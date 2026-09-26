@@ -1,0 +1,1 @@
+function r(e,l){let{createSvgElement:t,renderLabelNode:o}=l;o&&o(e,e.params?.GotoTag),e.group.appendChild(t("line",{x1:25,y1:20,x2:40,y2:20,class:"label-node"}))}var p={labelSource:{render:r}};export{p as blockDefinitions};

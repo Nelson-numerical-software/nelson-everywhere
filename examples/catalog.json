@@ -1,0 +1,447 @@
+{
+  "groups": [
+    {
+      "name": "categorical",
+      "title": "categorical",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Summarize categorical labels",
+          "description": "Encode repeated labels and count each category.",
+          "tags": [
+            "categorical",
+            "summary"
+          ],
+          "requirements": [],
+          "file": "/examples/categorical/categorical_summary.m"
+        }
+      ]
+    },
+    {
+      "name": "control_system",
+      "title": "control system",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Time-domain response",
+          "description": "Plot the step response of a stable second-order model.",
+          "tags": [
+            "control",
+            "time-response"
+          ],
+          "requirements": [
+            "control-system",
+            "plots"
+          ],
+          "file": "/examples/control_system/step_response.m"
+        }
+      ]
+    },
+    {
+      "name": "data_analysis",
+      "title": "data analysis",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Clean a measurement series",
+          "description": "Interpolate missing values and compute a moving average.",
+          "tags": [
+            "data-cleaning",
+            "missing-data"
+          ],
+          "requirements": [],
+          "file": "/examples/data_analysis/clean_measurements.m"
+        },
+        {
+          "title": "Group observations",
+          "description": "Count table rows by category and display a compact summary.",
+          "tags": [
+            "grouping",
+            "table"
+          ],
+          "requirements": [],
+          "file": "/examples/data_analysis/group_observations.m"
+        }
+      ]
+    },
+    {
+      "name": "dictionary",
+      "title": "dictionary",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Key-value lookup",
+          "description": "Create a dictionary and retrieve a value by its key.",
+          "tags": [
+            "dictionary",
+            "data"
+          ],
+          "requirements": [],
+          "file": "/examples/dictionary/dictionary_lookup.m"
+        }
+      ]
+    },
+    {
+      "name": "elementary_mathematics",
+      "title": "elementary mathematics",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Matrix arithmetic",
+          "description": "Compare matrix multiplication with element-wise operations.",
+          "tags": [
+            "beginner",
+            "matrices"
+          ],
+          "requirements": [],
+          "file": "/examples/elementary_mathematics/matrix_arithmetic.m"
+        }
+      ]
+    },
+    {
+      "name": "files_folders_functions",
+      "title": "files folders functions",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Work with temporary files",
+          "description": "Create, read and clean up a text file under the temporary directory.",
+          "tags": [
+            "files",
+            "folders"
+          ],
+          "requirements": [],
+          "file": "/examples/files_folders_functions/temporary_files.m"
+        }
+      ]
+    },
+    {
+      "name": "function_handle",
+      "title": "function handle",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Parameterized function handle",
+          "description": "Capture coefficients in a function handle and pass it to a numerical algorithm.",
+          "tags": [
+            "function-handle",
+            "closure",
+            "parameters"
+          ],
+          "requirements": [],
+          "file": "/examples/function_handle/parameterized_function.m"
+        }
+      ]
+    },
+    {
+      "name": "graphics",
+      "title": "graphics",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Essential plot types",
+          "description": "Compare line, error-bar, bar, histogram, contour and surface plots in a compact gallery.",
+          "tags": [
+            "plot",
+            "beginner",
+            "visualization"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/essential_plot_types.m"
+        },
+        {
+          "title": "Parametric rainbow rose",
+          "description": "Build a colorful three-dimensional flower from parametric equations.",
+          "tags": [
+            "3d",
+            "parametric",
+            "surface"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/rainbow_rose.m"
+        },
+        {
+          "title": "Mandelbrot fractal",
+          "description": "Render escape iterations across the complex plane.",
+          "tags": [
+            "fractal",
+            "complex",
+            "image"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/mandelbrot_fractal.m"
+        },
+        {
+          "title": "Moebius strip",
+          "description": "Build a one-sided parametric surface with a half twist.",
+          "tags": [
+            "3d",
+            "parametric",
+            "topology"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/moebius_strip.m"
+        },
+        {
+          "title": "Fractal tree",
+          "description": "Grow a binary tree through repeated rotations and scaling.",
+          "tags": [
+            "fractal",
+            "tree",
+            "geometry"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/fractal_tree.m"
+        },
+        {
+          "title": "Mathematical shader",
+          "description": "Compose a colorful image from vectorized waves, rings and projection.",
+          "tags": [
+            "generative-art",
+            "image",
+            "vectorization"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/mathematical_shader.m"
+        },
+        {
+          "title": "Rigid triple pendulum",
+          "description": "Animate three distributed-mass rigid rods with coupled nonlinear dynamics, angle traces and energy monitoring.",
+          "tags": [
+            "animation",
+            "simulation",
+            "mechanics",
+            "chaos"
+          ],
+          "requirements": [
+            "plots",
+            "ode-solvers"
+          ],
+          "file": "/examples/graphics/rigid_triple_pendulum.m"
+        },
+        {
+          "title": "Portable curves and peaks",
+          "description": "Render a sine curve and an interactive peaks surface with the portable plotting backend.",
+          "tags": [
+            "plot",
+            "surface",
+            "portable"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/examples/graphics/portable_peaks.m"
+        }
+      ]
+    },
+    {
+      "name": "integer",
+      "title": "integer",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Fixed-width integer arithmetic",
+          "description": "Inspect integer ranges and saturation during conversion and arithmetic.",
+          "tags": [
+            "integer",
+            "conversion",
+            "saturation"
+          ],
+          "requirements": [],
+          "file": "/examples/integer/fixed_width_integers.m"
+        }
+      ]
+    },
+    {
+      "name": "linear_algebra",
+      "title": "linear algebra",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Solve a linear system",
+          "description": "Solve a small symmetric system and verify its residual.",
+          "tags": [
+            "linear-system",
+            "beginner"
+          ],
+          "requirements": [],
+          "file": "/examples/linear_algebra/solve_linear_system.m"
+        },
+        {
+          "title": "Compare matrix decompositions",
+          "description": "Validate LU, QR and eigenvalue factorizations numerically.",
+          "tags": [
+            "decomposition",
+            "matrix"
+          ],
+          "requirements": [],
+          "file": "/examples/linear_algebra/matrix_decompositions.m"
+        },
+        {
+          "title": "Preconditioned conjugate gradient",
+          "description": "Compare an iterative sparse solve with and without incomplete Cholesky preconditioning.",
+          "tags": [
+            "iterative-solver",
+            "sparse",
+            "preconditioning"
+          ],
+          "requirements": [],
+          "file": "/examples/linear_algebra/preconditioned_conjugate_gradient.m"
+        }
+      ]
+    },
+    {
+      "name": "logical",
+      "title": "logical",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Filter data with logical masks",
+          "description": "Combine conditions to select and replace measurements without loops.",
+          "tags": [
+            "logical",
+            "indexing",
+            "filtering"
+          ],
+          "requirements": [],
+          "file": "/examples/logical/logical_indexing.m"
+        }
+      ]
+    },
+    {
+      "name": "modules_manager",
+      "title": "modules manager",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Create and test a module",
+          "description": "Build a minimal module in the temporary directory, load it, test it and unload it.",
+          "tags": [
+            "module",
+            "testing"
+          ],
+          "requirements": [],
+          "file": "/examples/modules_manager/create_temporary_module.m"
+        }
+      ]
+    },
+    {
+      "name": "profiler",
+      "title": "profiler",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Profile a computation",
+          "description": "Collect timing information for repeated matrix decompositions.",
+          "tags": [
+            "profiling",
+            "performance"
+          ],
+          "requirements": [],
+          "file": "/examples/profiler/profile_computation.m"
+        }
+      ]
+    },
+    {
+      "name": "sparse",
+      "title": "sparse",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Solve a sparse Poisson system",
+          "description": "Assemble a banded sparse operator and solve a boundary-value discretization.",
+          "tags": [
+            "sparse",
+            "linear-system"
+          ],
+          "requirements": [],
+          "file": "/examples/sparse/sparse_poisson.m"
+        }
+      ]
+    },
+    {
+      "name": "string",
+      "title": "string",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Parse measurement records",
+          "description": "Split structured text records and convert their numeric fields.",
+          "tags": [
+            "text",
+            "parsing",
+            "strings"
+          ],
+          "requirements": [],
+          "file": "/examples/string/parse_measurements.m"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "title": "table",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Build and filter a table",
+          "description": "Create typed columns and select rows with a logical condition.",
+          "tags": [
+            "table",
+            "filtering"
+          ],
+          "requirements": [],
+          "file": "/examples/table/build_and_select_table.m"
+        }
+      ]
+    },
+    {
+      "name": "tests_manager",
+      "title": "tests manager",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Run a unit test",
+          "description": "Create a temporary assertion-based test and execute it with the test manager.",
+          "tags": [
+            "testing",
+            "automation"
+          ],
+          "requirements": [],
+          "file": "/examples/tests_manager/run_unit_test.m"
+        }
+      ]
+    },
+    {
+      "name": "trigonometric_functions",
+      "title": "trigonometric functions",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Coordinate-system round trip",
+          "description": "Convert planar and spatial points between Cartesian, polar and spherical coordinates.",
+          "tags": [
+            "coordinates",
+            "polar",
+            "spherical"
+          ],
+          "requirements": [],
+          "file": "/examples/trigonometric_functions/coordinate_transforms.m"
+        }
+      ]
+    }
+  ],
+  "diagnostics": [],
+  "locale": "en_US"
+}

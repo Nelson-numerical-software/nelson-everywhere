@@ -1,0 +1,1979 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="acausal_electrical__CCC" data-lib="acausal_electrical" data-name="CCC.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="22" cy="36" r="7" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><path d="M22 43 L18 39 M22 43 L26 39" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><circle cx="48" cy="36" r="10" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="48" y1="42" x2="48" y2="30" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M45 33 L48 28 L51 33 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="24" r="3" fill="#1A3E8C"/><circle cx="64" cy="48" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__CCV" data-lib="acausal_electrical" data-name="CCV.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="22" cy="36" r="7" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><path d="M22 43 L18 39 M22 43 L26 39" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><circle cx="48" cy="36" r="10" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="43" y1="36" x2="53" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="24" r="3" fill="#1A3E8C"/><circle cx="64" cy="48" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Capacitor" data-lib="acausal_electrical" data-name="Capacitor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="32" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="32" y1="22" x2="32" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="22" x2="40" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Conductor" data-lib="acausal_electrical" data-name="Conductor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><rect x="22" y="28" width="28" height="16" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="50" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><text x="52" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3E8C">G</text>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__ConstantCurrent" data-lib="acausal_electrical" data-name="ConstantCurrent.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="36" y1="44" x2="36" y2="28" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M32 33 L36 27 L40 33 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__ConstantVoltage" data-lib="acausal_electrical" data-name="ConstantVoltage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="22" y1="36" x2="50" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><text x="27" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1A3E8C">+</text><text x="45" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1A3E8C">&#8722;</text>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__CurrentSensor" data-lib="acausal_electrical" data-name="CurrentSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#1A3E8C">I</text>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Diode" data-lib="acausal_electrical" data-name="Diode.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="28" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M28 28 L28 44 L44 36 Z" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="44" y1="28" x2="44" y2="44" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__ExpSineCurrent" data-lib="acausal_electrical" data-name="ExpSineCurrent.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M27 36 q2 -6 4 0 q2 5 4 0 q2 -4 4 0 q2 3 4 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><path d="M33 26 L36 21 L39 26 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__ExpSineVoltage" data-lib="acausal_electrical" data-name="ExpSineVoltage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M27 36 q2 -6 4 0 q2 5 4 0 q2 -4 4 0 q2 3 4 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Ground" data-lib="acausal_electrical" data-name="Ground.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="36" y1="20" x2="36" y2="40" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="40" x2="46" y2="40" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="29" y1="46" x2="43" y2="46" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="32" y1="52" x2="40" y2="52" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Gyrator" data-lib="acausal_electrical" data-name="Gyrator.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <text x="36" y="32" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1A3E8C">G1</text><text x="36" y="51" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1A3E8C">G2</text>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="24" r="3" fill="#1A3E8C"/><circle cx="64" cy="48" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__HeatingResistor" data-lib="acausal_electrical" data-name="HeatingResistor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><rect x="22" y="26" width="28" height="16" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="50" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="42" x2="36" y2="52" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M32 48 L36 56 L40 48 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__IdealDiode" data-lib="acausal_electrical" data-name="IdealDiode.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="28" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M28 28 L28 44 L44 36 Z" fill="#1A3E8C" stroke="#1A3E8C" stroke-width="2"/><line x1="44" y1="28" x2="44" y2="44" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__IdealOpAmp" data-lib="acausal_electrical" data-name="IdealOpAmp.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <path d="M26 22 L26 50 L50 36 Z" fill="none" stroke="#1A3E8C" stroke-width="2"/><text x="31" y="32" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3E8C">&#8722;</text><text x="31" y="47" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3E8C">+</text>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__IdealSwitch" data-lib="acausal_electrical" data-name="IdealSwitch.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="26" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><circle cx="26" cy="36" r="2" fill="#1A3E8C"/><line x1="26" y1="36" x2="46" y2="26" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="36" r="2" fill="#1A3E8C"/><line x1="46" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__IdealTransformer" data-lib="acausal_electrical" data-name="IdealTransformer.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <path d="M28 30 a4 4 0 0 1 0 12 a4 4 0 0 1 0 -12" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M44 30 a4 4 0 0 0 0 12 a4 4 0 0 0 0 -12" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="36" y1="24" x2="36" y2="48" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="24" r="3" fill="#1A3E8C"/><circle cx="64" cy="48" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Idle" data-lib="acausal_electrical" data-name="Idle.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="30" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Inductor" data-lib="acausal_electrical" data-name="Inductor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="8" y1="36" x2="18" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M18 36 a7 7 0 0 1 14 0 a7 7 0 0 1 14 0 a7 7 0 0 1 14 0" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="60" y1="36" x2="64" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__NMOS" data-lib="acausal_electrical" data-name="NMOS.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="24" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="27" x2="24" y2="45" stroke="#1A3E8C" stroke-width="2"/><line x1="30" y1="26" x2="30" y2="46" stroke="#1A3E8C" stroke-width="3"/><line x1="30" y1="30" x2="50" y2="22" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="42" x2="50" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M38 46 L30 42 L37 39 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__NPN" data-lib="acausal_electrical" data-name="NPN.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="30" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="26" x2="30" y2="46" stroke="#1A3E8C" stroke-width="3"/><line x1="30" y1="32" x2="50" y2="22" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="40" x2="50" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M42 42 L50 50 L44 44 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__PMOS" data-lib="acausal_electrical" data-name="PMOS.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="24" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="27" x2="24" y2="45" stroke="#1A3E8C" stroke-width="2"/><line x1="30" y1="26" x2="30" y2="46" stroke="#1A3E8C" stroke-width="3"/><line x1="30" y1="30" x2="50" y2="22" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="42" x2="50" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M30 42 L38 46 L37 39 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__PNP" data-lib="acausal_electrical" data-name="PNP.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="30" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="26" x2="30" y2="46" stroke="#1A3E8C" stroke-width="3"/><line x1="30" y1="32" x2="50" y2="22" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="40" x2="50" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M30 40 L38 44 L36 36 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__PotentialSensor" data-lib="acausal_electrical" data-name="PotentialSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#1A3E8C">&#966;</text>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__RampCurrent" data-lib="acausal_electrical" data-name="RampCurrent.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M26 40 L34 40 L46 30" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><path d="M33 26 L36 21 L39 26 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__RampVoltage" data-lib="acausal_electrical" data-name="RampVoltage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M26 40 L34 40 L46 30" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Resistor" data-lib="acausal_electrical" data-name="Resistor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="20" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><rect x="20" y="24" width="32" height="24" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="52" y1="36" x2="60" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__Short" data-lib="acausal_electrical" data-name="Short.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__SignalCurrent" data-lib="acausal_electrical" data-name="SignalCurrent.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="36" y1="44" x2="36" y2="28" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M32 33 L36 27 L40 33 Z" fill="#1A3E8C"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__SignalVoltage" data-lib="acausal_electrical" data-name="SignalVoltage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="22" y1="36" x2="50" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><text x="27" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1A3E8C">+</text><text x="45" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1A3E8C">&#8722;</text><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__SineCurrent" data-lib="acausal_electrical" data-name="SineCurrent.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M27 36 q2.5 -6 5 0 q2.5 6 5 0 q2.5 -6 5 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><path d="M33 26 L36 21 L39 26 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__SineVoltage" data-lib="acausal_electrical" data-name="SineVoltage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M27 36 q2.5 -6 5 0 q2.5 6 5 0 q2.5 -6 5 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__TrapezoidCurrent" data-lib="acausal_electrical" data-name="TrapezoidCurrent.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M26 40 L31 32 L41 32 L46 40" fill="none" stroke="#1A3E8C" stroke-width="1.5"/><path d="M33 26 L36 21 L39 26 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__TrapezoidVoltage" data-lib="acausal_electrical" data-name="TrapezoidVoltage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M26 40 L31 32 L41 32 L46 40" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VCC" data-lib="acausal_electrical" data-name="VCC.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="26" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M23 32 L30 36 L23 40 Z" fill="#1A3E8C"/><circle cx="48" cy="36" r="10" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="48" y1="43" x2="48" y2="31" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M45 34 L48 29 L51 34 Z" fill="#1A3E8C"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="24" r="3" fill="#1A3E8C"/><circle cx="64" cy="48" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VCV" data-lib="acausal_electrical" data-name="VCV.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="26" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M23 32 L30 36 L23 40 Z" fill="#1A3E8C"/><circle cx="48" cy="36" r="10" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="43" y1="36" x2="53" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="3" fill="#1A3E8C"/><circle cx="8" cy="48" r="3" fill="#1A3E8C"/><circle cx="64" cy="24" r="3" fill="#1A3E8C"/><circle cx="64" cy="48" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VariableCapacitor" data-lib="acausal_electrical" data-name="VariableCapacitor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="32" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="32" y1="22" x2="32" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="22" x2="40" y2="50" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="52" x2="54" y2="22" stroke="#1A3E8C" stroke-width="1.5"/><path d="M49 22 L54 22 L54 27 Z" fill="#1A3E8C"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VariableConductor" data-lib="acausal_electrical" data-name="VariableConductor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><rect x="22" y="28" width="28" height="16" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="50" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="52" x2="54" y2="22" stroke="#1A3E8C" stroke-width="1.5"/><path d="M49 22 L54 22 L54 27 Z" fill="#1A3E8C"/><text x="52" y="28" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#1A3E8C">G</text><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VariableInductor" data-lib="acausal_electrical" data-name="VariableInductor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M22 36 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="46" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="52" x2="54" y2="22" stroke="#1A3E8C" stroke-width="1.5"/><path d="M49 22 L54 22 L54 27 Z" fill="#1A3E8C"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VariableResistor" data-lib="acausal_electrical" data-name="VariableResistor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><rect x="22" y="28" width="28" height="16" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="50" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="52" x2="54" y2="22" stroke="#1A3E8C" stroke-width="1.5"/><path d="M49 22 L54 22 L54 27 Z" fill="#1A3E8C"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1A3E8C" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__VoltageSensor" data-lib="acausal_electrical" data-name="VoltageSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#1A3E8C" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#1A3E8C">V</text>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_electrical__ZDiode" data-lib="acausal_electrical" data-name="ZDiode.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#E8F0FE" stroke="#9DB8F0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="28" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/><path d="M28 28 L28 44 L44 36 Z" fill="none" stroke="#1A3E8C" stroke-width="2"/><path d="M40 28 L44 28 L44 44 L48 44" fill="none" stroke="#1A3E8C" stroke-width="2"/><line x1="44" y1="36" x2="58" y2="36" stroke="#1A3E8C" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1A3E8C"/><circle cx="64" cy="36" r="3" fill="#1A3E8C"/>
+</symbol>
+<symbol id="acausal_planar__PlanarAccelerationSensor" data-lib="acausal_planar" data-name="PlanarAccelerationSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#3C3489">a</text>
+</symbol>
+<symbol id="acausal_planar__PlanarBody" data-lib="acausal_planar" data-name="PlanarBody.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="22" y="24" width="28" height="24" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/><circle cx="36" cy="36" r="2.5" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarDamper" data-lib="acausal_planar" data-name="PlanarDamper.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <circle cx="16" cy="36" r="3" fill="#3C3489"/><line x1="16" y1="36" x2="28" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><rect x="28" y="30" width="12" height="12" fill="none" stroke="#3C3489" stroke-width="2"/><line x1="34" y1="30" x2="34" y2="42" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="36" x2="52" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><circle cx="52" cy="36" r="3" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarDistance" data-lib="acausal_planar" data-name="PlanarDistance.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <circle cx="20" cy="36" r="3" fill="#3C3489"/><line x1="20" y1="36" x2="52" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><circle cx="52" cy="36" r="3" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarDistanceSensor" data-lib="acausal_planar" data-name="PlanarDistanceSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#3C3489">d</text>
+</symbol>
+<symbol id="acausal_planar__PlanarFixed" data-lib="acausal_planar" data-name="PlanarFixed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="22" y1="30" x2="50" y2="30" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="24" y1="30" x2="20" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="31" y1="30" x2="27" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="30" x2="34" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="45" y1="30" x2="41" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="30" x2="36" y2="46" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="acausal_planar__PlanarForce" data-lib="acausal_planar" data-name="PlanarForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="18" y1="36" x2="48" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><path d="M46 30 L56 36 L46 42 Z" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarPointMass" data-lib="acausal_planar" data-name="PlanarPointMass.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="6" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarPositionSensor" data-lib="acausal_planar" data-name="PlanarPositionSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#3C3489">x</text>
+</symbol>
+<symbol id="acausal_planar__PlanarPrismatic" data-lib="acausal_planar" data-name="PlanarPrismatic.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="16" y="40" width="40" height="6" rx="1" fill="none" stroke="#3C3489" stroke-width="2"/><rect x="28" y="26" width="16" height="12" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/>
+</symbol>
+<symbol id="acausal_planar__PlanarRelPositionSensor" data-lib="acausal_planar" data-name="PlanarRelPositionSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#3C3489">r</text>
+</symbol>
+<symbol id="acausal_planar__PlanarRelativeTorque" data-lib="acausal_planar" data-name="PlanarRelativeTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <path d="M26 42 A14 14 0 0 1 46 42" fill="none" stroke="#3C3489" stroke-width="2"/><path d="M44 38 L49 44 L41 45 Z" fill="#3C3489"/><path d="M28 38 L23 44 L31 45 Z" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarRevolute" data-lib="acausal_planar" data-name="PlanarRevolute.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="16" y1="36" x2="30" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="36" x2="56" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="36" r="7" fill="none" stroke="#3C3489" stroke-width="2"/><circle cx="36" cy="36" r="2" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarRollingWheel" data-lib="acausal_planar" data-name="PlanarRollingWheel.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <circle cx="36" cy="30" r="10" fill="none" stroke="#3C3489" stroke-width="2"/><circle cx="36" cy="30" r="2" fill="#3C3489"/><line x1="18" y1="44" x2="54" y2="44" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="44" x2="16" y2="50" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="44" x2="26" y2="50" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="44" x2="36" y2="50" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="44" x2="46" y2="50" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="acausal_planar__PlanarSpring" data-lib="acausal_planar" data-name="PlanarSpring.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <circle cx="16" cy="36" r="3" fill="#3C3489"/><line x1="16" y1="36" x2="22" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><path d="M22 36 L26 30 L30 42 L34 30 L38 42 L42 36" fill="none" stroke="#3C3489" stroke-width="2"/><line x1="42" y1="36" x2="52" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><circle cx="52" cy="36" r="3" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarSpringDamper" data-lib="acausal_planar" data-name="PlanarSpringDamper.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <circle cx="16" cy="36" r="3" fill="#3C3489"/><line x1="16" y1="36" x2="22" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><path d="M22 36 L26 30 L30 42 L34 30 L38 42 L42 36" fill="none" stroke="#3C3489" stroke-width="2"/><line x1="42" y1="36" x2="52" y2="36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><circle cx="52" cy="36" r="3" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarTorque" data-lib="acausal_planar" data-name="PlanarTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <path d="M24 44 A16 16 0 1 1 48 44" fill="none" stroke="#3C3489" stroke-width="2"/><path d="M44 40 L50 46 L42 48 Z" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_planar__PlanarVelocitySensor" data-lib="acausal_planar" data-name="PlanarVelocitySensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#3C3489" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#3C3489">v</text>
+</symbol>
+<symbol id="acausal_planar__PlanarWorld" data-lib="acausal_planar" data-name="PlanarWorld.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="20" y1="52" x2="52" y2="52" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="52" x2="20" y2="22" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/><path d="M20 26 L16 34 L24 34 Z" fill="#3C3489"/><path d="M48 52 L48 44 L56 48 Z" fill="#3C3489"/>
+</symbol>
+<symbol id="acausal_rotational__AngleSensor" data-lib="acausal_rotational" data-name="AngleSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#1E6B2E" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#1E6B2E">&#966;</text>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__BearingFriction" data-lib="acausal_rotational" data-name="BearingFriction.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="10" y1="30" x2="22" y2="30" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="30" x2="62" y2="30" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="22" y="20" width="28" height="20" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="36" y1="40" x2="36" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="46" x2="46" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="29" y1="46" x2="25" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="46" x2="31" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="41" y1="46" x2="37" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="47" y1="46" x2="43" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__Clutch" data-lib="acausal_rotational" data-name="Clutch.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M34 22 A14 14 0 0 0 34 50" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M38 22 A14 14 0 0 1 38 50" fill="none" stroke="#1E6B2E" stroke-width="2"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__ConstantRotSpeed" data-lib="acausal_rotational" data-name="ConstantRotSpeed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/><circle cx="36" cy="36" r="2.5" fill="#1E6B2E"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__ConstantTorque" data-lib="acausal_rotational" data-name="ConstantTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__EMF" data-lib="acausal_rotational" data-name="EMF.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="10" y1="30" x2="22" y2="30" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="42" x2="22" y2="42" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="36" r="12" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="28" y1="36" x2="40" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="3" fill="#1E6B2E"/><circle cx="8" cy="48" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__ElastoBacklash" data-lib="acausal_rotational" data-name="ElastoBacklash.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="18" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><path d="M18 36 L21 30 L24 42 L27 33 L30 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M33 30 L30 30 L30 42 L33 42" fill="none" stroke="#1E6B2E" stroke-width="1.5"/><path d="M39 30 L42 30 L42 42 L39 42" fill="none" stroke="#1E6B2E" stroke-width="1.5"/><path d="M42 36 L45 33 L48 42 L51 30 L54 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="54" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__ExpSineTorque" data-lib="acausal_rotational" data-name="ExpSineTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/><path d="M14 56 q2 -5 4 0 q2 4 4 0 q2 -3 4 0 q2 2 4 0" fill="none" stroke="#1E6B2E" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__Freewheel" data-lib="acausal_rotational" data-name="Freewheel.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="10" y1="36" x2="24" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><path d="M24 28 A10 10 0 1 1 24 44" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M20 30 L24 24 L28 30 Z" fill="#1E6B2E"/><path d="M40 30 L44 36 L40 42" fill="none" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__IdealGear" data-lib="acausal_rotational" data-name="IdealGear.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="12" fill="none" stroke="#1E6B2E" stroke-width="2"/><circle cx="36" cy="36" r="4" fill="#1E6B2E"/><line x1="36" y1="20" x2="36" y2="24" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="48" x2="36" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="36" x2="24" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="36" x2="52" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__Inertia" data-lib="acausal_rotational" data-name="Inertia.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="10" y1="36" x2="24" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="36" x2="62" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="24" y="24" width="24" height="24" rx="7" fill="none" stroke="#1E6B2E" stroke-width="2"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__LinearSpeedDependentTorque" data-lib="acausal_rotational" data-name="LinearSpeedDependentTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="12" y1="34" x2="26" y2="34" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="26" y="28" width="14" height="12" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="34" y1="28" x2="34" y2="40" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="34" x2="50" y2="34" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="26" x2="50" y2="42" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="42" x2="45" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="55" y1="42" x2="50" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="42" x2="55" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__QuadraticSpeedDependentTorque" data-lib="acausal_rotational" data-name="QuadraticSpeedDependentTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="12" y1="34" x2="24" y2="34" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="24" y="28" width="13" height="12" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="31" y1="28" x2="31" y2="40" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="37" y1="34" x2="46" y2="34" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="26" x2="46" y2="42" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="42" x2="41" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="51" y1="42" x2="46" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="56" y1="42" x2="51" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><text x="56" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#1E6B2E">&#178;</text>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RampTorque" data-lib="acausal_rotational" data-name="RampTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/><path d="M14 58 L22 58 L34 50" fill="none" stroke="#1E6B2E" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RelAngleSensor" data-lib="acausal_rotational" data-name="RelAngleSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#1E6B2E" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1E6B2E">&#916;&#966;</text>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RelRotSpeedSensor" data-lib="acausal_rotational" data-name="RelRotSpeedSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#1E6B2E" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#1E6B2E">&#916;&#969;</text>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotAccelerate" data-lib="acausal_rotational" data-name="RotAccelerate.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 37 L22 29 L28 37 Z" fill="#1E6B2E"/><path d="M18 45 L24 37 L30 45 Z" fill="#1E6B2E"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotBrake" data-lib="acausal_rotational" data-name="RotBrake.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <circle cx="34" cy="36" r="12" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="46" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="28" y="18" width="12" height="7" fill="none" stroke="#1E6B2E" stroke-width="2"/><rect x="28" y="47" width="12" height="7" fill="none" stroke="#1E6B2E" stroke-width="2"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotDamper" data-lib="acausal_rotational" data-name="RotDamper.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="26" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="26" y="28" width="16" height="16" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="34" y1="28" x2="34" y2="44" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotFixed" data-lib="acausal_rotational" data-name="RotFixed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="24" y1="26" x2="48" y2="26" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="26" x2="22" y2="32" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="32" y1="26" x2="28" y2="32" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="26" x2="34" y2="32" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="26" x2="40" y2="32" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="26" x2="36" y2="48" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotSpeed" data-lib="acausal_rotational" data-name="RotSpeed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotSpeedSensor" data-lib="acausal_rotational" data-name="RotSpeedSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#1E6B2E" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#1E6B2E">&#969;</text>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotSpring" data-lib="acausal_rotational" data-name="RotSpring.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><path d="M22 36 L26 28 L30 44 L34 28 L38 44 L42 28 L46 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="46" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__RotSpringDamper" data-lib="acausal_rotational" data-name="RotSpringDamper.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="20" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="52" y1="36" x2="58" y2="36" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="26" x2="20" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="52" y1="26" x2="52" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><path d="M20 26 L24 20 L28 32 L32 20 L36 32 L40 20 L44 32 L48 20 L52 26" fill="none" stroke="#1E6B2E" stroke-width="1.5"/><line x1="20" y1="46" x2="30" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="30" y="41" width="12" height="10" fill="none" stroke="#1E6B2E" stroke-width="1.5"/><line x1="36" y1="41" x2="36" y2="51" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="46" x2="52" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__SineTorque" data-lib="acausal_rotational" data-name="SineTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/><path d="M14 56 q3 -5 6 0 q3 5 6 0 q3 -5 6 0" fill="none" stroke="#1E6B2E" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__Torque" data-lib="acausal_rotational" data-name="Torque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1E6B2E" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__Torque2" data-lib="acausal_rotational" data-name="Torque2.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M34 22 A13 13 0 0 0 21 34" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 32 L21 40 L26 33 Z" fill="#1E6B2E"/><path d="M38 22 A13 13 0 0 1 51 34" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M46 33 L51 40 L56 32 Z" fill="#1E6B2E"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#1E6B2E" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/><circle cx="64" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_rotational__TrapezoidTorque" data-lib="acausal_rotational" data-name="TrapezoidTorque.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
+  <path d="M36 22 A14 14 0 1 1 22 36" fill="none" stroke="#1E6B2E" stroke-width="2"/><path d="M16 39 L22 30 L28 39 Z" fill="#1E6B2E"/><path d="M14 58 L19 52 L27 52 L32 58" fill="none" stroke="#1E6B2E" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+</symbol>
+<symbol id="acausal_thermal__BodyRadiation" data-lib="acausal_thermal" data-name="BodyRadiation.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="18" y="24" width="11" height="24"/></clipPath><g clip-path="url(#hc)"><line x1="-6" y1="24" x2="18" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="0" y1="24" x2="24" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="6" y1="24" x2="30" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="12" y1="24" x2="36" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="18" y1="24" x2="42" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="24" y1="24" x2="48" y2="48" stroke="#9C2A1A" stroke-width="1"/></g><rect x="18" y="24" width="11" height="24" fill="none" stroke="#9C2A1A" stroke-width="2"/><line x1="33" y1="30" x2="52" y2="30" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M49 27 L56 30 L49 33 Z" fill="#9C2A1A"/><line x1="33" y1="36" x2="52" y2="36" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M49 33 L56 36 L49 39 Z" fill="#9C2A1A"/><line x1="33" y1="42" x2="52" y2="42" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M49 39 L56 42 L49 45 Z" fill="#9C2A1A"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__Convection" data-lib="acausal_thermal" data-name="Convection.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="18" y="24" width="11" height="24"/></clipPath><g clip-path="url(#hc)"><line x1="-6" y1="24" x2="18" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="0" y1="24" x2="24" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="6" y1="24" x2="30" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="12" y1="24" x2="36" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="18" y1="24" x2="42" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="24" y1="24" x2="48" y2="48" stroke="#9C2A1A" stroke-width="1"/></g><rect x="18" y="24" width="11" height="24" fill="none" stroke="#9C2A1A" stroke-width="2"/><line x1="33" y1="31" x2="52" y2="31" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M49 28 L56 31 L49 34 Z" fill="#9C2A1A"/><line x1="33" y1="41" x2="52" y2="41" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M49 38 L56 41 L49 44 Z" fill="#9C2A1A"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__ConvectiveResistor" data-lib="acausal_thermal" data-name="ConvectiveResistor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="18" y="24" width="11" height="24"/></clipPath><g clip-path="url(#hc)"><line x1="-6" y1="24" x2="18" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="0" y1="24" x2="24" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="6" y1="24" x2="30" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="12" y1="24" x2="36" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="18" y1="24" x2="42" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="24" y1="24" x2="48" y2="48" stroke="#9C2A1A" stroke-width="1"/></g><rect x="18" y="24" width="11" height="24" fill="none" stroke="#9C2A1A" stroke-width="2"/><line x1="33" y1="36" x2="52" y2="36" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M49 33 L56 36 L49 39 Z" fill="#9C2A1A"/><text x="43" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#9C2A1A">h</text>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__FixedHeatFlow" data-lib="acausal_thermal" data-name="FixedHeatFlow.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <line x1="14" y1="30" x2="44" y2="30" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M40 26 L48 30 L40 34 Z" fill="#9C2A1A"/><line x1="14" y1="42" x2="44" y2="42" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M40 38 L48 42 L40 46 Z" fill="#9C2A1A"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__FixedTemperature" data-lib="acausal_thermal" data-name="FixedTemperature.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="20" y="24" width="26" height="24"/></clipPath><g clip-path="url(#hc)"><line x1="-4" y1="24" x2="20" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="2" y1="24" x2="26" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="8" y1="24" x2="32" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="14" y1="24" x2="38" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="20" y1="24" x2="44" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="26" y1="24" x2="50" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="32" y1="24" x2="56" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="38" y1="24" x2="62" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="44" y1="24" x2="68" y2="48" stroke="#9C2A1A" stroke-width="1"/></g><rect x="20" y="24" width="26" height="24" fill="none" stroke="#9C2A1A" stroke-width="2"/><text x="56" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#9C2A1A">T</text>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__HeatCapacitor" data-lib="acausal_thermal" data-name="HeatCapacitor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <path d="M30 20 Q19 24 22 34 Q18 46 31 48 Q43 50 48 41 Q52 31 45 23 Q39 18 30 20 Z" fill="none" stroke="#9C2A1A" stroke-width="2"/><line x1="31" y1="48" x2="31" y2="55" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__HeatFlowSensor" data-lib="acausal_thermal" data-name="HeatFlowSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="14" fill="none" stroke="#9C2A1A" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#9C2A1A">I</text>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__PrescribedHeatFlow" data-lib="acausal_thermal" data-name="PrescribedHeatFlow.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <line x1="14" y1="30" x2="44" y2="30" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M40 26 L48 30 L40 34 Z" fill="#9C2A1A"/><line x1="14" y1="42" x2="44" y2="42" stroke="#9C2A1A" stroke-width="2" stroke-linecap="round"/><path d="M40 38 L48 42 L40 46 Z" fill="#9C2A1A"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#9C2A1A" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__PrescribedTemperature" data-lib="acausal_thermal" data-name="PrescribedTemperature.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="20" y="24" width="26" height="24"/></clipPath><g clip-path="url(#hc)"><line x1="-4" y1="24" x2="20" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="2" y1="24" x2="26" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="8" y1="24" x2="32" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="14" y1="24" x2="38" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="20" y1="24" x2="44" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="26" y1="24" x2="50" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="32" y1="24" x2="56" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="38" y1="24" x2="62" y2="48" stroke="#9C2A1A" stroke-width="1"/><line x1="44" y1="24" x2="68" y2="48" stroke="#9C2A1A" stroke-width="1"/></g><rect x="20" y="24" width="26" height="24" fill="none" stroke="#9C2A1A" stroke-width="2"/><text x="56" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#9C2A1A">T</text><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#9C2A1A" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__RelTemperatureSensor" data-lib="acausal_thermal" data-name="RelTemperatureSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <rect x="32" y="18" width="8" height="22" rx="4" fill="none" stroke="#9C2A1A" stroke-width="2"/><rect x="34" y="24" width="4" height="18" fill="#9C2A1A"/><circle cx="36" cy="45" r="6" fill="#9C2A1A"/><text x="50" y="30" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#9C2A1A">&#916;</text>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__TemperatureSensor" data-lib="acausal_thermal" data-name="TemperatureSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <rect x="32" y="18" width="8" height="22" rx="4" fill="none" stroke="#9C2A1A" stroke-width="2"/><rect x="34" y="24" width="4" height="18" fill="#9C2A1A"/><circle cx="36" cy="45" r="6" fill="#9C2A1A"/>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__ThermalConductor" data-lib="acausal_thermal" data-name="ThermalConductor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="22" y="26" width="28" height="20"/></clipPath><g clip-path="url(#hc)"><line x1="2" y1="26" x2="22" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="8" y1="26" x2="28" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="14" y1="26" x2="34" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="20" y1="26" x2="40" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="26" y1="26" x2="46" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="32" y1="26" x2="52" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="38" y1="26" x2="58" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="44" y1="26" x2="64" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="50" y1="26" x2="70" y2="46" stroke="#9C2A1A" stroke-width="1"/></g><rect x="22" y="26" width="28" height="20" fill="none" stroke="#9C2A1A" stroke-width="2"/><text x="58" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#9C2A1A">G</text>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_thermal__ThermalResistor" data-lib="acausal_thermal" data-name="ThermalResistor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
+  <clipPath id="hc"><rect x="22" y="26" width="28" height="20"/></clipPath><g clip-path="url(#hc)"><line x1="2" y1="26" x2="22" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="8" y1="26" x2="28" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="14" y1="26" x2="34" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="20" y1="26" x2="40" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="26" y1="26" x2="46" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="32" y1="26" x2="52" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="38" y1="26" x2="58" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="44" y1="26" x2="64" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="50" y1="26" x2="70" y2="46" stroke="#9C2A1A" stroke-width="1"/></g><rect x="22" y="26" width="28" height="20" fill="none" stroke="#9C2A1A" stroke-width="2"/><text x="58" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#9C2A1A">R</text>
+  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+</symbol>
+<symbol id="acausal_translational__Accelerate" data-lib="acausal_translational" data-name="Accelerate.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="16" y="28" width="16" height="16" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><path d="M38 29 L47 36 L38 43" fill="none" stroke="#8C5A08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M47 29 L56 36 L47 43" fill="none" stroke="#8C5A08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Brake" data-lib="acausal_translational" data-name="Brake.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="10" y1="36" x2="58" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><rect x="28" y="22" width="12" height="9" fill="none" stroke="#8C5A08" stroke-width="2"/><rect x="28" y="41" width="12" height="9" fill="none" stroke="#8C5A08" stroke-width="2"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__ConstantForce" data-lib="acausal_translational" data-name="ConstantForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="24" x2="16" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="36" x2="46" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M42 29 L56 36 L42 43 Z" fill="#8C5A08"/><circle cx="16" cy="36" r="2.5" fill="#8C5A08"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__ConstantSpeed" data-lib="acausal_translational" data-name="ConstantSpeed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="16" y="28" width="16" height="16" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="36" y1="36" x2="52" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M48 32 L56 36 L48 40 Z" fill="#8C5A08"/><circle cx="36" cy="36" r="2" fill="#8C5A08"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Damper" data-lib="acausal_translational" data-name="Damper.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="26" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><rect x="26" y="28" width="16" height="16" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="34" y1="28" x2="34" y2="44" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="36" x2="58" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__ElastoGap" data-lib="acausal_translational" data-name="ElastoGap.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="12" y1="36" x2="18" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M18 36 L22 30 L26 42 L30 30 L34 42 L38 36" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="38" y1="36" x2="42" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="26" x2="48" y2="46" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="46" x2="44" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="26" x2="50" y2="30" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__ExpSineForce" data-lib="acausal_translational" data-name="ExpSineForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="22" x2="16" y2="44" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="33" x2="46" y2="33" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M42 26 L56 33 L42 40 Z" fill="#8C5A08"/><path d="M14 54 q2 -6 4 0 q2 5 4 0 q2 -4 4 0 q2 3 4 0" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Fixed" data-lib="acausal_translational" data-name="Fixed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="24" y1="26" x2="48" y2="26" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="26" x2="22" y2="32" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="32" y1="26" x2="28" y2="32" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="38" y1="26" x2="34" y2="32" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="26" x2="40" y2="32" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="26" x2="36" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Force" data-lib="acausal_translational" data-name="Force.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="24" x2="16" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="36" x2="46" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M42 29 L56 36 L42 43 Z" fill="#8C5A08"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Force2" data-lib="acausal_translational" data-name="Force2.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="20" y1="36" x2="52" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M22 30 L12 36 L22 42 Z" fill="#8C5A08"/><path d="M50 30 L60 36 L50 42 Z" fill="#8C5A08"/><path d="M22 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Friction" data-lib="acausal_translational" data-name="Friction.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="18" y1="46" x2="54" y2="46" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="46" x2="16" y2="52" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="28" y1="46" x2="24" y2="52" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="46" x2="32" y2="52" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="46" x2="40" y2="52" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><rect x="28" y="26" width="16" height="14" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Lever" data-lib="acausal_translational" data-name="Lever.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="30" x2="56" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M32 46 L40 46 L36 38 Z" fill="none" stroke="#8C5A08" stroke-width="2"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__LinearSpeedDependentForce" data-lib="acausal_translational" data-name="LinearSpeedDependentForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="12" y1="34" x2="26" y2="34" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><rect x="26" y="28" width="14" height="12" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="34" y1="28" x2="34" y2="40" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="40" y1="34" x2="50" y2="34" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="26" x2="50" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="42" x2="45" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="55" y1="42" x2="50" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="60" y1="42" x2="55" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Mass" data-lib="acausal_translational" data-name="Mass.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="24" y="26" width="24" height="20" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__MassWithWeight" data-lib="acausal_translational" data-name="MassWithWeight.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="22" y="18" width="24" height="16" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="34" y1="36" x2="34" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M30 46 L34 54 L38 46 Z" fill="#8C5A08"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__PositionSensor" data-lib="acausal_translational" data-name="PositionSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#8C5A08">x</text>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Pulley" data-lib="acausal_translational" data-name="Pulley.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <circle cx="36" cy="38" r="13" fill="none" stroke="#8C5A08" stroke-width="2"/><circle cx="36" cy="38" r="9" fill="none" stroke="#8C5A08" stroke-width="1.5"/><circle cx="36" cy="38" r="2.5" fill="#8C5A08"/><line x1="14" y1="30" x2="58" y2="30" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__QuadraticSpeedDependentForce" data-lib="acausal_translational" data-name="QuadraticSpeedDependentForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="12" y1="34" x2="24" y2="34" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><rect x="24" y="28" width="13" height="12" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="31" y1="28" x2="31" y2="40" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="37" y1="34" x2="46" y2="34" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="26" x2="46" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="42" x2="41" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="51" y1="42" x2="46" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="56" y1="42" x2="51" y2="48" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><text x="56" y="26" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#8C5A08">&#178;</text>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__RampForce" data-lib="acausal_translational" data-name="RampForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="22" x2="16" y2="44" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="33" x2="46" y2="33" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M42 26 L56 33 L42 40 Z" fill="#8C5A08"/><path d="M14 56 L22 56 L34 48" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__RelPositionSensor" data-lib="acausal_translational" data-name="RelPositionSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#8C5A08">&#916;x</text>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__RelSpeedSensor" data-lib="acausal_translational" data-name="RelSpeedSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#8C5A08">&#916;v</text>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Rod" data-lib="acausal_translational" data-name="Rod.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="30" x2="16" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="36" x2="56" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="56" y1="30" x2="56" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__SineForce" data-lib="acausal_translational" data-name="SineForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="22" x2="16" y2="44" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="33" x2="46" y2="33" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M42 26 L56 33 L42 40 Z" fill="#8C5A08"/><path d="M14 54 q3 -6 6 0 q3 6 6 0 q3 -6 6 0" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__SlidingMass" data-lib="acausal_translational" data-name="SlidingMass.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="24" y="22" width="24" height="16" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="16" y1="44" x2="56" y2="44" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="44" x2="16" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="28" y1="44" x2="24" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="36" y1="44" x2="32" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="44" y1="44" x2="40" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="52" y1="44" x2="48" y2="50" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Speed" data-lib="acausal_translational" data-name="Speed.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="16" y="28" width="16" height="16" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><path d="M42 29 L51 36 L42 43" fill="none" stroke="#8C5A08" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="38" y1="36" x2="51" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__SpeedSensor" data-lib="acausal_translational" data-name="SpeedSensor.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <rect x="19" y="26" width="34" height="20" rx="2" fill="none" stroke="#8C5A08" stroke-width="2"/><text x="36" y="41" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#8C5A08">v</text>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__Spring" data-lib="acausal_translational" data-name="Spring.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="22" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M22 36 L26 28 L30 44 L34 28 L38 44 L42 28 L46 36" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="46" y1="36" x2="58" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__SpringDamper" data-lib="acausal_translational" data-name="SpringDamper.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="14" y1="36" x2="20" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="52" y1="36" x2="58" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="20" y1="26" x2="20" y2="46" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="52" y1="26" x2="52" y2="46" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M20 26 L24 20 L28 32 L32 20 L36 32 L40 20 L44 32 L48 20 L52 26" fill="none" stroke="#8C5A08" stroke-width="1.5"/><line x1="20" y1="46" x2="30" y2="46" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><rect x="30" y="41" width="12" height="10" fill="none" stroke="#8C5A08" stroke-width="1.5"/><line x1="36" y1="41" x2="36" y2="51" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="46" x2="52" y2="46" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__TranslationalEMF" data-lib="acausal_translational" data-name="TranslationalEMF.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="10" y1="30" x2="22" y2="30" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="10" y1="42" x2="22" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="36" r="12" fill="none" stroke="#8C5A08" stroke-width="2"/><line x1="28" y1="36" x2="40" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="36" x2="54" y2="36" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="30" x2="54" y2="42" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="8" cy="24" r="3" fill="#8C5A08"/><circle cx="8" cy="48" r="3" fill="#8C5A08"/><circle cx="64" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="acausal_translational__TrapezoidForce" data-lib="acausal_translational" data-name="TrapezoidForce.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FEF6E1" stroke="#E7C98A" stroke-width="1.5"/>
+  <line x1="16" y1="22" x2="16" y2="44" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="33" x2="46" y2="33" stroke="#8C5A08" stroke-width="2" stroke-linecap="round"/><path d="M42 26 L56 33 L42 40 Z" fill="#8C5A08"/><path d="M14 56 L19 50 L27 50 L32 56" fill="none" stroke="#8C5A08" stroke-width="1.5"/>
+  <circle cx="8" cy="36" r="3" fill="#8C5A08"/>
+</symbol>
+<symbol id="continuous__constraint" data-lib="continuous" data-name="constraint.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="20" font-weight="400" font-style="italic" fill="#085041">g=0</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__delay" data-lib="continuous" data-name="delay.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="31" y="38" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-weight="400" font-style="italic" fill="#085041">e</text>
+  <text x="45" y="31" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="9" font-weight="400" font-style="italic" fill="#085041">-sT</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__derivative" data-lib="continuous" data-name="derivative.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#085041">d</text>
+  <line x1="18" y1="38" x2="54" y2="38" stroke="#085041" stroke-width="1" stroke-linecap="round"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#085041">dt</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__hpf" data-lib="continuous" data-name="hpf.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <polyline points="16,24 26,26 34,33 40,42 50,48 58,49" fill="none" stroke="#085041" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="16" y1="54" x2="58" y2="54" stroke="#9FE1CB" stroke-width="0.5"/>
+  <line x1="16" y1="18" x2="16" y2="54" stroke="#9FE1CB" stroke-width="0.5"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__integrator" data-lib="continuous" data-name="integrator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#085041">1</text>
+  <line x1="18" y1="38" x2="54" y2="38" stroke="#085041" stroke-width="1" stroke-linecap="round"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#085041">s</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__lpf" data-lib="continuous" data-name="lpf.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <polyline points="16,48 26,46 34,39 40,30 50,24 58,23" fill="none" stroke="#085041" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="16" y1="54" x2="58" y2="54" stroke="#9FE1CB" stroke-width="0.5"/>
+  <line x1="16" y1="18" x2="16" y2="54" stroke="#9FE1CB" stroke-width="0.5"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__pid" data-lib="continuous" data-name="pid.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14" font-weight="500" font-style="normal" fill="#085041">PID</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__stateSpace" data-lib="continuous" data-name="stateSpace.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="36" y="31" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="400" font-style="italic" fill="#085041">x = Ax+Bu</text>
+  <text x="36" y="46" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="400" font-style="italic" fill="#085041">y = Cx+Du</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="continuous__tf" data-lib="continuous" data-name="tf.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E1F5EE" stroke="#9FE1CB" stroke-width="1.5"/>
+  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-weight="400" font-style="italic" fill="#085041">N(s)</text>
+  <line x1="17" y1="38" x2="55" y2="38" stroke="#085041" stroke-width="1" stroke-linecap="round"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-weight="400" font-style="italic" fill="#085041">D(s)</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#085041" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#085041" opacity="0.7"/>
+</symbol>
+<symbol id="dashboard__dashboardCallbackButton" data-lib="dashboard" data-name="dashboardCallbackButton.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="10" y="21" width="52" height="30" rx="7" fill="#2563EB" stroke="#173D8F" stroke-width="2"/>
+  <path d="M28 29L28 43L41 36Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-linejoin="round"/>
+  <path d="M45 28C52 31 52 41 45 44" fill="none" stroke="#F6BD60" stroke-width="3" stroke-linecap="round"/>
+  <path d="M44 25L48 28 44 31" fill="none" stroke="#F6BD60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="dashboard__dashboardCheckBox" data-lib="dashboard" data-name="dashboardCheckBox.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="13" y="22" width="28" height="28" rx="4" fill="#FFFFFF" stroke="#344A40" stroke-width="2.5"/>
+  <path d="M19 36L25 42 36 29" fill="none" stroke="#0F766E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 29H60M48 36H57M48 43H62" stroke="#718078" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="dashboard__dashboardComboBox" data-lib="dashboard" data-name="dashboardComboBox.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="10" y="20" width="52" height="30" rx="4" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M51 20V50" stroke="#AEB8B0" stroke-width="2"/>
+  <path d="M55 32L59 37 63 32" fill="#0F766E" stroke="#0F766E" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17 31H42M17 39H35" stroke="#718078" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 56H58" stroke="#D97706" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+</symbol>
+<symbol id="dashboard__dashboardDisplay" data-lib="dashboard" data-name="dashboardDisplay.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="10" y="20" width="52" height="32" rx="4" fill="#17221D" stroke="#344A40" stroke-width="2"/>
+  <text x="36" y="38" text-anchor="middle" dominant-baseline="middle" font-family="Consolas,monospace" font-size="15" fill="#7EE2B8">12.3</text>
+  <circle cx="56" cy="25" r="2" fill="#D97706"/>
+</symbol>
+<symbol id="dashboard__dashboardEdit" data-lib="dashboard" data-name="dashboardEdit.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="10" y="23" width="52" height="27" rx="4" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M18 42H42" stroke="#7A8981" stroke-width="2" stroke-linecap="round"/>
+  <path d="M47 29V44" stroke="#0F766E" stroke-width="2.5"/>
+  <path d="M53 17L60 24 45 39 38 41 40 34Z" fill="#F6BD60" stroke="#8A5A00" stroke-width="1.5" stroke-linejoin="round"/>
+</symbol>
+<symbol id="dashboard__dashboardGauge" data-lib="dashboard" data-name="dashboardGauge.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <circle cx="36" cy="37" r="24" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M20 51A22 22 0 0 1 52 20" fill="none" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M52 20A22 22 0 0 1 57 42" fill="none" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+  <path d="M36 37L51 27" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="36" cy="37" r="4" fill="#1F2937"/>
+</symbol>
+<symbol id="dashboard__dashboardHalfGauge" data-lib="dashboard" data-name="dashboardHalfGauge.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <path d="M12 48A24 24 0 0 1 60 48" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M17 46A19 19 0 0 1 49 32" fill="none" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M49 32A19 19 0 0 1 55 46" fill="none" stroke="#D97706" stroke-width="4" stroke-linecap="round"/>
+  <path d="M36 48L49 37" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="36" cy="48" r="4" fill="#1F2937"/>
+</symbol>
+<symbol id="dashboard__dashboardKnob" data-lib="dashboard" data-name="dashboardKnob.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <circle cx="36" cy="38" r="23" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <circle cx="36" cy="38" r="16" fill="#DDE5DF" stroke="#718078" stroke-width="2"/>
+  <path d="M36 38L45 25" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="36" cy="38" r="3" fill="#344A40"/>
+  <path d="M17 56L13 59M55 56L59 59M36 11V16" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="dashboard__dashboardLamp" data-lib="dashboard" data-name="dashboardLamp.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <circle cx="36" cy="34" r="20" fill="#74C69D" stroke="#1B6B4A" stroke-width="3"/>
+  <circle cx="30" cy="28" r="7" fill="#D8F3E5" opacity="0.85"/>
+  <path d="M28 56H44M31 61H41" stroke="#344A40" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 34H7M65 34H60M36 9V5" stroke="#D97706" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="dashboard__dashboardLinearGauge" data-lib="dashboard" data-name="dashboardLinearGauge.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="13" y="29" width="46" height="14" rx="7" fill="#E2E8E4" stroke="#344A40" stroke-width="2"/>
+  <path d="M19 36H49" stroke="#0F766E" stroke-width="6" stroke-linecap="round"/>
+  <path d="M19 25V20M28 25V22M36 25V20M45 25V22M53 25V20" stroke="#718078" stroke-width="2"/>
+  <path d="M49 23V49" stroke="#D97706" stroke-width="3"/>
+  <circle cx="49" cy="36" r="5" fill="#FFFFFF" stroke="#8A5A00" stroke-width="2"/>
+</symbol>
+<symbol id="dashboard__dashboardMultiStateImage" data-lib="dashboard" data-name="dashboardMultiStateImage.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="12" y="13" width="48" height="43" rx="4" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <circle cx="49" cy="24" r="6" fill="#F6BD60"/>
+  <path d="M16 50L29 34 38 43 45 36 56 50Z" fill="#74C69D"/>
+  <path d="M16 50L29 34 38 43 45 36 56 50" fill="none" stroke="#1B6B4A" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="24" y="58" width="24" height="4" rx="2" fill="#2563EB"/>
+</symbol>
+<symbol id="dashboard__dashboardPushButton" data-lib="dashboard" data-name="dashboardPushButton.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <ellipse cx="36" cy="50" rx="23" ry="9" fill="#AEB8B0" stroke="#344A40" stroke-width="2"/>
+  <path d="M16 34V49C16 54 56 54 56 49V34" fill="#DDE5DF" stroke="#344A40" stroke-width="2"/>
+  <ellipse cx="36" cy="34" rx="20" ry="10" fill="#E85D5D" stroke="#8F2525" stroke-width="2"/>
+  <ellipse cx="31" cy="31" rx="8" ry="3" fill="#F7A3A3" opacity="0.8"/>
+</symbol>
+<symbol id="dashboard__dashboardQuarterGauge" data-lib="dashboard" data-name="dashboardQuarterGauge.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <path d="M16 56V20C36 20 52 36 52 56Z" fill="#FFFFFF" stroke="#344A40" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M22 50V27C34 29 44 39 46 50" fill="none" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M22 56L39 40" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="22" cy="56" r="4" fill="#1F2937"/>
+  <path d="M47 46L51 45" stroke="#D97706" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="dashboard__dashboardRadioButton" data-lib="dashboard" data-name="dashboardRadioButton.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <circle cx="20" cy="22" r="7" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <circle cx="20" cy="22" r="3.5" fill="#0F766E"/>
+  <circle cx="20" cy="36" r="7" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <circle cx="20" cy="50" r="7" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M32 22H55M32 36H51M32 50H57" stroke="#718078" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="dashboard__dashboardRockerSwitch" data-lib="dashboard" data-name="dashboardRockerSwitch.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="22" y="11" width="28" height="50" rx="9" fill="#24332C" stroke="#101713" stroke-width="2"/>
+  <path d="M25 36L28 18C29 14 43 14 44 18L47 36Z" fill="#74C69D" stroke="#1B6B4A" stroke-width="2"/>
+  <path d="M25 36L28 54C29 58 43 58 44 54L47 36Z" fill="#DDE5DF" stroke="#718078" stroke-width="2"/>
+  <circle cx="36" cy="24" r="3" fill="#D8F3E5"/>
+</symbol>
+<symbol id="dashboard__dashboardRotarySwitch" data-lib="dashboard" data-name="dashboardRotarySwitch.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <circle cx="36" cy="38" r="22" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <circle cx="36" cy="38" r="14" fill="#DDE5DF" stroke="#718078" stroke-width="2"/>
+  <path d="M36 38L47 28" stroke="#0F766E" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="36" cy="38" r="3" fill="#344A40"/>
+  <circle cx="18" cy="24" r="2.5" fill="#D97706"/><circle cx="36" cy="12" r="2.5" fill="#D97706"/><circle cx="54" cy="24" r="2.5" fill="#D97706"/>
+</symbol>
+<symbol id="dashboard__dashboardScope" data-lib="dashboard" data-name="dashboardScope.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="11" y="13" width="50" height="42" rx="3" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M17 48V20M17 48H56" fill="none" stroke="#94A39B" stroke-width="1.5"/>
+  <path d="M18 40C24 40 25 26 32 26S39 45 46 39 51 24 56 27" fill="none" stroke="#0F766E" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="26" r="2.5" fill="#D97706"/>
+</symbol>
+<symbol id="dashboard__dashboardSlider" data-lib="dashboard" data-name="dashboardSlider.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <path d="M13 39H59" stroke="#344A40" stroke-width="5" stroke-linecap="round"/>
+  <path d="M13 39H43" stroke="#0F766E" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="43" cy="39" r="9" fill="#FFFFFF" stroke="#0F766E" stroke-width="3"/>
+  <path d="M16 27V21M26 27V23M36 27V21M46 27V23M56 27V21" stroke="#718078" stroke-width="2"/>
+  <path d="M15 53H57" stroke="#D97706" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+</symbol>
+<symbol id="dashboard__dashboardSliderSwitch" data-lib="dashboard" data-name="dashboardSliderSwitch.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="12" y="27" width="48" height="20" rx="10" fill="#B7E4C7" stroke="#1B6B4A" stroke-width="2"/>
+  <path d="M22 37H50" stroke="#0F766E" stroke-width="4" stroke-linecap="round"/>
+  <rect x="38" y="22" width="16" height="30" rx="6" fill="#FFFFFF" stroke="#344A40" stroke-width="2"/>
+  <path d="M43 29H49M43 34H49M43 39H49M43 44H49" stroke="#AEB8B0" stroke-width="1.5"/>
+</symbol>
+<symbol id="dashboard__dashboardToggleSwitch" data-lib="dashboard" data-name="dashboardToggleSwitch.svg" viewBox="0 0 72 72">
+  <rect x="1" y="1" width="70" height="70" rx="12" fill="#F6F8F6" stroke="#AEB8B0" stroke-width="1.5"/>
+  <rect x="24" y="9" width="24" height="54" rx="12" fill="#B7E4C7" stroke="#1B6B4A" stroke-width="2"/>
+  <circle cx="36" cy="24" r="9" fill="#FFFFFF" stroke="#0F766E" stroke-width="2"/>
+  <path d="M36 17V25" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+  <path d="M32 51H40" stroke="#718078" stroke-width="2" stroke-linecap="round"/>
+</symbol>
+<symbol id="discrete__ddelay" data-lib="discrete" data-name="ddelay.svg" viewBox="0 0 72 72">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.736111"
+     inkscape:cx="36.046572"
+     inkscape:cy="36"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <rect
+     width="72"
+     height="72"
+     rx="14"
+     fill="#E6F1FB"
+     stroke="#B5D4F4"
+     stroke-width="1"
+     stroke-dasharray="5,3"
+     id="rect1" />
+  <text
+     x="36"
+     y="28"
+     text-anchor="middle"
+     dominant-baseline="middle"
+     font-family="Georgia,serif"
+     font-size="13"
+     font-style="italic"
+     fill="#0C447C"
+     id="text1">z</text>
+  <line
+     x1="14"
+     y1="38"
+     x2="58"
+     y2="38"
+     stroke="#0C447C"
+     stroke-width="1"
+     id="line1" />
+  <text
+     x="36"
+     y="50"
+     text-anchor="middle"
+     dominant-baseline="middle"
+     font-family="Georgia,serif"
+     font-size="12"
+     fill="#0C447C"
+     id="text2">T</text>
+</symbol>
+<symbol id="discrete__detectChange" data-lib="discrete" data-name="detectChange.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="34" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="22" font-weight="600" font-style="normal" fill="#444441">&#916;?</text>
+</symbol>
+<symbol id="discrete__detectDecrease" data-lib="discrete" data-name="detectDecrease.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="34" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="22" font-weight="600" font-style="normal" fill="#444441">&#8595;?</text>
+</symbol>
+<symbol id="discrete__detectIncrease" data-lib="discrete" data-name="detectIncrease.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="34" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="22" font-weight="600" font-style="normal" fill="#444441">&#8593;?</text>
+</symbol>
+<symbol id="discrete__difference" data-lib="discrete" data-name="difference.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="31" y="31" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="400" font-style="italic" fill="#0C447C">u[k]</text>
+  <text x="36" y="38" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14" font-weight="500" font-style="normal" fill="#0C447C">-</text>
+  <text x="40" y="48" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="10" font-weight="400" font-style="italic" fill="#0C447C">u[k-1]</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="discrete__dstateSpace" data-lib="discrete" data-name="dstateSpace.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="36" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="10" font-weight="400" font-style="italic" fill="#0C447C">x[k+1]</text>
+  <text x="36" y="43" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" font-weight="400" font-style="italic" fill="#0C447C">Ax+Bu</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="discrete__dtf" data-lib="discrete" data-name="dtf.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-weight="400" font-style="italic" fill="#0C447C">N(z)</text>
+  <line x1="17" y1="38" x2="55" y2="38" stroke="#0C447C" stroke-width="1" stroke-linecap="round"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-weight="400" font-style="italic" fill="#0C447C">D(z)</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="discrete__fallingEdge" data-lib="discrete" data-name="fallingEdge.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M16 24 H34 V48 H56" fill="none" stroke="#444441" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</symbol>
+<symbol id="discrete__foh" data-lib="discrete" data-name="foh.svg" viewBox="0 0 72 72">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.736111"
+     inkscape:cx="36.046572"
+     inkscape:cy="36"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <rect
+     width="72"
+     height="72"
+     rx="14"
+     fill="#E6F1FB"
+     stroke="#B5D4F4"
+     stroke-width="1"
+     stroke-dasharray="5,3"
+     id="rect1" />
+  <text
+     x="36"
+     y="40"
+     text-anchor="middle"
+     dominant-baseline="middle"
+     font-family="sans-serif"
+     font-size="13"
+     font-weight="500"
+     fill="#0C447C"
+     id="text1">FOH</text>
+</symbol>
+<symbol id="discrete__rateTransition" data-lib="discrete" data-name="rateTransition.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M14 50 L26 50 L26 40 L38 40 L38 30 L50 30 L50 20 L58 20" fill="none" stroke="#444441" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="14" y1="56" x2="58" y2="56" stroke="#B4B2A9" stroke-width="1.2"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="discrete__risingEdge" data-lib="discrete" data-name="risingEdge.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M16 48 H34 V24 H56" fill="none" stroke="#444441" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</symbol>
+<symbol id="discrete__unitDelay" data-lib="discrete" data-name="unitDelay.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#0C447C">1</text>
+  <line x1="18" y1="38" x2="54" y2="38" stroke="#0C447C" stroke-width="1" stroke-linecap="round"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#0C447C">z</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="discrete__zoh" data-lib="discrete" data-name="zoh.svg" viewBox="0 0 72 72">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="10.736111"
+     inkscape:cx="36.046572"
+     inkscape:cy="36"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg5" />
+  <rect
+     width="72"
+     height="72"
+     rx="14"
+     fill="#E6F1FB"
+     stroke="#B5D4F4"
+     stroke-width="1"
+     stroke-dasharray="5,3"
+     id="rect1" />
+  <text
+     x="36"
+     y="22"
+     text-anchor="middle"
+     font-family="sans-serif"
+     font-size="8"
+     fill="#0C447C"
+     opacity="0.7"
+     id="text1">ZOH</text>
+  <text
+     x="32"
+     y="36"
+     text-anchor="middle"
+     dominant-baseline="middle"
+     font-family="Georgia,serif"
+     font-size="11"
+     font-style="italic"
+     fill="#0C447C"
+     id="text2">1-e</text>
+  <text
+     x="48"
+     y="29"
+     text-anchor="middle"
+     font-family="Georgia,serif"
+     font-size="7.5"
+     font-style="italic"
+     fill="#0C447C"
+     id="text3">-Ts</text>
+  <line
+     x1="14"
+     y1="44"
+     x2="58"
+     y2="44"
+     stroke="#0C447C"
+     stroke-width="1"
+     id="line3" />
+  <text
+     x="36"
+     y="55"
+     text-anchor="middle"
+     dominant-baseline="middle"
+     font-family="Georgia,serif"
+     font-size="11"
+     font-style="italic"
+     fill="#0C447C"
+     id="text4">s</text>
+</symbol>
+<symbol id="fmi__fmu" data-lib="fmi" data-name="fmu.svg" viewBox="0 0 80 80">
+  <rect x="6" y="14" width="68" height="52" rx="6" fill="#eef4ff" stroke="#2b6cb0" stroke-width="2"/>
+  <text x="40" y="38" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#2b6cb0" text-anchor="middle">FMU</text>
+  <text x="40" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">FMI 3.0</text>
+</symbol>
+<symbol id="fmi__modelica" data-lib="fmi" data-name="modelica.svg" viewBox="0 0 80 80">
+  <rect x="6" y="14" width="68" height="52" rx="6" fill="#f0fff4" stroke="#2f855a" stroke-width="2"/>
+  <text x="40" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#2f855a" text-anchor="middle">Modelica</text>
+  <text x="40" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">.mo → FMU</text>
+</symbol>
+<symbol id="logic__and" data-lib="logic" data-name="and.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">AND</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__bitClear" data-lib="logic" data-name="bitClear.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="13" font-weight="600" fill="#444441">bit&#8592;0</text>
+  <text x="36" y="48" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#7A7A75">&amp;~</text>
+</symbol>
+<symbol id="logic__bitSet" data-lib="logic" data-name="bitSet.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="13" font-weight="600" fill="#444441">bit&#8592;1</text>
+  <text x="36" y="48" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" fill="#7A7A75">|=</text>
+</symbol>
+<symbol id="logic__bitwiseOperator" data-lib="logic" data-name="bitwiseOperator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="13" font-weight="600" fill="#444441">&amp;|^</text>
+  <text x="36" y="48" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" font-weight="500" fill="#7A7A75">1011</text>
+</symbol>
+<symbol id="logic__combinatorialLogic" data-lib="logic" data-name="combinatorialLogic.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="28" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="10" font-weight="600" fill="#7A7A75">00 01</text>
+  <text x="36" y="42" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="10" font-weight="600" fill="#7A7A75">10 11</text>
+  <text x="36" y="56" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="10" font-style="italic" fill="#444441">truth</text>
+</symbol>
+<symbol id="logic__compareToConstant" data-lib="logic" data-name="compareToConstant.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">u &gt;= c</text>
+  <line x1="20" y1="47" x2="52" y2="47" stroke="#444441" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__compareToZero" data-lib="logic" data-name="compareToZero.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">u != 0</text>
+  <line x1="21" y1="47" x2="51" y2="47" stroke="#444441" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__extractBits" data-lib="logic" data-name="extractBits.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="12" font-weight="600" fill="#7A7A75">1<tspan fill="#C0453B">011</tspan>0</text>
+  <text x="36" y="48" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="11" font-weight="600" fill="#444441">&#8594; 011</text>
+</symbol>
+<symbol id="logic__if" data-lib="logic" data-name="if.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="20" font-weight="600" fill="#444441">if { }</text>
+  <polygon points="-1,20 -1,28 5,24" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,44 -1,52 5,48" fill="#444441" opacity="0.7"/>
+  <polygon points="67,20 67,28 73,24" fill="#444441" opacity="0.7"/>
+  <polygon points="67,44 67,52 73,48" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__intervalTest" data-lib="logic" data-name="intervalTest.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12" font-weight="500" font-style="normal" fill="#444441">a &#8804;u&#8804; b</text>
+</symbol>
+<symbol id="logic__intervalTestDynamic" data-lib="logic" data-name="intervalTestDynamic.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12" font-weight="500" font-style="normal" fill="#444441">lo&#8804;u&#8804;up</text>
+  <text x="36" y="48" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#7A7A75">dyn</text>
+</symbol>
+<symbol id="logic__logicalOperator" data-lib="logic" data-name="logicalOperator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M22 20 h14 a16 16 0 0 1 0 32 h-14 z" fill="none" stroke="#444441" stroke-width="2.5"/>
+  <line x1="14" y1="30" x2="22" y2="30" stroke="#444441" stroke-width="2"/>
+  <line x1="14" y1="42" x2="22" y2="42" stroke="#444441" stroke-width="2"/>
+  <line x1="52" y1="36" x2="60" y2="36" stroke="#444441" stroke-width="2"/>
+</symbol>
+<symbol id="logic__not" data-lib="logic" data-name="not.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">NOT</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__or" data-lib="logic" data-name="or.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">OR</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__relationalOperator" data-lib="logic" data-name="relationalOperator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12" font-weight="500" font-style="normal" fill="#444441">u1 &gt;= u2</text>
+  <line x1="20" y1="47" x2="52" y2="47" stroke="#444441" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="-1,24 -1,32 5,28" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__shiftArithmetic" data-lib="logic" data-name="shiftArithmetic.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="38" text-anchor="middle" dominant-baseline="middle" font-family="monospace" font-size="20" font-weight="700" fill="#444441">&#171;&#160;&#187;</text>
+</symbol>
+<symbol id="logic__switchCase" data-lib="logic" data-name="switchCase.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12" font-weight="600" fill="#444441">switch</text>
+  <text x="36" y="46" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12" font-weight="600" fill="#444441">case</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,20 67,28 73,24" fill="#444441" opacity="0.7"/>
+  <polygon points="67,44 67,52 73,48" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="logic__xor" data-lib="logic" data-name="xor.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">XOR</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="lookup__directLookup" data-lib="lookup" data-name="directLookup.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="24" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" fill="#3C3489">n-D <tspan font-style="italic">T[k]</tspan></text>
+  <g stroke="#3C3489" stroke-width="1.2" fill="none">
+    <rect x="24" y="34" width="24" height="20"/>
+    <line x1="32" y1="34" x2="32" y2="54"/>
+    <line x1="40" y1="34" x2="40" y2="54"/>
+    <line x1="24" y1="44" x2="48" y2="44"/>
+  </g>
+  <rect x="32" y="44" width="8" height="10" fill="#AFA9EC" opacity="0.6"/>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="lookup__interpolationPrelookup" data-lib="lookup" data-name="interpolationPrelookup.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E7EEF5" stroke="#9BB2CE" stroke-width="1.5"/>
+  <polyline points="14,54 30,38 46,30 58,18" fill="none" stroke="#2F4A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="36" y="60" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#5B7A9B">f&#183;&#916;</text>
+</symbol>
+<symbol id="lookup__lookup1D" data-lib="lookup" data-name="lookup1D.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="24" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" fill="#3C3489">1-D <tspan font-style="italic">T(u)</tspan></text>
+  <path d="M15 56 C 25 56 26 54 31 46 C 36 38 38 30 49 29 L 57 29" fill="none" stroke="#3C3489" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="lookup__lookup2D" data-lib="lookup" data-name="lookup2D.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="24" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" fill="#3C3489">2-D <tspan font-style="italic">T(u)</tspan></text>
+  <g stroke="#3C3489" stroke-width="1.3" fill="none">
+    <path d="M22 52 L34 44 L52 44 L40 52 Z"/>
+    <path d="M28 47 L46 47"/>
+    <path d="M31 44 L25 52"/>
+    <path d="M43 44 L37 52"/>
+  </g>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="lookup__lookupDynamic" data-lib="lookup" data-name="lookupDynamic.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E7EEF5" stroke="#9BB2CE" stroke-width="1.5"/>
+  <polyline points="14,52 26,40 40,44 54,22" fill="none" stroke="#2F4A6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="36" y="62" text-anchor="middle" font-family="sans-serif" font-size="10" font-style="italic" fill="#5B7A9B">dyn</text>
+</symbol>
+<symbol id="lookup__lookupND" data-lib="lookup" data-name="lookupND.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="24" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="11" fill="#3C3489">n-D <tspan font-style="italic">T(u)</tspan></text>
+  <g fill="none" stroke="#3C3489" stroke-width="1.3" stroke-linejoin="round">
+    <rect x="26" y="40" width="16" height="14"/>
+    <path d="M26 40 L32 34 L48 34 L42 40"/>
+    <path d="M42 40 L48 34 L48 48 L42 54"/>
+  </g>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="lookup__prelookup" data-lib="lookup" data-name="prelookup.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E7EEF5" stroke="#9BB2CE" stroke-width="1.5"/>
+  <line x1="14" y1="52" x2="58" y2="52" stroke="#5B7A9B" stroke-width="1.5"/>
+  <line x1="24" y1="20" x2="24" y2="56" stroke="#9BB2CE" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <line x1="40" y1="20" x2="40" y2="56" stroke="#9BB2CE" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <circle cx="33" cy="52" r="3.5" fill="#C0453B"/>
+  <text x="36" y="34" text-anchor="middle" font-family="monospace" font-size="12" font-weight="700" fill="#2F4A6B">k,f</text>
+</symbol>
+<symbol id="math__abs" data-lib="math" data-name="abs.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="24" y1="24" x2="24" y2="50" stroke="#3C3489" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="36" y="38" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-weight="400" font-style="italic" fill="#3C3489">u</text>
+  <line x1="48" y1="24" x2="48" y2="50" stroke="#3C3489" stroke-width="1.8" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__atan2" data-lib="math" data-name="atan2.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="20" y1="48" x2="54" y2="48" stroke="#3C3489" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="20" y1="48" x2="48" y2="24" stroke="#3C3489" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M34 48 A 14 14 0 0 0 31 39" fill="none" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <text x="42" y="42" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#3C3489">&#952;</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__bias" data-lib="math" data-name="bias.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="24" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#3C3489">u</text>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="14" font-weight="500" font-style="normal" fill="#3C3489">+</text>
+  <text x="48" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#3C3489">b</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__complexToMagnitudeAngle" data-lib="math" data-name="complexToMagnitudeAngle.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="16" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">z</text>
+  <line x1="24" y1="36" x2="34" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M31 32 L35 36 L31 40" fill="none" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="49" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">|z|</text>
+  <text x="49" y="44" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" fill="#3C3489">&#8736;</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,24 67,32 73,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,40 67,48 73,44" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__complexToRealImag" data-lib="math" data-name="complexToRealImag.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="16" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">z</text>
+  <line x1="24" y1="36" x2="34" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M31 32 L35 36 L31 40" fill="none" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="49" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">Re</text>
+  <text x="49" y="44" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">Im</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,24 67,32 73,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,40 67,48 73,44" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__conjugate" data-lib="math" data-name="conjugate.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="39" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="18" font-style="italic" fill="#3C3489">z</text>
+  <line x1="30" y1="26" x2="42" y2="26" stroke="#3C3489" stroke-width="1.8" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__crossProduct" data-lib="math" data-name="crossProduct.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="40" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="20" font-style="italic" fill="#3C3489">a&#215;b</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__divide" data-lib="math" data-name="divide.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#3C3489">u1</text>
+  <line x1="18" y1="38" x2="54" y2="38" stroke="#3C3489" stroke-width="1" stroke-linecap="round"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#3C3489">u2</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__dotProduct" data-lib="math" data-name="dotProduct.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="40" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="20" font-style="italic" fill="#3C3489">a&#183;b</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__gain" data-lib="math" data-name="gain.svg" viewBox="0 0 72 72">
+  <polygon points="6,66 6,6 66,36" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="28" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="18" font-weight="400" font-style="italic" fill="#3C3489">K</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__magnitudeAngleToComplex" data-lib="math" data-name="magnitudeAngleToComplex.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="24" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">|z|</text>
+  <text x="24" y="44" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" fill="#3C3489">&#8736;</text>
+  <line x1="38" y1="36" x2="48" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M45 32 L49 36 L45 40" fill="none" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="57" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">z</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__mathFunction" data-lib="math" data-name="mathFunction.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="30" y="42" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="24" font-style="italic" fill="#3C3489">e</text>
+  <text x="46" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-style="italic" fill="#3C3489">u</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__matmul" data-lib="math" data-name="matmul.svg" viewBox="0 0 72 72">
+  <rect x="6" y="6" width="60" height="60" rx="10" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="24" y="30" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">A</text>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="16" fill="#3C3489">&#215;</text>
+  <text x="48" y="44" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">B</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__max" data-lib="math" data-name="max.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#3C3489">max</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__min" data-lib="math" data-name="min.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#3C3489">min</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__mult" data-lib="math" data-name="mult.svg" viewBox="0 0 72 72">
+
+  <!-- Top square -->
+  <rect x="30" y="6" width="12" height="12" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></rect>
+
+  <!-- Left square -->
+  <rect x="6" y="30" width="12" height="12" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></rect>
+
+  <!-- Bottom square -->
+  <rect x="30" y="54" width="12" height="12" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></rect>
+
+  <!-- Right circle -->
+  <circle cx="60" cy="36" r="6" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></circle>
+
+  <!-- Selection highlight -->
+  <rect x="24" y="24" width="24" height="24" fill="none" stroke="#7a73d1" stroke-width="2"></rect>
+
+  <!-- Central button -->
+  <circle cx="36" cy="36" r="8" fill="#f0f0f0" stroke="#666" stroke-width="2"></circle>
+
+  <!-- X -->
+  <line x1="32" y1="32" x2="40" y2="40" stroke="#444" stroke-width="2"></line>
+  <line x1="40" y1="32" x2="32" y2="40" stroke="#444" stroke-width="2"></line>
+
+</symbol>
+<symbol id="math__negate" data-lib="math" data-name="negate.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="16" font-weight="400" font-style="italic" fill="#3C3489">-u</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__polynomial" data-lib="math" data-name="polynomial.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="40" text-anchor="middle" dominant-baseline="middle" font-family="serif" font-size="17" font-style="italic" fill="#3C3489">p(u)</text>
+</symbol>
+<symbol id="math__productOfElements" data-lib="math" data-name="productOfElements.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="40" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="34" font-weight="500" fill="#3C3489">&#928;</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__realImagToComplex" data-lib="math" data-name="realImagToComplex.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="24" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">Re</text>
+  <text x="24" y="44" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">Im</text>
+  <line x1="38" y1="36" x2="48" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M45 32 L49 36 L45 40" fill="none" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="57" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">z</text>
+  <polygon points="-1,24 -1,32 5,28" fill="#3C3489" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__roundingFunction" data-lib="math" data-name="roundingFunction.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <path d="M27 24 V 48 H 33" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M45 24 V 48 H 39" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="36" y="38" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">u</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__sign" data-lib="math" data-name="sign.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="18" y1="36" x2="54" y2="36" stroke="#3C3489" stroke-width="0.8" opacity="0.5"/>
+  <path d="M18 48 H 36 V 24 H 54" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="36" cy="36" r="2.4" fill="#3C3489"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__sqrt" data-lib="math" data-name="sqrt.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <path d="M17 39 L 23 39 L 29 50 L 38 22 L 55 22" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="44" y="40" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">u</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__sum" data-lib="math" data-name="sum.svg" viewBox="0 0 72 72">
+
+  <!-- Top square -->
+  <rect x="30" y="6" width="12" height="12" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></rect>
+
+  <!-- Left square -->
+  <rect x="6" y="30" width="12" height="12" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></rect>
+
+  <!-- Bottom square -->
+  <rect x="30" y="54" width="12" height="12" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></rect>
+
+  <!-- Right circle -->
+  <circle cx="60" cy="36" r="6" fill="#f4e38a" stroke="#c9b85c" stroke-width="1.5"></circle>
+
+  <!-- Selection highlight -->
+  <rect x="24" y="24" width="24" height="24" fill="none" stroke="#7a73d1" stroke-width="2"></rect>
+
+  <!-- Central button -->
+  <circle cx="36" cy="36" r="8" fill="#f0f0f0" stroke="#666" stroke-width="2"></circle>
+
+  <!-- Plus -->
+  <line x1="36" y1="31" x2="36" y2="41" stroke="#444" stroke-width="2" stroke-linecap="round"></line>
+  <line x1="31" y1="36" x2="41" y2="36" stroke="#444" stroke-width="2" stroke-linecap="round"></line>
+
+</symbol>
+<symbol id="math__sumElements" data-lib="math" data-name="sumElements.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="40" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="34" font-weight="500" fill="#3C3489">&#931;</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__trigFunction" data-lib="math" data-name="trigFunction.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <path d="M16 36 C 22 18 28 18 34 36 S 46 54 52 36" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/>
+  <line x1="16" y1="36" x2="56" y2="36" stroke="#3C3489" stroke-width="0.8" opacity="0.5"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="math__wrapToZero" data-lib="math" data-name="wrapToZero.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <polyline points="14,50 34,20 34,52 58,52" fill="none" stroke="#3C3489" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="34" cy="52" r="3" fill="#C0453B"/>
+</symbol>
+<symbol id="nonlinear__backlash" data-lib="nonlinear" data-name="backlash.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAECE7" stroke="#F5C4B3" stroke-width="1.5"/>
+  <polyline points="16,50 28,50 44,24 56,24" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="16,58 28,58 44,32 56,32" fill="none" stroke="#712B13" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#712B13" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#712B13" opacity="0.7"/>
+</symbol>
+<symbol id="nonlinear__coulombViscousFriction" data-lib="nonlinear" data-name="coulombViscousFriction.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E7F0FA" stroke="#B3CCF5" stroke-width="1.5"/>
+  <line x1="10" y1="36" x2="62" y2="36" stroke="#9DB8DB" stroke-width="1"/>
+  <line x1="36" y1="10" x2="36" y2="62" stroke="#9DB8DB" stroke-width="1"/>
+  <polyline points="13,55 34,43" fill="none" stroke="#133A71" stroke-width="2.5" stroke-linecap="round"/>
+  <polyline points="38,29 59,17" fill="none" stroke="#133A71" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="36" y1="43" x2="36" y2="29" stroke="#133A71" stroke-width="2.5" stroke-dasharray="2,2"/>
+</symbol>
+<symbol id="nonlinear__deadZone" data-lib="nonlinear" data-name="deadZone.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAECE7" stroke="#F5C4B3" stroke-width="1.5"/>
+  <polyline points="15,52 25,52 32,36 40,36 47,20 57,20" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#712B13" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#712B13" opacity="0.7"/>
+</symbol>
+<symbol id="nonlinear__hitCrossing" data-lib="nonlinear" data-name="hitCrossing.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EAF1EC" stroke="#9BC0A6" stroke-width="1.5"/>
+  <line x1="12" y1="40" x2="60" y2="40" stroke="#9BC0A6" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polyline points="14,56 34,44 40,40 46,30 58,16" fill="none" stroke="#2F6B43" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="40" r="4" fill="#C0453B"/>
+</symbol>
+<symbol id="nonlinear__hysteresis" data-lib="nonlinear" data-name="hysteresis.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAECE7" stroke="#F5C4B3" stroke-width="1.5"/>
+  <path d="M14 48 H34 V24 H58" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 24 H38 V48 H14" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+</symbol>
+<symbol id="nonlinear__quantizer" data-lib="nonlinear" data-name="quantizer.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAECE7" stroke="#F5C4B3" stroke-width="1.5"/>
+  <polyline points="16,54 24,54 24,45 34,45 34,35 44,35 44,25 56,25" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#712B13" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#712B13" opacity="0.7"/>
+</symbol>
+<symbol id="nonlinear__rate" data-lib="nonlinear" data-name="rate.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAECE7" stroke="#F5C4B3" stroke-width="1.5"/>
+  <polyline points="18,52 31,41 43,31 55,20" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#712B13" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#712B13" opacity="0.7"/>
+</symbol>
+<symbol id="nonlinear__saturation" data-lib="nonlinear" data-name="saturation.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAECE7" stroke="#F5C4B3" stroke-width="1.5"/>
+  <polyline points="16,52 25,52 47,20 56,20" fill="none" stroke="#712B13" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#712B13" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#712B13" opacity="0.7"/>
+</symbol>
+<symbol id="sink__display" data-lib="sink" data-name="display.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <rect x="16" y="24" width="40" height="24" rx="4" fill="none" stroke="#0C447C" stroke-width="2"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="12" font-weight="500" font-style="normal" fill="#0C447C">123</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__fileSink" data-lib="sink" data-name="fileSink.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <path d="M24 15h18l9 9v33H24z" fill="none" stroke="#0C447C" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M42 15v10h9" fill="none" stroke="#0C447C" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="31" y1="42" x2="45" y2="42" stroke="#0C447C" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="31" y1="49" x2="45" y2="49" stroke="#0C447C" stroke-width="1.6" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__labelSink" data-lib="sink" data-name="labelSink.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <text x="36" y="34" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="16" font-weight="400" font-style="italic" fill="#0C447C">x</text>
+  <line x1="23" y1="47" x2="49" y2="47" stroke="#0C447C" stroke-width="1.4" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__scope" data-lib="sink" data-name="scope.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <rect x="14" y="18" width="44" height="34" rx="5" fill="#0c1f3a" stroke="#B5D4F4" stroke-width="1"/>
+  <line x1="22" y1="18" x2="22" y2="52" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="36" y1="18" x2="36" y2="52" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="50" y1="18" x2="50" y2="52" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="14" y1="29" x2="58" y2="29" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="14" y1="41" x2="58" y2="41" stroke="#B5D4F4" stroke-width="0.5"/>
+  <path d="M17 40 C24 28 32 50 40 37 C46 28 51 34 56 27" fill="none" stroke="#0C447C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,22 -1,30 5,26" fill="#0C447C" opacity="0.7"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="-1,42 -1,50 5,46" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__stopSimulation" data-lib="sink" data-name="stopSimulation.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <rect x="24" y="24" width="24" height="24" rx="3" fill="#C0453B"/>
+</symbol>
+<symbol id="sink__terminator" data-lib="sink" data-name="terminator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <line x1="24" y1="24" x2="48" y2="48" stroke="#0C447C" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="48" y1="24" x2="24" y2="48" stroke="#0C447C" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__toWorkspace" data-lib="sink" data-name="toWorkspace.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <rect x="16" y="20" width="40" height="26" rx="4" fill="none" stroke="#0C447C" stroke-width="2"/>
+  <line x1="16" y1="28" x2="56" y2="28" stroke="#0C447C" stroke-width="1.6"/>
+  <circle cx="20.5" cy="24" r="1.4" fill="#0C447C"/>
+  <circle cx="25" cy="24" r="1.4" fill="#0C447C"/>
+  <text x="36" y="41" font-family="monospace" font-size="10" text-anchor="middle" fill="#0C447C">simout</text>
+  <path d="M30 52v8m0 0l-4-4m4 4l4-4" fill="none" stroke="#0C447C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-90 30 56)"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__xyScope" data-lib="sink" data-name="xyScope.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <rect x="14" y="18" width="44" height="34" rx="5" fill="#0c1f3a" stroke="#B5D4F4" stroke-width="1"/>
+  <line x1="22" y1="18" x2="22" y2="52" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="36" y1="18" x2="36" y2="52" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="50" y1="18" x2="50" y2="52" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="14" y1="29" x2="58" y2="29" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="14" y1="41" x2="58" y2="41" stroke="#B5D4F4" stroke-width="0.5"/>
+  <path d="M19 45 C26 27 35 49 43 31 C49 19 54 24 57 20" fill="none" stroke="#0C447C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,22 -1,30 5,26" fill="#0C447C" opacity="0.7"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="-1,42 -1,50 5,46" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="sink__xyzScope" data-lib="sink" data-name="xyzScope.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1.5"/>
+  <rect x="14" y="17" width="44" height="36" rx="5" fill="#0c1f3a" stroke="#B5D4F4" stroke-width="1"/>
+  <line x1="22" y1="17" x2="22" y2="53" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="36" y1="17" x2="36" y2="53" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="50" y1="17" x2="50" y2="53" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="14" y1="28" x2="58" y2="28" stroke="#B5D4F4" stroke-width="0.5"/>
+  <line x1="14" y1="40" x2="58" y2="40" stroke="#B5D4F4" stroke-width="0.5"/>
+  <polyline points="20,45 34,31 52,40" fill="none" stroke="#0C447C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="34" y1="31" x2="34" y2="23" stroke="#0C447C" stroke-width="1.5" stroke-linecap="round"/>
+  <polygon points="-1,22 -1,30 5,26" fill="#0C447C" opacity="0.7"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
+  <polygon points="-1,42 -1,50 5,46" fill="#0C447C" opacity="0.7"/>
+</symbol>
+<symbol id="source__chirp" data-lib="source" data-name="chirp.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <path d="M13 36 C18 22 23 22 27 36 C31 50 36 50 39 36 C42 24 46 24 49 36 C52 48 56 48 59 36" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__clock" data-lib="source" data-name="clock.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <circle cx="36" cy="36" r="18" fill="none" stroke="#633806" stroke-width="2"/>
+  <line x1="36" y1="36" x2="36" y2="25" stroke="#633806" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="36" x2="45" y2="41" stroke="#633806" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__constant" data-lib="source" data-name="constant.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="18" font-weight="400" font-style="italic" fill="#633806">C</text>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__counterFreeRunning" data-lib="source" data-name="counterFreeRunning.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="14,54 26,54 26,42 38,42 38,30 50,30 50,18 58,18" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="source__counterLimited" data-lib="source" data-name="counterLimited.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="14,54 24,54 24,42 34,42 34,30 44,30 44,54 54,54 54,42" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="source__enumeratedConstant" data-lib="source" data-name="enumeratedConstant.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1E8F0" stroke="#BCA0B6" stroke-width="1.5"/>
+  <line x1="22" y1="28" x2="50" y2="28" stroke="#5A2A52" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="22" y1="36" x2="50" y2="36" stroke="#5A2A52" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="22" y1="44" x2="50" y2="44" stroke="#5A2A52" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="36" y="60" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#5A2A52">ENUM</text>
+</symbol>
+<symbol id="source__fileSource" data-lib="source" data-name="fileSource.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <path d="M24 15h18l9 9v33H24z" fill="none" stroke="#633806" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M42 15v10h9" fill="none" stroke="#633806" stroke-width="2" stroke-linejoin="round"/>
+  <polyline points="29,44 36,38 43,42 48,34" fill="none" stroke="#633806" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__fromWorkspace" data-lib="source" data-name="fromWorkspace.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <rect x="16" y="20" width="40" height="26" rx="4" fill="none" stroke="#633806" stroke-width="2"/>
+  <line x1="16" y1="28" x2="56" y2="28" stroke="#633806" stroke-width="1.6"/>
+  <circle cx="20.5" cy="24" r="1.4" fill="#633806"/>
+  <circle cx="25" cy="24" r="1.4" fill="#633806"/>
+  <text x="36" y="41" font-family="monospace" font-size="11" text-anchor="middle" fill="#633806">simin</text>
+  <polyline points="24,54 32,54 36,58 44,58" fill="none" stroke="#633806" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__impulse" data-lib="source" data-name="impulse.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <line x1="36" y1="52" x2="36" y2="20" stroke="#633806" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="29,28 36,20 43,28" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__labelSource" data-lib="source" data-name="labelSource.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <text x="36" y="34" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="16" font-weight="400" font-style="italic" fill="#633806">x</text>
+  <line x1="23" y1="47" x2="49" y2="47" stroke="#633806" stroke-width="1.4" stroke-linecap="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__noise" data-lib="source" data-name="noise.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="15,38 20,30 25,48 31,22 37,50 43,26 49,44 57,34" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__pulse" data-lib="source" data-name="pulse.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <path d="M12 48 H24 V24 H36 V48 H48 V24 H60" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="source__ramp" data-lib="source" data-name="ramp.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="16,52 56,22" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__repeatingSequenceInterpolated" data-lib="source" data-name="repeatingSequenceInterpolated.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="12,50 24,26 36,50 48,26 60,50" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="source__repeatingSequenceStair" data-lib="source" data-name="repeatingSequenceStair.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="12,50 22,50 22,38 32,38 32,26 42,26 42,50 52,50 52,38 60,38" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="source__signalGenerator" data-lib="source" data-name="signalGenerator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <path d="M12 36 Q21 16 30 36 T48 36" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="48,44 52,44 52,28 58,28" fill="none" stroke="#B5762A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol>
+<symbol id="source__sine" data-lib="source" data-name="sine.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <path d="M14 36 C20 18 29 18 36 36 C43 54 52 54 58 36" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="source__step" data-lib="source" data-name="step.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#FAEEDA" stroke="#FAC775" stroke-width="1.5"/>
+  <polyline points="16,50 33,50 33,25 56,25" fill="none" stroke="#633806" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="67,32 67,40 73,36" fill="#633806" opacity="0.7"/>
+</symbol>
+<symbol id="userdefined__expression" data-lib="userdefined" data-name="expression.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#3C3489">f(u)</text>
+  <line x1="20" y1="48" x2="52" y2="48" stroke="#3C3489" stroke-width="1.2" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="userdefined__nelsonFunction" data-lib="userdefined" data-name="nelsonFunction.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <text x="36" y="32" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="400" font-style="italic" fill="#3C3489">y=f(u)</text>
+  <text x="36" y="50" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="600" fill="#3C3489">NELSON</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="utility__assignment" data-lib="utility" data-name="assignment.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1ECE8" stroke="#BCAEA0" stroke-width="1.5"/>
+  <rect x="18" y="30" width="12" height="12" fill="none" stroke="#553A27" stroke-width="1.8"/>
+  <rect x="30" y="30" width="12" height="12" fill="#553A27" stroke="#553A27" stroke-width="1.8"/>
+  <rect x="42" y="30" width="12" height="12" fill="none" stroke="#553A27" stroke-width="1.8"/>
+  <line x1="36" y1="18" x2="36" y2="28" stroke="#553A27" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="32,25 36,31 40,25" fill="#553A27"/>
+  <text x="36" y="55" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#553A27">A(i)=u</text>
+</symbol>
+<symbol id="utility__busAssignment" data-lib="utility" data-name="busAssignment.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E8F1EF" stroke="#A0BCB4" stroke-width="1.5"/>
+  <line x1="14" y1="18" x2="58" y2="18" stroke="#27554A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="14" y1="54" x2="58" y2="54" stroke="#27554A" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="24" cy="18" r="3" fill="#27554A"/>
+  <circle cx="48" cy="54" r="3" fill="#27554A"/>
+  <line x1="36" y1="40" x2="36" y2="22" stroke="#C0533B" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="31,25 36,17 41,25" fill="#C0533B"/>
+  <text x="36" y="44" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#C0533B">set</text>
+</symbol>
+<symbol id="utility__busCreator" data-lib="utility" data-name="busCreator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <line x1="16" y1="28" x2="34" y2="28" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="16" y1="44" x2="34" y2="44" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="34" y1="22" x2="34" y2="50" stroke="#444441" stroke-width="3" stroke-linecap="round"/>
+  <line x1="34" y1="36" x2="56" y2="36" stroke="#444441" stroke-width="3.5" stroke-linecap="round"/>
+  <polygon points="-1,24 -1,32 5,28" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__busSelector" data-lib="utility" data-name="busSelector.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <line x1="16" y1="36" x2="38" y2="36" stroke="#444441" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="38" y1="22" x2="38" y2="50" stroke="#444441" stroke-width="3" stroke-linecap="round"/>
+  <line x1="38" y1="28" x2="56" y2="28" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="38" y1="44" x2="56" y2="44" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,24 67,32 73,28" fill="#444441" opacity="0.7"/>
+  <polygon points="67,40 67,48 73,44" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__comment" data-lib="utility" data-name="comment.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M18 20h36v24H31l-9 8v-8h-4z" fill="none" stroke="#444441" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="25" y1="29" x2="47" y2="29" stroke="#444441" stroke-width="1.4" stroke-linecap="round"/>
+  <line x1="25" y1="36" x2="41" y2="36" stroke="#444441" stroke-width="1.4" stroke-linecap="round"/>
+</symbol>
+<symbol id="utility__concatenate" data-lib="utility" data-name="concatenate.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <rect x="20" y="18" width="14" height="14" fill="#D9D5F2" stroke="#3C3489" stroke-width="1.6"/>
+  <rect x="20" y="34" width="14" height="14" fill="#EEEDFE" stroke="#3C3489" stroke-width="1.6"/>
+  <path d="M40 33 L54 33" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 27 L54 33 L48 39" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,22 -1,30 5,26" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,38 -1,46 5,42" fill="#444441" opacity="0.7"/>
+  <polygon points="67,29 67,37 73,33" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__convert" data-lib="utility" data-name="convert.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="30" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" fill="#444441">3.7</text>
+  <path d="M22 40 L50 40" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <path d="M44 34 L50 40 L44 46" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="36" y="55" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-weight="600" fill="#3C3489">int</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__dataStoreMemory" data-lib="utility" data-name="dataStoreMemory.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EDEBF5" stroke="#B0A8CE" stroke-width="1.5"/>
+  <ellipse cx="36" cy="24" rx="16" ry="6" fill="#C9C0E6" stroke="#7A6DB0" stroke-width="1.5"/>
+  <path d="M20 24 V48 A16 6 0 0 0 52 48 V24" fill="#DBD4EE" stroke="#7A6DB0" stroke-width="1.5"/>
+  <ellipse cx="36" cy="24" rx="16" ry="6" fill="none" stroke="#7A6DB0" stroke-width="1.5"/>
+  <text x="36" y="40" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#4A3F73">DS</text>
+</symbol>
+<symbol id="utility__dataStoreRead" data-lib="utility" data-name="dataStoreRead.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EDEBF5" stroke="#B0A8CE" stroke-width="1.5"/>
+  <ellipse cx="36" cy="24" rx="16" ry="6" fill="#C9C0E6" stroke="#7A6DB0" stroke-width="1.5"/>
+  <path d="M20 24 V48 A16 6 0 0 0 52 48 V24" fill="#DBD4EE" stroke="#7A6DB0" stroke-width="1.5"/>
+  <ellipse cx="36" cy="24" rx="16" ry="6" fill="none" stroke="#7A6DB0" stroke-width="1.5"/>
+  <path d="M48 40 H64" stroke="#B5762A" stroke-width="2.5" stroke-linecap="round"/><polygon points="56,35 56,45 64,40" fill="#B5762A"/>
+</symbol>
+<symbol id="utility__dataStoreWrite" data-lib="utility" data-name="dataStoreWrite.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EDEBF5" stroke="#B0A8CE" stroke-width="1.5"/>
+  <ellipse cx="36" cy="24" rx="16" ry="6" fill="#C9C0E6" stroke="#7A6DB0" stroke-width="1.5"/>
+  <path d="M20 24 V48 A16 6 0 0 0 52 48 V24" fill="#DBD4EE" stroke="#7A6DB0" stroke-width="1.5"/>
+  <ellipse cx="36" cy="24" rx="16" ry="6" fill="none" stroke="#7A6DB0" stroke-width="1.5"/>
+  <path d="M8 40 H24" stroke="#2F6B43" stroke-width="2.5" stroke-linecap="round"/><polygon points="22,35 22,45 30,40" fill="#2F6B43"/>
+</symbol>
+<symbol id="utility__demux" data-lib="utility" data-name="demux.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M25 27 L47 18 L47 54 L25 45 Z" fill="none" stroke="#444441" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="14" y1="36" x2="25" y2="36" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="42" y1="31" x2="58" y2="28" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="42" y1="41" x2="58" y2="44" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,24 67,32 73,28" fill="#444441" opacity="0.7"/>
+  <polygon points="67,40 67,48 73,44" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__functionCallGenerator" data-lib="utility" data-name="functionCallGenerator.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="30" y="45" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="34" fill="#444441">f()</text>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__functionCallSplit" data-lib="utility" data-name="functionCallSplit.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <circle cx="24" cy="36" r="3.5" fill="#444441"/>
+  <path d="M24 36 L52 20" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 36 L52 36" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <path d="M24 36 L52 52" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="53,16 53,24 59,20" fill="#444441" opacity="0.7"/>
+  <polygon points="53,32 53,40 59,36" fill="#444441" opacity="0.7"/>
+  <polygon points="53,48 53,56 59,52" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__initialCondition" data-lib="utility" data-name="initialCondition.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="20" font-weight="600" font-style="normal" fill="#444441">IC</text>
+</symbol>
+<symbol id="utility__iteratorCondition" data-lib="utility" data-name="iteratorCondition.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M20 42 A18 18 0 1 1 52 42" fill="none" stroke="#444441" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="52,42 47,34 57,35" fill="#444441"/>
+  <polygon points="36,26 48,40 36,54 24,40" fill="none" stroke="#444441" stroke-width="3" stroke-linejoin="round"/>
+  <text x="31" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#444441">?</text>
+</symbol>
+<symbol id="utility__iteratorNumber" data-lib="utility" data-name="iteratorNumber.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M22 44 A18 18 0 1 1 50 44" fill="none" stroke="#444441" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="50,44 45,36 55,37" fill="#444441"/>
+  <text x="30" y="46" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="30" fill="#444441">i</text>
+</symbol>
+<symbol id="utility__merge" data-lib="utility" data-name="merge.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M14 22 L36 36 L58 36" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 50 L36 36" fill="none" stroke="#444441" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="36" cy="36" r="3.5" fill="#444441"/>
+  <polygon points="-1,18 -1,26 5,22" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,46 -1,54 5,50" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__multiportSwitch" data-lib="utility" data-name="multiportSwitch.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
+  <line x1="20" y1="22" x2="30" y2="22" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="20" y1="36" x2="30" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="20" y1="50" x2="30" y2="50" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="30" cy="22" r="2.2" fill="#3C3489"/>
+  <circle cx="30" cy="36" r="2.2" fill="#3C3489"/>
+  <circle cx="30" cy="50" r="2.2" fill="#3C3489"/>
+  <line x1="52" y1="36" x2="30" y2="22" stroke="#3C3489" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="52" cy="36" r="2.8" fill="#3C3489"/>
+  <line x1="52" y1="36" x2="60" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="42" y1="14" x2="42" y2="20" stroke="#3C3489" stroke-width="1.4" stroke-linecap="round"/>
+  <polygon points="42,22 39,18 45,18" fill="#3C3489"/>
+  <polygon points="-1,18 -1,26 5,22" fill="#3C3489" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+</symbol>
+<symbol id="utility__mux" data-lib="utility" data-name="mux.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <path d="M25 18 L47 27 L47 45 L25 54 Z" fill="none" stroke="#444441" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="18" y1="28" x2="31" y2="31" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="18" y1="44" x2="31" y2="41" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="47" y1="36" x2="58" y2="36" stroke="#444441" stroke-width="1.6" stroke-linecap="round"/>
+  <polygon points="-1,24 -1,32 5,28" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,40 -1,48 5,44" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__reshape" data-lib="utility" data-name="reshape.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <rect x="14" y="26" width="10" height="20" fill="none" stroke="#444441" stroke-width="1.8"/>
+  <path d="M27 36 L44 36" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 30 L44 36 L38 42" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="47" y="28" width="16" height="16" fill="none" stroke="#3C3489" stroke-width="1.8"/>
+  <line x1="55" y1="28" x2="55" y2="44" stroke="#3C3489" stroke-width="1.2"/>
+  <line x1="47" y1="36" x2="63" y2="36" stroke="#3C3489" stroke-width="1.2"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__selector" data-lib="utility" data-name="selector.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <rect x="18" y="22" width="12" height="10" fill="none" stroke="#444441" stroke-width="1.6"/>
+  <rect x="18" y="32" width="12" height="10" fill="#D9D5F2" stroke="#3C3489" stroke-width="1.8"/>
+  <rect x="18" y="42" width="12" height="10" fill="none" stroke="#444441" stroke-width="1.6"/>
+  <path d="M32 37 L52 37" stroke="#3C3489" stroke-width="2" stroke-linecap="round"/>
+  <path d="M46 31 L52 37 L46 43" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__signalConversion" data-lib="utility" data-name="signalConversion.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#E8EFF1" stroke="#A0B4BC" stroke-width="1.5"/>
+  <line x1="14" y1="30" x2="52" y2="30" stroke="#274A55" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="52,24 62,30 52,36" fill="#274A55"/>
+  <line x1="20" y1="46" x2="58" y2="46" stroke="#274A55" stroke-width="2.5" stroke-linecap="round"/>
+  <polygon points="20,40 10,46 20,52" fill="#274A55"/>
+</symbol>
+<symbol id="utility__subsystem" data-lib="utility" data-name="subsystem.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="2"/>
+  <rect x="6" y="6" width="60" height="60" rx="10" fill="none" stroke="#B4B2A9" stroke-width="2" opacity="0.6"/>
+  <text x="36" y="37" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">Sub</text>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__switch" data-lib="utility" data-name="switch.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <line x1="19" y1="24" x2="35" y2="36" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19" y1="48" x2="35" y2="36" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <line x1="35" y1="36" x2="55" y2="36" stroke="#444441" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="35" cy="36" r="2.5" fill="#444441"/>
+  <polygon points="-1,18 -1,26 5,22" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
+  <polygon points="-1,46 -1,54 5,50" fill="#444441" opacity="0.7"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__toggleSwitch" data-lib="utility" data-name="toggleSwitch.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <rect x="16" y="27" width="40" height="18" rx="9" fill="none" stroke="#444441" stroke-width="2"/>
+  <circle cx="45" cy="36" r="6" fill="#444441"/>
+  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+</symbol>
+<symbol id="utility__width" data-lib="utility" data-name="width.svg" viewBox="0 0 72 72">
+  <rect width="72" height="72" rx="14" fill="#EFF1E8" stroke="#B6BCA0" stroke-width="1.5"/>
+  <line x1="16" y1="26" x2="56" y2="26" stroke="#4A5A2A" stroke-width="2" stroke-linecap="round"/>
+  <line x1="16" y1="21" x2="16" y2="31" stroke="#4A5A2A" stroke-width="2" stroke-linecap="round"/>
+  <line x1="56" y1="21" x2="56" y2="31" stroke="#4A5A2A" stroke-width="2" stroke-linecap="round"/>
+  <text x="36" y="52" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#4A5A2A">n</text>
+</symbol>
+</svg>

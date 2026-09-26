@@ -1,0 +1,1 @@
+import{aT as m,aU as p}from"../library-loader.js";const n=6,x=({blockWidth:t,blockHeight:o,portY:a,side:r})=>{const s=Math.max(48,Math.floor(t*.36)),e=o,c=r==="right"?t-s-n:n,h=Math.round(a-e/2);return{x:c,y:h,width:s,height:e}},E=(t,o)=>`${t===m?">":t===p?"\\ne":"\\geq"}\\!\\!${o}`;export{E as a,x as c};

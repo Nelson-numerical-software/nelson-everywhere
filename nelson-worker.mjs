@@ -29,8 +29,10 @@ let runner = null;
 let runnerFactory = null;
 let runnerOptions = null;
 let nflowCancelSignal = null;
+let commandMailbox = null;
 let virtualFiles = new Map();
 let workspaceStore = createWorkspaceStore();
+const PERSISTENT_DIRECTORIES = ["/workspace", "/preferences", "/user-modules"];
 
 function progress(progress) {
   self.postMessage({ version: PROTOCOL_VERSION, event: "progress", progress });
@@ -83,15 +85,17 @@ async function initialize(
   moduleUrl,
   wasmBinary,
   runtimeCapabilities,
-  nflowCancelBuffer
+  nflowCancelBuffer,
+  commandBuffer,
 ) {
   const capabilities = runtimeCapabilityNames(runtimeCapabilities);
   nflowCancelSignal = cancellationSignalFrom(nflowCancelBuffer);
+  commandMailbox = commandMailboxFrom(commandBuffer);
   await restorePersistentWorkspace();
   const module = await import(moduleUrl);
   if (typeof module.default !== "function") {
     throw new TypeError(
-      "The Nelson WebAssembly module has no default factory export"
+      "The Nelson WebAssembly module has no default factory export",
     );
   }
   const runtimeBaseUrl = new URL(".", moduleUrl);
@@ -119,6 +123,7 @@ async function initialize(
       onNelsonNFlowPartial: publishNFlowPartial,
       onNelsonNFlowShouldCancel: () =>
         nflowCancelSignal ? Atomics.load(nflowCancelSignal, 0) : 0,
+      onNelsonPollCommand: pollCooperativeCommand,
     },
   };
   runner = createPersistentNelsonRunner(runnerFactory, runnerOptions);
@@ -129,7 +134,52 @@ async function initialize(
   ) {
     throw new Error("WebAssembly portable engine API is unavailable");
   }
+  if (capabilities.includes("package-manager-core")) {
+    const loaded = await runner.loadUserModules({
+      beforeRun: populateVirtualFiles,
+      afterRun: collectVirtualFiles,
+    });
+    if (loaded.exitCode !== 0) {
+      throw new Error("Installed Nelson modules could not be loaded");
+    }
+  }
   return { capabilities };
+}
+
+function commandMailboxFrom(buffer) {
+  if (
+    typeof SharedArrayBuffer !== "function" ||
+    !(buffer instanceof SharedArrayBuffer) ||
+    buffer.byteLength <= Int32Array.BYTES_PER_ELEMENT * 2
+  ) {
+    return null;
+  }
+  return {
+    header: new Int32Array(buffer, 0, 2),
+    payload: new Uint8Array(buffer, Int32Array.BYTES_PER_ELEMENT * 2),
+  };
+}
+
+function pollCooperativeCommand() {
+  if (!commandMailbox || Atomics.load(commandMailbox.header, 0) !== 1) {
+    return "";
+  }
+  const length = Atomics.load(commandMailbox.header, 1);
+  let command = "";
+  if (length > 0 && length <= commandMailbox.payload.byteLength) {
+    // Chromium deliberately rejects TextDecoder input backed directly by a
+    // SharedArrayBuffer. Copy only the occupied mailbox bytes to a regular
+    // ArrayBuffer before decoding the cooperative command.
+    const bytes = new Uint8Array(commandMailbox.payload.subarray(0, length));
+    command = new TextDecoder().decode(bytes);
+  }
+  Atomics.store(commandMailbox.header, 1, 0);
+  Atomics.store(commandMailbox.header, 0, 0);
+  self.postMessage({
+    version: PROTOCOL_VERSION,
+    event: "command.consumed",
+  });
+  return command;
 }
 
 function cancellationSignalFrom(buffer) {
@@ -155,7 +205,7 @@ function disableWorkspacePersistence(error) {
   console.warn(
     `Nelson workspace persistence is unavailable: ${
       error instanceof Error ? error.message : String(error)
-    }`
+    }`,
   );
   workspaceStore = createWorkspaceStore(undefined);
 }
@@ -193,9 +243,11 @@ function clearVirtualDirectory(module, directory) {
 }
 
 function populateVirtualFiles(module) {
-  module.FS.mkdirTree("/workspace");
   module.FS.chdir("/");
-  clearVirtualDirectory(module, "/workspace");
+  for (const directory of PERSISTENT_DIRECTORIES) {
+    module.FS.mkdirTree(directory);
+    clearVirtualDirectory(module, directory);
+  }
   for (const [path, data] of virtualFiles) {
     const parent = path.slice(0, path.lastIndexOf("/")) || "/workspace";
     module.FS.mkdirTree(parent);
@@ -215,7 +267,7 @@ async function collectVirtualFiles(module) {
       else collected.set(path, new Uint8Array(module.FS.readFile(path)));
     }
   };
-  visit("/workspace");
+  for (const directory of PERSISTENT_DIRECTORIES) visit(directory);
   virtualFiles = collected;
   await persistVirtualFiles();
 }
@@ -234,7 +286,9 @@ async function evaluateRaw(code, output = {}) {
       result.stderr.trim() ||
       `Nelson exited with status ${result.exitCode}`;
     throw new Error(
-      result.errorIdentifier ? `${result.errorIdentifier}: ${message}` : message
+      result.errorIdentifier
+        ? `${result.errorIdentifier}: ${message}`
+        : message,
     );
   }
   return result;
@@ -269,7 +323,7 @@ async function simulateNFlow(diagramJson) {
   ].join(" ");
   const result = await evaluateRaw(code);
   return JSON.parse(
-    extractMarkedResult(result.stdout, NFLOW_BEGIN, NFLOW_END, "NFlow")
+    extractMarkedResult(result.stdout, NFLOW_BEGIN, NFLOW_END, "NFlow"),
   );
 }
 
@@ -285,16 +339,16 @@ async function listWorkspace() {
       result.stdout,
       WORKSPACE_BEGIN,
       WORKSPACE_END,
-      "Workspace"
-    )
+      "Workspace",
+    ),
   );
   const entries = Array.isArray(parsed)
     ? parsed
     : parsed && typeof parsed === "object" && Object.keys(parsed).length
-    ? [parsed]
-    : [];
+      ? [parsed]
+      : [];
   return entries.filter(
-    (entry) => !String(entry?.name ?? "").startsWith("nelsonWasm")
+    (entry) => !String(entry?.name ?? "").startsWith("nelsonWasm"),
   );
 }
 
@@ -310,8 +364,8 @@ async function complete(line) {
       result.stdout,
       COMPLETION_BEGIN,
       COMPLETION_END,
-      "Completion"
-    )
+      "Completion",
+    ),
   );
 }
 
@@ -338,8 +392,8 @@ async function readVariable(nameValue) {
         result.stdout,
         VARIABLE_BEGIN,
         VARIABLE_END,
-        "Variable"
-      )
+        "Variable",
+      ),
     ),
   };
 }
@@ -385,7 +439,7 @@ function variableMetadata({ name, entry, value }) {
     rows: kind === "char" ? 1 : rows,
     cols: kind === "char" ? 1 : cols,
     columns: Array.from({ length: kind === "char" ? 1 : cols }, (_, index) =>
-      String(index + 1)
+      String(index + 1),
     ),
     editable,
     kind,
@@ -404,8 +458,8 @@ function variableCells(descriptor) {
     return Array.from({ length: metadata.rows }, (_, row) =>
       Array.from(
         { length: metadata.cols },
-        (_, col) => flat[row + col * metadata.rows] ?? ""
-      )
+        (_, col) => flat[row + col * metadata.rows] ?? "",
+      ),
     );
   }
   if (metadata.kind !== "matrix") return [[metadata.text ?? ""]];
@@ -465,7 +519,7 @@ async function replaceVariable(nameValue, values) {
   } else if (metadata.kind === "string") {
     expression = matrixExpression(
       values,
-      (value) => `string(${characterExpression(value)})`
+      (value) => `string(${characterExpression(value)})`,
     );
   } else {
     expression = matrixExpression(values, numericLiteral);
@@ -516,8 +570,8 @@ async function evaluateFigureAction(statement, resultExpression) {
         extracted.stdout,
         FIGURE_ACTION_BEGIN,
         FIGURE_ACTION_END,
-        "Figure action"
-      )
+        "Figure action",
+      ),
     ),
     figures: extracted.figures,
   };
@@ -526,25 +580,25 @@ async function evaluateFigureAction(statement, resultExpression) {
 async function setFigureSize(handle, width, height) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_size__(${Number(handle)}, ${Number(
-      width
+      width,
     )}, ${Number(height)});`,
-    "struct('ok', nelsonWasmFigureActionOk)"
+    "struct('ok', nelsonWasmFigureActionOk)",
   );
 }
 
 async function panFigure(handle, dxFrac, dyFrac) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_pan__(${Number(handle)}, ${Number(
-      dxFrac
+      dxFrac,
     )}, ${Number(dyFrac)});`,
-    "struct('ok', nelsonWasmFigureActionOk)"
+    "struct('ok', nelsonWasmFigureActionOk)",
   );
 }
 
 async function closeFigure(handle) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_close__(${Number(handle)});`,
-    "struct('ok', nelsonWasmFigureActionOk)"
+    "struct('ok', nelsonWasmFigureActionOk)",
   );
 }
 
@@ -562,27 +616,27 @@ async function sendFigureKeyEvent(request) {
   ].join(", ");
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_key_event__(${args});`,
-    "struct('ok', nelsonWasmFigureActionOk)"
+    "struct('ok', nelsonWasmFigureActionOk)",
   );
 }
 
 async function sendFigureMouseEvent(request) {
   return evaluateFigureAction(
     `[nelsonWasmFigureActionOk, nelsonWasmFigureMotion] = __figure_mouse_event__(${Number(
-      request.handle
+      request.handle,
     )}, ${nelsonCharacterExpression(request.action)}, [${Number(
-      request.x
+      request.x,
     )} ${Number(request.y)}], 'web');`,
-    "struct('ok', nelsonWasmFigureActionOk, 'motion', nelsonWasmFigureMotion)"
+    "struct('ok', nelsonWasmFigureActionOk, 'motion', nelsonWasmFigureMotion)",
   );
 }
 
 async function sendUIControlAction(request) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_uicontrol_action__(${Number(
-      request.handle
+      request.handle,
     )}, ${Number(request.value)}, ${nelsonCharacterExpression(request.text)});`,
-    "struct('ok', nelsonWasmFigureActionOk)"
+    "struct('ok', nelsonWasmFigureActionOk)",
   );
 }
 
@@ -619,7 +673,8 @@ self.addEventListener("message", async (event) => {
           String(request.moduleUrl),
           request.wasmBinary,
           request.runtimeCapabilities,
-          request.nflowCancelBuffer
+          request.nflowCancelBuffer,
+          request.commandBuffer,
         );
         break;
       case "evaluate":
@@ -629,7 +684,7 @@ self.addEventListener("message", async (event) => {
             event: "output",
             id: request.id,
             output: { stream: "stdout", text },
-          })
+          }),
         );
         break;
       case "nflow.simulate":
@@ -664,21 +719,21 @@ self.addEventListener("message", async (event) => {
           request.handle,
           request.azimuth,
           request.elevation,
-          request.compactView
+          request.compactView,
         );
         break;
       case "figure.setSize":
         result = await setFigureSize(
           request.handle,
           request.width,
-          request.height
+          request.height,
         );
         break;
       case "figure.pan":
         result = await panFigure(
           request.handle,
           request.dxFrac,
-          request.dyFrac
+          request.dyFrac,
         );
         break;
       case "figure.close":
@@ -707,7 +762,7 @@ self.addEventListener("message", async (event) => {
         break;
       default:
         throw new Error(
-          `Unsupported Nelson Worker request: ${String(request.type)}`
+          `Unsupported Nelson Worker request: ${String(request.type)}`,
         );
     }
     reply(request.id, true, result);

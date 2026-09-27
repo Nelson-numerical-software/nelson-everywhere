@@ -41,6 +41,7 @@ const CAPABILITY_FEATURES = [
   "lapack",
   "nflow",
   "odeSolvers",
+  "packageManager",
   "plots",
   "slicot",
   "virtualFilesystem",
@@ -59,10 +60,10 @@ export function validateRuntimeCapabilityManifest(manifest) {
     !stringArray(manifest.capabilities) ||
     !stringArray(manifest.unavailable) ||
     CAPABILITY_FEATURES.some(
-      (name) => typeof manifest.features?.[name] !== "boolean"
+      (name) => typeof manifest.features?.[name] !== "boolean",
     ) ||
     Object.entries(WORKER_LIMITS).some(
-      ([name, value]) => manifest.limits?.[name] !== value
+      ([name, value]) => manifest.limits?.[name] !== value,
     )
   ) {
     throw new Error("Invalid WebAssembly capability manifest");
@@ -91,7 +92,7 @@ function matrixCellCount(value) {
   if (!Array.isArray(value)) return -1;
   return value.reduce(
     (count, row) => count + (Array.isArray(row) ? row.length : 0),
-    0
+    0,
   );
 }
 
@@ -101,7 +102,7 @@ export function validateWorkerRequest(request) {
   }
   if (!REQUEST_TYPES.has(request.type)) {
     throw new Error(
-      `Unsupported Nelson Worker request: ${String(request.type)}`
+      `Unsupported Nelson Worker request: ${String(request.type)}`,
     );
   }
   switch (request.type) {
@@ -116,7 +117,7 @@ export function validateWorkerRequest(request) {
         const bytes = binaryBytes(request.wasmBinary);
         if (bytes < 0 || bytes > WORKER_LIMITS.maxWasmBytes) {
           throw new Error(
-            `WebAssembly binary exceeds the ${WORKER_LIMITS.maxWasmBytes}-byte limit`
+            `WebAssembly binary exceeds the ${WORKER_LIMITS.maxWasmBytes}-byte limit`,
           );
         }
       }
@@ -128,20 +129,28 @@ export function validateWorkerRequest(request) {
       ) {
         throw new Error("Invalid NFlow cooperative cancellation buffer");
       }
+      if (
+        request.commandBuffer !== undefined &&
+        (typeof SharedArrayBuffer !== "function" ||
+          !(request.commandBuffer instanceof SharedArrayBuffer) ||
+          request.commandBuffer.byteLength <= Int32Array.BYTES_PER_ELEMENT * 2)
+      ) {
+        throw new Error("Invalid cooperative command buffer");
+      }
       break;
     }
     case "evaluate":
       assertStringByteLimit(
         request.code,
         WORKER_LIMITS.maxSourceBytes,
-        "Source code"
+        "Source code",
       );
       break;
     case "completion.request":
       assertStringByteLimit(
         request.line,
         WORKER_LIMITS.maxSourceBytes,
-        "Completion input"
+        "Completion input",
       );
       break;
     case "figure.close":
@@ -218,7 +227,7 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.diagramJson,
         WORKER_LIMITS.maxNflowJsonBytes,
-        "NFlow model"
+        "NFlow model",
       );
       break;
     case "file.write": {
@@ -226,7 +235,7 @@ export function validateWorkerRequest(request) {
       if (bytes < 0) throw new Error("Virtual file data must be binary");
       if (bytes > WORKER_LIMITS.maxVirtualFileBytes) {
         throw new Error(
-          `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`
+          `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`,
         );
       }
       break;
@@ -249,7 +258,7 @@ export function validateWorkerRequest(request) {
       const cells = matrixCellCount(request.values);
       if (cells < 0 || cells > WORKER_LIMITS.maxVariableBlockCells) {
         throw new Error(
-          "Variable replacement exceeds the WebAssembly cell limit"
+          "Variable replacement exceeds the WebAssembly cell limit",
         );
       }
       break;
@@ -330,7 +339,14 @@ export function extractUiActions(stdout) {
     const end = stdout.indexOf(UI_ACTION_END, payloadStart);
     if (end < 0) throw new Error("UI action end marker is missing");
     const action = JSON.parse(stdout.slice(payloadStart, end));
-    if (action?.type !== "open-examples") {
+    if (
+      action?.type !== "open-examples" &&
+      !(
+        action?.type === "open-editor" &&
+        typeof action.path === "string" &&
+        (action.line === undefined || Number.isSafeInteger(action.line))
+      )
+    ) {
       throw new Error(`Unsupported Nelson UI action: ${String(action?.type)}`);
     }
     actions.push(action);
@@ -348,7 +364,7 @@ export function extractUiActions(stdout) {
 function longestMarkerPrefixSuffix(text, markers) {
   const maxLength = Math.min(
     text.length,
-    Math.max(...markers.map((marker) => marker.length - 1))
+    Math.max(...markers.map((marker) => marker.length - 1)),
   );
   for (let length = maxLength; length > 0; length -= 1) {
     const suffix = text.slice(-length);

@@ -13,7 +13,7 @@
             "summary"
           ],
           "requirements": [],
-          "file": "/examples/categorical/categorical_summary.m"
+          "file": "/modules/categorical/examples/categorical_summary.m"
         }
       ]
     },
@@ -33,7 +33,65 @@
             "control-system",
             "plots"
           ],
-          "file": "/examples/control_system/step_response.m"
+          "file": "/modules/control_system/examples/step_response.m"
+        },
+        {
+          "title": "Frequency-domain response",
+          "description": "Inspect gain and phase across frequency for a low-pass model.",
+          "tags": [
+            "control",
+            "frequency-response"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/control_system/examples/frequency_response.m"
+        },
+        {
+          "title": "Ball-on-plate LQR tracking",
+          "description": "Design a state-feedback controller, integrate a rolling-ball plate model and animate the ball, reference path and actuator linkages.",
+          "tags": [
+            "control",
+            "lqr",
+            "state-feedback",
+            "ode45",
+            "animation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/control_system/examples/ball_on_plate_lqr.m"
+        },
+        {
+          "title": "Filtered PID closed loop",
+          "description": "Build a filtered PID controller, close the feedback loop and inspect stability and tracking.",
+          "tags": [
+            "control",
+            "pid",
+            "feedback",
+            "step-response"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/control_system/examples/pid_closed_loop.m"
+        }
+      ]
+    },
+    {
+      "name": "core",
+      "title": "core",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Workspace basics",
+          "description": "Create an array, transform it and display a concise result.",
+          "tags": [
+            "beginner",
+            "workspace"
+          ],
+          "requirements": [],
+          "file": "/modules/core/examples/workspace_basics.m"
         }
       ]
     },
@@ -50,7 +108,7 @@
             "missing-data"
           ],
           "requirements": [],
-          "file": "/examples/data_analysis/clean_measurements.m"
+          "file": "/modules/data_analysis/examples/clean_measurements.m"
         },
         {
           "title": "Group observations",
@@ -60,7 +118,24 @@
             "table"
           ],
           "requirements": [],
-          "file": "/examples/data_analysis/group_observations.m"
+          "file": "/modules/data_analysis/examples/group_observations.m"
+        }
+      ]
+    },
+    {
+      "name": "data_structures",
+      "title": "data structures",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Organize heterogeneous records",
+          "description": "Store named sample arrays in a structure collection.",
+          "tags": [
+            "struct",
+            "data"
+          ],
+          "requirements": [],
+          "file": "/modules/data_structures/examples/organize_records.m"
         }
       ]
     },
@@ -77,7 +152,25 @@
             "data"
           ],
           "requirements": [],
-          "file": "/examples/dictionary/dictionary_lookup.m"
+          "file": "/modules/dictionary/examples/dictionary_lookup.m"
+        }
+      ]
+    },
+    {
+      "name": "elementary_functions",
+      "title": "elementary functions",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Classic test matrices",
+          "description": "Construct Hilbert, Pascal and magic matrices and inspect their numerical properties.",
+          "tags": [
+            "matrices",
+            "conditioning",
+            "gallery"
+          ],
+          "requirements": [],
+          "file": "/modules/elementary_functions/examples/classic_test_matrices.m"
         }
       ]
     },
@@ -94,7 +187,24 @@
             "matrices"
           ],
           "requirements": [],
-          "file": "/examples/elementary_mathematics/matrix_arithmetic.m"
+          "file": "/modules/elementary_mathematics/examples/matrix_arithmetic.m"
+        }
+      ]
+    },
+    {
+      "name": "file_archiver",
+      "title": "file archiver",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Create and extract an archive",
+          "description": "Package a temporary text file and extract it to another temporary folder.",
+          "tags": [
+            "zip",
+            "files"
+          ],
+          "requirements": [],
+          "file": "/modules/file_archiver/examples/create_archive.m"
         }
       ]
     },
@@ -111,7 +221,7 @@
             "folders"
           ],
           "requirements": [],
-          "file": "/examples/files_folders_functions/temporary_files.m"
+          "file": "/modules/files_folders_functions/examples/temporary_files.m"
         }
       ]
     },
@@ -129,7 +239,7 @@
             "parameters"
           ],
           "requirements": [],
-          "file": "/examples/function_handle/parameterized_function.m"
+          "file": "/modules/function_handle/examples/parameterized_function.m"
         }
       ]
     },
@@ -138,6 +248,18 @@
       "title": "graphics",
       "source": "nelson",
       "examples": [
+        {
+          "title": "Colorbar layouts",
+          "description": "Compare colorbar placement and styling options.",
+          "tags": [
+            "plot",
+            "color"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/colorbar/demo_colorbar.m"
+        },
         {
           "title": "Essential plot types",
           "description": "Compare line, error-bar, bar, histogram, contour and surface plots in a compact gallery.",
@@ -149,7 +271,44 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/essential_plot_types.m"
+          "file": "/modules/graphics/examples/essential_plot_types.m"
+        },
+        {
+          "title": "Draw a three-dimensional cube",
+          "description": "Build and render a simple polygonal object.",
+          "tags": [
+            "3d",
+            "geometry"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/cube/demo_cube.m"
+        },
+        {
+          "title": "Animate image frames",
+          "description": "Create an animation from bundled image sequences.",
+          "tags": [
+            "animation",
+            "images"
+          ],
+          "requirements": [
+            "gui",
+            "graphics-io"
+          ],
+          "file": "/modules/graphics/examples/movie/demo_movie.m"
+        },
+        {
+          "title": "Surface lighting",
+          "description": "Explore lighting on a three-dimensional surface.",
+          "tags": [
+            "3d",
+            "lighting"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/surface-lighting/demo_surface_lighting.m"
         },
         {
           "title": "Parametric rainbow rose",
@@ -162,7 +321,99 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/rainbow_rose.m"
+          "file": "/modules/graphics/examples/rainbow_rose.m"
+        },
+        {
+          "title": "Animated dot tunnel",
+          "description": "Animate rings of points with depth, rotation and frame pacing.",
+          "tags": [
+            "animation",
+            "scatter",
+            "3d-effect"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/dot_tunnel.m"
+        },
+        {
+          "title": "Retro raycasting maze",
+          "description": "Explore a textured first-person maze rendered by a pure Nelson software raycaster.",
+          "tags": [
+            "animation",
+            "raycasting",
+            "game",
+            "realtime"
+          ],
+          "requirements": [
+            "gui",
+            "graphics-io"
+          ],
+          "file": "/modules/graphics/examples/retro_raycaster.m"
+        },
+        {
+          "title": "Particle funnel",
+          "description": "Animate five hundred soft particles bouncing through a polished funnel with fluid paced rendering.",
+          "tags": [
+            "animation",
+            "simulation",
+            "particles",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/particle_funnel.m"
+        },
+        {
+          "title": "Interactive controls",
+          "description": "Connect buttons and sliders to a plotted signal.",
+          "tags": [
+            "ui",
+            "callbacks"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/uicontrol/uicontrol_demo.m"
+        },
+        {
+          "title": "Interruptible controls",
+          "description": "Keep an interactive control responsive during updates.",
+          "tags": [
+            "ui",
+            "callbacks"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/uicontrol/uicontrol_demo_interruptible.m"
+        },
+        {
+          "title": "Complete UI controls",
+          "description": "Coordinate text, edit, slider, menu, checkbox, radio, list, toggle and push-button controls.",
+          "tags": [
+            "ui",
+            "uicontrol",
+            "callbacks"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/uicontrol/complete_uicontrol_demo.m"
+        },
+        {
+          "title": "Modern UI component gallery",
+          "description": "Explore UI figures, layouts, tabs, axes, containers, controls, indicators, trees and tables.",
+          "tags": [
+            "ui",
+            "components",
+            "callbacks"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/uicontrol/complete_ui_components_demo.m"
         },
         {
           "title": "Mandelbrot fractal",
@@ -175,7 +426,7 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/mandelbrot_fractal.m"
+          "file": "/modules/graphics/examples/mandelbrot_fractal.m"
         },
         {
           "title": "Moebius strip",
@@ -188,7 +439,7 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/moebius_strip.m"
+          "file": "/modules/graphics/examples/moebius_strip.m"
         },
         {
           "title": "Fractal tree",
@@ -201,7 +452,62 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/fractal_tree.m"
+          "file": "/modules/graphics/examples/fractal_tree.m"
+        },
+        {
+          "title": "Conway Game of Life",
+          "description": "Animate a cellular automaton with reproducible initial conditions.",
+          "tags": [
+            "cellular-automaton",
+            "animation",
+            "simulation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/conway_game_of_life.m"
+        },
+        {
+          "title": "Gray-Scott reaction diffusion",
+          "description": "Simulate pattern formation in a two-species reaction-diffusion model.",
+          "tags": [
+            "reaction-diffusion",
+            "animation",
+            "simulation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/gray_scott_reaction_diffusion.m"
+        },
+        {
+          "title": "2D fluid simulation",
+          "description": "Animate an incompressible jet that breaks on an obstacle into fine smoke vortices, solved in real time.",
+          "tags": [
+            "fluid",
+            "animation",
+            "simulation",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/fluid_simulation_2d.m"
+        },
+        {
+          "title": "2D SPH particle fluid",
+          "description": "Stir an interactive 2D fluid of separate Smoothed Particle Hydrodynamics particles that fill the tank and bounce off its walls, each dot tinted by its speed.",
+          "tags": [
+            "fluid",
+            "animation",
+            "simulation",
+            "particles",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/fluid_sph_2d.m"
         },
         {
           "title": "Mathematical shader",
@@ -214,7 +520,74 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/mathematical_shader.m"
+          "file": "/modules/graphics/examples/mathematical_shader.m"
+        },
+        {
+          "title": "Interactive analog clock",
+          "description": "Animate clock hands live and stop the animation with a UI control.",
+          "tags": [
+            "animation",
+            "uicontrol",
+            "time"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/analog_clock.m"
+        },
+        {
+          "title": "Twisted surface animation",
+          "description": "Animate a bounded sequence of smoothly deformed parametric surfaces.",
+          "tags": [
+            "3d",
+            "surface",
+            "animation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/twisted_surface_animation.m"
+        },
+        {
+          "title": "Realtime 3D Boing Ball",
+          "description": "Bounce a shaded checkered ball across a three-dimensional room with direction-linked spin and dynamic floor and wall shadows.",
+          "tags": [
+            "animation",
+            "3d",
+            "shadows",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/boing_ball_3d.m"
+        },
+        {
+          "title": "Formula racing aerodynamic trade-off",
+          "description": "Compare low-drag and high-downforce setups with animated cars, speed profiles and lap-time delta.",
+          "tags": [
+            "animation",
+            "simulation",
+            "vehicle-dynamics"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/formula_racing_aero_tradeoff.m"
+        },
+        {
+          "title": "Aircraft flight animation",
+          "description": "Follow a fixed-wing aircraft along a three-dimensional path with synchronized telemetry and an artificial horizon.",
+          "tags": [
+            "animation",
+            "simulation",
+            "flight-dynamics",
+            "3d"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/aircraft_flight_animation.m"
         },
         {
           "title": "Rigid triple pendulum",
@@ -229,7 +602,60 @@
             "plots",
             "ode-solvers"
           ],
-          "file": "/examples/graphics/rigid_triple_pendulum.m"
+          "file": "/modules/graphics/examples/rigid_triple_pendulum.m"
+        },
+        {
+          "title": "Potential flow past a cylinder",
+          "description": "Advect tracer particles through the potential flow past a circular cylinder, with live sliders for circulation and free-stream speed.",
+          "tags": [
+            "fluid",
+            "animation",
+            "potential-flow"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/potential_flow_cylinder.m"
+        },
+        {
+          "title": "Vibrating membrane (normal modes)",
+          "description": "Animated 3D surface of the standing-wave normal modes of a rectangular membrane, with live sliders to reshape the mode amplitudes.",
+          "tags": [
+            "animation",
+            "waves",
+            "surface"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/vibrating_membrane.m"
+        },
+        {
+          "title": "Harmonograph",
+          "description": "Animate a harmonograph tracing decaying Lissajous figures with a moving pen and interactive frequency and damping controls.",
+          "tags": [
+            "animation",
+            "curves",
+            "lissajous"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/harmonograph.m"
+        },
+        {
+          "title": "Realtime demoscene reel",
+          "description": "Run a fullscreen, music-synchronized demoscene reel with plasma, tunnel, starfield, rotozoomer, a flat-shaded 3D vector cube and a sine scroller, all software-rendered in pure Nelson over a procedurally generated synthwave soundtrack.",
+          "tags": [
+            "animation",
+            "demoscene",
+            "realtime",
+            "audio"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/demoscene.m"
         },
         {
           "title": "Portable curves and peaks",
@@ -242,7 +668,40 @@
           "requirements": [
             "plots"
           ],
-          "file": "/examples/graphics/portable_peaks.m"
+          "file": "/modules/graphics/examples/portable_peaks.m"
+        },
+        {
+          "title": "Bi-level ventilator monitor",
+          "description": "Simulate a single-compartment lung under bi-level PC-AC ventilation with live pressure, flow and volume waveforms, a pressure-volume loop, real-time monitoring and adjustable settings.",
+          "tags": [
+            "ui",
+            "simulation",
+            "realtime",
+            "medical"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/ventilator/ventilator_gui.m"
+        }
+      ]
+    },
+    {
+      "name": "graphics_io",
+      "title": "graphics io",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Export a plot as an image",
+          "description": "Render a hidden figure and save it as a PNG in the temporary directory.",
+          "tags": [
+            "graphics",
+            "export"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics_io/examples/export_plot.m"
         }
       ]
     },
@@ -260,7 +719,25 @@
             "saturation"
           ],
           "requirements": [],
-          "file": "/examples/integer/fixed_width_integers.m"
+          "file": "/modules/integer/examples/fixed_width_integers.m"
+        }
+      ]
+    },
+    {
+      "name": "json",
+      "title": "json",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Read and write JSON",
+          "description": "Inspect a patient record and write a formatted copy in the temporary directory.",
+          "tags": [
+            "json",
+            "files",
+            "beginner"
+          ],
+          "requirements": [],
+          "file": "/modules/json/examples/json_patient.m"
         }
       ]
     },
@@ -277,7 +754,7 @@
             "beginner"
           ],
           "requirements": [],
-          "file": "/examples/linear_algebra/solve_linear_system.m"
+          "file": "/modules/linear_algebra/examples/solve_linear_system.m"
         },
         {
           "title": "Compare matrix decompositions",
@@ -287,7 +764,7 @@
             "matrix"
           ],
           "requirements": [],
-          "file": "/examples/linear_algebra/matrix_decompositions.m"
+          "file": "/modules/linear_algebra/examples/matrix_decompositions.m"
         },
         {
           "title": "Preconditioned conjugate gradient",
@@ -298,7 +775,7 @@
             "preconditioning"
           ],
           "requirements": [],
-          "file": "/examples/linear_algebra/preconditioned_conjugate_gradient.m"
+          "file": "/modules/linear_algebra/examples/preconditioned_conjugate_gradient.m"
         }
       ]
     },
@@ -316,7 +793,7 @@
             "filtering"
           ],
           "requirements": [],
-          "file": "/examples/logical/logical_indexing.m"
+          "file": "/modules/logical/examples/logical_indexing.m"
         }
       ]
     },
@@ -333,7 +810,190 @@
             "testing"
           ],
           "requirements": [],
-          "file": "/examples/modules_manager/create_temporary_module.m"
+          "file": "/modules/modules_manager/examples/create_temporary_module.m"
+        }
+      ]
+    },
+    {
+      "name": "ode_solvers",
+      "title": "ode solvers",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Bouncing ball events",
+          "description": "Integrate a bouncing ball model with event detection.",
+          "tags": [
+            "ode",
+            "events"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/ballode.m"
+        },
+        {
+          "title": "Boundary-value problem",
+          "description": "Solve a delayed boundary-value problem with additional options.",
+          "tags": [
+            "dde",
+            "boundary-value"
+          ],
+          "requirements": [],
+          "file": "/modules/ode_solvers/examples/dde_bvp_added_features_example.m"
+        },
+        {
+          "title": "Delay sensitivity",
+          "description": "Study sensitivities in a delayed differential system.",
+          "tags": [
+            "ode",
+            "sensitivity"
+          ],
+          "requirements": [],
+          "file": "/modules/ode_solvers/examples/ode_delay_sensitivity_example.m"
+        },
+        {
+          "title": "Fully implicit system",
+          "description": "Compute consistent initial conditions for an implicit system.",
+          "tags": [
+            "ode",
+            "implicit"
+          ],
+          "requirements": [],
+          "file": "/modules/ode_solvers/examples/ode_fully_implicit_consistent_example.m"
+        },
+        {
+          "title": "Events and interpolation",
+          "description": "Use solver objects, event locations and dense interpolation.",
+          "tags": [
+            "ode",
+            "events"
+          ],
+          "requirements": [],
+          "file": "/modules/ode_solvers/examples/ode_object_event_interpolation_example.m"
+        },
+        {
+          "title": "Sparse preconditioning",
+          "description": "Solve a larger system with a sparse preconditioner.",
+          "tags": [
+            "ode",
+            "sparse"
+          ],
+          "requirements": [],
+          "file": "/modules/ode_solvers/examples/ode_sundials_sparse_preconditioner_example.m"
+        },
+        {
+          "title": "Measure ode45 convergence",
+          "description": "Compare measured integration errors with fourth- and fifth-order reference slopes.",
+          "tags": [
+            "ode45",
+            "accuracy",
+            "convergence"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/ode45_convergence.m"
+        },
+        {
+          "title": "Lorenz attractor",
+          "description": "Integrate a chaotic three-state system and display its phase-space trajectory.",
+          "tags": [
+            "ode45",
+            "chaos",
+            "phase-space"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/lorenz_attractor.m"
+        },
+        {
+          "title": "Black hole funnel orbit",
+          "description": "Orbit a point mass on the curved z = -1/r funnel and relaunch it from an interactive control panel.",
+          "tags": [
+            "ode45",
+            "animation",
+            "gravity"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/black_hole.m"
+        },
+        {
+          "title": "Levitron spinning top",
+          "description": "Integrate the heavy symmetric-top equations and animate the hovering, precessing and nutating top in 3D.",
+          "tags": [
+            "ode45",
+            "animation",
+            "gyroscope"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/levitron.m"
+        },
+        {
+          "title": "Solar system (N-body gravity)",
+          "description": "Precompute a softened 3D N-body solar system with ode45, then animate planets on inclined orbits with fading trails and interactive controls.",
+          "tags": [
+            "ode45",
+            "animation",
+            "nbody",
+            "gravity"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/solar_system.m"
+        },
+        {
+          "title": "Strange attractors gallery",
+          "description": "Pick a famous 3D strange attractor (Aizawa, Rossler, Thomas, Halvorsen, Lorenz), integrate it with ode45 and animate a growing, slowly rotating comet that traces the chaotic orbit.",
+          "tags": [
+            "ode45",
+            "chaos",
+            "strange-attractor",
+            "animation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ode_solvers/examples/strange_attractors.m"
+        }
+      ]
+    },
+    {
+      "name": "overload",
+      "title": "overload",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Define an overloaded class",
+          "description": "Use a class folder to customize display, indexing and addition.",
+          "tags": [
+            "objects",
+            "operators"
+          ],
+          "requirements": [],
+          "file": "/modules/overload/examples/complex/example_complex.m"
+        }
+      ]
+    },
+    {
+      "name": "polynomial_functions",
+      "title": "polynomial functions",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Polynomial roots and coefficients",
+          "description": "Build a polynomial from roots and recover them numerically.",
+          "tags": [
+            "polynomial",
+            "roots"
+          ],
+          "requirements": [],
+          "file": "/modules/polynomial_functions/examples/polynomial_roots.m"
         }
       ]
     },
@@ -350,7 +1010,37 @@
             "performance"
           ],
           "requirements": [],
-          "file": "/examples/profiler/profile_computation.m"
+          "file": "/modules/profiler/examples/profile_computation.m"
+        }
+      ]
+    },
+    {
+      "name": "random",
+      "title": "random",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Reproducible random samples",
+          "description": "Seed the generator and create uniform and normal samples.",
+          "tags": [
+            "random",
+            "reproducibility"
+          ],
+          "requirements": [],
+          "file": "/modules/random/examples/reproducible_random.m"
+        },
+        {
+          "title": "Estimate pi with Monte Carlo sampling",
+          "description": "Visualize how uniformly distributed random points approximate the area of a circle.",
+          "tags": [
+            "random",
+            "monte-carlo",
+            "visualization"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/modules/random/examples/monte_carlo_pi.m"
         }
       ]
     },
@@ -367,7 +1057,94 @@
             "linear-system"
           ],
           "requirements": [],
-          "file": "/examples/sparse/sparse_poisson.m"
+          "file": "/modules/sparse/examples/sparse_poisson.m"
+        },
+        {
+          "title": "Reduce sparse matrix bandwidth",
+          "description": "Visualize a shuffled Poisson matrix and reduce its bandwidth with reverse Cuthill-McKee ordering.",
+          "tags": [
+            "sparse",
+            "ordering",
+            "spy",
+            "bandwidth"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/sparse/examples/sparsity_ordering.m"
+        }
+      ]
+    },
+    {
+      "name": "special_functions",
+      "title": "special functions",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Compare interpolation methods",
+          "description": "Reconstruct a smooth signal from sparse samples with four interpolation methods.",
+          "tags": [
+            "interpolation",
+            "interp1",
+            "comparison"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/special_functions/examples/interpolation_methods.m"
+        }
+      ]
+    },
+    {
+      "name": "statistics",
+      "title": "statistics",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Descriptive statistics",
+          "description": "Summarize measurements with central tendency, spread and a robust range.",
+          "tags": [
+            "statistics",
+            "beginner"
+          ],
+          "requirements": [],
+          "file": "/modules/statistics/examples/descriptive_statistics.m"
+        },
+        {
+          "title": "Correlation analysis",
+          "description": "Quantify the linear association between paired observations.",
+          "tags": [
+            "statistics",
+            "correlation"
+          ],
+          "requirements": [],
+          "file": "/modules/statistics/examples/correlation_analysis.m"
+        },
+        {
+          "title": "Weibull inverse sampling",
+          "description": "Generate a Weibull population from uniform random values and compare bin probabilities.",
+          "tags": [
+            "distribution",
+            "sampling",
+            "weibull"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/modules/statistics/examples/weibull_sampling.m"
+        },
+        {
+          "title": "K-means clustering",
+          "description": "Partition a two-dimensional dataset and visualize observations with their estimated centers.",
+          "tags": [
+            "statistics",
+            "clustering",
+            "kmeans"
+          ],
+          "requirements": [
+            "plots"
+          ],
+          "file": "/modules/statistics/examples/kmeans_clustering.m"
         }
       ]
     },
@@ -385,7 +1162,7 @@
             "strings"
           ],
           "requirements": [],
-          "file": "/examples/string/parse_measurements.m"
+          "file": "/modules/string/examples/parse_measurements.m"
         }
       ]
     },
@@ -402,7 +1179,17 @@
             "filtering"
           ],
           "requirements": [],
-          "file": "/examples/table/build_and_select_table.m"
+          "file": "/modules/table/examples/build_and_select_table.m"
+        },
+        {
+          "title": "Join related tables",
+          "description": "Combine measurements and metadata by a shared station key.",
+          "tags": [
+            "table",
+            "join"
+          ],
+          "requirements": [],
+          "file": "/modules/table/examples/join_tables.m"
         }
       ]
     },
@@ -419,7 +1206,25 @@
             "automation"
           ],
           "requirements": [],
-          "file": "/examples/tests_manager/run_unit_test.m"
+          "file": "/modules/tests_manager/examples/run_unit_test.m"
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "title": "time",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Calendar arithmetic",
+          "description": "Build a monthly schedule while preserving calendar semantics at month ends.",
+          "tags": [
+            "datetime",
+            "calendar",
+            "schedule"
+          ],
+          "requirements": [],
+          "file": "/modules/time/examples/calendar_arithmetic.m"
         }
       ]
     },
@@ -437,7 +1242,44 @@
             "spherical"
           ],
           "requirements": [],
-          "file": "/examples/trigonometric_functions/coordinate_transforms.m"
+          "file": "/modules/trigonometric_functions/examples/coordinate_transforms.m"
+        }
+      ]
+    },
+    {
+      "name": "validators",
+      "title": "validators",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Parse function inputs",
+          "description": "Define required, optional and named arguments with validation.",
+          "tags": [
+            "validation",
+            "functions"
+          ],
+          "requirements": [],
+          "file": "/modules/validators/examples/inputParser_example.m"
+        },
+        {
+          "title": "Validate attributes",
+          "description": "Check value type, dimensions and numeric constraints.",
+          "tags": [
+            "validation",
+            "errors"
+          ],
+          "requirements": [],
+          "file": "/modules/validators/examples/validateattributes_example.m"
+        },
+        {
+          "title": "Validate text choices",
+          "description": "Resolve a text value against an accepted set.",
+          "tags": [
+            "validation",
+            "text"
+          ],
+          "requirements": [],
+          "file": "/modules/validators/examples/validatestring_example.m"
         }
       ]
     }

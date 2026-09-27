@@ -102,8 +102,8 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         ? activeOutput.printErr
         : activeOutput.print
       : error
-      ? defaultOptions.printErr
-      : defaultOptions.print;
+        ? defaultOptions.printErr
+        : defaultOptions.print;
     callback?.(String(value));
   };
 
@@ -132,7 +132,7 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           typeof instance._nlsPortableEvaluate === "function";
         if (!hasEngineApi && typeof instance.callMain !== "function") {
           throw new TypeError(
-            "The Nelson WebAssembly module exports neither the engine API nor callMain"
+            "The Nelson WebAssembly module exports neither the engine API nor callMain",
           );
         }
         if (
@@ -178,19 +178,19 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
             "nlsPortableEvaluate",
             "number",
             ["string"],
-            [String(options.code)]
+            [String(options.code)],
           );
           const capturedOutput = instance.ccall(
             "nlsPortableStdout",
             "string",
             [],
-            []
+            [],
           );
           const capturedError = instance.ccall(
             "nlsPortableStderr",
             "string",
             [],
-            []
+            [],
           );
           if (capturedOutput) stdout.push(capturedOutput);
           if (capturedError) stderr.push(capturedError);
@@ -224,6 +224,22 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
 
   return {
     initialize,
+    loadUserModules: (options = {}) =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (options.beforeRun) await options.beforeRun(instance);
+        let exitCode = 0;
+        if (typeof instance._nlsPortableLoadUserModules === "function") {
+          exitCode = instance.ccall(
+            "nlsPortableLoadUserModules",
+            "number",
+            [],
+            [],
+          );
+        }
+        if (options.afterRun) await options.afterRun(instance);
+        return { exitCode };
+      }),
     evaluate: (code, options = {}) =>
       run({ ...defaultOptions, ...options, code }),
     runFile: (file, options = {}) =>

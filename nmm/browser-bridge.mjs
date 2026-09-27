@@ -5,6 +5,7 @@ const CHANNEL_NAME = "nelson-nmm";
 const PREFS_KEY = "nelson-nmm-gui-preferences";
 const REGISTRY_KEY = "nelson-nmm-registry-url";
 const MAX_DOCUMENT_BYTES = 1024 * 1024;
+const REMOTE_TIMEOUT_MS = 10000;
 const MUTATING_METHODS = new Set([
   "install",
   "installSource",
@@ -40,6 +41,7 @@ export class NmmBrowserBridge {
   #location;
   #navigator;
   #open;
+  #standalone;
   #nextToken = 1;
   #pending = new Map();
 
@@ -56,6 +58,7 @@ export class NmmBrowserBridge {
     const requestedChannel = new URL(this.#location.href).searchParams.get(
       "channel",
     );
+    this.#standalone = !requestedChannel;
     const channelName =
       requestedChannel &&
       /^nelson-nmm-[A-Za-z0-9._-]{1,128}$/.test(requestedChannel)
@@ -184,9 +187,27 @@ export class NmmBrowserBridge {
   }
 
   #remote(request) {
+    if (this.#standalone) {
+      return Promise.reject(
+        new Error("Open Package Manager from the Nelson WebAssembly desktop"),
+      );
+    }
     const token = this.#nextToken++;
     const promise = new Promise((resolve, reject) => {
-      this.#pending.set(token, { resolve, reject });
+      const timer = setTimeout(() => {
+        this.#pending.delete(token);
+        reject(new Error("Package Manager desktop bridge unavailable"));
+      }, REMOTE_TIMEOUT_MS);
+      this.#pending.set(token, {
+        resolve: (value) => {
+          clearTimeout(timer);
+          resolve(value);
+        },
+        reject: (error) => {
+          clearTimeout(timer);
+          reject(error);
+        },
+      });
     });
     this.#channel.postMessage({ type: "request", token, payload: request });
     return promise;

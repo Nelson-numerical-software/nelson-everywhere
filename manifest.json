@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "fb2eb22a078c",
-  "entryPoint": "index.html?runtime=wasm&build=fb2eb22a078c",
+  "buildId": "de91f24659bf",
+  "entryPoint": "index.html?runtime=wasm&build=de91f24659bf",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -27,6 +27,7 @@
         "id": "shell",
         "mode": "startup",
         "files": [
+          ".nojekyll",
           "app.css",
           "app.js",
           "capabilities.json",
@@ -36,7 +37,7 @@
           "nelson-worker.mjs",
           "nelson-workspace-store.mjs"
         ],
-        "bytes": 2823478
+        "bytes": 2828645
       }
     ],
     "onDemand": [
@@ -53,7 +54,7 @@
           "examples/gallery-shared.css",
           "examples/index.html"
         ],
-        "bytes": 76891
+        "bytes": 77524
       },
       {
         "id": "module-editor",
@@ -80,9 +81,9 @@
         "mode": "on-demand",
         "trigger": "module:mock",
         "files": [
-          "packs/mock/mockEngine-BHu_tPPw.js"
+          "packs/mock/mockEngine-tXWMA8FC.js"
         ],
-        "bytes": 29808
+        "bytes": 30271
       },
       {
         "id": "module-nmm",
@@ -844,20 +845,25 @@
           "nmm/locale/nmm-ui-en_US.json",
           "nmm/locale/nmm-ui-fr_FR.json"
         ],
-        "bytes": 233597
+        "bytes": 234200
       }
     ]
   },
   "files": [
     {
+      "file": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "file": "app.css",
-      "bytes": 1548921,
-      "sha256": "daf4389e29059f90c1fa530e955ed189111deed64ac0cbca8a07212bfd9ce891"
+      "bytes": 1550150,
+      "sha256": "a3cfe7a5be7facb01f36c97e803d611a2b9e9a85e9a73ae9b9c29e392b2bcd28"
     },
     {
       "file": "app.js",
-      "bytes": 1208242,
-      "sha256": "6a1513b2aebf63c48d452155b8dc985578f6c1fbdbb9784b45e31fa8e4ddf81f"
+      "bytes": 1212180,
+      "sha256": "846d8412571daa443cf6e99e7edf86b947dda855c409c7b44991b6a8ab6c75b7"
     },
     {
       "file": "capabilities.json",
@@ -886,8 +892,8 @@
     },
     {
       "file": "examples/examples.js",
-      "bytes": 4475,
-      "sha256": "01a4b776aa2b2e15e847b9e6079b07542d339f1bb5cb8330e89fc3eaa5cd9664"
+      "bytes": 5108,
+      "sha256": "a4790f41f9eb090d52fcf1d9b5ed7106bbedcc4e62cc808a70225a7b50c6bdcf"
     },
     {
       "file": "examples/gallery-shared.css",
@@ -897,12 +903,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "c4116feeb6afc8d63b0e32653c090e83969bcad7c738cb386632ab8a3a13dded"
+      "sha256": "73c51248e8df90befba5afc0f016df03bab1e48b19d7836dc675c32b3ffeaca0"
     },
     {
       "file": "index.html",
       "bytes": 1625,
-      "sha256": "e8bcba20aed21da188a6e09e0fe23783b4f1de0ead8fe90515bb5a950aeba0d3"
+      "sha256": "561a4be6b32b3c70b342d485f7e8261c3aabcc13c287007f5744bb75a4505930"
     },
     {
       "file": "nelson-portable.data",
@@ -932,7 +938,7 @@
     {
       "file": "nelson-worker.mjs",
       "bytes": 32678,
-      "sha256": "f06af244ef0957154e45f356616b921ff4ddda2cbc5a86b74f3b055f2ba825ec"
+      "sha256": "2889f49def5d1408db9f923fd6a37a89529113706283840c2676d36bcfdcce44"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -1467,7 +1473,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "4dcbf2397610fb85070a12355b91ccf19ffd90bc5ed1a3a45fd8d62738c66204"
+      "sha256": "ce91f658d87381cccd3ef1cac1e0fe0c599e37f4e21617542b3b0bbef4f59c6f"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -4601,13 +4607,13 @@
     },
     {
       "file": "nmm/browser-bridge.mjs",
-      "bytes": 7194,
-      "sha256": "d1626f0ce23565729c5e7623f4072198be6b12fa17adbc07c0bc7f8fa8d33045"
+      "bytes": 7797,
+      "sha256": "39d043c932397bed1d1faebfb540328b15bec1ee2b9b27badfc55acc6582fec2"
     },
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "ea43ad3e2b8e82189086f5a1ab92c240f682f4031bed991ba4acbcc8754c463c"
+      "sha256": "8ba8d502ca6758e4c2c397dc2be94614a6066cd03337b16953f233b451895385"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -4627,7 +4633,7 @@
     {
       "file": "packs/editor/EditorPanel-DxJFfHoN.js",
       "bytes": 3618898,
-      "sha256": "dab6022fd2a335cdeb8e3cc5516e6b487043a24f739c43e07d1015547c02f945"
+      "sha256": "1cac83919b818b56cb29eceb34a85b85ad35720179482b5960de27959247b9b5"
     },
     {
       "file": "packs/examples/ExamplesPanel-BblPti1m.css",
@@ -4637,12 +4643,12 @@
     {
       "file": "packs/examples/ExamplesPanel-ByJJ9fIy.js",
       "bytes": 9429,
-      "sha256": "707c7a6766fae2466adbe47b7bd6197ab0feb8f2b4d2a548280649c47a1e14ff"
+      "sha256": "f7ed0caa3f476a8902aa9eba4e37e6f13cb82e915dda7d6bb1cafab1b4dc7eb2"
     },
     {
-      "file": "packs/mock/mockEngine-BHu_tPPw.js",
-      "bytes": 29808,
-      "sha256": "9d2210dc531bcd747be36733921268ca882d26d59607a640a77693be6ad85a7a"
+      "file": "packs/mock/mockEngine-tXWMA8FC.js",
+      "bytes": 30271,
+      "sha256": "1218d38a7ca71437dd39457329d30f2e388636807a79146174422d3472694712"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
@@ -4652,8 +4658,8 @@
     {
       "file": "packs/nmm/PackageManagerPanel-D3Ug9blg.js",
       "bytes": 48053,
-      "sha256": "26b7a81ae43d36c0678254c3979bdcef56e0acba3bba6bdf021f9ff3a6dc140b"
+      "sha256": "57d6980bac09743e9e5e139b1bc91e0939fc837bd6c5d35275117fd123ffde51"
     }
   ],
-  "totalBytes": 68225502
+  "totalBytes": 68232368
 }

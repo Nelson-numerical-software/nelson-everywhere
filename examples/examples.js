@@ -32,7 +32,9 @@ window.addEventListener('gesturechange', stopZoom, { capture: true, passive: fal
 let rpcId = 0;
 // The WebAssembly desktop opens this page in a separate tab and answers the
 // gallery through a BroadcastChannel named in the URL instead of a native bridge.
-const examplesChannelName = new URLSearchParams(window.location.search).get('channel') || 'nelson-examples';
+const urlParams = new URLSearchParams(window.location.search);
+const examplesChannelName = urlParams.get('channel') || '';
+const useBrowserBridge = typeof BroadcastChannel === 'function' && examplesChannelName;
 
 function delay(milliseconds) {
   return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
@@ -42,7 +44,8 @@ function transportReady() {
   if (typeof window.webui?.call === 'function') {
     return typeof window.webui.isConnected !== 'function' || window.webui.isConnected();
   }
-  if (typeof BroadcastChannel === 'function') return true;
+  if (useBrowserBridge) return true;
+  if (typeof fetch === 'function') return true;
   return typeof window.examplesRpc === 'function';
 }
 
@@ -58,7 +61,7 @@ async function callTransport(payload) {
   if (typeof window.webui?.call === 'function') {
     return window.webui.call('examplesRpc', payload);
   }
-  if (typeof BroadcastChannel === 'function') {
+  if (useBrowserBridge) {
     const request = typeof payload === 'string' ? JSON.parse(payload) : payload;
     return new Promise((resolve, reject) => {
       const channel = new BroadcastChannel(examplesChannelName);
@@ -75,6 +78,15 @@ async function callTransport(payload) {
       };
       channel.postMessage({ type: 'request', payload: request });
     });
+  }
+  if (typeof fetch === 'function') {
+    const request = typeof payload === 'string' ? JSON.parse(payload) : payload;
+    if (request.method === 'list' || request.method === 'refresh') {
+      const response = await fetch(new URL('catalog.json', window.location.href));
+      if (!response.ok) throw new Error(`Cannot load examples catalog (${response.status})`);
+      return { id: request.id, result: await response.json() };
+    }
+    throw new Error('Open this example from the Nelson WebAssembly desktop to run it.');
   }
   return window.examplesRpc(payload);
 }

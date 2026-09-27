@@ -224,6 +224,71 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
 
   return {
     initialize,
+    renderFigurePng: (handle) =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableFigurePngBase64 !== "function"
+        ) {
+          throw new Error("Portable figure PNG export is unavailable");
+        }
+        const encoded = instance.ccall(
+          "nlsPortableFigurePngBase64",
+          "string",
+          ["bigint"],
+          [BigInt(handle)],
+        );
+        if (!encoded) throw new Error(`Figure ${Number(handle)} is unavailable`);
+        return encoded;
+      }),
+    saveFigure: (handle, path, options = {}) =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableSaveFigure !== "function"
+        ) {
+          throw new Error("Portable figure file export is unavailable");
+        }
+        if (options.beforeRun) await options.beforeRun(instance);
+        let status;
+        try {
+          status = instance.ccall(
+            "nlsPortableSaveFigure",
+            "number",
+            ["bigint", "string"],
+            [BigInt(handle), String(path)],
+          );
+        } finally {
+          if (options.afterRun) await options.afterRun(instance);
+        }
+        if (status !== 0) {
+          throw new Error(`Figure ${Number(handle)} could not be saved to '${path}'`);
+        }
+        return { ok: true, path: String(path) };
+      }),
+    analyzeCode: (path, source) =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableAnalyzeCode !== "function"
+        ) {
+          return [];
+        }
+        const encoded = instance.ccall(
+          "nlsPortableAnalyzeCode",
+          "string",
+          ["string", "string"],
+          [String(path), String(source)],
+        );
+        const diagnostics = JSON.parse(encoded || "[]");
+        if (!Array.isArray(diagnostics)) {
+          throw new TypeError("Invalid Nelson code analyzer result");
+        }
+        return diagnostics;
+      }),
     loadUserModules: (options = {}) =>
       enqueue(async () => {
         const instance = await initialize();

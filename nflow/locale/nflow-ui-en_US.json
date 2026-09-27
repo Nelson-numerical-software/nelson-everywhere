@@ -346,5 +346,11 @@
   "Dashboard": "Dashboard",
   "Solvers": "Solvers",
   "FMI / co-simulation": "FMI / co-simulation",
-  "Cannot save to {path}, choose another location.": "Cannot save to {path}, choose another location."
+  "Cannot save to {path}, choose another location.": "Cannot save to {path}, choose another location.",
+  "Nelson": "Nelson",
+  "Open in editor": "Open in editor",
+  "Command": "Command",
+  "Refresh": "Refresh",
+  "Catalog diagnostics": "Catalog diagnostics",
+  "Nelson is not connected.": "Nelson is not connected."
 }

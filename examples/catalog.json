@@ -706,6 +706,63 @@
       ]
     },
     {
+      "name": "image_processing",
+      "title": "image processing",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Denoise a grayscale image",
+          "description": "Apply a median filter to synthetic impulse noise.",
+          "tags": [
+            "image",
+            "filtering"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/image_processing/examples/denoise_image.m"
+        },
+        {
+          "title": "Binary image morphology",
+          "description": "Clean binary regions and display their boundaries.",
+          "tags": [
+            "image",
+            "morphology"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/image_processing/examples/morphology_shapes.m"
+        },
+        {
+          "title": "Rotate a synthetic image",
+          "description": "Animate bilinear image rotation without relying on an external image file.",
+          "tags": [
+            "image",
+            "rotation",
+            "animation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/image_processing/examples/rotate_synthetic_image.m"
+        },
+        {
+          "title": "Sobel edge detection",
+          "description": "Compute horizontal and vertical gradients on a self-contained synthetic image.",
+          "tags": [
+            "image",
+            "edges",
+            "sobel"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/image_processing/examples/sobel_edge_detection.m"
+        }
+      ]
+    },
+    {
       "name": "integer",
       "title": "integer",
       "source": "nelson",
@@ -960,6 +1017,46 @@
             "gui"
           ],
           "file": "/modules/ode_solvers/examples/strange_attractors.m"
+        }
+      ]
+    },
+    {
+      "name": "optimization",
+      "title": "optimization",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Unconstrained minimization",
+          "description": "Locate the minimum of a smooth two-variable objective.",
+          "tags": [
+            "optimization",
+            "unconstrained"
+          ],
+          "requirements": [],
+          "file": "/modules/optimization/examples/unconstrained_minimum.m"
+        },
+        {
+          "title": "Constrained quadratic program",
+          "description": "Solve a bounded quadratic problem with a linear inequality.",
+          "tags": [
+            "optimization",
+            "constraints"
+          ],
+          "requirements": [],
+          "file": "/modules/optimization/examples/constrained_quadratic.m"
+        },
+        {
+          "title": "Fit a noisy ellipse",
+          "description": "Estimate the center, axes and rotation of an ellipse using unconstrained optimization.",
+          "tags": [
+            "fitting",
+            "geometry",
+            "fminsearch"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/optimization/examples/fit_noisy_ellipse.m"
         }
       ]
     },

@@ -5,38 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google" content="notranslate" />
     <title>Nelson examples</title>
-    <link rel="stylesheet" href="gallery-shared.css" />
-    <link rel="stylesheet" href="examples.css" />
+    <link rel="stylesheet" href="gallery-shared.css?build=fb2eb22a078c" />
+    <link rel="stylesheet" href="examples.css?build=fb2eb22a078c" />
   </head>
-  <body class="example-gallery">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">NELSON</p>
-        <h1 id="page-title">Examples</h1>
-      </div>
-      <div class="tools">
-        <label class="search">
-          <span aria-hidden="true">⌕</span>
-          <input id="search" type="search" placeholder="Search examples" autocomplete="off" />
-        </label>
-        <button id="refresh" class="icon-button" type="button" title="Refresh">↻</button>
-      </div>
-    </header>
-    <div class="layout">
-      <aside class="example-gallery-rail">
-        <button class="rail-item example-gallery-category active" data-module="all" type="button">
-          <span id="all-label">All examples</span><strong id="all-count">0</strong>
-        </button>
-        <div id="rail"></div>
-      </aside>
-      <main>
-        <div id="summary" class="summary"></div>
-        <div id="diagnostics" class="diagnostics" hidden></div>
-        <div id="content"></div>
-        <div id="empty" class="empty" hidden>No examples match this search.</div>
-      </main>
-    </div>
-    <div id="toast" role="status" aria-live="polite"></div>
-    <script src="examples.js"></script>
+  <body>
+    <div id="gallery"></div>
+    <script type="module" src="examples.js?build=fb2eb22a078c"></script>
   </body>
 </html>

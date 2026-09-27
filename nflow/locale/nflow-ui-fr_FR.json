@@ -333,5 +333,11 @@
   "Dashboard": "Tableau de bord",
   "Solvers": "Solveurs",
   "FMI / co-simulation": "FMI / co-simulation",
-  "Cannot save to {path}, choose another location.": "Impossible d'enregistrer dans {path}, choisissez un autre emplacement."
+  "Cannot save to {path}, choose another location.": "Impossible d'enregistrer dans {path}, choisissez un autre emplacement.",
+  "Nelson": "Nelson",
+  "Open in editor": "Ouvrir dans l’éditeur",
+  "Command": "Commande",
+  "Refresh": "Actualiser",
+  "Catalog diagnostics": "Diagnostics du catalogue",
+  "Nelson is not connected.": "Nelson n’est pas connecté."
 }

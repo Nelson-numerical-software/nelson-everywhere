@@ -2,8 +2,9 @@
 // SPDX-License-Identifier: LGPL-3.0-or-later
 
 const DATABASE_NAME = "nelson-webassembly-workspace";
-const DATABASE_VERSION = 1;
+const DATABASE_VERSION = 2;
 const FILE_STORE = "files";
+const DIRECTORY_STORE = "directories";
 
 function requestResult(request) {
   return new Promise((resolve, reject) => {
@@ -30,6 +31,9 @@ async function openDatabase(factory) {
     if (!database.objectStoreNames.contains(FILE_STORE)) {
       database.createObjectStore(FILE_STORE, { keyPath: "path" });
     }
+    if (!database.objectStoreNames.contains(DIRECTORY_STORE)) {
+      database.createObjectStore(DIRECTORY_STORE, { keyPath: "path" });
+    }
   };
   return requestResult(request);
 }
@@ -42,6 +46,12 @@ class DisabledWorkspaceStore {
   }
 
   async replace() {}
+
+  async loadWorkspace() {
+    return { files: new Map(), directories: new Set() };
+  }
+
+  async replaceWorkspace() {}
 
   async clear() {}
 }
@@ -82,11 +92,56 @@ export class IndexedDbWorkspaceStore {
     await finished;
   }
 
+  async loadWorkspace() {
+    const database = await this.#database;
+    const transaction = database.transaction(
+      [FILE_STORE, DIRECTORY_STORE],
+      "readonly",
+    );
+    const [fileRecords, directoryRecords] = await Promise.all([
+      requestResult(transaction.objectStore(FILE_STORE).getAll()),
+      requestResult(transaction.objectStore(DIRECTORY_STORE).getAll()),
+    ]);
+    await transactionFinished(transaction);
+    return {
+      files: new Map(
+        fileRecords.map(({ path, data }) => [
+          String(path),
+          data instanceof Uint8Array ? data : new Uint8Array(data),
+        ]),
+      ),
+      directories: new Set(directoryRecords.map(({ path }) => String(path))),
+    };
+  }
+
+  async replaceWorkspace(files, directories) {
+    const database = await this.#database;
+    const transaction = database.transaction(
+      [FILE_STORE, DIRECTORY_STORE],
+      "readwrite",
+    );
+    const finished = transactionFinished(transaction);
+    const fileStore = transaction.objectStore(FILE_STORE);
+    const directoryStore = transaction.objectStore(DIRECTORY_STORE);
+    fileStore.clear();
+    directoryStore.clear();
+    for (const [path, data] of files) {
+      const bytes = new Uint8Array(data);
+      fileStore.put({ path, data: bytes.slice().buffer });
+    }
+    for (const path of directories) directoryStore.put({ path });
+    await finished;
+  }
+
   async clear() {
     const database = await this.#database;
-    const transaction = database.transaction(FILE_STORE, "readwrite");
+    const transaction = database.transaction(
+      [FILE_STORE, DIRECTORY_STORE],
+      "readwrite",
+    );
     const finished = transactionFinished(transaction);
     transaction.objectStore(FILE_STORE).clear();
+    transaction.objectStore(DIRECTORY_STORE).clear();
     await finished;
   }
 }

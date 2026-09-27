@@ -1,172 +1,169 @@
 {
-  "examples": [
+  "groups": [
     {
-      "path": "nflow-example:/causal/Amplitude_Modulation_Demo.nflow",
-      "name": "Amplitude Modulation - Message x Carrier",
-      "description": "A slow message sine (0.2 Hz) multiplies a fast carrier sine (2 Hz) to form a double-sideband product. The scope overlays message, carrier and their product so the carrier riding inside the message envelope is visible.",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 4,
-      "runtime": 10,
-      "sampleTime": 0.01
+      "name": "nflow:causal",
+      "title": "Causal",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Amplitude Modulation - Message x Carrier",
+          "description": "A slow message sine (0.2 Hz) multiplies a fast carrier sine (2 Hz) to form a double-sideband product. The scope overlays message, carrier and their product so the carrier riding inside the message envelope is visible.",
+          "kind": "model",
+          "file": "nflow-example:/causal/Amplitude_Modulation_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Bus Assignment Demo",
+          "description": "Groups a position vector and a scalar count into a bus (busCreator), replaces the 'count' member with a new value (busAssignment), then reads both members back out (busSelector). 'pos' passes through unchanged; 'count' is overwritten.",
+          "kind": "model",
+          "file": "nflow-example:/causal/Bus_Assignment_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Chirp Frequency Response - Low-pass",
+          "description": "A linear chirp sweeps 0.1 -> 3 Hz over 20 s into a first-order low-pass 1/(0.15 s + 1). The scope overlays the raw chirp and the filtered output: as the sweep frequency climbs, the low-pass rolls the amplitude off, so the filtered trace shrinks while the input stays at full amplitude.",
+          "kind": "model",
+          "file": "nflow-example:/causal/Chirp_Frequency_Response_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "Complementary Filter",
+          "description": "",
+          "kind": "model",
+          "file": "nflow-example:/causal/complementary_filter.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 11
+        },
+        {
+          "title": "Coulomb & Viscous Friction Demo",
+          "description": "A sinusoidal velocity drives a Coulomb & Viscous Friction block (y = Gain*u + Offset*sign(u)). Scopes compare the input velocity and the resulting friction force, showing the viscous slope plus the Coulomb jump at zero.",
+          "kind": "model",
+          "file": "nflow-example:/causal/Coulomb_Viscous_Friction_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Logic Gates Demo",
+          "description": "Logic Gates Demo - AND, OR, XOR, NOT with constant inputs and scope outputs",
+          "kind": "model",
+          "file": "nflow-example:/causal/Logic_Gates_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 15
+        },
+        {
+          "title": "Nonlinear Elements - Saturation vs Dead-zone",
+          "description": "A sine of amplitude 1.5 is fed through two static nonlinearities. Saturation clips it to +/-1 (flat tops), while the dead-zone [-0.5,0.5] holds the output at zero near the origin and passes the offset excess beyond. The scope overlays the input with both shaped signals.",
+          "kind": "model",
+          "file": "nflow-example:/causal/Nonlinear_Elements_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "PID Demo - P vs PI vs PID",
+          "description": "",
+          "kind": "model",
+          "file": "nflow-example:/causal/PID_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 18
+        },
+        {
+          "title": "Second-Order Responses - Damping Comparison",
+          "description": "Second-order step responses: the same unit step drives three plants that differ only in their damping. Underdamped 1/(s^2+0.4s+1) rings, overdamped 1/(s^2+3s+2) crawls, resonant 4/(s^2+0.5s+4) overshoots strongly. The scope overlays the three so the damping regimes can be compared at a glance.",
+          "kind": "model",
+          "file": "nflow-example:/causal/Second_Order_Responses_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Signal Utilities Demo",
+          "description": "Demonstrates four signal-routing niche blocks: width (element count of a vector), signalConversion (identity pass-through), enumeratedConstant (a fixed enumeration value) and assignment (write elements of a base vector at given indices).",
+          "kind": "model",
+          "file": "nflow-example:/causal/Signal_Utilities_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 12
+        }
+      ]
     },
     {
-      "path": "nflow-example:/causal/Bus_Assignment_Demo.nflow",
-      "name": "Bus Assignment Demo",
-      "description": "Groups a position vector and a scalar count into a bus (busCreator), replaces the 'count' member with a new value (busAssignment), then reads both members back out (busSelector). 'pos' passes through unchanged; 'count' is overwritten.",
-      "author": "",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 8,
-      "runtime": "10",
-      "sampleTime": 0.01
+      "name": "nflow:dashboard",
+      "title": "Dashboard",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Dashboard Gallery Demo",
+          "description": "Gallery of the 20 built-in dashboard blocks",
+          "kind": "model",
+          "file": "nflow-example:/dashboard/Dashboard_Gallery_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 23
+        },
+        {
+          "title": "Dashboard Runtime Demo",
+          "description": "Interactive dashboard slider controlling a gain during simulation",
+          "kind": "model",
+          "file": "nflow-example:/dashboard/Dashboard_Runtime_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 5
+        }
+      ]
     },
     {
-      "path": "nflow-example:/causal/Chirp_Frequency_Response_Demo.nflow",
-      "name": "Chirp Frequency Response - Low-pass",
-      "description": "A linear chirp sweeps 0.1 -> 3 Hz over 20 s into a first-order low-pass 1/(0.15 s + 1). The scope overlays the raw chirp and the filtered output: as the sweep frequency climbs, the low-pass rolls the amplitude off, so the filtered trace shrinks while the input stays at full amplitude.",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 3,
-      "runtime": 20,
-      "sampleTime": 0.01
+      "name": "nflow:workspace",
+      "title": "Workspace",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Nelson Function Demo",
+          "description": "User-defined function blocks. The Nelson Function block evaluates tanh(u) via the interpreter at every step (simulation only). The Expression block evaluates the restricted math expression u^2 (simulates AND generates code). Both are fed by a sine and compared on the scope.",
+          "kind": "model",
+          "file": "nflow-example:/workspace/Nelson_Function_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "To Workspace Demo",
+          "description": "To Workspace demo: a sine signal is logged to the base-workspace variable 'simout' (Structure With Time). After the run, inspect simout.time and simout.signals.values in Nelson.",
+          "kind": "model",
+          "file": "nflow-example:/workspace/To_Workspace_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        }
+      ]
     },
     {
-      "path": "nflow-example:/causal/complementary_filter.nflow",
-      "name": "Complementary Filter",
-      "description": "",
-      "author": "",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 11,
-      "runtime": "10",
-      "sampleTime": 0.01
-    },
-    {
-      "path": "nflow-example:/causal/Coulomb_Viscous_Friction_Demo.nflow",
-      "name": "Coulomb & Viscous Friction Demo",
-      "description": "A sinusoidal velocity drives a Coulomb & Viscous Friction block (y = Gain*u + Offset*sign(u)). Scopes compare the input velocity and the resulting friction force, showing the viscous slope plus the Coulomb jump at zero.",
-      "author": "",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 4,
-      "runtime": "10",
-      "sampleTime": 0.01
-    },
-    {
-      "path": "nflow-example:/causal/Logic_Gates_Demo.nflow",
-      "name": "Logic Gates Demo",
-      "description": "Logic Gates Demo - AND, OR, XOR, NOT with constant inputs and scope outputs",
-      "author": "",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 15,
-      "runtime": "10",
-      "sampleTime": 0.01
-    },
-    {
-      "path": "nflow-example:/causal/Nonlinear_Elements_Demo.nflow",
-      "name": "Nonlinear Elements - Saturation vs Dead-zone",
-      "description": "A sine of amplitude 1.5 is fed through two static nonlinearities. Saturation clips it to +/-1 (flat tops), while the dead-zone [-0.5,0.5] holds the output at zero near the origin and passes the offset excess beyond. The scope overlays the input with both shaped signals.",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 4,
-      "runtime": 12,
-      "sampleTime": 0.02
-    },
-    {
-      "path": "nflow-example:/causal/PID_Demo.nflow",
-      "name": "PID Demo - P vs PI vs PID",
-      "description": "",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 18,
-      "runtime": "10",
-      "sampleTime": 0.01
-    },
-    {
-      "path": "nflow-example:/causal/Second_Order_Responses_Demo.nflow",
-      "name": "Second-Order Responses - Damping Comparison",
-      "description": "Second-order step responses: the same unit step drives three plants that differ only in their damping. Underdamped 1/(s^2+0.4s+1) rings, overdamped 1/(s^2+3s+2) crawls, resonant 4/(s^2+0.5s+4) overshoots strongly. The scope overlays the three so the damping regimes can be compared at a glance.",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 5,
-      "runtime": 20,
-      "sampleTime": 0.02
-    },
-    {
-      "path": "nflow-example:/causal/Signal_Utilities_Demo.nflow",
-      "name": "Signal Utilities Demo",
-      "description": "Demonstrates four signal-routing niche blocks: width (element count of a vector), signalConversion (identity pass-through), enumeratedConstant (a fixed enumeration value) and assignment (write elements of a base vector at given indices).",
-      "author": "",
-      "kind": "model",
-      "category": "causal",
-      "group": "Causal",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 12,
-      "runtime": "10",
-      "sampleTime": 0.01
-    },
-    {
-      "path": "nflow-example:/dashboard/Dashboard_Gallery_Demo.nflow",
-      "name": "Dashboard Gallery Demo",
-      "description": "Gallery of the 20 built-in dashboard blocks",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "dashboard",
-      "group": "Dashboard",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 23,
-      "runtime": 10,
-      "sampleTime": 0.01
-    },
-    {
-      "path": "nflow-example:/dashboard/Dashboard_Runtime_Demo.nflow",
-      "name": "Dashboard Runtime Demo",
-      "description": "Interactive dashboard slider controlling a gain during simulation",
-      "author": "Allan CORNET",
-      "kind": "model",
-      "category": "dashboard",
-      "group": "Dashboard",
-      "source": "builtin",
-      "tags": [],
-      "blockCount": 5,
-      "runtime": 10,
-      "sampleTime": 0.05
+      "name": "nflow:medical",
+      "title": "Medical",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Medical Ventilator - Bi-level (PC-AC) with simulated patient",
+          "description": "Bi-level (PC-AC) mechanical ventilation on a single-compartment lung. Airway pressure alternates between Pinsp and PEEP; the lung (resistance R, compliance C) responds as a first-order system, giving the decelerating inspiratory flow and the tidal volume of pressure-controlled ventilation. A periodic patient effort (Pmus) is added at each inspiration onset to emulate an assisted breath. Scopes show Pressure / Flow / Volume like a ventilator screen; the XY scope draws the dynamic pressure-volume loop. Settings: PEEP 5, Pinsp 18 cmH2O, RR 15/min, Ti 1.2 s (Width 30%), R 10 cmH2O.s/L, C 0.05 L/cmH2O (tau = R*C = 0.5 s) -> Vt ~ 0.6 L.",
+          "kind": "model",
+          "file": "nflow-example:/medical/Ventilator_BiLevel_PCAC_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 21
+        }
+      ]
     }
-  ]
+  ],
+  "diagnostics": [],
+  "locale": "en_US"
 }

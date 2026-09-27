@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=fb2eb22a078c";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=fb2eb22a078c";
 import {
   createVisibleOutputFilter,
   evaluationCodeWithFigures,
@@ -12,7 +12,8 @@ import {
   nelsonCharacterExpression,
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
-} from "./nelson-worker-protocol.mjs";
+  versionedSiblingUrl,
+} from "./nelson-worker-protocol.mjs?build=fb2eb22a078c";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -31,6 +32,7 @@ let runnerOptions = null;
 let nflowCancelSignal = null;
 let commandMailbox = null;
 let virtualFiles = new Map();
+let virtualDirectories = new Set();
 let workspaceStore = createWorkspaceStore();
 const PERSISTENT_DIRECTORIES = ["/workspace", "/preferences", "/user-modules"];
 
@@ -98,10 +100,9 @@ async function initialize(
       "The Nelson WebAssembly module has no default factory export",
     );
   }
-  const runtimeBaseUrl = new URL(".", moduleUrl);
   runnerFactory = module.default;
   runnerOptions = {
-    locateFile: (file) => new URL(file, runtimeBaseUrl).href,
+    locateFile: (file) => versionedSiblingUrl(file, moduleUrl),
     moduleOptions: {
       ...(wasmBinary ? { wasmBinary } : {}),
       setStatus: (label) => {
@@ -201,6 +202,18 @@ function normalizeVirtualPath(value) {
   return path;
 }
 
+function parentVirtualPath(path) {
+  return path.slice(0, path.lastIndexOf("/")) || "/workspace";
+}
+
+function addParentDirectories(path) {
+  let parent = parentVirtualPath(path);
+  while (parent.startsWith("/workspace/") && parent !== "/workspace") {
+    virtualDirectories.add(parent);
+    parent = parentVirtualPath(parent);
+  }
+}
+
 function disableWorkspacePersistence(error) {
   console.warn(
     `Nelson workspace persistence is unavailable: ${
@@ -213,7 +226,10 @@ function disableWorkspacePersistence(error) {
 async function restorePersistentWorkspace() {
   if (!workspaceStore.available) return;
   try {
-    virtualFiles = await workspaceStore.load();
+    const restored = await workspaceStore.loadWorkspace();
+    virtualFiles = restored.files;
+    virtualDirectories = restored.directories;
+    for (const path of virtualFiles.keys()) addParentDirectories(path);
   } catch (error) {
     disableWorkspacePersistence(error);
   }
@@ -222,7 +238,7 @@ async function restorePersistentWorkspace() {
 async function persistVirtualFiles() {
   if (!workspaceStore.available) return;
   try {
-    await workspaceStore.replace(virtualFiles);
+    await workspaceStore.replaceWorkspace(virtualFiles, virtualDirectories);
   } catch (error) {
     disableWorkspacePersistence(error);
   }
@@ -248,8 +264,13 @@ function populateVirtualFiles(module) {
     module.FS.mkdirTree(directory);
     clearVirtualDirectory(module, directory);
   }
+  for (const directory of [...virtualDirectories].sort(
+    (left, right) => left.length - right.length,
+  )) {
+    module.FS.mkdirTree(directory);
+  }
   for (const [path, data] of virtualFiles) {
-    const parent = path.slice(0, path.lastIndexOf("/")) || "/workspace";
+    const parent = parentVirtualPath(path);
     module.FS.mkdirTree(parent);
     module.FS.writeFile(path, data);
   }
@@ -258,17 +279,22 @@ function populateVirtualFiles(module) {
 
 async function collectVirtualFiles(module) {
   const collected = new Map();
+  const directories = new Set();
   const visit = (directory) => {
     for (const name of module.FS.readdir(directory)) {
       if (name === "." || name === "..") continue;
       const path = `${directory}/${name}`;
       const info = module.FS.stat(path);
-      if (module.FS.isDir(info.mode)) visit(path);
+      if (module.FS.isDir(info.mode)) {
+        directories.add(path);
+        visit(path);
+      }
       else collected.set(path, new Uint8Array(module.FS.readFile(path)));
     }
   };
   for (const directory of PERSISTENT_DIRECTORIES) visit(directory);
   virtualFiles = collected;
+  virtualDirectories = directories;
   await persistVirtualFiles();
 }
 
@@ -317,9 +343,10 @@ async function evaluate(code, onOutput) {
 async function simulateNFlow(diagramJson) {
   const escaped = escapeNelsonCharacterVector(diagramJson);
   const code = [
-    `nelsonWasmNflowResult = __nflow_simulate__('${escaped}');`,
+    `nelsonWasmNflowDocument = NFlow.internal.prepareModelJson('${escaped}');`,
+    "nelsonWasmNflowResult = __nflow_simulate__(nelsonWasmNflowDocument);",
     `disp(['${NFLOW_BEGIN}', nelsonWasmNflowResult, '${NFLOW_END}']);`,
-    "clear nelsonWasmNflowResult;",
+    "clear nelsonWasmNflowDocument nelsonWasmNflowResult;",
   ].join(" ");
   const result = await evaluateRaw(code);
   return JSON.parse(
@@ -432,21 +459,49 @@ function variableMetadata({ name, entry, value }) {
   } else if (numericClasses.has(className) && plain) {
     kind = "matrix";
     editable = true;
+  } else if (className === "struct" && plain) {
+    kind = "struct";
+  } else if (className === "cell" && plain) {
+    kind = "cell";
   }
+  const structValues =
+    kind === "struct" ? (Array.isArray(value) ? value : [value]) : [];
+  const fields =
+    kind === "struct" && structValues[0] && typeof structValues[0] === "object"
+      ? Object.keys(structValues[0])
+      : [];
+  const gridRows = kind === "struct" ? rows * cols : kind === "char" ? 1 : rows;
+  const gridCols = kind === "struct" ? fields.length : kind === "char" ? 1 : cols;
   return {
     name,
     className,
-    rows: kind === "char" ? 1 : rows,
-    cols: kind === "char" ? 1 : cols,
-    columns: Array.from({ length: kind === "char" ? 1 : cols }, (_, index) =>
-      String(index + 1),
-    ),
+    rows: gridRows,
+    cols: gridCols,
+    columns:
+      kind === "struct"
+        ? fields
+        : Array.from({ length: gridCols }, (_, index) => String(index + 1)),
     editable,
     kind,
     ...(kind === "text"
       ? { text: typeof value === "string" ? value : JSON.stringify(value) }
       : {}),
   };
+}
+
+function summarizeNestedValue(value) {
+  if (value === null || value === undefined) return "[]";
+  if (typeof value === "string") return `'${value}'`;
+  if (typeof value === "boolean") return value ? "1" : "0";
+  if (typeof value === "number") return String(value);
+  if (Array.isArray(value)) {
+    if (value.length === 0) return "[]";
+    const rows = Array.isArray(value[0]) ? value.length : 1;
+    const cols = Array.isArray(value[0]) ? value[0].length : value.length;
+    return `${rows}x${cols} value`;
+  }
+  if (typeof value === "object") return "1x1 struct";
+  return String(value);
 }
 
 function variableCells(descriptor) {
@@ -459,6 +514,20 @@ function variableCells(descriptor) {
       Array.from(
         { length: metadata.cols },
         (_, col) => flat[row + col * metadata.rows] ?? "",
+      ),
+    );
+  }
+  if (metadata.kind === "struct") {
+    const values = Array.isArray(value) ? value : [value];
+    return values.map((element) =>
+      metadata.columns.map((field) => summarizeNestedValue(element?.[field])),
+    );
+  }
+  if (metadata.kind === "cell") {
+    const values = Array.isArray(value) ? value : [value];
+    return Array.from({ length: metadata.rows }, (_, row) =>
+      Array.from({ length: metadata.cols }, (_, col) =>
+        summarizeNestedValue(values[row + col * metadata.rows]),
       ),
     );
   }
@@ -529,6 +598,48 @@ async function replaceVariable(nameValue, values) {
     if (metadata.className === "logical") expression = `logical(${expression})`;
   }
   await evaluateRaw(`${descriptor.name} = ${expression};`);
+  return { ok: true };
+}
+
+function nestedAssignmentTarget(descriptor, kind, row, col) {
+  const metadata = variableMetadata(descriptor);
+  if (metadata.kind !== kind || row >= metadata.rows || col >= metadata.cols) {
+    throw new Error(`Invalid nested cell for '${descriptor.name}'.`);
+  }
+  if (kind === "cell") return `${descriptor.name}{${row + 1}, ${col + 1}}`;
+  const field = metadata.columns[col];
+  if (!/^[A-Za-z][A-Za-z0-9_]*$/.test(field)) {
+    throw new Error(`Unsupported struct field: ${field}`);
+  }
+  return `${descriptor.name}(${row + 1}).${field}`;
+}
+
+async function setNestedVariable(request) {
+  const descriptor = await readVariable(request.name);
+  const kind = String(request.kind);
+  const row = Number(request.row);
+  const col = Number(request.col);
+  const target = nestedAssignmentTarget(descriptor, kind, row, col);
+  const text = String(request.value ?? "");
+  const parsed = Number.parseFloat(text);
+  const numeric = Number.isNaN(parsed) ? "0" : numericLiteral(parsed);
+  const character = characterExpression(text);
+  await evaluateRaw(
+    [
+      `nelsonWasmNestedValue = ${target};`,
+      "if ischar(nelsonWasmNestedValue)",
+      `  ${target} = ${character};`,
+      "elseif isstring(nelsonWasmNestedValue)",
+      `  ${target} = string(${character});`,
+      "elseif isnumeric(nelsonWasmNestedValue) || islogical(nelsonWasmNestedValue)",
+      `  ${target} = feval(class(nelsonWasmNestedValue), ${numeric});`,
+      "else",
+      "  error('Nelson:web_gui:unsupportedNestedEdit', " +
+        "'only scalar numeric, char, and string cells are editable');",
+      "end",
+      "clear nelsonWasmNestedValue;",
+    ].join("\n"),
+  );
   return { ok: true };
 }
 
@@ -640,6 +751,34 @@ async function sendUIControlAction(request) {
   );
 }
 
+function desktopCodeAnalyzerDiagnostics(diagnostics) {
+  return diagnostics
+    .filter((diagnostic) => !diagnostic.suppressed)
+    .map((diagnostic) => ({
+      severity: diagnostic.severity,
+      message: diagnostic.message,
+      ruleName: diagnostic.ruleName,
+      checkId: diagnostic.id,
+      category: diagnostic.category,
+      helpUri: diagnostic.helpUri,
+      lineStart: diagnostic.range?.startLine ?? diagnostic.line ?? 0,
+      lineEnd: diagnostic.range?.endLine ?? diagnostic.line ?? 0,
+      columnStart: diagnostic.range?.startColumn ?? diagnostic.column ?? 0,
+      columnEnd: diagnostic.range?.endColumn ?? diagnostic.column ?? 0,
+      fixes: (diagnostic.fixes || []).map((fix) => ({
+        title: fix.title,
+        safe: fix.safe,
+        edits: (fix.edits || []).map((edit) => ({
+          lineStart: edit.range?.startLine ?? 0,
+          lineEnd: edit.range?.endLine ?? 0,
+          columnStart: edit.range?.startColumn ?? 0,
+          columnEnd: edit.range?.endColumn ?? 0,
+          replacementText: edit.replacementText,
+        })),
+      })),
+    }));
+}
+
 async function writeVirtualFile(path, data) {
   const normalized = normalizeVirtualPath(path);
   const bytes =
@@ -647,8 +786,75 @@ async function writeVirtualFile(path, data) {
       ? new TextEncoder().encode(data)
       : new Uint8Array(data);
   virtualFiles.set(normalized, bytes);
+  addParentDirectories(normalized);
   await persistVirtualFiles();
   return { path: normalized, bytes: bytes.byteLength };
+}
+
+async function createVirtualDirectory(path) {
+  const normalized = normalizeVirtualPath(path);
+  if (virtualFiles.has(normalized) || virtualDirectories.has(normalized)) {
+    throw new Error(`Virtual path already exists: ${normalized}`);
+  }
+  addParentDirectories(normalized);
+  virtualDirectories.add(normalized);
+  await persistVirtualFiles();
+  return { ok: true, path: normalized };
+}
+
+function virtualPathExists(path) {
+  return virtualFiles.has(path) || virtualDirectories.has(path);
+}
+
+async function renameVirtualPath(fromValue, toValue) {
+  const from = normalizeVirtualPath(fromValue);
+  const to = normalizeVirtualPath(toValue);
+  if (!virtualPathExists(from)) throw new Error(`Virtual path does not exist: ${from}`);
+  if (virtualPathExists(to)) throw new Error(`Virtual path already exists: ${to}`);
+  if (to.startsWith(`${from}/`)) throw new Error("Cannot move a directory inside itself");
+  if (virtualFiles.has(from)) {
+    const data = virtualFiles.get(from);
+    virtualFiles.delete(from);
+    virtualFiles.set(to, data);
+  } else {
+    const movedFiles = [...virtualFiles.entries()].filter(([path]) =>
+      path.startsWith(`${from}/`),
+    );
+    const movedDirectories = [...virtualDirectories].filter(
+      (path) => path === from || path.startsWith(`${from}/`),
+    );
+    for (const [path] of movedFiles) virtualFiles.delete(path);
+    for (const path of movedDirectories) virtualDirectories.delete(path);
+    for (const [path, data] of movedFiles) {
+      virtualFiles.set(`${to}${path.slice(from.length)}`, data);
+    }
+    for (const path of movedDirectories) {
+      virtualDirectories.add(`${to}${path.slice(from.length)}`);
+    }
+  }
+  addParentDirectories(to);
+  await persistVirtualFiles();
+  return { ok: true, path: to };
+}
+
+async function deleteVirtualPath(pathValue) {
+  const path = normalizeVirtualPath(pathValue);
+  let removed = virtualFiles.delete(path);
+  for (const file of [...virtualFiles.keys()]) {
+    if (file.startsWith(`${path}/`)) {
+      virtualFiles.delete(file);
+      removed = true;
+    }
+  }
+  for (const directory of [...virtualDirectories]) {
+    if (directory === path || directory.startsWith(`${path}/`)) {
+      virtualDirectories.delete(directory);
+      removed = true;
+    }
+  }
+  if (!removed) throw new Error(`Virtual path does not exist: ${path}`);
+  await persistVirtualFiles();
+  return { ok: true };
 }
 
 function readVirtualFile(path) {
@@ -699,6 +905,18 @@ self.addEventListener("message", async (event) => {
       case "file.list":
         result = [...virtualFiles.keys()].sort();
         break;
+      case "directory.list":
+        result = [...virtualDirectories].sort();
+        break;
+      case "file.mkdir":
+        result = await createVirtualDirectory(request.path);
+        break;
+      case "file.rename":
+        result = await renameVirtualPath(request.from, request.to);
+        break;
+      case "file.delete":
+        result = await deleteVirtualPath(request.path);
+        break;
       case "workspace.list":
         result = await listWorkspace();
         break;
@@ -711,8 +929,18 @@ self.addEventListener("message", async (event) => {
       case "variable.replace":
         result = await replaceVariable(request.name, request.values);
         break;
+      case "variable.setNested":
+        result = await setNestedVariable(request);
+        break;
       case "completion.request":
         result = await complete(String(request.line ?? ""));
+        break;
+      case "code.analyze":
+        result = {
+          diagnostics: desktopCodeAnalyzerDiagnostics(
+            await runner.analyzeCode(request.path, request.source),
+          ),
+        };
         break;
       case "figure.setView":
         result = await setFigureView(
@@ -739,6 +967,20 @@ self.addEventListener("message", async (event) => {
       case "figure.close":
         result = await closeFigure(request.handle);
         break;
+      case "figure.getImage":
+        result = {
+          handle: request.handle,
+          image: `data:image/png;base64,${await runner.renderFigurePng(request.handle)}`,
+        };
+        break;
+      case "figure.saveAs": {
+        const path = normalizeVirtualPath(request.path);
+        result = await runner.saveFigure(request.handle, path, {
+          beforeRun: populateVirtualFiles,
+          afterRun: collectVirtualFiles,
+        });
+        break;
+      }
       case "figure.keyEvent":
         result = await sendFigureKeyEvent(request);
         break;
@@ -750,6 +992,7 @@ self.addEventListener("message", async (event) => {
         break;
       case "reset":
         virtualFiles.clear();
+        virtualDirectories.clear();
         if (workspaceStore.available) {
           try {
             await workspaceStore.clear();

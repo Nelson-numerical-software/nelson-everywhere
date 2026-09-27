@@ -13,22 +13,40 @@ export const WORKER_LIMITS = Object.freeze({
   maxWasmBytes: 128 * 1024 * 1024,
 });
 
+export function versionedSiblingUrl(path, baseHref) {
+  const base = new URL(baseHref);
+  const url = new URL(path, base);
+  const buildId = base.searchParams.get("build");
+  if (buildId && url.origin === base.origin && !url.searchParams.has("build")) {
+    url.searchParams.set("build", buildId);
+  }
+  return url.href;
+}
+
 const REQUEST_TYPES = new Set([
+  "code.analyze",
   "completion.request",
   "evaluate",
   "figure.close",
+  "figure.getImage",
   "figure.keyEvent",
   "figure.mouseEvent",
   "figure.pan",
+  "figure.saveAs",
   "figure.setSize",
   "figure.setView",
   "file.list",
   "file.read",
+  "file.delete",
+  "file.mkdir",
+  "file.rename",
+  "directory.list",
   "file.write",
   "init",
   "nflow.simulate",
   "reset",
   "variable.block",
+  "variable.setNested",
   "variable.open",
   "variable.replace",
   "uicontrol.action",
@@ -153,7 +171,20 @@ export function validateWorkerRequest(request) {
         "Completion input",
       );
       break;
+    case "code.analyze":
+      assertStringByteLimit(
+        request.path,
+        WORKER_LIMITS.maxSourceBytes,
+        "Code analyzer path",
+      );
+      assertStringByteLimit(
+        request.source,
+        WORKER_LIMITS.maxSourceBytes,
+        "Code analyzer source",
+      );
+      break;
     case "figure.close":
+    case "figure.getImage":
     case "figure.setView": {
       if (!Number.isSafeInteger(request.handle) || request.handle < 0) {
         throw new Error("Invalid WebAssembly figure handle");
@@ -182,6 +213,17 @@ export function validateWorkerRequest(request) {
       ) {
         throw new Error("Invalid WebAssembly figure pan");
       }
+      break;
+    }
+    case "figure.saveAs": {
+      if (!Number.isSafeInteger(request.handle) || request.handle < 0) {
+        throw new Error("Invalid WebAssembly figure handle");
+      }
+      assertStringByteLimit(
+        request.path,
+        WORKER_LIMITS.maxSourceBytes,
+        "Figure export path",
+      );
       break;
     }
     case "figure.keyEvent": {
@@ -240,6 +282,29 @@ export function validateWorkerRequest(request) {
       }
       break;
     }
+    case "file.read":
+    case "file.delete":
+    case "file.mkdir": {
+      assertStringByteLimit(
+        request.path,
+        WORKER_LIMITS.maxSourceBytes,
+        "Virtual path",
+      );
+      break;
+    }
+    case "file.rename": {
+      assertStringByteLimit(
+        request.from,
+        WORKER_LIMITS.maxSourceBytes,
+        "Source virtual path",
+      );
+      assertStringByteLimit(
+        request.to,
+        WORKER_LIMITS.maxSourceBytes,
+        "Target virtual path",
+      );
+      break;
+    }
     case "variable.block": {
       const rows = Number(request.rows);
       const cols = Number(request.cols);
@@ -261,6 +326,23 @@ export function validateWorkerRequest(request) {
           "Variable replacement exceeds the WebAssembly cell limit",
         );
       }
+      break;
+    }
+    case "variable.setNested": {
+      if (
+        !["struct", "cell"].includes(request.kind) ||
+        !Number.isSafeInteger(request.row) ||
+        !Number.isSafeInteger(request.col) ||
+        request.row < 0 ||
+        request.col < 0
+      ) {
+        throw new Error("Invalid nested WebAssembly variable cell");
+      }
+      assertStringByteLimit(
+        request.value,
+        WORKER_LIMITS.maxSourceBytes,
+        "Nested variable value",
+      );
       break;
     }
   }

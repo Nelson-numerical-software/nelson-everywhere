@@ -192,6 +192,26 @@
       ]
     },
     {
+      "name": "fftw",
+      "title": "fftw",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Two-dimensional Fourier transform",
+          "description": "Reveal the directional frequency content of a synthetic image.",
+          "tags": [
+            "fft2",
+            "image",
+            "spectrum"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/fftw/examples/two_dimensional_fft.m"
+        }
+      ]
+    },
+    {
       "name": "file_archiver",
       "title": "file archiver",
       "source": "nelson",
@@ -240,6 +260,39 @@
           ],
           "requirements": [],
           "file": "/modules/function_handle/examples/parameterized_function.m"
+        }
+      ]
+    },
+    {
+      "name": "geometry",
+      "title": "geometry",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Convex hull of a point set",
+          "description": "Compute and display the boundary enclosing planar samples.",
+          "tags": [
+            "geometry",
+            "points"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/geometry/examples/convex_hull.m"
+        },
+        {
+          "title": "Scattered data interpolation",
+          "description": "Connect Delaunay triangulation, Voronoi cells and gridded interpolation in one workflow.",
+          "tags": [
+            "geometry",
+            "delaunay",
+            "voronoi",
+            "interpolation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/geometry/examples/scattered_data_interpolation.m"
         }
       ]
     },
@@ -414,6 +467,45 @@
             "gui"
           ],
           "file": "/modules/graphics/examples/uicontrol/complete_ui_components_demo.m"
+        },
+        {
+          "title": "Nefertiti point cloud",
+          "description": "Render a bundled three-dimensional scan.",
+          "tags": [
+            "3d",
+            "data"
+          ],
+          "requirements": [
+            "gui",
+            "hdf5"
+          ],
+          "file": "/modules/graphics/examples/nefertiti-mask/nefertiti_mask.m"
+        },
+        {
+          "title": "Bunny surface",
+          "description": "Render a bundled triangulated surface.",
+          "tags": [
+            "3d",
+            "mesh"
+          ],
+          "requirements": [
+            "gui",
+            "hdf5"
+          ],
+          "file": "/modules/graphics/examples/stanford-bunny/stanford_bunny.m"
+        },
+        {
+          "title": "Teapot surface",
+          "description": "Render a classic parametric surface dataset.",
+          "tags": [
+            "3d",
+            "mesh"
+          ],
+          "requirements": [
+            "gui",
+            "hdf5"
+          ],
+          "file": "/modules/graphics/examples/utah-teapot/utah_teapot.m"
         },
         {
           "title": "Mandelbrot fractal",
@@ -706,6 +798,23 @@
       ]
     },
     {
+      "name": "hdf5",
+      "title": "hdf5",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "HDF5 dataset round trip",
+          "description": "Create a dataset in a temporary HDF5 file and read it back.",
+          "tags": [
+            "hdf5",
+            "data"
+          ],
+          "requirements": [],
+          "file": "/modules/hdf5/examples/hdf5_roundtrip.m"
+        }
+      ]
+    },
+    {
       "name": "image_processing",
       "title": "image processing",
       "source": "nelson",
@@ -855,6 +964,23 @@
       ]
     },
     {
+      "name": "matio",
+      "title": "matio",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "MAT file round trip",
+          "description": "Save selected variables to a temporary data file and reload them.",
+          "tags": [
+            "mat-file",
+            "workspace"
+          ],
+          "requirements": [],
+          "file": "/modules/matio/examples/mat_file_roundtrip.m"
+        }
+      ]
+    },
+    {
       "name": "modules_manager",
       "title": "modules manager",
       "source": "nelson",
@@ -868,6 +994,23 @@
           ],
           "requirements": [],
           "file": "/modules/modules_manager/examples/create_temporary_module.m"
+        }
+      ]
+    },
+    {
+      "name": "netcdf",
+      "title": "netcdf",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "NetCDF variable round trip",
+          "description": "Create a temporary NetCDF variable and read its values back.",
+          "tags": [
+            "netcdf",
+            "data"
+          ],
+          "requirements": [],
+          "file": "/modules/netcdf/examples/netcdf_roundtrip.m"
         }
       ]
     },
@@ -1138,6 +1281,51 @@
             "plots"
           ],
           "file": "/modules/random/examples/monte_carlo_pi.m"
+        }
+      ]
+    },
+    {
+      "name": "signal_processing",
+      "title": "signal processing",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Filter a noisy signal",
+          "description": "Design an FIR filter and smooth a synthetic measurement.",
+          "tags": [
+            "signal",
+            "filter"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/signal_processing/examples/filter_noisy_signal.m"
+        },
+        {
+          "title": "Inspect a signal spectrum",
+          "description": "Use a Fourier transform to reveal two frequency components.",
+          "tags": [
+            "signal",
+            "spectrum"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/signal_processing/examples/signal_spectrum.m"
+        },
+        {
+          "title": "Track a chirp with a spectrogram",
+          "description": "Use short-time spectral analysis to reveal a frequency sweep over time.",
+          "tags": [
+            "signal",
+            "spectrogram",
+            "chirp",
+            "time-frequency"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/signal_processing/examples/chirp_spectrogram.m"
         }
       ]
     },

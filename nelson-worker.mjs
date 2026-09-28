@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=6e5650f8781c";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=6e5650f8781c";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=9fc63ac78c2f";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=9fc63ac78c2f";
 import {
   createVisibleOutputFilter,
   evaluationCodeWithFigures,
@@ -13,7 +13,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=6e5650f8781c";
+} from "./nelson-worker-protocol.mjs?build=9fc63ac78c2f";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";

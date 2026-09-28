@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=de91f24659bf";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=de91f24659bf";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=6e5650f8781c";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=6e5650f8781c";
 import {
   createVisibleOutputFilter,
   evaluationCodeWithFigures,
@@ -13,7 +13,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=de91f24659bf";
+} from "./nelson-worker-protocol.mjs?build=6e5650f8781c";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -47,6 +47,49 @@ function publishFigure(handle, json) {
     event: "figure",
     figure: { handle: Number(handle), displayList },
   });
+}
+
+function publishFigureBytes(handle, jsonBuffer) {
+  const buffer =
+    jsonBuffer instanceof ArrayBuffer
+      ? jsonBuffer
+      : new Uint8Array(jsonBuffer).buffer;
+  self.postMessage(
+    {
+      version: PROTOCOL_VERSION,
+      event: "figure",
+      figureBytes: { handle: Number(handle), json: buffer },
+    },
+    [buffer],
+  );
+}
+
+function publishFigureAttachments(handle, jsonBuffer, attachments = []) {
+  const buffer =
+    jsonBuffer instanceof ArrayBuffer
+      ? jsonBuffer
+      : new Uint8Array(jsonBuffer).buffer;
+  const transferList = [buffer];
+  const payloadAttachments = attachments.map((attachment) => {
+    const data =
+      attachment?.data instanceof ArrayBuffer
+        ? attachment.data
+        : new Uint8Array(attachment?.data ?? []).buffer;
+    transferList.push(data);
+    return { id: String(attachment?.id ?? ""), data };
+  });
+  self.postMessage(
+    {
+      version: PROTOCOL_VERSION,
+      event: "figure",
+      figureBytes: {
+        handle: Number(handle),
+        json: buffer,
+        attachments: payloadAttachments,
+      },
+    },
+    transferList,
+  );
 }
 
 function publishNFlowPartial(json) {
@@ -121,6 +164,8 @@ async function initialize(
           label: `Initializing runtime (${remaining} remaining)`,
         }),
       onNelsonFigureFrame: publishFigure,
+      onNelsonFigureFrameBytes: publishFigureBytes,
+      onNelsonFigureFrameAttachments: publishFigureAttachments,
       onNelsonNFlowPartial: publishNFlowPartial,
       onNelsonNFlowShouldCancel: () =>
         nflowCancelSignal ? Atomics.load(nflowCancelSignal, 0) : 0,

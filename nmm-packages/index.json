@@ -1,0 +1,15 @@
+{
+  "formatVersion": 1,
+  "registryUrl": "https://raw.githubusercontent.com/nelson-lang/nelson-modules-registry/master/registry.json",
+  "packages": [
+    {
+      "name": "morse",
+      "version": "1.0.0",
+      "source": "https://github.com/NelsonModules/morse/releases/download/v1.0.0/morse-all-1.0.0.nmz",
+      "checksum": "f850303b1d4f40550bd9c48fffdc6724a026f440fea3f8f5e50d6c038c47128f",
+      "file": "morse-all-1.0.0.nmz",
+      "bytes": 138686,
+      "sha256": "f850303b1d4f40550bd9c48fffdc6724a026f440fea3f8f5e50d6c038c47128f"
+    }
+  ]
+}

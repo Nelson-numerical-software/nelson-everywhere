@@ -4,6 +4,7 @@
   "profile": "portable-nflow",
   "modules": [
     "assert_functions",
+    "audio",
     "categorical",
     "commons",
     "console",
@@ -32,6 +33,7 @@
     "graphics_io",
     "handle",
     "hdf5",
+    "help_tools",
     "history_manager",
     "i18n",
     "image_processing",
@@ -63,6 +65,7 @@
     "slicot",
     "sparse",
     "special_functions",
+    "spreadsheet",
     "statistics",
     "stream_manager",
     "string",
@@ -73,9 +76,12 @@
     "time",
     "trigonometric_functions",
     "types",
-    "validators"
+    "validators",
+    "xml"
   ],
   "capabilities": [
+    "audio",
+    "audio-output",
     "blas",
     "control-system",
     "evaluate",
@@ -85,6 +91,7 @@
     "graphics-io",
     "gui",
     "hdf5",
+    "help",
     "image-processing",
     "lapack",
     "matio",
@@ -101,9 +108,11 @@
     "reset",
     "signal-processing",
     "slicot",
+    "spreadsheet",
     "statistics",
     "virtual-filesystem",
-    "worker"
+    "worker",
+    "xml"
   ],
   "features": {
     "blas": true,

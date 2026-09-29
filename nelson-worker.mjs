@@ -1,8 +1,9 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=9fc63ac78c2f";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=9fc63ac78c2f";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=7427707dccf7";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=7427707dccf7";
 import {
+  createTextOutputBatcher,
   createVisibleOutputFilter,
   evaluationCodeWithFigures,
   extractFigureFrames,
@@ -13,7 +14,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=9fc63ac78c2f";
+} from "./nelson-worker-protocol.mjs?build=7427707dccf7";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -35,6 +36,7 @@ let virtualFiles = new Map();
 let virtualDirectories = new Set();
 let workspaceStore = createWorkspaceStore();
 const PERSISTENT_DIRECTORIES = ["/workspace", "/preferences", "/user-modules"];
+const VIRTUAL_PATH_ROOTS = ["/workspace", "/modules"];
 
 function progress(progress) {
   self.postMessage({ version: PROTOCOL_VERSION, event: "progress", progress });
@@ -97,6 +99,14 @@ function publishNFlowPartial(json) {
     version: PROTOCOL_VERSION,
     event: "nflow.partial",
     partial: JSON.parse(String(json)),
+  });
+}
+
+function publishDebuggerState(json) {
+  self.postMessage({
+    version: PROTOCOL_VERSION,
+    event: "debugger.state",
+    state: JSON.parse(String(json)),
   });
 }
 
@@ -167,6 +177,7 @@ async function initialize(
       onNelsonFigureFrameBytes: publishFigureBytes,
       onNelsonFigureFrameAttachments: publishFigureAttachments,
       onNelsonNFlowPartial: publishNFlowPartial,
+      onNelsonDebuggerState: publishDebuggerState,
       onNelsonNFlowShouldCancel: () =>
         nflowCancelSignal ? Atomics.load(nflowCancelSignal, 0) : 0,
       onNelsonPollCommand: pollCooperativeCommand,
@@ -241,8 +252,11 @@ function cancellationSignalFrom(buffer) {
 
 function normalizeVirtualPath(value) {
   const path = String(value).replaceAll("\\", "/");
-  if (!path.startsWith("/workspace/") || path.split("/").includes("..")) {
-    throw new Error("Virtual files must be below /workspace");
+  const inVirtualRoot = VIRTUAL_PATH_ROOTS.some((root) =>
+    path.startsWith(`${root}/`),
+  );
+  if (!inVirtualRoot || path.split("/").includes("..")) {
+    throw new Error("Virtual files must be below /workspace or /modules");
   }
   return path;
 }
@@ -251,12 +265,23 @@ function parentVirtualPath(path) {
   return path.slice(0, path.lastIndexOf("/")) || "/workspace";
 }
 
+function virtualRootFor(path) {
+  return VIRTUAL_PATH_ROOTS.find((root) => path === root || path.startsWith(`${root}/`)) ?? "";
+}
+
 function addParentDirectories(path) {
   let parent = parentVirtualPath(path);
-  while (parent.startsWith("/workspace/") && parent !== "/workspace") {
+  const root = virtualRootFor(path);
+  while (root && parent.startsWith(`${root}/`) && parent !== root) {
     virtualDirectories.add(parent);
     parent = parentVirtualPath(parent);
   }
+}
+
+function isPersistentRuntimePath(path) {
+  return PERSISTENT_DIRECTORIES.some(
+    (directory) => path === directory || path.startsWith(`${directory}/`),
+  );
 }
 
 function disableWorkspacePersistence(error) {
@@ -323,8 +348,12 @@ function populateVirtualFiles(module) {
 }
 
 async function collectVirtualFiles(module) {
-  const collected = new Map();
-  const directories = new Set();
+  const collected = new Map(
+    [...virtualFiles.entries()].filter(([path]) => !isPersistentRuntimePath(path)),
+  );
+  const directories = new Set(
+    [...virtualDirectories].filter((path) => !isPersistentRuntimePath(path)),
+  );
   const visit = (directory) => {
     for (const name of module.FS.readdir(directory)) {
       if (name === "." || name === "..") continue;
@@ -350,6 +379,9 @@ async function evaluateRaw(code, output = {}) {
     afterRun: collectVirtualFiles,
     print: output.stdout,
     printErr: output.stderr,
+    clear: output.clear,
+    html: output.html,
+    expandable: output.expandable,
   });
   if (result.exitCode !== 0 || result.stderr.trim()) {
     const message =
@@ -365,12 +397,15 @@ async function evaluateRaw(code, output = {}) {
   return result;
 }
 
-async function evaluate(code, onOutput) {
-  const outputFilter = createVisibleOutputFilter(onOutput);
+async function evaluate(code, handlers = {}) {
+  const outputFilter = createVisibleOutputFilter(handlers.stdout);
   let result;
   try {
     result = await evaluateRaw(evaluationCodeWithFigures(String(code)), {
       stdout: (text) => outputFilter.push(text),
+      clear: handlers.clear,
+      html: handlers.html,
+      expandable: handlers.expandable,
     });
   } finally {
     outputFilter.finish();
@@ -902,11 +937,20 @@ async function deleteVirtualPath(pathValue) {
   return { ok: true };
 }
 
-function readVirtualFile(path) {
+async function readVirtualFile(path) {
   const normalized = normalizeVirtualPath(path);
   const data = virtualFiles.get(normalized);
-  if (!data) throw new Error(`Virtual file does not exist: ${normalized}`);
-  return { path: normalized, data };
+  if (data) return { path: normalized, data };
+  if (normalized.startsWith("/modules/")) {
+    const instance = await runner?.initialize();
+    try {
+      const moduleData = instance?.FS?.readFile(normalized);
+      if (moduleData) return { path: normalized, data: new Uint8Array(moduleData) };
+    } catch {
+      // Fall through to the explicit virtual-file error below.
+    }
+  }
+  throw new Error(`Virtual file does not exist: ${normalized}`);
 }
 
 self.addEventListener("message", async (event) => {
@@ -929,14 +973,53 @@ self.addEventListener("message", async (event) => {
         );
         break;
       case "evaluate":
-        result = await evaluate(String(request.code ?? ""), (text) =>
-          self.postMessage({
-            version: PROTOCOL_VERSION,
-            event: "output",
-            id: request.id,
-            output: { stream: "stdout", text },
-          }),
-        );
+        {
+          const outputBatcher = createTextOutputBatcher((text) =>
+            self.postMessage({
+              version: PROTOCOL_VERSION,
+              event: "output",
+              id: request.id,
+              output: { stream: "stdout", text },
+            }),
+          );
+          try {
+            result = await evaluate(String(request.code ?? ""), {
+              stdout: (text) => outputBatcher.push(text),
+              clear: () => {
+                outputBatcher.flush();
+                self.postMessage({
+                  version: PROTOCOL_VERSION,
+                  event: "output",
+                  id: request.id,
+                  output: { stream: "control", clear: true },
+                });
+              },
+              html: (html) => {
+                outputBatcher.flush();
+                self.postMessage({
+                  version: PROTOCOL_VERSION,
+                  event: "output",
+                  id: request.id,
+                  output: { stream: "control", html: String(html) },
+                });
+              },
+              expandable: (id, text) => {
+                outputBatcher.flush();
+                self.postMessage({
+                  version: PROTOCOL_VERSION,
+                  event: "output",
+                  id: request.id,
+                  output: {
+                    stream: "control",
+                    expandable: { id: Number(id), text: String(text) },
+                  },
+                });
+              },
+            });
+          } finally {
+            outputBatcher.flush();
+          }
+        }
         break;
       case "nflow.simulate":
         result = await simulateNFlow(String(request.diagramJson ?? "{}"));
@@ -945,7 +1028,7 @@ self.addEventListener("message", async (event) => {
         result = await writeVirtualFile(request.path, request.data);
         break;
       case "file.read":
-        result = readVirtualFile(request.path);
+        result = await readVirtualFile(request.path);
         break;
       case "file.list":
         result = [...virtualFiles.keys()].sort();
@@ -987,30 +1070,42 @@ self.addEventListener("message", async (event) => {
           ),
         };
         break;
+      case "debugger.state":
+        result = await runner.debuggerState();
+        break;
+      case "debugger.getBreakpoints":
+        result = await runner.debuggerGetBreakpoints(String(request.file ?? ""));
+        break;
+      case "debugger.toggleBreakpoint":
+        result = await runner.debuggerToggleBreakpoint(
+          String(request.file ?? ""),
+          Number(request.line) || 0,
+        );
+        break;
       case "figure.setView":
         result = await setFigureView(
-          request.handle,
-          request.azimuth,
-          request.elevation,
-          request.compactView,
+          Number(request.handle),
+          Number(request.azimuth),
+          Number(request.elevation),
+          Boolean(request.compactView),
         );
         break;
       case "figure.setSize":
         result = await setFigureSize(
-          request.handle,
-          request.width,
-          request.height,
+          Number(request.handle),
+          Number(request.width),
+          Number(request.height),
         );
         break;
       case "figure.pan":
         result = await panFigure(
-          request.handle,
-          request.dxFrac,
-          request.dyFrac,
+          Number(request.handle),
+          Number(request.dxFrac),
+          Number(request.dyFrac),
         );
         break;
       case "figure.close":
-        result = await closeFigure(request.handle);
+        result = await closeFigure(Number(request.handle));
         break;
       case "figure.getImage":
         result = {
@@ -1049,12 +1144,10 @@ self.addEventListener("message", async (event) => {
         result = { reset: true };
         break;
       default:
-        throw new Error(
-          `Unsupported Nelson Worker request: ${String(request.type)}`,
-        );
+        throw new Error(`Unsupported Nelson Worker request: ${request.type}`);
     }
     reply(request.id, true, result);
   } catch (error) {
-    reply(request.id, false, error instanceof Error ? error.message : error);
+    reply(request.id, false, error instanceof Error ? error.message : String(error));
   }
 });

@@ -1,6 +1,53 @@
 {
   "groups": [
     {
+      "name": "audio",
+      "title": "audio",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Play a generated stereo tone",
+          "description": "Synthesize a short stereo tone, plot its waveform and play it through the available audio backend.",
+          "tags": [
+            "audio",
+            "synthesis",
+            "beginner"
+          ],
+          "requirements": [
+            "audio-output"
+          ],
+          "file": "/modules/audio/examples/play_generated_tone.m"
+        },
+        {
+          "title": "Play a WAV file",
+          "description": "Load and play a bundled waveform.",
+          "tags": [
+            "audio",
+            "beginner"
+          ],
+          "requirements": [
+            "audio-output"
+          ],
+          "file": "/modules/audio/examples/play_wav.m"
+        },
+        {
+          "title": "Polyphonic synthesizer piano",
+          "description": "Play a three-octave neon keyboard with six live-synthesised instruments, ADSR knobs, oscilloscope, spectrum, recorder and a player piano.",
+          "tags": [
+            "audio",
+            "synthesis",
+            "gui",
+            "realtime"
+          ],
+          "requirements": [
+            "gui",
+            "audio-output"
+          ],
+          "file": "/modules/audio/examples/synth_piano/synth_piano.m"
+        }
+      ]
+    },
+    {
       "name": "categorical",
       "title": "categorical",
       "source": "nelson",
@@ -1381,6 +1428,23 @@
       ]
     },
     {
+      "name": "spreadsheet",
+      "title": "spreadsheet",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Spreadsheet round trip",
+          "description": "Write a table to a temporary workbook and read it back.",
+          "tags": [
+            "spreadsheet",
+            "table"
+          ],
+          "requirements": [],
+          "file": "/modules/spreadsheet/examples/spreadsheet_roundtrip.m"
+        }
+      ]
+    },
+    {
       "name": "statistics",
       "title": "statistics",
       "source": "nelson",
@@ -1565,6 +1629,23 @@
           ],
           "requirements": [],
           "file": "/modules/validators/examples/validatestring_example.m"
+        }
+      ]
+    },
+    {
+      "name": "xml",
+      "title": "xml",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "XML document round trip",
+          "description": "Write XML to a temporary file, parse it and serialize the document.",
+          "tags": [
+            "xml",
+            "data"
+          ],
+          "requirements": [],
+          "file": "/modules/xml/examples/xml_roundtrip.m"
         }
       ]
     }

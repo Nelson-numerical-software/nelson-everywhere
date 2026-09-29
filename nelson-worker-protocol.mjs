@@ -13,6 +13,40 @@ export const WORKER_LIMITS = Object.freeze({
   maxWasmBytes: 128 * 1024 * 1024,
 });
 
+export function createTextOutputBatcher(send, options = {}) {
+  const maxChars = Number(options.maxChars) > 0 ? Number(options.maxChars) : 8192;
+  const intervalMs = Number(options.intervalMs) >= 0 ? Number(options.intervalMs) : 33;
+  const now =
+    typeof options.now === "function"
+      ? options.now
+      : () =>
+          typeof performance !== "undefined" && typeof performance.now === "function"
+            ? performance.now()
+            : Date.now();
+  let buffer = "";
+  let lastFlush = 0;
+
+  const flush = () => {
+    if (!buffer) return;
+    const text = buffer;
+    buffer = "";
+    lastFlush = now();
+    send(text);
+  };
+
+  return {
+    push(value) {
+      if (value === undefined || value === null || value === "") return;
+      buffer += String(value);
+      const elapsed = now() - lastFlush;
+      if (buffer.length >= maxChars || elapsed >= intervalMs) {
+        flush();
+      }
+    },
+    flush,
+  };
+}
+
 export function versionedSiblingUrl(path, baseHref) {
   const base = new URL(baseHref);
   const url = new URL(path, base);
@@ -27,6 +61,9 @@ const REQUEST_TYPES = new Set([
   "code.analyze",
   "completion.request",
   "evaluate",
+  "debugger.getBreakpoints",
+  "debugger.state",
+  "debugger.toggleBreakpoint",
   "figure.close",
   "figure.getImage",
   "figure.keyEvent",
@@ -182,6 +219,25 @@ export function validateWorkerRequest(request) {
         WORKER_LIMITS.maxSourceBytes,
         "Code analyzer source",
       );
+      break;
+    case "debugger.getBreakpoints":
+      assertStringByteLimit(
+        request.file,
+        WORKER_LIMITS.maxSourceBytes,
+        "Debugger source path",
+      );
+      break;
+    case "debugger.state":
+      break;
+    case "debugger.toggleBreakpoint":
+      assertStringByteLimit(
+        request.file,
+        WORKER_LIMITS.maxSourceBytes,
+        "Debugger source path",
+      );
+      if (!Number.isSafeInteger(request.line) || request.line < 1) {
+        throw new Error("Invalid debugger breakpoint line");
+      }
       break;
     case "figure.close":
     case "figure.getImage":
@@ -412,6 +468,48 @@ export function extractUiActions(stdout) {
   const actions = [];
   const visible = [];
   let offset = 0;
+  const isPlayAudioAction = (action) =>
+    action?.type === "play-audio" &&
+    Number.isFinite(action.sampleRate) &&
+    action.sampleRate > 0 &&
+    Number.isSafeInteger(action.channels) &&
+    action.channels > 0 &&
+    action.channels <= 8 &&
+    Number.isSafeInteger(action.frames) &&
+    action.frames >= 0 &&
+    Array.isArray(action.samples) &&
+    action.samples.length === action.channels * action.frames &&
+    action.samples.every(Number.isFinite);
+  const isAudioBufferBeginAction = (action) =>
+    action?.type === "audio-buffer-begin" &&
+    Number.isSafeInteger(action.id) &&
+    action.id > 0 &&
+    Number.isFinite(action.sampleRate) &&
+    action.sampleRate > 0 &&
+    Number.isSafeInteger(action.channels) &&
+    action.channels > 0 &&
+    action.channels <= 8 &&
+    Number.isSafeInteger(action.frames) &&
+    action.frames >= 0;
+  const isAudioBufferChunkAction = (action) =>
+    action?.type === "audio-buffer-chunk" &&
+    Number.isSafeInteger(action.id) &&
+    action.id > 0 &&
+    Number.isSafeInteger(action.offset) &&
+    action.offset >= 0 &&
+    Number.isSafeInteger(action.frames) &&
+    action.frames >= 0 &&
+    Array.isArray(action.samples) &&
+    action.samples.every(Number.isFinite);
+  const isAudioBufferPlayAction = (action) =>
+    action?.type === "audio-buffer-play" &&
+    Number.isSafeInteger(action.id) &&
+    action.id > 0;
+  const isAudioControlAction = (action) =>
+    action?.type === "audio-control" &&
+    Number.isSafeInteger(action.id) &&
+    action.id > 0 &&
+    ["pause", "resume", "stop"].includes(action.command);
   while (offset < stdout.length) {
     const begin = stdout.indexOf(UI_ACTION_BEGIN, offset);
     if (begin < 0) {
@@ -429,7 +527,12 @@ export function extractUiActions(stdout) {
         action?.type === "open-editor" &&
         typeof action.path === "string" &&
         (action.line === undefined || Number.isSafeInteger(action.line))
-      )
+      ) &&
+      !isPlayAudioAction(action) &&
+      !isAudioBufferBeginAction(action) &&
+      !isAudioBufferChunkAction(action) &&
+      !isAudioBufferPlayAction(action) &&
+      !isAudioControlAction(action)
     ) {
       throw new Error(`Unsupported Nelson UI action: ${String(action?.type)}`);
     }

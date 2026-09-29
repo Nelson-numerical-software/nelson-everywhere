@@ -111,6 +111,9 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
     if (!instancePromise) {
       const moduleOptions = defaultOptions.moduleOptions || {};
       const configuredOutput = moduleOptions.onNelsonOutput;
+      const configuredClearTerminal = moduleOptions.onNelsonClearTerminal;
+      const configuredHtml = moduleOptions.onNelsonHtml;
+      const configuredExpandableText = moduleOptions.onNelsonExpandableText;
       instancePromise = factory({
         ...moduleOptions,
         // Instantiate only. Running main here makes modularized Emscripten
@@ -125,6 +128,18 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         onNelsonOutput: (error, value) => {
           configuredOutput?.(error, value);
           emitEngineOutput(Boolean(error), value);
+        },
+        onNelsonClearTerminal: () => {
+          configuredClearTerminal?.();
+          activeOutput?.clear?.();
+        },
+        onNelsonHtml: (html) => {
+          configuredHtml?.(html);
+          activeOutput?.html?.(String(html));
+        },
+        onNelsonExpandableText: (id, text) => {
+          configuredExpandableText?.(id, text);
+          activeOutput?.expandable?.(Number(id), String(text));
         },
       }).then((instance) => {
         const hasEngineApi =
@@ -165,6 +180,9 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         stderr,
         print: options.print,
         printErr: options.printErr,
+        clear: options.clear,
+        html: options.html,
+        expandable: options.expandable,
       };
       let exitCode = 0;
       try {
@@ -288,6 +306,56 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           throw new TypeError("Invalid Nelson code analyzer result");
         }
         return diagnostics;
+      }),
+    debuggerState: () =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableDebuggerState !== "function"
+        ) {
+          return { running: false, currentLine: null, currentFile: null, stack: [] };
+        }
+        return JSON.parse(
+          instance.ccall("nlsPortableDebuggerState", "string", [], []) ||
+            '{"running":false,"currentLine":null,"currentFile":null,"stack":[]}',
+        );
+      }),
+    debuggerGetBreakpoints: (file) =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableDebuggerGetBreakpoints !== "function"
+        ) {
+          return { file: String(file), lines: [] };
+        }
+        return JSON.parse(
+          instance.ccall(
+            "nlsPortableDebuggerGetBreakpoints",
+            "string",
+            ["string"],
+            [String(file)],
+          ) || '{"lines":[]}',
+        );
+      }),
+    debuggerToggleBreakpoint: (file, line) =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableDebuggerToggleBreakpoint !== "function"
+        ) {
+          return { file: String(file), lines: [] };
+        }
+        return JSON.parse(
+          instance.ccall(
+            "nlsPortableDebuggerToggleBreakpoint",
+            "string",
+            ["string", "number"],
+            [String(file), Number(line) || 0],
+          ) || '{"lines":[]}',
+        );
       }),
     loadUserModules: (options = {}) =>
       enqueue(async () => {

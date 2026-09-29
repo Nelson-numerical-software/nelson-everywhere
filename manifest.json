@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "9fc63ac78c2f",
-  "entryPoint": "index.html?runtime=wasm&build=9fc63ac78c2f",
+  "buildId": "7427707dccf7",
+  "entryPoint": "index.html?runtime=wasm&build=7427707dccf7",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -13,7 +13,7 @@
           "nelson-portable.mjs",
           "nelson-portable.wasm"
         ],
-        "bytes": 38115049
+        "bytes": 41837710
       },
       {
         "id": "resources",
@@ -21,7 +21,7 @@
         "files": [
           "nelson-portable.data"
         ],
-        "bytes": 17745782
+        "bytes": 19357876
       },
       {
         "id": "shell",
@@ -30,7 +30,7 @@
           ".nojekyll",
           "app.css",
           "app.js",
-          "assets/figureCanvasWorker-Byxfhq-I.js",
+          "assets/figureCanvasWorker-DO4fRWnq.js",
           "capabilities.json",
           "index.html",
           "nelson-coi-serviceworker.js",
@@ -39,7 +39,7 @@
           "nelson-worker.mjs",
           "nelson-workspace-store.mjs"
         ],
-        "bytes": 2865127
+        "bytes": 2888857
       }
     ],
     "onDemand": [
@@ -53,20 +53,245 @@
           "examples/example-gallery.js",
           "examples/examples.css",
           "examples/examples.js",
+          "examples/files/audio/examples/demo_recorder.m",
+          "examples/files/audio/examples/drums.ogg",
+          "examples/files/audio/examples/haha.wav",
+          "examples/files/audio/examples/index.json",
+          "examples/files/audio/examples/kaneda.flac",
+          "examples/files/audio/examples/opening.mp3",
+          "examples/files/audio/examples/play_flac.m",
+          "examples/files/audio/examples/play_generated_tone.m",
+          "examples/files/audio/examples/play_mp3.m",
+          "examples/files/audio/examples/play_ogg.m",
+          "examples/files/audio/examples/play_wav.m",
+          "examples/files/audio/examples/synth_piano/synth_piano_engine.m",
+          "examples/files/audio/examples/synth_piano/synth_piano_envelope.m",
+          "examples/files/audio/examples/synth_piano/synth_piano_keys_at.m",
+          "examples/files/audio/examples/synth_piano/synth_piano_score_groups.m",
+          "examples/files/audio/examples/synth_piano/synth_piano_songs.m",
+          "examples/files/audio/examples/synth_piano/synth_piano.m",
+          "examples/files/categorical/examples/categorical_summary.m",
+          "examples/files/categorical/examples/index.json",
+          "examples/files/control_system/examples/ball_on_plate_lqr.m",
+          "examples/files/control_system/examples/frequency_response.m",
+          "examples/files/control_system/examples/index.json",
+          "examples/files/control_system/examples/pid_closed_loop.m",
+          "examples/files/control_system/examples/step_response.m",
+          "examples/files/core/examples/index.json",
+          "examples/files/core/examples/workspace_basics.m",
+          "examples/files/data_analysis/examples/clean_measurements.m",
+          "examples/files/data_analysis/examples/group_observations.m",
+          "examples/files/data_analysis/examples/index.json",
+          "examples/files/data_structures/examples/index.json",
+          "examples/files/data_structures/examples/organize_records.m",
+          "examples/files/dictionary/examples/dictionary_lookup.m",
+          "examples/files/dictionary/examples/index.json",
+          "examples/files/elementary_functions/examples/classic_test_matrices.m",
+          "examples/files/elementary_functions/examples/index.json",
+          "examples/files/elementary_mathematics/examples/index.json",
+          "examples/files/elementary_mathematics/examples/matrix_arithmetic.m",
+          "examples/files/fftw/examples/index.json",
+          "examples/files/fftw/examples/two_dimensional_fft.m",
+          "examples/files/file_archiver/examples/create_archive.m",
+          "examples/files/file_archiver/examples/index.json",
+          "examples/files/files_folders_functions/examples/index.json",
+          "examples/files/files_folders_functions/examples/temporary_files.m",
+          "examples/files/function_handle/examples/index.json",
+          "examples/files/function_handle/examples/parameterized_function.m",
+          "examples/files/geometry/examples/convex_hull.m",
+          "examples/files/geometry/examples/index.json",
+          "examples/files/geometry/examples/scattered_data_interpolation.m",
+          "examples/files/graphics/examples/aircraft_flight_animation.m",
+          "examples/files/graphics/examples/analog_clock.m",
+          "examples/files/graphics/examples/boing_ball_3d.m",
+          "examples/files/graphics/examples/colorbar/demo_colorbar.m",
+          "examples/files/graphics/examples/conway_game_of_life.m",
+          "examples/files/graphics/examples/cube/demo_cube.m",
+          "examples/files/graphics/examples/demoscene.m",
+          "examples/files/graphics/examples/dot_tunnel.m",
+          "examples/files/graphics/examples/essential_plot_types.m",
+          "examples/files/graphics/examples/fluid_simulation_2d.m",
+          "examples/files/graphics/examples/fluid_sph_2d.m",
+          "examples/files/graphics/examples/formula_racing_aero_tradeoff.m",
+          "examples/files/graphics/examples/fourier_epicycles.m",
+          "examples/files/graphics/examples/fractal_tree.m",
+          "examples/files/graphics/examples/gray_scott_reaction_diffusion.m",
+          "examples/files/graphics/examples/harmonograph.m",
+          "examples/files/graphics/examples/index.json",
+          "examples/files/graphics/examples/mandelbrot_fractal.m",
+          "examples/files/graphics/examples/mathematical_shader.m",
+          "examples/files/graphics/examples/moebius_strip.m",
+          "examples/files/graphics/examples/movie/dance_1.png",
+          "examples/files/graphics/examples/movie/dance_2.png",
+          "examples/files/graphics/examples/movie/dance_3.png",
+          "examples/files/graphics/examples/movie/dance_4.png",
+          "examples/files/graphics/examples/movie/dance_5.png",
+          "examples/files/graphics/examples/movie/dance_6.png",
+          "examples/files/graphics/examples/movie/dance_7.png",
+          "examples/files/graphics/examples/movie/dance_8.png",
+          "examples/files/graphics/examples/movie/demo_movie.m",
+          "examples/files/graphics/examples/movie/leap_1.png",
+          "examples/files/graphics/examples/movie/leap_2.png",
+          "examples/files/graphics/examples/movie/leap_3.png",
+          "examples/files/graphics/examples/movie/leap_4.png",
+          "examples/files/graphics/examples/movie/leap_5.png",
+          "examples/files/graphics/examples/movie/leap_6.png",
+          "examples/files/graphics/examples/movie/leap_7.png",
+          "examples/files/graphics/examples/movie/leap_8.png",
+          "examples/files/graphics/examples/movie/leap_9.png",
+          "examples/files/graphics/examples/movie/readme.md",
+          "examples/files/graphics/examples/movie/run_1.png",
+          "examples/files/graphics/examples/movie/run_2.png",
+          "examples/files/graphics/examples/movie/run_3.png",
+          "examples/files/graphics/examples/movie/run_4.png",
+          "examples/files/graphics/examples/movie/run_5.png",
+          "examples/files/graphics/examples/movie/run_6.png",
+          "examples/files/graphics/examples/movie/run_7.png",
+          "examples/files/graphics/examples/movie/run_8.png",
+          "examples/files/graphics/examples/nefertiti-mask/nefertiti_mask.m",
+          "examples/files/graphics/examples/nefertiti-mask/nefertiti-mask.nh5",
+          "examples/files/graphics/examples/particle_funnel.m",
+          "examples/files/graphics/examples/portable_peaks.m",
+          "examples/files/graphics/examples/potential_flow_cylinder.m",
+          "examples/files/graphics/examples/rainbow_rose.m",
+          "examples/files/graphics/examples/retro_raycaster_assets/brick.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/enemy_render.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/enemy.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/energy.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/metal.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/portal.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/stone.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/weapon_render.png",
+          "examples/files/graphics/examples/retro_raycaster_assets/weapon.png",
+          "examples/files/graphics/examples/retro_raycaster.m",
+          "examples/files/graphics/examples/rigid_triple_pendulum.m",
+          "examples/files/graphics/examples/stanford-bunny/stanford_bunny.m",
+          "examples/files/graphics/examples/stanford-bunny/stanford-bunny.nh5",
+          "examples/files/graphics/examples/surface-lighting/demo_surface_lighting.m",
+          "examples/files/graphics/examples/twisted_surface_animation.m",
+          "examples/files/graphics/examples/uicontrol/button1Callback.m",
+          "examples/files/graphics/examples/uicontrol/button2Callback.m",
+          "examples/files/graphics/examples/uicontrol/complete_ui_components_demo.m",
+          "examples/files/graphics/examples/uicontrol/complete_uicontrol_demo.m",
+          "examples/files/graphics/examples/uicontrol/completeUiComponentsReset.m",
+          "examples/files/graphics/examples/uicontrol/completeUiComponentsUpdate.m",
+          "examples/files/graphics/examples/uicontrol/completeUiControlReset.m",
+          "examples/files/graphics/examples/uicontrol/completeUiControlUpdate.m",
+          "examples/files/graphics/examples/uicontrol/completeUiControlWaveform.m",
+          "examples/files/graphics/examples/uicontrol/resetPlot.m",
+          "examples/files/graphics/examples/uicontrol/uicontrol_demo_interruptible.m",
+          "examples/files/graphics/examples/uicontrol/uicontrol_demo.m",
+          "examples/files/graphics/examples/uicontrol/updatePlot.m",
+          "examples/files/graphics/examples/uihtml_unit_converter.m",
+          "examples/files/graphics/examples/uihtml_wave_packet.m",
+          "examples/files/graphics/examples/utah-teapot/teapot.nh5",
+          "examples/files/graphics/examples/utah-teapot/utah_teapot.m",
+          "examples/files/graphics/examples/ventilator/ventilator_gui.m",
+          "examples/files/graphics/examples/vibrating_membrane.m",
+          "examples/files/graphics_io/examples/animated_surface_gif.m",
+          "examples/files/graphics_io/examples/export_plot.m",
+          "examples/files/graphics_io/examples/index.json",
+          "examples/files/hdf5/examples/hdf5_roundtrip.m",
+          "examples/files/hdf5/examples/index.json",
+          "examples/files/image_processing/examples/denoise_image.m",
+          "examples/files/image_processing/examples/index.json",
+          "examples/files/image_processing/examples/morphology_shapes.m",
+          "examples/files/image_processing/examples/rotate_synthetic_image.m",
+          "examples/files/image_processing/examples/sobel_edge_detection.m",
+          "examples/files/integer/examples/fixed_width_integers.m",
+          "examples/files/integer/examples/index.json",
+          "examples/files/json/examples/index.json",
+          "examples/files/json/examples/json_patient.m",
+          "examples/files/json/examples/patient.json",
+          "examples/files/linear_algebra/examples/index.json",
+          "examples/files/linear_algebra/examples/matrix_decompositions.m",
+          "examples/files/linear_algebra/examples/preconditioned_conjugate_gradient.m",
+          "examples/files/linear_algebra/examples/solve_linear_system.m",
+          "examples/files/logical/examples/index.json",
+          "examples/files/logical/examples/logical_indexing.m",
+          "examples/files/matio/examples/index.json",
+          "examples/files/matio/examples/mat_file_roundtrip.m",
+          "examples/files/modules_manager/examples/create_temporary_module.m",
+          "examples/files/modules_manager/examples/index.json",
+          "examples/files/netcdf/examples/index.json",
+          "examples/files/netcdf/examples/netcdf_roundtrip.m",
+          "examples/files/ode_solvers/examples/ballode.m",
+          "examples/files/ode_solvers/examples/black_hole.m",
+          "examples/files/ode_solvers/examples/dde_bvp_added_features_example.m",
+          "examples/files/ode_solvers/examples/index.json",
+          "examples/files/ode_solvers/examples/levitron.m",
+          "examples/files/ode_solvers/examples/lorenz_attractor.m",
+          "examples/files/ode_solvers/examples/ode_delay_sensitivity_example.m",
+          "examples/files/ode_solvers/examples/ode_fully_implicit_consistent_example.m",
+          "examples/files/ode_solvers/examples/ode_object_event_interpolation_example.m",
+          "examples/files/ode_solvers/examples/ode_sundials_sparse_preconditioner_example.m",
+          "examples/files/ode_solvers/examples/ode45_convergence.m",
+          "examples/files/ode_solvers/examples/solar_system.m",
+          "examples/files/ode_solvers/examples/strange_attractors.m",
+          "examples/files/optimization/examples/constrained_quadratic.m",
+          "examples/files/optimization/examples/fit_noisy_ellipse.m",
+          "examples/files/optimization/examples/index.json",
+          "examples/files/optimization/examples/unconstrained_minimum.m",
+          "examples/files/overload/examples/complex/@complexObj/complexObj.m",
+          "examples/files/overload/examples/complex/@complexObj/display.m",
+          "examples/files/overload/examples/complex/@complexObj/plus.m",
+          "examples/files/overload/examples/complex/@complexObj/subsref.m",
+          "examples/files/overload/examples/complex/example_complex.m",
+          "examples/files/overload/examples/index.json",
+          "examples/files/polynomial_functions/examples/index.json",
+          "examples/files/polynomial_functions/examples/polynomial_roots.m",
+          "examples/files/profiler/examples/index.json",
+          "examples/files/profiler/examples/profile_computation.m",
+          "examples/files/random/examples/index.json",
+          "examples/files/random/examples/monte_carlo_pi.m",
+          "examples/files/random/examples/reproducible_random.m",
+          "examples/files/signal_processing/examples/chirp_spectrogram.m",
+          "examples/files/signal_processing/examples/filter_noisy_signal.m",
+          "examples/files/signal_processing/examples/index.json",
+          "examples/files/signal_processing/examples/signal_spectrum.m",
+          "examples/files/sparse/examples/index.json",
+          "examples/files/sparse/examples/sparse_poisson.m",
+          "examples/files/sparse/examples/sparsity_ordering.m",
+          "examples/files/special_functions/examples/index.json",
+          "examples/files/special_functions/examples/interpolation_methods.m",
+          "examples/files/spreadsheet/examples/index.json",
+          "examples/files/spreadsheet/examples/spreadsheet_roundtrip.m",
+          "examples/files/statistics/examples/correlation_analysis.m",
+          "examples/files/statistics/examples/descriptive_statistics.m",
+          "examples/files/statistics/examples/index.json",
+          "examples/files/statistics/examples/kmeans_clustering.m",
+          "examples/files/statistics/examples/weibull_sampling.m",
+          "examples/files/string/examples/index.json",
+          "examples/files/string/examples/parse_measurements.m",
+          "examples/files/table/examples/build_and_select_table.m",
+          "examples/files/table/examples/index.json",
+          "examples/files/table/examples/join_tables.m",
+          "examples/files/tests_manager/examples/index.json",
+          "examples/files/tests_manager/examples/run_unit_test.m",
+          "examples/files/time/examples/calendar_arithmetic.m",
+          "examples/files/time/examples/index.json",
+          "examples/files/trigonometric_functions/examples/coordinate_transforms.m",
+          "examples/files/trigonometric_functions/examples/index.json",
+          "examples/files/validators/examples/index.json",
+          "examples/files/validators/examples/inputParser_example.m",
+          "examples/files/validators/examples/validateattributes_example.m",
+          "examples/files/validators/examples/validatestring_example.m",
+          "examples/files/xml/examples/index.json",
+          "examples/files/xml/examples/xml_roundtrip.m",
           "examples/gallery-shared.css",
           "examples/index.html"
         ],
-        "bytes": 82650
+        "bytes": 7910327
       },
       {
         "id": "module-editor",
         "mode": "on-demand",
         "trigger": "module:editor",
         "files": [
-          "packs/editor/EditorPanel-DV2I0Fna.css",
-          "packs/editor/EditorPanel-DxJFfHoN.js"
+          "packs/editor/EditorPanel-Du_uqhMU.js",
+          "packs/editor/EditorPanel-DV2I0Fna.css"
         ],
-        "bytes": 3856527
+        "bytes": 3856589
       },
       {
         "id": "module-examples",
@@ -74,16 +299,16 @@
         "trigger": "module:examples",
         "files": [
           "packs/examples/ExamplesPanel-BblPti1m.css",
-          "packs/examples/ExamplesPanel-ByJJ9fIy.js"
+          "packs/examples/ExamplesPanel-Bt2QIaBd.js"
         ],
-        "bytes": 16673
+        "bytes": 16912
       },
       {
         "id": "module-mock",
         "mode": "on-demand",
         "trigger": "module:mock",
         "files": [
-          "packs/mock/mockEngine-tXWMA8FC.js"
+          "packs/mock/mockEngine-tZJfUsKB.js"
         ],
         "bytes": 30271
       },
@@ -93,7 +318,7 @@
         "trigger": "module:nmm",
         "files": [
           "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
-          "packs/nmm/PackageManagerPanel-D3Ug9blg.js"
+          "packs/nmm/PackageManagerPanel-LRz_EtB9.js"
         ],
         "bytes": 67421
       },
@@ -102,24 +327,24 @@
         "mode": "on-demand",
         "trigger": "nflow",
         "files": [
-          "nflow/app/app-B8apj0So.js",
-          "nflow/app/chunks/app-CscicbfW.js",
-          "nflow/app/chunks/canvas-navigation-tools-D9QMFmxg.js",
-          "nflow/app/chunks/console-host-9nu4cKgC.js",
-          "nflow/app/chunks/dup-drag-DXaGeoAq.js",
-          "nflow/app/chunks/fmu-import-CTZOf09X.js",
+          "nflow/app/app-xAF93gmJ.js",
+          "nflow/app/chunks/app-CapSpBSU.js",
+          "nflow/app/chunks/canvas-navigation-tools-BsitAY2L.js",
+          "nflow/app/chunks/console-host-DxiKBms5.js",
+          "nflow/app/chunks/dup-drag-DQySi80i.js",
+          "nflow/app/chunks/fmu-import-Bcx9dz-F.js",
           "nflow/app/chunks/helpers-CyRuiCrn.js",
-          "nflow/app/chunks/history-D3llpuYR.js",
+          "nflow/app/chunks/history-xvlfLyNo.js",
           "nflow/app/chunks/icon-cache-Dde71SRH.js",
-          "nflow/app/chunks/minimap-CCn3KX9V.js",
-          "nflow/app/chunks/modelica-settings-Dhit2MUc.js",
+          "nflow/app/chunks/minimap-B5gNU3d3.js",
+          "nflow/app/chunks/modelica-settings-n3oQTTaz.js",
           "nflow/app/chunks/native-rpc-CCBvMdjR.js",
-          "nflow/app/chunks/quick-connect-Dz47ny6z.js",
-          "nflow/app/chunks/quick-insert-BRfXC--M.js",
-          "nflow/app/chunks/render-Bc2bpsbr.js",
-          "nflow/app/chunks/simulation-toolbar-visibility-BOiZMafP.js",
-          "nflow/app/chunks/subsystem-handlers-Bk0k9p5E.js",
-          "nflow/app/chunks/wire-labels-DxBj0CUN.js",
+          "nflow/app/chunks/quick-connect-B9benokF.js",
+          "nflow/app/chunks/quick-insert-L7JUT5Cg.js",
+          "nflow/app/chunks/render-DPgkdYdJ.js",
+          "nflow/app/chunks/simulation-toolbar-visibility-Bhbu-CP3.js",
+          "nflow/app/chunks/subsystem-handlers-hbKJAzEG.js",
+          "nflow/app/chunks/wire-labels-CYInnMeZ.js",
           "nflow/app/floating-toolbar.21f3dc5fa02a.js",
           "nflow/app/floating-toolbar.js",
           "nflow/app/head-init.84ac660ea83e.js",
@@ -833,7 +1058,7 @@
           "nflow/styles/themes.css",
           "nflow/styles/ui-extras.css"
         ],
-        "bytes": 3875747
+        "bytes": 3876201
       },
       {
         "id": "nmm",
@@ -864,23 +1089,23 @@
     },
     {
       "file": "app.js",
-      "bytes": 1237040,
-      "sha256": "58cf99cd8b66dffaf3aadfa7776b81cdd12e7a972b12fc5808afa964cc78a7ee"
+      "bytes": 1251593,
+      "sha256": "47a9f80c3dc3e528c179e4ecc0732839f74e253c2ff662571e79c976778d5d18"
     },
     {
-      "file": "assets/figureCanvasWorker-Byxfhq-I.js",
-      "bytes": 9024,
-      "sha256": "bfa2e01cdd32585e50c123dc9d957fff7bd9ced1c55f1d44cdfdb2d9e48096d7"
+      "file": "assets/figureCanvasWorker-DO4fRWnq.js",
+      "bytes": 9095,
+      "sha256": "41150b4dafaa1bea393af5df358382c43f293c7e00331d3d32e64b518ef0e7f0"
     },
     {
       "file": "capabilities.json",
-      "bytes": 2499,
-      "sha256": "8b0029e2ba585f94d2e07c03a1a97331e7460c169eb13f463149ff0bfd7089fb"
+      "bytes": 2635,
+      "sha256": "ae9451fa06bcb7f19e8f7d5200bd299bae3afa734789302138cd00124620fc37"
     },
     {
       "file": "examples/catalog.json",
-      "bytes": 47024,
-      "sha256": "c5209e03dea9a47f5c4aeb2b3002c8e291e158572fe72c9170917d41e9155998"
+      "bytes": 49299,
+      "sha256": "31efe93a89b8602f295120c2bea6899a61b453c0e787c862d926139f4dff33fb"
     },
     {
       "file": "examples/example-gallery.d.ts",
@@ -903,6 +1128,1131 @@
       "sha256": "a4790f41f9eb090d52fcf1d9b5ed7106bbedcc4e62cc808a70225a7b50c6bdcf"
     },
     {
+      "file": "examples/files/audio/examples/demo_recorder.m",
+      "bytes": 2858,
+      "sha256": "8fc153dee79bbd956d216fd22953faed6226d05e46539e9765f9c390c9948987"
+    },
+    {
+      "file": "examples/files/audio/examples/drums.ogg",
+      "bytes": 62634,
+      "sha256": "dda99c83a25586792d6e294d1029b61b98cc38d9ac219e61547b12dfa506a67b"
+    },
+    {
+      "file": "examples/files/audio/examples/haha.wav",
+      "bytes": 11561,
+      "sha256": "5ce1ad41b824dc26b3e9233f12f2b8025f3c54877635a364027208bdd664b562"
+    },
+    {
+      "file": "examples/files/audio/examples/index.json",
+      "bytes": 2967,
+      "sha256": "4498c11e1cd9f90d66010ea6231c396c1061bebbd5d8e4ffc8f17c4f80983469"
+    },
+    {
+      "file": "examples/files/audio/examples/kaneda.flac",
+      "bytes": 797928,
+      "sha256": "1fa6756a3f5de222a9802ea5d74c686848058128506585c8077ed7066de1ec24"
+    },
+    {
+      "file": "examples/files/audio/examples/opening.mp3",
+      "bytes": 177028,
+      "sha256": "5a5d6e403bf02cb60ba5fd1e1f6dfb20f717f766930efb5449098a34dc0768c3"
+    },
+    {
+      "file": "examples/files/audio/examples/play_flac.m",
+      "bytes": 856,
+      "sha256": "352e8fe51897aa9cea623f6c0e77b7c4287b3ff7fba79038c829eb85f02c81ce"
+    },
+    {
+      "file": "examples/files/audio/examples/play_generated_tone.m",
+      "bytes": 1753,
+      "sha256": "ac8c64c3a79e1da401c8a80beef2d0adb814fb7ae057882f20f84b38d5fa4d33"
+    },
+    {
+      "file": "examples/files/audio/examples/play_mp3.m",
+      "bytes": 854,
+      "sha256": "1540a85d992d2736233727ea1d90efa203fc1f3ff327bbc6513b9b03a31b1a97"
+    },
+    {
+      "file": "examples/files/audio/examples/play_ogg.m",
+      "bytes": 869,
+      "sha256": "c844e24c2295aa1eb72d501a1da87cc1bf1d3b743188f690e2916f316b1f628a"
+    },
+    {
+      "file": "examples/files/audio/examples/play_wav.m",
+      "bytes": 853,
+      "sha256": "821e71c1a8f91ca09678e58b916e6b3eeb13cc5adbf706bbd3f5b564a55df045"
+    },
+    {
+      "file": "examples/files/audio/examples/synth_piano/synth_piano_engine.m",
+      "bytes": 8308,
+      "sha256": "0a7f646c637c5add38d600ce998150eaee912fa7723daa012d0155a74b1c7c6f"
+    },
+    {
+      "file": "examples/files/audio/examples/synth_piano/synth_piano_envelope.m",
+      "bytes": 1401,
+      "sha256": "a51a6ecd27a91111a8d0094e50e930c8781a5281232a4b5e164f92cf1c232450"
+    },
+    {
+      "file": "examples/files/audio/examples/synth_piano/synth_piano_keys_at.m",
+      "bytes": 1518,
+      "sha256": "0aa4aef6a5c62c9e53ef54f98bdf2030809c8fee5d39e5d76cac653eb0d3e1a3"
+    },
+    {
+      "file": "examples/files/audio/examples/synth_piano/synth_piano_score_groups.m",
+      "bytes": 1299,
+      "sha256": "ad064c3124d5f01ebe594c93d61b390972fb4549680cadb315d1a7906273737b"
+    },
+    {
+      "file": "examples/files/audio/examples/synth_piano/synth_piano_songs.m",
+      "bytes": 4997,
+      "sha256": "bc1f859fd87ceb138a96278ce196dc0e9f88fbbb36028ff4657491e8e99fe14f"
+    },
+    {
+      "file": "examples/files/audio/examples/synth_piano/synth_piano.m",
+      "bytes": 37055,
+      "sha256": "484ecdeee96691d8ad86d2fcf8c73a281d8e9988adcdb9fbe09e3bcb11b5087d"
+    },
+    {
+      "file": "examples/files/categorical/examples/categorical_summary.m",
+      "bytes": 221,
+      "sha256": "b46db67cdcc9b8f40321bee54ec068ed3f6e62def92a3ae327ae2b15e1a2cd29"
+    },
+    {
+      "file": "examples/files/categorical/examples/index.json",
+      "bytes": 322,
+      "sha256": "fdba52ab456749ed9123e31847df792d1fe5ef40083e66eab8c984bc92e6651d"
+    },
+    {
+      "file": "examples/files/control_system/examples/ball_on_plate_lqr.m",
+      "bytes": 24161,
+      "sha256": "495b4f581d001fb4bc374a15ebf7e950ca7b9c456a07da2ba20016331b7522c4"
+    },
+    {
+      "file": "examples/files/control_system/examples/frequency_response.m",
+      "bytes": 154,
+      "sha256": "58bff03a0fb52513e917e4471a278b1bf70eb295cce2b01873515fb22fff973b"
+    },
+    {
+      "file": "examples/files/control_system/examples/index.json",
+      "bytes": 1963,
+      "sha256": "31e53d60318b19f8a52cd34ff8a1cad9964ff8152d18dd9602ac2cebbd4544df"
+    },
+    {
+      "file": "examples/files/control_system/examples/pid_closed_loop.m",
+      "bytes": 1938,
+      "sha256": "f30491469e8a517316bd7627d43b3c8eb5ea465ab865f2db7e0dc7cd03edbbba"
+    },
+    {
+      "file": "examples/files/control_system/examples/step_response.m",
+      "bytes": 159,
+      "sha256": "8164db76ae310872d8f67eeb41c0477666390c38664eef8fb00ff7dcd486f0b7"
+    },
+    {
+      "file": "examples/files/core/examples/index.json",
+      "bytes": 318,
+      "sha256": "9756a001c241f712f320ba02f971ee0b4c4344e961531b9dc6879bdcaed6cee1"
+    },
+    {
+      "file": "examples/files/core/examples/workspace_basics.m",
+      "bytes": 281,
+      "sha256": "011d44501582c6ecc13e51fa0aed9076107243c16a0a0dee8bc80551db74034a"
+    },
+    {
+      "file": "examples/files/data_analysis/examples/clean_measurements.m",
+      "bytes": 243,
+      "sha256": "97b074a168f102333a0ce781f315627c8fb9d2adbf015632169f28e42205ac66"
+    },
+    {
+      "file": "examples/files/data_analysis/examples/group_observations.m",
+      "bytes": 270,
+      "sha256": "17fb297e8231c0f8436df78b4122378cd9ef5a8e9c93672049f1d1f36e86a84b"
+    },
+    {
+      "file": "examples/files/data_analysis/examples/index.json",
+      "bytes": 603,
+      "sha256": "cd393f2a0e79392c0f952cf551dbf56dc640c951daf26b31bbf186a571197613"
+    },
+    {
+      "file": "examples/files/data_structures/examples/index.json",
+      "bytes": 318,
+      "sha256": "ee35b0ef9c5e68a6c0f16c51fdb819ff64873a58ebf481ae26718273fd9d317e"
+    },
+    {
+      "file": "examples/files/data_structures/examples/organize_records.m",
+      "bytes": 297,
+      "sha256": "8995f9396dfc0b1e23f06d9434ce7217bb16e7227b58e84a9eb24b0190fcbb3f"
+    },
+    {
+      "file": "examples/files/dictionary/examples/dictionary_lookup.m",
+      "bytes": 222,
+      "sha256": "719ea20aab9b4f414b15488724c734812731d5b0fa6f9f2a02e098caa1d30468"
+    },
+    {
+      "file": "examples/files/dictionary/examples/index.json",
+      "bytes": 309,
+      "sha256": "04eac74f87ea7732697316682bda9cfb6d5f1325ee58a46aaa174d7b7fdc07fd"
+    },
+    {
+      "file": "examples/files/elementary_functions/examples/classic_test_matrices.m",
+      "bytes": 510,
+      "sha256": "a0c635de2433ec060ce116dc4fe1b7edafee4386a06dd411088d9d3b043aff3d"
+    },
+    {
+      "file": "examples/files/elementary_functions/examples/index.json",
+      "bytes": 603,
+      "sha256": "83ea241ce6df96fadb6b42c90f56d00f505211079aeadc292ad046638e55d682"
+    },
+    {
+      "file": "examples/files/elementary_mathematics/examples/index.json",
+      "bytes": 319,
+      "sha256": "1d52c7c177b67ca8c380c0faced03c0e80164177c2a19227a52de9fadb91a6a8"
+    },
+    {
+      "file": "examples/files/elementary_mathematics/examples/matrix_arithmetic.m",
+      "bytes": 182,
+      "sha256": "18980c1056a6007e3a5d281c6220d12dca12cf5a5e4861edcabbb372611a7bdf"
+    },
+    {
+      "file": "examples/files/fftw/examples/index.json",
+      "bytes": 593,
+      "sha256": "8af73509a8f410d4e4c93b7ca6742a11014292717c1c9dc601344e47b3f6d90c"
+    },
+    {
+      "file": "examples/files/fftw/examples/two_dimensional_fft.m",
+      "bytes": 688,
+      "sha256": "b9ffab9321155f94fde34cf95bbebbae29079ffcf01a83c8562565d2585978c4"
+    },
+    {
+      "file": "examples/files/file_archiver/examples/create_archive.m",
+      "bytes": 485,
+      "sha256": "bda9d34065702cf27ecdc7bf4f8329cbbfe5c21d0343b0164aa416dd7c2abcae"
+    },
+    {
+      "file": "examples/files/file_archiver/examples/index.json",
+      "bytes": 334,
+      "sha256": "5b721bb929674d22bf704669ba78e2f68f7c8fb628534195841d1407fc61e47a"
+    },
+    {
+      "file": "examples/files/files_folders_functions/examples/index.json",
+      "bytes": 330,
+      "sha256": "a826b15371c712dfbd712f0ca7f76fb0463f78ce7d30b58741917b173ee9107f"
+    },
+    {
+      "file": "examples/files/files_folders_functions/examples/temporary_files.m",
+      "bytes": 316,
+      "sha256": "19ef9376299b782d7ffdd9f4e4bf1a64168ec11c4b1d9e82de0fd9b4bf1e6c4e"
+    },
+    {
+      "file": "examples/files/function_handle/examples/index.json",
+      "bytes": 616,
+      "sha256": "44070925f7500766f37d668e1ce276dbabdc548e934cc4df611738928783a11b"
+    },
+    {
+      "file": "examples/files/function_handle/examples/parameterized_function.m",
+      "bytes": 264,
+      "sha256": "7a7e1da6a6515ebd1ec24bc82d2e32644f59f41635d8327cf62598cdb8cabf84"
+    },
+    {
+      "file": "examples/files/geometry/examples/convex_hull.m",
+      "bytes": 287,
+      "sha256": "be497df87973747b7a4c65e87dbbebf8de6d3ade4cb0ba2efff16ed7f16f68a1"
+    },
+    {
+      "file": "examples/files/geometry/examples/index.json",
+      "bytes": 961,
+      "sha256": "842be5a09355050986b47744cd3031951da0a54588c5dbd30ef4f9bbd46ca501"
+    },
+    {
+      "file": "examples/files/geometry/examples/scattered_data_interpolation.m",
+      "bytes": 2849,
+      "sha256": "637ca9a52acc6a1c6418f16f740a7cc967464aad069d620d19c4c371d0f645ee"
+    },
+    {
+      "file": "examples/files/graphics/examples/aircraft_flight_animation.m",
+      "bytes": 14392,
+      "sha256": "077c95929922633554d88efdfa6fb5d753ea536946f3ad9b0263ea1dfa2ae45e"
+    },
+    {
+      "file": "examples/files/graphics/examples/analog_clock.m",
+      "bytes": 2898,
+      "sha256": "8cf75b7fa269a2212a3e7f555e9e941355c06fa5226b42a4d82dcb3ee0a142a2"
+    },
+    {
+      "file": "examples/files/graphics/examples/boing_ball_3d.m",
+      "bytes": 11001,
+      "sha256": "e7e80a941109d8819ae06b23d8202aa3522e73ab1ca87014dc62c27e256e72a5"
+    },
+    {
+      "file": "examples/files/graphics/examples/colorbar/demo_colorbar.m",
+      "bytes": 1376,
+      "sha256": "f809790490a84f6f7d33ec77a586360e6b3fda9ef7b7ae8f52ca293ea8939423"
+    },
+    {
+      "file": "examples/files/graphics/examples/conway_game_of_life.m",
+      "bytes": 1492,
+      "sha256": "9ec10da22a853b924973adc17eaaf3a4fd0ef783c0d416ae1b213798fe921ee5"
+    },
+    {
+      "file": "examples/files/graphics/examples/cube/demo_cube.m",
+      "bytes": 2733,
+      "sha256": "9e474e824d03c0286d5351535e9a33f5b2d062ba2d85474419ec05e71675a29b"
+    },
+    {
+      "file": "examples/files/graphics/examples/demoscene.m",
+      "bytes": 66477,
+      "sha256": "677fdcfee4f49e2d59635d71885a3893cfc277b4c3f25e84b94d8167f980847d"
+    },
+    {
+      "file": "examples/files/graphics/examples/dot_tunnel.m",
+      "bytes": 2328,
+      "sha256": "a040791a89762267c55b9c4886257c313b345c2ac36482599f8c7b5e9a9cc8c7"
+    },
+    {
+      "file": "examples/files/graphics/examples/essential_plot_types.m",
+      "bytes": 3137,
+      "sha256": "e1ff1942aa0a7eb129f9ffe59c9c032074c241319ac4e911712d3758f244a3da"
+    },
+    {
+      "file": "examples/files/graphics/examples/fluid_simulation_2d.m",
+      "bytes": 23480,
+      "sha256": "06dc874dc4e24d25fc2ca638e136c0c00035a723c0308de3972d63848a12c58f"
+    },
+    {
+      "file": "examples/files/graphics/examples/fluid_sph_2d.m",
+      "bytes": 18769,
+      "sha256": "abe07c93e61ad02894ad62723c27d4dbfecb07f26a6ac4f8ce4ee4a4a4ae2487"
+    },
+    {
+      "file": "examples/files/graphics/examples/formula_racing_aero_tradeoff.m",
+      "bytes": 17347,
+      "sha256": "64b1398c7d39a4d049876c3c2b6bdfce88e5ba496eda7a5c03a96f899138e7c5"
+    },
+    {
+      "file": "examples/files/graphics/examples/fourier_epicycles.m",
+      "bytes": 9707,
+      "sha256": "feeb474fa406417bcf5258b634011dbf50cd4b2ab169b728b73e87a96a3f7754"
+    },
+    {
+      "file": "examples/files/graphics/examples/fractal_tree.m",
+      "bytes": 2042,
+      "sha256": "91f3cb636b98aaa30f5b67874c2ad702292ffb825f98d4f1fff52a0dfb013d05"
+    },
+    {
+      "file": "examples/files/graphics/examples/gray_scott_reaction_diffusion.m",
+      "bytes": 1877,
+      "sha256": "ef24400147ab237bec8ab120c6840d4b22a298ebfc32140a97ef94217b9286d1"
+    },
+    {
+      "file": "examples/files/graphics/examples/harmonograph.m",
+      "bytes": 11127,
+      "sha256": "d2a7052d2615497b45cae305996d08d33b5478f251a564a5e39f961a918e97e6"
+    },
+    {
+      "file": "examples/files/graphics/examples/index.json",
+      "bytes": 20353,
+      "sha256": "d3fa2956cd9bc637a7ded2a3d93de633eb7b0e21c566807ca096575c081bd676"
+    },
+    {
+      "file": "examples/files/graphics/examples/mandelbrot_fractal.m",
+      "bytes": 1766,
+      "sha256": "8d4cbaf9ca2b1f9c7563aa7aecf371e82c58b644e995c06a53327a537ebe100d"
+    },
+    {
+      "file": "examples/files/graphics/examples/mathematical_shader.m",
+      "bytes": 1912,
+      "sha256": "b8c88ba890d56469c83579d769d10f0c96266b25322e5c89b033b51d46bb561b"
+    },
+    {
+      "file": "examples/files/graphics/examples/moebius_strip.m",
+      "bytes": 1266,
+      "sha256": "d630af6379fa58f2f517f5d89446cc55be727c44104d57104a9bbb97db7a8eb7"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_1.png",
+      "bytes": 45309,
+      "sha256": "81def0bb53e5f75abe799aa386f1815bb74c644ff2d9f1e56897cb032385d11b"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_2.png",
+      "bytes": 45406,
+      "sha256": "917672d346fcbdae1bc8737325eb2ee34b2b3facb1ec80b0b21bd1e25a21f35a"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_3.png",
+      "bytes": 42792,
+      "sha256": "d12aa90103171f70911528a18765097d9acc912f2eb4607e9858e3d0dae131b7"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_4.png",
+      "bytes": 40812,
+      "sha256": "beee0fd9a40a3c7c51a1e2ade99388a177e6a33f01effd03bdea2d4582d3854c"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_5.png",
+      "bytes": 44281,
+      "sha256": "378d479191ca3dfe89d8bcd49bd5165bdcf93176f9d15545c25dfcf194b4df94"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_6.png",
+      "bytes": 43667,
+      "sha256": "d504b0b80ad4cb325255c511f1105f9f0a5014aa60b9686cdbc399064ebf8644"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_7.png",
+      "bytes": 43518,
+      "sha256": "8d3c6bb77e4de4cbc0add8003c886595607375addc230e67f1b0ff71b017319d"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/dance_8.png",
+      "bytes": 39678,
+      "sha256": "07d5937a603c189f1eb178d291e898525c5425724a7b5fa363a1b54304653038"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/demo_movie.m",
+      "bytes": 1240,
+      "sha256": "116bc4e2d2d889ff2e3d0c81238144eb27398c071c6a67651a6442094aa128e3"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_1.png",
+      "bytes": 44147,
+      "sha256": "02f726917f3e4e1665a99b767c5fa0e846b21458dc20eae08e5ac82b9e65fb82"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_2.png",
+      "bytes": 44289,
+      "sha256": "3a2d782b0b01e65f15aceb66c3ec8adcd1e28992de351794d84f421a7e45db42"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_3.png",
+      "bytes": 39706,
+      "sha256": "0e66764bcd3a248bc97074b7ea86800660a49e0491027da0f2abc42b7797cda2"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_4.png",
+      "bytes": 38039,
+      "sha256": "297512cadd485f504949fb1115cfbc2c15ad857eae8a2d32c7961eec5539b1e2"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_5.png",
+      "bytes": 35543,
+      "sha256": "ebbcc904be59837ca630c100c3f9ff1410f4c885270635444a7fef2eb594a5a6"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_6.png",
+      "bytes": 34796,
+      "sha256": "a40d3ada7c37af17a02e61884ee461a3b190b9df9abf0882a717eb328c56e3f2"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_7.png",
+      "bytes": 34812,
+      "sha256": "42f932134400f70301fafecff29ed853a582729b967141d89791c562d0472e69"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_8.png",
+      "bytes": 35986,
+      "sha256": "f39a5c1460cd277b9d532adcc684c695a8a792359c1cb3d859c7864c12b70124"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/leap_9.png",
+      "bytes": 38118,
+      "sha256": "087333bb0af5eb8e9d3d66857f76e84a73e1eb370c2cb74fdc25c11e0e2ee700"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/readme.md",
+      "bytes": 101,
+      "sha256": "04f53afb4bc5c4a723c6e07f61ae1ab9252d4e7a6dfe975728d709eb5e4aa971"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_1.png",
+      "bytes": 42105,
+      "sha256": "4b739626d88af4a562ceec6c46a28cf399805f01eca51e84920f3472efafd9ba"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_2.png",
+      "bytes": 37310,
+      "sha256": "68a7418aac7e810a86e6574387635df61b700e32e240b6f00f6ba182ef9c25bf"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_3.png",
+      "bytes": 34609,
+      "sha256": "f3458ed997215fbeaa37095da78d4da84842f1bad1825e1ec5df5ded71aa2643"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_4.png",
+      "bytes": 39445,
+      "sha256": "5c821c3d00d0239ec373f4ed519c8094e47277f128b9b81a9910fa3ce2becc74"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_5.png",
+      "bytes": 38322,
+      "sha256": "f8320f64086c9a8e1e267bfaa6b823ec9c9e2bc129aabde9e3673784a4ae20b0"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_6.png",
+      "bytes": 32074,
+      "sha256": "975d86ebb844e5a0278727f5a84860f2c8ca423d8d52a4bd125721d0f0262aaf"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_7.png",
+      "bytes": 31337,
+      "sha256": "eb2b7b30a657bdb8a599114d6157f68c0d0fcb4dc64785153bea4df39ac78fd9"
+    },
+    {
+      "file": "examples/files/graphics/examples/movie/run_8.png",
+      "bytes": 37527,
+      "sha256": "077c01cf3539fcde9bcacc2e7fa586e620965e1c94fac746f5dc219734689914"
+    },
+    {
+      "file": "examples/files/graphics/examples/nefertiti-mask/nefertiti_mask.m",
+      "bytes": 909,
+      "sha256": "2567534750cf2ea82dd532e75275fbd8ad1693909f6b5d7cc951bc3ca49b1d3c"
+    },
+    {
+      "file": "examples/files/graphics/examples/nefertiti-mask/nefertiti-mask.nh5",
+      "bytes": 25728,
+      "sha256": "603445d7f1455a8cbff7d133e16bbeed22686271db549a4e84958d080e8677fe"
+    },
+    {
+      "file": "examples/files/graphics/examples/particle_funnel.m",
+      "bytes": 18547,
+      "sha256": "92eb589e5e90fe21a786f361a021e8a8181475b21eb1ee4eb0f1e9cd2f999404"
+    },
+    {
+      "file": "examples/files/graphics/examples/portable_peaks.m",
+      "bytes": 147,
+      "sha256": "973c474935040bf95d9f62587f0e09678a2dd633deed9fc62786ad57cfd3ac98"
+    },
+    {
+      "file": "examples/files/graphics/examples/potential_flow_cylinder.m",
+      "bytes": 8642,
+      "sha256": "0f0124fe035a6ffb60f4d2f54048e56c981a2eb460e2e8e8f38800969ab77ca0"
+    },
+    {
+      "file": "examples/files/graphics/examples/rainbow_rose.m",
+      "bytes": 1726,
+      "sha256": "59f4f2dbbcfe67e31c0d3804e37d9d9a580a551e6cde9e6a54f38b97c4e268fa"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/brick.png",
+      "bytes": 155229,
+      "sha256": "757be120a9dc50fc0aa9a9850b7e7913eb879ea353c555b146b958ce3a7a4f6b"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/enemy_render.png",
+      "bytes": 566034,
+      "sha256": "2bcdb8e92e3ce61e6c14a18f4eff70c8f6486b1f86e9577cf5e627ffad853fba"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/enemy.png",
+      "bytes": 185161,
+      "sha256": "426f9c9131fb457649c29390833837ba4d1d4e64323737bd9f3af01c78c729d4"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/energy.png",
+      "bytes": 34040,
+      "sha256": "0ab74ccfe5f6f19635217edcae045d4d839311c50f4ea36363ed2df790b448a2"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/metal.png",
+      "bytes": 142050,
+      "sha256": "e5a4664d7b56c20832a26464c172f6278c1467a3a14c8ae5d239a6003c9619dc"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/portal.png",
+      "bytes": 135989,
+      "sha256": "0db025f4004f00c777e65afcee3f7010cd90ec9696bf7a2420a38aca4b60400a"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/stone.png",
+      "bytes": 164225,
+      "sha256": "b5073bd308dc8c7d1308bae682e8bc73481d105cc7bc74e54b8e546548542c44"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/weapon_render.png",
+      "bytes": 479952,
+      "sha256": "1293aa95a45485829d5be22cad1a9dcb8146253eac9a321557692272d27af439"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster_assets/weapon.png",
+      "bytes": 153999,
+      "sha256": "87e5f91f88452104a1d3cb4e3b1a2e2446c2148fd7b5c059d3c5a3896bc4d32b"
+    },
+    {
+      "file": "examples/files/graphics/examples/retro_raycaster.m",
+      "bytes": 25121,
+      "sha256": "63854d723510951bb7456deb7762718afe5599465f0d450d86c2a84ebd28a9a2"
+    },
+    {
+      "file": "examples/files/graphics/examples/rigid_triple_pendulum.m",
+      "bytes": 19951,
+      "sha256": "5e0d9ceee105677ca0a27539c33960ec06fc99cc14b75d762da28e0a9fcb0bd6"
+    },
+    {
+      "file": "examples/files/graphics/examples/stanford-bunny/stanford_bunny.m",
+      "bytes": 1227,
+      "sha256": "6a4263f7e5df40e815abc35b80eba0bd5042b45fd6caa04e2d27f610a69be6ff"
+    },
+    {
+      "file": "examples/files/graphics/examples/stanford-bunny/stanford-bunny.nh5",
+      "bytes": 3047582,
+      "sha256": "1967495082b9bf904f543edd094981fc4f21c1322ab9f742d3b65a8532279289"
+    },
+    {
+      "file": "examples/files/graphics/examples/surface-lighting/demo_surface_lighting.m",
+      "bytes": 807,
+      "sha256": "88bba20a6fe3ee99feb8d75f89d8edd321d81a0e9d8ebc3494e177e6f41bffe0"
+    },
+    {
+      "file": "examples/files/graphics/examples/twisted_surface_animation.m",
+      "bytes": 2122,
+      "sha256": "4b6305d2694098aacb9c2bcb08461e6c7d74c3e43c273e0adaf67c286fc1915e"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/button1Callback.m",
+      "bytes": 659,
+      "sha256": "7052de2fb2d6b46bdc09737bf09c1c4a41e9b41ea427330263bc3a45a88407b3"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/button2Callback.m",
+      "bytes": 667,
+      "sha256": "f7232b1fb687de5d5cb42eeeacab808f2fdfb88a32ed8828cd1ab78abd356cd0"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/complete_ui_components_demo.m",
+      "bytes": 8537,
+      "sha256": "7c1feee21101fc30435deba2cc54828e19bfaa127209395d9d0af243126f2f69"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/complete_uicontrol_demo.m",
+      "bytes": 4816,
+      "sha256": "95c4f17cdf94148db8f13c2c89812ae42c618c950699a56148d7022e5d50cf56"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/completeUiComponentsReset.m",
+      "bytes": 1079,
+      "sha256": "7bbec7c9341b33d697d9ab736231e16d116f627b72d8f1b33bf8e9097c7343cc"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/completeUiComponentsUpdate.m",
+      "bytes": 2569,
+      "sha256": "04bf43104c2e2300c2703a20643d4e8c57ed8335df94f0efe384f00306cb00d3"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/completeUiControlReset.m",
+      "bytes": 1106,
+      "sha256": "09568dfaf7673d43bcee1d57d18abe8c66dffc77ee3dfe069f58f49f92544ac3"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/completeUiControlUpdate.m",
+      "bytes": 2443,
+      "sha256": "6e0ee8175c0f67a4245f5c00819a7cd73a7c9e57c821b31e890fa4c0424bf5be"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/completeUiControlWaveform.m",
+      "bytes": 876,
+      "sha256": "7d582da740a7befc1fd799a62bdaea7d29adcbbc5abca996e84c456c65b7ecd8"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/resetPlot.m",
+      "bytes": 1420,
+      "sha256": "78c39318863f0b209ecc869bee511c92e991e6ba08935f5e1422cf8d681b0c7f"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/uicontrol_demo_interruptible.m",
+      "bytes": 1865,
+      "sha256": "df7fc4c8ca760f9ff00b2bca6c308ba3b56e0cd25f718596a65fd84e6c0463a8"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/uicontrol_demo.m",
+      "bytes": 2105,
+      "sha256": "14f426fbffa10979714a8de9ad8f269d24d4003427131f74cb4fb4311a7728f8"
+    },
+    {
+      "file": "examples/files/graphics/examples/uicontrol/updatePlot.m",
+      "bytes": 1238,
+      "sha256": "113c9763353fa2ad0f346219714b97aa26507feb4f663425567903769b31a092"
+    },
+    {
+      "file": "examples/files/graphics/examples/uihtml_unit_converter.m",
+      "bytes": 3617,
+      "sha256": "66d394e623f960f472a546d9532646c4d503fd8e769f546aa96eaa4c80a4f77d"
+    },
+    {
+      "file": "examples/files/graphics/examples/uihtml_wave_packet.m",
+      "bytes": 16821,
+      "sha256": "3ce13b95cb7f97eba2eee18902d22fad36d1642063d32786192a6ee17d14ecf5"
+    },
+    {
+      "file": "examples/files/graphics/examples/utah-teapot/teapot.nh5",
+      "bytes": 69741,
+      "sha256": "c25b0184bfd812b4e39292e87ed95d2f2868d48f1abed0087be5043b741ed77d"
+    },
+    {
+      "file": "examples/files/graphics/examples/utah-teapot/utah_teapot.m",
+      "bytes": 1377,
+      "sha256": "b1ab1ce2eb0b90b10ef0fd469303838137bb0aedfbf5159b650453da6dc891f1"
+    },
+    {
+      "file": "examples/files/graphics/examples/ventilator/ventilator_gui.m",
+      "bytes": 26581,
+      "sha256": "8eb39e108e567854d8cebb1f71a6039b86852c31f821284367a269f3aec1c599"
+    },
+    {
+      "file": "examples/files/graphics/examples/vibrating_membrane.m",
+      "bytes": 6945,
+      "sha256": "f292ffb6c8f6c511c1171357cf1879abf6ec08fb90e6d57ef8066eb6dc4d1e94"
+    },
+    {
+      "file": "examples/files/graphics_io/examples/animated_surface_gif.m",
+      "bytes": 2187,
+      "sha256": "ab596779dfd628a4c2ed62de75da63d55823b4dcc89ae3b6a7fa81766a06d00a"
+    },
+    {
+      "file": "examples/files/graphics_io/examples/export_plot.m",
+      "bytes": 314,
+      "sha256": "f27b7b5ba1461dc736f11e4d0c8771c8700405680f2d547465203322614d36be"
+    },
+    {
+      "file": "examples/files/graphics_io/examples/index.json",
+      "bytes": 974,
+      "sha256": "409f502c229ba501ea57685c3051a4363cf02720498d3be2bf812570405f95ae"
+    },
+    {
+      "file": "examples/files/hdf5/examples/hdf5_roundtrip.m",
+      "bytes": 327,
+      "sha256": "020c5ce28b1f7075bb7c45496178d54495a441178bb67975a06a7e16e7cdeb21"
+    },
+    {
+      "file": "examples/files/hdf5/examples/index.json",
+      "bytes": 314,
+      "sha256": "92d0907bada345511f8234c6ec19ea4ee58212aebb7b64d8f0ce1d91d6804dff"
+    },
+    {
+      "file": "examples/files/image_processing/examples/denoise_image.m",
+      "bytes": 321,
+      "sha256": "617c28d013b611c5c22974a3dc82fa2aaa6a7c9021e154ac37ed6344c3ba9a06"
+    },
+    {
+      "file": "examples/files/image_processing/examples/index.json",
+      "bytes": 1724,
+      "sha256": "af910e7f67f6c40669112e581cf147a295b7bb501006a4d69df1f8fe8350e346"
+    },
+    {
+      "file": "examples/files/image_processing/examples/morphology_shapes.m",
+      "bytes": 311,
+      "sha256": "d3b7c10b4f2642ad240448aeaf7c445217d59923f0ec1a2e3c56fce102627530"
+    },
+    {
+      "file": "examples/files/image_processing/examples/rotate_synthetic_image.m",
+      "bytes": 1537,
+      "sha256": "88bd2560b0c819327401ff0cb9ebad1c2b4a0541db49680a69015db1079567c4"
+    },
+    {
+      "file": "examples/files/image_processing/examples/sobel_edge_detection.m",
+      "bytes": 2163,
+      "sha256": "af05d70762a4962826f321f594ccdce3aece993f8d7389ce8e2132f1760a4d4c"
+    },
+    {
+      "file": "examples/files/integer/examples/fixed_width_integers.m",
+      "bytes": 372,
+      "sha256": "e46ca90db54e5d4e348cb33af28323fa0870a818449575e434ba6df78dbda2c9"
+    },
+    {
+      "file": "examples/files/integer/examples/index.json",
+      "bytes": 597,
+      "sha256": "0c68aaa808736f6bfb3ff94a30045de5a6aaf30e16d0caa3de6d66a9539a3c37"
+    },
+    {
+      "file": "examples/files/json/examples/index.json",
+      "bytes": 564,
+      "sha256": "1bb6699860d4efe5ed9f5a2a7cf222d5136f27aafa3867baab246cac74c1e4d3"
+    },
+    {
+      "file": "examples/files/json/examples/json_patient.m",
+      "bytes": 370,
+      "sha256": "dffcc13c57ab2b168061031ea8cd9f46d7fe2262a5c189092a32371cd1606720"
+    },
+    {
+      "file": "examples/files/json/examples/patient.json",
+      "bytes": 3713,
+      "sha256": "55a2efb05a686f6afc5c6c90c65ff64592c6dee06ecc52e5da219321aa540872"
+    },
+    {
+      "file": "examples/files/linear_algebra/examples/index.json",
+      "bytes": 1211,
+      "sha256": "9bbb625a05c85f66d702508a11f2185c3e93cff20130a140f6b72cfae73005cf"
+    },
+    {
+      "file": "examples/files/linear_algebra/examples/matrix_decompositions.m",
+      "bytes": 284,
+      "sha256": "717947123e5492739c24cdc4affb663644abe3a8beaea2c9fea4f2f4d93b30db"
+    },
+    {
+      "file": "examples/files/linear_algebra/examples/preconditioned_conjugate_gradient.m",
+      "bytes": 1797,
+      "sha256": "335811541bfd1d5d22de4a80d3d43447fd91ba89cfad701f8844b47e0cb8e876"
+    },
+    {
+      "file": "examples/files/linear_algebra/examples/solve_linear_system.m",
+      "bytes": 222,
+      "sha256": "58d564073138852694cba5c8642157060af325288665cadae490df9629c58804"
+    },
+    {
+      "file": "examples/files/logical/examples/index.json",
+      "bytes": 589,
+      "sha256": "96714f2420cb52729cedab164f1f26d33722f56449cbe4da47d6b2e61c0145c1"
+    },
+    {
+      "file": "examples/files/logical/examples/logical_indexing.m",
+      "bytes": 406,
+      "sha256": "04667389b2e35293b0a981b1e607634d61182c264477a2675da66558732ea46e"
+    },
+    {
+      "file": "examples/files/matio/examples/index.json",
+      "bytes": 329,
+      "sha256": "666a8204b08d77a30bd4fed33bfce3eb6d010578c3d9fea4a1d0dd1697c13c5a"
+    },
+    {
+      "file": "examples/files/matio/examples/mat_file_roundtrip.m",
+      "bytes": 307,
+      "sha256": "d35050272464740a6cd23de71c5b077e8693b3b23c377f5595b0e983bd547695"
+    },
+    {
+      "file": "examples/files/modules_manager/examples/create_temporary_module.m",
+      "bytes": 1054,
+      "sha256": "6a6998cfe242daf33570f61ba6e530252861600b7cedc9c80307d5bd3713983e"
+    },
+    {
+      "file": "examples/files/modules_manager/examples/index.json",
+      "bytes": 352,
+      "sha256": "c3379c15fb799498bd955a837a539da2fc8c624b1c51c1ec7e948a4fb3ff5026"
+    },
+    {
+      "file": "examples/files/netcdf/examples/index.json",
+      "bytes": 322,
+      "sha256": "80c5e0f7e654a3743d4dc6b987040eec571fd20a401520459f92ea3a88e0af21"
+    },
+    {
+      "file": "examples/files/netcdf/examples/netcdf_roundtrip.m",
+      "bytes": 332,
+      "sha256": "23d86d17596567ffb2a1f259ba46d25b990bb55776a55a9f299f4d978b989f56"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/ballode.m",
+      "bytes": 6976,
+      "sha256": "14effd888970d0ce52efdbbfc5c8f34223d95729970fac4836ddf8e56654ac3e"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/black_hole.m",
+      "bytes": 14514,
+      "sha256": "2b90bad4588830d38bed57019239c7a3d6827091d9d4ed393cc3704c7cb60ab2"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/dde_bvp_added_features_example.m",
+      "bytes": 4076,
+      "sha256": "1cca14bb625199c2473db30128ac15ff1839b2e7fef80cece397fc77c12382a1"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/index.json",
+      "bytes": 5631,
+      "sha256": "01e7a205b148d8a067db62e30375acf2c6ba2f7d50eb20e8577e331cf1952b65"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/levitron.m",
+      "bytes": 13823,
+      "sha256": "219257cfbe620f90f807b686cbb23634ca48bad75a18bf877a320ab44773c986"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/lorenz_attractor.m",
+      "bytes": 1948,
+      "sha256": "88762e6f96f8b7c18bbac344a5c2dbb96dbe3838179d02b58900937f183ab6d4"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/ode_delay_sensitivity_example.m",
+      "bytes": 2527,
+      "sha256": "36aa57663e73ab2cab5175f4afb710f7c97bec38f317a2d934ac1590b45d6275"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/ode_fully_implicit_consistent_example.m",
+      "bytes": 1842,
+      "sha256": "60708b12560210ba16d4411380400211c9d211c194e5ec9e9fed7e6b5fe82836"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/ode_object_event_interpolation_example.m",
+      "bytes": 2173,
+      "sha256": "1d0534917708fe67f143fd44a58660c9f923ac060cfc8e89c9e3cd6f293bda7e"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/ode_sundials_sparse_preconditioner_example.m",
+      "bytes": 3319,
+      "sha256": "be8a7fafc0e73d33d57763235fdd4a4ac1a5f6839a8b57c97741ee6ce5675827"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/ode45_convergence.m",
+      "bytes": 1914,
+      "sha256": "62897b0ef36d4948b7ec3fb5fccdf45344fc12786910f501f25ad6fb8da2db34"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/solar_system.m",
+      "bytes": 11805,
+      "sha256": "3f8269d09334ee2416f97cef3ace8f600f378da109889d338532e9f47468ee8d"
+    },
+    {
+      "file": "examples/files/ode_solvers/examples/strange_attractors.m",
+      "bytes": 11196,
+      "sha256": "a9596b2d9af1346e7dfa763719c0e0557a68617d2128874e1463fa2977e82571"
+    },
+    {
+      "file": "examples/files/optimization/examples/constrained_quadratic.m",
+      "bytes": 274,
+      "sha256": "a41e6bfd96d6dedc45df77f9e8f42ca15be8b34deb97664af2a89c70abf9b3e4"
+    },
+    {
+      "file": "examples/files/optimization/examples/fit_noisy_ellipse.m",
+      "bytes": 2672,
+      "sha256": "80b0c67c7774ed112b9b48fef577e2012b608b5cc2ef9cd55227e014472332a2"
+    },
+    {
+      "file": "examples/files/optimization/examples/index.json",
+      "bytes": 1193,
+      "sha256": "2b37cf6bfde38cb8a8d678cafe9a4ee0d889c4f1b871b257376e7ea9fa4add5c"
+    },
+    {
+      "file": "examples/files/optimization/examples/unconstrained_minimum.m",
+      "bytes": 282,
+      "sha256": "71a1dee6604470e38a79ac4b6b103b19bf8e06dda2bc11795a1ab94f6944adea"
+    },
+    {
+      "file": "examples/files/overload/examples/complex/@complexObj/complexObj.m",
+      "bytes": 889,
+      "sha256": "c9b2f111d8800e72d47fe9e94a62e605f6346f67cc796d7823ece3e9b470033f"
+    },
+    {
+      "file": "examples/files/overload/examples/complex/@complexObj/display.m",
+      "bytes": 765,
+      "sha256": "fdd7f9d6e54c25df91e5a88a40df7ca09ae91ba76f50a2494482f5077e917df6"
+    },
+    {
+      "file": "examples/files/overload/examples/complex/@complexObj/plus.m",
+      "bytes": 672,
+      "sha256": "d875072a2ec047993d7fbe23b8e72b6ab0d27d71ebf6a4237bd70124568a6a06"
+    },
+    {
+      "file": "examples/files/overload/examples/complex/@complexObj/subsref.m",
+      "bytes": 2546,
+      "sha256": "fd7e8b9ac3dec5e35256345c24ba9b228447689bcc187b3cdb69c6936f1a0c7a"
+    },
+    {
+      "file": "examples/files/overload/examples/complex/example_complex.m",
+      "bytes": 743,
+      "sha256": "fbef731fae347d7d749eaec4aab7dbe7c9481443d5f259c506de4741e3fe6ed5"
+    },
+    {
+      "file": "examples/files/overload/examples/index.json",
+      "bytes": 338,
+      "sha256": "3d56e932bed388e179121692ddd900740f86ece1e632c865aef5b5d98a4bf311"
+    },
+    {
+      "file": "examples/files/polynomial_functions/examples/index.json",
+      "bytes": 333,
+      "sha256": "fd588ab1683298e7a73c1365bcf9fac86440eeeded7d31318285d3f813b05283"
+    },
+    {
+      "file": "examples/files/polynomial_functions/examples/polynomial_roots.m",
+      "bytes": 267,
+      "sha256": "4399023d52f3aa6dc5eb53dd74286fb1e17605fc78f403041d714e89af3bb3b6"
+    },
+    {
+      "file": "examples/files/profiler/examples/index.json",
+      "bytes": 332,
+      "sha256": "9f9beb2a10a0ad1b9ed44e03c0361b256ad6b5d2e1ddec171d5ffe2effdfe2d7"
+    },
+    {
+      "file": "examples/files/profiler/examples/profile_computation.m",
+      "bytes": 234,
+      "sha256": "b4823249b7c7db5449c68e3ad4e3070bf42dd312262d18a62f726dbe97d392f5"
+    },
+    {
+      "file": "examples/files/random/examples/index.json",
+      "bytes": 927,
+      "sha256": "255733c3156f713775b1a31342f9bd6a16f97229bb8243c17e0d6b182b90aa1e"
+    },
+    {
+      "file": "examples/files/random/examples/monte_carlo_pi.m",
+      "bytes": 1595,
+      "sha256": "26c164a8275ca089ab34fd3802f404825cc1951b6e239abca7e4be569f544000"
+    },
+    {
+      "file": "examples/files/random/examples/reproducible_random.m",
+      "bytes": 208,
+      "sha256": "95b05ef7ed48e3a996ad4c8e24fa68c15c97309c6803c7e21ca9f4555a338f30"
+    },
+    {
+      "file": "examples/files/signal_processing/examples/chirp_spectrogram.m",
+      "bytes": 2418,
+      "sha256": "4f0d1efab70e81752467f4fd34c6f0dfaf1d33f027b765e7a575d216da5e244a"
+    },
+    {
+      "file": "examples/files/signal_processing/examples/filter_noisy_signal.m",
+      "bytes": 306,
+      "sha256": "390a93926ca6ccd857857ebf6e80bfbf16499aced65754d5cd63f210771b6c8c"
+    },
+    {
+      "file": "examples/files/signal_processing/examples/index.json",
+      "bytes": 1227,
+      "sha256": "fdcefc4d22efc9e233907d83643a2ee2801d6260be0206c1090195e0e7ee04f3"
+    },
+    {
+      "file": "examples/files/signal_processing/examples/signal_spectrum.m",
+      "bytes": 365,
+      "sha256": "9c02ae173339b0608a78a21b1a03c9d865eea6c6fd82fe8238d410dbd2e2da24"
+    },
+    {
+      "file": "examples/files/sparse/examples/index.json",
+      "bytes": 980,
+      "sha256": "99d1483928a6ba79645e59b90bb25f8e99b4b5532e082aa2e89db822321dbfb4"
+    },
+    {
+      "file": "examples/files/sparse/examples/sparse_poisson.m",
+      "bytes": 247,
+      "sha256": "6e010c97fb0c93aa29b2afdbc6f2b881666f493b4319ae86f4618a4f62268f6f"
+    },
+    {
+      "file": "examples/files/sparse/examples/sparsity_ordering.m",
+      "bytes": 1899,
+      "sha256": "ecdea0f582f4877ad73064008bdca94c4abb28f029d6a7d56c5c1e09591d127c"
+    },
+    {
+      "file": "examples/files/special_functions/examples/index.json",
+      "bytes": 654,
+      "sha256": "763f30ecb461fecf5191a4183dda3795eedabc261d9a6c8927b954a5c1818ba5"
+    },
+    {
+      "file": "examples/files/special_functions/examples/interpolation_methods.m",
+      "bytes": 2671,
+      "sha256": "955e7552daccdb2358f8b2985db3f8cc8780ae3ac25cca04c1a2cca95beddffa"
+    },
+    {
+      "file": "examples/files/spreadsheet/examples/index.json",
+      "bytes": 324,
+      "sha256": "1c13832214f5f065b7e4e8f01c058323be749a44edd2ccfa7a2b088482bbe72b"
+    },
+    {
+      "file": "examples/files/spreadsheet/examples/spreadsheet_roundtrip.m",
+      "bytes": 341,
+      "sha256": "bba0b2a0a76c6fad1d0fa4821e2766777da44411b93e2c6250c2d987e3dd4260"
+    },
+    {
+      "file": "examples/files/statistics/examples/correlation_analysis.m",
+      "bytes": 203,
+      "sha256": "53dbf4b1fa4bbc82cc9f49fe9cf9605785570b0cb9c2753859d8ef7e0a928ec8"
+    },
+    {
+      "file": "examples/files/statistics/examples/descriptive_statistics.m",
+      "bytes": 339,
+      "sha256": "e1e126aeb154143112bac72cf93a7fd45696729e99e741741b2e69f6aeb4d452"
+    },
+    {
+      "file": "examples/files/statistics/examples/index.json",
+      "bytes": 1805,
+      "sha256": "3e06e1d425dc3ea079e1b9fdd0b73a40a7ddd2a49b3052808865d7383c84222c"
+    },
+    {
+      "file": "examples/files/statistics/examples/kmeans_clustering.m",
+      "bytes": 2038,
+      "sha256": "a6b633b9d314a3a204877ed44fb468411dcc16595f0e6dc47f070d12d55aacce"
+    },
+    {
+      "file": "examples/files/statistics/examples/weibull_sampling.m",
+      "bytes": 1603,
+      "sha256": "9d10b761b4f6cdc86c90c285ceeac79f7f19541ebfbcbfd82a633acbb7400d73"
+    },
+    {
+      "file": "examples/files/string/examples/index.json",
+      "bytes": 562,
+      "sha256": "6282a50d4dc1c5c513d85e8b01036638ebf8bf8d855b7169f201c0f208a4ff29"
+    },
+    {
+      "file": "examples/files/string/examples/parse_measurements.m",
+      "bytes": 393,
+      "sha256": "256bfcf2fc5e4a8cd129539a5376eaebc80d0a1c37fb4cd9c4e22fe0fc54d0c7"
+    },
+    {
+      "file": "examples/files/table/examples/build_and_select_table.m",
+      "bytes": 355,
+      "sha256": "c0133e4e771e2fa2763c3b92fe7fca9fbaf495c01aafe4c6b796c668c69cba8a"
+    },
+    {
+      "file": "examples/files/table/examples/index.json",
+      "bytes": 589,
+      "sha256": "6b36d5aba13429c3a9481bed09b709de0bb99723d5190d75f134a1a240fac7ea"
+    },
+    {
+      "file": "examples/files/table/examples/join_tables.m",
+      "bytes": 381,
+      "sha256": "c9c7729faf7a878e1b56a3ef57423a7c4af4587dbc2bdc102a5925eb255b3c3d"
+    },
+    {
+      "file": "examples/files/tests_manager/examples/index.json",
+      "bytes": 332,
+      "sha256": "49a682ec146f008061dfa5b329e3377eed2e4925f7e6264037487057ec590d5c"
+    },
+    {
+      "file": "examples/files/tests_manager/examples/run_unit_test.m",
+      "bytes": 305,
+      "sha256": "52d1b969ce252584cc388529fbcd5e867c1760809cb13daf3c5e776d1609df28"
+    },
+    {
+      "file": "examples/files/time/examples/calendar_arithmetic.m",
+      "bytes": 412,
+      "sha256": "1b0e7f8b891517b89c1b2a241ef17ce9e26d078738e6aa578811017dc401ea56"
+    },
+    {
+      "file": "examples/files/time/examples/index.json",
+      "bytes": 558,
+      "sha256": "402b8a2057ead826c49c9bf51d695b8327ab122ef00b71e790c3c58774b25451"
+    },
+    {
+      "file": "examples/files/trigonometric_functions/examples/coordinate_transforms.m",
+      "bytes": 806,
+      "sha256": "dc5dd4aa1033ea1c9c5987ba9649c7a650b54f4ef34eff783487cc1dcd8b47ba"
+    },
+    {
+      "file": "examples/files/trigonometric_functions/examples/index.json",
+      "bytes": 608,
+      "sha256": "202999cb8b03410c55e709dc3da180d70315c3a0f64df2472dd31dcb6ef17b71"
+    },
+    {
+      "file": "examples/files/validators/examples/index.json",
+      "bytes": 867,
+      "sha256": "155783b34d31593c3d944799de4f4d83d354476a4024730c80e9789c7ef71880"
+    },
+    {
+      "file": "examples/files/validators/examples/inputParser_example.m",
+      "bytes": 951,
+      "sha256": "14d28ae238e017c06e48867ac3ef67f74c7cbc353fcb926af7ab745821978882"
+    },
+    {
+      "file": "examples/files/validators/examples/validateattributes_example.m",
+      "bytes": 658,
+      "sha256": "e115353dc8dcbd28652e799d5d10713caff70a8140d417997bace350cac15d34"
+    },
+    {
+      "file": "examples/files/validators/examples/validatestring_example.m",
+      "bytes": 669,
+      "sha256": "aa2027b117a263d11ed0cc1c1a0b6a2667f55d01b16eb53b5ef870d5fd097874"
+    },
+    {
+      "file": "examples/files/xml/examples/index.json",
+      "bytes": 320,
+      "sha256": "8d37d3c95ed95c7d73657c0d411bc32e5fa4cd00a1a0f6d16e6090d5552c96ff"
+    },
+    {
+      "file": "examples/files/xml/examples/xml_roundtrip.m",
+      "bytes": 255,
+      "sha256": "c68425aa3229cdb0e7786f01d90d4e5deee4be48b97b1d44bded07368839c4bc"
+    },
+    {
       "file": "examples/gallery-shared.css",
       "bytes": 9404,
       "sha256": "2cedf7238b0bb4a19e92f1c93e303a4cb0912f87a91cb27ffa963174dde649ea"
@@ -910,12 +2260,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "0617c7a3a390ac2150f1735acb94c626213137447978a22cfca99e582272b8e7"
+      "sha256": "7ed5bf6d1c8496b291a999978ae9037bf9328c7de23f869c9a7d859afcbf0946"
     },
     {
       "file": "index.html",
       "bytes": 1625,
-      "sha256": "0b85331058429c3fd871d336a02ebfbec8d1eff9e0c8fa92c0b195731062cd76"
+      "sha256": "4e69b1b1a94dd84d265c2c49f0505e50b3def53982215faa0a32753f6144aea3"
     },
     {
       "file": "nelson-coi-serviceworker.js",
@@ -924,33 +2274,33 @@
     },
     {
       "file": "nelson-portable.data",
-      "bytes": 17745782,
-      "sha256": "715188a853fb2fdff6f94b3cf8f1fc66fee0e7b5ae3f01a80df7c4ee543224ae"
+      "bytes": 19357876,
+      "sha256": "4c224a3dbadc8a92f144229310c2ad03b98fd9c65e4909aa2ec85a674917118c"
     },
     {
       "file": "nelson-portable.mjs",
-      "bytes": 577616,
-      "sha256": "3e11c69f47731fb8f14c022cf24af293182f766925534e95d4336b1e0a3fb718"
+      "bytes": 594319,
+      "sha256": "5dd6f9a1b51e117cd532fb639c190f6514af43c98d534f70f04828050ec70eee"
     },
     {
       "file": "nelson-portable.wasm",
-      "bytes": 37537433,
-      "sha256": "ff627f6ee1caf7e591dd340afaa9164164d27c4cfc95305c87923a09017504e6"
+      "bytes": 41243391,
+      "sha256": "bd45f98ce7d738529a3fd8520405e82437cdcb4729b2b5f5319a4ac357e53008"
     },
     {
       "file": "nelson-runtime.mjs",
-      "bytes": 10497,
-      "sha256": "bf11f92e46325f9683b7bfcda1169052f88a3fa6c4d99fd7a518d49b7876e4a3"
+      "bytes": 12909,
+      "sha256": "1e7c17b3fd654f87238b4d3ddd5ed2aadcc973dc8e13c040adcd3ba4d42d0d9f"
     },
     {
       "file": "nelson-worker-protocol.mjs",
-      "bytes": 14674,
-      "sha256": "5c33d8f94e65fac81ff84f78d91957458a9e16a55e56fc008283025d81856925"
+      "bytes": 17995,
+      "sha256": "c4011f36685874506cd16cef3e4bea4a6f9e7a2a5587e31ef195c3cd3cffeeda"
     },
     {
       "file": "nelson-worker.mjs",
-      "bytes": 33896,
-      "sha256": "acd19b4ec78e8024ff3e19098248b61b8a1c8a72658c401150a1b631151fd4d0"
+      "bytes": 37133,
+      "sha256": "c3a4a54c236ff60ca2d49edba12cdbece362349729ee8426f6c1506265fc6879"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -958,34 +2308,34 @@
       "sha256": "2d2741130038745946b17cbb365d80a075608a851b7830ffd0a812358b3f0365"
     },
     {
-      "file": "nflow/app/app-B8apj0So.js",
-      "bytes": 13653,
-      "sha256": "bbbaccb7d4246c1d7588c6890e50ba9351adfba6d75aa5c5824b23437ddbfa21"
+      "file": "nflow/app/app-xAF93gmJ.js",
+      "bytes": 14107,
+      "sha256": "50e457f925db803ce106d3665a7ecc854309c77741794ef17d4cd736be634c5d"
     },
     {
-      "file": "nflow/app/chunks/app-CscicbfW.js",
+      "file": "nflow/app/chunks/app-CapSpBSU.js",
       "bytes": 548501,
-      "sha256": "d03d00b615575e9035f657e478fab6607b067c9d76aa619b7b24837dfadbf132"
+      "sha256": "3ecabab9c6a13b23cc5d0da21b91ea698de976cc20ee99ed3e1ce49a7d3efd07"
     },
     {
-      "file": "nflow/app/chunks/canvas-navigation-tools-D9QMFmxg.js",
+      "file": "nflow/app/chunks/canvas-navigation-tools-BsitAY2L.js",
       "bytes": 608,
-      "sha256": "149f1ab994a5dc75ff15167e58ff8f2808884324dfccb090b679c668e387f1ed"
+      "sha256": "965990f471fe0174f91ea62856646204a93b4fb076239fd270f3035fe1e6962e"
     },
     {
-      "file": "nflow/app/chunks/console-host-9nu4cKgC.js",
+      "file": "nflow/app/chunks/console-host-DxiKBms5.js",
       "bytes": 11424,
-      "sha256": "8b24cd26ae00c1ebdc44b035fd1d0ee9d81472b8cfec938cdf8243fea020e0d1"
+      "sha256": "b1ab5a5736f3203fff6f8ce3dcde1d287ea89b9c991f68ee37037fc5166958e5"
     },
     {
-      "file": "nflow/app/chunks/dup-drag-DXaGeoAq.js",
+      "file": "nflow/app/chunks/dup-drag-DQySi80i.js",
       "bytes": 1566,
-      "sha256": "0def32b7097b6843d974bff2b1789a311c7ffff0729f7f78b001a34c09efd6a0"
+      "sha256": "0c8348aac32d33ae077de78597e95c75def391425539ce0002865457a47b06f4"
     },
     {
-      "file": "nflow/app/chunks/fmu-import-CTZOf09X.js",
+      "file": "nflow/app/chunks/fmu-import-Bcx9dz-F.js",
       "bytes": 3916,
-      "sha256": "2af5c85e844488dd4af15419991afbaae99dacac3655e1b918badd32f2d0159b"
+      "sha256": "222463417eb40a9ad17c978988a7f4a6d43110c4d19678628a3b2f160dade360"
     },
     {
       "file": "nflow/app/chunks/helpers-CyRuiCrn.js",
@@ -993,9 +2343,9 @@
       "sha256": "7a4deb736a0a9d6781405226c14218bd9dd55c912a9a51f0a4ce3f664df249dd"
     },
     {
-      "file": "nflow/app/chunks/history-D3llpuYR.js",
+      "file": "nflow/app/chunks/history-xvlfLyNo.js",
       "bytes": 8696,
-      "sha256": "1e613e63077bf8cdd74a395611b864442c42e00ab085b8567892bc7ce966af89"
+      "sha256": "10bc2bd38b8ea694fb9ac1a82cec0b2e3bcbd0994c027094fd551f02d5525e35"
     },
     {
       "file": "nflow/app/chunks/icon-cache-Dde71SRH.js",
@@ -1003,14 +2353,14 @@
       "sha256": "95df24ab15ead6a9b35a0ee99ded672ca28212e1c36b7ed3f12622b2e69b3d73"
     },
     {
-      "file": "nflow/app/chunks/minimap-CCn3KX9V.js",
+      "file": "nflow/app/chunks/minimap-B5gNU3d3.js",
       "bytes": 2515,
-      "sha256": "063c9f2f9ae31338c218070ff487e88990d6a5460a6214f1fda285c1dacae45e"
+      "sha256": "31283dc1bc173057192843e84ee1694833a9e60e6138cf8583b559f08df84914"
     },
     {
-      "file": "nflow/app/chunks/modelica-settings-Dhit2MUc.js",
+      "file": "nflow/app/chunks/modelica-settings-n3oQTTaz.js",
       "bytes": 2413,
-      "sha256": "ab3cf61377a885b6dcfb064564454527b35050ee1c65aaed68ea539c276a9391"
+      "sha256": "46dc78aff80ec79a886ef9c7b1ca3eeca00c29ba0fb9b4e5c14a1becb484714b"
     },
     {
       "file": "nflow/app/chunks/native-rpc-CCBvMdjR.js",
@@ -1018,34 +2368,34 @@
       "sha256": "37355f0e63cf6a35cef8fcc53e26ae7ce23e65b1b03122f3d4a02617291c0d97"
     },
     {
-      "file": "nflow/app/chunks/quick-connect-Dz47ny6z.js",
+      "file": "nflow/app/chunks/quick-connect-B9benokF.js",
       "bytes": 1603,
-      "sha256": "547e6b887b81d708ef18520a33d4c3114331798313459e94dad3ad5d825027a0"
+      "sha256": "b1c493281844e608a0a65726067b68b317835f070e6ac56fa8c59aebdd67ea5b"
     },
     {
-      "file": "nflow/app/chunks/quick-insert-BRfXC--M.js",
+      "file": "nflow/app/chunks/quick-insert-L7JUT5Cg.js",
       "bytes": 88404,
-      "sha256": "e2bbe2d8ac875c0726791ab369e7219ff8803d475a98f3e3ef4f34ca01779200"
+      "sha256": "ca350df67448598adcef4aca62ddaefd170aea6ce95d0d5014d1647421828b4f"
     },
     {
-      "file": "nflow/app/chunks/render-Bc2bpsbr.js",
+      "file": "nflow/app/chunks/render-DPgkdYdJ.js",
       "bytes": 155735,
-      "sha256": "d50f276937219f015ae8d0e4911f484f926261ada0aa6ec44e36cd5846428ec9"
+      "sha256": "ddf1ee1882b4c70c51c37c16ce2040b738497a817107a136600425380c252f21"
     },
     {
-      "file": "nflow/app/chunks/simulation-toolbar-visibility-BOiZMafP.js",
+      "file": "nflow/app/chunks/simulation-toolbar-visibility-Bhbu-CP3.js",
       "bytes": 593,
-      "sha256": "addd68a3aeed0c14a5d0fced09f9307835c3abed4d17f08f21f54b71c5870d25"
+      "sha256": "82fec4067a58866bc3108c3519f0b0c4e58146a271400e36112e690b5f9da1c3"
     },
     {
-      "file": "nflow/app/chunks/subsystem-handlers-Bk0k9p5E.js",
+      "file": "nflow/app/chunks/subsystem-handlers-hbKJAzEG.js",
       "bytes": 6235,
-      "sha256": "587b28502292413a9dcb5e3df9c850c610dc4cde73ca2e9dc727a6626f679ae2"
+      "sha256": "d46f42471fa5c3a62cd2d9b36791d0f4682168287eeb659b2985141636586a0a"
     },
     {
-      "file": "nflow/app/chunks/wire-labels-DxBj0CUN.js",
+      "file": "nflow/app/chunks/wire-labels-CYInnMeZ.js",
       "bytes": 3016,
-      "sha256": "f25994d77f6255fa1173dbb8bc8e956682799f74f918dce19e1acec5ea6fca43"
+      "sha256": "ba9c33a0cb60c3a36f133eed644d14b66717cfb5932119f5e4333c88773f6841"
     },
     {
       "file": "nflow/app/floating-toolbar.21f3dc5fa02a.js",
@@ -1485,7 +2835,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "864a93442f11fa3875515526c22427f7f3f6c7d26dde9cb5563ed9e09e03a203"
+      "sha256": "721b98d8e3e0ab000326316f0c591a19bce10158d668f947d049789e5b575f6c"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -4625,7 +5975,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "ff178dc1070e888e23fb9121672afee5b6400cce8af8e2aefd0ffcb0446c6738"
+      "sha256": "2bed7f6d4132dc6a52d3caeb4eef455ee09a6e14bc948a7b0370525a336b0d74"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -4638,14 +5988,14 @@
       "sha256": "bc8a1d656b8984556682f8a285f9fa8ca0a723fad3be5f4f1d453609b41c9a0f"
     },
     {
+      "file": "packs/editor/EditorPanel-Du_uqhMU.js",
+      "bytes": 3618960,
+      "sha256": "cd8d789da9c80158679539698d9281a744cc88f2fb9219e2638b40a10ab8622f"
+    },
+    {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
       "bytes": 237629,
       "sha256": "630124aedc5d040b94ba93e272efdff2be734cc255d46fc483901561510c19d9"
-    },
-    {
-      "file": "packs/editor/EditorPanel-DxJFfHoN.js",
-      "bytes": 3618898,
-      "sha256": "07ae726b6be90245f4d9ef03e5ea2af869869ae8de3b30eefde38d71e1d6d4d2"
     },
     {
       "file": "packs/examples/ExamplesPanel-BblPti1m.css",
@@ -4653,14 +6003,14 @@
       "sha256": "b8060de099a46b28de7445f5f676be4f75245eb098c8af7b2c8738f6acb17afe"
     },
     {
-      "file": "packs/examples/ExamplesPanel-ByJJ9fIy.js",
-      "bytes": 9429,
-      "sha256": "35d55ac0dc16bf59d5a49e5e8d2cde8e9421124dd9531aa6d0a57c7e86dcf863"
+      "file": "packs/examples/ExamplesPanel-Bt2QIaBd.js",
+      "bytes": 9668,
+      "sha256": "46f5ca9d0f76a1b1137cd73691585a142b8249eff56216f4e1bb34379be71e03"
     },
     {
-      "file": "packs/mock/mockEngine-tXWMA8FC.js",
+      "file": "packs/mock/mockEngine-tZJfUsKB.js",
       "bytes": 30271,
-      "sha256": "934ee47ea5f47830bd1288e118a8d5d2ab9b374df9dcc8f65b379e481b9c76f3"
+      "sha256": "ae8ed17179654f0f7bf82de55496219052d3c680ff7b19fdf026a182418854ed"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
@@ -4668,10 +6018,10 @@
       "sha256": "d339e2dbe7e85baaef691bff16286938196480c8548b0fafe15f875602874bf6"
     },
     {
-      "file": "packs/nmm/PackageManagerPanel-D3Ug9blg.js",
+      "file": "packs/nmm/PackageManagerPanel-LRz_EtB9.js",
       "bytes": 48053,
-      "sha256": "45edfbafeb894733f6cfe075e7118dcbe59d6cdf23c517f026076b24adb3e1da"
+      "sha256": "b9239d2778c8afdeb6a5dd3e37291663c429bb5488ce67c9c2030b9fa91a939f"
     }
   ],
-  "totalBytes": 66889447
+  "totalBytes": 80076364
 }

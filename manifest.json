@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "8e7dff7f82db",
-  "entryPoint": "index.html?runtime=wasm&build=8e7dff7f82db",
+  "buildId": "8622043d4bce",
+  "entryPoint": "index.html?runtime=wasm&build=8622043d4bce",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -13,7 +13,7 @@
           "nelson-portable.mjs",
           "nelson-portable.wasm"
         ],
-        "bytes": 41857513
+        "bytes": 41862100
       },
       {
         "id": "resources",
@@ -21,7 +21,7 @@
         "files": [
           "nelson-portable.data"
         ],
-        "bytes": 19359966
+        "bytes": 19365674
       },
       {
         "id": "shell",
@@ -281,7 +281,7 @@
           "examples/gallery-shared.css",
           "examples/index.html"
         ],
-        "bytes": 7910497
+        "bytes": 7913457
       },
       {
         "id": "module-editor",
@@ -327,24 +327,24 @@
         "mode": "on-demand",
         "trigger": "nflow",
         "files": [
-          "nflow/app/app-CwFyBRtb.js",
-          "nflow/app/chunks/app-CPqoVN9T.js",
-          "nflow/app/chunks/canvas-navigation-tools-CXvmaB-8.js",
-          "nflow/app/chunks/console-host-Cqv2R26v.js",
-          "nflow/app/chunks/dup-drag-DaGSOdRN.js",
-          "nflow/app/chunks/fmu-import-CmFCUCXQ.js",
+          "nflow/app/app-Bg95gw_7.js",
+          "nflow/app/chunks/app-DvNbulkU.js",
+          "nflow/app/chunks/canvas-navigation-tools-BQOvpeZR.js",
+          "nflow/app/chunks/console-host-CuL2BvWm.js",
+          "nflow/app/chunks/dup-drag-D5Etc35e.js",
+          "nflow/app/chunks/fmu-import-C5UQTow7.js",
           "nflow/app/chunks/helpers-CyRuiCrn.js",
-          "nflow/app/chunks/history-CzRh3jZQ.js",
+          "nflow/app/chunks/history-D89XZJCt.js",
           "nflow/app/chunks/icon-cache-Dde71SRH.js",
-          "nflow/app/chunks/minimap-BhMQv76C.js",
-          "nflow/app/chunks/modelica-settings-CewakjSv.js",
+          "nflow/app/chunks/minimap-DeCeipgL.js",
+          "nflow/app/chunks/modelica-settings-BpPGqmB6.js",
           "nflow/app/chunks/native-rpc-CCBvMdjR.js",
-          "nflow/app/chunks/quick-connect-CpmHOIz0.js",
-          "nflow/app/chunks/quick-insert-CfJ_4OsT.js",
-          "nflow/app/chunks/render-Bcil4YZK.js",
-          "nflow/app/chunks/simulation-toolbar-visibility-CGtTcvQx.js",
-          "nflow/app/chunks/subsystem-handlers-C9AwlVOy.js",
-          "nflow/app/chunks/wire-labels-BHy6djcX.js",
+          "nflow/app/chunks/quick-connect-C-4H4WkI.js",
+          "nflow/app/chunks/quick-insert-6F6rq01t.js",
+          "nflow/app/chunks/render-C6p-XTKR.js",
+          "nflow/app/chunks/simulation-toolbar-visibility-Cyj1uSlk.js",
+          "nflow/app/chunks/subsystem-handlers-CwKJQlux.js",
+          "nflow/app/chunks/wire-labels-BhvWPe2B.js",
           "nflow/app/floating-toolbar.21f3dc5fa02a.js",
           "nflow/app/floating-toolbar.js",
           "nflow/app/head-init.84ac660ea83e.js",
@@ -1058,7 +1058,7 @@
           "nflow/styles/themes.css",
           "nflow/styles/ui-extras.css"
         ],
-        "bytes": 3876397
+        "bytes": 3893015
       },
       {
         "id": "nmm",
@@ -1090,7 +1090,7 @@
     {
       "file": "app.js",
       "bytes": 1253641,
-      "sha256": "07c34aae6bce29a2d46715384b29253ede182eb8303fb84c45364db5c1ec4057"
+      "sha256": "3c9d50bff31549948b0186e1bf6e9cc3441a38f49fc0b05a474d404a271424f9"
     },
     {
       "file": "assets/figureCanvasWorker-DO4fRWnq.js",
@@ -1399,8 +1399,8 @@
     },
     {
       "file": "examples/files/graphics/examples/demoscene.m",
-      "bytes": 66647,
-      "sha256": "fcfcbd1014ee55deced38688050df273e979aa4c55082a7dc8a0e525de541db8"
+      "bytes": 69607,
+      "sha256": "37a29a0f4416817ff5a3cef42605bf1acf17f1c544c64950dd28910b9bb4f2b4"
     },
     {
       "file": "examples/files/graphics/examples/dot_tunnel.m",
@@ -2260,12 +2260,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "15707ee253ed9e06b2c34ca898c89f227cb42d583cbc64f3dad4898697ff812e"
+      "sha256": "f08a6ecc55575a820ef8b7eb5b35ec77f81ce57ffad2b8035351902f5028cd12"
     },
     {
       "file": "index.html",
       "bytes": 1625,
-      "sha256": "e9ce8aa6b90f4846d200f3a0f4ebabd0cb903648130e2261401586e347079b8d"
+      "sha256": "b7fe6d6d2acfe3ac9e861f995506d607dcb4e47c12b6083f93d320bf93540777"
     },
     {
       "file": "nelson-coi-serviceworker.js",
@@ -2274,18 +2274,18 @@
     },
     {
       "file": "nelson-portable.data",
-      "bytes": 19359966,
-      "sha256": "fde7ee92093c73299febd0094fec5f7adc75489703db518487cb16f42bbc8a02"
+      "bytes": 19365674,
+      "sha256": "0da1cfc0597fdb5ffeeb69e50e97224aef0d123e4a267bc8f0c1f3a2435ccd94"
     },
     {
       "file": "nelson-portable.mjs",
-      "bytes": 594965,
-      "sha256": "24c96d85e85c414afa54a6184c26e6a7c78c35df07594ddaa83900f722a9a462"
+      "bytes": 595143,
+      "sha256": "899b214dc802e3b0c9f7148dceafa2ad826ef40e7f966ade40d735337dcb3066"
     },
     {
       "file": "nelson-portable.wasm",
-      "bytes": 41262548,
-      "sha256": "c47b8e64ba2a654d35273f83656a33789bc594f478d08ac56ad9711aa1d5c219"
+      "bytes": 41266957,
+      "sha256": "d713bf127e7c43295dd63917bab06bcd1426dc7cb0d0143325488f8d4a10a186"
     },
     {
       "file": "nelson-runtime.mjs",
@@ -2300,7 +2300,7 @@
     {
       "file": "nelson-worker.mjs",
       "bytes": 38412,
-      "sha256": "1ff741c6308b8f176bd7f822eab1f43b6c8a04ee4f6490d3dcbe812186306f1b"
+      "sha256": "f1a66ef1e8ce8da190e64226f3406099f226c655e851c8eba39213794cbf48e1"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -2308,34 +2308,34 @@
       "sha256": "2d2741130038745946b17cbb365d80a075608a851b7830ffd0a812358b3f0365"
     },
     {
-      "file": "nflow/app/app-CwFyBRtb.js",
+      "file": "nflow/app/app-Bg95gw_7.js",
       "bytes": 14303,
-      "sha256": "d28790673eb08da1b3484c005f65fd1fffc1b837c8f422c5e734d83331343145"
+      "sha256": "5337f06ee9bd4a3d8c304a82f0546ef97f3dc8bf8e42a7550b023a2d3b234d1a"
     },
     {
-      "file": "nflow/app/chunks/app-CPqoVN9T.js",
-      "bytes": 548501,
-      "sha256": "95ced1acf383321372f16454f6aa04c2cbce7b89f2db86215ca70ab5f21136f2"
+      "file": "nflow/app/chunks/app-DvNbulkU.js",
+      "bytes": 549940,
+      "sha256": "e7114661ece3a89c7bd823420fb1bfaad786871833c3b3f94aa9d5d8aec9d915"
     },
     {
-      "file": "nflow/app/chunks/canvas-navigation-tools-CXvmaB-8.js",
+      "file": "nflow/app/chunks/canvas-navigation-tools-BQOvpeZR.js",
       "bytes": 608,
-      "sha256": "006c6940719fc4dc5c4eb247bc9ecda4f0e18c2afc313e9efc898b194ab21619"
+      "sha256": "5cfbc4e88bc9de5e4b81fb2bbb5c8e6b32332a16c858ef7c9c6e46386ecb27b8"
     },
     {
-      "file": "nflow/app/chunks/console-host-Cqv2R26v.js",
-      "bytes": 11424,
-      "sha256": "ae8f7a0666432a12e095ae7515872fce656ee2d924420108010dc9b5bfe21e7d"
+      "file": "nflow/app/chunks/console-host-CuL2BvWm.js",
+      "bytes": 13350,
+      "sha256": "3ec4b8ba8890c26aff840558b89e68f683d6184070af9af9be25f683cb9604dc"
     },
     {
-      "file": "nflow/app/chunks/dup-drag-DaGSOdRN.js",
+      "file": "nflow/app/chunks/dup-drag-D5Etc35e.js",
       "bytes": 1566,
-      "sha256": "b53d6bc7712fb8286edda44b4d9c72cfa0018bb760e3fea281641e82cbcc4d9e"
+      "sha256": "2b9d9f6fa52fd3d18296188fcb8885d9a6d4f1c252745df389c852a3b34abb0a"
     },
     {
-      "file": "nflow/app/chunks/fmu-import-CmFCUCXQ.js",
+      "file": "nflow/app/chunks/fmu-import-C5UQTow7.js",
       "bytes": 3916,
-      "sha256": "cde1e95e2f1bd6f226ba8a6338d5e5db28bb63073a2cd7d6568bae21bd625038"
+      "sha256": "b9402e5c5afe81fe2376c66ffc485686c2137054e7875c461b627abf6987ca1a"
     },
     {
       "file": "nflow/app/chunks/helpers-CyRuiCrn.js",
@@ -2343,9 +2343,9 @@
       "sha256": "7a4deb736a0a9d6781405226c14218bd9dd55c912a9a51f0a4ce3f664df249dd"
     },
     {
-      "file": "nflow/app/chunks/history-CzRh3jZQ.js",
+      "file": "nflow/app/chunks/history-D89XZJCt.js",
       "bytes": 8696,
-      "sha256": "f21f1350966a54518ec3265880fe3f626f359949f06584e7064571724d778961"
+      "sha256": "96a4898482217769741d98b037c32e17e00c4d151b18db965d10dda247ecd807"
     },
     {
       "file": "nflow/app/chunks/icon-cache-Dde71SRH.js",
@@ -2353,14 +2353,14 @@
       "sha256": "95df24ab15ead6a9b35a0ee99ded672ca28212e1c36b7ed3f12622b2e69b3d73"
     },
     {
-      "file": "nflow/app/chunks/minimap-BhMQv76C.js",
+      "file": "nflow/app/chunks/minimap-DeCeipgL.js",
       "bytes": 2515,
-      "sha256": "be3357a197a62c58d95658fb0298dc8f7d7fa09b1cc04153d66860c84d4225f9"
+      "sha256": "d52121b49a05208de3f9ddcc937e3771250db942430c6b9bf2057b01f0c9e5a9"
     },
     {
-      "file": "nflow/app/chunks/modelica-settings-CewakjSv.js",
+      "file": "nflow/app/chunks/modelica-settings-BpPGqmB6.js",
       "bytes": 2413,
-      "sha256": "9206cc9667cec09e90f58b888e664a5d99d65c7d4f65c3562a3538d6fced56bc"
+      "sha256": "101b45389b71f72075ac02068d656254cb9145d26f627296afa673e827f0a59f"
     },
     {
       "file": "nflow/app/chunks/native-rpc-CCBvMdjR.js",
@@ -2368,34 +2368,34 @@
       "sha256": "37355f0e63cf6a35cef8fcc53e26ae7ce23e65b1b03122f3d4a02617291c0d97"
     },
     {
-      "file": "nflow/app/chunks/quick-connect-CpmHOIz0.js",
+      "file": "nflow/app/chunks/quick-connect-C-4H4WkI.js",
       "bytes": 1603,
-      "sha256": "8473da986aeacee3ec751de949a4d6a0f3ba079958f7e128f7caf46d81f571ee"
+      "sha256": "4e374a385ba6e07d6f001e87b6ede7793612109f9c04f2cdaadb01e07f841673"
     },
     {
-      "file": "nflow/app/chunks/quick-insert-CfJ_4OsT.js",
-      "bytes": 88404,
-      "sha256": "a5319ffe2fc39aa3c45c4b2a29eb79e0c38ecd0af7d439febc5e50bd78bc9029"
+      "file": "nflow/app/chunks/quick-insert-6F6rq01t.js",
+      "bytes": 88425,
+      "sha256": "20fcdbaa8853945c1589ab6cb865d2b6f34b9c47623e7e2ddd350deb4cbaef1a"
     },
     {
-      "file": "nflow/app/chunks/render-Bcil4YZK.js",
-      "bytes": 155735,
-      "sha256": "6cc88fdf93ca1b6ec35047bebca7b39d5856e0662ab2b755dc350f6863415fee"
+      "file": "nflow/app/chunks/render-C6p-XTKR.js",
+      "bytes": 167747,
+      "sha256": "d4b3c4c07a1fed9730762b6ba9e76f022404475103d0867d939534011a362591"
     },
     {
-      "file": "nflow/app/chunks/simulation-toolbar-visibility-CGtTcvQx.js",
+      "file": "nflow/app/chunks/simulation-toolbar-visibility-Cyj1uSlk.js",
       "bytes": 593,
-      "sha256": "6eae806db8783efb4a46e956a5b2806aa70895e5c9ec5dc6d38645cf964ff15a"
+      "sha256": "2fc0da9558652aab579a9fc73e554f7e59d9370aeaebbedda4111f482f4d7f1b"
     },
     {
-      "file": "nflow/app/chunks/subsystem-handlers-C9AwlVOy.js",
-      "bytes": 6235,
-      "sha256": "7994bfd94096c01f748b3292c05448f591eb28fb1338a5079d7f8919541df28f"
+      "file": "nflow/app/chunks/subsystem-handlers-CwKJQlux.js",
+      "bytes": 6409,
+      "sha256": "04a2686a26c8fc01adf358341ffcf67f1b55cf963827a7b540168c8dc8bfb9e9"
     },
     {
-      "file": "nflow/app/chunks/wire-labels-BHy6djcX.js",
+      "file": "nflow/app/chunks/wire-labels-BhvWPe2B.js",
       "bytes": 3016,
-      "sha256": "056f6ba8a665288ced2bd1078834b6d1a69973b6b76d6dad3b65b5b18a47a069"
+      "sha256": "8cc608558c4a9ccc31e4e9f4038081cb3763ce8110b0a316404108e4342daffa"
     },
     {
       "file": "nflow/app/floating-toolbar.21f3dc5fa02a.js",
@@ -2835,7 +2835,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "2a39d29230e7853017d93296a77593ac30b54d0b2a0014ca7da8c68f2a9c5fd1"
+      "sha256": "ac4f8fbfb944a31f1c0f78a8d88212da7b51d4a602bbb4f50b2b498d173e94d0"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -4644,8 +4644,8 @@
     },
     {
       "file": "nflow/libraries/fmi/blocks.js",
-      "bytes": 40308,
-      "sha256": "74c304ad315579d157c71ebdebc1520c344a741df7fbbb80ea750c68357c5cb3"
+      "bytes": 40312,
+      "sha256": "3917bbabe33f6f3da9cc47785bc27e16812387ea9cb9dd77c733099133c49a9b"
     },
     {
       "file": "nflow/libraries/fmi/exports/fmu.svg",
@@ -4825,7 +4825,7 @@
     {
       "file": "nflow/libraries/logic/library.json",
       "bytes": 13808,
-      "sha256": "6cb52226184c2aea2e69d744dcfe52c50a3771debd1ffd76f342542297e13c01"
+      "sha256": "3d7351112a859fb1f0ed93be523f6846966ab5de053289cbf33528457bb6e9ee"
     },
     {
       "file": "nflow/libraries/logic/logicalOperator.svg",
@@ -4864,8 +4864,8 @@
     },
     {
       "file": "nflow/libraries/lookup/blocks.js",
-      "bytes": 42638,
-      "sha256": "34b29c74e7cc0f4141aee1f3732c440a7369d0aea1240fced696e1dbd59519f1"
+      "bytes": 42648,
+      "sha256": "d35c1c7417ed591e511ac9901e44cef44d84a5da05aea71d995bf1b3da7c1d10"
     },
     {
       "file": "nflow/libraries/lookup/directLookup.svg",
@@ -4915,7 +4915,7 @@
     {
       "file": "nflow/libraries/lookup/library.json",
       "bytes": 7096,
-      "sha256": "050e316bcce554eb55fe4442e7f0a4bf0595e6730d151dba61661ae0fd899c2e"
+      "sha256": "56411ded8737a4eeaf06f3b03d89a22cab116fd86a9c74af0149bf17c404f841"
     },
     {
       "file": "nflow/libraries/lookup/lookup1D.svg",
@@ -4959,8 +4959,8 @@
     },
     {
       "file": "nflow/libraries/math/blocks.js",
-      "bytes": 48028,
-      "sha256": "8fa9c0d4889f96e7e9387bc936a25e6bc94d96eefb425781b45008e3b6b73003"
+      "bytes": 48036,
+      "sha256": "94b1c7f9eb26289397c0c48db5f0bd0071d5a0b105d2df46eb2d4d483aa227d6"
     },
     {
       "file": "nflow/libraries/math/complexToMagnitudeAngle.svg",
@@ -5135,7 +5135,7 @@
     {
       "file": "nflow/libraries/math/library.json",
       "bytes": 18455,
-      "sha256": "f89f7ffe097480653f093ea5ff90eaca61a3c1533bef4986d3351ca11f1512b5"
+      "sha256": "8ba966f18b3364dc16769e7a48ce169a8113f3a4d20b453ef61def8eb655fa28"
     },
     {
       "file": "nflow/libraries/math/magnitudeAngleToComplex.svg",
@@ -5639,8 +5639,8 @@
     },
     {
       "file": "nflow/libraries/utility/blocks.js",
-      "bytes": 55496,
-      "sha256": "7743b2a9a943631866944b1765b0745ce7de7074de479e7ec9ddb52abea03cbb"
+      "bytes": 55495,
+      "sha256": "a78deccd4c91739e6e6e3db288ea7eae8561d9744c8dc3aa352d8c7d9792e345"
     },
     {
       "file": "nflow/libraries/utility/busAssignment.svg",
@@ -5850,7 +5850,7 @@
     {
       "file": "nflow/libraries/utility/library.json",
       "bytes": 15861,
-      "sha256": "8c9fd999aa80fab4c4ab354aea0e5f391bc13e212a8e15181766f27e3d315a56"
+      "sha256": "7957d2d371e7e03c764c075c6c0fdb7123ad3216b8e1d2dc0a8efe6b2b4108a4"
     },
     {
       "file": "nflow/libraries/utility/merge.svg",
@@ -5904,13 +5904,13 @@
     },
     {
       "file": "nflow/locale/nflow-ui-en_US.json",
-      "bytes": 11600,
-      "sha256": "501023bb922cefbab5fd95ea1ce2f44944f1da5da15653d67fe801967cce13ed"
+      "bytes": 11695,
+      "sha256": "bed6b017f018ba773c161252fc6a3450d968a49a7b20ddfff586582ac42c6922"
     },
     {
       "file": "nflow/locale/nflow-ui-fr_FR.json",
-      "bytes": 14334,
-      "sha256": "16a0061754d651eb1c771ba785abbd06dc851a9a43559603aefe3af4de7a6a17"
+      "bytes": 14498,
+      "sha256": "9dcc8e810429b14d85e4edcad7323984c88ef7ddde67720a12e062e4067bf94a"
     },
     {
       "file": "nflow/nflow/ui-settings.json",
@@ -5924,8 +5924,8 @@
     },
     {
       "file": "nflow/styles/bottom-panel.css",
-      "bytes": 7399,
-      "sha256": "0ed73a631e34aeb348e3fc88d49ca76132d75fe85c3ddb415efd069ced82e18a"
+      "bytes": 8165,
+      "sha256": "dfaa6eccf7be6d98a86ef44723a34bd6cec6e5b09f55442588a124c4280e6c22"
     },
     {
       "file": "nflow/styles/context-menu.css",
@@ -5975,7 +5975,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "11d9fb8c347715b9b6d377dd685e0f2e55a1f8d15fc3ba19cc51dadff86ff8bb"
+      "sha256": "241cafcfa7cff0e49dddfeba361bf746bee7ac83102e65ba5475d4e0e6788109"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -5990,7 +5990,7 @@
     {
       "file": "packs/editor/EditorPanel-Du_uqhMU.js",
       "bytes": 3618960,
-      "sha256": "67f6088bb9524ce6b8683681047ab7b72e6b18f2d04abad846abe899ef7e804b"
+      "sha256": "aef019c1558cc9d44cf8f535c12c57824a5c67205bfe9406e5afa3635f32ea88"
     },
     {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
@@ -6005,12 +6005,12 @@
     {
       "file": "packs/examples/ExamplesPanel-Bt2QIaBd.js",
       "bytes": 9668,
-      "sha256": "2a94d1060a86080befa4a45e1b16bd7e238f54e09ff871b7cad786c2b43624ff"
+      "sha256": "a1712f78767283595dd01a44b38f3b34936459681aea69739a8704593e54d967"
     },
     {
       "file": "packs/mock/mockEngine-tZJfUsKB.js",
       "bytes": 30271,
-      "sha256": "ddf63c6b358b0bcb7f9bfea0e9c67ec435add9e8de51601caa6c39e692ee8aa7"
+      "sha256": "422ab639a9e7ec55e51713ca4714f03f0c51c0dc83df4fccaecff67dd3b28f73"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
@@ -6020,8 +6020,8 @@
     {
       "file": "packs/nmm/PackageManagerPanel-LRz_EtB9.js",
       "bytes": 48053,
-      "sha256": "f673f3f3e76f90d11e3f7106bd45b9a8e2e94dca71eec0b9ec1ea4fbab8b84a9"
+      "sha256": "6dcb4193175b0e2ffcbf1ee6d3607051ae4a3010546a6fbce00bfedcf2eccee4"
     }
   ],
-  "totalBytes": 80102003
+  "totalBytes": 80131876
 }

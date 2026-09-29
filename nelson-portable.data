@@ -38927,30 +38927,56 @@ catch demoError
 end
 %=============================================================================
 function demoRunBenchmark(sceneName, width, height, errorLog, imageDir)
+  musicTimer = tic();
   music = demoBuildMusic();
+  musicElapsed = toc(musicTimer);
   frames = 120;
+  timelineTimer = tic();
   scenes = demoBuildTimeline(music);
+  timelineElapsed = toc(timelineTimer);
   sceneT0 = 0;
   for k = 1:numel(scenes)
     if strcmp(scenes(k).name, sceneName)
       sceneT0 = scenes(k).t0;
     end
   end
+  setupTimer = tic();
   frame = zeros(height, width, 3);
+  setupElapsed = toc(setupTimer);
+  sceneElapsed = 0;
+  postElapsed = 0;
   timer = tic();
   for i = 1:frames
     t = sceneT0 + i / 60;
     beat = demoBeatInfo(t, music);
+    phaseTimer = tic();
     frame = demoRenderScene(sceneName, i / 60, t, beat, width, height);
+    sceneElapsed = sceneElapsed + toc(phaseTimer);
     applyOverlay = ~any(strcmp(sceneName, {'logo', 'earth', 'another'}));
+    phaseTimer = tic();
     frame = demoPostProcess(frame, t, beat, width, height, music, ...
       applyOverlay, 1.0);
+    postElapsed = postElapsed + toc(phaseTimer);
   end
   elapsed = toc(timer);
   fps = frames / elapsed;
   report = sprintf(['benchmark scene=%s %dx%d: %d frames in %.3fs ', ...
     '=> %.1f FPS (%.2f ms/frame)\n'], sceneName, width, height, frames, ...
     elapsed, fps, 1000 * elapsed / frames);
+  report = [report, sprintf(['benchmark prep scene=%s music %.3fs ', ...
+    'timeline %.3fs setup %.3fs render %.3fs total %.3fs\n'], ...
+    sceneName, musicElapsed, timelineElapsed, setupElapsed, elapsed, ...
+    musicElapsed + timelineElapsed + setupElapsed + elapsed)];
+  report = [report, sprintf(['benchmark render scene=%s effect %.3fs ', ...
+    'post %.3fs total %.3fs\n'], sceneName, sceneElapsed, postElapsed, ...
+    elapsed)];
+  if isfield(music, 'profile')
+    p = music.profile;
+    report = [report, sprintf(['benchmark music scene=%s drums %.3fs ', ...
+      'bass %.3fs arp %.3fs lead %.3fs pad %.3fs post %.3fs ', ...
+      'ambient %.3fs total %.3fs\n'], sceneName, p.drums, p.bass, ...
+      p.arp, p.lead, p.pad, p.post, p.ambient, p.total)];
+  end
   if ~isempty(imageDir)
     imwrite(min(1, max(0, frame)), [imageDir, '/bench_', sceneName, '.png']);
   end
@@ -39279,8 +39305,7 @@ function frame = demoCopperBars(t, beat, width, height)
       barLayer(:, 1, ch) = barLayer(:, 1, ch) + intensity * colors(k, ch);
     end
   end
-  frame = base + repmat(barLayer, 1, width, 1);
-  frame = min(1, frame);
+  frame = repmat(min(1, base + barLayer), 1, width, 1);
 end
 %=============================================================================
 function frame = demoFxTunnel(localT, t, beat, width, height)
@@ -39585,18 +39610,19 @@ function frame = demoPostProcess(frame, t, beat, width, height, music, ...
 end
 %=============================================================================
 function frame = demoFilmGrain(frame, t, width, height)
-  persistent cachedWidth cachedHeight grainTex
+  persistent cachedWidth cachedHeight grainTex grainTile
   if isempty(cachedWidth) || cachedWidth ~= width || cachedHeight ~= height
     cachedWidth = width;
     cachedHeight = height;
     idx = (1:height * width)';
     s = sin(idx * 12.9898 + idx * 0.017) * 43758.5453;
     grainTex = reshape((s - floor(s)) * 2 - 1, height, width);
+    grainTile = [grainTex grainTex; grainTex grainTex];
   end
   rowShift = mod(round(t * 163), height);
   colShift = mod(round(t * 97), width);
-  g = grainTex([rowShift + 1:height, 1:rowShift], ...
-    [colShift + 1:width, 1:colShift]);
+  g = grainTile(rowShift + 1:rowShift + height, ...
+    colShift + 1:colShift + width);
   amp = 0.022;
   frame(:, :, 1) = min(1, max(0, frame(:, :, 1) + g * amp));
   frame(:, :, 2) = min(1, max(0, frame(:, :, 2) + g * amp));
@@ -39685,6 +39711,18 @@ function frame = demoStampText(frame, text, scale, alpha, color, topRow, ...
 end
 %=============================================================================
 function [bmp, textWidth, glyphHeight] = demoBuildTextBitmap(text, scale)
+  persistent cachedKeys cachedBmps cachedWidths cachedHeights
+  key = [text, '|', int2str(scale)];
+  if ~isempty(cachedKeys)
+    for cacheIndex = 1:numel(cachedKeys)
+      if strcmp(cachedKeys{cacheIndex}, key)
+        bmp = cachedBmps{cacheIndex};
+        textWidth = cachedWidths(cacheIndex);
+        glyphHeight = cachedHeights(cacheIndex);
+        return
+      end
+    end
+  end
   [chars, glyphs] = demoFontData();
   glyphRows = 7;
   glyphCols = 5;
@@ -39705,6 +39743,16 @@ function [bmp, textWidth, glyphHeight] = demoBuildTextBitmap(text, scale)
   bmp = kron(small, ones(scale));
   glyphHeight = glyphRows * scale;
   textWidth = smallWidth * scale;
+  if isempty(cachedKeys)
+    cachedKeys = {};
+    cachedBmps = {};
+    cachedWidths = [];
+    cachedHeights = [];
+  end
+  cachedKeys{end + 1} = key;
+  cachedBmps{end + 1} = bmp;
+  cachedWidths(end + 1) = textWidth;
+  cachedHeights(end + 1) = glyphHeight;
 end
 %=============================================================================
 % ---- Beat / timing --------------------------------------------------------
@@ -39750,6 +39798,11 @@ function music = demoBuildMusic()
   sectionStartBars = [2 5 8 11 14 18];
   leadBars = 14:19;
   leadRiff = [69 72 71 69 67 69 64 67];
+  drumsElapsed = 0;
+  bassElapsed = 0;
+  arpElapsed = 0;
+  leadElapsed = 0;
+  padElapsed = 0;
 
   for barIndex = 0:bars - 1
     barStart = barIndex * samplesPerBar + 1;
@@ -39758,11 +39811,14 @@ function music = demoBuildMusic()
     tones = chordTones{chordId};
 
     if any(sectionStartBars == barIndex)
+      phaseTimer = tic();
       crash = demoSynthCrash(fs);
       [drumsL, drumsR] = demoMix(drumsL, drumsR, crash, barStart, 0.35, 0.35);
+      drumsElapsed = drumsElapsed + toc(phaseTimer);
     end
 
     for b = 0:3
+      phaseTimer = tic();
       kickStart = barStart + b * samplesPerBeat;
       kick = demoSynthKick(fs);
       [drumsL, drumsR] = demoMix(drumsL, drumsR, kick, kickStart, 1.0, 1.0);
@@ -39771,9 +39827,11 @@ function music = demoBuildMusic()
         [drumsL, drumsR] = demoMix(drumsL, drumsR, snare, kickStart, ...
           0.55, 0.55);
       end
+      drumsElapsed = drumsElapsed + toc(phaseTimer);
     end
 
     for h = 0:7
+      phaseTimer = tic();
       hatStart = barStart + h * round(samplesPerBeat / 2);
       hat = demoSynthHat(fs);
       pan = 0.4 + 0.2 * mod(h, 2);
@@ -39785,6 +39843,7 @@ function music = demoBuildMusic()
       end
       [drumsL, drumsR] = demoMix(drumsL, drumsR, hat, hatStart, ...
         gain * (2 - pan), gain * pan);
+      drumsElapsed = drumsElapsed + toc(phaseTimer);
     end
 
     bassPattern = [1 0 1 0 0 1 0 1] > 0;
@@ -39792,14 +39851,17 @@ function music = demoBuildMusic()
       if ~bassPattern(s + 1)
         continue
       end
+      phaseTimer = tic();
       bassStart = barStart + s * round(samplesPerBeat / 2);
       freq = demoNoteFreq(rootMidi);
       note = demoSynthBass(freq, round(samplesPerBeat / 2), fs);
       [toneL, toneR] = demoMix(toneL, toneR, note, bassStart, 0.60, 0.60);
+      bassElapsed = bassElapsed + toc(phaseTimer);
     end
 
     arpSequence = [1 2 3 2 1 2 3 2 1 2 3 2 1 3 2 3];
     for s = 0:15
+      phaseTimer = tic();
       arpStart = barStart + s * sixteenth;
       toneMidi = tones(arpSequence(s + 1)) + 12;
       freq = demoNoteFreq(toneMidi);
@@ -39807,23 +39869,29 @@ function music = demoBuildMusic()
       pan = 0.5 + 0.35 * sin(s * 0.6);
       [toneL, toneR] = demoMix(toneL, toneR, note, arpStart, ...
         0.20 * (1 + (1 - pan)), 0.20 * (1 + pan));
+      arpElapsed = arpElapsed + toc(phaseTimer);
     end
 
     if any(leadBars == barIndex)
       for s = 0:7
+        phaseTimer = tic();
         leadStart = barStart + s * round(samplesPerBeat / 2);
         leadMidi = leadRiff(s + 1);
         note = demoSynthLead(demoNoteFreq(leadMidi), ...
           round(samplesPerBeat / 2), fs);
         [toneL, toneR] = demoMix(toneL, toneR, note, leadStart, 0.30, 0.30);
+        leadElapsed = leadElapsed + toc(phaseTimer);
       end
     end
 
+    phaseTimer = tic();
     padFreqs = demoNoteFreq(tones);
     pad = demoSynthPad(padFreqs, samplesPerBar, fs);
     [toneL, toneR] = demoMix(toneL, toneR, pad, barStart, 0.20, 0.20);
+    padElapsed = padElapsed + toc(phaseTimer);
   end
 
+  postTimer = tic();
   duck = demoSidechain(totalSamples, samplesPerBeat, fs);
   toneL = toneL .* duck;
   toneR = toneR .* duck;
@@ -39845,9 +39913,12 @@ function music = demoBuildMusic()
   right(1:fadeLen) = right(1:fadeLen) .* fade;
   left(end - fadeLen + 1:end) = left(end - fadeLen + 1:end) .* flipud(fade);
   right(end - fadeLen + 1:end) = right(end - fadeLen + 1:end) .* flipud(fade);
+  postElapsed = toc(postTimer);
 
   synthDuration = duration;
+  ambientTimer = tic();
   [ambientL, ambientR] = demoBuildAmbient(fs);
+  ambientElapsed = toc(ambientTimer);
   left = [left; ambientL];
   right = [right; ambientR];
   totalDuration = numel(left) / fs;
@@ -39860,6 +39931,11 @@ function music = demoBuildMusic()
   music.duration = totalDuration;
   music.eonStart = synthDuration;
   music.bpm = bpm;
+  music.profile = struct('drums', drumsElapsed, 'bass', bassElapsed, ...
+    'arp', arpElapsed, 'lead', leadElapsed, 'pad', padElapsed, ...
+    'post', postElapsed, 'ambient', ambientElapsed, ...
+    'total', drumsElapsed + bassElapsed + arpElapsed + leadElapsed + ...
+    padElapsed + postElapsed + ambientElapsed);
 end
 %=============================================================================
 function freq = demoNoteFreq(midi)
@@ -40559,9 +40635,7 @@ function y = eonSynthPad(freqs, n, fs)
   env = min(1, tt * 2.5) .* min(1, (max(tt) - tt) * 3 + 0.15);
   y = y .* env;
   alpha = 0.06;
-  for i = 2:n
-    y(i) = y(i - 1) + alpha * (y(i) - y(i - 1));
-  end
+  y = filter(alpha, [1 alpha - 1], y, (1 - alpha) * y(1));
 end
 %=============================================================================
 function y = eonSynthSub(freq, n, fs)
@@ -40583,8 +40657,10 @@ end
 %=============================================================================
 function y = eonEcho(x, delaySamples, feedback)
   y = x;
-  for i = delaySamples + 1:numel(x)
-    y(i) = y(i) + feedback * y(i - delaySamples);
+  gain = feedback;
+  for offset = delaySamples:delaySamples:numel(x) - 1
+    y(offset + 1:end) = y(offset + 1:end) + gain * x(1:end - offset);
+    gain = gain * feedback;
   end
 end
 %=============================================================================
@@ -118941,9 +119017,12 @@ function varargout = kron(varargin)
     error('Nelson:kron:inputMustBe2D', 'Inputs must be 2-D.');
   end
 
-  % need to be optimized ...
   if issparse(A) || issparse(B)
     varargout{1} = sparse(kron(full(A), full(B)));
+  elseif (isa(A, 'double') || isa(A, 'single')) && ...
+      (isa(B, 'double') || isa(B, 'single')) && ...
+      isreal(A) && isreal(B)
+    varargout{1} = builtin('kron', A, B);
   else
     [m, n] = size(A);
     [p, q] = size(B);
@@ -119538,6 +119617,69 @@ asserts.isequal(id, 'Nelson:singularMatrix');
 %=============================================================================
 B = [1 2; 3 4];
 asserts.isapprox(inv(B), [-2 1; 1.5 -0.5], 1e-12);
+%=============================================================================
+%=============================================================================
+% Copyright (c) 2016-present Allan CORNET (Nelson)
+%=============================================================================
+% This file is part of Nelson.
+%=============================================================================
+% LICENCE_BLOCK_BEGIN
+% SPDX-License-Identifier: LGPL-3.0-or-later
+% LICENCE_BLOCK_END
+%=============================================================================
+% <--REUSE PROCESS-->
+A = eye(4);
+B = [1 -1; -1 1];
+R = kron(A, B);
+REF = [1 -1 0 0 0 0 0 0;
+  -1 1 0 0 0 0 0 0;
+  0 0 1 -1 0 0 0 0;
+  0 0 -1 1 0 0 0 0;
+  0 0 0 0 1 -1 0 0;
+  0 0 0 0 -1 1 0 0;
+  0 0 0 0 0 0 1 -1;
+  0 0 0 0 0 0 -1 1];
+asserts.isequal(R, REF)
+%=============================================================================
+A = [10 20 30; 40 50 60];
+B = ones(2);
+R = kron(A, B);
+REF = [10 10 20 20 30 30;
+  10 10 20 20 30 30;
+  40 40 50 50 60 60;
+  40 40 50 50 60 60];
+asserts.isequal(R, REF)
+%=============================================================================
+A = ones(0, 1);
+B = ones(1, 0);
+R = kron(A, B);
+REF = [];
+asserts.isequal(R, REF)
+%=============================================================================
+asserts.isequal(kron([1 2], [3; 4]), [3 6; 4 8]);
+%=============================================================================
+%=============================================================================
+% Copyright (c) 2016-present Allan CORNET (Nelson)
+%=============================================================================
+% This file is part of Nelson.
+%=============================================================================
+% LICENCE_BLOCK_BEGIN
+% SPDX-License-Identifier: LGPL-3.0-or-later
+% LICENCE_BLOCK_END
+%=============================================================================
+% integer and single classes are preserved
+R = kron(int8([1 2]), int8([3; 4]));
+asserts.isequal(class(R), 'int8');
+asserts.isequal(R, int8([3 6; 4 8]));
+asserts.isequal(class(kron(single([1 2]), [3; 4])), 'single');
+asserts.isequal(class(kron(uint16([1 2]), uint16([3 4]))), 'uint16');
+asserts.isequal(kron(uint8([100 3]), uint8([4 5])), uint8([400 500 12 15]));
+%=============================================================================
+% double behavior unchanged
+asserts.isequal(kron([1 2], [0 1]), [0 1 0 2]);
+asserts.isequal(kron([1 3; 4 2], eye(2)), [1 0 3 0; 0 1 0 3; 4 0 2 0; 0 4 0 2]);
+% complex
+asserts.isequal(kron([1 + 2i 3], [2 1i]), [2 + 4i -2 + 1i 6 3i]);
 %=============================================================================
 % Generated portable test module boundary.
 {
@@ -269975,8 +270117,8 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
   ],
   "summary": {
     "discovered": 5074,
-    "included": 640,
-    "excluded": 4434
+    "included": 642,
+    "excluded": 4432
   },
   "tests": [
     {
@@ -301784,10 +301926,12 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/linear_algebra/tests/test_kron_class.m",
       "sha256": "cc047425bd29ea5551ee31a35bc4b28878aaa46cdfbc2cd9fdabdb9754271216",
-      "included": false,
-      "requiredCapabilities": [],
+      "included": true,
+      "requiredCapabilities": [
+        "portable"
+      ],
       "missingCapabilities": [],
-      "exclusionReason": "not-classified-portable",
+      "exclusionReason": "",
       "resources": []
     },
     {
@@ -301796,10 +301940,12 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/linear_algebra/tests/test_kron.m",
       "sha256": "f85bda593dc949f1864b65f91ab300be361c6014e34269f21499788c878b7250",
-      "included": false,
-      "requiredCapabilities": [],
+      "included": true,
+      "requiredCapabilities": [
+        "portable"
+      ],
       "missingCapabilities": [],
-      "exclusionReason": "not-classified-portable",
+      "exclusionReason": "",
       "resources": []
     },
     {

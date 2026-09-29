@@ -82,30 +82,56 @@ catch demoError
 end
 %=============================================================================
 function demoRunBenchmark(sceneName, width, height, errorLog, imageDir)
+  musicTimer = tic();
   music = demoBuildMusic();
+  musicElapsed = toc(musicTimer);
   frames = 120;
+  timelineTimer = tic();
   scenes = demoBuildTimeline(music);
+  timelineElapsed = toc(timelineTimer);
   sceneT0 = 0;
   for k = 1:numel(scenes)
     if strcmp(scenes(k).name, sceneName)
       sceneT0 = scenes(k).t0;
     end
   end
+  setupTimer = tic();
   frame = zeros(height, width, 3);
+  setupElapsed = toc(setupTimer);
+  sceneElapsed = 0;
+  postElapsed = 0;
   timer = tic();
   for i = 1:frames
     t = sceneT0 + i / 60;
     beat = demoBeatInfo(t, music);
+    phaseTimer = tic();
     frame = demoRenderScene(sceneName, i / 60, t, beat, width, height);
+    sceneElapsed = sceneElapsed + toc(phaseTimer);
     applyOverlay = ~any(strcmp(sceneName, {'logo', 'earth', 'another'}));
+    phaseTimer = tic();
     frame = demoPostProcess(frame, t, beat, width, height, music, ...
       applyOverlay, 1.0);
+    postElapsed = postElapsed + toc(phaseTimer);
   end
   elapsed = toc(timer);
   fps = frames / elapsed;
   report = sprintf(['benchmark scene=%s %dx%d: %d frames in %.3fs ', ...
     '=> %.1f FPS (%.2f ms/frame)\n'], sceneName, width, height, frames, ...
     elapsed, fps, 1000 * elapsed / frames);
+  report = [report, sprintf(['benchmark prep scene=%s music %.3fs ', ...
+    'timeline %.3fs setup %.3fs render %.3fs total %.3fs\n'], ...
+    sceneName, musicElapsed, timelineElapsed, setupElapsed, elapsed, ...
+    musicElapsed + timelineElapsed + setupElapsed + elapsed)];
+  report = [report, sprintf(['benchmark render scene=%s effect %.3fs ', ...
+    'post %.3fs total %.3fs\n'], sceneName, sceneElapsed, postElapsed, ...
+    elapsed)];
+  if isfield(music, 'profile')
+    p = music.profile;
+    report = [report, sprintf(['benchmark music scene=%s drums %.3fs ', ...
+      'bass %.3fs arp %.3fs lead %.3fs pad %.3fs post %.3fs ', ...
+      'ambient %.3fs total %.3fs\n'], sceneName, p.drums, p.bass, ...
+      p.arp, p.lead, p.pad, p.post, p.ambient, p.total)];
+  end
   if ~isempty(imageDir)
     imwrite(min(1, max(0, frame)), [imageDir, '/bench_', sceneName, '.png']);
   end
@@ -434,8 +460,7 @@ function frame = demoCopperBars(t, beat, width, height)
       barLayer(:, 1, ch) = barLayer(:, 1, ch) + intensity * colors(k, ch);
     end
   end
-  frame = base + repmat(barLayer, 1, width, 1);
-  frame = min(1, frame);
+  frame = repmat(min(1, base + barLayer), 1, width, 1);
 end
 %=============================================================================
 function frame = demoFxTunnel(localT, t, beat, width, height)
@@ -740,18 +765,19 @@ function frame = demoPostProcess(frame, t, beat, width, height, music, ...
 end
 %=============================================================================
 function frame = demoFilmGrain(frame, t, width, height)
-  persistent cachedWidth cachedHeight grainTex
+  persistent cachedWidth cachedHeight grainTex grainTile
   if isempty(cachedWidth) || cachedWidth ~= width || cachedHeight ~= height
     cachedWidth = width;
     cachedHeight = height;
     idx = (1:height * width)';
     s = sin(idx * 12.9898 + idx * 0.017) * 43758.5453;
     grainTex = reshape((s - floor(s)) * 2 - 1, height, width);
+    grainTile = [grainTex grainTex; grainTex grainTex];
   end
   rowShift = mod(round(t * 163), height);
   colShift = mod(round(t * 97), width);
-  g = grainTex([rowShift + 1:height, 1:rowShift], ...
-    [colShift + 1:width, 1:colShift]);
+  g = grainTile(rowShift + 1:rowShift + height, ...
+    colShift + 1:colShift + width);
   amp = 0.022;
   frame(:, :, 1) = min(1, max(0, frame(:, :, 1) + g * amp));
   frame(:, :, 2) = min(1, max(0, frame(:, :, 2) + g * amp));
@@ -840,6 +866,18 @@ function frame = demoStampText(frame, text, scale, alpha, color, topRow, ...
 end
 %=============================================================================
 function [bmp, textWidth, glyphHeight] = demoBuildTextBitmap(text, scale)
+  persistent cachedKeys cachedBmps cachedWidths cachedHeights
+  key = [text, '|', int2str(scale)];
+  if ~isempty(cachedKeys)
+    for cacheIndex = 1:numel(cachedKeys)
+      if strcmp(cachedKeys{cacheIndex}, key)
+        bmp = cachedBmps{cacheIndex};
+        textWidth = cachedWidths(cacheIndex);
+        glyphHeight = cachedHeights(cacheIndex);
+        return
+      end
+    end
+  end
   [chars, glyphs] = demoFontData();
   glyphRows = 7;
   glyphCols = 5;
@@ -860,6 +898,16 @@ function [bmp, textWidth, glyphHeight] = demoBuildTextBitmap(text, scale)
   bmp = kron(small, ones(scale));
   glyphHeight = glyphRows * scale;
   textWidth = smallWidth * scale;
+  if isempty(cachedKeys)
+    cachedKeys = {};
+    cachedBmps = {};
+    cachedWidths = [];
+    cachedHeights = [];
+  end
+  cachedKeys{end + 1} = key;
+  cachedBmps{end + 1} = bmp;
+  cachedWidths(end + 1) = textWidth;
+  cachedHeights(end + 1) = glyphHeight;
 end
 %=============================================================================
 % ---- Beat / timing --------------------------------------------------------
@@ -905,6 +953,11 @@ function music = demoBuildMusic()
   sectionStartBars = [2 5 8 11 14 18];
   leadBars = 14:19;
   leadRiff = [69 72 71 69 67 69 64 67];
+  drumsElapsed = 0;
+  bassElapsed = 0;
+  arpElapsed = 0;
+  leadElapsed = 0;
+  padElapsed = 0;
 
   for barIndex = 0:bars - 1
     barStart = barIndex * samplesPerBar + 1;
@@ -913,11 +966,14 @@ function music = demoBuildMusic()
     tones = chordTones{chordId};
 
     if any(sectionStartBars == barIndex)
+      phaseTimer = tic();
       crash = demoSynthCrash(fs);
       [drumsL, drumsR] = demoMix(drumsL, drumsR, crash, barStart, 0.35, 0.35);
+      drumsElapsed = drumsElapsed + toc(phaseTimer);
     end
 
     for b = 0:3
+      phaseTimer = tic();
       kickStart = barStart + b * samplesPerBeat;
       kick = demoSynthKick(fs);
       [drumsL, drumsR] = demoMix(drumsL, drumsR, kick, kickStart, 1.0, 1.0);
@@ -926,9 +982,11 @@ function music = demoBuildMusic()
         [drumsL, drumsR] = demoMix(drumsL, drumsR, snare, kickStart, ...
           0.55, 0.55);
       end
+      drumsElapsed = drumsElapsed + toc(phaseTimer);
     end
 
     for h = 0:7
+      phaseTimer = tic();
       hatStart = barStart + h * round(samplesPerBeat / 2);
       hat = demoSynthHat(fs);
       pan = 0.4 + 0.2 * mod(h, 2);
@@ -940,6 +998,7 @@ function music = demoBuildMusic()
       end
       [drumsL, drumsR] = demoMix(drumsL, drumsR, hat, hatStart, ...
         gain * (2 - pan), gain * pan);
+      drumsElapsed = drumsElapsed + toc(phaseTimer);
     end
 
     bassPattern = [1 0 1 0 0 1 0 1] > 0;
@@ -947,14 +1006,17 @@ function music = demoBuildMusic()
       if ~bassPattern(s + 1)
         continue
       end
+      phaseTimer = tic();
       bassStart = barStart + s * round(samplesPerBeat / 2);
       freq = demoNoteFreq(rootMidi);
       note = demoSynthBass(freq, round(samplesPerBeat / 2), fs);
       [toneL, toneR] = demoMix(toneL, toneR, note, bassStart, 0.60, 0.60);
+      bassElapsed = bassElapsed + toc(phaseTimer);
     end
 
     arpSequence = [1 2 3 2 1 2 3 2 1 2 3 2 1 3 2 3];
     for s = 0:15
+      phaseTimer = tic();
       arpStart = barStart + s * sixteenth;
       toneMidi = tones(arpSequence(s + 1)) + 12;
       freq = demoNoteFreq(toneMidi);
@@ -962,23 +1024,29 @@ function music = demoBuildMusic()
       pan = 0.5 + 0.35 * sin(s * 0.6);
       [toneL, toneR] = demoMix(toneL, toneR, note, arpStart, ...
         0.20 * (1 + (1 - pan)), 0.20 * (1 + pan));
+      arpElapsed = arpElapsed + toc(phaseTimer);
     end
 
     if any(leadBars == barIndex)
       for s = 0:7
+        phaseTimer = tic();
         leadStart = barStart + s * round(samplesPerBeat / 2);
         leadMidi = leadRiff(s + 1);
         note = demoSynthLead(demoNoteFreq(leadMidi), ...
           round(samplesPerBeat / 2), fs);
         [toneL, toneR] = demoMix(toneL, toneR, note, leadStart, 0.30, 0.30);
+        leadElapsed = leadElapsed + toc(phaseTimer);
       end
     end
 
+    phaseTimer = tic();
     padFreqs = demoNoteFreq(tones);
     pad = demoSynthPad(padFreqs, samplesPerBar, fs);
     [toneL, toneR] = demoMix(toneL, toneR, pad, barStart, 0.20, 0.20);
+    padElapsed = padElapsed + toc(phaseTimer);
   end
 
+  postTimer = tic();
   duck = demoSidechain(totalSamples, samplesPerBeat, fs);
   toneL = toneL .* duck;
   toneR = toneR .* duck;
@@ -1000,9 +1068,12 @@ function music = demoBuildMusic()
   right(1:fadeLen) = right(1:fadeLen) .* fade;
   left(end - fadeLen + 1:end) = left(end - fadeLen + 1:end) .* flipud(fade);
   right(end - fadeLen + 1:end) = right(end - fadeLen + 1:end) .* flipud(fade);
+  postElapsed = toc(postTimer);
 
   synthDuration = duration;
+  ambientTimer = tic();
   [ambientL, ambientR] = demoBuildAmbient(fs);
+  ambientElapsed = toc(ambientTimer);
   left = [left; ambientL];
   right = [right; ambientR];
   totalDuration = numel(left) / fs;
@@ -1015,6 +1086,11 @@ function music = demoBuildMusic()
   music.duration = totalDuration;
   music.eonStart = synthDuration;
   music.bpm = bpm;
+  music.profile = struct('drums', drumsElapsed, 'bass', bassElapsed, ...
+    'arp', arpElapsed, 'lead', leadElapsed, 'pad', padElapsed, ...
+    'post', postElapsed, 'ambient', ambientElapsed, ...
+    'total', drumsElapsed + bassElapsed + arpElapsed + leadElapsed + ...
+    padElapsed + postElapsed + ambientElapsed);
 end
 %=============================================================================
 function freq = demoNoteFreq(midi)
@@ -1714,9 +1790,7 @@ function y = eonSynthPad(freqs, n, fs)
   env = min(1, tt * 2.5) .* min(1, (max(tt) - tt) * 3 + 0.15);
   y = y .* env;
   alpha = 0.06;
-  for i = 2:n
-    y(i) = y(i - 1) + alpha * (y(i) - y(i - 1));
-  end
+  y = filter(alpha, [1 alpha - 1], y, (1 - alpha) * y(1));
 end
 %=============================================================================
 function y = eonSynthSub(freq, n, fs)
@@ -1738,8 +1812,10 @@ end
 %=============================================================================
 function y = eonEcho(x, delaySamples, feedback)
   y = x;
-  for i = delaySamples + 1:numel(x)
-    y(i) = y(i) + feedback * y(i - delaySamples);
+  gain = feedback;
+  for offset = delaySamples:delaySamples:numel(x) - 1
+    y(offset + 1:end) = y(offset + 1:end) + gain * x(1:end - offset);
+    gain = gain * feedback;
   end
 end
 %=============================================================================

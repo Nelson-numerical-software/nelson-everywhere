@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=7427707dccf7";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=7427707dccf7";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=8e7dff7f82db";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=8e7dff7f82db";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,7 +14,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=7427707dccf7";
+} from "./nelson-worker-protocol.mjs?build=8e7dff7f82db";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -110,6 +110,54 @@ function publishDebuggerState(json) {
   });
 }
 
+function publishAudioAction(action, transferList = []) {
+  self.postMessage(
+    {
+      version: PROTOCOL_VERSION,
+      event: "audio",
+      action,
+    },
+    transferList,
+  );
+}
+
+function publishAudioBufferBegin(id, sampleRate, channels, frames) {
+  publishAudioAction({
+    type: "audio-buffer-begin",
+    id: Number(id),
+    sampleRate: Number(sampleRate),
+    channels: Number(channels),
+    frames: Number(frames),
+  });
+}
+
+function publishAudioBufferChunk(id, offset, frames, buffer) {
+  const payload =
+    buffer instanceof ArrayBuffer ? buffer : new Uint8Array(buffer).buffer;
+  publishAudioAction(
+    {
+      type: "audio-buffer-chunk",
+      id: Number(id),
+      offset: Number(offset),
+      frames: Number(frames),
+      samplesF32Buffer: payload,
+    },
+    [payload],
+  );
+}
+
+function publishAudioBufferPlay(id) {
+  publishAudioAction({ type: "audio-buffer-play", id: Number(id) });
+}
+
+function publishAudioControl(id, command) {
+  publishAudioAction({
+    type: "audio-control",
+    id: Number(id),
+    command: String(command),
+  });
+}
+
 function reply(id, ok, value) {
   self.postMessage({
     version: PROTOCOL_VERSION,
@@ -178,6 +226,10 @@ async function initialize(
       onNelsonFigureFrameAttachments: publishFigureAttachments,
       onNelsonNFlowPartial: publishNFlowPartial,
       onNelsonDebuggerState: publishDebuggerState,
+      onNelsonAudioBufferBegin: publishAudioBufferBegin,
+      onNelsonAudioBufferChunk: publishAudioBufferChunk,
+      onNelsonAudioBufferPlay: publishAudioBufferPlay,
+      onNelsonAudioControl: publishAudioControl,
       onNelsonNFlowShouldCancel: () =>
         nflowCancelSignal ? Atomics.load(nflowCancelSignal, 0) : 0,
       onNelsonPollCommand: pollCooperativeCommand,

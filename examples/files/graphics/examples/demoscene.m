@@ -162,10 +162,15 @@ end
 %=============================================================================
 function demoRun(figureVisible, startFullscreen, enableAudio, width, ...
   height, targetFps, maxFrames, maxSeconds, outputImage)
+  fprintf(['Preparing demoscene: generating procedural music and ', ...
+    'timeline, please wait...\n']);
+  drawnow();
   music = demoBuildMusic();
   fs = music.sampleRate;
   scenes = demoBuildTimeline(music);
   totalDuration = music.duration;
+  fprintf('Starting demoscene.\n');
+  drawnow();
 
   screenSize = get(0, 'ScreenSize');
   figureWidth = min(1120, max(720, screenSize(3) - 80));

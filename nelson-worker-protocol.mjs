@@ -499,8 +499,8 @@ export function extractUiActions(stdout) {
     action.offset >= 0 &&
     Number.isSafeInteger(action.frames) &&
     action.frames >= 0 &&
-    Array.isArray(action.samples) &&
-    action.samples.every(Number.isFinite);
+    ((Array.isArray(action.samples) && action.samples.every(Number.isFinite)) ||
+      typeof action.samplesF32Base64 === "string");
   const isAudioBufferPlayAction = (action) =>
     action?.type === "audio-buffer-play" &&
     Number.isSafeInteger(action.id) &&

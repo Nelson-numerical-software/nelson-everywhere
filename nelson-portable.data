@@ -5143,6 +5143,11 @@ if ~exist('audioToneFigureVisible', 'var')
   audioToneFigureVisible = 'on';
 end
 %=============================================================================
+devices = audiodevinfo();
+if isempty(devices.output)
+  error('This example requires an audio output device.');
+end
+%=============================================================================
 fs = audioToneSampleRate;
 t = (0:round(audioToneDuration * fs) - 1)' / fs;
 envelope = min(1, t / 0.04) .* exp(-3.5 * t / max(audioToneDuration, eps));
@@ -6767,11 +6772,10 @@ rmfile(filename);
 % SPDX-License-Identifier: LGPL-3.0-or-later
 % LICENCE_BLOCK_END
 %=============================================================================
-info = audiodevinfo();
-if (~isfield(info, 'output') || isempty(info.output) || ~isfield(info.output, 'Name') ...
-    || ~strcmp(info.output.Name, 'Web Audio'))
-  skip_testsuite('Portable Web Audio device is not available.');
+if ~iswasm()
+  skip_testsuite('Portable Web Audio backend requires a WebAssembly build.');
 end
+info = audiodevinfo();
 %=============================================================================
 asserts.isequal(fieldnames(info), {'input'; 'output'});
 asserts.istrue(isempty(info.input));
@@ -6802,10 +6806,8 @@ asserts.isequal(audiodevinfo(INPUT_DEVICE, 44100, 16, 1), -1);
 % SPDX-License-Identifier: LGPL-3.0-or-later
 % LICENCE_BLOCK_END
 %=============================================================================
-audioInfo = audiodevinfo();
-if (~isfield(audioInfo, 'output') || isempty(audioInfo.output) ...
-    || ~isfield(audioInfo.output, 'Name') || ~strcmp(audioInfo.output.Name, 'Web Audio'))
-  skip_testsuite('Portable Web Audio device is not available.');
+if ~iswasm()
+  skip_testsuite('Portable Web Audio backend requires a WebAssembly build.');
 end
 %=============================================================================
 fs = 8000;
@@ -6836,10 +6838,8 @@ asserts.istrue(true);
 % SPDX-License-Identifier: LGPL-3.0-or-later
 % LICENCE_BLOCK_END
 %=============================================================================
-audioInfo = audiodevinfo();
-if (~isfield(audioInfo, 'output') || isempty(audioInfo.output) ...
-    || ~isfield(audioInfo.output, 'Name') || ~strcmp(audioInfo.output.Name, 'Web Audio'))
-  skip_testsuite('Portable Web Audio device is not available.');
+if ~iswasm()
+  skip_testsuite('Portable Web Audio backend requires a WebAssembly build.');
 end
 %=============================================================================
 y = [0; 0.5; -0.5; 1];
@@ -6855,10 +6855,8 @@ asserts.istrue(true);
 % SPDX-License-Identifier: LGPL-3.0-or-later
 % LICENCE_BLOCK_END
 %=============================================================================
-audioInfo = audiodevinfo();
-if (~isfield(audioInfo, 'output') || isempty(audioInfo.output) ...
-    || ~isfield(audioInfo.output, 'Name') || ~strcmp(audioInfo.output.Name, 'Web Audio'))
-  skip_testsuite('Portable Web Audio device is not available.');
+if ~iswasm()
+  skip_testsuite('Portable Web Audio backend requires a WebAssembly build.');
 end
 %=============================================================================
 y = [-1; 0; 1];
@@ -86682,6 +86680,112 @@ function [orientation, nSeries] = getSeriesOrientation(theta, radius)
   error('Nelson:dimagree:valueValueNumberElements', '%s and %s must have the same number of elements.', 'Theta', 'radius');
 end
 %=============================================================================
+%=============================================================================
+% Copyright (c) 2016-present Allan CORNET (Nelson)
+%=============================================================================
+% This file is part of Nelson.
+%=============================================================================
+% LICENCE_BLOCK_BEGIN
+% SPDX-License-Identifier: LGPL-3.0-or-later
+% LICENCE_BLOCK_END
+%=============================================================================
+function print(varargin)
+  nargoutchk(0, 0);
+
+  fig = [];
+  filename = '';
+  device = '';
+  resolution = '';
+
+  for k = 1:nargin
+    arg = varargin{k};
+    if isStringScalar(arg) || (ischar(arg) && isrow(arg)) || isempty(arg)
+      txt = localScalarText(arg);
+      if startsWith(txt, '-d')
+        device = lower(txt);
+      elseif startsWith(txt, '-r')
+        resolution = lower(txt);
+      elseif startsWith(txt, '-')
+        % other switches (e.g. '-loose', '-noui') are accepted and ignored.
+      else
+        filename = txt;
+      end
+    elseif isgraphics(arg, 'figure')
+      fig = arg;
+    elseif isnumeric(arg) && isscalar(arg) && isgraphics(arg, 'figure')
+      fig = arg;
+    else
+      error('Nelson:print:invalidArgument', 'Unsupported argument for print.');
+    end
+  end
+
+  if isempty(fig)
+    fig = gcf();
+  end
+  if ~isgraphics(fig, 'figure')
+    error('Nelson:print:expectedFigure', 'Expected figure graphics object.');
+  end
+  if isempty(filename)
+    error('Nelson:print:filenameExpected', 'A filename is required to print to a file.');
+  end
+
+  % '-r<dpi>' is accepted for compatibility; the export resolution follows the
+  % figure size and is not resampled.
+  if ~isempty(resolution)
+    dpi = resolution(3:end);
+    if ~isempty(dpi) && isnan(str2double(dpi))
+      error('Nelson:print:invalidResolution', 'Invalid resolution: %s', resolution);
+    end
+  end
+
+  if isempty(device)
+    saveas(fig, filename);
+  else
+    format = localDeviceToFormat(device);
+    saveas(fig, filename, format);
+  end
+end
+%=============================================================================
+function txt = localScalarText(value)
+  if isStringScalar(value)
+    txt = char(value);
+  elseif ischar(value)
+    txt = value;
+  else
+    txt = '';
+  end
+end
+%=============================================================================
+function format = localDeviceToFormat(device)
+  token = device(3:end);
+  switch token
+    case 'png'
+      format = 'png';
+    case {'jpeg', 'jpg'}
+      format = 'jpg';
+    case 'pdf'
+      format = 'pdf';
+    case 'svg'
+      format = 'svg';
+    case {'tiff', 'tiffn', 'tif'}
+      format = 'tif';
+    case {'bmp', 'bmpmono'}
+      format = 'bmp';
+    case 'gif'
+      format = 'gif';
+    case 'webp'
+      format = 'webp';
+    case 'pcx'
+      format = 'pcx';
+    case 'tga'
+      format = 'tga';
+    case {'pbm', 'pgm', 'ppm', 'pnm'}
+      format = token;
+    otherwise
+      error('Nelson:print:unsupportedDevice', 'Unsupported device option: %s', device);
+  end
+end
+%=============================================================================
 ﻿%=============================================================================
 % Copyright (c) 2026-present Allan CORNET (Nelson)
 %=============================================================================
@@ -87870,8 +87974,7 @@ function applyBarAxesState(parent, orientation, x, y, labels, width, mode, nSeri
 
 
   if updateValueLimits
-    limits = barValueLimits(y, mode, baseValue);
-    ticks = barValueTicks(limits, orientation);
+    [limits, ticks] = barValueLimits(y, mode, baseValue);
     if strcmp(orientation, 'horizontal')
       ax.XLim = limits;
       if strcmp(ax.XTickMode, 'auto')
@@ -87912,7 +88015,7 @@ function limits = barPositionLimits(x, width, mode, nSeries, labels)
   limits = [min(x) - pad, max(x) + pad];
 end
 %=============================================================================
-function limits = barValueLimits(y, mode, baseValue)
+function [limits, ticks] = barValueLimits(y, mode, baseValue)
   if strcmp(mode, 'stacked')
     positiveBases = baseValue * ones(size(y, 1), 1);
     negativeBases = baseValue * ones(size(y, 1), 1);
@@ -87936,85 +88039,74 @@ function limits = barValueLimits(y, mode, baseValue)
   values = values(isfinite(values));
   if isempty(values)
     limits = [0 1];
+    ticks = [0 1];
     return
   end
-  limits = [min(values), max(values)];
-  if limits(1) == limits(2)
-    limits = [limits(1) - 0.5, limits(2) + 0.5];
-  elseif limits(1) < 0 && limits(2) > 0
-    limits = mixedSignValueLimits(limits);
-  elseif limits(1) >= 0 && limits(2) > 0
-    if strcmp(mode, 'stacked')
-      limits(2) = positiveStackedValueUpper(limits(2));
-    else
-      limits(2) = positiveValueUpper(limits(2));
-    end
-  end
-end
-%=============================================================================
-function upper = positiveValueUpper(value)
-  step = niceStep(value / 9);
-  upper = ceil(value / step) * step;
-end
-%=============================================================================
-function ticks = barValueTicks(limits, orientation)
-  if strcmp(orientation, 'vertical') && limits(1) < 0 && limits(2) > 0
-    step = niceStep(diff(limits) / 3);
-  else
-    step = niceStep(diff(limits) / 9);
-  end
-  first = ceil(limits(1) / step) * step;
-  last = floor(limits(2) / step) * step;
-  ticks = first:step:last;
-  if isempty(ticks)
+  lo = min(values);
+  hi = max(values);
+  if lo == hi
+    limits = [lo - 0.5, hi + 0.5];
     ticks = limits;
     return
   end
-  if abs(ticks(1) - limits(1)) > 1e-12
-    ticks = [limits(1), ticks];
-  end
-  if abs(ticks(end) - limits(2)) > 1e-12
-    ticks = [ticks, limits(2)];
-  end
+  [limits, ticks] = niceValueAxis(lo, hi);
 end
 %=============================================================================
-function upper = positiveStackedValueUpper(value)
-  padded = value * 1.1;
-  step = niceStep(padded / 6);
-  upper = ceil(padded / step) * step;
+% Reference-compatible automatic value axis. The data extent [lo, hi] (which
+% always brackets the bar baseline) is snapped outward onto a {1,2,5}x10^k grid.
+% Among the steps whose outward-snapped limits span at most 10 intervals, the one
+% adding the least padding beyond the data wins; ties resolve to the finest step.
+% This is the same rule the axis auto-tick engine (GOAxisHelpers niceStep) uses,
+% applied here so a bar's frozen value limits and ticks match what an automatic
+% axis would settle on for the same value range.
+function [limits, ticks] = niceValueAxis(lo, hi)
+  step = niceValueStep(lo, hi, 10);
+  a = floor(lo / step) * step;
+  b = ceil(hi / step) * step;
+  n = round((b - a) / step);
+  ticks = a + (0:n) * step;
+  ticks(abs(ticks) < step * 1e-9) = 0;
+  limits = [a, b];
 end
 %=============================================================================
-function limits = mixedSignValueLimits(limits)
-  coarseStep = niceStep(diff(limits) / 3);
-  if isMultipleOfStep(limits(1), coarseStep) && isMultipleOfStep(limits(2), coarseStep)
-    return
-  end
-  fineStep = niceStep(diff(limits) / 8);
-  limits = [floor(limits(1) / fineStep) * fineStep, ceil(limits(2) / fineStep) * fineStep];
-end
-%=============================================================================
-function step = niceStep(value)
-  value = abs(value);
-  if value <= 0 || ~isfinite(value)
+function step = niceValueStep(amin, amax, maxIntervals)
+  range = abs(amax - amin);
+  if ~isfinite(range) || range <= 0
     step = 1;
     return
   end
-  scale = 10 ^ floor(log10(value));
-  normalized = value / scale;
-  if normalized <= 1
-    nice = 1;
-  elseif normalized <= 2
-    nice = 2;
-  elseif normalized <= 5
-    nice = 5;
-  else
-    nice = 10;
+  if maxIntervals < 1
+    maxIntervals = 1;
   end
-  step = nice * scale;
-end
-%=============================================================================
-function tf = isMultipleOfStep(value, step)
-  tf = abs(value / step - round(value / step)) < 1e-12;
+  rawStep = range / maxIntervals;
+  loDecade = floor(log10(rawStep)) - 1;
+  hiDecade = ceil(log10(range)) + 1;
+  multipliers = [1 2 5];
+  bestStep = 0;
+  bestPadding = inf;
+  tol = 1e-9 * max(1, range);
+  for decade = loDecade:hiDecade
+    scale = 10 ^ decade;
+    for m = multipliers
+      s = m * scale;
+      a = floor(amin / s) * s;
+      b = ceil(amax / s) * s;
+      intervals = round((b - a) / s);
+      if intervals < 1 || intervals > maxIntervals
+        continue
+      end
+      padding = (amin - a) + (b - amax);
+      if padding < bestPadding - tol
+        bestPadding = padding;
+        bestStep = s;
+      end
+    end
+  end
+  if bestStep <= 0
+    step = range / maxIntervals;
+  else
+    step = bestStep;
+  end
 end
 %=============================================================================
 function tf = shouldUseBarTicks(x)
@@ -88505,6 +88597,102 @@ function normals = computeIsonormals(x, y, z, V, vertices, negate)
   normals = [nx(:), ny(:), nz(:)];
   if negate
     normals = -normals;
+  end
+end
+%=============================================================================
+%=============================================================================
+% Copyright (c) 2026-present Allan CORNET (Nelson)
+%=============================================================================
+% This file is part of Nelson.
+%=============================================================================
+% LICENCE_BLOCK_BEGIN
+% SPDX-License-Identifier: LGPL-3.0-or-later
+% LICENCE_BLOCK_END
+%=============================================================================
+% Shared implementation for xline (InterceptAxis 'x') and yline ('y').
+function h = constantLineImpl(interceptAxis, args)
+  args = convertStringToCharArgs(args);
+  [parent, args] = graphicsParseParent(args);
+  if isempty(args)
+    error('Nelson:graphics:notEnoughInputs', 'Not enough input arguments.');
+  end
+  value = args{1};
+  args(1) = [];
+  if ~isnumeric(value) || ~isreal(value)
+    error('Nelson:graphics:invalidConstantLineValue', 'Value must be a real numeric scalar or vector.');
+  end
+  value = double(value(:)');
+
+  propArgs = {};
+  labels = {};
+  % Optional LineSpec, only immediately after the value.
+  if ~isempty(args) && ischar(args{1}) && ~isConstantLineProperty(args{1})
+    [lineStyle, colorSpec, markerSpec] = tryLineSpec(args{1});
+    if ~isempty(lineStyle) || ~isempty(colorSpec) || ~isempty(markerSpec)
+      if ~isempty(colorSpec)
+        propArgs = [propArgs, {'Color', colorSpec}];
+      end
+      if ~isempty(lineStyle)
+        propArgs = [propArgs, {'LineStyle', lineStyle}];
+      end
+      args(1) = [];
+      % Optional labels, only after a LineSpec.
+      if ~isempty(args) && ~isConstantLineProperty(args{1}) && (ischar(args{1}) || iscellstr(args{1}))
+        labels = cellstr(args{1});
+        args(1) = [];
+      end
+    end
+  end
+
+  if rem(numel(args), 2) ~= 0
+    error('Nelson:graphics:invalidNameValueArguments', 'Invalid parameter/value pair arguments.');
+  end
+
+  count = numel(value);
+  h = [];
+  for k = 1:count
+    callArgs = {'InterceptAxis', interceptAxis, 'Value', value(k)};
+    if ~isempty(labels)
+      callArgs = [callArgs, {'Label', labels{min(k, numel(labels))}}];
+    end
+    callArgs = [callArgs, propArgs, args];
+    if ~isempty(parent)
+      callArgs = [{'Parent', parent}, callArgs];
+    end
+    hk = __constantline__(callArgs{:});
+    if isempty(h)
+      h = hk;
+    else
+      h = [h, hk];
+    end
+  end
+end
+%=============================================================================
+function tf = isConstantLineProperty(name)
+  tf = false;
+  if ~ischar(name)
+    return
+  end
+  props = {'Value', 'InterceptAxis', 'Label', 'FontAngle', 'FontSize', 'FontName', ...
+    'FontWeight', 'Interpreter', 'LabelOrientation', 'LabelHorizontalAlignment', ...
+    'LabelVerticalAlignment', 'Alpha', 'LineWidth', 'Color', 'LabelColor', 'LineStyle', ...
+    'Layer', 'ColorMode', 'LabelColorMode', 'LineStyleMode', 'Visible', 'HandleVisibility', ...
+    'DisplayName', 'ButtonDownFcn', 'BusyAction', 'Interruptible', 'CreateFcn', 'DeleteFcn', ...
+    'Tag', 'UserData', 'Selected', 'SelectionHighlight', 'HitTest', 'PickableParts', ...
+    'SeriesIndex', 'Parent', 'ContextMenu'};
+  tf = any(strcmpi(name, props));
+end
+%=============================================================================
+function [lineStyle, colorSpec, markerSpec] = tryLineSpec(candidate)
+  lineStyle = '';
+  colorSpec = '';
+  markerSpec = '';
+  try
+    [lineStyle, colorSpec, markerSpec] = colstyle(candidate);
+  catch
+    lineStyle = '';
+    colorSpec = '';
+    markerSpec = '';
   end
 end
 %=============================================================================
@@ -98837,6 +99025,12 @@ function value = xVariableSelector(value)
 end
 %=============================================================================
 function value = onOffValue(value)
+  % Graphics on/off properties read back as nelson.lang.OnOffSwitchState
+  % enumerations, so coerce any non char/cellstr value to a character row
+  % vector before validating it.
+  if ~ischar(value) && ~iscellstr(value)
+    value = char(value);
+  end
   value = scalarName(value);
   value = lower(value);
   if ~(strcmp(value, 'on') || strcmp(value, 'off'))
@@ -103065,7 +103259,7 @@ function ax = uiaxes(varargin)
       userSetsPosition = true;
     end
   end
-  ax = axes('Parent', parent, 'NextPlot', 'replacechildren', 'FontUnits', 'pixels', 'FontSize', 12);
+  ax = __uiaxes__('Parent', parent, 'NextPlot', 'replacechildren', 'FontUnits', 'pixels', 'FontSize', 12);
   ax.Units = 'pixels';
   if ~userSetsPosition
     ax.Position = [10 10 400 300];
@@ -104282,6 +104476,24 @@ end
 % SPDX-License-Identifier: LGPL-3.0-or-later
 % LICENCE_BLOCK_END
 %=============================================================================
+function varargout = xline(varargin)
+  nargoutchk(0, 1);
+  narginchk(1, inf);
+  handle = constantLineImpl('x', varargin);
+  if nargout > 0
+    varargout{1} = handle;
+  end
+end
+%=============================================================================
+%=============================================================================
+% Copyright (c) 2026-present Allan CORNET (Nelson)
+%=============================================================================
+% This file is part of Nelson.
+%=============================================================================
+% LICENCE_BLOCK_BEGIN
+% SPDX-License-Identifier: LGPL-3.0-or-later
+% LICENCE_BLOCK_END
+%=============================================================================
 function varargout = xtickangle(varargin)
   narginchk(0, 2);
   nargoutchk(0, 1);
@@ -104646,6 +104858,24 @@ end
 %=============================================================================
 function tf = isLimitMethod(value)
   tf = strcmp(value, 'tickaligned') || strcmp(value, 'tight') || strcmp(value, 'padded');
+end
+%=============================================================================
+%=============================================================================
+% Copyright (c) 2026-present Allan CORNET (Nelson)
+%=============================================================================
+% This file is part of Nelson.
+%=============================================================================
+% LICENCE_BLOCK_BEGIN
+% SPDX-License-Identifier: LGPL-3.0-or-later
+% LICENCE_BLOCK_END
+%=============================================================================
+function varargout = yline(varargin)
+  nargoutchk(0, 1);
+  narginchk(1, inf);
+  handle = constantLineImpl('y', varargin);
+  if nargout > 0
+    varargout{1} = handle;
+  end
 end
 %=============================================================================
 %=============================================================================
@@ -120344,7 +120574,7 @@ modules_list = {
 {'time', true};
 {'stream_manager', true};
 {'hdf5', true};
-{'preferences', false};
+{'preferences', true};
 {'netcdf', true};
 {'matio', true};
 {'xml', true};
@@ -256977,7 +257207,8 @@ function validateEntry(entry, examplesRoot)
     runOutsideModule(examplePath);
   else
     validateRequirementNames(requirements);
-    guardedRequirements = requirements(~ismember(requirements, {'gui'; 'plots'; 'control-system'}));
+    [~, baselineRequirements] = galleryRequirementCatalog();
+    guardedRequirements = requirements(~ismember(requirements, baselineRequirements));
     if ~isempty(guardedRequirements)
       asserts.istrue(contains(loweredSource, 'error('));
     end
@@ -257006,10 +257237,30 @@ function validateText(value)
 end
 
 function validateRequirementNames(requirements)
-  allowed = {'gui'; 'web_gui'; 'plots'; 'control-system'; 'network'; 'credentials'; ...
-    'compiler'; 'mpi'; 'windows'; 'python'; 'julia'; 'audio-input'; 'audio-output'; ...
-    'external-application'};
+  allowed = galleryRequirementCatalog();
   asserts.istrue(all(ismember(requirements, allowed)));
+end
+
+function [allowed, baseline] = galleryRequirementCatalog()
+  % Reads the shared gallery requirement vocabulary from etc/gallery_requirements.json.
+  % allowed  : every capability name a requirements field may use.
+  % baseline : names always present in a standard build (no runtime error() guard needed).
+  persistent cachedAllowed cachedBaseline
+  if isempty(cachedAllowed)
+    manifestPath = fullfile(nelsonroot(), 'etc', 'gallery_requirements.json');
+    catalog = jsondecode(fileread(manifestPath));
+    entries = catalog.requirements;
+    cachedAllowed = cell(numel(entries), 1);
+    cachedBaseline = {};
+    for index = 1:numel(entries)
+      cachedAllowed{index} = entries(index).name;
+      if entries(index).baseline
+        cachedBaseline{end + 1, 1} = entries(index).name; %#ok<AGROW>
+      end
+    end
+  end
+  allowed = cachedAllowed;
+  baseline = cachedBaseline;
 end
 
 function validateNoArgumentFunction(source)
@@ -270189,6 +270440,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     "os_functions",
     "overload",
     "polynomial_functions",
+    "preferences",
     "profiler",
     "random",
     "render_web",
@@ -270212,9 +270464,9 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     "xml"
   ],
   "summary": {
-    "discovered": 5078,
+    "discovered": 5094,
     "included": 642,
-    "excluded": 4436
+    "excluded": 4452
   },
   "tests": [
     {
@@ -270852,7 +271104,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_audiodevinfo_portable_web_audio.m",
       "kind": "test",
       "runtimePath": "modules/audio/tests/test_audiodevinfo_portable_web_audio.m",
-      "sha256": "186fec86451cf378fd9d915b3ab03ef70d7408914f37565727106c6475f51118",
+      "sha256": "e24c686618be36c5291d8bbe23025c333b306fc37ce6a5d9a6346278f0c5605d",
       "included": true,
       "requiredCapabilities": [
         "audio",
@@ -270975,7 +271227,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_audioplayer_portable_controls.m",
       "kind": "test",
       "runtimePath": "modules/audio/tests/test_audioplayer_portable_controls.m",
-      "sha256": "a22fa195de7d36fbfe69bf45718e5d868981990ff436e1914c49032ab81c0b62",
+      "sha256": "5b5d8f1cca57827537656399e4d19906ea057b602a89d345905f25c6e253ef4a",
       "included": true,
       "requiredCapabilities": [
         "audio",
@@ -271326,7 +271578,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_sound_portable_web_audio_action.m",
       "kind": "test",
       "runtimePath": "modules/audio/tests/test_sound_portable_web_audio_action.m",
-      "sha256": "d5cac147051d962fd90506b5bd2348d66c66dec83182347cb0b675c6fb5a6676",
+      "sha256": "ae5845d9f3aafb524713d6512b5a87fe77136dd91e2bdd8bf0cf5189aae0a9b1",
       "included": true,
       "requiredCapabilities": [
         "audio",
@@ -271353,7 +271605,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_soundsc_portable_web_audio_action.m",
       "kind": "test",
       "runtimePath": "modules/audio/tests/test_soundsc_portable_web_audio_action.m",
-      "sha256": "07ff93fc4c33e47fc88a4750a1ab15a1b344e4b694474558edf3ca3f78f6b2fc",
+      "sha256": "fcd4095494f8248027046c466e409b6db56c6eba4e988992aab6f2697a7b4ad4",
       "included": true,
       "requiredCapabilities": [
         "audio",
@@ -271404,7 +271656,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_synth_piano_gui.m",
       "kind": "test",
       "runtimePath": "modules/audio/tests/test_synth_piano_gui.m",
-      "sha256": "b0bab02c849c42197a25ef5a095ec9b355832724f579145ebe83d760e84e0d93",
+      "sha256": "16ad6631dc8b5d69869a551142e1df7aecd27b5243082b7bca6beabcca32b19e",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284321,7 +284573,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "bug_github_issue_809.m",
       "kind": "bug",
       "runtimePath": "modules/graphics/tests/bug_github_issue_809.m",
-      "sha256": "b6cca499547237b9d0d30d5318a1b1f25a69c24752505005103c859b22619d32",
+      "sha256": "4fb0694cfab701128b0754cb6ed715fbafd567401f27031fb7350bf330721c54",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284453,7 +284705,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_animatedline_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_animatedline_properties.m",
-      "sha256": "fba4092adb44b26efd361f15a0e6a5dd747bf4271ee5b8b06c51f975b62fbcd0",
+      "sha256": "25089f214b9c788f6fa5570a48c5d8118edc0ddcfb396d902f01e4a67c1f6768",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284465,7 +284717,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_animatedline_render_clipping.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_animatedline_render_clipping.m",
-      "sha256": "a0381ba0fd158d7b75054cd38cacaf9ef3d8e3d59cafc0c1350c502753f1f009",
+      "sha256": "b53796fe093c3cf6ca9269207d10b6cf557c1924d70c4ad352998e60ce2c2ef3",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284597,7 +284849,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_annotation_arrow.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_annotation_arrow.m",
-      "sha256": "9f8226741ccc5af1366a92da52b2382d9a1ea1d76aee05a1e0c022f1065572d9",
+      "sha256": "84100348e01883bb28da9b1f947599d2393c2cee59ced3aa5d52e4fd2eb969fd",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284609,7 +284861,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_annotation_doublearrow.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_annotation_doublearrow.m",
-      "sha256": "fec3c4d5e562c37aa44c6bd511a68e52b3f4c1393b51235208282f8ca081d4ac",
+      "sha256": "16c9d49d7f40ae18e295599bced1330bb223a9986e0d8f7df6b0dd6f255c7bc8",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284622,6 +284874,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_annotation_figure_parent.m",
       "sha256": "b3165af46816ded3c134275bbf639ac677eb66e4379d6fad18d0b75d7c380229",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_annotation_interactive_properties.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_annotation_interactive_properties.m",
+      "sha256": "67523006b9848bab0560231d2751a3c4b892b40d0f6b286be8eae09642edd92f",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284657,7 +284921,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_annotation_textarrow_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_annotation_textarrow_properties.m",
-      "sha256": "b001483c8f105565ee95f424f2d71821785aa47acaae1e3718d34d802e33dafc",
+      "sha256": "3139c4e54a95c6921558b5f5ffc674081e04f1f0e46e464820618c126bd8a50c",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284669,7 +284933,19 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_annotation_textbox_rectangle.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_annotation_textbox_rectangle.m",
-      "sha256": "4fb446457ecb6f50c69b4c1a6923a4502b9ff445c45d07fd49e5fdd3874f2842",
+      "sha256": "b288894a7fefacbe0d2ebafe31ef1f315bd13bc9b41340da513e5c131d5850e2",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_annotation_type.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_annotation_type.m",
+      "sha256": "deb0c4cde965c94677def3b6f731848d7ad091e320385bf114073aef083d50eb",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284693,7 +284969,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_annotation.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_annotation.m",
-      "sha256": "9ad17cf7bb7ec59c272e01e00f8433548345b4bf228c15617720555b0a9dd650",
+      "sha256": "7ccb9b46d8e1ab4c902fcfab71bfabef9431ed95fb183d3c9aeca35f629c71e0",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284705,7 +284981,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_area.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_area.m",
-      "sha256": "b8a65854f2efcc9f0b67b69411200a3f84a7e64336dc256e076d8f84f04adf01",
+      "sha256": "bfe78d7abdef64c186e1cc8fd8f70015d28ea4d155b719758935461d9d68519d",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284789,7 +285065,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_axes_toolbar.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_axes_toolbar.m",
-      "sha256": "1374e4abc78527494a8065f26ee30ff30ca17ef4c97d73eae3e7878a119fd81b",
+      "sha256": "9ee4ac3aec3dffa3ce017b55ad4dcc0634481cbded2fa135e60df25629ca0425",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -284837,7 +285113,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_axes.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_axes.m",
-      "sha256": "c6501fe8f07dca0a056e711971dd9fda2ffb4b123281af12ca1d46fafc89e940",
+      "sha256": "3cfd35b25290f5cbed239390d48f012910d63dfc22d1b06421946d722011fc69",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285008,7 +285284,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_axis.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_axis.m",
-      "sha256": "6f1164a5709545a381f519ac1fcbcc417de6057e29b42d4bf94bbedb7b35bd54",
+      "sha256": "21f3ae8ab98202fb52540f50bb7fb7cd90e74967303f2747d4a024d018f58dea",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285056,7 +285332,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_bar.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_bar.m",
-      "sha256": "215d7be935f382688547be39935d8445db81f1a46ec9fef19c1e2f5e9eab3e97",
+      "sha256": "e2d32d3c1841e84732be677dd3bca5aee75069533cfe288ebaffc0a57157e2e3",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285092,7 +285368,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_barh.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_barh.m",
-      "sha256": "8dc06527f82834dca7e7e2bb903acf829ba5ed586eb0f75c9a960ff33f3f2a53",
+      "sha256": "636c3248b931446f2236b6ce23e5deca02d0886fc193a9c0f22fbf8203c9f0dc",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285116,7 +285392,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_binscatter.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_binscatter.m",
-      "sha256": "f0dba377200f54eaf365f152ddacf03ae1ab9d1c71cd3fa9a71aeecfa29905ea",
+      "sha256": "425b109ee3ee3e707ef67fdc8dfaf7edd3ebdba46b2c20b63792acb89a4a5c45",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285164,7 +285440,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_box.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_box.m",
-      "sha256": "c5a6aaaf383544663ac08b6fb0c064a147cd83693913ed1a59789d626ff7cae2",
+      "sha256": "4c3b0111e80456a985e23bed7c1e8edd6877834de02e12dbfb9d935e7860ae69",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285176,7 +285452,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_boxchart.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_boxchart.m",
-      "sha256": "8704a5aca41f273402caf05d3b491b4498cfd4cc63d33c945fdcfce7512dbbe0",
+      "sha256": "6ab3c1b3a7b292c7c8032d70faf2de391644d04d4f10c6c5ea577f3b4a13b2bd",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285200,7 +285476,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_bubblechart.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_bubblechart.m",
-      "sha256": "8784d7fde91e0c1bff14477876934ed3471a6d0927885b7d6f5da3b61f895b29",
+      "sha256": "de29e80ae172ce030e54a9cf8968f7c35c56fcd91f02135db8434cea1db88047",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285212,7 +285488,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_bubblechart3.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_bubblechart3.m",
-      "sha256": "c2812de912466bf8d9c76cd9a1d0c521f5aa942fb0c56038378f89d81ddaaec4",
+      "sha256": "3a46f2c94acf25a18de4e1c62a11a108db34ee4aa2f7c1310632ebcf69759c58",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285224,7 +285500,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_bubblecloud.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_bubblecloud.m",
-      "sha256": "a35bea5e14485da94a33b6ac6a3d7e9316de3740d6bdf33ea9a7b5cf44f3c144",
+      "sha256": "1f84ee3baa728bf3286f742dc44856ad639b41f05dd8e096c2b54d2c34331a14",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285248,7 +285524,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_caxis.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_caxis.m",
-      "sha256": "8b630f2d59685a84c5e7d301e1c66bdf4fc1edf0a152e8bb09677888048324e9",
+      "sha256": "f6b0b7d139e77a877ac3c5767505243f35b920c7ee8e128eb9fce0b234b10bb9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285473,6 +285749,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_colorbar_axis_image.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_colorbar_axis_image.m",
+      "sha256": "4ed1b814b020ebd082050a2ce8af23fd025614b0d2e6c53b3670e4df91a778fd",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_colorbar_axis_manual.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_colorbar_axis_manual.m",
@@ -285596,7 +285884,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_colorbar_manual.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_colorbar_manual.m",
-      "sha256": "169290e35da7eb4c3c4916a50bdcf73d5efd6e6aad8cf7b9b08e70cc87922fbb",
+      "sha256": "a2312b5d9b26e91bbec5a8bdbf4f109c74bd82a66ec3e45f009c52d346c900bf",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285704,7 +285992,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_colorbar.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_colorbar.m",
-      "sha256": "0e491f0e7fb83915d56e7cfd52ae537e24e6ff78b5aec49be0537a945ce45219",
+      "sha256": "858b7e343e0a94bb96526e914905b5ae3de4e0d77f0ff7b322354fe4fb9cb94c",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285872,7 +286160,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_comet.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_comet.m",
-      "sha256": "e998609c1a2e1f085022a34f08642b99cc95126084eb00797d49ca7a04b9fdcc",
+      "sha256": "99398c90d5c1e3cfd7b963cf4018c4a414516e6215ec0b5e549f12097263b672",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -285920,7 +286208,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_comet3.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_comet3.m",
-      "sha256": "e81873b2793e89a29563d4ac272c038dc9ba1dbccd72feeac7929c3b81633882",
+      "sha256": "328b5b9ce801a7c9c702ad863a5110ce2aee35ccf2d465b9991ddf8b474a9a46",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286016,7 +286304,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contour_box_state.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contour_box_state.m",
-      "sha256": "b60d693d79aa2a37e39fe7c264731abcd955095cacb4a51aa8a8f1a2ff9637aa",
+      "sha256": "0e753ea8bc43f4f504216dd6f5e0709e18d4461de13d3a033dad57c4a4dedf02",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286040,7 +286328,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contour_fill_mode.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contour_fill_mode.m",
-      "sha256": "94e3c65b287ac90e504512e68631b35f3586a3a2f8063cc957aa2aa86e31560d",
+      "sha256": "c632068be88ac62bbe3113ce7ec19032e8d976199187a15f1e22e53dbb338271",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286100,7 +286388,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contour_name_value_pairs.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contour_name_value_pairs.m",
-      "sha256": "c0761baae70ebcc03663ee9141e510fbf5f5c797b7bf2b8df87a0469fe3fe0dd",
+      "sha256": "82525687cbfda9fb0f1d5e4ecbda3f80dcbadfa9a7abf9d1c73fe8aa8690fc96",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286172,7 +286460,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contour_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contour_properties.m",
-      "sha256": "3e95f2d7b95e38579021320545f7ff3c28b425ca076729170b8d4eab5c209579",
+      "sha256": "76417dc4d32530d3201f39760707caa5820b9181b1f0b0402e9fcdccf4ccc0b9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286292,7 +286580,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contour3_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contour3_properties.m",
-      "sha256": "7a062a1e7b063236bc70eeecec8135c276505500e7f804f474a5fb6eb0fef443",
+      "sha256": "e5e7c571ecc34223c69040efafe627571575635ec46d41de18a8571ced7e4e8e",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286364,7 +286652,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contourf_axes_parent.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contourf_axes_parent.m",
-      "sha256": "5e1ddaf32d4d9b33753aa0478849207453023f17878ee452c72f19c36cd44f3a",
+      "sha256": "452b8008a934f30b0b4d20a18fab7ec29036cfbee4f15318ef3ce8048ec21b13",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286412,7 +286700,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contourf_showtext.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contourf_showtext.m",
-      "sha256": "d468d5da490b7f02652f6f9ff414932f8c3fae60f1eca2b89a124f9a78b3b588",
+      "sha256": "5143adb351c42041550d4c5292779004c7cc3ee07404cbdee34701083384b101",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286424,7 +286712,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_contourf.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_contourf.m",
-      "sha256": "8777af93a2aca8e8601aaa6776d39dd180d6d9751f339fd898ccf10061fc90bd",
+      "sha256": "2c0cf069fe792b6f073002dd70546d0717015c78f8ed006d4042029c813568c9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286533,6 +286821,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_daspect.m",
       "sha256": "20ca323379749ae0443762d6b4dc6787c815105a027208602c45ff97cfa4c859",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_data_variable_properties_char.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_data_variable_properties_char.m",
+      "sha256": "e31892047655444b4e6b3fefb2dfb8719c2dfecf4552cd10eedcc3f3abc35caa",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286760,7 +287060,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_fcontour.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_fcontour.m",
-      "sha256": "8c8d3f45b0f3094e836b22c6fc823af097a7198e03137de1ae9094198d412f85",
+      "sha256": "1af1124fcfe977627c2023d0c405c5243e7656c6577378a0c76630cca2e10fba",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286904,7 +287204,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_figure_close_callbacks.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_figure_close_callbacks.m",
-      "sha256": "7afff3e385336327bae2018ddab9f0dcdbf7a03990ff27cb0705ee342075419a",
+      "sha256": "bf2efc40dfcdb3f2a248dae4d155f05d6bec2bf2075fcce1aa25a6f2cfc466c6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286916,7 +287216,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_figure_default_color.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_figure_default_color.m",
-      "sha256": "dc21a431c2c0f4afcacfcd2968906a59fe916e01b4c8488ee7e4a3210768d610",
+      "sha256": "a5bf656859d9d616556ac2ebbe8ed444b3d0248f074ed49e78229d5dfa1969f4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -286940,7 +287240,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_figure_drawlater.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_figure_drawlater.m",
-      "sha256": "965eb1fb320e196f4a20b740cc4a277a15f0c2ce198e768e5bc40b4ebc289cac",
+      "sha256": "56c84d7e865c845573eb34785870e4c04116b4a02b751e4fc0ca10c7fd6bb1f0",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287036,7 +287336,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_figure_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_figure_properties.m",
-      "sha256": "6679c2e17ecf6bfab2bcf155db5f93af2dce1f82b3adee1d9b9782e430b77e2c",
+      "sha256": "8ff531c8a0ebfcd23a526151b06e71cfebbc5a3bd3bf5c85f1eac9140608fb60",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287060,7 +287360,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_figure_resize.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_figure_resize.m",
-      "sha256": "1f81026a00cd38f04cbc06e8a425462ba90016107620dbe06cb6183e3121a919",
+      "sha256": "978a6642e5b7d33e038ea9c8d4acbd0c6a4abd6f714a5f077d2b23a4a898269c",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287288,7 +287588,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_fimplicit.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_fimplicit.m",
-      "sha256": "54f1b736152f8648f8606b91447b5d498861aa448c6aabfc3d751aa3d9bf30fb",
+      "sha256": "838555829fa5ed7d0e49ae9a681d17a748080351c0b7e13e63c4ce1e9add17da",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287372,7 +287672,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_fluid_simulation_2d.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_fluid_simulation_2d.m",
-      "sha256": "990b9e88ade4d9dcd268f2ebfe98f1ec29bfac19df08f125f74cf929cb9be0b7",
+      "sha256": "b69cb57b5035f2c76a18e279ab19c0d95eef406f74caa447d2f8005c275e663b",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287420,7 +287720,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_fplot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_fplot.m",
-      "sha256": "a2601ba2e07f3e3d7e361dcedee553804a6b133c67f989b57981f38d31593a75",
+      "sha256": "61304054327e4e5035029642579f9623c733f377fd17ced2a8f57226acd98d72",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287504,7 +287804,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_fsurf_updates.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_fsurf_updates.m",
-      "sha256": "e3dc61926a9c079ac0a489849630c94459bbadb522d3a91456a6d5f73ad79e1c",
+      "sha256": "36f7ac759546f356c03ee360236b3df5c2838197b4811f64683de30e7b9b81cf",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287577,6 +287877,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_gco_gcbo_gcbf.m",
       "sha256": "47652eff18f37caaf3cb28231253b27d6f88388fb17165ea83006e5859a1a7ce",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_get_onoff_switchstate.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_get_onoff_switchstate.m",
+      "sha256": "9c0aafbfa151ca74bd9bffecd97c0d4be5bc821f6326ba3ae72990b7facaa93a",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287816,7 +288128,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_graphics_property_compatibility.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_graphics_property_compatibility.m",
-      "sha256": "b9a7ab65471f583474de5786d46fa0053457408fb46d8f90ad8d0bc2886dd79b",
+      "sha256": "b7bb95bb46c5b6260b3b1cc5de49d6f83b63f40a0853ed477fdfd895584cc2ea",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287924,7 +288236,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_grid.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_grid.m",
-      "sha256": "dbcc8cd5b57be0520734d47e8b7a9b4a744bec9c40e693543aa12e3cacac6cd0",
+      "sha256": "e1b0ee2fef99887bf2361670beef4e838e5acce528c3a51b0dcb15c0aa750384",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287984,7 +288296,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_heatmap.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_heatmap.m",
-      "sha256": "2cb823e6261eb553932f338dbb14817400a3280fa91368c4a1409b3c535982f9",
+      "sha256": "ca266b52f718ba5651d1798b93aaef8c6b4e7adcb0658dc9f7ec39ad566852e7",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287996,7 +288308,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_hggroup.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_hggroup.m",
-      "sha256": "8a81d7ea09da4cb6f6567d789a640a2593ec53869e23edaa848377da40ea42fd",
+      "sha256": "5271c690c5575a21455f5edfdf0edb04dc6e0023f5d4f7101e0a7a6647d3d583",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288092,7 +288404,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_histogram.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_histogram.m",
-      "sha256": "3de76eb6d33757e7cc03d3bae87c763cb7a98269903be5a3559f4434021eb307",
+      "sha256": "0a8f4c19c12955e10196e8646e482d18b3d71161d13126727826856bb4b540be",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288104,7 +288416,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_histogram2.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_histogram2.m",
-      "sha256": "e29c706eb4efef9b21a3fb8dc510e6c72e04c21bd1c24fe36766248c8952b171",
+      "sha256": "551d32885a464772896ccef633bb643856018b4d802ecbb0e2c284aa295cdab9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288188,7 +288500,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_image.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_image.m",
-      "sha256": "07fe005aff0a8188f5d2211621617286e016a9ebb6d66dcfa0e2739c9dc48dc5",
+      "sha256": "a93a4c787d2807627e0aa5318d94fdee54403e01532c9be3d637fc12312b7eaf",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288224,7 +288536,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_imagesc.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_imagesc.m",
-      "sha256": "c95a1e1cb86b842e96fcf393a97b8b303cfab45c24227f031fbfd0718419fbf9",
+      "sha256": "f73c2fb41c5dcd45e9621cf8a51566d407172d911a94bb9b011a3c8b09186076",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288260,7 +288572,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_imshow_logical_rendering.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_imshow_logical_rendering.m",
-      "sha256": "a0f91ec60f467e6e00bc3032221a8dfd3256f4155fdfd6aa78c4e8eac5455726",
+      "sha256": "f73e258ee82a46d94f424e8ac17358cfeebfaa24751e6530141f8885d8126e21",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288332,7 +288644,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_isosurface.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_isosurface.m",
-      "sha256": "0e6240a4fdbec52bc9c07eeff5af41bfa7601ee077d9c7adf877755583798f0d",
+      "sha256": "97f941c1890323cad0a6429b7c7249520990dcae3691b74e2eec52b2d6a5673a",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288404,7 +288716,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_legend_auto.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_legend_auto.m",
-      "sha256": "5f46b01720bc3ad9356e7ed8557553144cca8891c262c14f8136cc7e7b8c0c67",
+      "sha256": "5ff98dd2cf93cdf4253f7fb3d3c7698edc763004c5f54b956821fe8d29a738bb",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288488,7 +288800,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_legend_orientation.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_legend_orientation.m",
-      "sha256": "9cc4e2f53f1704127b1246b944628657170e41d4cbfcadc6bf2254f5aa00f13a",
+      "sha256": "c101dec32124cf1b6db5dd65e735110ed7571637ec566fa103b11a04b098cbfd",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288512,7 +288824,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_legend_render_updates.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_legend_render_updates.m",
-      "sha256": "6cf119b34d3eab485e04f9f0c87789cba9d8cce5b611478300256570efc100cb",
+      "sha256": "ebdb09dcfe3493bc4a481b75136b1afe262bca2037571e7e89272b569629112c",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288524,7 +288836,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_legend.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_legend.m",
-      "sha256": "119049bd1522ac01e3d66112127d6078bcf264dcdb396619c382263d029e7d2f",
+      "sha256": "597c11a56c9da525619869f8d6f636bc3ddd0575fa3001036783423c0b4a88c5",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288560,7 +288872,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_light.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_light.m",
-      "sha256": "dcc22278d512ba129d3722d8ba6caec03283518e96adc9e8e3e3ba884d8666e6",
+      "sha256": "95cf0fd54d45d47a45f395f78429c5ea3122891ab7d34768d0761a0401d27b0b",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288728,7 +289040,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_log_scale_minor_ticks.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_log_scale_minor_ticks.m",
-      "sha256": "59fed62a002c122463b6290b2d312a67ecd5cf69df11528f83e1367af27533ff",
+      "sha256": "cc076425cac4b2a03d12be6053ce9ec4d2dc452853591595bbf28c0c083bd5c1",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288740,7 +289052,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_loglog.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_loglog.m",
-      "sha256": "3435fcbdc473052a683a4f41fd0469b85ca635b98d91ebffdcd633c03120e9c5",
+      "sha256": "d203c9dd47ce81535df2f1626ecafdd63b86641ae29616cb0b8d6dd6c91d90e7",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288764,7 +289076,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_mesh_waterfall_binscatter_name_value.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_mesh_waterfall_binscatter_name_value.m",
-      "sha256": "94a6f9076b768de000001f35b6c10a6ceb1f89307c5e3bc35a0bf2c3513d1170",
+      "sha256": "8992b458a79bacda7dde3f98f0fde9a15b4388e3ae02d098b6bc92dadeec4cf6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288968,7 +289280,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_numericruler_axis_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_numericruler_axis_properties.m",
-      "sha256": "48a71875b8fe8fc06ad75094211537d3c41307a3bb7baae574ba48e7ab3da22f",
+      "sha256": "9600c7c73714abf84538fe7a3fbc668371dbcea29e9e1b2bfdff3f172f25b7b7",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289304,7 +289616,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_patch_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_patch_properties.m",
-      "sha256": "101ac314b52ddbc111664a6476ddb7a0eb4687f016d2a23447584934552a95b9",
+      "sha256": "6481332c7314d88c3cbc444d050fd66f9f980bd08dff9f07802f1699da5f3d5f",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289484,7 +289796,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_piechart_style_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_piechart_style_properties.m",
-      "sha256": "22ce97c0c58cf916687d46c9108f58b339f229e93904859d415a99216671f87e",
+      "sha256": "d7144337211f865d43420cfc908fc725aadd8d7310745ae28374a0aed8a58880",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289496,7 +289808,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_piechart.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_piechart.m",
-      "sha256": "18d1201745cff6b2de0aad1e95d5641d092f0fbfd57f60ca77833b16e0e9bef6",
+      "sha256": "0f58fb36a4e4144bd0bc6d22f0b345ed5c090273bbe9057075181b3a01ed8d1b",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289556,7 +289868,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_plot_name_value_forwarding.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_plot_name_value_forwarding.m",
-      "sha256": "8794b8476d85a75644e4abbc855460590d0e4643f17f3188eb4a5f77f00bbb78",
+      "sha256": "ddfaf5ec9a2579f325d46960f644328958ed39b79e350158c4471362b427ce9b",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289580,7 +289892,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_plot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_plot.m",
-      "sha256": "d0668ee0e2f4229a5b2f1b02e5def139d928fcf4d270bc7dac7e0f5950747ace",
+      "sha256": "9892c7e4fca8761cc00825657fa2c0c64b31fe4605c52cd3852747568c391d8e",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289652,7 +289964,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_plotmatrix.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_plotmatrix.m",
-      "sha256": "daae488316a043b01007945707712db4449568a9373690e9e7ba01750a6f352d",
+      "sha256": "ed23aac2633957e917d973102364dd1acae796cc4a15ee37acce9660173357a2",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289664,7 +289976,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_polaraxes.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_polaraxes.m",
-      "sha256": "4fe800d5f04da96ca790db0cc9edeb6159888fd5b54e3bdf4639d04eb72a96f2",
+      "sha256": "e66bb5cd218d68451a678ff95baa9eb64a280eea550c62ca0a8b560f5bded141",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289676,7 +289988,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_polarbubblechart.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_polarbubblechart.m",
-      "sha256": "e88e7efc8c3b7741345dea7bf8b91c897b819824e5590e67c9006848ba88860b",
+      "sha256": "a699e9697c1d7b961706d5a24dc7707db5e76fee592192846ddc6104303bf179",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289688,7 +290000,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_polarhistogram.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_polarhistogram.m",
-      "sha256": "6097dfe2e91771ee2e2d270562b9e37e1a1eb79ac61c80a59011c2089a371484",
+      "sha256": "33ff6f106403fef6c0e2e249106e7c1c62f6fbd479d88383df285f6bbcfee7f1",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289724,7 +290036,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_polarplot_hidden_render.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_polarplot_hidden_render.m",
-      "sha256": "e74757d70cade22ad6a27af7694a78db2d6745af59b1349c43a48a0e7341da12",
+      "sha256": "10fb5b6e4255c0775135c3d9b552ada24b4096bd4a318b02f4f1e19fd7d97324",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289737,6 +290049,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_polarplot_numeric_inputs.m",
       "sha256": "3c2036e70e4c1b0d4a880fa788394d5921296f71d493ae30797288892918c96d",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_polarplot_saveas.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_polarplot_saveas.m",
+      "sha256": "44c57db2cab9c72b2ba5c701dedc5f511f2a6759ec6708c6ea062d6738f50d38",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289948,10 +290272,22 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_print.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_print.m",
+      "sha256": "887b7efb48c8b274beda907b3a4fa989c60c7eb286079cc455c8e212ca857a6e",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_quiver_1.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_quiver_1.m",
-      "sha256": "736b11be5ec6e050593f96c1c64df13509ea5f51decf85c1e79416dbd6c0905c",
+      "sha256": "8002f89805f0285d09eb18c46ef1ffb7829a6ddc4d1a772b8e479028de30ea58",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289963,7 +290299,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_quiver_2.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_quiver_2.m",
-      "sha256": "8d73aa884064e090bfafdb876d9e69a2d74cf9e867ca8a6a25c64c484b30ed9b",
+      "sha256": "957cd034e144c93539b24479c4ce2de8fb66ae64d3ecde3a4726239c051edd39",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289987,7 +290323,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_quiver3.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_quiver3.m",
-      "sha256": "69a22ef6cc1255c57160fe3640399a6ceb8833017730cdd6b431db6793701c31",
+      "sha256": "df66f015279dfb1e6feab883f08e9768304f3f1ed0cdaacb8aca937b79eb8e25",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290020,6 +290356,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_reference_surface_mask.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_reference_surface_mask.m",
+      "sha256": "647dc9226315c9fea1573c41cb497dff0366ed9c76f8129c2eb68f0fc8990560",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_refresh.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_refresh.m",
@@ -290035,7 +290383,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_axes_plot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_axes_plot.m",
-      "sha256": "b51f50f2e2d3b00ba66561733ab1fe6f654b304c4af919858b796a72468a256e",
+      "sha256": "cccf2899e7756ffa013741ccb033aa48c07fa43e79fe4de0c00b515ba94fd645",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290047,7 +290395,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar_categorical.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar_categorical.m",
-      "sha256": "2ca12013b31d6c01702f6f6c1befc393622fe0b4fd12ceb7bb40f36459087e89",
+      "sha256": "104e4dcb914a15500e73f3243cc89e2f7f4c4ee6cc7209079377f014dbe24595",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290059,7 +290407,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar_chart.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar_chart.m",
-      "sha256": "3beedcbe388488c5718716acf29dc9dd874d8257e7c2666aa542530ae3dd7b89",
+      "sha256": "ce82e4f2b182e4040c47117d755084bd8e93673e68c215b703fff19f77f95db4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290071,7 +290419,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar_grouped.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar_grouped.m",
-      "sha256": "b6433ec9a56d18d9f0bbac39f457984cf07dcc8da6388613ccc17b51700f8112",
+      "sha256": "4e0863a37a591742812aa42c38a38c0a3f04320d795f9c36562f5b292fc3aee1",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290083,7 +290431,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar_scalar_x_stacked.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar_scalar_x_stacked.m",
-      "sha256": "a279007e112eea3cac3d29a9ce32dab8d7efa4612a7f9c57ffe02a0cd7c01eb4",
+      "sha256": "8f9516bb3d0e2a8e72a8c1f77889480f829ece70a5cd09b207ded42f96edd56f",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290095,7 +290443,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar_stacked_negative.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar_stacked_negative.m",
-      "sha256": "e51c29a2702a0fdc40071a0626aac084f041bb4aac3548a44ba84e0df04a9844",
+      "sha256": "74106c2944ac85bf7a1bd4e3d7e3be7d1547d78fc5992c50cf5e1213bbbca2fa",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290107,7 +290455,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_detached.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_detached.m",
-      "sha256": "209d35720ad55b51bd67471c02af272069965db6cc5cd160495835e64bffa43c",
+      "sha256": "9725fbb80be368be513a9cdc563adb4e9526d38aa57bea729e1adbeba9badf37",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290119,7 +290467,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_explicit_positions.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_explicit_positions.m",
-      "sha256": "af41e5bb3ebcdbe12cfd78791efabd3a3746282d78aea140f141e89901d09881",
+      "sha256": "f1d79930a9cdada49255528eb03fc9014a6663eee0dd9a861ea992eac9f3ef84",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290131,7 +290479,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_grouped_large.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_grouped_large.m",
-      "sha256": "ba30cef336d23c8068a3fe0aab6324aa98c76404d99d1d506be41ae44252b2b5",
+      "sha256": "b22bf6730db8e217da7083f429966dd5729ceb2c472ca6a030156db3bb6e8eca",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290143,7 +290491,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_grouped.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_grouped.m",
-      "sha256": "ec010d6b364971156846bb309790ea0250476c25f897fa3b525645dc7eeebd7f",
+      "sha256": "8ae378b0fa3a7ecfe7de511b55d28512d694d7537eed7c6bc822ca0280e8c1ee",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290155,7 +290503,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_matrix.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_matrix.m",
-      "sha256": "7f4908a82b8c7aa4c03456e1054cf7013d6f94d514cf5f5cf18ecfaabdcf75e4",
+      "sha256": "320da3deee86caea98414e66ac0586688b65458da87a2f1fe040598ffa019af6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290167,7 +290515,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_stacked_width.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_stacked_width.m",
-      "sha256": "95135a9ff3a05ce26e5b43fe94719f3e2897471fe32944bc27fd8cad53c3b7c4",
+      "sha256": "d75d25ee7fa405495b1d2848e5b44d399e5c746c9b80eae48236e9ed2916d9c8",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290179,7 +290527,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_stacked.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_stacked.m",
-      "sha256": "f7fe4d12ce72853f45631b3daeb6dff89d5ccc252152fd2024099b0f7563af74",
+      "sha256": "69723b32535b0bf7682361eed6b796f156d9fe01b2109e4669322c6306e6ce6e",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290191,7 +290539,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3_vector.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3_vector.m",
-      "sha256": "c188d2550d5c4216868566a47dd3d45341dd96735275eba98ba975fcac009dba",
+      "sha256": "d46761bda9425baa54eedb4bdb2839032cc0c4adec73fb7512ba27cd40b06885",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290203,7 +290551,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_detached.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_detached.m",
-      "sha256": "cd86c54be1c7e50f4fd84eb00cce877b6679ec4e83e55abd5f3125d940fa95ea",
+      "sha256": "d709463d47e933cbaa18ed91ebbc2e199455affafc52a5c629c498a3bc1957a8",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290215,7 +290563,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_explicit_positions.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_explicit_positions.m",
-      "sha256": "014a2c0368c91873585739e3eed958a2b11d728cd10bde566ab575dc6857f6ce",
+      "sha256": "cf7f2c82e00b479c965ba05f7d70b4f8c1cd998852e8564b72421310dbf06464",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290227,7 +290575,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_grouped.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_grouped.m",
-      "sha256": "9540ae4e83dbf7d4f5f4b5a489449ca1f883ad3a84136dd7b063448cde5dfaae",
+      "sha256": "56c8862679261bb87f2ed10edfcb536d0685610290cc4094273491b341028137",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290239,7 +290587,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_matrix_color.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_matrix_color.m",
-      "sha256": "0b0b5c85469248c798d5ac45946decd9ed00e6ddd99447e210aba0c30c1ff73b",
+      "sha256": "433479890f682b65f9caae937f2b9b7eecd0ce484e326e5ad840fee81a7ea741",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290251,7 +290599,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_matrix_positions.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_matrix_positions.m",
-      "sha256": "38d4b4dc43e860e5c0620000cceae8e42f00cb08b41075f1f76b0e9799aad0b2",
+      "sha256": "4690d5d8f192911b30ed2fe3f07cd8b6b44b10d32225da41f18d71e810c07a09",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290263,7 +290611,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_sine_red.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_sine_red.m",
-      "sha256": "b1fa18b26724cf024295e4271a88f37efc5907e782ea7b24defb4943ed6711c8",
+      "sha256": "9b6b61d31886697b7478d450566fa2b1c312995efc1547f00f4d6b56213ff811",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290275,7 +290623,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_stacked.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_stacked.m",
-      "sha256": "d3e614cbc90174091dcd109201b1dbed724d627e2d294cb5fe8f15a95c836565",
+      "sha256": "ae5e4bed5d7b0cebe61070ec09fed721ce4b6e4eef33573f2441be8ae6acd20f",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290287,7 +290635,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_bar3h_vector.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_bar3h_vector.m",
-      "sha256": "7a03866e041cf922ec569e3a1bb8e0b11aaf451b3c7ba03ca71045f1ebb445b0",
+      "sha256": "365aa83c6e8a71c2b7f8f566aee3da73f71ab2edaf3ee2f35b54dc08e6d7b623",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290299,7 +290647,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_barh_grouped.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_barh_grouped.m",
-      "sha256": "883879bfb33e5169f2662b887b5775878d52d9e8289b8422ccbbea071f4e44bb",
+      "sha256": "789edfd2f629f35a821a6913e784267db6dfde024fa03e9434c6c71e9066fd70",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290311,7 +290659,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_barh_stacked_negative.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_barh_stacked_negative.m",
-      "sha256": "adaaaf0d779c9c0a3005c36dcc880f51778d48c13a146cd0b118240e87668ebf",
+      "sha256": "3125138b596aa0f74b25c4c446281d1e39cf753268f1bc94d4c4e576010e0f8b",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290323,7 +290671,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_boxchart_group_color.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_boxchart_group_color.m",
-      "sha256": "b632008727f84009d82d82fb92c8149abe6375c01360d152c61c4ee5b0154316",
+      "sha256": "dccce4f2dd3d4c0f08100df8db3047b736c5095094eb7d80d55a2ad62a186dd1",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290335,7 +290683,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_boxchart_magic.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_boxchart_magic.m",
-      "sha256": "674aed34d3aaf7af9564749181f411a4ae3c6916fae97ae0b6d5090462bdf1da",
+      "sha256": "bc38cf2c2249cce15366a306ae388fef84f5bb39b02c8bd6c34a054a04ff1159",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290347,7 +290695,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_boxchart_notch.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_boxchart_notch.m",
-      "sha256": "7ccf278c20c5250a265ff155ca5a347a4378996dd30ca7932adf05073fee9705",
+      "sha256": "aaf8d574c0b8fbf0c339e58af812925bee77c543d5fd4c974694a62f47c138f5",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290359,7 +290707,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_boxchart_outlier_hinge.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_boxchart_outlier_hinge.m",
-      "sha256": "d103ee1086fc16e095b5069ad4bc0dbc053268d5a3e5002c2ec849d7985a3ae1",
+      "sha256": "482e6228b24189a64e6558037d8b92206cae44b632c4bdf8edd53e0265d69e66",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290371,7 +290719,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_fsurf_basic.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_fsurf_basic.m",
-      "sha256": "49e96e3991bb805c9381c37f147ab35fa003ae5d8744789dcdd1101fb6b6e5e0",
+      "sha256": "4e2ab1f6829571af1ff52ead11aed87fbdf46a5979c275ba0626113a5a7114c0",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290383,7 +290731,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_fsurf_light_default_gouraud.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_fsurf_light_default_gouraud.m",
-      "sha256": "689073d55bfa58d06d81671b63c75e097cd27d773be7f076906c60efbb79a349",
+      "sha256": "865aef282b3f964a76d292572b604f91b03356f25a2d124d1e4611dcfa5918c4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290395,7 +290743,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_image_axes.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_image_axes.m",
-      "sha256": "3ee555cdfdc4ed4b20c1efc7311895ab50f7af5d754bd840d8386ca57ace9803",
+      "sha256": "ed742972915c95c52ad1c2f4d809ad7fdb36e2e9a01942e4ed862d6cc7692293",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290407,7 +290755,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_legend_scene.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_legend_scene.m",
-      "sha256": "d9392348e5e59d7420fd77f04d46391e39c3879ea3ab8e772fd7373391309905",
+      "sha256": "3c1490bebba2df31d71bf4dbb3e857696cc443cf8ae81618a72f52cc99da47a9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290419,7 +290767,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_line_marker_style.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_line_marker_style.m",
-      "sha256": "1b0bb6c0b4f8d6d5da19de6f56f9de4e30ce810a62a5417421a6f03582d258b1",
+      "sha256": "950fe25e9c1d35353ed7fdc3051911c27c6b75a3e628bb260c48663d258cd657",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290431,7 +290779,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_line_plot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_line_plot.m",
-      "sha256": "32a04893dd834ef66dc946b7858764f15cf49e0b0d3e9805b0693b2530a6a146",
+      "sha256": "a467755949c1e3b9d40074928ab4f280788b405d9b9afdfb42c3c997bd058231",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290443,7 +290791,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_patch_fill.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_patch_fill.m",
-      "sha256": "0d6f923b7c0ecfe95e04b4985e6d5c4bb61f50e1d88d97e829703b1bd7e8d30c",
+      "sha256": "7600f8a8d382b7404aa0402d82725e82deff6aee50ccb0da84a5aa5fccb1de27",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290455,7 +290803,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_scatter_markers.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_scatter_markers.m",
-      "sha256": "bb90eeea615c7c2e11227fe7b2cb2ad0a934c691812c2249d4c3fb4336d6516a",
+      "sha256": "27e7aa06a6db72c6f5e79318b0502ca8bb5f6517b819936a7b44f3c48e1fade5",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290467,7 +290815,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_subplot_scene.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_subplot_scene.m",
-      "sha256": "d1a2558936ed7d2073210eb563c13f1f37e424ee83bfbb1deae1a0b1878e2df6",
+      "sha256": "18124e7ca3c3cf1c5ba0b945afed961d1cec2e74ef9e355fa209965cc51c470b",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290479,7 +290827,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_surface_light_default_gouraud.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_surface_light_default_gouraud.m",
-      "sha256": "a77b934f54ffc43fd721a46f1daf76cc12cc28a56275de4bc5a936f71d8476f4",
+      "sha256": "dd1cf33cd5df3762878c38d82e4f730260395bf81d291eaaa8b523e704f45218",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290491,7 +290839,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_surface_light_gouraud.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_surface_light_gouraud.m",
-      "sha256": "644bd378cf7f2eac0a1a5b9982280b7498e0ce1b4254177b495a66958fb20418",
+      "sha256": "e37ebf4340f030f6fa5f25a2cbe7af4daccd66fb72cc1d85707fd4e546378924",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290503,7 +290851,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_surface_light_metal_gouraud.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_surface_light_metal_gouraud.m",
-      "sha256": "fbbcfba97fb28e5ad45c9616495f7bb0aafc7d78cccabdfcce4ce5eed4f1060d",
+      "sha256": "b850bc0fddd210aeb3339d273720c19d87edc08d43baf27e06f7297a2862b508",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290515,7 +290863,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_surface_peaks.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_surface_peaks.m",
-      "sha256": "9b5c328cb065a557e2176079992d70089f790e7ab429025fb1f3e2af5bf0e329",
+      "sha256": "03b2815f215c87315d4d6e5076300849783fd3b927994caa0aff6d2f053fa002",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290527,7 +290875,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_surface_shading_modes.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_surface_shading_modes.m",
-      "sha256": "5b99c3ac63f35c07a282df29e9bdcc345fe9783f5c1561a3827b1372f6cd07e6",
+      "sha256": "7979f6c8a4cf702ed5d07b4b51e127b48dc34e331f52c80e28105f909f85033c",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290539,7 +290887,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_surface_view.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_surface_view.m",
-      "sha256": "516de28b4adf120b62238ac681ccb47e2c47661d2cfc624ad205f26825f76abd",
+      "sha256": "368d8a46c0d061ba3b2f5f7e4fa02584b4f888e517552cd8de7024c8a98b43c9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290551,7 +290899,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_text_labels.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_text_labels.m",
-      "sha256": "9b9c38f4939bfa84b25dcc506146f10c196fae49bed9ca12517870b634016c6b",
+      "sha256": "9511b1ad2e084d0546e525f1072ea017743654e03933c746c197c50f477e2360",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290563,7 +290911,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_render_example_uicontrol_scene.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_render_example_uicontrol_scene.m",
-      "sha256": "0cdd72553eef156de7b4ef620368e72ce686deddccce2715779ddbf03db42cf4",
+      "sha256": "603bca43cf6b6d0380c71d7ed2f3910f9eae549f5d78722730355e4ccec70919",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290575,7 +290923,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_retro_raycaster.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_retro_raycaster.m",
-      "sha256": "d2d08050635cbb5d29b95e39a06fd097e5df0d34d2011991b272e18e6c8ab153",
+      "sha256": "d01d21ef23b3fa2d2918008b6e61978a55778e8569ec412e3b08b10e22ccf796",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290639,7 +290987,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig_all_objects.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig_all_objects.m",
-      "sha256": "5278252303bdedd3ea8a37ad99f6f46c9590e9337619885860063df4dccdc3f8",
+      "sha256": "6d1b40ac2237b4c5a409b4e896a75bc4c2071e7f5c14c6da7f890fdac9712af4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290651,7 +290999,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig_basic_open.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig_basic_open.m",
-      "sha256": "4ce39e35266a13c3fe5f3f40e7a847de2aa85a5bce52ac7f2a0dfa0857b2d0ed",
+      "sha256": "35a3add391d409ea4b685ef50ecb1cb585a24ae8959e8a77658048913fefdeea",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290663,7 +291011,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig_default_visibility.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig_default_visibility.m",
-      "sha256": "55f7b3968bbc0848496abe6848677a1f06cdf7658175a35244771028d27b6c7b",
+      "sha256": "44f053fc73405fdd960ec01ab0f0c6277a64410fe6853ac2073e5174220cc17a",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290711,7 +291059,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig_recursive.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig_recursive.m",
-      "sha256": "ff5b9c9ea5ef53596d818fdef9fedcf618aa605e9565ed79f7b1a2cd4c655ddc",
+      "sha256": "b5d0f6b02f526614f0e5bf2593e5dad0159c25ea4ac85b17ca0715441f77de40",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290723,7 +291071,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig_reuse.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig_reuse.m",
-      "sha256": "7cd08272c5f75bc3831e411d7ff6dd36fc151105842a637b9af0d18375b21bac",
+      "sha256": "02b611a9526e3d967975fa880ad1ee339e6fc415544d5d8ca105dd0f41098568",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290747,7 +291095,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig_visible_source.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig_visible_source.m",
-      "sha256": "f8906d08ed36ad3a39c736a9b5bf25ca9b82c557066bbb952da8854e17ca06b2",
+      "sha256": "56f73f2f16255771ea5e61d5dea6c2a27f12623896f9a07bf642bfba7322cbc6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290759,7 +291107,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_savefig_openfig.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_savefig_openfig.m",
-      "sha256": "9624820b55a27c7728f7e2b04424d096219667bc2beb15fd6b507dcf28978952",
+      "sha256": "1c0f4fa3c4e40f96ed764acf5b172964b4cb47e6610de2a1aa2d86c4fb3eb374",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291227,7 +291575,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_scatterhistogram_style_updates.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_scatterhistogram_style_updates.m",
-      "sha256": "08e16111ce57e91fee3ec61490da61ae40a6cafd3ae7fb7db16f260c2c8e0a73",
+      "sha256": "08fd7a3ad5d04615d0504c6b042088da5deece43f9552b23c27ef21d52b5b967",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291251,7 +291599,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_scatterhistogram.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_scatterhistogram.m",
-      "sha256": "b4116714a85c2df4d1f54ba2a1fd946e438dd17779697d0b77db91273caba120",
+      "sha256": "2f994e3fb034592734297e59d2b6d76f6b5ab3f2c32b0ea55df196d96e94cffd",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291263,7 +291611,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_semilogx.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_semilogx.m",
-      "sha256": "3f2ef17831aa2dd347dcf1d8e1f60c2edcf6ae568aadd0c08761b443b24b3677",
+      "sha256": "87c9331b1025dd73d0fc8e7048b65cabbee82d1d9df1cec824805bb9487c64aa",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291275,7 +291623,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_semilogy.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_semilogy.m",
-      "sha256": "d82bd4fe569b798f9b915d8b5a98f6bc307adf0f32660cd433dace55abaca0c3",
+      "sha256": "fae822b8a9abdbd798bd19fe25ded756eb7344b7607321ac7831eab0517bcea0",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291288,6 +291636,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_set_graphics_object_value_object_argument.m",
       "sha256": "b6590a81dd589d6d3e0a650e0c4693a4789f7a977ecf5a428eea08053c107766",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_set_introspection.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_set_introspection.m",
+      "sha256": "93b0156d3c087fc57c5e9f04df486a165b31285da5ef51ad0094332727c9e770",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291467,7 +291827,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot_events.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_events.m",
-      "sha256": "ef973617a5a79fdf9e0e93b4f613e932bfba1d58bc9ec16d6a40d4270bc11ed7",
+      "sha256": "12e49a7285142cf96d139a90c703698e60fc9390462801a960ee56ce1a942240",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291503,7 +291863,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot_inmemory_matrix.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_inmemory_matrix.m",
-      "sha256": "d001cb71dafee5b5141d4eb9b72ecec31769f5668bab1caf0287a2c440fab187",
+      "sha256": "6c4742ecedb6a59889b2d491e6b7f1c07a762316be607980511660d1a343cd7f",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291659,7 +292019,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot_namevalue_legend.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_namevalue_legend.m",
-      "sha256": "aa8a2746fe6c02b6ea8c92ec3a60b52ba6dc8813f193f9477fe44eb2fc1121ff",
+      "sha256": "b83d521c7fd9866a3f0f71b6dfbbec69fd97adac8b6708a4b6e845b8b3ef6f15",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291671,7 +292031,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot_parent_legend.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_parent_legend.m",
-      "sha256": "5dbfb2d7c70ac984fbd42ba611adbe7805cc9ec7a584af35f8ce1a89775bb3e6",
+      "sha256": "50e83276b5b108637ba340d530b795b20e35233e3fe595eb336eae73d832f845",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291719,7 +292079,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot_signal_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_signal_properties.m",
-      "sha256": "c1cf9e9b1ecee43777509f555517fa15a5a85a0477e50caf095aeb203fc104fa",
+      "sha256": "2896aba6e645f84cb62e9796a286528aa9cbf59969c8bad2465a317341d034c9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291731,7 +292091,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot_string_namevalue.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_string_namevalue.m",
-      "sha256": "09d2a13b0893c052aee443b39eea52715ed6cd5b572f1de2c657f192cca71fed",
+      "sha256": "4fd564179a9579e5762000070bf9dc383e7b143fe354760cd4dbef0aeb009e84",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291779,7 +292139,19 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_stackedplot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot.m",
-      "sha256": "cf92d994d94b2cc90eade522a47c3d994ab5cff59b51c2e912cd788fbfded61c",
+      "sha256": "87bac8f8a11049fdf42f51013adb80543226e817bdb594b1c20878918e3769f6",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_stairs_class.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_stairs_class.m",
+      "sha256": "ae00cf169ff097ac6548dfcf40aee927b9d7c5740c6c1ef2f4d2f08818f73e63",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292055,7 +292427,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_streamslice.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_streamslice.m",
-      "sha256": "645acb33c501efc916709569c38d8f1d275fdcba47de5574bf53e1754612c7a6",
+      "sha256": "cb6fe759dacf6521478a359e9fc807cf726b7449bdd2bfd2880ed2f15643f955",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292079,7 +292451,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_subplot_axes_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_subplot_axes_properties.m",
-      "sha256": "780ec1e220c2a36c6ad21a0c2719c41e65d4dd615e2b98b3cf054ad7815d5cb0",
+      "sha256": "f107e684cdffb239cbb8d24e43946e086f2c7aa60bbeda05fc9b3854499d68a9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292127,7 +292499,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_subplot_span_box.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_subplot_span_box.m",
-      "sha256": "31c8d0c8a500a37a09a6bc6d9f02096cc0e0ebbd7ca4e7b352defcc5984a5d14",
+      "sha256": "84548370f0b3ed4ccb7801436e3271831e929323da237257cfcd44eff9d0495a",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292151,7 +292523,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_subtitle.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_subtitle.m",
-      "sha256": "26efc431b3f00732d6344d0e4ae7d499e5efb20182a41416bc55d84d704b2815",
+      "sha256": "f77cf96ebae3b14a8fb392db450acbe16f998cf25ecccb99ff6c88bc851f4590",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292175,7 +292547,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_surf.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_surf.m",
-      "sha256": "1811886eff782d80640763db505e9ee83c5c8d3ff963c4a651f56c520b696cfb",
+      "sha256": "956d61c5fa77849d2750da9bc4c78229fe6bb65eddd7fb5d31238010f9022861",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292487,7 +292859,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_text_axes_visibility.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_text_axes_visibility.m",
-      "sha256": "557703bee33c67843f0aa17d63e29e952e357e75b7ccedcdd7a22b2b50f053cb",
+      "sha256": "1c99d8f61186c39c649bbe3d35cdd0934f1abfeb13ec4a3d9a6b41a74ab588d7",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292619,7 +292991,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_title_position_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_title_position_properties.m",
-      "sha256": "921dc433849c1c95d041c4126006e360f8c0e9d46c3838f73f59dff125b99368",
+      "sha256": "92ba0eb8c2f3a5417603634b31a24ce5e58d9ba85f441fae238baf0f99335f39",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292643,7 +293015,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_title_visibility.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_title_visibility.m",
-      "sha256": "fccde5dbdb32931e8bc4962c40fa750d31d976bcdb6278d892e4789f144ba49e",
+      "sha256": "ec22b003b34689856a8bd2042940e11b9fb4c2f430b0cfeaabd74a52c22da8e6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292712,6 +293084,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_typed_object_properties.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_typed_object_properties.m",
+      "sha256": "5ed87502f0f19253190d512afd316a9ac84f044b9f7c17253a2ad5fb1a4eef8c",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_ui_component_units.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_ui_component_units.m",
@@ -292751,7 +293135,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uiaxes.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uiaxes.m",
-      "sha256": "cfba85f2d1759d564280a8ac51ad0a50d221b52d230e179fdb201cb00a369118",
+      "sha256": "a31eebef71fa4df6de4adb12b606f6af93b321cbec4e79874969cb213a666588",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292775,7 +293159,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uibutton.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uibutton.m",
-      "sha256": "1c532f3cebe685ae9e4fbaae3af9f0e7245d2b78b9160a3331fc03e15efaeb55",
+      "sha256": "df30d010ec7cbf755340e3e66f4eabf5525a74da800682263744f059859e3dba",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292787,7 +293171,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uibuttongroup_appdesigner.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uibuttongroup_appdesigner.m",
-      "sha256": "f1f0da72a183b909aa491f58d31f02170971196aa70ee44786be1c69f5a79dc0",
+      "sha256": "2a45edefb26b3b4d6c12a614a228780938c534577a3fdeb1a044e56b677cd98f",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292811,7 +293195,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uicheckbox.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uicheckbox.m",
-      "sha256": "e0371583b1e17af56fa3fdb729168cce4e7e6848320bc2d583a19084015d5123",
+      "sha256": "eacb61ece87f1023ccb4b085456fa81f28a6fec5f3bb3552290e277ad0a8a6b0",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292883,7 +293267,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uicontextmenu_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uicontextmenu_properties.m",
-      "sha256": "15eb688f40a2eb508718e7b8ed7d233bd2dc58b71286b13514801feebc03f60c",
+      "sha256": "0c13cd4b7950101a3417d219656f4e071a7934176ca81f3370e86ce13603d673",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293051,7 +293435,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uicontrol_normalized_layout.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uicontrol_normalized_layout.m",
-      "sha256": "a5ce4766088ee59d4c3f8fa30333fd28c6c4b6f662478c7deedd5cad118ee2c5",
+      "sha256": "4fb7e97441921bc4b182ca751f74a5f67f84f4b753d61e6220e86d9c664dfa3a",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293195,7 +293579,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uidropdown.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uidropdown.m",
-      "sha256": "40ae1da679688d7423a6b0456ccd3d6fc24363254e57521500d661baf4fba7ec",
+      "sha256": "bffc03d17f65f9a1f0eafa356e2423c935211175b158461163c5ca71eb3214bb",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293207,7 +293591,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uieditfield.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uieditfield.m",
-      "sha256": "4ad9ce03e9e479dd650504c84dfc35a8bcfaa3693955e5ceb42dbad6a067f4d6",
+      "sha256": "a551d356b60f38616026e5ebcf973f0f3cd6738a892cceb2f9b2ea96396357b8",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293267,7 +293651,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uigridlayout.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uigridlayout.m",
-      "sha256": "b0674a3af39f8216e5451df9f1ad6d4378d03ec2335d89d462664852bc4a1326",
+      "sha256": "b99cf37b99d532d40d26172542585798132f0bb2faee08d29efe552e04ae0692",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293351,7 +293735,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uilabel.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uilabel.m",
-      "sha256": "8206723b5df33c57a1cf5f6f011e72b2346aad746b05dd4e530776284833998b",
+      "sha256": "9f74f85273e594da2ded603e8d826f9f1c3e0cb0092dcd09d44671fb5059b764",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293387,7 +293771,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uilistbox.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uilistbox.m",
-      "sha256": "c6a28aeba799c801276cc00a2d92d0f196eb2db6b2d57578c9af260f08fd3a22",
+      "sha256": "f803ba13b9a7833e23aa97e1527e525b31d28adb372e88445b64dd7400f777a4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293399,7 +293783,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uimenu_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uimenu_properties.m",
-      "sha256": "4632842ce1e60abd3d5da3bfe0a79b831734f32e4dabf5c8b14d37857dbd408b",
+      "sha256": "bee65a67e282e3dc8e838ff35e50216919fac1b39021cd50aaf24372744b78a7",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293423,7 +293807,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uipanel.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uipanel.m",
-      "sha256": "dc7a98b115ae374ae3953f5513add1797a2fb81885da845bc48c914128a0fefd",
+      "sha256": "0cb215e25bc7ccbb596eae8ffd5ee8dbfb98e528bff431531eb93ca14deaf9da",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293495,7 +293879,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uitable_appdesigner.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uitable_appdesigner.m",
-      "sha256": "73675dfc11da21ba67222e3d2b870241e0680068883c30bb31bf605a7e6fad81",
+      "sha256": "b29bb172041e552bad6e14f8063cd94110824e010d24bfc4ed46d867ce3172e1",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293531,7 +293915,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uitextarea_uispinner.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uitextarea_uispinner.m",
-      "sha256": "002b260eb94fe095946d770f504e022656458e6996ae52f7f39fcd7733a9b2b6",
+      "sha256": "04b00009850302352a6eae72efabb5efab6d0243e907b03edebff7b1da6b6dd5",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293555,7 +293939,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uitree.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uitree.m",
-      "sha256": "e47ff1baacb0f1e6094b1ee9b43b0071671c905d9705bef683459dbd6fd6ad41",
+      "sha256": "d691bc83439f04074d47abe6b163493a0c208cd872e695a3d430848cc035f6d7",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293615,7 +293999,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_violinplot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_violinplot.m",
-      "sha256": "4df5429de4d86d698dca732145959f000a0112e92456a734aac6f886cd2d2450",
+      "sha256": "ed6077aa005c018c85002913f991e09ca6d3d490cd066c5872790c48cc8db7d6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293759,7 +294143,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_wordcloud.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_wordcloud.m",
-      "sha256": "9c67479fcc20b5c2516c08eb165e07456a7187ffcd2b5419a20d0b5d96acebaa",
+      "sha256": "9835a085ae6680ceaef97e925af700173eb3b670420b5904fc93a32ead84cff6",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293772,6 +294156,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_xlim.m",
       "sha256": "4363032bed2286656f33f54a669b9bb0054ba9bb1a821edd6581edf1abecc3c1",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_xline.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_xline.m",
+      "sha256": "9f623a076ca78e4802cb33f0992e39dad4ac8bf3b374e3b00fea5702e4369636",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293844,6 +294240,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_ylim.m",
       "sha256": "c3546d16e628c71fa717351e85e8b8a3387e986257610c05b262bea3571ef6ef",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_yline.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_yline.m",
+      "sha256": "c0c93279849e482c2e74c4bcf56dc9616a2cbb3d388b851d5dd1ada7cb75b1e9",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -297858,7 +298266,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_application_window_lifetime.m",
       "kind": "test",
       "runtimePath": "modules/interpreter/tests/test_application_window_lifetime.m",
-      "sha256": "d0da89d11e64dcc0827a04a0ebeb43cd16b34d4a948661c291e713b8436fac58",
+      "sha256": "2433048713114ac47769e42ae83f9fc29dbbc481eb3319d940b1048d388dcdb4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -298074,7 +298482,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_bytecode_artifact.m",
       "kind": "test",
       "runtimePath": "modules/interpreter/tests/test_bytecode_artifact.m",
-      "sha256": "a221c0db22d5ab4627b0e458f370d0c51f43f9152abbb7f102ca3f79c7c73f00",
+      "sha256": "e47e7c344c6bfd9b2ef49277568876bbfdaec7f8142654aacc389f6115c7be91",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -308488,6 +308896,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "nflow_engine",
+      "file": "test_nflow_reload.m",
+      "kind": "test",
+      "runtimePath": "modules/nflow_engine/tests/test_nflow_reload.m",
+      "sha256": "d0e7880bb7b878f1c714a41c0d14cd4e18036b3f05cfbd9331f081ff7bd15704",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "nflow_engine",
       "file": "test_nflow_reroute.m",
       "kind": "test",
       "runtimePath": "modules/nflow_engine/tests/test_nflow_reroute.m",
@@ -312218,6 +312638,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "os_functions",
+      "file": "test_iswasm.m",
+      "kind": "test",
+      "runtimePath": "modules/os_functions/tests/test_iswasm.m",
+      "sha256": "764f991e446be7055beb080451e837811dd1ec83aae5bdf6ec526abd5839f494",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "os_functions",
       "file": "test_java_util_UUID_randomUUID.m",
       "kind": "test",
       "runtimePath": "modules/os_functions/tests/test_java_util_UUID_randomUUID.m",
@@ -312846,6 +313278,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/polynomial_functions/tests/test_roots.m",
       "sha256": "078d57df86e359912e5e64876c652a0ba0ac5fef7d3643be5131e7a31ececebf",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "preferences",
+      "file": "test_preferences.m",
+      "kind": "test",
+      "runtimePath": "modules/preferences/tests/test_preferences.m",
+      "sha256": "cac9e3c097e551e3daa9a1c9895caede80bbdde3857925f0798e4a4873edebd0",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -332392,7 +332836,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_nelson_lang_OnOffSwitchState.m",
       "kind": "test",
       "runtimePath": "modules/types/tests/test_nelson_lang_OnOffSwitchState.m",
-      "sha256": "f78df030b68b1df0f07cd3ffb8e4183d7876f98e03e8f5b60f032f4fa20b3e8a",
+      "sha256": "13ecd199d5bb42287272b331312ced6b8f6a77a9dd56b5ad394f8db687e5dcf2",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -333385,7 +333829,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "module": "tests_manager",
       "path": "tests/helpers/validateExampleModule.m",
       "runtimePath": "modules/tests_manager/tests/helpers/validateExampleModule.m",
-      "sha256": "b28140a40b856fbd2fe64b46bb68fd2032faf16e4c0f19eca2c6cc8d60ab4a73",
+      "sha256": "c3cb44f75b9c15a6b9b57347c054df3fe84e5a4ea5d365f02c878ba51d926e40",
       "included": true,
       "requiredCapabilities": [
         "portable"

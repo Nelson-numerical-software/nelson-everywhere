@@ -98,6 +98,969 @@
       ]
     },
     {
+      "name": "nflow:acausal",
+      "title": "Acausal",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Acausal Brake",
+          "description": "Acausal rotational demo: a signal-actuated brake stops a spinning flywheel.\n\nPhysics: the flywheel (Inertia J = 1 kg.m2) starts at w0 = 10 rad/s. The RotBrake applies a friction torque to ground whose peak magnitude is set by its signal input (constant 4 N.m). The friction is tanh-regularised around w = 0 (parameter w_eps), so the model is event-free and integrates smoothly with a fixed-step solver: J dw/dt = -tau_brake(w). The flywheel therefore decelerates and settles at rest (w -> 0 in about 2.5 s). The RotSpeedSensor measures the shaft speed; the Scope plots w(t) and the ToWorkspace block exports it as the variable 'w'.\n\nWiring: the three rotational flanges (RotBrake, Inertia, RotSpeedSensor) share ONE physical node -- the green pins joined by the vertical wire on the left. This is an undirected acausal connection (no arrows): torques sum to zero and the speed is common. The constant signal comes in from the top into the brake's actuation input; the sensor's signal output leaves at the bottom to the scope and the workspace export -- so signal wires and the physical bus stay on opposite sides.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Brake_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Acausal Contact (ElastoGap)",
+          "description": "Acausal 1-D contact demo: a mass driven by a constant force meets a compliant one-sided contact (ElastoGap) with an initial gap. While the gap is open the mass moves freely; once closed, the contact acts as a spring-damper that pushes back -- a unilateral (non-penetrating) contact, regularised so it stays event-free. The three translational flanges share one physical node. The Scope plots the mass position; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Contact_ElastoGap_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Acausal DC Motor",
+          "description": "Acausal DC-motor demo (mixed electrical + mechanical): a 1 V source drives an armature (Resistor R = 1, Inductor L = 1) feeding an EMF converter (back-emf v = k w, torque tau = k i, k = 1); the EMF spins a flywheel (Inertia J = 1) loaded by a rotational damper (d = 1) held to a rotational reference. The motor accelerates until the electromagnetic torque balances the viscous load, reaching a steady shaft speed. NOTE: mixing an electrical DAE island with a mechanical island requires the DAE solver. The Scope plots shaft speed; ToWorkspace exports it as w.\n\nLayout: an electrical loop on the left (Resistor + Inductor + EMF across the top, constant source below, ground at bottom) and a mechanical column to its right (flywheel, speed sensor, damper) whose flanges share the EMF shaft; the sensor signal drops to the scope and workspace stacked to the right.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_DC_Motor_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 12
+        },
+        {
+          "title": "Acausal EMF DC Motor",
+          "description": "Acausal DC-motor demo (mixed electrical + mechanical): a constant voltage drives a resistor and an EMF converter (v = k*w, tau = k*i); the EMF spins a flywheel (Inertia) loaded by a rotational damper and held to a rotational reference. The motor accelerates until the electrical torque balances the viscous load, reaching a steady speed. NOTE: mixing an electrical DAE island with a mechanical island requires the DAE solver. The Scope plots shaft speed; ToWorkspace exports it.\n\nLayout: a roomy electrical loop on the left (Resistor + EMF on top, source below, ground at bottom) and a tight mechanical column to its right (flywheel, speed sensor, damper) whose left flanges share one physical node. The flywheel sits above the EMF so its top flange joins the column with a single clean elbow; the reference sits off the damper, and the sensor signal drops to the scope and workspace stacked to the right at the sensor's output level.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_EMF_DC_Motor_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 11
+        },
+        {
+          "title": "Acausal Freewheel",
+          "description": "Acausal one-way-clutch demo: a prescribed rotating source drives a flywheel through a Freewheel (overrunning clutch). Torque is transmitted only while the source overruns the flywheel; when the source slows, the clutch releases and the flywheel coasts on its own inertia. The Scope plots flywheel speed; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Freewheel_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Acausal Half-Wave Rectifier",
+          "description": "Acausal half-wave rectifier: a sine AC source (via a SignalVoltage) feeds a diode into an RC load. The diode conducts only on positive half-cycles and the capacitor smooths the output, so the load voltage is a rectified, ripple-smoothed waveform. The Scope plots the output voltage; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Half_Wave_Rectifier_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 10
+        },
+        {
+          "title": "Acausal Mass-Spring-Damper",
+          "description": "Acausal mass-spring-damper: a mass connected to a wall through a parallel spring and damper, released from an initial offset, oscillates and decays to its equilibrium position -- a classic second-order response. The translational flanges share physical nodes. The Scope plots the mass position; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Mass_Spring_Damper_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Acausal RC low-pass in a subsystem",
+          "description": "A self-contained acausal RC low-pass circuit grouped inside a plain subsystem (Tier 1: acausal components inside a subsystem). The subsystem 'RC_Lowpass' holds a sinusoidal voltage source, a resistor, a capacitor to ground and a voltage sensor wired with physical wires; it exposes the sensed capacitor voltage as its single output. On simulation NFlow.internal.acausalExpand recurses into the subsystem and lowers the physical wires into a nested physicalIsland (the engine simulates it exactly like a top-level island). The Scope plots the filtered capacitor voltage and ToWorkspace exports it. tau = R*C = 100*1e-3 = 0.1 s.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Subsystem_RC_Lowpass.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "Acausal RLC Circuit",
+          "description": "Acausal series RLC circuit: a constant voltage source drives a resistor, inductor and capacitor in series to ground. The inductor and capacitor exchange energy while the resistor damps it, so the capacitor voltage rings and settles to the source value -- a damped second-order electrical response. The Scope plots the capacitor voltage; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_RLC_Circuit_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "Acausal Rotational Drivetrain",
+          "description": "Acausal rotational drivetrain: two inertias coupled by an ideal gear, driven by a constant torque and loaded by a rotational damper to a fixed reference. The gear scales speed and torque by its ratio; the output shaft accelerates to the steady speed where drive torque balances damping. The Scope plots the output-shaft speed; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Rotational_Drivetrain_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "Acausal Series RLC (AC)",
+          "description": "Acausal series RLC circuit driven by a sinusoidal voltage source. The source feeds a resistor, an inductor, a current sensor and a capacitor in series to ground. After the initial transient the capacitor voltage settles into a steady sinusoid, phase-shifted and scaled by the frequency response of the second-order circuit; the current sensor reports the loop current i = C dVc/dt. The Scope plots the capacitor voltage and the loop current; ToWorkspace exports both.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Series_RLC_AC_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 11
+        },
+        {
+          "title": "Acausal Thermal Heatsink",
+          "description": "Acausal thermal RC demo: a heated thermal mass (HeatCapacitor) loses heat through a thermal resistance to a fixed ambient temperature. The body temperature relaxes exponentially toward ambient -- a first-order thermal (RC) response. The heat-port nodes are the physical connections. The Scope plots the body temperature; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Thermal_Heatsink_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Bearing Friction",
+          "description": "Bearing friction bringing a spinning inertia to rest.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Bearing_Friction.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Body Radiation",
+          "description": "A body radiating heat to a fixed ambient (Stefan-Boltzmann).",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Body_Radiation.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Brake (Signal)",
+          "description": "A signal-actuated brake decelerating a spinning inertia.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Brake_Signal.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "CCC Source",
+          "description": "Current-controlled current source driving a load.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_CCC_Source.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "CCV Source",
+          "description": "Current-controlled voltage source.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_CCV_Source.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Clutch Two Inertias",
+          "description": "A clutch pulling two inertias to a common speed.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Clutch_TwoInertia.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Conductor Divider",
+          "description": "Two conductors in series divide the source voltage.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Conductor_Divider.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Constant Rotational Speed",
+          "description": "A flange driven at a prescribed angular velocity.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Constant_RotSpeed.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Constant Speed",
+          "description": "A flange driven at a prescribed constant velocity.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Constant_Speed.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Coulomb Friction",
+          "description": "Regularised Coulomb friction bringing a mass to rest.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Coulomb_Friction.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Current Divider",
+          "description": "A current source splits between two parallel resistors.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Current_Divider.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "DC Motor (EMF)",
+          "description": "A DC motor: armature coupled to an inertia through an EMF.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_DC_Motor_EMF.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 13
+        },
+        {
+          "title": "Deep Diode",
+          "description": "A deeply forward-biased diode operating point.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Deep_Diode.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Diode Operating Point",
+          "description": "A resistor drives a diode: Shockley operating point.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Diode_Operating_Point.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Exp-Sine Force MSD",
+          "description": "Exponentially damped sine force on a mass-spring-damper.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_ExpSineForce_MSD.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Exp-Sine RC",
+          "description": "Exponentially damped sine voltage driving an RC.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_ExpSine_RC.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Extreme Gear Ratio",
+          "description": "A gear with an extreme ratio folding a large equivalent inertia.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Extreme_Gear.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Freewheel Engaged",
+          "description": "A freewheel engaging (a overruns b) and braking the inertia.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Freewheel_Engaged.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "Freewheel Free",
+          "description": "A freewheel disengaged (a does not overrun b); the inertia coasts.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Freewheel_Free.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "Geared Inertia",
+          "description": "Two inertias coupled by an ideal gear under a torque.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Geared_Inertia.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Gyrator as Inductor",
+          "description": "A gyrator terminated by a capacitor behaves like an inductor.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Gyrator_Inductor.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Half-Wave Rectifier",
+          "description": "Sine source, diode and smoothing capacitor with a load.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_HalfWave_Rectifier.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Heat-Flow Body",
+          "description": "A body heated by a constant heat flow, losing heat to ambient.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_HeatFlow_Body.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Heat-Flow Sensor Cooling",
+          "description": "A cooling body; the sensor reads the heat loss.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_HeatFlowSensor_Cooling.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Heating Resistor",
+          "description": "A resistor dissipating its power as heat into a thermal body.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Heating_Resistor.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "High-Q RLC",
+          "description": "A lightly damped high-Q RLC ringing for many periods.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_HighQ_RLC.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Idle Branch",
+          "description": "An ideal open branch carries no current.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Idle_Branch.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Inverting Op-Amp",
+          "description": "Ideal op-amp inverting amplifier, gain -Rf/Rin.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Inverting_OpAmp.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "LC Conservative",
+          "description": "A lossless LC tank oscillating without decay.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_LC_Conservative.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Lever Ratio",
+          "description": "A lever imposing a kinematic ratio between its flanges.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Lever_Ratio.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Linear Motor (TEMF)",
+          "description": "A linear motor from a translational EMF driving a mass.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Linear_Motor_TEMF.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 13
+        },
+        {
+          "title": "Linear Speed Force",
+          "description": "Mass slowed by a linear speed-dependent force.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Linear_SpeedForce.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Mass Under Gravity",
+          "description": "A mass in free fall under its own weight.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_MassWithWeight_FreeFall.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Mass-Damper",
+          "description": "Mass coasting to rest through a viscous damper.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Mass_Damper.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Mass-Spring",
+          "description": "Undamped mass on a spring released from a displacement.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Mass_Spring.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Mass-Spring Long Run",
+          "description": "A conservative mass-spring over many periods.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_MassSpring_LongRun.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "NMOS Diode-Connected",
+          "description": "Diode-connected N-MOSFET square-law operating point.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_NMOS_Diode_Connected.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "NPN Diode-Connected",
+          "description": "Diode-connected NPN bipolar transistor bias point.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_NPN_Diode_Connected.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Op-Amp Integrator",
+          "description": "Ideal op-amp integrator, output ramps as -(1/RC) int Vin.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_OpAmp_Integrator.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Parallel RLC",
+          "description": "A current source feeds a parallel RLC tank.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Parallel_RLC.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Planar Double Pendulum",
+          "description": "Planar 2-D multibody demo: a double pendulum -- two rigid bodies joined by revolute joints, hanging from a fixed world frame -- swings under gravity. Its motion is chaotic and highly sensitive to initial conditions. Constraints are Baumgarte-stabilised. (Planar island: simulation only, no code generation.) The Scope plots a tip coordinate; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Planar_Double_Pendulum_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Planar Pendulum",
+          "description": "Planar 2-D single rod pendulum: a uniform rod (length 1, mass 1) pivoted at one end to a fixed world frame, released horizontally, swings under gravity. The body angle follows the physical-pendulum equation I_pivot phi'' = -m g d cos(phi). The Scope plots the angle; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Planar_Pendulum.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Planar Reaction Wheel",
+          "description": "Planar 2-D multibody demo: a reaction wheel. Two free bodies -- a platform (I = 0.5) and a wheel (I = 2) -- are coupled only by an internal actuator torque (tau = 1). With no external anchor and no gravity, total angular momentum is conserved: the actuator spins the wheel one way while the platform recoils the other, their angular accelerations in inverse ratio to their inertias (alpha = tau / I). (Planar island: simulation only, no code generation.) ToWorkspace exports both angular speeds as W0 (platform) and W1 (wheel).\n\nLayout: the gravity-free world sits at the left; the two bodies stack in the middle joined by the relative-torque actuator; each body has a velocity sensor (axis omega) whose signal drops to its ToWorkspace sink on the right.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Planar_Reaction_Wheel_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Planar Rigid Triple Pendulum",
+          "description": "Runnable planar multibody demo stored as a native mechanical island: three uniform rigid rods are connected in series by frictionless revolute joints and released horizontally under gravity. Keeping the already-lowered island in the example avoids an interpreter-thread dependency when Run is pressed. The real-time XY Scope animates the end-point trajectory while the Scope overlays all three absolute rod angles.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Planar_Rigid_Triple_Pendulum_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "Planar Spring Pendulum",
+          "description": "Planar 2-D demo: a rigid body hangs from a fixed anchor by a 2-D spring-damper under gravity. It swings and bounces as a spring pendulum and settles at the static spring stretch. Constraints are Baumgarte-stabilised. (Planar island: simulation only.) The Scope plots the body's vertical position; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Planar_Spring_Pendulum_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "PMOS Diode-Connected",
+          "description": "Diode-connected P-MOSFET square-law bias point.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_PMOS_Diode_Connected.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "PNP Diode-Connected",
+          "description": "Diode-connected PNP bipolar transistor bias point.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_PNP_Diode_Connected.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Quadratic Drag",
+          "description": "Mass slowed by quadratic (drag) resistance.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Quadratic_Drag.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Ramp Current Capacitor",
+          "description": "A ramp current charging a capacitor.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RampCurrent_Cap.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Ramp Force Mass",
+          "description": "A ramp force on a free mass.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RampForce_Mass.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "RC High-Pass",
+          "description": "Sine-driven RC high-pass; output taken across the resistor.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RC_HighPass.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "RC Ladder",
+          "description": "Two-stage RC ladder low-pass: a step source feeds R1 into C1, then R2 into C2, both capacitors returned to ground. The output at C2 is a smoothed second-order response. Exercises the modified-nodal-analysis solver on a multi-node passive network. The Scope plots the C2 voltage; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RC_Ladder.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "RC Low-Pass (AC)",
+          "description": "Sine-driven first-order RC low-pass filter.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RC_LowPass_AC.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "RC Ramp",
+          "description": "RC circuit driven by a ramp voltage source.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RC_Ramp.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Relative Position Two Masses",
+          "description": "Relative-position sensor across two free masses on a spring.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RelPosition_TwoMass.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "RL Sine",
+          "description": "An RL circuit under a sine drive.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RL_Sine.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "RL Step",
+          "description": "First-order RL circuit: the inductor current rises to V/R.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RL_Step.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Rotational Damper",
+          "description": "Inertia coasting to rest through a rotational damper.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Rot_Damper.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Rotational Inertia-Spring",
+          "description": "Inertia on a torsional spring released from an angle.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Rot_Inertia_Spring.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 6
+        },
+        {
+          "title": "Rotational Quadratic Drag",
+          "description": "Inertia slowed by quadratic rotational drag.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Rot_Quadratic_Drag.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
+          "title": "Rotational Spring-Damper",
+          "description": "Inertia on a rotational spring-damper driven by a torque.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_RotSpringDamper.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Series RLC Step",
+          "description": "Series RLC step response (R = L = C = 1): a constant voltage source drives a resistor, inductor and capacitor in series to ground. The capacitor voltage is the classic underdamped second-order step response (alpha = 1/2, omega_d = sqrt(3)/2). The Scope plots the capacitor voltage; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Series_RLC_Step.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Short Circuit",
+          "description": "An ideal short ties a node to ground.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Short_Circuit.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Sine Current RC",
+          "description": "A sine current into a parallel RC.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_SineCurrent_RC.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Sine Force MSD",
+          "description": "Sine force on a mass-spring-damper.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_SineForce_MSD.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Sine Torque ISD",
+          "description": "Sine torque on an inertia-spring-damper.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_SineTorque_ISD.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 8
+        },
+        {
+          "title": "Spring-Damper Step",
+          "description": "Mass on a composite spring-damper under a constant force.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_SpringDamper_Step.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Stiff RC",
+          "description": "A stiff fast RC with a 10 ms time constant.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Stiff_RC.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 7
+        },
+        {
+          "title": "Thermal Chain",
+          "description": "A two-stage heat chain from a fixed boundary.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Thermal_Chain.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 10
+        },
+        {
+          "title": "Torsional Oscillator",
+          "description": "Two inertias coupled by torsional springs to a wall.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Torsional_Oscillator.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 10
+        },
+        {
+          "title": "Two-Capacitor Sharing",
+          "description": "Two capacitors share charge through a resistor.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_TwoCap_Sharing.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "Two-Mass Chain",
+          "description": "Two masses coupled by springs to a wall.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_TwoMass_Chain.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 10
+        },
+        {
+          "title": "VCC Source",
+          "description": "Voltage-controlled current source driving a load.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_VCC_Source.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "VCV Amplifier",
+          "description": "Voltage-controlled voltage source amplifying a divider tap.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_VCV_Amplifier.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "Wheatstone Bridge",
+          "description": "A resistive bridge; the ideal sensor reads the bridge voltage.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Wheatstone_Bridge.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        },
+        {
+          "title": "Zero Resistor Short",
+          "description": "Zero-ohm resistor (an ideal jumper) in the lower leg of a divider: a source through R1 = 10 into a R = 0 resistor to ground. The zero resistor must behave as a short, pinning the mid node to 0 V and carrying the full loop current V/R1 = 0.5 A, rather than dividing by zero. Regression guard for the resistor R -> 0 floor.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/gallery/Acausal_Zero_Resistor_Short.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 9
+        }
+      ]
+    },
+    {
       "name": "nflow:dashboard",
       "title": "Dashboard",
       "source": "nflow",
@@ -127,6 +1090,15 @@
       "title": "Workspace",
       "source": "nflow",
       "examples": [
+        {
+          "title": "From Workspace Demo",
+          "description": "From/To Workspace round-trip. Define the source signal in Nelson before running, e.g.  simin = [(0:0.01:10)', sin(2*pi*0.5*(0:0.01:10))'];  The From Workspace block reads 'simin', a gain of 2 is applied, and the result is written back to 'simout'.",
+          "kind": "model",
+          "file": "nflow-example:/workspace/From_Workspace_Demo.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
         {
           "title": "Nelson Function Demo",
           "description": "User-defined function blocks. The Nelson Function block evaluates tanh(u) via the interpreter at every step (simulation only). The Expression block evaluates the restricted math expression u^2 (simulates AND generates code). Both are fed by a sine and compared on the scope.",

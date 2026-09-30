@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "2794aacbfe1f",
-  "entryPoint": "index.html?runtime=wasm&build=2794aacbfe1f",
+  "buildId": "f1194467a5dc",
+  "entryPoint": "index.html?runtime=wasm&build=f1194467a5dc",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -13,7 +13,7 @@
           "nelson-portable.mjs",
           "nelson-portable.wasm"
         ],
-        "bytes": 41870707
+        "bytes": 42609740
       },
       {
         "id": "resources",
@@ -21,7 +21,7 @@
         "files": [
           "nelson-portable.data"
         ],
-        "bytes": 19372227
+        "bytes": 19387408
       },
       {
         "id": "shell",
@@ -39,7 +39,7 @@
           "nelson-worker.mjs",
           "nelson-workspace-store.mjs"
         ],
-        "bytes": 2894461
+        "bytes": 2894480
       }
     ],
     "onDemand": [
@@ -281,7 +281,7 @@
           "examples/gallery-shared.css",
           "examples/index.html"
         ],
-        "bytes": 7913457
+        "bytes": 7913651
       },
       {
         "id": "module-editor",
@@ -417,6 +417,94 @@
           "nflow/config/libraries.json",
           "nflow/config/ui-settings.json",
           "nflow/examples/catalog.json",
+          "nflow/examples/files/acausal/Acausal_Brake_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Contact_ElastoGap_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_DC_Motor_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_EMF_DC_Motor_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Freewheel_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Half_Wave_Rectifier_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Mass_Spring_Damper_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_RLC_Circuit_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Rotational_Drivetrain_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Series_RLC_AC_Demo.nflow",
+          "nflow/examples/files/acausal/Acausal_Subsystem_RC_Lowpass.nflow",
+          "nflow/examples/files/acausal/Acausal_Thermal_Heatsink_Demo.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Bearing_Friction.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Body_Radiation.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Brake_Signal.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_CCC_Source.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_CCV_Source.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Clutch_TwoInertia.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Conductor_Divider.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Constant_RotSpeed.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Constant_Speed.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Coulomb_Friction.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Current_Divider.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_DC_Motor_EMF.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Deep_Diode.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Diode_Operating_Point.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_ExpSine_RC.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_ExpSineForce_MSD.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Extreme_Gear.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Freewheel_Engaged.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Freewheel_Free.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Geared_Inertia.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Gyrator_Inductor.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_HalfWave_Rectifier.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_HeatFlow_Body.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_HeatFlowSensor_Cooling.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Heating_Resistor.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_HighQ_RLC.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Idle_Branch.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Inverting_OpAmp.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_LC_Conservative.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Lever_Ratio.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Linear_Motor_TEMF.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Linear_SpeedForce.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Mass_Damper.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Mass_Spring.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_MassSpring_LongRun.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_MassWithWeight_FreeFall.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_NMOS_Diode_Connected.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_NPN_Diode_Connected.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_OpAmp_Integrator.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Parallel_RLC.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Planar_Pendulum.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_PMOS_Diode_Connected.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_PNP_Diode_Connected.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Quadratic_Drag.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RampCurrent_Cap.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RampForce_Mass.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RC_HighPass.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RC_Ladder.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RC_LowPass_AC.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RC_Ramp.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RelPosition_TwoMass.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RL_Sine.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RL_Step.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Rot_Damper.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Rot_Inertia_Spring.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Rot_Quadratic_Drag.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_RotSpringDamper.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Series_RLC_Step.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Short_Circuit.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_SineCurrent_RC.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_SineForce_MSD.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_SineTorque_ISD.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_SpringDamper_Step.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Stiff_RC.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Thermal_Chain.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Torsional_Oscillator.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_TwoCap_Sharing.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_TwoMass_Chain.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_VCC_Source.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_VCV_Amplifier.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Wheatstone_Bridge.nflow",
+          "nflow/examples/files/acausal/gallery/Acausal_Zero_Resistor_Short.nflow",
+          "nflow/examples/files/acausal/Planar_Double_Pendulum_Demo.nflow",
+          "nflow/examples/files/acausal/Planar_Reaction_Wheel_Demo.nflow",
+          "nflow/examples/files/acausal/Planar_Rigid_Triple_Pendulum_Demo.nflow",
+          "nflow/examples/files/acausal/Planar_Spring_Pendulum_Demo.nflow",
           "nflow/examples/files/causal/Amplitude_Modulation_Demo.nflow",
           "nflow/examples/files/causal/Bus_Assignment_Demo.nflow",
           "nflow/examples/files/causal/Chirp_Frequency_Response_Demo.nflow",
@@ -430,6 +518,7 @@
           "nflow/examples/files/dashboard/Dashboard_Gallery_Demo.nflow",
           "nflow/examples/files/dashboard/Dashboard_Runtime_Demo.nflow",
           "nflow/examples/files/medical/Ventilator_BiLevel_PCAC_Demo.nflow",
+          "nflow/examples/files/workspace/From_Workspace_Demo.nflow",
           "nflow/examples/files/workspace/Nelson_Function_Demo.nflow",
           "nflow/examples/files/workspace/To_Workspace_Demo.nflow",
           "nflow/index.html",
@@ -1058,7 +1147,7 @@
           "nflow/styles/themes.css",
           "nflow/styles/ui-extras.css"
         ],
-        "bytes": 3891670
+        "bytes": 4076288
       },
       {
         "id": "nmm",
@@ -1090,7 +1179,7 @@
     {
       "file": "app.js",
       "bytes": 1254211,
-      "sha256": "71f762fb503e9a7e60c061f76d821ce54097ef53e8c98e2ae45e84f4dca849e0"
+      "sha256": "a422f341dbb277927bc9c9890393b04b47b4e200c642e71a46ceaed743cf8f75"
     },
     {
       "file": "assets/figureCanvasWorker-DO4fRWnq.js",
@@ -1099,8 +1188,8 @@
     },
     {
       "file": "capabilities.json",
-      "bytes": 2635,
-      "sha256": "ae9451fa06bcb7f19e8f7d5200bd299bae3afa734789302138cd00124620fc37"
+      "bytes": 2654,
+      "sha256": "5a4e86a9c44e64ec82c2b464fcf1fafe62fef18097903809a7159b1781a59075"
     },
     {
       "file": "examples/catalog.json",
@@ -1164,8 +1253,8 @@
     },
     {
       "file": "examples/files/audio/examples/play_generated_tone.m",
-      "bytes": 1753,
-      "sha256": "ac8c64c3a79e1da401c8a80beef2d0adb814fb7ae057882f20f84b38d5fa4d33"
+      "bytes": 1947,
+      "sha256": "d1f454c79f1351fc4298559a4b4d47cf21f636d4fdc530071899adf2c3fd95b9"
     },
     {
       "file": "examples/files/audio/examples/play_mp3.m",
@@ -2260,12 +2349,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "20904b0819eeb39eea3dd137f99d20b888fa98bc0ef5e1950d7598d818a0eb64"
+      "sha256": "a46acedc086b20502a483a8bb1f80a797f2f9ac1251ab21704b62445a3f49713"
     },
     {
       "file": "index.html",
       "bytes": 1625,
-      "sha256": "38e752632cd0c27fbf44e21a5bfc771b2d805d608bb0767123b3a766b1a23b54"
+      "sha256": "a313b3fd9374aab9e43f18b9b3c639ce736b2d892809f50cad23b4d422841db3"
     },
     {
       "file": "nelson-coi-serviceworker.js",
@@ -2274,18 +2363,18 @@
     },
     {
       "file": "nelson-portable.data",
-      "bytes": 19372227,
-      "sha256": "4fc50b30404a2fb614812c68b14f730f8fcad959438f3a6b817630e8a668beba"
+      "bytes": 19387408,
+      "sha256": "5187fbec4d995a5300cc4217ba0d22b2e477cd32a987a748f87d0847cc51ee5a"
     },
     {
       "file": "nelson-portable.mjs",
-      "bytes": 595220,
-      "sha256": "e703366247c2bb1bd54639f6027650dc24e885895664bdec1c860bb9e5eb3f47"
+      "bytes": 599512,
+      "sha256": "86ff1c507774d23dc85a3f783ff58c3346042ec157b1081226125a1621a40f35"
     },
     {
       "file": "nelson-portable.wasm",
-      "bytes": 41275487,
-      "sha256": "100da9bf781f7ed28fc89727c8eba98e454edd9aa9f82d286c0a8277189c5871"
+      "bytes": 42010228,
+      "sha256": "4ca424e0e01523d5d3dd647126565d9e3a9319d1d80361b1890dfb3ffbe8a895"
     },
     {
       "file": "nelson-runtime.mjs",
@@ -2300,7 +2389,7 @@
     {
       "file": "nelson-worker.mjs",
       "bytes": 39524,
-      "sha256": "0e5328f550d1045ed63c9d09946fd82470dc627fdda2b05ed77d6a8867ea28c3"
+      "sha256": "a1a4c44a5f06f49d9265d69c5617168b21fefc4e38ecc58e39a79d903e629366"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -2754,8 +2843,448 @@
     },
     {
       "file": "nflow/examples/catalog.json",
-      "bytes": 7789,
-      "sha256": "4cf806d44a6be9e70310cee6376fe2365e7d9791e4aaeb0d78edb62da03bb427"
+      "bytes": 48325,
+      "sha256": "3e834d1416023ed481823e387a15ee9fed3c86d8db51e43154a9535ae8323efc"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Brake_Demo.nflow",
+      "bytes": 2802,
+      "sha256": "7d9abc9f7e3c75dd78a21cb7fe695306d0d9e85adf08015cbd6f5c708d24f008"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Contact_ElastoGap_Demo.nflow",
+      "bytes": 2235,
+      "sha256": "753f115701c2f84a6335a31ed0290c04da19c570179cde9742c0b9e9832cd90c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_DC_Motor_Demo.nflow",
+      "bytes": 3581,
+      "sha256": "b142165ff3d2346fc3b48ebef2f6d970afeb7432a686962977afdf88726f4149"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_EMF_DC_Motor_Demo.nflow",
+      "bytes": 3475,
+      "sha256": "14510db19fb943da36772c3b5a84083b7b265735b93c9e1b66f929708a9f7cec"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Freewheel_Demo.nflow",
+      "bytes": 1982,
+      "sha256": "31877bbb2a5bbede83aedc6f47f5806880a066a02b33e91a25080e0db0b4a7bc"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Half_Wave_Rectifier_Demo.nflow",
+      "bytes": 2754,
+      "sha256": "28d1e9d3bef395b02bc8980cc2867076f95a4a618ad894be7d60c4a63bbe8a21"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Mass_Spring_Damper_Demo.nflow",
+      "bytes": 2090,
+      "sha256": "0eae42f9fc1ee3692325aa5b2aa150232b7f9072d5fd1a08bc262c7f82004db1"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_RLC_Circuit_Demo.nflow",
+      "bytes": 2545,
+      "sha256": "bc7b6b52c04214fceb81be0119e0191453702d856dd2286fa3f8d7741b181431"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Rotational_Drivetrain_Demo.nflow",
+      "bytes": 2459,
+      "sha256": "2693a8272078da84e806e59a64a1f7e74e339821bc964c802ee452da372b3beb"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Series_RLC_AC_Demo.nflow",
+      "bytes": 3329,
+      "sha256": "390c49d594df956a130ddda13dddfef46871a4a0811c14a9875368b0bf8bc134"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Subsystem_RC_Lowpass.nflow",
+      "bytes": 3713,
+      "sha256": "fa4650398530a11828a4df337a569275e3043995c1dff0c243f823521f3f75c3"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Acausal_Thermal_Heatsink_Demo.nflow",
+      "bytes": 1975,
+      "sha256": "6a4cd728df1b7717c17862a50361f82fb4a7aa4af968ccc1e5422211a87b83f3"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Bearing_Friction.nflow",
+      "bytes": 1028,
+      "sha256": "6f379b0b7caf9f2276e51edcbf1b4531b971e6d1eb1303cf36db82cbfa77e722"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Body_Radiation.nflow",
+      "bytes": 1121,
+      "sha256": "446d321eff8bff82fdb5dffc38bf4adb9442dd4b26382e22d1e1483bdd9b9950"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Brake_Signal.nflow",
+      "bytes": 1153,
+      "sha256": "30f5778f095aaf05ecf239e06ac6a9e879408ab72e982b29f1a8443104c0bcab"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_CCC_Source.nflow",
+      "bytes": 1192,
+      "sha256": "863355db4ebdf3fefa8357e1b0745728976130cd6f85b55aea2e7ddbeee57c21"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_CCV_Source.nflow",
+      "bytes": 1177,
+      "sha256": "ece460a32f863fdfe9f2e1f7d05ef2b576a16c7e3e8824b47828929e959bd775"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Clutch_TwoInertia.nflow",
+      "bytes": 1364,
+      "sha256": "5ed53e77179dd920fe99e420f104b3f320f77979f35e74765c8ebd5b16a3fbfd"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Conductor_Divider.nflow",
+      "bytes": 1194,
+      "sha256": "ec59675be9df37a902d31008d1440c6ce51c9a589b9313507a0279ce7f603c6a"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Constant_RotSpeed.nflow",
+      "bytes": 918,
+      "sha256": "130bb0ae040eed347b346082c0e16d4528a54a653cf746fb19a7c19e4d017b66"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Constant_Speed.nflow",
+      "bytes": 906,
+      "sha256": "485545af8258ebbbc3682f61e434f1d3f7d5ee432fe69cffb086172983771697"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Coulomb_Friction.nflow",
+      "bytes": 1009,
+      "sha256": "7f78823cdbd0982b046e6df01873a4daf35a3bb2b049db6ceb0449835f2c4741"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Current_Divider.nflow",
+      "bytes": 1190,
+      "sha256": "9c26bc17bf30729a7afb3879ebdd0b0180cc1b69629e4ca4334248333b2f7c12"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_DC_Motor_EMF.nflow",
+      "bytes": 1995,
+      "sha256": "ca56e14809098165ab128ec96a2d8e38bcc95df43b22f926dbf5bd72709d408f"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Deep_Diode.nflow",
+      "bytes": 1190,
+      "sha256": "af9050fdf62f1ca6f0640aed84e886c873f7a6dfc684cdd29f98a3e643195895"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Diode_Operating_Point.nflow",
+      "bytes": 1208,
+      "sha256": "6f48774d24aa22136da48b0a04472f782d8723a8d3959275114e08187ec1fab2"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_ExpSine_RC.nflow",
+      "bytes": 1231,
+      "sha256": "03c3a787074ef5fed23510d36e153f5d30c463500699624d8cfd8d0514d83bb6"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_ExpSineForce_MSD.nflow",
+      "bytes": 1327,
+      "sha256": "4a64a1350c894e307d38a7ee17ecb584d1b769b73a154458a87fc1cce1c35249"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Extreme_Gear.nflow",
+      "bytes": 1233,
+      "sha256": "000b9730f90c84b0bd8ca6568b26f7519831097db9d678db6e52ebed61a85d12"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Freewheel_Engaged.nflow",
+      "bytes": 1044,
+      "sha256": "c3c5b0940eb86b82ec1c7bac60d4e9b8cc68a590ce6d6067e624019c5cd6ebf2"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Freewheel_Free.nflow",
+      "bytes": 1047,
+      "sha256": "ee3db8e9c84ecfc2257bc2495043ab87110d266360d2cbaa2d8728faf1d31f7a"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Geared_Inertia.nflow",
+      "bytes": 1217,
+      "sha256": "d35c989bda2661ce77102f8ea22b2811dab79d2e9fd58f415e129b32f9404a0d"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Gyrator_Inductor.nflow",
+      "bytes": 1341,
+      "sha256": "1445cd29df4110a0f9d3f13fa516be0877f26ae90438a45d61c795d25b4e7c04"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_HalfWave_Rectifier.nflow",
+      "bytes": 1334,
+      "sha256": "ee50aa7002e0b5be454e200f79ec8df0f89b2822ba483e804b064f5b00fb59ab"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_HeatFlow_Body.nflow",
+      "bytes": 1219,
+      "sha256": "9b9471ad324f6d1efba320e4007bf43167aa571e9db02f064011894c937d7fe6"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_HeatFlowSensor_Cooling.nflow",
+      "bytes": 1496,
+      "sha256": "b2bc3c9764d3070543d3a444e01019707f52da86e423a8335cd4b25112d7f01c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Heating_Resistor.nflow",
+      "bytes": 1437,
+      "sha256": "f9ae95a063960f0c4108eff007c3627b34bcad9b5da745b74444957021c7314c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_HighQ_RLC.nflow",
+      "bytes": 1300,
+      "sha256": "85623ce3c2fe29386e2cc252a8dc139954a2f579ae86ad934ebeda7009500364"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Idle_Branch.nflow",
+      "bytes": 1161,
+      "sha256": "6fe29aa412ccc87b893aed0a40a2aaa593a2920b87d06b9a729447d2d6fbbcdb"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Inverting_OpAmp.nflow",
+      "bytes": 1298,
+      "sha256": "8e118809c4ba859dc81e68a01c26b81e3889fd1ef2e7c32449c145aa986f9cd2"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_LC_Conservative.nflow",
+      "bytes": 1084,
+      "sha256": "b71a0878e0c8900e639450bdf99883619910f60374b4866c69a66515fb109b35"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Lever_Ratio.nflow",
+      "bytes": 1013,
+      "sha256": "93bc6cd40b1cc2a84432bb5a6555e8abd1c396262f294423865b5221c94d1266"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Linear_Motor_TEMF.nflow",
+      "bytes": 1994,
+      "sha256": "e1342ffe5cb7591624aa2b6f814590ffe584950968e6e7117a51b48ca37d0413"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Linear_SpeedForce.nflow",
+      "bytes": 1007,
+      "sha256": "65a78709b388036d855d4c97b4221d0dd3140d48d6106c4fd5920056349ba160"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Mass_Damper.nflow",
+      "bytes": 1079,
+      "sha256": "fd5f4823cffd5543cd8fd52c06f26aac11a11208d0a585db0a438c82dd9e7bc6"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Mass_Spring.nflow",
+      "bytes": 1090,
+      "sha256": "807fbec20d825e42035d457796b2fcecdceb5ae0c4c7b54c413f629810a56be0"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_MassSpring_LongRun.nflow",
+      "bytes": 1089,
+      "sha256": "fcd279cec8d556d1cfac8f54cbcfa875c0e8a00d1cef6205127379263401c4ed"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_MassWithWeight_FreeFall.nflow",
+      "bytes": 920,
+      "sha256": "37b811cd6f8f90bdd0218ed460f9ca16f2eeb50be083b9b9e9447ee67f4c6cd0"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_NMOS_Diode_Connected.nflow",
+      "bytes": 1211,
+      "sha256": "17134bf35e3257eda585ff4c30258625e35427d7db78fd8f9ef8e09fe6bc4e1c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_NPN_Diode_Connected.nflow",
+      "bytes": 1221,
+      "sha256": "c75a4b8ae2c247429d8eb751535abe622f53b0bba008a7a0029cf4d1b171c136"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_OpAmp_Integrator.nflow",
+      "bytes": 1317,
+      "sha256": "e2887c799f2bf9630f744029e798f5b478ac931ded6b99bc0efd3e5bc3f6bd21"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Parallel_RLC.nflow",
+      "bytes": 1265,
+      "sha256": "671311f8af15dd5cd1bb2770fc8bf294e70691870cfddc884647c32bb0429151"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Planar_Pendulum.nflow",
+      "bytes": 1789,
+      "sha256": "f50b056c46d127ccd0c9fdfa3e2cc18fb37ec53bad443cd881a352ae21744bd5"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_PMOS_Diode_Connected.nflow",
+      "bytes": 1206,
+      "sha256": "7884ff6cbd417d056c59444d82a8ab0ee71282d535206c1bda916de679a2ac07"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_PNP_Diode_Connected.nflow",
+      "bytes": 1221,
+      "sha256": "83588a211a09a43b0198a7358d6efa813878b0e960668bc738227582df7e9112"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Quadratic_Drag.nflow",
+      "bytes": 1005,
+      "sha256": "a535b86d3972872a217de5704e5973725b954f37d05e1bc6fbaca7898e444f0a"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RampCurrent_Cap.nflow",
+      "bytes": 1098,
+      "sha256": "0c9ede3af09aa813f75edabcadc7855186dc744b78cb2b2c904256d4ed9d8d7d"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RampForce_Mass.nflow",
+      "bytes": 990,
+      "sha256": "d632598b549fa7af100c3b7498559e2ed4b375e04d23323463e9a46fcab1dc1e"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RC_HighPass.nflow",
+      "bytes": 1226,
+      "sha256": "2811576f0f52f0cc760b4b46a3d73f5844371b938496901d05cdeea9868ecb63"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RC_Ladder.nflow",
+      "bytes": 2025,
+      "sha256": "7f1e238612300830ebf425d5c7182b2164e990bd15d906cf6b9561f7ff4e39eb"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RC_LowPass_AC.nflow",
+      "bytes": 1214,
+      "sha256": "143084f4163460235aa5cad07cedc05552919ff1524501bb1e307cca6a2d3e71"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RC_Ramp.nflow",
+      "bytes": 1191,
+      "sha256": "454f49382d4965247f2517d3a38c57be9190820708ee1827c5b2990267ed21f3"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RelPosition_TwoMass.nflow",
+      "bytes": 1132,
+      "sha256": "8c1777df73e99f9f0b7ba7e633969d83cfd424ad6e420fa9af8bef79b841b8b5"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RL_Sine.nflow",
+      "bytes": 1204,
+      "sha256": "4af5058fea66e8e5de008df80308537909681f5c99545a74440d62131d9b6ea1"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RL_Step.nflow",
+      "bytes": 1200,
+      "sha256": "b416371575e781458eafe9511b89981bdaac467d586d82f55d9a1bd3dfacf41c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Rot_Damper.nflow",
+      "bytes": 1109,
+      "sha256": "7c6b986e7af68d6ed887078d6c08b4bba9354d0a24bebfc3a6286f93cc41ab2b"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Rot_Inertia_Spring.nflow",
+      "bytes": 1114,
+      "sha256": "3cd4eca90d75834e37ef8ca966cf25187cd362928f5d87525d9591f856359a31"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Rot_Quadratic_Drag.nflow",
+      "bytes": 1026,
+      "sha256": "a66dd9d13328a48cc0ebf25b4d0893411e02812f5b56d957462ca7826be23c0c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_RotSpringDamper.nflow",
+      "bytes": 1225,
+      "sha256": "a69e17b27e49b5909bf9eda149c2203a79ac42b15303cd1f731c84e468c7d3a8"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Series_RLC_Step.nflow",
+      "bytes": 1918,
+      "sha256": "d7e08a0e95dde90c5b7668578f03ca1dd06ec5be9ce4233f98c45e75fd0012c5"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Short_Circuit.nflow",
+      "bytes": 1161,
+      "sha256": "ade9597d1ffe717803b98ede2429596ad594246ab38b2af14c5850f305e871b4"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_SineCurrent_RC.nflow",
+      "bytes": 1194,
+      "sha256": "41c3fb83a1973c7dc48f9539dce8532630438ee9dae72f810485a4c274f1c40e"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_SineForce_MSD.nflow",
+      "bytes": 1285,
+      "sha256": "d29b520616649ce259a300f0cea2b5f5cfd5a76a26109aa9548b34a56043c502"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_SineTorque_ISD.nflow",
+      "bytes": 1305,
+      "sha256": "18350cc24a0281843a18a355740c36be80f35b516c510f663ee398647fd0d76c"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_SpringDamper_Step.nflow",
+      "bytes": 1206,
+      "sha256": "2cede8e767937694417e764030b6c3566bc0bccc1a563ddf7775dc8592d3ca13"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Stiff_RC.nflow",
+      "bytes": 1186,
+      "sha256": "03e319d35da86be70e2f77c0703a74f0ea6b4bd5cbb652732f5cd1207926d240"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Thermal_Chain.nflow",
+      "bytes": 1681,
+      "sha256": "97020ef3aaee06d010b7a45af64fecea8de3c3352282d4898b69134f390a0d36"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Torsional_Oscillator.nflow",
+      "bytes": 1677,
+      "sha256": "3b70637c08793c09eaa0eddc641f3fc17396757a683ff5c33cb207580f73bb90"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_TwoCap_Sharing.nflow",
+      "bytes": 1571,
+      "sha256": "526403af6931e8d225293f27dfcdc308c2c3bdcb449a6d266ac3dc0457c743e3"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_TwoMass_Chain.nflow",
+      "bytes": 1644,
+      "sha256": "250f9126518a0717eb1c0f6bc93760cad049ffb5345e8ef54253b383aa7c7585"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_VCC_Source.nflow",
+      "bytes": 1388,
+      "sha256": "9be3479cd46d7b82d12cfa0654beec4a7062da128d3831f8803246d204c808a3"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_VCV_Amplifier.nflow",
+      "bytes": 1399,
+      "sha256": "f0681c67c3ef64fae3fd1913dbdf45f00fbd5966bcea1b93a81316941c1a6837"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Wheatstone_Bridge.nflow",
+      "bytes": 1392,
+      "sha256": "1f923b61f3a655df6367d1ce1c7ff9d16130de845c7f83cc4ff4dc10fa932e2e"
+    },
+    {
+      "file": "nflow/examples/files/acausal/gallery/Acausal_Zero_Resistor_Short.nflow",
+      "bytes": 2142,
+      "sha256": "0a9ef13ba9f4796b4e24ba7bee342c798b091c2ad9c5a342ab7078959c150270"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Planar_Double_Pendulum_Demo.nflow",
+      "bytes": 2699,
+      "sha256": "72bc2e806753268c57748d4eba6c54afeca0a38037dcf545d22c22f7a5689ca6"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Planar_Reaction_Wheel_Demo.nflow",
+      "bytes": 2879,
+      "sha256": "8571d0be36d2fc25e17225f0a2a30fdafdee4cfa19d67a03166483f7d5fd7e31"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Planar_Rigid_Triple_Pendulum_Demo.nflow",
+      "bytes": 9359,
+      "sha256": "d6c23b0e7d94404694f3f845d5ee1d1845d1026e950a2be9e5e1cc1349678456"
+    },
+    {
+      "file": "nflow/examples/files/acausal/Planar_Spring_Pendulum_Demo.nflow",
+      "bytes": 2269,
+      "sha256": "e0b956f2d8c19bd4d414b02909e08667f2d26eda9eb91b1c941fb7fadd0a6dda"
     },
     {
       "file": "nflow/examples/files/causal/Amplitude_Modulation_Demo.nflow",
@@ -2823,6 +3352,11 @@
       "sha256": "62fb8f6a4f491a98636498c32c1d600931fc946a4a96387a92d554babdce2199"
     },
     {
+      "file": "nflow/examples/files/workspace/From_Workspace_Demo.nflow",
+      "bytes": 2192,
+      "sha256": "bf6f589c0e1db9a5b4d7f319567986d855ca8aae8c2fb17fc7ab2b99ae8485a6"
+    },
+    {
       "file": "nflow/examples/files/workspace/Nelson_Function_Demo.nflow",
       "bytes": 2317,
       "sha256": "145714c1d1dda27f83140c54195af62b69d89d987d39c115c22cc104a710ffd5"
@@ -2835,7 +3369,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "cf2d5282057984f9b6d24851d3ea42ec512038899c32f609a1c549a12e658706"
+      "sha256": "3bdc06dbd550a5d094f8032ca703363a6bbda64cdf4ea3ab3940830cd587ff17"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -5975,7 +6509,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "715d39abe594821574a88bb86967e4418a23490fd164d8cf063339bb7f335e38"
+      "sha256": "d924f3c81d177635504f11790dd4ac6c6bcf94a90db94b21e1785b9fd9bfb247"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -5990,7 +6524,7 @@
     {
       "file": "packs/editor/EditorPanel-Du_uqhMU.js",
       "bytes": 3618960,
-      "sha256": "e33996a9697069ab2a763285c5e0945c1b0382e9597516bcf528c1f05cfe2b81"
+      "sha256": "fd62a240ebe5f2caf90b5438f17e976bb9e871289aa6b7e1f19b045f7b669544"
     },
     {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
@@ -6005,12 +6539,12 @@
     {
       "file": "packs/examples/ExamplesPanel-Bt2QIaBd.js",
       "bytes": 9668,
-      "sha256": "8068ec0fac9563242158af230a429206cac52793225fc975853b717c583eb183"
+      "sha256": "60ff7cdc73480ebecdecf35e61cbfc48b9f7306fbbe7189ee09cd66db7eff01f"
     },
     {
       "file": "packs/mock/mockEngine-CXMWVVXG.js",
       "bytes": 30368,
-      "sha256": "927f67884bdae9b6c960d453585e1f19cd16c92933ee5ea194959c8a5b7e1381"
+      "sha256": "44e34e9b62c79069958dd76c8024e674fb537a8c3cdd26b343d5d6759b076028"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
@@ -6020,8 +6554,8 @@
     {
       "file": "packs/nmm/PackageManagerPanel-LRz_EtB9.js",
       "bytes": 48053,
-      "sha256": "098e0624740ac98687b6cfbf9cee8b9441b768592915976d2787691483a9373c"
+      "sha256": "6876511f0332f71fd3e35f37f27bf62aa88e377263832699416593586b872ee3"
     }
   ],
-  "totalBytes": 80148012
+  "totalBytes": 81087057
 }

@@ -19,6 +19,11 @@ if ~exist('audioToneFigureVisible', 'var')
   audioToneFigureVisible = 'on';
 end
 %=============================================================================
+devices = audiodevinfo();
+if isempty(devices.output)
+  error('This example requires an audio output device.');
+end
+%=============================================================================
 fs = audioToneSampleRate;
 t = (0:round(audioToneDuration * fs) - 1)' / fs;
 envelope = min(1, t / 0.04) .* exp(-3.5 * t / max(audioToneDuration, eps));

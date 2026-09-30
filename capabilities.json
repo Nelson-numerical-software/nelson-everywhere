@@ -57,6 +57,7 @@
     "os_functions",
     "overload",
     "polynomial_functions",
+    "preferences",
     "profiler",
     "random",
     "render_web",

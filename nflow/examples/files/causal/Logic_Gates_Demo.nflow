@@ -142,7 +142,7 @@
       "id": "b4",
       "type": "toggleSwitch",
       "x": 60,
-      "y": 345,
+      "y": 435,
       "rotation": 0,
       "params": {
         "State": 1,
@@ -158,7 +158,7 @@
       "id": "b5",
       "type": "toggleSwitch",
       "x": 60,
-      "y": 435,
+      "y": 345,
       "rotation": 0,
       "params": {
         "State": 1,

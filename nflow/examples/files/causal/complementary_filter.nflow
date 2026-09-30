@@ -13,8 +13,8 @@
     {
       "id": "b1",
       "type": "lpf",
-      "x": 380,
-      "y": 170,
+      "x": 440,
+      "y": 200,
       "rotation": 0,
       "params": {
         "Cutoff": 0.5
@@ -23,8 +23,8 @@
     {
       "id": "b2",
       "type": "hpf",
-      "x": 700,
-      "y": 260,
+      "x": 800,
+      "y": 360,
       "rotation": 0,
       "params": {
         "Cutoff": 0.5
@@ -33,7 +33,7 @@
     {
       "id": "b3",
       "type": "sum",
-      "x": 860,
+      "x": 940,
       "y": 240,
       "rotation": 0,
       "params": {
@@ -43,8 +43,8 @@
     {
       "id": "b4",
       "type": "derivative",
-      "x": 220,
-      "y": 180,
+      "x": 240,
+      "y": 360,
       "rotation": 0,
       "params": {}
     },
@@ -52,7 +52,7 @@
       "id": "b5",
       "type": "sine",
       "x": 60,
-      "y": 180,
+      "y": 60,
       "rotation": 0,
       "params": {
         "Amplitude": 1,
@@ -64,7 +64,7 @@
       "id": "b6",
       "type": "constant",
       "x": 60,
-      "y": 300,
+      "y": 440,
       "rotation": 0,
       "params": {
         "Value": 0.2,
@@ -75,7 +75,7 @@
       "id": "b7",
       "type": "noise",
       "x": 60,
-      "y": 60,
+      "y": 200,
       "rotation": 0,
       "params": {
         "Amplitude": 1
@@ -84,8 +84,8 @@
     {
       "id": "b8",
       "type": "sum",
-      "x": 220,
-      "y": 120,
+      "x": 240,
+      "y": 200,
       "rotation": 0,
       "params": {
         "Inputs": "+++"
@@ -94,8 +94,8 @@
     {
       "id": "b9",
       "type": "sum",
-      "x": 380,
-      "y": 290,
+      "x": 440,
+      "y": 360,
       "rotation": 0,
       "params": {
         "Inputs": "+++"
@@ -104,8 +104,8 @@
     {
       "id": "b10",
       "type": "integrator",
-      "x": 540,
-      "y": 260,
+      "x": 620,
+      "y": 360,
       "rotation": 0,
       "params": {
         "InitialCondition": 0,
@@ -116,8 +116,8 @@
     {
       "id": "b11",
       "type": "scope",
-      "x": 960,
-      "y": 220,
+      "x": 1060,
+      "y": 60,
       "rotation": 0,
       "params": {
         "TMin": "",
@@ -206,7 +206,7 @@
       "from": "b7",
       "to": "b8",
       "fromIndex": 0,
-      "toIndex": 1,
+      "toIndex": 0,
       "points": [
         [140, 100],
         [170, 100],
@@ -219,7 +219,7 @@
       "from": "b5",
       "to": "b8",
       "fromIndex": 0,
-      "toIndex": 0,
+      "toIndex": 1,
       "points": [
         [140, 220],
         [170, 220],

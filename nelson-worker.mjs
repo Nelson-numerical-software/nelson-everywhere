@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=8622043d4bce";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=8622043d4bce";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=2794aacbfe1f";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=2794aacbfe1f";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,7 +14,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=8622043d4bce";
+} from "./nelson-worker-protocol.mjs?build=2794aacbfe1f";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -30,6 +30,8 @@ const FIGURE_ACTION_END = "__FIGURE_ACTION_RESULT_END__";
 let runner = null;
 let runnerFactory = null;
 let runnerOptions = null;
+let timerPumpHandle = null;
+let timerPumpBusy = false;
 let nflowCancelSignal = null;
 let commandMailbox = null;
 let virtualFiles = new Map();
@@ -252,7 +254,31 @@ async function initialize(
       throw new Error("Installed Nelson modules could not be loaded");
     }
   }
+  startTimerPump();
   return { capabilities };
+}
+
+// The single-threaded runtime has no timer worker thread, so drive Nelson's
+// cooperative clock from here: advance due timers and drain their callbacks on
+// the interpreter thread whenever the engine is idle. The busy guard keeps at
+// most one pump outstanding, so it never piles up behind a running evaluation.
+const TIMER_PUMP_INTERVAL_MS = 16;
+
+function startTimerPump() {
+  if (timerPumpHandle !== null || typeof setInterval !== "function") {
+    return;
+  }
+  timerPumpHandle = setInterval(() => {
+    if (timerPumpBusy || !runner || typeof runner.pump !== "function") {
+      return;
+    }
+    timerPumpBusy = true;
+    Promise.resolve(runner.pump())
+      .catch(() => {})
+      .finally(() => {
+        timerPumpBusy = false;
+      });
+  }, TIMER_PUMP_INTERVAL_MS);
 }
 
 function commandMailboxFrom(buffer) {
@@ -775,18 +801,22 @@ async function setNestedVariable(request) {
   return { ok: true };
 }
 
-async function setFigureView(handle, azimuth, elevation, compactView = false) {
+async function setFigureView(handle, axesHandle, azimuth, elevation, compactView = false) {
   const figureHandle = Number(handle);
+  const targetAxesHandle = Number(axesHandle);
   const az = Number(azimuth);
   const el = Number(elevation);
   if (!Number.isSafeInteger(figureHandle) || figureHandle < 0) {
     throw new Error("Invalid WebAssembly figure handle");
   }
+  if (!Number.isSafeInteger(targetAxesHandle) || targetAxesHandle < 0) {
+    throw new Error("Invalid WebAssembly axes handle");
+  }
   if (!Number.isFinite(az) || !Number.isFinite(el)) {
     throw new Error("Invalid WebAssembly figure view");
   }
   const code = [
-    `nelsonWasmViewFrame = __web_display_list__(${figureHandle}, ${az}, ${el}, ${
+    `nelsonWasmViewFrame = __web_display_list__(${figureHandle}, ${targetAxesHandle}, ${az}, ${el}, ${
       compactView ? "true" : "false"
     });`,
     `disp(['${FIGURE_BEGIN}', nelsonWasmViewFrame, '${FIGURE_END}']);`,
@@ -1137,6 +1167,7 @@ self.addEventListener("message", async (event) => {
       case "figure.setView":
         result = await setFigureView(
           Number(request.handle),
+          Number(request.axesHandle ?? 0),
           Number(request.azimuth),
           Number(request.elevation),
           Boolean(request.compactView),

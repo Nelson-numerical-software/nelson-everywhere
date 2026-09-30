@@ -26,7 +26,7 @@
       "id": "nf",
       "type": "nelsonFunction",
       "x": 220,
-      "y": 206,
+      "y": 90,
       "rotation": 0,
       "params": {
         "Fcn": "tanh(u)",
@@ -38,7 +38,7 @@
       "id": "ex",
       "type": "expression",
       "x": 220,
-      "y": 90,
+      "y": 206,
       "rotation": 0,
       "params": {
         "Expr": "u^2"
@@ -48,7 +48,7 @@
       "id": "sc",
       "type": "scope",
       "x": 400,
-      "y": 60,
+      "y": 70,
       "rotation": 0,
       "params": {
         "TMin": "",

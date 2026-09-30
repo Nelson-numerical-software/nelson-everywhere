@@ -16,15 +16,15 @@
     {
       "id": "pv",
       "type": "pulse",
-      "x": 80,
-      "y": 140,
+      "x": 60,
+      "y": 160,
       "rotation": 0,
       "params": { "Amplitude": 13, "Period": 4, "Width": 30, "StartTime": 0, "Offset": 0 }
     },
     {
       "id": "pm",
       "type": "pulse",
-      "x": 80,
+      "x": 60,
       "y": 340,
       "rotation": 0,
       "params": { "Amplitude": 3, "Period": 4, "Width": 15, "StartTime": 0, "Offset": 0 }
@@ -32,40 +32,40 @@
     {
       "id": "bP",
       "type": "bias",
-      "x": 320,
-      "y": 40,
+      "x": 240,
+      "y": 60,
       "rotation": 0,
       "params": { "Bias": 5 }
     },
     {
       "id": "ps",
       "type": "sum",
-      "x": 280,
-      "y": 250,
+      "x": 240,
+      "y": 240,
       "rotation": 0,
       "params": { "Inputs": "++" }
     },
     {
       "id": "es",
       "type": "sum",
-      "x": 440,
-      "y": 250,
+      "x": 420,
+      "y": 240,
       "rotation": 0,
-      "params": { "Inputs": "+-" }
+      "params": { "Inputs": "-+" }
     },
     {
       "id": "gR",
       "type": "gain",
-      "x": 520,
-      "y": 210,
+      "x": 580,
+      "y": 240,
       "rotation": 0,
       "params": { "Gain": 0.1 }
     },
     {
       "id": "iV",
       "type": "integrator",
-      "x": 700,
-      "y": 210,
+      "x": 760,
+      "y": 240,
       "rotation": 0,
       "params": {
         "InitialCondition": 0,
@@ -78,31 +78,31 @@
     {
       "id": "gC",
       "type": "gain",
-      "x": 600,
-      "y": 420,
+      "x": 560,
+      "y": 560,
       "rotation": 0,
       "params": { "Gain": 20 }
     },
     {
       "id": "gQ",
       "type": "gain",
-      "x": 760,
-      "y": 80,
+      "x": 880,
+      "y": 100,
       "rotation": 0,
       "params": { "Gain": 60 }
     },
     {
       "id": "gVml",
       "type": "gain",
-      "x": 760,
-      "y": 400,
+      "x": 880,
+      "y": 440,
       "rotation": 0,
       "params": { "Gain": 1000 }
     },
     {
       "id": "scP",
       "type": "scope",
-      "x": 980,
+      "x": 1000,
       "y": 40,
       "rotation": 0,
       "params": { "TMin": "", "TMax": "", "YMin": 0, "YMax": 22, "width": 300, "height": 150, "ShowTickLabels": true }
@@ -110,24 +110,24 @@
     {
       "id": "scF",
       "type": "scope",
-      "x": 980,
-      "y": 230,
+      "x": 1000,
+      "y": 240,
       "rotation": 0,
       "params": { "TMin": "", "TMax": "", "YMin": "", "YMax": "", "width": 300, "height": 150, "ShowTickLabels": true }
     },
     {
       "id": "scV",
       "type": "scope",
-      "x": 980,
-      "y": 420,
+      "x": 1000,
+      "y": 440,
       "rotation": 0,
       "params": { "TMin": "", "TMax": "", "YMin": 0, "YMax": "", "width": 300, "height": 150, "ShowTickLabels": true }
     },
     {
       "id": "xy",
       "type": "xyScope",
-      "x": 1340,
-      "y": 210,
+      "x": 1360,
+      "y": 240,
       "rotation": 0,
       "params": { "XMin": 0, "XMax": 22, "YMin": 0, "YMax": "", "width": 260, "height": 220, "ShowTickLabels": true }
     },
@@ -260,15 +260,15 @@
       "points": [[160, 180], [240, 180], [240, 80], [320, 80]]
     },
     {
-      "from": "pv", "to": "ps", "fromIndex": 0, "toIndex": 0,
+      "from": "pv", "to": "ps", "fromIndex": 0, "toIndex": 1,
       "points": [[160, 180], [250, 180], [250, 255], [280, 255]]
     },
     {
-      "from": "pm", "to": "ps", "fromIndex": 0, "toIndex": 1,
+      "from": "pm", "to": "ps", "fromIndex": 0, "toIndex": 0,
       "points": [[160, 380], [250, 380], [250, 265], [280, 265]]
     },
     {
-      "from": "ps", "to": "es", "fromIndex": 0, "toIndex": 0,
+      "from": "ps", "to": "es", "fromIndex": 0, "toIndex": 1,
       "points": [[300, 260], [380, 260], [380, 255], [440, 255]]
     },
     {
@@ -284,7 +284,7 @@
       "points": [[780, 250], [820, 250], [820, 340], [560, 340], [560, 460], [600, 460]]
     },
     {
-      "from": "gC", "to": "es", "fromIndex": 0, "toIndex": 1,
+      "from": "gC", "to": "es", "fromIndex": 0, "toIndex": 0,
       "points": [[700, 460], [740, 460], [740, 540], [410, 540], [410, 265], [440, 265]]
     },
     {

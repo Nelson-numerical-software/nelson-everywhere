@@ -7,7 +7,7 @@
       "examples": [
         {
           "title": "Amplitude Modulation - Message x Carrier",
-          "description": "A slow message sine (0.2 Hz) multiplies a fast carrier sine (2 Hz) to form a double-sideband product. The scope overlays message, carrier and their product so the carrier riding inside the message envelope is visible.",
+          "description": "A slow message sine (0.2 Hz) multiplies a fast carrier sine (2 Hz) to form a double-sideband product. The scope overlays message, their product and the carrier so the carrier riding inside the message envelope is visible.",
           "kind": "model",
           "file": "nflow-example:/causal/Amplitude_Modulation_Demo.nflow",
           "tags": [],

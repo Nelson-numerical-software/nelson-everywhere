@@ -389,5 +389,18 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           instancePromise = undefined;
         }
       }),
+    // Cooperative clock: advance due timers and drain pending callbacks on the
+    // interpreter thread. Driven by a periodic timer in the worker so timer-based
+    // GUIs (e.g. animation/UI timers) keep running while the engine is idle.
+    pump: () =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall === "function" &&
+          typeof instance._nlsPortablePump === "function"
+        ) {
+          instance.ccall("nlsPortablePump", null, [], []);
+        }
+      }),
   };
 }

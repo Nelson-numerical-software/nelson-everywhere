@@ -131670,14 +131670,33 @@ function documentJson = acausalExpand(documentJson)
     return
   end
   doc = jsondecode(documentJson);
-  % Fail fast: acausal components inside a subsystem are not expanded (nested
-  % subsystems are left untouched), so they would otherwise fail later with a
-  % misleading "solver requires continuous states; none found" message. Reject
-  % them here with a clear message. (Full support is a post-2.0 feature.)
-  ax_reject_acausal_in_subsystem(doc);
-  if ~isfield(doc, 'physicalWires') || isempty(doc.physicalWires)
-    return
+  catalog = NFlow.internal.acausalCatalog();
+  catNames = {catalog.name};
+  % Tier 1: recurse into plain (virtual) subsystems and lower each inner acausal
+  % diagram in place, so a self-contained physical island inside a subsystem is
+  % emitted as a nested physicalIsland (the engine already simulates those - see
+  % test_nflow_island_solver_modes, nested case). A controlled subsystem (enable /
+  % trigger / reset / action / iterator / for-each) cannot host a DAE island - it
+  % would be conditionally gated - and is rejected with a clear message. Physical
+  % wires that CROSS a subsystem boundary remain a post-2.0 feature.
+  [doc, subChanged] = ax_expand_subsystems(doc, catalog, catNames);
+  hasTop = isfield(doc, 'physicalWires') && ~isempty(doc.physicalWires);
+  if hasTop
+    doc = ax_lower_diagram(doc, catalog, catNames);
   end
+  if hasTop || subChanged
+    % jsondecode turned any 1-element list into a scalar struct; keep the doc's
+    % list fields as JSON arrays so a single top-level connection is not dropped.
+    doc = ax_force_list_arrays(doc);
+    documentJson = jsonencode(doc);
+  end
+end
+%=============================================================================
+function doc = ax_lower_diagram(doc, catalog, catNames)
+  % Lower ONE diagram's physical wires into native island blocks. Operates on a
+  % struct with .blocks (+ optional .connections, .physicalWires) and returns it
+  % with each physical island rewritten to a single island block and the
+  % physicalWires field removed. The top level and each plain subsystem run this.
   % Waveform-source pre-pass: split each SineVoltage / PulseVoltage / ... into a
   % causal generator feeding a SignalVoltage / SignalCurrent, then let the island
   % grouping below wire the generator into the source's input port.
@@ -131687,8 +131706,6 @@ function documentJson = acausalExpand(documentJson)
   doc = ax_expand_composites(doc);
   doc = ax_expand_heating(doc);
   doc = ax_expand_emf(doc);
-  catalog = NFlow.internal.acausalCatalog();
-  catNames = {catalog.name};
   blocks = ax_cellrow(doc.blocks);
 
   isAc = false(1, numel(blocks));
@@ -131879,7 +131896,6 @@ function documentJson = acausalExpand(documentJson)
   doc.blocks = newBlocks;
   if ~isempty(newConns); doc.connections = newConns; end
   doc = rmfield(doc, 'physicalWires');
-  documentJson = jsonencode(doc);
 end
 %=============================================================================
 function r = ax_find(parent, i)
@@ -132222,47 +132238,124 @@ function doc = ax_expand_emf(doc)
   doc.physicalWires = [pw, addWires];
 end
 %=============================================================================
-function ax_reject_acausal_in_subsystem(doc)
-  % Error if any subsystem (at any depth) contains an acausal catalog component.
+function [doc, changed] = ax_expand_subsystems(doc, catalog, catNames)
+  % Depth-first Tier-1 recursion: lower the inner acausal diagram of every PLAIN
+  % subsystem in place. A controlled subsystem that (recursively) contains an
+  % acausal component is rejected - a physical (DAE) island cannot be gated.
+  changed = false;
   if ~isfield(doc, 'blocks') || isempty(doc.blocks)
     return
   end
   blocks = ax_cellrow(doc.blocks);
-  hasSub = false;
-  for i = 1:numel(blocks)
-    if strcmp(ax_field(blocks{i}, 'type', ''), 'subsystem')
-      hasSub = true;
-      break
-    end
-  end
-  if ~hasSub
-    return
-  end
-  catNames = {NFlow.internal.acausalCatalog().name};
-  ax_scan_subsystems(blocks, catNames);
-end
-%=============================================================================
-function ax_scan_subsystems(blocks, catNames)
+  anyChange = false;
   for i = 1:numel(blocks)
     b = blocks{i};
     if ~strcmp(ax_field(b, 'type', ''), 'subsystem') || ~isfield(b, 'params')
       continue
     end
-    if ~isfield(b.params, 'subsystem') || ~isfield(b.params.subsystem, 'blocks')
+    if ~isfield(b.params, 'subsystem') || ~isstruct(b.params.subsystem) ...
+        || ~isfield(b.params.subsystem, 'blocks')
       continue
     end
-    inner = ax_cellrow(b.params.subsystem.blocks);
-    for j = 1:numel(inner)
-      ty = ax_field(inner{j}, 'type', '');
-      if any(strcmp(catNames, ty))
-        error('Nelson:nflow:acausalInSubsystemUnsupported', ...
-          ['Acausal component ''%s'' (type %s) is inside subsystem ''%s''; ', ...
-           'acausal components are not supported inside subsystems yet - keep ', ...
-           'them at the top level of the diagram.'], ...
-          ax_field(inner{j}, 'id', '?'), ty, ax_field(b, 'id', '?'));
-      end
+    inner = b.params.subsystem;
+    if ~ax_inner_has_acausal(inner, catNames)
+      continue
     end
-    ax_scan_subsystems(inner, catNames); % nested subsystems
+    if ax_is_controlled_subsystem(b)
+      error('Nelson:nflow:acausalInSubsystemUnsupported', ...
+        ['Subsystem ''%s'' is a controlled subsystem (enable / trigger / reset / ', ...
+         'action / iterator / for-each) and cannot contain acausal components: a ', ...
+         'physical (DAE) island cannot be conditionally gated. Keep the acausal ', ...
+         'components in a plain subsystem or at the top level of the diagram.'], ...
+        ax_field(b, 'id', '?'));
+    end
+    % Lower nested plain subsystems first, then this level's own physical wires.
+    [inner, innerChanged] = ax_expand_subsystems(inner, catalog, catNames);
+    if isfield(inner, 'physicalWires') && ~isempty(inner.physicalWires)
+      inner = ax_lower_diagram(inner, catalog, catNames);
+      innerChanged = true;
+    end
+    if innerChanged
+      b.params.subsystem = ax_force_list_arrays(inner);
+      blocks{i} = b;
+      anyChange = true;
+    end
+  end
+  if anyChange
+    doc.blocks = blocks;
+    changed = true;
+  end
+end
+%=============================================================================
+function tf = ax_inner_has_acausal(inner, catNames)
+  % True if the subsystem's inner diagram contains an acausal catalog component
+  % at any depth (including inside nested subsystems).
+  tf = false;
+  if ~isstruct(inner) || ~isfield(inner, 'blocks') || isempty(inner.blocks)
+    return
+  end
+  innerBlocks = ax_cellrow(inner.blocks);
+  for j = 1:numel(innerBlocks)
+    ib = innerBlocks{j};
+    if any(strcmp(catNames, ax_field(ib, 'type', '')))
+      tf = true;
+      return
+    end
+    if strcmp(ax_field(ib, 'type', ''), 'subsystem') && isfield(ib, 'params') ...
+        && isfield(ib.params, 'subsystem') ...
+        && ax_inner_has_acausal(ib.params.subsystem, catNames)
+      tf = true;
+      return
+    end
+  end
+end
+%=============================================================================
+function tf = ax_is_controlled_subsystem(b)
+  % A subsystem is controlled (cannot host a DAE island) when it carries a
+  % controlPort (enable / trigger / enableTrigger / reset / action / functionCall
+  % / iterator) or a for-each specification, at any place the engine reads them
+  % (SubsystemHandlers.cpp reads params.controlPort, subsystem.controlPort and
+  % subsystem.params.controlPort; forEachInputDivision reads params.forEach).
+  tf = false;
+  if ~isfield(b, 'params') || ~isstruct(b.params)
+    return
+  end
+  if ax_has_object(b.params, 'controlPort') || ax_has_object(b.params, 'forEach')
+    tf = true;
+    return
+  end
+  if isfield(b.params, 'subsystem') && isstruct(b.params.subsystem)
+    sub = b.params.subsystem;
+    if ax_has_object(sub, 'controlPort') || ax_has_object(sub, 'forEach')
+      tf = true;
+      return
+    end
+    if isfield(sub, 'params') && isstruct(sub.params) ...
+        && (ax_has_object(sub.params, 'controlPort') || ax_has_object(sub.params, 'forEach'))
+      tf = true;
+    end
+  end
+end
+%=============================================================================
+function tf = ax_has_object(s, f)
+  % Mirror the engine's `is_object() && !empty()` test: a present, non-empty
+  % struct field (an empty {} controlPort means "always active", i.e. plain).
+  tf = isstruct(s) && isfield(s, f) && isstruct(s.(f)) && ~isempty(fieldnames(s.(f)));
+end
+%=============================================================================
+function s = ax_force_list_arrays(s)
+  % jsondecode turns a 1-element JSON array into a scalar struct, and jsonencode
+  % then re-emits it as a JSON object; but the parsers read blocks / connections /
+  % externalInputs / externalOutputs only when they are JSON arrays. Force those
+  % fields to cell arrays so the round-trip keeps them as arrays (a scalar struct
+  % would otherwise silently drop a single connection, giving an all-zero trace).
+  % Applied both to a subsystem's inner spec and to the top-level document.
+  arrFields = {'blocks', 'connections', 'externalInputs', 'externalOutputs'};
+  for k = 1:numel(arrFields)
+    f = arrFields{k};
+    if isfield(s, f) && ~isempty(s.(f)) && ~iscell(s.(f))
+      s.(f) = ax_cellrow(s.(f));
+    end
   end
 end
 %=============================================================================
@@ -132340,6 +132433,7 @@ function xml = acausalGenerateHelp(componentName, lang)
     '  <copyright>SAME AS NELSON SOFTWARE</copyright>', newline, ...
     '  <language>', lang, '</language>', newline, ...
     '  <keyword>', c.name, '</keyword>', newline, ...
+    '  <keyword_alias>block:', c.name, '</keyword_alias>', newline, ...
     '  <short_description>', esc(c.desc), '</short_description>', newline, ...
     '  <syntax><syntax_item>Acausal component: ', c.name, '</syntax_item></syntax>', newline, ...
     '  <param_input><param_input_item><param_name>physical pins</param_name>', ...
@@ -133983,6 +134077,7 @@ function s = ph_block_help(b, manifest, grp, lang, blocks)
     '  <copyright>SAME AS NELSON SOFTWARE</copyright>', newline, ...
     '  <language>', lang, '</language>', newline, ...
     '  <keyword>', b.type, '</keyword>', newline, ...
+    '  <keyword_alias>block:', b.type, '</keyword_alias>', newline, ...
     '  <short_description>', ph_esc(desc), '</short_description>', newline, ...
     '  <syntax>', newline, '    <syntax_item>Block type: ', b.type, '</syntax_item>', newline, '  </syntax>', newline, ...
     '  <param_input>', newline, '    <param_input_item>', newline, ...
@@ -134592,6 +134687,7 @@ function xml = planarGenerateHelp(blockName, lang)
     '  <copyright>SAME AS NELSON SOFTWARE</copyright>', newline, ...
     '  <language>', lang, '</language>', newline, ...
     '  <keyword>', c.name, '</keyword>', newline, ...
+    '  <keyword_alias>block:', c.name, '</keyword_alias>', newline, ...
     '  <short_description>', esc(c.desc), '</short_description>', newline, ...
     '  <syntax><syntax_item>Planar multibody block: ', c.name, '</syntax_item></syntax>', newline, ...
     '  <param_input><param_input_item><param_name>frame connectors</param_name>', ...
@@ -145119,12 +145215,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 26,
+          "y": 30,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 54,
+          "y": 50,
           "side": "left"
         }
       ],
@@ -145285,12 +145381,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 28,
+          "y": 30,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 52,
+          "y": 50,
           "side": "left"
         }
       ],
@@ -145349,12 +145445,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 28,
+          "y": 30,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 52,
+          "y": 50,
           "side": "left"
         }
       ],
@@ -145414,12 +145510,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 28,
+          "y": 30,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 52,
+          "y": 50,
           "side": "left"
         }
       ],
@@ -145475,12 +145571,12 @@ end
       "outputs": [
         {
           "x": 90,
-          "y": 25,
+          "y": 30,
           "side": "right"
         },
         {
           "x": 90,
-          "y": 55,
+          "y": 50,
           "side": "right"
         }
       ],
@@ -145516,12 +145612,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 25,
+          "y": 30,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 55,
+          "y": 50,
           "side": "left"
         }
       ],
@@ -145866,12 +145962,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 15,
+          "y": 20,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 45,
+          "y": 40,
           "side": "left"
         }
       ],
@@ -146591,12 +146687,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 15,
+          "y": 20,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 45,
+          "y": 40,
           "side": "left"
         }
       ],
@@ -146628,12 +146724,12 @@ end
       "outputs": [
         {
           "x": 60,
-          "y": 15,
+          "y": 20,
           "side": "right"
         },
         {
           "x": 60,
-          "y": 45,
+          "y": 40,
           "side": "right"
         }
       ],
@@ -146651,12 +146747,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 15,
+          "y": 20,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 45,
+          "y": 40,
           "side": "left"
         }
       ],
@@ -146688,12 +146784,12 @@ end
       "outputs": [
         {
           "x": 60,
-          "y": 15,
+          "y": 20,
           "side": "right"
         },
         {
           "x": 60,
-          "y": 45,
+          "y": 40,
           "side": "right"
         }
       ],
@@ -146736,12 +146832,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 15,
+          "y": 20,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 45,
+          "y": 40,
           "side": "left"
         }
       ],
@@ -148575,7 +148671,7 @@ end
         "ALGEBRAIC"
       ],
       "width": 40,
-      "height": 90,
+      "height": 80,
       "inputs": [
         {
           "x": 20,
@@ -148584,24 +148680,24 @@ end
         },
         {
           "x": 0,
-          "y": 36,
+          "y": 20,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 54,
+          "y": 40,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 72,
+          "y": 60,
           "side": "left"
         }
       ],
       "outputs": [
         {
           "x": 40,
-          "y": 45,
+          "y": 40,
           "side": "right"
         }
       ],
@@ -148962,12 +149058,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 15,
+          "y": 20,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 45,
+          "y": 40,
           "side": "left"
         }
       ],
@@ -148994,12 +149090,12 @@ end
       "inputs": [
         {
           "x": 0,
-          "y": 23,
+          "y": 25,
           "side": "left"
         },
         {
           "x": 0,
-          "y": 47,
+          "y": 45,
           "side": "left"
         }
       ],
@@ -149035,12 +149131,12 @@ end
       "outputs": [
         {
           "x": 85,
-          "y": 23,
+          "y": 25,
           "side": "right"
         },
         {
           "x": 85,
-          "y": 47,
+          "y": 45,
           "side": "right"
         }
       ],
@@ -149140,12 +149236,12 @@ end
       "outputs": [
         {
           "x": 60,
-          "y": 25,
+          "y": 30,
           "side": "right"
         },
         {
           "x": 60,
-          "y": 55,
+          "y": 50,
           "side": "right"
         }
       ],
@@ -270116,9 +270212,9 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     "xml"
   ],
   "summary": {
-    "discovered": 5074,
+    "discovered": 5078,
     "included": 642,
-    "excluded": 4432
+    "excluded": 4436
   },
   "tests": [
     {
@@ -293600,6 +293696,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_web_display_list_target_axes_view.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_web_display_list_target_axes_view.m",
+      "sha256": "0b00fce09647a13d4739a8c18b838d680f7d8d58a1dfa51e59885d29ba358789",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_white.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_white.m",
@@ -298305,6 +298413,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/interpreter/tests/test_classdef_builtin_subsref.m",
       "sha256": "c466dc95a1ec98dd4e2db53e85d94dd1cc8737738c08c7b5e07d017ab7aadb50",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "interpreter",
+      "file": "test_classdef_clear_classes_compiled_member_reload.m",
+      "kind": "test",
+      "runtimePath": "modules/interpreter/tests/test_classdef_clear_classes_compiled_member_reload.m",
+      "sha256": "a023bf570c24c15222f13f4cc9435d0dcdb555a9b2de2c72114ba9e90c643d13",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -305255,7 +305375,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_nflow_acausal_generate_help.m",
       "kind": "test",
       "runtimePath": "modules/nflow_blocks/tests/test_nflow_acausal_generate_help.m",
-      "sha256": "966dcf9716653463d06d89d66fb63a4ce74c5167b41857f814b8795377d0d2d6",
+      "sha256": "7bb565c640d84f8af6e3c2e53736f1a9bd68d440ffcd616f98c6183897f8f7d1",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -305528,6 +305648,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "nflow_blocks",
+      "file": "test_nflow_acausal_subsystem.m",
+      "kind": "test",
+      "runtimePath": "modules/nflow_blocks/tests/test_nflow_acausal_subsystem.m",
+      "sha256": "4c8a570d6ad51fe182558202cdb289be4a6369f206ec943c6c6c31fc1790645f",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "nflow_blocks",
       "file": "test_nflow_acausal_switch.m",
       "kind": "test",
       "runtimePath": "modules/nflow_blocks/tests/test_nflow_acausal_switch.m",
@@ -305579,7 +305711,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_nflow_acausal_validation.m",
       "kind": "test",
       "runtimePath": "modules/nflow_blocks/tests/test_nflow_acausal_validation.m",
-      "sha256": "4085f5d261c679fa8c2c9ca06a74322aa95afa3cbea9c00058dc1a37ddcde4f3",
+      "sha256": "e89c86974caafd747a9f769a64ac61f0a03663f3265938faae9f412960bcc545",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -306038,7 +306170,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_nflow_planar_generate_help.m",
       "kind": "test",
       "runtimePath": "modules/nflow_blocks/tests/test_nflow_planar_generate_help.m",
-      "sha256": "9d4ac25c062430f2d6cf0739cc0cea71badb00cf9820da17660e282c5a369ef9",
+      "sha256": "c6cfcddddc3a555b1f97eb25c57e5587a058a572bc967d90479e6608084b68a4",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -331491,6 +331623,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/types/tests/test_assign_all_false_logical_empty_rhs.m",
       "sha256": "5f7d5340617e859bfc2937392fee900565d0d455f581f5c0a5fd4170449868f1",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "types",
+      "file": "test_assign_dense_fastpath.m",
+      "kind": "test",
+      "runtimePath": "modules/types/tests/test_assign_dense_fastpath.m",
+      "sha256": "171f9f71d5b23536559879441c99445466a63a012312ad507507cfcc975acfcd",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],

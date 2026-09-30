@@ -15,7 +15,7 @@
       "id": "s1",
       "type": "sine",
       "x": 80,
-      "y": 300,
+      "y": 180,
       "rotation": 0,
       "params": {
         "Amplitude": 1.5,
@@ -27,7 +27,7 @@
       "id": "sa",
       "type": "saturation",
       "x": 360,
-      "y": 180,
+      "y": 300,
       "rotation": 0,
       "params": {
         "LowerLimit": -1,

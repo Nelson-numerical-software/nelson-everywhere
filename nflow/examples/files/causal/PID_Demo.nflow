@@ -17,7 +17,7 @@
       "id": "r1",
       "type": "step",
       "x": 60,
-      "y": 250,
+      "y": 340,
       "rotation": 0,
       "params": {
         "Time": 1
@@ -27,17 +27,17 @@
       "id": "e1",
       "type": "sum",
       "x": 220,
-      "y": 180,
+      "y": 120,
       "rotation": 0,
       "params": {
-        "Inputs": "+-"
+        "Inputs": "-+"
       }
     },
     {
       "id": "c1",
       "type": "pid",
-      "x": 320,
-      "y": 110,
+      "x": 360,
+      "y": 120,
       "rotation": 0,
       "params": {
         "P": 2,
@@ -50,8 +50,8 @@
     {
       "id": "p1",
       "type": "tf",
-      "x": 480,
-      "y": 230,
+      "x": 560,
+      "y": 120,
       "rotation": 0,
       "params": {
         "Numerator": [1],
@@ -62,17 +62,17 @@
       "id": "e2",
       "type": "sum",
       "x": 220,
-      "y": 280,
+      "y": 340,
       "rotation": 0,
       "params": {
-        "Inputs": "+-"
+        "Inputs": "-+"
       }
     },
     {
       "id": "c2",
       "type": "pid",
-      "x": 320,
-      "y": 270,
+      "x": 360,
+      "y": 340,
       "rotation": 0,
       "params": {
         "P": 2,
@@ -85,8 +85,8 @@
     {
       "id": "p2",
       "type": "tf",
-      "x": 480,
-      "y": 430,
+      "x": 560,
+      "y": 340,
       "rotation": 0,
       "params": {
         "Numerator": [1],
@@ -97,17 +97,17 @@
       "id": "e3",
       "type": "sum",
       "x": 220,
-      "y": 890,
+      "y": 560,
       "rotation": 0,
       "params": {
-        "Inputs": "+-"
+        "Inputs": "-+"
       }
     },
     {
       "id": "c3",
       "type": "pid",
-      "x": 320,
-      "y": 820,
+      "x": 360,
+      "y": 560,
       "rotation": 0,
       "params": {
         "P": 3,
@@ -120,8 +120,8 @@
     {
       "id": "p3",
       "type": "tf",
-      "x": 480,
-      "y": 900,
+      "x": 560,
+      "y": 560,
       "rotation": 0,
       "params": {
         "Numerator": [1],
@@ -131,8 +131,8 @@
     {
       "id": "sc1",
       "type": "scope",
-      "x": 640,
-      "y": 680,
+      "x": 900,
+      "y": 240,
       "rotation": 0,
       "params": {
         "TMin": "",
@@ -147,8 +147,8 @@
     {
       "id": "sc2",
       "type": "scope",
-      "x": 640,
-      "y": 220,
+      "x": 1360,
+      "y": 240,
       "rotation": 0,
       "params": {
         "TMin": "",
@@ -163,8 +163,8 @@
     {
       "id": "ls_p_out",
       "type": "labelSink",
-      "x": 640,
-      "y": 140,
+      "x": 720,
+      "y": 120,
       "rotation": 0,
       "params": {
         "GotoTag": "p_plant_out",
@@ -174,8 +174,8 @@
     {
       "id": "ls_pi_out",
       "type": "labelSink",
-      "x": 640,
-      "y": 600,
+      "x": 720,
+      "y": 340,
       "rotation": 0,
       "params": {
         "GotoTag": "pi_plant_out",
@@ -185,8 +185,8 @@
     {
       "id": "ls_pid_out",
       "type": "labelSink",
-      "x": 640,
-      "y": 1020,
+      "x": 720,
+      "y": 560,
       "rotation": 0,
       "params": {
         "GotoTag": "pid_plant_out",
@@ -196,8 +196,8 @@
     {
       "id": "ls_p_ctrl",
       "type": "labelSink",
-      "x": 640,
-      "y": 60,
+      "x": 360,
+      "y": 40,
       "rotation": 0,
       "params": {
         "GotoTag": "p_ctrl",
@@ -207,8 +207,8 @@
     {
       "id": "ls_pi_ctrl",
       "type": "labelSink",
-      "x": 640,
-      "y": 520,
+      "x": 360,
+      "y": 260,
       "rotation": 0,
       "params": {
         "GotoTag": "pi_ctrl",
@@ -218,8 +218,8 @@
     {
       "id": "ls_pid_ctrl",
       "type": "labelSink",
-      "x": 640,
-      "y": 1100,
+      "x": 360,
+      "y": 480,
       "rotation": 0,
       "params": {
         "GotoTag": "pid_ctrl",
@@ -232,7 +232,7 @@
       "from": "r1",
       "to": "e1",
       "fromIndex": 0,
-      "toIndex": 0,
+      "toIndex": 1,
       "points": [
         [140, 290],
         [160, 290],
@@ -244,7 +244,7 @@
       "from": "r1",
       "to": "e2",
       "fromIndex": 0,
-      "toIndex": 0,
+      "toIndex": 1,
       "points": [
         [140, 290],
         [190, 290]
@@ -254,7 +254,7 @@
       "from": "r1",
       "to": "e3",
       "fromIndex": 0,
-      "toIndex": 0,
+      "toIndex": 1,
       "points": [
         [140, 290],
         [160, 290],
@@ -290,7 +290,7 @@
       "from": "p1",
       "to": "e1",
       "fromIndex": 0,
-      "toIndex": 1,
+      "toIndex": 0,
       "points": [
         [560, 270],
         [580, 270],
@@ -351,7 +351,7 @@
       "from": "p2",
       "to": "e2",
       "fromIndex": 0,
-      "toIndex": 1,
+      "toIndex": 0,
       "points": [
         [560, 470],
         [570, 470],
@@ -416,7 +416,7 @@
       "from": "p3",
       "to": "e3",
       "fromIndex": 0,
-      "toIndex": 1,
+      "toIndex": 0,
       "points": [
         [560, 940],
         [580, 940],

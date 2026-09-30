@@ -672,7 +672,7 @@
       "id": "gallery_sink",
       "type": "display",
       "x": 1500,
-      "y": 80,
+      "y": 90,
       "rotation": 0,
       "params": {
         "Label": "Display",

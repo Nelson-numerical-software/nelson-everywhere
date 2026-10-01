@@ -3518,10 +3518,6 @@ select option {
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    width: 200px;
-  }
-
   .activity-bar {
     width: 40px;
   }
@@ -3529,6 +3525,38 @@ select option {
   .activity-icon {
     width: 32px;
     height: 32px;
+  }
+
+  /* The centred document title overlaps the menu items on a narrow bar. */
+  .titlebar-title {
+    display: none;
+  }
+
+  /* The diagram canvas is the primary surface on a phone: the palette and the
+     inspector float over it as drawers instead of consuming its width (which
+     left the canvas as an unusable sliver). Both start collapsed (set in JS),
+     so the canvas gets the full screen until a drawer is opened. */
+  .nflow-container .sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: min(80vw, 300px);
+    z-index: 50;
+    box-shadow: 2px 0 18px rgba(0, 0, 0, 0.4);
+  }
+  .nflow-container .inspector-pane {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: min(86vw, 320px) !important;
+    z-index: 50;
+    box-shadow: -2px 0 18px rgba(0, 0, 0, 0.4);
+  }
+  .nflow-container .sidebar.collapsed,
+  .nflow-container .inspector-pane.collapsed {
+    box-shadow: none;
   }
 }
 

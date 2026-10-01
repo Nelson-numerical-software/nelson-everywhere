@@ -68990,10 +68990,10 @@ function varargout = area(varargin)
   if ~isempty(ax) && isscalar(ax) && isgraphics(ax, 'axes')
     nextPlot = ax.NextPlot;
   end
-  [XData, YData, baseValue, propertiesList] = parseAreaArguments(inputArguments);
+  [XData, YData, baseValue, propertiesList, xAuto, storeRow] = parseAreaArguments(inputArguments);
   [XData, xIsDate] = datetimeToSerial(XData);
   [YData, yIsDate] = datetimeToSerial(YData);
-  h = areaPlot(parent, XData, YData, baseValue, propertiesList);
+  h = areaPlot(parent, XData, YData, baseValue, propertiesList, xAuto, storeRow);
   fixAreaAxesLimits(parent, XData);
   if ~isempty(ax) && any(strcmp(nextPlot, {'replace', 'replaceall'}))
     ax.Box = 'on';
@@ -69043,7 +69043,7 @@ function [parent, inputArguments] = parseParent(inputArguments)
   end
 end
 %=============================================================================
-function [XData, YData, baseValue, propertiesList] = parseAreaArguments(inputArguments)
+function [XData, YData, baseValue, propertiesList, xAuto, storeRow] = parseAreaArguments(inputArguments)
   firstProperty = findFirstAreaProperty(inputArguments);
   propertiesList = inputArguments(firstProperty:end);
   dataArguments = inputArguments(1:firstProperty - 1);
@@ -69053,15 +69053,24 @@ function [XData, YData, baseValue, propertiesList] = parseAreaArguments(inputArg
     baseValue = dataArguments{end};
     dataArguments = dataArguments(1:end - 1);
   end
+  % xAuto: X was generated from indices (single data argument) -> XDataMode 'auto'.
+  % storeRow: a single vector series keeps the input row orientation on read-back.
+  xAuto = false;
+  storeRow = false;
   if length(dataArguments) == 1
     YData = dataArguments{1};
+    xAuto = true;
     if isvector(YData)
+      storeRow = isrow(YData);
       YData = YData(:);
     end
     XData = (1:size(YData, 1)).';
   elseif length(dataArguments) == 2
     XData = dataArguments{1};
     YData = dataArguments{2};
+    if isvector(XData) && isvector(YData)
+      storeRow = isrow(YData);
+    end
   elseif isempty(dataArguments)
     error('Nelson:notEnoughInputs', 'Not enough input arguments.');
   else
@@ -69094,7 +69103,7 @@ function index = findFirstAreaProperty(inputArguments)
   end
 end
 %=============================================================================
-function h = areaPlot(parent, XData, YData, baseValue, propertiesList)
+function h = areaPlot(parent, XData, YData, baseValue, propertiesList, xAuto, storeRow)
   lower = baseValue * ones(size(YData, 1), 1);
   h = gobjects(1, size(YData, 2));
   for k = 1:size(YData, 2)
@@ -69103,14 +69112,28 @@ function h = areaPlot(parent, XData, YData, baseValue, propertiesList)
     vertices = [X, upper, ones(size(X)); flipud(X), flipud(lower), ones(size(X))];
     faces = 1:size(vertices, 1);
     color = getColorAndUpdateIndex(parent);
+    % Preserve the input orientation for a single vector series: the reference
+    % reads XData/YData back as a row when the data was given as a row.
+    if storeRow
+      xStore = X.';
+      yStore = YData(:, k).';
+    else
+      xStore = X;
+      yStore = YData(:, k);
+    end
     % Default edge is the dark-gray axes foreground (33/255), matching the
     % reference and bar/surf -- not pure black.
-    args = {'Parent', parent, 'XData', X, 'YData', YData(:, k), ...
+    args = {'Parent', parent, 'XData', xStore, 'YData', yStore, ...
       'Faces', faces, 'Vertices', vertices, 'FaceColor', color, ...
       'EdgeColor', [0.129411764705882, 0.129411764705882, 0.129411764705882], ...
       'BaseValue', baseValue};
     args = [args, propertiesList];
     h(k) = __area__(args{:});
+    % Setting XData flips XDataMode to 'manual'; when X was the auto sample
+    % index, restore 'auto' afterwards to match the reference.
+    if xAuto
+      h(k).XDataMode = 'auto';
+    end
     lower = upper;
   end
 end
@@ -70097,6 +70120,11 @@ function [x, y, xLabels] = parseArrayBoxchartData(posArgs)
   end
   if ~isnumeric(y)
     error('Nelson:validators:mustBeNumeric', '%s must be numeric.', 'Value');
+  end
+  % A single vector of values is one box group; the reference stores it (and
+  % reads it back) as a row vector regardless of the input orientation.
+  if isvector(y)
+    y = reshape(y, 1, []);
   end
 end
 %=============================================================================
@@ -71088,14 +71116,17 @@ function h = createBubbleChart(parent, x, y, sizes, colorData, chartArgs, tableA
     sk = graphicsSelectSeriesData(sizes, orientation, k, 'row');
     ck = graphicsSelectColorSeriesData(colorData, orientation, k, nSeries, numel(xk), 'row');
     args = [chartArgs, graphicsSelectTableSeriesArgs(tableArgs, k, nSeries)];
+    autoColor = false;
     if isempty(ck) && ~hasConstructorProperty(args, 'CData')
       if hasSeriesIndexNone(args)
         ck = noSeriesColor();
       else
         ck = getColorAndUpdateIndex(parent);
       end
+      % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+      autoColor = ~hasConstructorProperty(args, 'CDataMode');
     end
-    hk = createBubbleChartObject(parent, xk, yk, sk, ck, args);
+    hk = createBubbleChartObject(parent, xk, yk, sk, ck, args, autoColor);
     h = [h, hk];
   end
   if ~isempty(ax) && any(strcmp(nextPlot, {'replace', 'replaceall'}))
@@ -71144,12 +71175,20 @@ function parent = prepareParent(parent)
   end
 end
 %=============================================================================
-function h = createBubbleChartObject(parent, x, y, sizes, colorData, chartArgs)
+function h = createBubbleChartObject(parent, x, y, sizes, colorData, chartArgs, autoColor)
+  if nargin < 7
+    autoColor = false;
+  end
   args = {'Parent', parent, 'XData', x, 'YData', y, 'SizeData', sizes};
   if ~isempty(colorData)
     args = [args, {'CData', colorData}];
   end
   h = __bubblechart__(args{:}, chartArgs{:});
+  % Setting CData flips CDataMode to 'manual'; restore 'auto' for the auto
+  % color-order color afterwards to match the reference.
+  if autoColor && ~isempty(colorData)
+    h.CDataMode = 'auto';
+  end
 end
 %=============================================================================
 function [orientation, nSeries] = getSeriesOrientation(x, y, sizes)
@@ -82895,9 +82934,9 @@ function opts = parseParallelOptions(args, labels, sourceTable)
   opts = struct('CoordinateTickLabels', {labels}, 'GroupData', [], ...
     'GroupVariable', [], ...
     'DataNormalization', 'range', 'LineWidth', 1, 'LineStyle', '-', ...
-    'LineAlpha', 1, 'MarkerStyle', 'none', 'MarkerSize', 6, 'Jitter', 0, ...
+    'LineAlpha', 0.7, 'MarkerStyle', 'none', 'MarkerSize', 6, 'Jitter', 0.1, ...
     'LegendTitle', '', 'CoordinateLabel', '', 'DataLabel', '', ...
-    'LegendVisible', 'on', 'Title', '', 'FontName', '', 'FontSize', 10, ...
+    'LegendVisible', 'off', 'Title', '', 'FontName', 'Helvetica', 'FontSize', 10, ...
     'Color', []);
   if rem(length(args), 2) ~= 0
     error('Nelson:graphics:nameValueArgumentsExpected', 'Name-value arguments expected.');
@@ -93391,9 +93430,19 @@ function varargout = scatter(varargin)
   if isvector(X)
     if ~isfield(scatterProperties, 'CData')
       scatterProperties.CData = getColorAndUpdateIndex(parent);
+      if ~isfield(scatterProperties, 'CDataMode')
+        % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+        scatterProperties.CDataMode = 'auto';
+      end
     end
+    autoCData = isfield(scatterProperties, 'CDataMode') && strcmp(scatterProperties.CDataMode, 'auto');
     scatterProperties = reshape([fieldnames(scatterProperties)'; struct2cell(scatterProperties)'], 1, []);
     h = __scatter__('Parent', parent, 'XData', X, 'YData', Y, scatterProperties{:});
+    % Setting CData flips CDataMode to 'manual'; restore 'auto' for the auto
+    % color-order color afterwards to match the reference.
+    if autoCData
+      h.CDataMode = 'auto';
+    end
   else
     % X and Y are matrices
     if (size(X, 1) ~= size(Y, 1))
@@ -93415,14 +93464,24 @@ function varargout = scatter(varargin)
       end
       if isempty(markerColor)
         color = getColorAndUpdateIndex(parent);
+        autoColor = true;
       else
         color = markerColor;
+        autoColor = false;
       end
       scatterPropertiesBackup = scatterProperties;
       scatterProperties.CData = color;
+      if autoColor && ~isfield(scatterProperties, 'CDataMode')
+        % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+        scatterProperties.CDataMode = 'auto';
+      end
 
+      autoCData = isfield(scatterProperties, 'CDataMode') && strcmp(scatterProperties.CDataMode, 'auto');
       scatterPropertiesC = reshape([fieldnames(scatterProperties)'; struct2cell(scatterProperties)'], 1, []);
       he = __scatter__('Parent', parent, 'XData', X(:, i), 'YData', Y(:, i), scatterPropertiesC{:});
+      if autoCData
+        he.CDataMode = 'auto';
+      end
       scatterProperties = scatterPropertiesBackup;
       h = [h, he];
     end
@@ -93575,6 +93634,10 @@ function [parent, X, Y, scatterProperties] = parseArguments(inputArguments)
       parent = newplot();
     end
     scatterProperties.CData = getColorAndUpdateIndex(parent);
+    if ~isfield(scatterProperties, 'CDataMode')
+      % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+      scatterProperties.CDataMode = 'auto';
+    end
   end
 
   % Create parent axes if not already set
@@ -93776,9 +93839,19 @@ function varargout = scatter3(varargin)
   if isvector(X)
     if ~isfield(scatterProperties, 'CData')
       scatterProperties.CData = getColorAndUpdateIndex(parent);
+      if ~isfield(scatterProperties, 'CDataMode')
+        % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+        scatterProperties.CDataMode = 'auto';
+      end
     end
+    autoCData = isfield(scatterProperties, 'CDataMode') && strcmp(scatterProperties.CDataMode, 'auto');
     scatterProperties = reshape([fieldnames(scatterProperties)'; struct2cell(scatterProperties)'], 1, []);
     h = __scatter__('Parent', parent, 'XData', X, 'YData', Y, 'ZData', Z, scatterProperties{:});
+    % Setting CData flips CDataMode to 'manual'; restore 'auto' for the auto
+    % color-order color afterwards to match the reference.
+    if autoCData
+      h.CDataMode = 'auto';
+    end
   else
     % X and Y are matrices
     if (size(X, 1) ~= size(Y, 1) && size(X, 1) ~= size(Z, 1))
@@ -93800,14 +93873,24 @@ function varargout = scatter3(varargin)
       end
       if isempty(markerColor)
         color = getColorAndUpdateIndex(parent);
+        autoColor = true;
       else
         color = markerColor;
+        autoColor = false;
       end
       scatterPropertiesBackup = scatterProperties;
       scatterProperties.CData = color;
+      if autoColor && ~isfield(scatterProperties, 'CDataMode')
+        % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+        scatterProperties.CDataMode = 'auto';
+      end
 
+      autoCData = isfield(scatterProperties, 'CDataMode') && strcmp(scatterProperties.CDataMode, 'auto');
       scatterPropertiesC = reshape([fieldnames(scatterProperties)'; struct2cell(scatterProperties)'], 1, []);
       he = __scatter__('Parent', parent, 'XData', X(:, i), 'YData', Y(:, i), 'ZData', Z(:, i), scatterPropertiesC{:});
+      if autoCData
+        he.CDataMode = 'auto';
+      end
       scatterProperties = scatterPropertiesBackup;
       h = [h, he];
     end
@@ -93973,6 +94056,10 @@ function [parent, X, Y, Z, scatterProperties] = parseArguments(inputArguments)
       parent = newplot();
     end
     scatterProperties.CData = getColorAndUpdateIndex(parent);
+    if ~isfield(scatterProperties, 'CDataMode')
+      % Auto color-order color: CDataMode stays 'auto' (matches the reference).
+      scatterProperties.CDataMode = 'auto';
+    end
   end
 
   % Create parent axes if not already set
@@ -97854,7 +97941,9 @@ function [xValues, names, values, legendLabels, xLabelName, xVariableName, ...
     [xValues, names, values, legendLabels, xLabelName, displayVariables] = ...
       matrixStackedplotData(x, y);
     if isempty(x)
-      options.XData = (1:size(stackedplotValueToNumeric(y), 1))';
+      % The chart XData holds the auto sample index as a row vector, matching
+      % the reference (the per-panel line children keep their own data).
+      options.XData = (1:size(stackedplotValueToNumeric(y), 1));
     else
       options.XData = stackedplotValueToNumeric(x);
     end
@@ -98354,7 +98443,7 @@ function options = stackedplotDefaultOptions()
   options.Title = '';
   options.LegendLabels = [];
   options.LegendVisible = 'off';
-  options.LegendOrientation = 'vertical';
+  options.LegendOrientation = 'horizontal';
   options.LineProperties = [];
   options.AxesProperties = [];
   options.LineOptionNames = {};
@@ -99182,11 +99271,15 @@ function h = stairsPlot(varargin)
   if nbInputArguments > 1
     [inputArguments{2}, yIsDate] = datetimeToSerial(inputArguments{2});
   end
+  % The stair object stores the RAW data points and builds the staircase at
+  % paint time (matching the reference), so we pass X/Y through prepareXY only.
+  % xAuto marks the single-argument form where X is the auto sample index.
   if nbInputArguments > 1 && isnumeric(inputArguments{1}) && isnumeric(inputArguments{2})
     X = inputArguments{1};
     Y = inputArguments{2};
     inputArguments = inputArguments(3:end);
-    [XB, YB] = stairsImplementation(X, Y);
+    [XB, YB] = prepareXY(X, Y);
+    xAuto = false;
   else
     % Single data argument: the lone series is the Y axis, so a datetime
     % detected as the first argument actually maps to the Y axis.
@@ -99195,12 +99288,13 @@ function h = stairsPlot(varargin)
     if isnumeric(inputArguments{1})
       Y = inputArguments{1};
       inputArguments = inputArguments(2:end);
-      [XB, YB] = stairsImplementation(Y);
+      [XB, YB] = prepareXY(Y);
+      xAuto = true;
     else
       error('Nelson:stairs:wrongNumberOfOutputArguments', 'Wrong number of output arguments.');
     end
   end
-  h = stairsLinePlot(parent, XB, YB, inputArguments);
+  h = stairsLinePlot(parent, XB, YB, inputArguments, xAuto);
   if xIsDate
     applyDatetimeAxis(parent, 'x');
   end
@@ -99239,7 +99333,7 @@ function tf = isStairsUiFigureAxes(ax)
     && strcmp(parent.NumberTitle, 'off') && strcmp(parent.IntegerHandle, 'off');
 end
 %=============================================================================
-function h = stairsLinePlot(parent, X, Y, inputArguments)
+function h = stairsLinePlot(parent, X, Y, inputArguments, xAuto)
   [lineSpec, lineProperties, visibleExplicit] = parseStairsLineArguments(inputArguments);
   if ~isempty(lineSpec)
     [lineStyle, colorSpec, markerSpec, msg] = colstyle(lineSpec, 'plot', false);
@@ -99248,7 +99342,7 @@ function h = stairsLinePlot(parent, X, Y, inputArguments)
     end
     lineProperties = completeStairsLineProperties(colorSpec, markerSpec, lineStyle, lineProperties);
   end
-  h = stairsPlotXY(X, Y, parent, lineProperties);
+  h = stairsPlotXY(X, Y, parent, lineProperties, xAuto);
   if ~visibleExplicit
     h.Visible = 'on';
   end
@@ -99300,7 +99394,7 @@ function q = completeStairsLineProperties(colorSpec, markerSpec, lineStyle, prop
   end
 end
 %=============================================================================
-function h = stairsPlotXY(X, Y, parent, lineProperties)
+function h = stairsPlotXY(X, Y, parent, lineProperties, xAuto)
   h = [];
   if (isvector(X))
     X = X(:);
@@ -99309,11 +99403,11 @@ function h = stairsPlotXY(X, Y, parent, lineProperties)
     Y = Y(:);
   end
   for i = 1:size(Y, 2)
-    h = [h; stairsPlotVector(parent, X(:, i), Y(:, i), lineProperties)];
+    h = [h; stairsPlotVector(parent, X(:, i), Y(:, i), lineProperties, xAuto)];
   end
 end
 %=============================================================================
-function h = stairsPlotVector(parent, x, y, lineProperties)
+function h = stairsPlotVector(parent, x, y, lineProperties, xAuto)
   if isgraphics(parent, 'hggroup')
     ax = ancestor(parent, 'axes');
   else
@@ -99324,8 +99418,15 @@ function h = stairsPlotVector(parent, x, y, lineProperties)
   if (~any(strcmp(lineProperties, 'LineStyle')))
     lineProperties = [lineProperties, {'LineStyle', lineStyle}];
   end
+  % XDataMode is 'auto' only when X is the auto sample index (single-argument
+  % form); Y is always supplied, so YDataMode is 'manual'.
+  if xAuto
+    xMode = 'auto';
+  else
+    xMode = 'manual';
+  end
   h = __stair__('Parent', parent, 'XData', x, 'YData', y, 'Color', color, ...
-    'Visible', 'off', lineProperties{:});
+    'XDataMode', xMode, 'YDataMode', 'manual', 'Visible', 'off', lineProperties{:});
 end
 %=============================================================================
 %=============================================================================
@@ -270464,9 +270565,9 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     "xml"
   ],
   "summary": {
-    "discovered": 5094,
+    "discovered": 5102,
     "included": 642,
-    "excluded": 4452
+    "excluded": 4460
   },
   "tests": [
     {
@@ -286829,6 +286930,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_data_orientation_and_modes.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_data_orientation_and_modes.m",
+      "sha256": "02da0d8873ac819b0497039c022e428ffffb3c8081d2b58784562cb43ed5b45a",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_data_variable_properties_char.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_data_variable_properties_char.m",
@@ -286845,6 +286958,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_datetick.m",
       "sha256": "35494fa6fe862d963b119d13b0caceed63e3c37f54092765c43c7ac31c519c9b",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_default_values_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_default_values_compat.m",
+      "sha256": "588c439f3664e99b63574ef49749245f8c032cd9ae69b86e8c7a0f83516f2c2e",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -287765,6 +287890,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_fsurf_default_values_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_fsurf_default_values_compat.m",
+      "sha256": "73c37c20a1df9c8c6e63bd4584ec786f784ce480d2ae5dc5b430ee2d32934115",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_fsurf_errors.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_fsurf_errors.m",
@@ -288416,7 +288553,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_histogram2.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_histogram2.m",
-      "sha256": "551d32885a464772896ccef633bb643856018b4d802ecbb0e2c284aa295cdab9",
+      "sha256": "254f17fa6cb3e75546c253a6befb4fdc46a1ded8f64d853f2601b15a5c23b9fe",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288452,7 +288589,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_hsv.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_hsv.m",
-      "sha256": "e7fd8118ab2fe3c1b24ebf039681dd3338502c365fb382759b369f7b630e8827",
+      "sha256": "91cbca283e5af1ac575e314e8a2f54c7ffb2792fab8d56f531a2adf7b5f47359",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -288884,7 +289021,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_lightangle.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_lightangle.m",
-      "sha256": "6ff3897bba720f7aea0691ee853e0f2f08af34a642630d17f383a6366d7dbf5e",
+      "sha256": "47cc532ce86dc4600c67f427a0cbeea9ef27eaefbbcc3e351fb7e6c7c89e5399",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -289121,6 +289258,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_missing_props_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_missing_props_compat.m",
+      "sha256": "4e6c907b80efa0b3db9aaf174700a2145a74f437bf43303bf49030ab4d7355fc",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_movie_frame_orientation.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_movie_frame_orientation.m",
@@ -289313,10 +289462,22 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_parallelplot_default_values_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_parallelplot_default_values_compat.m",
+      "sha256": "b5d2722eee193c8ec4dd48489a3bfb87366c852c4c39c29c66f563d869f3c5f1",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_parallelplot.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_parallelplot.m",
-      "sha256": "21bbad2b48a7d814bde7c9468e91c6890491565516d8af47ce5b16ae4098b2ed",
+      "sha256": "6e74279b7522322b797e9a968ef92f65b84cee4a3810eae813f1157ecd18c9fa",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -290276,6 +290437,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_print.m",
       "sha256": "887b7efb48c8b274beda907b3a4fa989c60c7eb286079cc455c8e212ca857a6e",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
+      "file": "test_property_value_class_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_property_value_class_compat.m",
+      "sha256": "1ae2dcb009d4f89315dff81443ba64bbcb9061b9ed8da39a18dc7fc7fe94ddde",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -291824,6 +291997,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_stackedplot_default_values_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_stackedplot_default_values_compat.m",
+      "sha256": "d3a3b92dd00cea7a903777b00ebd3d37747cbfbbacced1328bc7cdeea800e918",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_stackedplot_events.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_stackedplot_events.m",
@@ -292547,7 +292732,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_surf.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_surf.m",
-      "sha256": "956d61c5fa77849d2750da9bc4c78229fe6bb65eddd7fb5d31238010f9022861",
+      "sha256": "a2d2bb390249e7d8642e8a1430c832c2514d670dcf87bc2d48bc71a7c48fe666",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -292679,7 +292864,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_surfnorm.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_surfnorm.m",
-      "sha256": "a02ab9bcf94edc6960b6fc36a5a870220b5c1ae9d4388b84d1bd9416ed11e28a",
+      "sha256": "e9744872172e88bc87ca6bc6604328fb3e5226b26759f09471820b780620cd82",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -293264,6 +293449,18 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
     },
     {
       "module": "graphics",
+      "file": "test_uicontainer_default_values_compat.m",
+      "kind": "test",
+      "runtimePath": "modules/graphics/tests/test_uicontainer_default_values_compat.m",
+      "sha256": "b3bca6e93c9221d4c7b10226b1825cc1579e6e782139c4ef9a074e84ed75db97",
+      "included": false,
+      "requiredCapabilities": [],
+      "missingCapabilities": [],
+      "exclusionReason": "not-classified-portable",
+      "resources": []
+    },
+    {
+      "module": "graphics",
       "file": "test_uicontextmenu_properties.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uicontextmenu_properties.m",
@@ -293807,7 +294004,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_uipanel.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_uipanel.m",
-      "sha256": "0cb215e25bc7ccbb596eae8ffd5ee8dbfb98e528bff431531eb93ca14deaf9da",
+      "sha256": "31e875a13e5940991c9e39f4687b76393ce4f19f491e067470bd3d2dfe59c235",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],
@@ -294071,7 +294268,7 @@ disp('NELSON_PORTABLE_BENCH_RUN_OK');
       "file": "test_waterfall.m",
       "kind": "test",
       "runtimePath": "modules/graphics/tests/test_waterfall.m",
-      "sha256": "38cc5f4a2d6cc13364789edf0d60f80f10c5c7bdf1465305f8f87200848f2d7b",
+      "sha256": "38be5a49b08a88cb048a103e647e339b864164bc8b609af8e78aee713f19561c",
       "included": false,
       "requiredCapabilities": [],
       "missingCapabilities": [],

@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=f1194467a5dc";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=f1194467a5dc";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=58e94e406eee";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=58e94e406eee";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,7 +14,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=f1194467a5dc";
+} from "./nelson-worker-protocol.mjs?build=58e94e406eee";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -34,6 +34,9 @@ let timerPumpHandle = null;
 let timerPumpBusy = false;
 let nflowCancelSignal = null;
 let commandMailbox = null;
+let nflowEventMailbox = null;
+let nflowEventLastSeq = 0;
+let nflowCallbackLastSeq = 0;
 let virtualFiles = new Map();
 let virtualDirectories = new Set();
 let workspaceStore = createWorkspaceStore();
@@ -192,10 +195,12 @@ async function initialize(
   runtimeCapabilities,
   nflowCancelBuffer,
   commandBuffer,
+  nflowEventBuffer,
 ) {
   const capabilities = runtimeCapabilityNames(runtimeCapabilities);
   nflowCancelSignal = cancellationSignalFrom(nflowCancelBuffer);
   commandMailbox = commandMailboxFrom(commandBuffer);
+  nflowEventMailbox = nflowEventMailboxFrom(nflowEventBuffer);
   await restorePersistentWorkspace();
   const module = await import(moduleUrl);
   if (typeof module.default !== "function") {
@@ -234,6 +239,7 @@ async function initialize(
       onNelsonAudioControl: publishAudioControl,
       onNelsonNFlowShouldCancel: () =>
         nflowCancelSignal ? Atomics.load(nflowCancelSignal, 0) : 0,
+      onNelsonNFlowFetchEvents: fetchPendingNFlowEvents,
       onNelsonPollCommand: pollCooperativeCommand,
     },
   };
@@ -315,6 +321,66 @@ function pollCooperativeCommand() {
     event: "command.consumed",
   });
   return command;
+}
+
+function nflowEventMailboxFrom(buffer) {
+  if (
+    typeof SharedArrayBuffer !== "function" ||
+    !(buffer instanceof SharedArrayBuffer) ||
+    buffer.byteLength <= Int32Array.BYTES_PER_ELEMENT * 2
+  ) {
+    return null;
+  }
+  return {
+    // header[0] = write sequence (bumped on every change by the main thread),
+    // header[1] = payload byte length.
+    header: new Int32Array(buffer, 0, 2),
+    payload: new Uint8Array(buffer, Int32Array.BYTES_PER_ELEMENT * 2),
+  };
+}
+
+// Called synchronously from the engine (via Module.onNelsonNFlowFetchEvents)
+// between simulation steps. Returns a JSON array [{name, data}, ...] of the
+// pending live dashboard events, or "" when nothing changed since the last
+// poll. Parameter events are re-applied idempotently; a callback invocation
+// fires exactly once (tracked by its sequence). A seqlock guards against a torn
+// read while the main thread writes.
+function fetchPendingNFlowEvents() {
+  const mailbox = nflowEventMailbox;
+  if (!mailbox) {
+    return "";
+  }
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const seq = Atomics.load(mailbox.header, 0);
+    if (seq === nflowEventLastSeq) {
+      return "";
+    }
+    const length = Atomics.load(mailbox.header, 1);
+    if (length <= 0 || length > mailbox.payload.byteLength) {
+      nflowEventLastSeq = seq;
+      return "";
+    }
+    // Copy out before decoding (TextDecoder rejects SharedArrayBuffer views).
+    const bytes = new Uint8Array(mailbox.payload.subarray(0, length));
+    if (Atomics.load(mailbox.header, 0) !== seq) {
+      continue; // torn read: the main thread wrote again, retry
+    }
+    nflowEventLastSeq = seq;
+    let snapshot;
+    try {
+      snapshot = JSON.parse(new TextDecoder().decode(bytes));
+    } catch {
+      return "";
+    }
+    const events = Array.isArray(snapshot?.params) ? snapshot.params.slice() : [];
+    const callback = snapshot?.callback;
+    if (callback && callback.seq > nflowCallbackLastSeq) {
+      nflowCallbackLastSeq = callback.seq;
+      events.push({ name: callback.name, data: callback.data });
+    }
+    return events.length ? JSON.stringify(events) : "";
+  }
+  return "";
 }
 
 function cancellationSignalFrom(buffer) {
@@ -1052,6 +1118,7 @@ self.addEventListener("message", async (event) => {
           request.runtimeCapabilities,
           request.nflowCancelBuffer,
           request.commandBuffer,
+          request.nflowEventBuffer,
         );
         break;
       case "evaluate":
@@ -1104,6 +1171,10 @@ self.addEventListener("message", async (event) => {
         }
         break;
       case "nflow.simulate":
+        // Start from a clean live-event baseline: only interactions that happen
+        // during this run should be applied.
+        nflowEventLastSeq = 0;
+        nflowCallbackLastSeq = 0;
         result = await simulateNFlow(String(request.diagramJson ?? "{}"));
         break;
       case "file.write":

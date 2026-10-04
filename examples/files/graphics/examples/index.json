@@ -108,6 +108,26 @@
       ]
     },
     {
+      "file": "abstract_particle_vortex.m",
+      "title": {
+        "en_US": "Abstract particle vortex",
+        "fr_FR": "Vortex abstrait de particules"
+      },
+      "description": {
+        "en_US": "Animate a relaxing school-like vortex of luminous colored rectangles with depth, glow, paced rendering and an original ambient soundtrack.",
+        "fr_FR": "Animer un vortex relaxant façon banc de mini-rectangles colorés lumineux avec profondeur, lueur, rendu cadencé et musique ambiante originale."
+      },
+      "tags": [
+        "animation",
+        "particles",
+        "scatter",
+        "realtime"
+      ],
+      "requirements": [
+        "gui"
+      ]
+    },
+    {
       "file": "retro_raycaster.m",
       "title": {
         "en_US": "Retro raycasting maze",

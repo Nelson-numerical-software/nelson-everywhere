@@ -20,6 +20,185 @@ function argumentsFor(options) {
   return args;
 }
 
+function ensureRuntimeDirectory(instance, path) {
+  if (!instance?.FS) return;
+  const exists = instance.FS.analyzePath?.(path)?.exists;
+  if (!exists) instance.FS.mkdirTree(path);
+}
+
+function ensureRuntimeDirectories(instance) {
+  ensureRuntimeDirectory(instance, "/tmp");
+  ensureRuntimeDirectory(instance, "/temp");
+}
+
+async function portableCcall(
+  instance,
+  name,
+  returnType,
+  argumentTypes = [],
+  args = [],
+  options = {},
+) {
+  const result = instance.ccall(
+    name,
+    returnType,
+    argumentTypes,
+    args,
+    options.async ? { async: true } : undefined,
+  );
+  return await result;
+}
+
+function normalizedSet(values) {
+  if (!Array.isArray(values) || values.length === 0) return null;
+  return new Set(values.map((value) => String(value)).filter(Boolean));
+}
+
+function selectedRuntimeResourceSelection(manifest, runtimeIndex, options = {}) {
+  const modules = normalizedSet(options.modules);
+  const kinds = normalizedSet(options.kinds);
+  const bundles = [];
+  const indexModules = Array.isArray(runtimeIndex?.modules)
+    ? runtimeIndex.modules
+    : [];
+  const hasBundleIndex = indexModules.some(
+    (entry) => entry && typeof entry === "object" && entry.bundles,
+  );
+  for (const entry of indexModules) {
+    if (!entry || typeof entry !== "object" || Array.isArray(entry)) continue;
+    const module = String(entry.module ?? "");
+    if (!module || (modules && !modules.has(module))) continue;
+    const moduleBundles = entry.bundles;
+    if (!moduleBundles || typeof moduleBundles !== "object") continue;
+    for (const kind of ["tests", "help"]) {
+      if (kinds && !kinds.has(kind)) continue;
+      const file = String(moduleBundles[kind]?.file ?? "");
+      if (file && !file.split("/").includes("..")) bundles.push(file);
+    }
+  }
+  const files = Array.isArray(manifest?.files) ? manifest.files : [];
+  const selectedFiles = files
+    .map((entry) =>
+      entry && typeof entry === "object" ? String(entry.file ?? "") : "",
+    )
+    .filter((file) => {
+      const runtimeMatch =
+        /^runtime-resources\/modules\/([^/]+)\/(tests|help)\//.exec(file);
+      const examplesMatch = /^examples\/files\/([^/]+)\/(examples)\//.exec(
+        file,
+      );
+      const match = runtimeMatch || examplesMatch;
+      if (!match || file.split("/").includes("..")) return false;
+      if (runtimeMatch && hasBundleIndex) return false;
+      if (modules && !modules.has(match[1])) return false;
+      if (kinds && !kinds.has(match[2])) return false;
+      return true;
+    });
+  return { bundles, files: selectedFiles };
+}
+
+function runtimeResourceVirtualPath(packagedFile) {
+  if (packagedFile.split("/").includes("..")) return null;
+  const runtimePrefix = "runtime-resources/modules/";
+  if (packagedFile.startsWith(runtimePrefix)) {
+    return `/modules/${packagedFile.slice(runtimePrefix.length)}`;
+  }
+  const examplesMatch = /^examples\/files\/([^/]+)\/examples\/(.+)$/.exec(
+    packagedFile,
+  );
+  if (!examplesMatch) return null;
+  if (examplesMatch[2].split("/").includes("..")) {
+    return null;
+  }
+  return `/modules/${examplesMatch[1]}/examples/${examplesMatch[2]}`;
+}
+
+function ensureRuntimeFileDirectory(instance, path) {
+  const directory = path.split("/").slice(0, -1).join("/") || "/";
+  ensureRuntimeDirectory(instance, directory);
+}
+
+function unpackRuntimeResourceBundle(bytes) {
+  if (bytes.subarray(0, 8).toString("ascii") !== "NLRPACK1") {
+    throw new Error("Runtime resource bundle has an unsupported format");
+  }
+  const headerLength = bytes.readUInt32LE(8);
+  const payloadOffset = 12 + headerLength;
+  const header = JSON.parse(bytes.subarray(12, payloadOffset).toString("utf8"));
+  if (header.formatVersion !== 1 || !Array.isArray(header.files)) {
+    throw new Error("Runtime resource bundle manifest is invalid");
+  }
+  return header.files.map((entry) => {
+    const file = String(entry.file ?? "");
+    const offset = Number(entry.offset);
+    const length = Number(entry.bytes);
+    if (
+      !file ||
+      file.split("/").includes("..") ||
+      !Number.isSafeInteger(offset) ||
+      !Number.isSafeInteger(length) ||
+      offset < 0 ||
+      length < 0 ||
+      payloadOffset + offset + length > bytes.byteLength
+    ) {
+      throw new Error("Runtime resource bundle entry is invalid");
+    }
+    return {
+      file,
+      bytes: bytes.subarray(payloadOffset + offset, payloadOffset + offset + length),
+    };
+  });
+}
+
+function writePackagedRuntimeResource(instance, packagedFile, bytes) {
+  const virtualPath = runtimeResourceVirtualPath(packagedFile);
+  if (!virtualPath) return false;
+  ensureRuntimeFileDirectory(instance, virtualPath);
+  instance.FS.writeFile(virtualPath, bytes);
+  return true;
+}
+
+export async function mountPackagedRuntimeResources(
+  instance,
+  browserRoot,
+  options = {},
+) {
+  if (!instance?.FS || !browserRoot) return 0;
+  const { readFile } = await import("node:fs/promises");
+  const { join } = await import("node:path");
+  const manifest = JSON.parse(
+    await readFile(join(browserRoot, "manifest.json"), "utf8"),
+  );
+  const groups = manifest?.delivery?.onDemand;
+  const hasRuntimeResources =
+    Array.isArray(groups) &&
+    groups.some((group) => {
+      if (!group || typeof group !== "object") return false;
+      return group.id === "runtime-resources" || group.trigger === "runtime-resources";
+    });
+  if (!hasRuntimeResources) return 0;
+  const runtimeIndex = JSON.parse(
+    await readFile(join(browserRoot, "runtime-resources", "index.json"), "utf8"),
+  );
+  const selection = selectedRuntimeResourceSelection(manifest, runtimeIndex, options);
+  let mounted = 0;
+  for (const bundle of selection.bundles) {
+    const bytes = await readFile(join(browserRoot, ...bundle.split("/")));
+    for (const resource of unpackRuntimeResourceBundle(bytes)) {
+      if (writePackagedRuntimeResource(instance, resource.file, resource.bytes)) mounted += 1;
+    }
+  }
+  for (const file of selection.files) {
+    const bytes = await readFile(join(browserRoot, ...file.split("/")));
+    if (writePackagedRuntimeResource(instance, file, bytes)) mounted += 1;
+  }
+  return mounted;
+}
+
+export function browserDirectoryForRuntimeModule(modulePath) {
+  return String(modulePath).replace(/[/\\][^/\\]+$/, "/browser");
+}
+
 /**
  * Run one isolated Nelson command in a fresh WebAssembly instance.
  *
@@ -43,15 +222,23 @@ export async function runNelson(factory, options = {}) {
 
   let exitCode = 0;
   let instance;
+  const deferMain = Boolean(options.beforeRun);
   try {
     instance = await factory({
       ...(options.moduleOptions || {}),
       arguments: args,
+      ...(deferMain ? { noInitialRun: true } : {}),
       noExitRuntime: true,
       ...(options.locateFile ? { locateFile: options.locateFile } : {}),
       print: (value) => emit(stdout, options.print, value),
       printErr: (value) => emit(stderr, options.printErr, value),
     });
+    if (deferMain) {
+      ensureRuntimeDirectories(instance);
+      await options.beforeRun(instance);
+      const status = await instance.callMain(args);
+      if (Number.isInteger(status)) exitCode = status;
+    }
   } catch (error) {
     if (!isExitStatus(error)) {
       throw error;
@@ -141,7 +328,8 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           configuredExpandableText?.(id, text);
           activeOutput?.expandable?.(Number(id), String(text));
         },
-      }).then((instance) => {
+      }).then(async (instance) => {
+        ensureRuntimeDirectories(instance);
         const hasEngineApi =
           typeof instance.ccall === "function" &&
           typeof instance._nlsPortableEvaluate === "function";
@@ -152,7 +340,9 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         }
         if (
           hasEngineApi &&
-          instance.ccall("nlsPortableStart", "number", [], []) !== 0
+          (await portableCcall(instance, "nlsPortableStart", "number", [], [], {
+            async: true,
+          })) !== 0
         ) {
           throw new Error("The Nelson portable engine could not start");
         }
@@ -192,19 +382,23 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           typeof instance.ccall === "function" &&
           typeof instance._nlsPortableEvaluate === "function";
         if (hasEngineApi) {
-          exitCode = instance.ccall(
+          exitCode = await portableCcall(
+            instance,
             "nlsPortableEvaluate",
             "number",
             ["string"],
             [String(options.code)],
+            { async: true },
           );
-          const capturedOutput = instance.ccall(
+          const capturedOutput = await portableCcall(
+            instance,
             "nlsPortableStdout",
             "string",
             [],
             [],
           );
-          const capturedError = instance.ccall(
+          const capturedError = await portableCcall(
+            instance,
             "nlsPortableStderr",
             "string",
             [],
@@ -214,15 +408,27 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           if (capturedError) stderr.push(capturedError);
           if (typeof instance._nlsPortableErrorIdentifier === "function") {
             errorIdentifier =
-              instance.ccall("nlsPortableErrorIdentifier", "string", [], []) ||
+              (await portableCcall(
+                instance,
+                "nlsPortableErrorIdentifier",
+                "string",
+                [],
+                [],
+              )) ||
               "";
           }
           if (typeof instance._nlsPortableErrorMessage === "function") {
             errorMessage =
-              instance.ccall("nlsPortableErrorMessage", "string", [], []) || "";
+              (await portableCcall(
+                instance,
+                "nlsPortableErrorMessage",
+                "string",
+                [],
+                [],
+              )) || "";
           }
         } else {
-          const status = instance.callMain(argumentsFor(options));
+          const status = await instance.callMain(argumentsFor(options));
           if (Number.isInteger(status)) exitCode = status;
         }
       } catch (error) {
@@ -251,7 +457,8 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         ) {
           throw new Error("Portable figure PNG export is unavailable");
         }
-        const encoded = instance.ccall(
+        const encoded = await portableCcall(
+          instance,
           "nlsPortableFigurePngBase64",
           "string",
           ["bigint"],
@@ -272,7 +479,8 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         if (options.beforeRun) await options.beforeRun(instance);
         let status;
         try {
-          status = instance.ccall(
+          status = await portableCcall(
+            instance,
             "nlsPortableSaveFigure",
             "number",
             ["bigint", "string"],
@@ -295,7 +503,8 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         ) {
           return [];
         }
-        const encoded = instance.ccall(
+        const encoded = await portableCcall(
+          instance,
           "nlsPortableAnalyzeCode",
           "string",
           ["string", "string"],
@@ -317,7 +526,13 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           return { running: false, currentLine: null, currentFile: null, stack: [] };
         }
         return JSON.parse(
-          instance.ccall("nlsPortableDebuggerState", "string", [], []) ||
+          (await portableCcall(
+            instance,
+            "nlsPortableDebuggerState",
+            "string",
+            [],
+            [],
+          )) ||
             '{"running":false,"currentLine":null,"currentFile":null,"stack":[]}',
         );
       }),
@@ -331,12 +546,13 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           return { file: String(file), lines: [] };
         }
         return JSON.parse(
-          instance.ccall(
+          (await portableCcall(
+            instance,
             "nlsPortableDebuggerGetBreakpoints",
             "string",
             ["string"],
             [String(file)],
-          ) || '{"lines":[]}',
+          )) || '{"lines":[]}',
         );
       }),
     debuggerToggleBreakpoint: (file, line) =>
@@ -349,12 +565,13 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           return { file: String(file), lines: [] };
         }
         return JSON.parse(
-          instance.ccall(
+          (await portableCcall(
+            instance,
             "nlsPortableDebuggerToggleBreakpoint",
             "string",
             ["string", "number"],
             [String(file), Number(line) || 0],
-          ) || '{"lines":[]}',
+          )) || '{"lines":[]}',
         );
       }),
     loadUserModules: (options = {}) =>
@@ -363,11 +580,13 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         if (options.beforeRun) await options.beforeRun(instance);
         let exitCode = 0;
         if (typeof instance._nlsPortableLoadUserModules === "function") {
-          exitCode = instance.ccall(
+          exitCode = await portableCcall(
+            instance,
             "nlsPortableLoadUserModules",
             "number",
             [],
             [],
+            { async: true },
           );
         }
         if (options.afterRun) await options.afterRun(instance);
@@ -384,7 +603,7 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           typeof instance.ccall === "function" &&
           typeof instance._nlsPortableReset === "function"
         ) {
-          instance.ccall("nlsPortableReset", null, [], []);
+          await portableCcall(instance, "nlsPortableReset", null, [], []);
         } else {
           instancePromise = undefined;
         }
@@ -399,7 +618,9 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           typeof instance.ccall === "function" &&
           typeof instance._nlsPortablePump === "function"
         ) {
-          instance.ccall("nlsPortablePump", null, [], []);
+          await portableCcall(instance, "nlsPortablePump", null, [], [], {
+            async: true,
+          });
         }
       }),
   };

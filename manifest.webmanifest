@@ -1,0 +1,18 @@
+{
+  "name": "Nelson Numerical Software",
+  "short_name": "Nelson",
+  "description": "Nelson numerical computing environment for the web.",
+  "start_url": "./?runtime=wasm",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1f6feb",
+  "icons": [
+    {
+      "src": "./nelson-pwa-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

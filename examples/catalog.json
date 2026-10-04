@@ -437,6 +437,20 @@
           "file": "/modules/graphics/examples/dot_tunnel.m"
         },
         {
+          "title": "Abstract particle vortex",
+          "description": "Animate a relaxing school-like vortex of luminous colored rectangles with depth, glow, paced rendering and an original ambient soundtrack.",
+          "tags": [
+            "animation",
+            "particles",
+            "scatter",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics/examples/abstract_particle_vortex.m"
+        },
+        {
           "title": "Retro raycasting maze",
           "description": "Explore a textured first-person maze rendered by a pure Nelson software raycaster.",
           "tags": [

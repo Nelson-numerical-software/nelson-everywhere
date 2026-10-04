@@ -79,7 +79,9 @@ const REQUEST_TYPES = new Set([
   "file.rename",
   "directory.list",
   "file.write",
+  "file.writeBatch",
   "init",
+  "input.reply",
   "nflow.simulate",
   "reset",
   "variable.block",
@@ -199,6 +201,16 @@ export function validateWorkerRequest(request) {
         request.code,
         WORKER_LIMITS.maxSourceBytes,
         "Source code",
+      );
+      break;
+    case "input.reply":
+      if (!Number.isSafeInteger(request.inputId) || request.inputId < 1) {
+        throw new Error("Invalid WebAssembly input request id");
+      }
+      assertStringByteLimit(
+        request.value,
+        WORKER_LIMITS.maxSourceBytes,
+        "Input response",
       );
       break;
     case "completion.request":
@@ -338,6 +350,24 @@ export function validateWorkerRequest(request) {
       }
       break;
     }
+    case "file.writeBatch": {
+      if (!Array.isArray(request.files)) {
+        throw new Error("Virtual file batch must be an array");
+      }
+      for (const entry of request.files) {
+        if (!entry || typeof entry !== "object" || Array.isArray(entry)) {
+          throw new Error("Virtual file batch entry must be an object");
+        }
+        const bytes = binaryBytes(entry.data);
+        if (bytes < 0) throw new Error("Virtual file data must be binary");
+        if (bytes > WORKER_LIMITS.maxVirtualFileBytes) {
+          throw new Error(
+            `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`,
+          );
+        }
+      }
+      break;
+    }
     case "file.read":
     case "file.delete":
     case "file.mkdir": {
@@ -411,7 +441,7 @@ export function evaluationCodeWithFigures(code) {
     "if isbuiltin('__web_display_list__')",
     "  nelsonWasmFigures = findall(0, 'Type', 'figure');",
     "  for nelsonWasmFigureIndex = 1:numel(nelsonWasmFigures)",
-    "    nelsonWasmDisplayList = __web_display_list__(nelsonWasmFigures(nelsonWasmFigureIndex), true);",
+    "    nelsonWasmDisplayList = __web_display_list__(nelsonWasmFigures(nelsonWasmFigureIndex));",
     "    if ~isempty(nelsonWasmDisplayList)",
     `      disp(['${FIGURE_BEGIN}', nelsonWasmDisplayList, '${FIGURE_END}']);`,
     "    end",

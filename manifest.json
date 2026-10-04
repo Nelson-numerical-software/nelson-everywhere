@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "58e94e406eee",
-  "entryPoint": "index.html?runtime=wasm&build=58e94e406eee",
+  "buildId": "8a9472eda111",
+  "entryPoint": "index.html?runtime=wasm&build=8a9472eda111",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -13,7 +13,7 @@
           "nelson-portable.mjs",
           "nelson-portable.wasm"
         ],
-        "bytes": 42654925
+        "bytes": 43233599
       },
       {
         "id": "resources",
@@ -21,7 +21,7 @@
         "files": [
           "nelson-portable.data"
         ],
-        "bytes": 19395364
+        "bytes": 13530375
       },
       {
         "id": "shell",
@@ -33,13 +33,15 @@
           "assets/figureCanvasWorker-DO4fRWnq.js",
           "capabilities.json",
           "index.html",
+          "manifest.webmanifest",
           "nelson-coi-serviceworker.js",
+          "nelson-pwa-icon.png",
           "nelson-runtime.mjs",
           "nelson-worker-protocol.mjs",
           "nelson-worker.mjs",
           "nelson-workspace-store.mjs"
         ],
-        "bytes": 2899942
+        "bytes": 3230751
       }
     ],
     "onDemand": [
@@ -101,6 +103,7 @@
           "examples/files/geometry/examples/convex_hull.m",
           "examples/files/geometry/examples/index.json",
           "examples/files/geometry/examples/scattered_data_interpolation.m",
+          "examples/files/graphics/examples/abstract_particle_vortex.m",
           "examples/files/graphics/examples/aircraft_flight_animation.m",
           "examples/files/graphics/examples/analog_clock.m",
           "examples/files/graphics/examples/boing_ball_3d.m",
@@ -281,7 +284,7 @@
           "examples/gallery-shared.css",
           "examples/index.html"
         ],
-        "bytes": 7913651
+        "bytes": 7926869
       },
       {
         "id": "module-editor",
@@ -299,18 +302,18 @@
         "trigger": "module:examples",
         "files": [
           "packs/examples/ExamplesPanel-BblPti1m.css",
-          "packs/examples/ExamplesPanel-Bt2QIaBd.js"
+          "packs/examples/ExamplesPanel-DT_4yNQ7.js"
         ],
-        "bytes": 16912
+        "bytes": 17002
       },
       {
         "id": "module-mock",
         "mode": "on-demand",
         "trigger": "module:mock",
         "files": [
-          "packs/mock/mockEngine-CXMWVVXG.js"
+          "packs/mock/mockEngine-BFq5HA4q.js"
         ],
-        "bytes": 30368
+        "bytes": 31204
       },
       {
         "id": "module-nmm",
@@ -327,24 +330,24 @@
         "mode": "on-demand",
         "trigger": "nflow",
         "files": [
-          "nflow/app/app-DRYraKY_.js",
-          "nflow/app/chunks/app-CtbkK3-A.js",
-          "nflow/app/chunks/canvas-navigation-tools-DkY-8iJv.js",
-          "nflow/app/chunks/console-host-CQ6Vrk3Q.js",
-          "nflow/app/chunks/dup-drag-CrllvR2c.js",
-          "nflow/app/chunks/fmu-import-BOz2hVCi.js",
+          "nflow/app/app-CP8fMOVO.js",
+          "nflow/app/chunks/app-CdL-QPIB.js",
+          "nflow/app/chunks/canvas-navigation-tools-BGzEa6qA.js",
+          "nflow/app/chunks/console-host-B08Br43s.js",
+          "nflow/app/chunks/dup-drag-B5FUwsuF.js",
+          "nflow/app/chunks/fmu-import-DNZ_3xR1.js",
           "nflow/app/chunks/helpers-CyRuiCrn.js",
-          "nflow/app/chunks/history-Uh_ijzKp.js",
+          "nflow/app/chunks/history-BWUlwZWV.js",
           "nflow/app/chunks/icon-cache-Dde71SRH.js",
-          "nflow/app/chunks/minimap-C4DKBucB.js",
-          "nflow/app/chunks/modelica-settings-C4vExAlK.js",
+          "nflow/app/chunks/minimap-DOzBLYZh.js",
+          "nflow/app/chunks/modelica-settings-ZINSKCVY.js",
           "nflow/app/chunks/native-rpc-ZXMdv8Gt.js",
-          "nflow/app/chunks/quick-connect-DGedD_eT.js",
-          "nflow/app/chunks/quick-insert-CCt3ip-l.js",
-          "nflow/app/chunks/render-if3VSehP.js",
-          "nflow/app/chunks/simulation-toolbar-visibility-B0X5rPEx.js",
-          "nflow/app/chunks/subsystem-handlers-ZW_X8tPw.js",
-          "nflow/app/chunks/wire-labels-bDHCrmll.js",
+          "nflow/app/chunks/quick-connect-C8ds5oCB.js",
+          "nflow/app/chunks/quick-insert-DO893eAn.js",
+          "nflow/app/chunks/render-DyV6XQQe.js",
+          "nflow/app/chunks/simulation-toolbar-visibility-CaszMcmG.js",
+          "nflow/app/chunks/subsystem-handlers-C8L1vCxl.js",
+          "nflow/app/chunks/wire-labels-BhPokV97.js",
           "nflow/app/floating-toolbar.21f3dc5fa02a.js",
           "nflow/app/floating-toolbar.js",
           "nflow/app/head-init.84ac660ea83e.js",
@@ -1147,7 +1150,7 @@
           "nflow/styles/themes.css",
           "nflow/styles/ui-extras.css"
         ],
-        "bytes": 4079954
+        "bytes": 4081563
       },
       {
         "id": "nmm",
@@ -1162,6 +1165,89 @@
           "nmm/locale/nmm-ui-fr_FR.json"
         ],
         "bytes": 234200
+      },
+      {
+        "id": "runtime-resources",
+        "mode": "on-demand",
+        "trigger": "runtime-resources",
+        "files": [
+          "runtime-resources/bundles/assert_functions-tests.nlpack",
+          "runtime-resources/bundles/audio-tests.nlpack",
+          "runtime-resources/bundles/categorical-tests.nlpack",
+          "runtime-resources/bundles/characters_encoding-tests.nlpack",
+          "runtime-resources/bundles/console-tests.nlpack",
+          "runtime-resources/bundles/constructors_functions-tests.nlpack",
+          "runtime-resources/bundles/control_system-tests.nlpack",
+          "runtime-resources/bundles/core-tests.nlpack",
+          "runtime-resources/bundles/data_analysis-tests.nlpack",
+          "runtime-resources/bundles/data_structures-tests.nlpack",
+          "runtime-resources/bundles/debugger-tests.nlpack",
+          "runtime-resources/bundles/dictionary-tests.nlpack",
+          "runtime-resources/bundles/display_format-tests.nlpack",
+          "runtime-resources/bundles/double-tests.nlpack",
+          "runtime-resources/bundles/elementary_functions-tests.nlpack",
+          "runtime-resources/bundles/elementary_mathematics-tests.nlpack",
+          "runtime-resources/bundles/engine-tests.nlpack",
+          "runtime-resources/bundles/error_manager-tests.nlpack",
+          "runtime-resources/bundles/f2c-tests.nlpack",
+          "runtime-resources/bundles/fftw-tests.nlpack",
+          "runtime-resources/bundles/file_archiver-tests.nlpack",
+          "runtime-resources/bundles/files_folders_functions-tests.nlpack",
+          "runtime-resources/bundles/function_handle-tests.nlpack",
+          "runtime-resources/bundles/functions_manager-tests.nlpack",
+          "runtime-resources/bundles/geometry-tests.nlpack",
+          "runtime-resources/bundles/graphics_io-tests.nlpack",
+          "runtime-resources/bundles/graphics-tests.nlpack",
+          "runtime-resources/bundles/handle-tests.nlpack",
+          "runtime-resources/bundles/hdf5-tests.nlpack",
+          "runtime-resources/bundles/help_tools-help.nlpack",
+          "runtime-resources/bundles/help_tools-tests.nlpack",
+          "runtime-resources/bundles/history_manager-tests.nlpack",
+          "runtime-resources/bundles/i18n-tests.nlpack",
+          "runtime-resources/bundles/image_processing-tests.nlpack",
+          "runtime-resources/bundles/integer-tests.nlpack",
+          "runtime-resources/bundles/interpreter-tests.nlpack",
+          "runtime-resources/bundles/json-tests.nlpack",
+          "runtime-resources/bundles/linear_algebra-tests.nlpack",
+          "runtime-resources/bundles/localization-tests.nlpack",
+          "runtime-resources/bundles/logical-tests.nlpack",
+          "runtime-resources/bundles/main-tests.nlpack",
+          "runtime-resources/bundles/matio-tests.nlpack",
+          "runtime-resources/bundles/memory_manager-tests.nlpack",
+          "runtime-resources/bundles/modules_manager-tests.nlpack",
+          "runtime-resources/bundles/netcdf-tests.nlpack",
+          "runtime-resources/bundles/nflow_blocks-tests.nlpack",
+          "runtime-resources/bundles/nflow_engine-tests.nlpack",
+          "runtime-resources/bundles/nflow_gui-tests.nlpack",
+          "runtime-resources/bundles/ode_solvers-tests.nlpack",
+          "runtime-resources/bundles/operators-tests.nlpack",
+          "runtime-resources/bundles/optimization-tests.nlpack",
+          "runtime-resources/bundles/os_functions-tests.nlpack",
+          "runtime-resources/bundles/overload-tests.nlpack",
+          "runtime-resources/bundles/polynomial_functions-tests.nlpack",
+          "runtime-resources/bundles/preferences-tests.nlpack",
+          "runtime-resources/bundles/profiler-tests.nlpack",
+          "runtime-resources/bundles/random-tests.nlpack",
+          "runtime-resources/bundles/signal_processing-tests.nlpack",
+          "runtime-resources/bundles/single-tests.nlpack",
+          "runtime-resources/bundles/slicot-tests.nlpack",
+          "runtime-resources/bundles/sparse-tests.nlpack",
+          "runtime-resources/bundles/special_functions-tests.nlpack",
+          "runtime-resources/bundles/spreadsheet-tests.nlpack",
+          "runtime-resources/bundles/statistics-tests.nlpack",
+          "runtime-resources/bundles/stream_manager-tests.nlpack",
+          "runtime-resources/bundles/string-tests.nlpack",
+          "runtime-resources/bundles/table-tests.nlpack",
+          "runtime-resources/bundles/tests_manager-tests.nlpack",
+          "runtime-resources/bundles/text_editor-tests.nlpack",
+          "runtime-resources/bundles/time-tests.nlpack",
+          "runtime-resources/bundles/trigonometric_functions-tests.nlpack",
+          "runtime-resources/bundles/types-tests.nlpack",
+          "runtime-resources/bundles/validators-tests.nlpack",
+          "runtime-resources/bundles/xml-tests.nlpack",
+          "runtime-resources/index.json"
+        ],
+        "bytes": 43975297
       }
     ]
   },
@@ -1173,13 +1259,13 @@
     },
     {
       "file": "app.css",
-      "bytes": 1550586,
-      "sha256": "9ba274144ab46ee7309199b6455b5483b2734dad15ed8f4cb977550439ceb7bb"
+      "bytes": 1550942,
+      "sha256": "6c9ac1215672313ff6489889b2d8ffcab3768d0689fa27b7c592acc5f9942826"
     },
     {
       "file": "app.js",
-      "bytes": 1256636,
-      "sha256": "4f59a8c49acd5d10273d6e47149bbab5b432430337da1d7f0329660c4d261f7f"
+      "bytes": 1286616,
+      "sha256": "a1b7fa9313e67470d3f281ed92a3624f6448dbf91a859e1e10c865d5e3d8a399"
     },
     {
       "file": "assets/figureCanvasWorker-DO4fRWnq.js",
@@ -1188,13 +1274,13 @@
     },
     {
       "file": "capabilities.json",
-      "bytes": 2654,
-      "sha256": "5a4e86a9c44e64ec82c2b464fcf1fafe62fef18097903809a7159b1781a59075"
+      "bytes": 2743,
+      "sha256": "33df79895a027bb6605c83f51dc0c7e7fa3015bc077cdc16396912070f48108c"
     },
     {
       "file": "examples/catalog.json",
-      "bytes": 49299,
-      "sha256": "31efe93a89b8602f295120c2bea6899a61b453c0e787c862d926139f4dff33fb"
+      "bytes": 49796,
+      "sha256": "a166a68e92296f3555d6a2a53a8dcdd5b3b15b9b513cda6ba93c6f443886721e"
     },
     {
       "file": "examples/example-gallery.d.ts",
@@ -1213,8 +1299,8 @@
     },
     {
       "file": "examples/examples.js",
-      "bytes": 5108,
-      "sha256": "a4790f41f9eb090d52fcf1d9b5ed7106bbedcc4e62cc808a70225a7b50c6bdcf"
+      "bytes": 5695,
+      "sha256": "2f7587138133f046186f1ab285ea481fa92bc611e440dfa4c93405badeab5c6f"
     },
     {
       "file": "examples/files/audio/examples/demo_recorder.m",
@@ -1457,6 +1543,11 @@
       "sha256": "637ca9a52acc6a1c6418f16f740a7cc967464aad069d620d19c4c371d0f645ee"
     },
     {
+      "file": "examples/files/graphics/examples/abstract_particle_vortex.m",
+      "bytes": 11451,
+      "sha256": "4cae51bc53ce09e7a41ab105d0a23a7470e2e575cd2ac7f7d401d3b5aaa3c445"
+    },
+    {
       "file": "examples/files/graphics/examples/aircraft_flight_animation.m",
       "bytes": 14392,
       "sha256": "077c95929922633554d88efdfa6fb5d753ea536946f3ad9b0263ea1dfa2ae45e"
@@ -1538,8 +1629,8 @@
     },
     {
       "file": "examples/files/graphics/examples/index.json",
-      "bytes": 20353,
-      "sha256": "d3fa2956cd9bc637a7ded2a3d93de633eb7b0e21c566807ca096575c081bd676"
+      "bytes": 21036,
+      "sha256": "ec5a5dde981a72e61dea3c40fec3de4a0f887364001ebc467e5aad4ea99824f4"
     },
     {
       "file": "examples/files/graphics/examples/mandelbrot_fractal.m",
@@ -2349,47 +2440,57 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "40ca4f25c09545287570be17d777353ef9368bf5cdab1f270c8dc639581f4687"
+      "sha256": "97f212f9e3f311984b1a1cbecb9aeb330a74fd79fa90b4024de12e33c5bfbfb0"
     },
     {
       "file": "index.html",
-      "bytes": 1625,
-      "sha256": "b7281d042e8c93f1f458ec26e9febda7d938154e8a6b51b6e435b6ea7587438d"
+      "bytes": 1785,
+      "sha256": "cc76b2593822f10a1a1a274951973052de1d3f5507993a3a3b75216c563b97de"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "bytes": 432,
+      "sha256": "e324bf8c481f70fc187f58ce1af5c2aa9fe4afaccb89014c5bdf45dad7de873b"
     },
     {
       "file": "nelson-coi-serviceworker.js",
-      "bytes": 1127,
-      "sha256": "16e5eef6243eebd3ce5d0026abdb0bf53620ef18f84db69b821dc25702acc3e4"
+      "bytes": 3654,
+      "sha256": "163a7b164877e5498274b3f352cec84f2ae4aaa0776abd25caeeeffa534b291b"
     },
     {
       "file": "nelson-portable.data",
-      "bytes": 19395364,
-      "sha256": "dca4a57e438d0be6ec150789332075c949b870c9ad8ce89735359f8dd1673cd0"
+      "bytes": 13530375,
+      "sha256": "1c905d96b54e063597f33a49d2764bc8cb4d6cb1e82b782e59b060f1dfa4098b"
     },
     {
       "file": "nelson-portable.mjs",
-      "bytes": 600047,
-      "sha256": "0c1841dff3c8763a97850505a1d58e5ea054f70a657b4aadad4827d9d0e8019b"
+      "bytes": 514682,
+      "sha256": "56d71e3b8546ee29521a0a134d91d1efd0b833c7509df1475a9e5032559d6f9c"
     },
     {
       "file": "nelson-portable.wasm",
-      "bytes": 42054878,
-      "sha256": "6e7cf1fa821d4fc97ff76849f381ca6f547eeecf844a0f2f7c808cf7556c6427"
+      "bytes": 42718917,
+      "sha256": "89d0d1d37037a21a954ea2de36bb81a05ecc215176b68c6e5ec196db17c1759e"
+    },
+    {
+      "file": "nelson-pwa-icon.png",
+      "bytes": 286627,
+      "sha256": "bb8a7de85e3596a04f899d57b89c5f4f67bb62efda70ad2a6a86cbe614705634"
     },
     {
       "file": "nelson-runtime.mjs",
-      "bytes": 13451,
-      "sha256": "2b702474a88b879ef0d085e6534da84610aedefa323a71249517dc680f117348"
+      "bytes": 20793,
+      "sha256": "8c6a714619018b2825e15070d2a80926612c17fea296b2835c9634c3de5be4bb"
     },
     {
       "file": "nelson-worker-protocol.mjs",
-      "bytes": 18048,
-      "sha256": "294c87659a0aad8ff5e3ad1d00f20c760efacb955f2064d4574a67cdccf693fb"
+      "bytes": 19081,
+      "sha256": "102d168723de98e7fe9bb1743407188fb0d76bec9ce8a426e507b0e75c35c1ab"
     },
     {
       "file": "nelson-worker.mjs",
-      "bytes": 42125,
-      "sha256": "7e0b94abcc1d2c41ee0119730b478260d2eba4269c1c9ddfb51917436ef10d3f"
+      "bytes": 44388,
+      "sha256": "529d0370cf6bacc6df5c2e8939d15307174d0ff01530c5df7faee16c40901d5c"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -2397,34 +2498,34 @@
       "sha256": "2d2741130038745946b17cbb365d80a075608a851b7830ffd0a812358b3f0365"
     },
     {
-      "file": "nflow/app/app-DRYraKY_.js",
-      "bytes": 15831,
-      "sha256": "d06f087993267ae7f94b80faef0853317e4e5acb85b27bc9728131122e968301"
+      "file": "nflow/app/app-CP8fMOVO.js",
+      "bytes": 16233,
+      "sha256": "da4bb994cb5ec5b32ab53d3e1a0f149f6b7a73e1913042dbe7127578916448d2"
     },
     {
-      "file": "nflow/app/chunks/app-CtbkK3-A.js",
-      "bytes": 549195,
-      "sha256": "a403173f1c3f1e60075ba6a9644f32431922e1e8a29d0c9d795f3a886e7cf091"
+      "file": "nflow/app/chunks/app-CdL-QPIB.js",
+      "bytes": 550402,
+      "sha256": "e04108d41fad568a87ef5327d34cee00c8012432439983b725476e7668d03d5a"
     },
     {
-      "file": "nflow/app/chunks/canvas-navigation-tools-DkY-8iJv.js",
+      "file": "nflow/app/chunks/canvas-navigation-tools-BGzEa6qA.js",
       "bytes": 608,
-      "sha256": "7bd6433afd840394af98d2ea75c0954a68e9c3782e1c879e10b8e405b32a5dd3"
+      "sha256": "b6d7a34b8431bef928adc1112879b98cb78128b5d333f1712935129c2f282fdd"
     },
     {
-      "file": "nflow/app/chunks/console-host-CQ6Vrk3Q.js",
+      "file": "nflow/app/chunks/console-host-B08Br43s.js",
       "bytes": 13350,
-      "sha256": "d0731068a674be94ba5419e72833f707245e38fe701705244ab7800eb3e7c287"
+      "sha256": "5fdca4d5a1b656311b45611d0eaf3a66f105d7ad6dbaf546c439c7537e11d97c"
     },
     {
-      "file": "nflow/app/chunks/dup-drag-CrllvR2c.js",
+      "file": "nflow/app/chunks/dup-drag-B5FUwsuF.js",
       "bytes": 1566,
-      "sha256": "b4dc1704c6a6dc56d066fb883dcd856d1dee1d07b5c37757e1b8712aebf68e27"
+      "sha256": "109cec96d18183309d7fb285bba4e9ca6729395fd291d63f8a15628b7ec40f03"
     },
     {
-      "file": "nflow/app/chunks/fmu-import-BOz2hVCi.js",
+      "file": "nflow/app/chunks/fmu-import-DNZ_3xR1.js",
       "bytes": 3916,
-      "sha256": "408cd441c39c1f76e6a3561eced64332166bee0c322a90b630c2ea156d1cfdb8"
+      "sha256": "40ea7985d32cc1cc1039521359a952f5c26d6da9b05ad72c98897e472edde205"
     },
     {
       "file": "nflow/app/chunks/helpers-CyRuiCrn.js",
@@ -2432,9 +2533,9 @@
       "sha256": "7a4deb736a0a9d6781405226c14218bd9dd55c912a9a51f0a4ce3f664df249dd"
     },
     {
-      "file": "nflow/app/chunks/history-Uh_ijzKp.js",
+      "file": "nflow/app/chunks/history-BWUlwZWV.js",
       "bytes": 8696,
-      "sha256": "b9f20d024f09cc97f5f12e06fb07d36b9ace8439e5febfa56641dfb6cca28f45"
+      "sha256": "92304e35273de67422cc2de2c978d070e993adaf1ab09596f96c926117c1b0f2"
     },
     {
       "file": "nflow/app/chunks/icon-cache-Dde71SRH.js",
@@ -2442,14 +2543,14 @@
       "sha256": "95df24ab15ead6a9b35a0ee99ded672ca28212e1c36b7ed3f12622b2e69b3d73"
     },
     {
-      "file": "nflow/app/chunks/minimap-C4DKBucB.js",
+      "file": "nflow/app/chunks/minimap-DOzBLYZh.js",
       "bytes": 2515,
-      "sha256": "838f09c49910a26617f9617619e2192fbb044f3fe3be1e46f07f0efa7ba2189f"
+      "sha256": "ca8d99c58804da6dcb32fc4d76f11e75102c71fa96f1d30d0eaa7091dfa1be69"
     },
     {
-      "file": "nflow/app/chunks/modelica-settings-C4vExAlK.js",
+      "file": "nflow/app/chunks/modelica-settings-ZINSKCVY.js",
       "bytes": 2413,
-      "sha256": "4b664823c414f95e308ec4a977115a6ca7f888593aa31102b539986cf82ab8b2"
+      "sha256": "12044e88eac40b54d3374b3a78c26babb3512d29a79c2cfb34620e3569ded6e6"
     },
     {
       "file": "nflow/app/chunks/native-rpc-ZXMdv8Gt.js",
@@ -2457,34 +2558,34 @@
       "sha256": "e4b4648204856b165d5ef3c9090c138afe7b63f09315a7df6937a098c35d84c9"
     },
     {
-      "file": "nflow/app/chunks/quick-connect-DGedD_eT.js",
+      "file": "nflow/app/chunks/quick-connect-C8ds5oCB.js",
       "bytes": 1603,
-      "sha256": "e237c2b14dcee33e66e0f0bff2a5dea88e68b2a3eb9f015ceaca0d37f3162654"
+      "sha256": "7dbfd6408c6002b5af564455e7eabfb9755ae53a56a36460bae6c3c42fd62ddf"
     },
     {
-      "file": "nflow/app/chunks/quick-insert-CCt3ip-l.js",
+      "file": "nflow/app/chunks/quick-insert-DO893eAn.js",
       "bytes": 88354,
-      "sha256": "8997d8ac81fbd7746456629d716d6f0318489f26fd6473ff3e8a72349901a3fc"
+      "sha256": "cc0b74379265404f8c730bb12352d68eec4c85ad8d46185b555aa87c81e79331"
     },
     {
-      "file": "nflow/app/chunks/render-if3VSehP.js",
+      "file": "nflow/app/chunks/render-DyV6XQQe.js",
       "bytes": 167557,
-      "sha256": "78b6abe8c891fc8cd9885b626a8b38f76f8d5bf801816df13e408235f26a6671"
+      "sha256": "a559a832bca1b22e00e6971feb4e02272bce8b1dfc8a2ce0d6254ef70ae07426"
     },
     {
-      "file": "nflow/app/chunks/simulation-toolbar-visibility-B0X5rPEx.js",
+      "file": "nflow/app/chunks/simulation-toolbar-visibility-CaszMcmG.js",
       "bytes": 593,
-      "sha256": "47b6411cd3653e2457768855408ef125b670ad2a0043d1781295b43f262c44a6"
+      "sha256": "2735d39ff25e0600cef391d951010de2478a67778b44777c1fb82d99f73414fa"
     },
     {
-      "file": "nflow/app/chunks/subsystem-handlers-ZW_X8tPw.js",
+      "file": "nflow/app/chunks/subsystem-handlers-C8L1vCxl.js",
       "bytes": 6409,
-      "sha256": "585d17391c6bb5862cc8488154edc142b0c401f97be73d0988e4615eb58587be"
+      "sha256": "1bfac3794f18c4b4b867f0002606fffd9a09c26ab25825504d3c63b9f6e625f2"
     },
     {
-      "file": "nflow/app/chunks/wire-labels-bDHCrmll.js",
+      "file": "nflow/app/chunks/wire-labels-BhPokV97.js",
       "bytes": 3016,
-      "sha256": "486d8411e30ee312bf8fb42c964b87f749fe55d9977ad4752e1d0890ded339bd"
+      "sha256": "02e2ab30aadc48d3048af8daaac9538243e898569b74d8a868c31e5925462256"
     },
     {
       "file": "nflow/app/floating-toolbar.21f3dc5fa02a.js",
@@ -3369,7 +3470,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "c5436eacd6ef7c58c79440c24e225ecb4bae3f333a71a488cde08d362de2a7ba"
+      "sha256": "c75b509072c6abd2f0a3d358264e3f18ae69ae5939ef848fdde7ab8a734b7d7c"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -6509,7 +6610,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "7f073d5357a05ef9bec20c58f38067ee0dac11bea9c9df86069379273afab33e"
+      "sha256": "39373d028ea9b016890d7f5a506b515ff56266488306ace39aec1b9ad02a94e4"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -6524,7 +6625,7 @@
     {
       "file": "packs/editor/EditorPanel-Du_uqhMU.js",
       "bytes": 3618960,
-      "sha256": "7a06292daa73b3e686c74b83cdab3b8bb73a17d472b1cc669521b64688f4d1fe"
+      "sha256": "79e4265254b646d26aac766459999236bfd97d172268abfa0b445877c9c4b403"
     },
     {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
@@ -6537,14 +6638,14 @@
       "sha256": "b8060de099a46b28de7445f5f676be4f75245eb098c8af7b2c8738f6acb17afe"
     },
     {
-      "file": "packs/examples/ExamplesPanel-Bt2QIaBd.js",
-      "bytes": 9668,
-      "sha256": "88732bf0609d66cbea99c95b5888e9b47725d7e44536ebe13ff697bd18c130ca"
+      "file": "packs/examples/ExamplesPanel-DT_4yNQ7.js",
+      "bytes": 9758,
+      "sha256": "57ba8ce75a8efba5f000dbb59b7f40a72ce1195ffbb879d6010628b4c5adbc44"
     },
     {
-      "file": "packs/mock/mockEngine-CXMWVVXG.js",
-      "bytes": 30368,
-      "sha256": "410ffc5a3230c7aa34e8004f599e3d0d84fc228d99895409884ed76868b9263d"
+      "file": "packs/mock/mockEngine-BFq5HA4q.js",
+      "bytes": 31204,
+      "sha256": "c7be8c4c868cbbee9c60655846977bfeff327c1d4c37d72ac19b235d4e94abe0"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
@@ -6554,8 +6655,383 @@
     {
       "file": "packs/nmm/PackageManagerPanel-LRz_EtB9.js",
       "bytes": 48053,
-      "sha256": "d78e8cadbda91f18786f212b4aa6a0c55fb0eca8cdc67c1b340a39098bc769d0"
+      "sha256": "dcf90d05835eea475d0946a1cc808859dc6a6d39d532b82192759968ead53c14"
+    },
+    {
+      "file": "runtime-resources/bundles/assert_functions-tests.nlpack",
+      "bytes": 88082,
+      "sha256": "d63188e1e23e59fc1b809e54696221c93827fefe30086aa73df36891f16624f9"
+    },
+    {
+      "file": "runtime-resources/bundles/audio-tests.nlpack",
+      "bytes": 5200713,
+      "sha256": "5331043df8411a16ccbf3d3ce2983059a38e91995fa2c71aeec90c95e223fb86"
+    },
+    {
+      "file": "runtime-resources/bundles/categorical-tests.nlpack",
+      "bytes": 90882,
+      "sha256": "cac0afb4d47b6ba7ad03533f455de788711ca969627cfecde41aa6226df3a63f"
+    },
+    {
+      "file": "runtime-resources/bundles/characters_encoding-tests.nlpack",
+      "bytes": 976432,
+      "sha256": "f658dab6e8c1b0bdfd997481f465a36488e1165ae50a4b36c7caa3e342cbbd09"
+    },
+    {
+      "file": "runtime-resources/bundles/console-tests.nlpack",
+      "bytes": 4460,
+      "sha256": "8cd483cacbaa6565ce850595bb88db29fd04d15b83e0ad8f38ddd5a17a39e213"
+    },
+    {
+      "file": "runtime-resources/bundles/constructors_functions-tests.nlpack",
+      "bytes": 26593,
+      "sha256": "42fabfaa98070a6192af14c50ad2757c87b345f4b709470bc5b811936f3ce701"
+    },
+    {
+      "file": "runtime-resources/bundles/control_system-tests.nlpack",
+      "bytes": 186405,
+      "sha256": "e550acca48b58e680d9b4fca432038f907bb2bd97d00bd8d80a2671851c6aac7"
+    },
+    {
+      "file": "runtime-resources/bundles/core-tests.nlpack",
+      "bytes": 126090,
+      "sha256": "5c719f6d1135014600a94590449275f451ccced2e4871248fc728c6d5d1ccd50"
+    },
+    {
+      "file": "runtime-resources/bundles/data_analysis-tests.nlpack",
+      "bytes": 362291,
+      "sha256": "08140d663cb029c4c6510614daf738c89a17d9ae69c3af1f6aad16f4d0e19253"
+    },
+    {
+      "file": "runtime-resources/bundles/data_structures-tests.nlpack",
+      "bytes": 115773,
+      "sha256": "b861362988118c913bd8e8654bdf25093f187de51a193d8a591a2e43207ce095"
+    },
+    {
+      "file": "runtime-resources/bundles/debugger-tests.nlpack",
+      "bytes": 32862,
+      "sha256": "c3953ae78c81e710da3539b0c52880e50303a58c9fd43c7e7bdb064afab7e4b8"
+    },
+    {
+      "file": "runtime-resources/bundles/dictionary-tests.nlpack",
+      "bytes": 70371,
+      "sha256": "f3aceb133f94e448f421d2bd30714d0e8092cd990c039cccf3a3e9d2c0274525"
+    },
+    {
+      "file": "runtime-resources/bundles/display_format-tests.nlpack",
+      "bytes": 415729,
+      "sha256": "510dc4e697229064eaac6992aff878b7c00a20cf094d68f06222636a3b31b9f1"
+    },
+    {
+      "file": "runtime-resources/bundles/double-tests.nlpack",
+      "bytes": 31298,
+      "sha256": "5c9c1c69458133bc341ae21dcf686f46a625fca74ba684a9e663bfb09d151e52"
+    },
+    {
+      "file": "runtime-resources/bundles/elementary_functions-tests.nlpack",
+      "bytes": 431245,
+      "sha256": "db65f4de910eda03e5028fb67a6afdf12443db860573e3df4b098f9ce7894693"
+    },
+    {
+      "file": "runtime-resources/bundles/elementary_mathematics-tests.nlpack",
+      "bytes": 1012,
+      "sha256": "f50513175cf68e30cb1a60f299b86243249fac8ca97eda0f8baf5f935efe8236"
+    },
+    {
+      "file": "runtime-resources/bundles/engine-tests.nlpack",
+      "bytes": 77520,
+      "sha256": "9639610848ce793c926af1affe871f9f4d401d2129816dbe71d5eda2f271c3ef"
+    },
+    {
+      "file": "runtime-resources/bundles/error_manager-tests.nlpack",
+      "bytes": 51889,
+      "sha256": "64add5260c4db4eea1057991105b7f95ab209958d22a011456c6a67ea96a31c0"
+    },
+    {
+      "file": "runtime-resources/bundles/f2c-tests.nlpack",
+      "bytes": 21677,
+      "sha256": "e383a73abac61237f559ac47717c16a3a7f7df6722344b98347fe2d427f488c7"
+    },
+    {
+      "file": "runtime-resources/bundles/fftw-tests.nlpack",
+      "bytes": 21459,
+      "sha256": "4601223735b0d88dbd71891b15bfd85c1561ceda3cc685f8d04ed9ace09b6866"
+    },
+    {
+      "file": "runtime-resources/bundles/file_archiver-tests.nlpack",
+      "bytes": 87735,
+      "sha256": "d389e907bc94c5b6282f6a11ee31144fc8847568289ea3503c9584dde43f231a"
+    },
+    {
+      "file": "runtime-resources/bundles/files_folders_functions-tests.nlpack",
+      "bytes": 68297,
+      "sha256": "fa04d6d8d180643af90bd90d473fc52cc3215e0d1df33989bffebb02de7a5b22"
+    },
+    {
+      "file": "runtime-resources/bundles/function_handle-tests.nlpack",
+      "bytes": 36035,
+      "sha256": "e32194c7fa93a84c11274df40f493cdf29ba68d5b67324791ebe0356de2f4763"
+    },
+    {
+      "file": "runtime-resources/bundles/functions_manager-tests.nlpack",
+      "bytes": 66583,
+      "sha256": "de1c4cb1d33bc94ed48489ad496f9cd8c60227dcb47256fbc8209df80549fdb9"
+    },
+    {
+      "file": "runtime-resources/bundles/geometry-tests.nlpack",
+      "bytes": 35346,
+      "sha256": "0512baf39a732678365f23799cec125d982a439779579ac06622fb2fc696b40c"
+    },
+    {
+      "file": "runtime-resources/bundles/graphics_io-tests.nlpack",
+      "bytes": 127154,
+      "sha256": "b2702e15a61a5e322f13c2c60b16251d9c27469908d46a93cfc341ebfd7be58f"
+    },
+    {
+      "file": "runtime-resources/bundles/graphics-tests.nlpack",
+      "bytes": 6952065,
+      "sha256": "4e2e00753c7121950a5f33c57e6ec5d2d129a3796d22dc6070813b7e151fb60c"
+    },
+    {
+      "file": "runtime-resources/bundles/handle-tests.nlpack",
+      "bytes": 38347,
+      "sha256": "6b7990eb9408777385a76df529ba7900b98d78b45e867a4c17dffff6c9c581aa"
+    },
+    {
+      "file": "runtime-resources/bundles/hdf5-tests.nlpack",
+      "bytes": 725039,
+      "sha256": "72dad758a11c71fcc801b62717867f6a5a444fb627b47e3e9bf10ef53bcbde78"
+    },
+    {
+      "file": "runtime-resources/bundles/help_tools-help.nlpack",
+      "bytes": 5626972,
+      "sha256": "985cbc43f60c93dc4b46f216e2fa86aed39db9a2d7705f7a82bc2422b45922c6"
+    },
+    {
+      "file": "runtime-resources/bundles/help_tools-tests.nlpack",
+      "bytes": 75760,
+      "sha256": "236910a27023197abf0e59d40402322acb6e7f4bfa03fb6aeace406ff8a8b0f7"
+    },
+    {
+      "file": "runtime-resources/bundles/history_manager-tests.nlpack",
+      "bytes": 3039,
+      "sha256": "cc98f8c7fdaa9c3718f32c1bb2e7f66b5fa36ebea145ebf3ebceb0b3ef050061"
+    },
+    {
+      "file": "runtime-resources/bundles/i18n-tests.nlpack",
+      "bytes": 7154,
+      "sha256": "cc1e0baf62ba87bbd718bb51e4a751436f23bed3ed2c75b3a00d4aa075a6770e"
+    },
+    {
+      "file": "runtime-resources/bundles/image_processing-tests.nlpack",
+      "bytes": 361081,
+      "sha256": "c9ef8bac109e961edaef4d50d769be279e2edb222e0468e64dbd87f0c5f1c5c8"
+    },
+    {
+      "file": "runtime-resources/bundles/integer-tests.nlpack",
+      "bytes": 55028,
+      "sha256": "510764b29a5be01a29346f217ef1ac3a533ce2aec2567720a0d6ea18977a3cf0"
+    },
+    {
+      "file": "runtime-resources/bundles/interpreter-tests.nlpack",
+      "bytes": 1517729,
+      "sha256": "fbcea7952d7a8c66acf852b8744ccfb5dd2a5a3e37432c5826200318ce0a37d1"
+    },
+    {
+      "file": "runtime-resources/bundles/json-tests.nlpack",
+      "bytes": 2149167,
+      "sha256": "067a85e7b646c5d1cca1538bf107dd9b76054f70e216f87b17f645db507da925"
+    },
+    {
+      "file": "runtime-resources/bundles/linear_algebra-tests.nlpack",
+      "bytes": 416064,
+      "sha256": "7457011e03395627dbafecabc4de0b2626a8cc754853731bae10dcf0c8785250"
+    },
+    {
+      "file": "runtime-resources/bundles/localization-tests.nlpack",
+      "bytes": 6368,
+      "sha256": "af480e65c485213e997cb772a2bf8c4a9b79c1f4990ab3004ce73bbe89ad8e37"
+    },
+    {
+      "file": "runtime-resources/bundles/logical-tests.nlpack",
+      "bytes": 29055,
+      "sha256": "61ffca077ab3c83c036ed4dc3cf3747e57418c58d3dc9ce1ae4edda10724cfb3"
+    },
+    {
+      "file": "runtime-resources/bundles/main-tests.nlpack",
+      "bytes": 232418,
+      "sha256": "47ac86f10f4e8affe447140acea7d55ea0941c469cdfe0de4c0d2b6d3e8334ba"
+    },
+    {
+      "file": "runtime-resources/bundles/matio-tests.nlpack",
+      "bytes": 132853,
+      "sha256": "ca6dde1fdf57e22aeb278c3b5e0d7340eaeced14fd36949b880cb1b51020e1cc"
+    },
+    {
+      "file": "runtime-resources/bundles/memory_manager-tests.nlpack",
+      "bytes": 76097,
+      "sha256": "0d76ff4bcec9414cf8f6807d9ba4ca8d04cacc01eeacbce3d1ffad40c1f7e7b6"
+    },
+    {
+      "file": "runtime-resources/bundles/modules_manager-tests.nlpack",
+      "bytes": 1514712,
+      "sha256": "81b98ec0f3ba3420b1bee6753f51055dc6dc5de82c5f6426a70299672569fd64"
+    },
+    {
+      "file": "runtime-resources/bundles/netcdf-tests.nlpack",
+      "bytes": 163986,
+      "sha256": "2239c4826fa1a5fb6bd87ca82f1ef7bb8fb2e0f64129495ccbeed2a06b5ee0ca"
+    },
+    {
+      "file": "runtime-resources/bundles/nflow_blocks-tests.nlpack",
+      "bytes": 649205,
+      "sha256": "b155e78388eaeab74a887e7a7f5a0edf5cab070f0d9291ff5594df076e05cb49"
+    },
+    {
+      "file": "runtime-resources/bundles/nflow_engine-tests.nlpack",
+      "bytes": 1483644,
+      "sha256": "f6078344c6f821f249331369d1fbf3406bd89c07f0f483ab6cae4ad1b1d3539a"
+    },
+    {
+      "file": "runtime-resources/bundles/nflow_gui-tests.nlpack",
+      "bytes": 1716559,
+      "sha256": "7cff1cf87c1dc5f4751539d2baf4d9e84d6f87765af0f0b21a2d21e9cc3a0085"
+    },
+    {
+      "file": "runtime-resources/bundles/ode_solvers-tests.nlpack",
+      "bytes": 268323,
+      "sha256": "9727be2c81474f22ff964c31c28d82c63911f7d8b0b5a77d4536fa56bf99a263"
+    },
+    {
+      "file": "runtime-resources/bundles/operators-tests.nlpack",
+      "bytes": 290937,
+      "sha256": "0c3882b1ab070d5d18cbd956ddde7c82684ee281a7650b92bbacaedfd280953e"
+    },
+    {
+      "file": "runtime-resources/bundles/optimization-tests.nlpack",
+      "bytes": 124251,
+      "sha256": "56be9bfb2922b19e3196c00a959af8083f5bd2ce62bdb12aaba7a7947e8d252d"
+    },
+    {
+      "file": "runtime-resources/bundles/os_functions-tests.nlpack",
+      "bytes": 45324,
+      "sha256": "bfff9c791cc2d8782c3f927542c79509d56e24d360ff6b8a35f01aef1fcbd151"
+    },
+    {
+      "file": "runtime-resources/bundles/overload-tests.nlpack",
+      "bytes": 14304,
+      "sha256": "060eec753943478eb9e34cc0d25641b557963495169a538a1c9be44241b7e975"
+    },
+    {
+      "file": "runtime-resources/bundles/polynomial_functions-tests.nlpack",
+      "bytes": 32340,
+      "sha256": "4034121b9f275fc13021d2d7d351dd75112057d22205ed165575dfa54402c687"
+    },
+    {
+      "file": "runtime-resources/bundles/preferences-tests.nlpack",
+      "bytes": 3836,
+      "sha256": "549a5e8ffaeb4898abd31c15c20d97d7fe2c81f4275cbb5cd5013cd245b8ce1a"
+    },
+    {
+      "file": "runtime-resources/bundles/profiler-tests.nlpack",
+      "bytes": 16873,
+      "sha256": "09808c71871e50efc625e35f48c8b4758583604d019eeb9308daae30c25d7611"
+    },
+    {
+      "file": "runtime-resources/bundles/random-tests.nlpack",
+      "bytes": 68983,
+      "sha256": "dee1774797e155347688466f12f604ad08607def7246570edffc8182547fee5c"
+    },
+    {
+      "file": "runtime-resources/bundles/signal_processing-tests.nlpack",
+      "bytes": 219150,
+      "sha256": "600d4408eae713f236d70de210f4244eb1e44bf367d994d3d91e6f89182b7224"
+    },
+    {
+      "file": "runtime-resources/bundles/single-tests.nlpack",
+      "bytes": 24316,
+      "sha256": "541e18cdb9d8f5c62d40eeb65a10b185e61e3c98dc502ae9bc3888438470619b"
+    },
+    {
+      "file": "runtime-resources/bundles/slicot-tests.nlpack",
+      "bytes": 65989,
+      "sha256": "1b6f8399d2df74034cea76f1de8e61728c6745a1cd6be87a0593e8ed1c234f15"
+    },
+    {
+      "file": "runtime-resources/bundles/sparse-tests.nlpack",
+      "bytes": 131942,
+      "sha256": "2e2c2d4a8cdb2adbd03a9f712c090703afb46168977e447e830ea01ba3a6fdcd"
+    },
+    {
+      "file": "runtime-resources/bundles/special_functions-tests.nlpack",
+      "bytes": 139614,
+      "sha256": "9f5cf2e68bd2498cc4d681864959f7b31bbd6a53ffe12dcc8be44d689d2e8b42"
+    },
+    {
+      "file": "runtime-resources/bundles/spreadsheet-tests.nlpack",
+      "bytes": 195247,
+      "sha256": "f2de34583b99146ae4bf99091c77b809dae22dfb7c8281dae238b88d10a44c3b"
+    },
+    {
+      "file": "runtime-resources/bundles/statistics-tests.nlpack",
+      "bytes": 1083068,
+      "sha256": "0fc7138c15e4b61b7c4ad79cabb82ee15abaea23a3c441a269a7d39f3d5a0e1a"
+    },
+    {
+      "file": "runtime-resources/bundles/stream_manager-tests.nlpack",
+      "bytes": 6147876,
+      "sha256": "be74d4e04e34158d3722083588d91280190941ccf273c5c595f34f472c49bfef"
+    },
+    {
+      "file": "runtime-resources/bundles/string-tests.nlpack",
+      "bytes": 317507,
+      "sha256": "e2271cec24d0b38f368d4b835226b8e7060234b3ba56bf0f7f5824e97b3ef8f6"
+    },
+    {
+      "file": "runtime-resources/bundles/table-tests.nlpack",
+      "bytes": 581357,
+      "sha256": "94b904a9e344d72f87d53ec898194090defb66386cae68bed54b1c4bacb0144d"
+    },
+    {
+      "file": "runtime-resources/bundles/tests_manager-tests.nlpack",
+      "bytes": 192755,
+      "sha256": "2b15333808fa81375dddc3929ef1bce336c30e892d85aced6126306dc91f98d3"
+    },
+    {
+      "file": "runtime-resources/bundles/text_editor-tests.nlpack",
+      "bytes": 7338,
+      "sha256": "6c9072761bebac71a86f9fa903b6c675e2d9269c1978e8bf3684a1c5baad0b24"
+    },
+    {
+      "file": "runtime-resources/bundles/time-tests.nlpack",
+      "bytes": 271094,
+      "sha256": "a1d48a91684b9d784ae5c14c577e41eeb377b1035c111b103fc135187c70510c"
+    },
+    {
+      "file": "runtime-resources/bundles/trigonometric_functions-tests.nlpack",
+      "bytes": 97978,
+      "sha256": "5835120daa32f437f994a49154c108154f9069ee23499ddd6cd23bc1ff5f2032"
+    },
+    {
+      "file": "runtime-resources/bundles/types-tests.nlpack",
+      "bytes": 231735,
+      "sha256": "76d189e3f584499ac9fc2aa1f9bb8d72e457613343c5ea33031f9bf36ecbb04a"
+    },
+    {
+      "file": "runtime-resources/bundles/validators-tests.nlpack",
+      "bytes": 95525,
+      "sha256": "f594a0d151ac6b95f6d54368ac7ec3039ada7c09fcc38afe55d2f0c84c1426bd"
+    },
+    {
+      "file": "runtime-resources/bundles/xml-tests.nlpack",
+      "bytes": 40942,
+      "sha256": "5d5f3c05e33741035396ec421ad97059bdf36f111faa7510a2944f3b5cc6e35f"
+    },
+    {
+      "file": "runtime-resources/index.json",
+      "bytes": 580418,
+      "sha256": "43985930f866d59d0062f7a9f3f8f8fa6affeddff7242a98f584915a962af06b"
     }
   ],
-  "totalBytes": 81149326
+  "totalBytes": 120184870
 }

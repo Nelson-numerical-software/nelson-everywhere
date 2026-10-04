@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=58e94e406eee";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=58e94e406eee";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=8a9472eda111";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=8a9472eda111";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,7 +14,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=58e94e406eee";
+} from "./nelson-worker-protocol.mjs?build=8a9472eda111";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -37,6 +37,8 @@ let commandMailbox = null;
 let nflowEventMailbox = null;
 let nflowEventLastSeq = 0;
 let nflowCallbackLastSeq = 0;
+let nextInputRequestId = 1;
+const pendingInputRequests = new Map();
 let virtualFiles = new Map();
 let virtualDirectories = new Set();
 let workspaceStore = createWorkspaceStore();
@@ -172,6 +174,35 @@ function reply(id, ok, value) {
   });
 }
 
+function workerErrorMessage(error) {
+  const message = error instanceof Error ? error.message : String(error);
+  if (
+    message.includes("WebAssembly.Suspending") ||
+    message.includes("WebAssembly.promising")
+  ) {
+    return [
+      "This browser does not support the JSPI WebAssembly build.",
+      "Use Chrome or Firefox with JSPI support, or use a non-JSPI Nelson WebAssembly build.",
+    ].join(" ");
+  }
+  return message;
+}
+
+function requestInput(prompt) {
+  const inputId = nextInputRequestId++;
+  self.postMessage({
+    version: PROTOCOL_VERSION,
+    event: "input.request",
+    input: {
+      id: inputId,
+      prompt: String(prompt ?? ""),
+    },
+  });
+  return new Promise((resolve) => {
+    pendingInputRequests.set(inputId, resolve);
+  });
+}
+
 function escapeNelsonCharacterVector(value) {
   return String(value).replaceAll("'", "''");
 }
@@ -241,6 +272,7 @@ async function initialize(
         nflowCancelSignal ? Atomics.load(nflowCancelSignal, 0) : 0,
       onNelsonNFlowFetchEvents: fetchPendingNFlowEvents,
       onNelsonPollCommand: pollCooperativeCommand,
+      onNelsonInput: requestInput,
     },
   };
   runner = createPersistentNelsonRunner(runnerFactory, runnerOptions);
@@ -422,7 +454,7 @@ function addParentDirectories(path) {
   }
 }
 
-function isPersistentRuntimePath(path) {
+function isPersistentVirtualPath(path) {
   return PERSISTENT_DIRECTORIES.some(
     (directory) => path === directory || path.startsWith(`${directory}/`),
   );
@@ -441,8 +473,14 @@ async function restorePersistentWorkspace() {
   if (!workspaceStore.available) return;
   try {
     const restored = await workspaceStore.loadWorkspace();
-    virtualFiles = restored.files;
-    virtualDirectories = restored.directories;
+    virtualFiles = new Map(
+      [...restored.files.entries()].filter(([path]) =>
+        isPersistentVirtualPath(path),
+      ),
+    );
+    virtualDirectories = new Set(
+      [...restored.directories].filter((path) => isPersistentVirtualPath(path)),
+    );
     for (const path of virtualFiles.keys()) addParentDirectories(path);
   } catch (error) {
     disableWorkspacePersistence(error);
@@ -452,7 +490,16 @@ async function restorePersistentWorkspace() {
 async function persistVirtualFiles() {
   if (!workspaceStore.available) return;
   try {
-    await workspaceStore.replaceWorkspace(virtualFiles, virtualDirectories);
+    await workspaceStore.replaceWorkspace(
+      new Map(
+        [...virtualFiles.entries()].filter(([path]) =>
+          isPersistentVirtualPath(path),
+        ),
+      ),
+      new Set(
+        [...virtualDirectories].filter((path) => isPersistentVirtualPath(path)),
+      ),
+    );
   } catch (error) {
     disableWorkspacePersistence(error);
   }
@@ -493,10 +540,10 @@ function populateVirtualFiles(module) {
 
 async function collectVirtualFiles(module) {
   const collected = new Map(
-    [...virtualFiles.entries()].filter(([path]) => !isPersistentRuntimePath(path)),
+    [...virtualFiles.entries()].filter(([path]) => !isPersistentVirtualPath(path)),
   );
   const directories = new Set(
-    [...virtualDirectories].filter((path) => !isPersistentRuntimePath(path)),
+    [...virtualDirectories].filter((path) => !isPersistentVirtualPath(path)),
   );
   const visit = (directory) => {
     for (const name of module.FS.readdir(directory)) {
@@ -1019,6 +1066,25 @@ async function writeVirtualFile(path, data) {
   return { path: normalized, bytes: bytes.byteLength };
 }
 
+async function writeVirtualFiles(files) {
+  if (!Array.isArray(files)) throw new Error("Virtual file batch must be an array");
+  let bytesWritten = 0;
+  const written = [];
+  for (const entry of files) {
+    const normalized = normalizeVirtualPath(entry.path);
+    const bytes =
+      typeof entry.data === "string"
+        ? new TextEncoder().encode(entry.data)
+        : new Uint8Array(entry.data);
+    virtualFiles.set(normalized, bytes);
+    addParentDirectories(normalized);
+    bytesWritten += bytes.byteLength;
+    written.push({ path: normalized, bytes: bytes.byteLength });
+  }
+  await persistVirtualFiles();
+  return { files: written.length, bytes: bytesWritten, written };
+}
+
 async function createVirtualDirectory(path) {
   const normalized = normalizeVirtualPath(path);
   if (virtualFiles.has(normalized) || virtualDirectories.has(normalized)) {
@@ -1170,6 +1236,13 @@ self.addEventListener("message", async (event) => {
           }
         }
         break;
+      case "input.reply": {
+        const resolve = pendingInputRequests.get(request.inputId);
+        pendingInputRequests.delete(request.inputId);
+        resolve?.(String(request.value ?? ""));
+        result = { ok: true };
+        break;
+      }
       case "nflow.simulate":
         // Start from a clean live-event baseline: only interactions that happen
         // during this run should be applied.
@@ -1179,6 +1252,9 @@ self.addEventListener("message", async (event) => {
         break;
       case "file.write":
         result = await writeVirtualFile(request.path, request.data);
+        break;
+      case "file.writeBatch":
+        result = await writeVirtualFiles(request.files);
         break;
       case "file.read":
         result = await readVirtualFile(request.path);
@@ -1302,6 +1378,6 @@ self.addEventListener("message", async (event) => {
     }
     reply(request.id, true, result);
   } catch (error) {
-    reply(request.id, false, error instanceof Error ? error.message : String(error));
+    reply(request.id, false, workerErrorMessage(error));
   }
 });

@@ -35,6 +35,13 @@ let rpcId = 0;
 const urlParams = new URLSearchParams(window.location.search);
 const examplesChannelName = urlParams.get('channel') || '';
 const useBrowserBridge = typeof BroadcastChannel === 'function' && examplesChannelName;
+// The desktop keeps the native WebUI bridge: it serves this page with a
+// `webui.js` script that injects `window.webui` only on DOMContentLoaded, which
+// fires after this deferred module runs its first request. The WebAssembly
+// packager strips that script, so its absence marks the static/browser build.
+// On the desktop we must wait for that bridge instead of falling back to the
+// static fetch path, which has no `catalog.json` file to serve (404).
+const expectsNativeBridge = document.querySelector('script[src*="webui.js"]') !== null;
 
 function delay(milliseconds) {
   return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
@@ -44,6 +51,7 @@ function transportReady() {
   if (typeof window.webui?.call === 'function') {
     return typeof window.webui.isConnected !== 'function' || window.webui.isConnected();
   }
+  if (expectsNativeBridge) return false;
   if (useBrowserBridge) return true;
   if (typeof fetch === 'function') return true;
   return typeof window.examplesRpc === 'function';

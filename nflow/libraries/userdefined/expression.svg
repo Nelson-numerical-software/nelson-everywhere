@@ -1,7 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
-  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="14" font-weight="400" font-style="italic" fill="#3C3489">f(u)</text>
-  <line x1="20" y1="48" x2="52" y2="48" stroke="#3C3489" stroke-width="1.2" stroke-linecap="round"/>
-  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
-  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="306.5" height="206.5" viewBox="-153.25 -103.25 306.5 206.5">
+  <rect x="-153.25" y="-103.25" width="306.5" height="206.5" rx="39.235" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <rect x="-100" y="-40" width="200" height="80" fill="#AFA9EC" stroke="#3C3489" stroke-width="3.25"/>
+    <g transform="translate(0,0) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#3C3489">0.0</text></g>
+    <g transform="translate(0,70) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">Expression</text></g>
+  </g>
 </svg>

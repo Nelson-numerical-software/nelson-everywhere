@@ -1,6 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <polygon points="6,66 6,6 66,36" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
-  <text x="28" y="37" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="18" font-weight="400" font-style="italic" fill="#3C3489">K</text>
-  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
-  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="306.5" height="286.5" viewBox="-153.25 -143.25 306.5 286.5">
+  <rect x="-153.25" y="-143.25" width="306.5" height="286.5" rx="54.435" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <polygon points="-100,-100 -100,100 100,0 -100,-100" fill="#FFFFFF" stroke="#3C3489" stroke-width="3.25" stroke-linejoin="round"/>
+    <g transform="translate(0,-120) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">k</text></g>
+    <g transform="translate(0,120) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">Gain</text></g>
+  </g>
 </svg>

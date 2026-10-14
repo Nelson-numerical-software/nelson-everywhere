@@ -1,5 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect x="1" y="1" width="70" height="70" rx="14" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="1.5"/>
-  <line x1="10" y1="30" x2="22" y2="30" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="50" y1="30" x2="62" y2="30" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><rect x="22" y="20" width="28" height="20" fill="none" stroke="#1E6B2E" stroke-width="2"/><line x1="36" y1="40" x2="36" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="26" y1="46" x2="46" y2="46" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="29" y1="46" x2="25" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="46" x2="31" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="41" y1="46" x2="37" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/><line x1="47" y1="46" x2="43" y2="52" stroke="#1E6B2E" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="8" cy="36" r="3" fill="#1E6B2E"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="306.5" height="256.5" viewBox="-153.25 -133.25 306.5 256.5">
+  <rect x="-153.25" y="-133.25" width="306.5" height="256.5" rx="48.735" fill="#EAF7EC" stroke="#A6DDB0" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <polyline points="-50,-120 -30,-100" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="-30,-120 -10,-100" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="-10,-120 10,-100" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="10,-120 30,-100" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="-30,-100 30,-100" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-100" y="-10" width="200" height="20" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-60" y="-60" width="120" height="50" fill="none" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-60" y="-25" width="120" height="15" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-60" y="-61" width="120" height="16" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-50" y="-50" width="100" height="32" fill="#FFFFFF" stroke="#1E6B2E" stroke-width="3.25"/>
+    <polygon points="60,-60 60,-70 75,-70 75,-80 -75,-80 -75,-70 -60,-70 -60,-60 60,-60" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25" stroke-linejoin="round"/>
+    <polyline points="-75,-10 -75,-70" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="75,-10 75,-70" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-60" y="10" width="120" height="50" fill="none" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-60" y="45" width="120" height="15" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-60" y="10" width="120" height="15" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25"/>
+    <rect x="-50" y="19" width="100" height="32" fill="#FFFFFF" stroke="#1E6B2E" stroke-width="3.25"/>
+    <polyline points="-75,70 -75,10" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="60,60 60,70 75,70 75,80 -75,80 -75,70 -60,70 -60,60 60,60" fill="#A6DDB0" stroke="#1E6B2E" stroke-width="3.25" stroke-linejoin="round"/>
+    <polyline points="75,70 75,10" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(0,110) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#1E6B2E">BearingFriction</text></g>
+    <polyline points="0,-80 0,-100" fill="none" stroke="#1E6B2E" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

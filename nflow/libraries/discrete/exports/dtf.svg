@@ -1,8 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="36" y="27" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-weight="400" font-style="italic" fill="#0C447C">N(z)</text>
-  <line x1="17" y1="38" x2="55" y2="38" stroke="#0C447C" stroke-width="1" stroke-linecap="round"/>
-  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-weight="400" font-style="italic" fill="#0C447C">D(z)</text>
-  <polygon points="-1,32 -1,40 5,36" fill="#0C447C" opacity="0.7"/>
-  <polygon points="67,32 67,40 73,36" fill="#0C447C" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="306.5" height="256.5" viewBox="-153.25 -153.25 306.5 256.5">
+  <rect x="-153.25" y="-153.25" width="306.5" height="256.5" rx="48.735" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="3.25" stroke-dasharray="21 13"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <rect x="-100" y="-100" width="200" height="200" fill="#B5D4F4" stroke="#0C447C" stroke-width="3.25"/>
+    <g transform="translate(0,130) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#0C447C">Discrete TF</text></g>
+    <polyline points="82,0 -84,0" fill="none" stroke="#0C447C" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(-3,52) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="64" fill="#0C447C">b(z)</text></g>
+    <g transform="translate(0,-51) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="62.4" fill="#0C447C">a(z)</text></g>
+  </g>
 </svg>

@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "8a9472eda111",
-  "entryPoint": "index.html?runtime=wasm&build=8a9472eda111",
+  "buildId": "5c1d9c31b4a8",
+  "entryPoint": "index.html?runtime=wasm&build=5c1d9c31b4a8",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -13,7 +13,7 @@
           "nelson-portable.mjs",
           "nelson-portable.wasm"
         ],
-        "bytes": 43233599
+        "bytes": 37238726
       },
       {
         "id": "resources",
@@ -21,7 +21,7 @@
         "files": [
           "nelson-portable.data"
         ],
-        "bytes": 13530375
+        "bytes": 7117595
       },
       {
         "id": "shell",
@@ -30,7 +30,7 @@
           ".nojekyll",
           "app.css",
           "app.js",
-          "assets/figureCanvasWorker-DO4fRWnq.js",
+          "assets/figureCanvasWorker-BgYkuI5o.js",
           "capabilities.json",
           "index.html",
           "manifest.webmanifest",
@@ -41,7 +41,7 @@
           "nelson-worker.mjs",
           "nelson-workspace-store.mjs"
         ],
-        "bytes": 3230751
+        "bytes": 3240737
       }
     ],
     "onDemand": [
@@ -284,17 +284,17 @@
           "examples/gallery-shared.css",
           "examples/index.html"
         ],
-        "bytes": 7926869
+        "bytes": 7928119
       },
       {
         "id": "module-editor",
         "mode": "on-demand",
         "trigger": "module:editor",
         "files": [
-          "packs/editor/EditorPanel-Du_uqhMU.js",
+          "packs/editor/EditorPanel-D6iJ14Og.js",
           "packs/editor/EditorPanel-DV2I0Fna.css"
         ],
-        "bytes": 3856589
+        "bytes": 3780890
       },
       {
         "id": "module-examples",
@@ -311,44 +311,44 @@
         "mode": "on-demand",
         "trigger": "module:mock",
         "files": [
-          "packs/mock/mockEngine-BFq5HA4q.js"
+          "packs/mock/mockEngine-1e6JWa-a.js"
         ],
-        "bytes": 31204
+        "bytes": 31205
       },
       {
         "id": "module-nmm",
         "mode": "on-demand",
         "trigger": "module:nmm",
         "files": [
-          "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
-          "packs/nmm/PackageManagerPanel-LRz_EtB9.js"
+          "packs/nmm/PackageManagerPanel-CLcDany2.js",
+          "packs/nmm/PackageManagerPanel-D_8kqlRb.css"
         ],
-        "bytes": 67421
+        "bytes": 67413
       },
       {
         "id": "nflow",
         "mode": "on-demand",
         "trigger": "nflow",
         "files": [
-          "nflow/app/app-CP8fMOVO.js",
-          "nflow/app/chunks/app-CdL-QPIB.js",
-          "nflow/app/chunks/canvas-navigation-tools-BGzEa6qA.js",
-          "nflow/app/chunks/console-host-B08Br43s.js",
-          "nflow/app/chunks/dup-drag-B5FUwsuF.js",
-          "nflow/app/chunks/fmu-import-DNZ_3xR1.js",
+          "nflow/app/app-iWCsq4fa.js",
+          "nflow/app/chunks/app-D-y8B0Fb.js",
+          "nflow/app/chunks/canvas-navigation-tools-DNnR3UFL.js",
+          "nflow/app/chunks/console-host-B7J3oVFb.js",
+          "nflow/app/chunks/dup-drag-Di2EdibQ.js",
+          "nflow/app/chunks/fmu-import-ZbOs6oG8.js",
           "nflow/app/chunks/helpers-CyRuiCrn.js",
-          "nflow/app/chunks/history-BWUlwZWV.js",
+          "nflow/app/chunks/history-BNRMi4gQ.js",
           "nflow/app/chunks/icon-cache-Dde71SRH.js",
-          "nflow/app/chunks/minimap-DOzBLYZh.js",
-          "nflow/app/chunks/modelica-settings-ZINSKCVY.js",
+          "nflow/app/chunks/minimap-BnDFz9dF.js",
+          "nflow/app/chunks/modelica-settings-Dbz-D_F7.js",
           "nflow/app/chunks/native-rpc-ZXMdv8Gt.js",
-          "nflow/app/chunks/quick-connect-C8ds5oCB.js",
-          "nflow/app/chunks/quick-insert-DO893eAn.js",
-          "nflow/app/chunks/render-DyV6XQQe.js",
-          "nflow/app/chunks/simulation-toolbar-visibility-CaszMcmG.js",
-          "nflow/app/chunks/subsystem-handlers-C8L1vCxl.js",
-          "nflow/app/chunks/wire-labels-BhPokV97.js",
-          "nflow/app/floating-toolbar.21f3dc5fa02a.js",
+          "nflow/app/chunks/quick-connect-BhdzxXWT.js",
+          "nflow/app/chunks/quick-insert-BLa7xOp4.js",
+          "nflow/app/chunks/render-COjToR1R.js",
+          "nflow/app/chunks/simulation-toolbar-visibility-Ba72FGV7.js",
+          "nflow/app/chunks/subsystem-handlers-BlujqpN8.js",
+          "nflow/app/chunks/wire-labels-CoSjoPBm.js",
+          "nflow/app/floating-toolbar.8c235c0bb48b.js",
           "nflow/app/floating-toolbar.js",
           "nflow/app/head-init.84ac660ea83e.js",
           "nflow/app/head-init.js",
@@ -1150,7 +1150,7 @@
           "nflow/styles/themes.css",
           "nflow/styles/ui-extras.css"
         ],
-        "bytes": 4081563
+        "bytes": 4623638
       },
       {
         "id": "nmm",
@@ -1164,7 +1164,7 @@
           "nmm/locale/nmm-ui-en_US.json",
           "nmm/locale/nmm-ui-fr_FR.json"
         ],
-        "bytes": 234200
+        "bytes": 234458
       },
       {
         "id": "runtime-resources",
@@ -1247,7 +1247,7 @@
           "runtime-resources/bundles/xml-tests.nlpack",
           "runtime-resources/index.json"
         ],
-        "bytes": 43975297
+        "bytes": 44815244
       }
     ]
   },
@@ -1259,23 +1259,23 @@
     },
     {
       "file": "app.css",
-      "bytes": 1550942,
-      "sha256": "6c9ac1215672313ff6489889b2d8ffcab3768d0689fa27b7c592acc5f9942826"
+      "bytes": 1549349,
+      "sha256": "01a3f2317d8d9353ad64386df37a2d432ddb443d6288fd5404886b89a7753e01"
     },
     {
       "file": "app.js",
-      "bytes": 1286616,
-      "sha256": "a1b7fa9313e67470d3f281ed92a3624f6448dbf91a859e1e10c865d5e3d8a399"
+      "bytes": 1297550,
+      "sha256": "0407aabd65c1917825d6679ff775fa5a250edfb36e81969b4400b167d5e0ebaf"
     },
     {
-      "file": "assets/figureCanvasWorker-DO4fRWnq.js",
-      "bytes": 9095,
-      "sha256": "41150b4dafaa1bea393af5df358382c43f293c7e00331d3d32e64b518ef0e7f0"
+      "file": "assets/figureCanvasWorker-BgYkuI5o.js",
+      "bytes": 9089,
+      "sha256": "951ff952ab0f2a10a6d1fbfb99b20e1281374f4f5b102526639bb5f7c0392995"
     },
     {
       "file": "capabilities.json",
-      "bytes": 2743,
-      "sha256": "33df79895a027bb6605c83f51dc0c7e7fa3015bc077cdc16396912070f48108c"
+      "bytes": 2740,
+      "sha256": "32a81bbb3331f24e022fc8a55389f56d8a8e115eac43ad83650f0c962d759bac"
     },
     {
       "file": "examples/catalog.json",
@@ -1299,8 +1299,8 @@
     },
     {
       "file": "examples/examples.js",
-      "bytes": 5695,
-      "sha256": "2f7587138133f046186f1ab285ea481fa92bc611e440dfa4c93405badeab5c6f"
+      "bytes": 6099,
+      "sha256": "b3474f3e561d5a726da41f53a2ee183d093807dc60cbb25ca0e01105b04428f3"
     },
     {
       "file": "examples/files/audio/examples/demo_recorder.m",
@@ -1899,8 +1899,8 @@
     },
     {
       "file": "examples/files/graphics/examples/uicontrol/complete_ui_components_demo.m",
-      "bytes": 8537,
-      "sha256": "7c1feee21101fc30435deba2cc54828e19bfaa127209395d9d0af243126f2f69"
+      "bytes": 8741,
+      "sha256": "75f72ec48a55b6f5d6958256acf989d58bf2bde1ad9ce6d9abc3cef304a6e2ba"
     },
     {
       "file": "examples/files/graphics/examples/uicontrol/complete_uicontrol_demo.m",
@@ -1974,8 +1974,8 @@
     },
     {
       "file": "examples/files/graphics/examples/ventilator/ventilator_gui.m",
-      "bytes": 26581,
-      "sha256": "8eb39e108e567854d8cebb1f71a6039b86852c31f821284367a269f3aec1c599"
+      "bytes": 27223,
+      "sha256": "0f1db63884b325a32b4784fa0bf1330477d47c6ea3db54fd604b6502fe9e25ed"
     },
     {
       "file": "examples/files/graphics/examples/vibrating_membrane.m",
@@ -2440,12 +2440,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "97f212f9e3f311984b1a1cbecb9aeb330a74fd79fa90b4024de12e33c5bfbfb0"
+      "sha256": "c863f4e07bbc1fd3c98e4dec7574826fefea3695ab9b7de48aa753780b2896f3"
     },
     {
       "file": "index.html",
       "bytes": 1785,
-      "sha256": "cc76b2593822f10a1a1a274951973052de1d3f5507993a3a3b75216c563b97de"
+      "sha256": "3b845f4273ce774e4713433743765354370326fce6123fd9ca43e02d6e0f22f5"
     },
     {
       "file": "manifest.webmanifest",
@@ -2459,18 +2459,18 @@
     },
     {
       "file": "nelson-portable.data",
-      "bytes": 13530375,
-      "sha256": "1c905d96b54e063597f33a49d2764bc8cb4d6cb1e82b782e59b060f1dfa4098b"
+      "bytes": 7117595,
+      "sha256": "5bfc176a4af11d7be5027b90d5b69a07d6e7bb9f090f858bd0c6701c081ad655"
     },
     {
       "file": "nelson-portable.mjs",
-      "bytes": 514682,
-      "sha256": "56d71e3b8546ee29521a0a134d91d1efd0b833c7509df1475a9e5032559d6f9c"
+      "bytes": 594050,
+      "sha256": "732bc3b90bc5cf54f39961e2ea06ae52eb18bf2db2a3768a1e1c46fccc8f8c10"
     },
     {
       "file": "nelson-portable.wasm",
-      "bytes": 42718917,
-      "sha256": "89d0d1d37037a21a954ea2de36bb81a05ecc215176b68c6e5ec196db17c1759e"
+      "bytes": 36644676,
+      "sha256": "1465e97337a18ea99915d3c2d7c9a01bbbacf313c42987b6a8c137056bdcb5aa"
     },
     {
       "file": "nelson-pwa-icon.png",
@@ -2479,8 +2479,8 @@
     },
     {
       "file": "nelson-runtime.mjs",
-      "bytes": 20793,
-      "sha256": "8c6a714619018b2825e15070d2a80926612c17fea296b2835c9634c3de5be4bb"
+      "bytes": 21447,
+      "sha256": "e07d1f411699dee38505d7c929b73b1da1b16f7ee5877e5b58630d64defcec50"
     },
     {
       "file": "nelson-worker-protocol.mjs",
@@ -2490,7 +2490,7 @@
     {
       "file": "nelson-worker.mjs",
       "bytes": 44388,
-      "sha256": "529d0370cf6bacc6df5c2e8939d15307174d0ff01530c5df7faee16c40901d5c"
+      "sha256": "32552dcc6fa06d4d5b7b68e008b9c18952594dffa3936c19310cabd5444e7b48"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -2498,34 +2498,34 @@
       "sha256": "2d2741130038745946b17cbb365d80a075608a851b7830ffd0a812358b3f0365"
     },
     {
-      "file": "nflow/app/app-CP8fMOVO.js",
-      "bytes": 16233,
-      "sha256": "da4bb994cb5ec5b32ab53d3e1a0f149f6b7a73e1913042dbe7127578916448d2"
+      "file": "nflow/app/app-iWCsq4fa.js",
+      "bytes": 16356,
+      "sha256": "87677e9108a3744c4c79b5da229ec70fca5ea790104c25a14426f07b8f9cecc5"
     },
     {
-      "file": "nflow/app/chunks/app-CdL-QPIB.js",
-      "bytes": 550402,
-      "sha256": "e04108d41fad568a87ef5327d34cee00c8012432439983b725476e7668d03d5a"
+      "file": "nflow/app/chunks/app-D-y8B0Fb.js",
+      "bytes": 554018,
+      "sha256": "cc25105bb5e3fe7c790ffeb27ab7a516c892cff61389875736365d4df82f25b4"
     },
     {
-      "file": "nflow/app/chunks/canvas-navigation-tools-BGzEa6qA.js",
+      "file": "nflow/app/chunks/canvas-navigation-tools-DNnR3UFL.js",
       "bytes": 608,
-      "sha256": "b6d7a34b8431bef928adc1112879b98cb78128b5d333f1712935129c2f282fdd"
+      "sha256": "53b8be64a61b6013b041d0ebb66da1bb6ef7db7de3bd46d1c12c3be6510e7b8b"
     },
     {
-      "file": "nflow/app/chunks/console-host-B08Br43s.js",
-      "bytes": 13350,
-      "sha256": "5fdca4d5a1b656311b45611d0eaf3a66f105d7ad6dbaf546c439c7537e11d97c"
+      "file": "nflow/app/chunks/console-host-B7J3oVFb.js",
+      "bytes": 13355,
+      "sha256": "9c2d48b70cbd0db99465629664e7ee24533624d7fd6c2112641bf59a9a166391"
     },
     {
-      "file": "nflow/app/chunks/dup-drag-B5FUwsuF.js",
+      "file": "nflow/app/chunks/dup-drag-Di2EdibQ.js",
       "bytes": 1566,
-      "sha256": "109cec96d18183309d7fb285bba4e9ca6729395fd291d63f8a15628b7ec40f03"
+      "sha256": "ca2cf4a02b44c25ee0f1856addd1903cbb84b45af4dcd9141c436b78ba77f4fd"
     },
     {
-      "file": "nflow/app/chunks/fmu-import-DNZ_3xR1.js",
+      "file": "nflow/app/chunks/fmu-import-ZbOs6oG8.js",
       "bytes": 3916,
-      "sha256": "40ea7985d32cc1cc1039521359a952f5c26d6da9b05ad72c98897e472edde205"
+      "sha256": "02439e0e39c827dfa49c305b29da43dd9b81878f9906ffc8bf7b8b0e863a7061"
     },
     {
       "file": "nflow/app/chunks/helpers-CyRuiCrn.js",
@@ -2533,9 +2533,9 @@
       "sha256": "7a4deb736a0a9d6781405226c14218bd9dd55c912a9a51f0a4ce3f664df249dd"
     },
     {
-      "file": "nflow/app/chunks/history-BWUlwZWV.js",
-      "bytes": 8696,
-      "sha256": "92304e35273de67422cc2de2c978d070e993adaf1ab09596f96c926117c1b0f2"
+      "file": "nflow/app/chunks/history-BNRMi4gQ.js",
+      "bytes": 8644,
+      "sha256": "6935045aad0ba9d0bb66d7578cb98bf671f886c348fa075f12e896ebd7332103"
     },
     {
       "file": "nflow/app/chunks/icon-cache-Dde71SRH.js",
@@ -2543,14 +2543,14 @@
       "sha256": "95df24ab15ead6a9b35a0ee99ded672ca28212e1c36b7ed3f12622b2e69b3d73"
     },
     {
-      "file": "nflow/app/chunks/minimap-DOzBLYZh.js",
-      "bytes": 2515,
-      "sha256": "ca8d99c58804da6dcb32fc4d76f11e75102c71fa96f1d30d0eaa7091dfa1be69"
+      "file": "nflow/app/chunks/minimap-BnDFz9dF.js",
+      "bytes": 2526,
+      "sha256": "a3f46891ed5150516d9a3b2f08c517f6ebdd22f562ade84c3699ed3eb70fd5d7"
     },
     {
-      "file": "nflow/app/chunks/modelica-settings-ZINSKCVY.js",
+      "file": "nflow/app/chunks/modelica-settings-Dbz-D_F7.js",
       "bytes": 2413,
-      "sha256": "12044e88eac40b54d3374b3a78c26babb3512d29a79c2cfb34620e3569ded6e6"
+      "sha256": "aca5ce1f4742fcb6e6436ded0a860bc2accc756ec85815c6808b55c649c193ef"
     },
     {
       "file": "nflow/app/chunks/native-rpc-ZXMdv8Gt.js",
@@ -2558,44 +2558,44 @@
       "sha256": "e4b4648204856b165d5ef3c9090c138afe7b63f09315a7df6937a098c35d84c9"
     },
     {
-      "file": "nflow/app/chunks/quick-connect-C8ds5oCB.js",
+      "file": "nflow/app/chunks/quick-connect-BhdzxXWT.js",
       "bytes": 1603,
-      "sha256": "7dbfd6408c6002b5af564455e7eabfb9755ae53a56a36460bae6c3c42fd62ddf"
+      "sha256": "8eb888f6549f8f7a9520dec308c92b003e058a5beb2b79cf7f7e15b46b0a710a"
     },
     {
-      "file": "nflow/app/chunks/quick-insert-DO893eAn.js",
-      "bytes": 88354,
-      "sha256": "cc0b74379265404f8c730bb12352d68eec4c85ad8d46185b555aa87c81e79331"
+      "file": "nflow/app/chunks/quick-insert-BLa7xOp4.js",
+      "bytes": 88361,
+      "sha256": "63491f3a55a575e0c9048f269a2ddba2c65ff8f2a1c7a0670b5cfcc318084077"
     },
     {
-      "file": "nflow/app/chunks/render-DyV6XQQe.js",
-      "bytes": 167557,
-      "sha256": "a559a832bca1b22e00e6971feb4e02272bce8b1dfc8a2ce0d6254ef70ae07426"
+      "file": "nflow/app/chunks/render-COjToR1R.js",
+      "bytes": 167545,
+      "sha256": "970afa113af0bdbc8df1795f1bd67fa546020931942a7ef9fab9dfaf2f863cd0"
     },
     {
-      "file": "nflow/app/chunks/simulation-toolbar-visibility-CaszMcmG.js",
+      "file": "nflow/app/chunks/simulation-toolbar-visibility-Ba72FGV7.js",
       "bytes": 593,
-      "sha256": "2735d39ff25e0600cef391d951010de2478a67778b44777c1fb82d99f73414fa"
+      "sha256": "10b5a13a9ef8c10fe1c78570e045ae96bfdfa4e3ebd5ba5b2fd555fc8f8d32b4"
     },
     {
-      "file": "nflow/app/chunks/subsystem-handlers-C8L1vCxl.js",
+      "file": "nflow/app/chunks/subsystem-handlers-BlujqpN8.js",
       "bytes": 6409,
-      "sha256": "1bfac3794f18c4b4b867f0002606fffd9a09c26ab25825504d3c63b9f6e625f2"
+      "sha256": "1d736e0d5edf97b41a686e2f4d06174ea0d19f4cf3b1ff3ec97fe9c3126f42d5"
     },
     {
-      "file": "nflow/app/chunks/wire-labels-BhPokV97.js",
-      "bytes": 3016,
-      "sha256": "02e2ab30aadc48d3048af8daaac9538243e898569b74d8a868c31e5925462256"
+      "file": "nflow/app/chunks/wire-labels-CoSjoPBm.js",
+      "bytes": 3038,
+      "sha256": "832036f0fce39334a88b1524aae355a19e1dff0170c4b02defa5642e36fbe356"
     },
     {
-      "file": "nflow/app/floating-toolbar.21f3dc5fa02a.js",
-      "bytes": 149197,
-      "sha256": "4666f67a57e38ba002eca3c0fb6c7c0b83c749287e7b26e7a4dcf1ef01e1eab0"
+      "file": "nflow/app/floating-toolbar.8c235c0bb48b.js",
+      "bytes": 149416,
+      "sha256": "99f5b3dfbfc36974258307b723dd05576a45d85b994c124b47af3241b31ab384"
     },
     {
       "file": "nflow/app/floating-toolbar.js",
-      "bytes": 149197,
-      "sha256": "4666f67a57e38ba002eca3c0fb6c7c0b83c749287e7b26e7a4dcf1ef01e1eab0"
+      "bytes": 149416,
+      "sha256": "99f5b3dfbfc36974258307b723dd05576a45d85b994c124b47af3241b31ab384"
     },
     {
       "file": "nflow/app/head-init.84ac660ea83e.js",
@@ -2924,13 +2924,13 @@
     },
     {
       "file": "nflow/assets/katex/katex.min.css",
-      "bytes": 23827,
-      "sha256": "0289a02cf451a44dd73add683a09644252363871ac11713a647b732cee8b1ee3"
+      "bytes": 24794,
+      "sha256": "f76ac5391ddb3465afbff9f22394841ed065f5f45b5444c2d120b5126b6d56a5"
     },
     {
       "file": "nflow/assets/katex/katex.min.js",
-      "bytes": 272537,
-      "sha256": "a29d2961d3146de5949d78ac7c1a9d93ae54955bad22a6db4fbe836e88e8bf48"
+      "bytes": 272756,
+      "sha256": "608ba65190845e9a9b6865ec75cd5d04fa9bc1ef86a6d23e6b01340d5f55eee3"
     },
     {
       "file": "nflow/config/libraries.json",
@@ -3470,12 +3470,12 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "c75b509072c6abd2f0a3d358264e3f18ae69ae5939ef848fdde7ab8a734b7d7c"
+      "sha256": "56181752b51683c4d9a8e9aa6a1cc1b57e541afda9e1c0fb366b366f943fdc7c"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
-      "bytes": 192997,
-      "sha256": "e5af0e734daed641ddfff9340de66c3c50baea6d12b7a1a5d63a9adddef85d63"
+      "bytes": 371695,
+      "sha256": "7a52c525e25a19525dd7b8d706482bf60ea81df54b09813f5499ff3050f54d81"
     },
     {
       "file": "nflow/libraries/acausal/blocks.js",
@@ -3484,428 +3484,428 @@
     },
     {
       "file": "nflow/libraries/acausal_electrical/Capacitor.svg",
-      "bytes": 676,
-      "sha256": "df51eb2c82b6ecc267ad5b62250ae0169b35c8e32a44f1bedfe5bdfa14e33687"
+      "bytes": 1139,
+      "sha256": "07ead0e30ff1c882eace86a7aebc7477ca8b72637414eece72abefec993a152e"
     },
     {
       "file": "nflow/libraries/acausal_electrical/CCC.svg",
-      "bytes": 772,
-      "sha256": "5e655fb9d685506489649145f3578612a4be2a059f349577d13d4dd05e8dff9d"
+      "bytes": 1477,
+      "sha256": "0a2dec149959b7a8e3bdb92d48f8b53abe9b38601738e2355b53fe8f56a8ef90"
     },
     {
       "file": "nflow/libraries/acausal_electrical/CCV.svg",
-      "bytes": 723,
-      "sha256": "4d119a67a9aac6d164ba5dc056aab202b8b584ba74bac70894c4311409c6f536"
+      "bytes": 1212,
+      "sha256": "6ff0d04be2ae271d6e410c21545d90dfa985e7a7025ace82afdc503a1568a934"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Conductor.svg",
-      "bytes": 681,
-      "sha256": "7576a5329eb735b5a8ee8325727984bf107e07c57b7cd1a5a8bc680b2f49e9d0"
+      "bytes": 1080,
+      "sha256": "6a6c093b7addfdbbfcc87e60488ef362660445007f285d64ef0d60ab891d027e"
     },
     {
       "file": "nflow/libraries/acausal_electrical/ConstantCurrent.svg",
-      "bytes": 515,
-      "sha256": "875c1cbe8e079fa4dcdf40a55f2f6204332d96f0f18acabb4333ee5ff2f72dc0"
+      "bytes": 1233,
+      "sha256": "8e75be0327e81ccf34e92385f703d248be230fc4c604d75a427bd7f017a03d8c"
     },
     {
       "file": "nflow/libraries/acausal_electrical/ConstantVoltage.svg",
-      "bytes": 686,
-      "sha256": "2e9e4d7cecbce4d779ae1e9e254843a86ba689934acf70fbd9e7a78ab8935f37"
+      "bytes": 1249,
+      "sha256": "5cd577b8051bd4cb4ea91bba6872ed4f0438e7ee60a70227f40f21c33733ca71"
     },
     {
       "file": "nflow/libraries/acausal_electrical/CurrentSensor.svg",
-      "bytes": 477,
-      "sha256": "dc9ae6b36d0e0bd8c8949168b61a40aba7cf03e7ccc90330df0a3e2658452174"
+      "bytes": 2006,
+      "sha256": "1072aa41de30f5377b09ef8908b139e106c11881086d24fcc5d6cb84a539a334"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Diode.svg",
-      "bytes": 660,
-      "sha256": "a8f7da0668697206dc6867672ea397cd600222f92b05c92e9a27199bbe64028e"
+      "bytes": 1135,
+      "sha256": "38aa418a94cc6503e92ef9931881d5ea7f34fdaf3751b0684b2e7f3c00d83147"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Capacitor.svg",
-      "bytes": 676,
-      "sha256": "df51eb2c82b6ecc267ad5b62250ae0169b35c8e32a44f1bedfe5bdfa14e33687"
+      "bytes": 1139,
+      "sha256": "07ead0e30ff1c882eace86a7aebc7477ca8b72637414eece72abefec993a152e"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/CCC.svg",
-      "bytes": 772,
-      "sha256": "5e655fb9d685506489649145f3578612a4be2a059f349577d13d4dd05e8dff9d"
+      "bytes": 1477,
+      "sha256": "0a2dec149959b7a8e3bdb92d48f8b53abe9b38601738e2355b53fe8f56a8ef90"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/CCV.svg",
-      "bytes": 723,
-      "sha256": "4d119a67a9aac6d164ba5dc056aab202b8b584ba74bac70894c4311409c6f536"
+      "bytes": 1212,
+      "sha256": "6ff0d04be2ae271d6e410c21545d90dfa985e7a7025ace82afdc503a1568a934"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Conductor.svg",
-      "bytes": 681,
-      "sha256": "7576a5329eb735b5a8ee8325727984bf107e07c57b7cd1a5a8bc680b2f49e9d0"
+      "bytes": 1080,
+      "sha256": "6a6c093b7addfdbbfcc87e60488ef362660445007f285d64ef0d60ab891d027e"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/ConstantCurrent.svg",
-      "bytes": 515,
-      "sha256": "875c1cbe8e079fa4dcdf40a55f2f6204332d96f0f18acabb4333ee5ff2f72dc0"
+      "bytes": 1233,
+      "sha256": "8e75be0327e81ccf34e92385f703d248be230fc4c604d75a427bd7f017a03d8c"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/ConstantVoltage.svg",
-      "bytes": 686,
-      "sha256": "2e9e4d7cecbce4d779ae1e9e254843a86ba689934acf70fbd9e7a78ab8935f37"
+      "bytes": 1249,
+      "sha256": "5cd577b8051bd4cb4ea91bba6872ed4f0438e7ee60a70227f40f21c33733ca71"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/CurrentSensor.svg",
-      "bytes": 477,
-      "sha256": "dc9ae6b36d0e0bd8c8949168b61a40aba7cf03e7ccc90330df0a3e2658452174"
+      "bytes": 2006,
+      "sha256": "1072aa41de30f5377b09ef8908b139e106c11881086d24fcc5d6cb84a539a334"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Diode.svg",
-      "bytes": 660,
-      "sha256": "a8f7da0668697206dc6867672ea397cd600222f92b05c92e9a27199bbe64028e"
+      "bytes": 1135,
+      "sha256": "38aa418a94cc6503e92ef9931881d5ea7f34fdaf3751b0684b2e7f3c00d83147"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/ExpSineCurrent.svg",
-      "bytes": 523,
-      "sha256": "f1daa45382ab712a1bdf6a065a01a3c9053cf63144096678136853a5748e149c"
+      "bytes": 1534,
+      "sha256": "1a10563982da49fc039d71b55de023a41d0401fddac3d64f0a76d6c236a3e563"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/ExpSineVoltage.svg",
-      "bytes": 474,
-      "sha256": "fc6443e1cead3995b057ce5c79de53d50915e756b1ec45da823a7ef9a7c9d501"
+      "bytes": 1545,
+      "sha256": "7614c0f1afa7608a1b4bca26dc0da6f10ca1c767690bb279d8fb6f3c940e2821"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Ground.svg",
-      "bytes": 630,
-      "sha256": "13b0c34d23741ce50cb8132fc435b8dda8985bc44e61620eee0d50b6bd97583e"
+      "bytes": 984,
+      "sha256": "ada6ff4013fa99f30a15a80bd98d21e6b7871a02022b1cff9117daeb6cc47842"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Gyrator.svg",
-      "bytes": 599,
-      "sha256": "edf79ca65381739d4ddc25bc19c14139faf1dded2f5f75f8074e076267d6db41"
+      "bytes": 2559,
+      "sha256": "9f928c7c88b9e27a42944822c1f78a43e0797f8bbfd2b02cb0a211b6881617bf"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/HeatingResistor.svg",
-      "bytes": 764,
-      "sha256": "ed5ccadf57ba585c0e8ea31880cb407ab9be13bec1d63134f6076f9637f42060"
+      "bytes": 1147,
+      "sha256": "8eef9c6e35fe343745f3971a068164a5b6c88d14622057074baa27ad5dd8db16"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/IdealDiode.svg",
-      "bytes": 663,
-      "sha256": "3d863d91b2506632cdaf14ecd721b993063611609d0c9999e28505a4fe4abbda"
+      "bytes": 976,
+      "sha256": "fa528a35276cf5db7fb1b897cbf74db4a5887221bc0b89032f00104c44f05308"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/IdealOpAmp.svg",
-      "bytes": 637,
-      "sha256": "e7e3d09c67b3c64107fd5dae3a4a20560013780a5e56d8aa57e34877e597825a"
+      "bytes": 1526,
+      "sha256": "c4e488b43ea904484d77157298181d23df8793838907752471687b38eaa76bbe"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/IdealSwitch.svg",
-      "bytes": 767,
-      "sha256": "fee50ff76f9bbcf2039a115348a7f80211fe61832923b4876db53611456861f1"
+      "bytes": 946,
+      "sha256": "f2d759f80cab02a8cc4f30dc7da1e7eccaafb3d91efb665383c8a9fb8726fa82"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/IdealTransformer.svg",
-      "bytes": 673,
-      "sha256": "bb2559e70f6281b7fdd7eff6c3f7588210fda4051a6748e44d58f20037e56d3a"
+      "bytes": 3347,
+      "sha256": "80b102b5a5a778a3703979b8d62837e34da9a17293713d33a59347eb30de8a19"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Idle.svg",
-      "bytes": 484,
-      "sha256": "bcd84f2160b5f1c7a6857522600a405d205c1c67d98620fcd9356d03bdbd6598"
+      "bytes": 818,
+      "sha256": "ad0eb5c6d6a26f84ad26588a98109d34003f7843c763db776e8e57ee89a52b9b"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Inductor.svg",
-      "bytes": 595,
-      "sha256": "d645c399e64b00d441c84a5debf62589bba950c6ace5f40cb2d9155f5bd088c0"
+      "bytes": 1567,
+      "sha256": "d4a2286472823d0bc35b99bd37f9f3c918909ac4e26b235ccba5a4b924901381"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/NMOS.svg",
-      "bytes": 820,
-      "sha256": "56c3863c327b5889d7419833d62fba0623f5adf15a299870ae21736154691983"
+      "bytes": 1644,
+      "sha256": "54b0fd6b7149bad9e36605e71f096ddf76f4d3839e954ceb88897e53253697af"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/NPN.svg",
-      "bytes": 747,
-      "sha256": "ffb311209a28975c8373e7ed2ac609163b67878eec0f55e429f506da0f5c1e06"
+      "bytes": 1384,
+      "sha256": "37962c4e8f4847a2021d72be5f0a1ae8cf07a7be048bd7ddfad2ca7654387236"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/PMOS.svg",
-      "bytes": 820,
-      "sha256": "ef69f77172e4242527fe7ab5f14cfb1b9b272d0d34d4eee37a12cbedea04409b"
+      "bytes": 1644,
+      "sha256": "ea3c2684932df3949f0e023c65540760dfb488ffc456af6555b9779b211928c1"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/PNP.svg",
-      "bytes": 747,
-      "sha256": "a0f8ef41a7f98ba829cd0bdd9bb9992173f0db0c7c5d6e42afdeb07daf16e618"
+      "bytes": 1387,
+      "sha256": "ab2751d01a64057b53a32f969b772640a8134b40fbd09979d29e0e66fd6cdff3"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/PotentialSensor.svg",
-      "bytes": 436,
-      "sha256": "ea73b9bf6b5de2936810bddfe910cd7517be9a9296bd61daca01a5c4c0a19413"
+      "bytes": 2005,
+      "sha256": "ea7b568d90d294b062e6d5ae1518fad14ebd57d3df44120785ac017b5968b547"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/RampCurrent.svg",
-      "bytes": 499,
-      "sha256": "992ad573bf562839169768d21637d4ebc8da319310a3a8bfbac0995ca55f995a"
+      "bytes": 1220,
+      "sha256": "3caa57afe8e0460f89dada95f6ae65a59190f8626fec8312ebe9a75a6638c7d5"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/RampVoltage.svg",
-      "bytes": 450,
-      "sha256": "24013976e51c5bde5ab97140d40337f8ab39c0b07b2ef989628fe670a9d7c043"
+      "bytes": 1236,
+      "sha256": "3a28a717dc136d4112a2a8c215b25b9a989d4171180f3b0a6be9ba10465238da"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Resistor.svg",
-      "bytes": 574,
-      "sha256": "3d7a252aa79365ba1b37ec1ad0acfa2d8a0244e8e4fe552a89a0240bf3642709"
+      "bytes": 978,
+      "sha256": "ce47481dc152e355f2969b0df8d0b6eb2c0bf7321fd74b1e41416b6b182448e7"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/Short.svg",
-      "bytes": 388,
-      "sha256": "8d3adfa8f1b38179239783b0375ff34a339fcc30f63749c5bf82a739bf2b422f"
+      "bytes": 687,
+      "sha256": "c5bca6c75fa94528c23cd9f5ae361f55b8d20bd9dfb4a00c8d003ee8a3978e1a"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/SignalCurrent.svg",
-      "bytes": 610,
-      "sha256": "7939f62d13ca9c9ea900bee5997850619018ccb0b860aaecaefd760be5bf3eb0"
+      "bytes": 1073,
+      "sha256": "ad3896222160d178207c2604d6ab97ca618f29e8a5779550fc9e5524b311693f"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/SignalVoltage.svg",
-      "bytes": 781,
-      "sha256": "7c380ce5866451ade903b8b912278c8dd4d65dd183a91e165ffaa41003b06d44"
+      "bytes": 1089,
+      "sha256": "660f89a2b96d8717f0e79a567a19690a03b918c71dcec20296921ef06405e9f5"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/SineCurrent.svg",
-      "bytes": 520,
-      "sha256": "0720e6c060524727d38fe823f87e621b8c78161c152a13cc96089bee08c29bea"
+      "bytes": 1429,
+      "sha256": "1b120ddd9b738cf3c77aeb0d950f9c692f483c33499589cb7cc79d6fc221734d"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/SineVoltage.svg",
-      "bytes": 471,
-      "sha256": "eb1b34870c5c32c28ff5bee733275847e1a92bf823c222ae944c6af2c2f1f7e8"
+      "bytes": 1445,
+      "sha256": "5fe17666e487b58e914fceb1fe209df694240a5b3ebef4b9451d15480306d087"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/TrapezoidCurrent.svg",
-      "bytes": 506,
-      "sha256": "24c462bba7f54998055448107291028d17fe1a0f174f4f8990e89ba0452bbfd3"
+      "bytes": 1245,
+      "sha256": "43558fe5ead28ba2975db558ee3550f1056f77e0ad3259d2db31316aca904722"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/TrapezoidVoltage.svg",
-      "bytes": 457,
-      "sha256": "0d5400ffe2fdb3ecdcc5458cbc0962c6f457db2cbe13fcb73eb181aecd4dabe1"
+      "bytes": 1261,
+      "sha256": "b83cc59396bb2afdef3d63179b6c64906b4637fc50225a27d8346a4ec733172c"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VariableCapacitor.svg",
-      "bytes": 895,
-      "sha256": "cb3f7975721b523b0dc2031c5411a6e21481e668375ffc668e7037f7ff03cc63"
+      "bytes": 989,
+      "sha256": "56cf0378b6b2ff6cf68527eb4ae44672b6cd52e705f35447d8beb4ab4bafac2b"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VariableConductor.svg",
-      "bytes": 900,
-      "sha256": "2ff399ae0467f475deba450f76ad328494c4eed2d15a68670fcd54668551ebde"
+      "bytes": 829,
+      "sha256": "32722e9210703d8b42f4dd0677a818606597f87c66b461233ce8c7a6647ac0a0"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VariableInductor.svg",
-      "bytes": 812,
-      "sha256": "a5407408b319a31a7aec662624d97468e7ae16fe40778d5c4fecea765eaf33be"
+      "bytes": 1417,
+      "sha256": "92845adab249be815bce27429b3185597fd240eb117c0f67f1b3773af46ca057"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VariableResistor.svg",
-      "bytes": 793,
-      "sha256": "81dc9450c1f2d76a53e0f9462e358b2c432ff48c5af67424031ad5d7a0a3e3f5"
+      "bytes": 828,
+      "sha256": "58ccf4437e0781ee1ad772c0c2c3a259cc7741a04a60e523462221d423f483e5"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VCC.svg",
-      "bytes": 751,
-      "sha256": "25ebbb71061948b370db32e85fa2a246751910a2b4b4e439841c268b5f93c413"
+      "bytes": 1668,
+      "sha256": "157591c36e3519fcbc288a0f97c4970e4b9eb2b6ac01e4d42ed38c062c0b782b"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VCV.svg",
-      "bytes": 702,
-      "sha256": "83b4e91e45532a1f530e7226b2ebeba1c95e931c765ab36e0cde4c39fc2f381e"
+      "bytes": 1349,
+      "sha256": "b23953726af2b6050c8a612f04526d0236bbe829dc6194f35e0b70d5d81d5c16"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/VoltageSensor.svg",
-      "bytes": 477,
-      "sha256": "ea0d667cb212740ce5ba15741381ec355bb11af52ec2922428d2f63a39549d12"
+      "bytes": 2136,
+      "sha256": "ccb104e6dd3cd10ca4d056e30959baf7e14e63aae9d03427af97cb8e7afb5383"
     },
     {
       "file": "nflow/libraries/acausal_electrical/exports/ZDiode.svg",
-      "bytes": 649,
-      "sha256": "97274db943aee3ed57be40568fffa1f74cb55b2ac656759dabeb7e962d60a274"
+      "bytes": 1107,
+      "sha256": "1c2bfc456cd2daed421d637228fb1fa3f5d7c33edd3027df7f19744721093cf3"
     },
     {
       "file": "nflow/libraries/acausal_electrical/ExpSineCurrent.svg",
-      "bytes": 523,
-      "sha256": "f1daa45382ab712a1bdf6a065a01a3c9053cf63144096678136853a5748e149c"
+      "bytes": 1534,
+      "sha256": "1a10563982da49fc039d71b55de023a41d0401fddac3d64f0a76d6c236a3e563"
     },
     {
       "file": "nflow/libraries/acausal_electrical/ExpSineVoltage.svg",
-      "bytes": 474,
-      "sha256": "fc6443e1cead3995b057ce5c79de53d50915e756b1ec45da823a7ef9a7c9d501"
+      "bytes": 1545,
+      "sha256": "7614c0f1afa7608a1b4bca26dc0da6f10ca1c767690bb279d8fb6f3c940e2821"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Ground.svg",
-      "bytes": 630,
-      "sha256": "13b0c34d23741ce50cb8132fc435b8dda8985bc44e61620eee0d50b6bd97583e"
+      "bytes": 984,
+      "sha256": "ada6ff4013fa99f30a15a80bd98d21e6b7871a02022b1cff9117daeb6cc47842"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Gyrator.svg",
-      "bytes": 599,
-      "sha256": "edf79ca65381739d4ddc25bc19c14139faf1dded2f5f75f8074e076267d6db41"
+      "bytes": 2559,
+      "sha256": "9f928c7c88b9e27a42944822c1f78a43e0797f8bbfd2b02cb0a211b6881617bf"
     },
     {
       "file": "nflow/libraries/acausal_electrical/HeatingResistor.svg",
-      "bytes": 764,
-      "sha256": "ed5ccadf57ba585c0e8ea31880cb407ab9be13bec1d63134f6076f9637f42060"
+      "bytes": 1147,
+      "sha256": "8eef9c6e35fe343745f3971a068164a5b6c88d14622057074baa27ad5dd8db16"
     },
     {
       "file": "nflow/libraries/acausal_electrical/IdealDiode.svg",
-      "bytes": 663,
-      "sha256": "3d863d91b2506632cdaf14ecd721b993063611609d0c9999e28505a4fe4abbda"
+      "bytes": 976,
+      "sha256": "fa528a35276cf5db7fb1b897cbf74db4a5887221bc0b89032f00104c44f05308"
     },
     {
       "file": "nflow/libraries/acausal_electrical/IdealOpAmp.svg",
-      "bytes": 637,
-      "sha256": "e7e3d09c67b3c64107fd5dae3a4a20560013780a5e56d8aa57e34877e597825a"
+      "bytes": 1526,
+      "sha256": "c4e488b43ea904484d77157298181d23df8793838907752471687b38eaa76bbe"
     },
     {
       "file": "nflow/libraries/acausal_electrical/IdealSwitch.svg",
-      "bytes": 767,
-      "sha256": "fee50ff76f9bbcf2039a115348a7f80211fe61832923b4876db53611456861f1"
+      "bytes": 946,
+      "sha256": "f2d759f80cab02a8cc4f30dc7da1e7eccaafb3d91efb665383c8a9fb8726fa82"
     },
     {
       "file": "nflow/libraries/acausal_electrical/IdealTransformer.svg",
-      "bytes": 673,
-      "sha256": "bb2559e70f6281b7fdd7eff6c3f7588210fda4051a6748e44d58f20037e56d3a"
+      "bytes": 3347,
+      "sha256": "80b102b5a5a778a3703979b8d62837e34da9a17293713d33a59347eb30de8a19"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Idle.svg",
-      "bytes": 484,
-      "sha256": "bcd84f2160b5f1c7a6857522600a405d205c1c67d98620fcd9356d03bdbd6598"
+      "bytes": 818,
+      "sha256": "ad0eb5c6d6a26f84ad26588a98109d34003f7843c763db776e8e57ee89a52b9b"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Inductor.svg",
-      "bytes": 595,
-      "sha256": "d645c399e64b00d441c84a5debf62589bba950c6ace5f40cb2d9155f5bd088c0"
+      "bytes": 1567,
+      "sha256": "d4a2286472823d0bc35b99bd37f9f3c918909ac4e26b235ccba5a4b924901381"
     },
     {
       "file": "nflow/libraries/acausal_electrical/library.json",
-      "bytes": 36324,
-      "sha256": "d58da193e04b5616cf319355bc382062702643dfdf5d498db2bd6bb592b2035a"
+      "bytes": 36389,
+      "sha256": "52f52fe83f1fbe0dbe8894f69646ccf91641bc00243c31d7d633de87953c30a0"
     },
     {
       "file": "nflow/libraries/acausal_electrical/NMOS.svg",
-      "bytes": 820,
-      "sha256": "56c3863c327b5889d7419833d62fba0623f5adf15a299870ae21736154691983"
+      "bytes": 1644,
+      "sha256": "54b0fd6b7149bad9e36605e71f096ddf76f4d3839e954ceb88897e53253697af"
     },
     {
       "file": "nflow/libraries/acausal_electrical/NPN.svg",
-      "bytes": 747,
-      "sha256": "ffb311209a28975c8373e7ed2ac609163b67878eec0f55e429f506da0f5c1e06"
+      "bytes": 1384,
+      "sha256": "37962c4e8f4847a2021d72be5f0a1ae8cf07a7be048bd7ddfad2ca7654387236"
     },
     {
       "file": "nflow/libraries/acausal_electrical/PMOS.svg",
-      "bytes": 820,
-      "sha256": "ef69f77172e4242527fe7ab5f14cfb1b9b272d0d34d4eee37a12cbedea04409b"
+      "bytes": 1644,
+      "sha256": "ea3c2684932df3949f0e023c65540760dfb488ffc456af6555b9779b211928c1"
     },
     {
       "file": "nflow/libraries/acausal_electrical/PNP.svg",
-      "bytes": 747,
-      "sha256": "a0f8ef41a7f98ba829cd0bdd9bb9992173f0db0c7c5d6e42afdeb07daf16e618"
+      "bytes": 1387,
+      "sha256": "ab2751d01a64057b53a32f969b772640a8134b40fbd09979d29e0e66fd6cdff3"
     },
     {
       "file": "nflow/libraries/acausal_electrical/PotentialSensor.svg",
-      "bytes": 436,
-      "sha256": "ea73b9bf6b5de2936810bddfe910cd7517be9a9296bd61daca01a5c4c0a19413"
+      "bytes": 2005,
+      "sha256": "ea7b568d90d294b062e6d5ae1518fad14ebd57d3df44120785ac017b5968b547"
     },
     {
       "file": "nflow/libraries/acausal_electrical/RampCurrent.svg",
-      "bytes": 499,
-      "sha256": "992ad573bf562839169768d21637d4ebc8da319310a3a8bfbac0995ca55f995a"
+      "bytes": 1220,
+      "sha256": "3caa57afe8e0460f89dada95f6ae65a59190f8626fec8312ebe9a75a6638c7d5"
     },
     {
       "file": "nflow/libraries/acausal_electrical/RampVoltage.svg",
-      "bytes": 450,
-      "sha256": "24013976e51c5bde5ab97140d40337f8ab39c0b07b2ef989628fe670a9d7c043"
+      "bytes": 1236,
+      "sha256": "3a28a717dc136d4112a2a8c215b25b9a989d4171180f3b0a6be9ba10465238da"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Resistor.svg",
-      "bytes": 574,
-      "sha256": "3d7a252aa79365ba1b37ec1ad0acfa2d8a0244e8e4fe552a89a0240bf3642709"
+      "bytes": 978,
+      "sha256": "ce47481dc152e355f2969b0df8d0b6eb2c0bf7321fd74b1e41416b6b182448e7"
     },
     {
       "file": "nflow/libraries/acausal_electrical/Short.svg",
-      "bytes": 388,
-      "sha256": "8d3adfa8f1b38179239783b0375ff34a339fcc30f63749c5bf82a739bf2b422f"
+      "bytes": 687,
+      "sha256": "c5bca6c75fa94528c23cd9f5ae361f55b8d20bd9dfb4a00c8d003ee8a3978e1a"
     },
     {
       "file": "nflow/libraries/acausal_electrical/SignalCurrent.svg",
-      "bytes": 610,
-      "sha256": "7939f62d13ca9c9ea900bee5997850619018ccb0b860aaecaefd760be5bf3eb0"
+      "bytes": 1073,
+      "sha256": "ad3896222160d178207c2604d6ab97ca618f29e8a5779550fc9e5524b311693f"
     },
     {
       "file": "nflow/libraries/acausal_electrical/SignalVoltage.svg",
-      "bytes": 781,
-      "sha256": "7c380ce5866451ade903b8b912278c8dd4d65dd183a91e165ffaa41003b06d44"
+      "bytes": 1089,
+      "sha256": "660f89a2b96d8717f0e79a567a19690a03b918c71dcec20296921ef06405e9f5"
     },
     {
       "file": "nflow/libraries/acausal_electrical/SineCurrent.svg",
-      "bytes": 520,
-      "sha256": "0720e6c060524727d38fe823f87e621b8c78161c152a13cc96089bee08c29bea"
+      "bytes": 1429,
+      "sha256": "1b120ddd9b738cf3c77aeb0d950f9c692f483c33499589cb7cc79d6fc221734d"
     },
     {
       "file": "nflow/libraries/acausal_electrical/SineVoltage.svg",
-      "bytes": 471,
-      "sha256": "eb1b34870c5c32c28ff5bee733275847e1a92bf823c222ae944c6af2c2f1f7e8"
+      "bytes": 1445,
+      "sha256": "5fe17666e487b58e914fceb1fe209df694240a5b3ebef4b9451d15480306d087"
     },
     {
       "file": "nflow/libraries/acausal_electrical/TrapezoidCurrent.svg",
-      "bytes": 506,
-      "sha256": "24c462bba7f54998055448107291028d17fe1a0f174f4f8990e89ba0452bbfd3"
+      "bytes": 1245,
+      "sha256": "43558fe5ead28ba2975db558ee3550f1056f77e0ad3259d2db31316aca904722"
     },
     {
       "file": "nflow/libraries/acausal_electrical/TrapezoidVoltage.svg",
-      "bytes": 457,
-      "sha256": "0d5400ffe2fdb3ecdcc5458cbc0962c6f457db2cbe13fcb73eb181aecd4dabe1"
+      "bytes": 1261,
+      "sha256": "b83cc59396bb2afdef3d63179b6c64906b4637fc50225a27d8346a4ec733172c"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VariableCapacitor.svg",
-      "bytes": 895,
-      "sha256": "cb3f7975721b523b0dc2031c5411a6e21481e668375ffc668e7037f7ff03cc63"
+      "bytes": 989,
+      "sha256": "56cf0378b6b2ff6cf68527eb4ae44672b6cd52e705f35447d8beb4ab4bafac2b"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VariableConductor.svg",
-      "bytes": 900,
-      "sha256": "2ff399ae0467f475deba450f76ad328494c4eed2d15a68670fcd54668551ebde"
+      "bytes": 829,
+      "sha256": "32722e9210703d8b42f4dd0677a818606597f87c66b461233ce8c7a6647ac0a0"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VariableInductor.svg",
-      "bytes": 812,
-      "sha256": "a5407408b319a31a7aec662624d97468e7ae16fe40778d5c4fecea765eaf33be"
+      "bytes": 1417,
+      "sha256": "92845adab249be815bce27429b3185597fd240eb117c0f67f1b3773af46ca057"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VariableResistor.svg",
-      "bytes": 793,
-      "sha256": "81dc9450c1f2d76a53e0f9462e358b2c432ff48c5af67424031ad5d7a0a3e3f5"
+      "bytes": 828,
+      "sha256": "58ccf4437e0781ee1ad772c0c2c3a259cc7741a04a60e523462221d423f483e5"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VCC.svg",
-      "bytes": 751,
-      "sha256": "25ebbb71061948b370db32e85fa2a246751910a2b4b4e439841c268b5f93c413"
+      "bytes": 1668,
+      "sha256": "157591c36e3519fcbc288a0f97c4970e4b9eb2b6ac01e4d42ed38c062c0b782b"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VCV.svg",
-      "bytes": 702,
-      "sha256": "83b4e91e45532a1f530e7226b2ebeba1c95e931c765ab36e0cde4c39fc2f381e"
+      "bytes": 1349,
+      "sha256": "b23953726af2b6050c8a612f04526d0236bbe829dc6194f35e0b70d5d81d5c16"
     },
     {
       "file": "nflow/libraries/acausal_electrical/VoltageSensor.svg",
-      "bytes": 477,
-      "sha256": "ea0d667cb212740ce5ba15741381ec355bb11af52ec2922428d2f63a39549d12"
+      "bytes": 2136,
+      "sha256": "ccb104e6dd3cd10ca4d056e30959baf7e14e63aae9d03427af97cb8e7afb5383"
     },
     {
       "file": "nflow/libraries/acausal_electrical/ZDiode.svg",
-      "bytes": 649,
-      "sha256": "97274db943aee3ed57be40568fffa1f74cb55b2ac656759dabeb7e962d60a274"
+      "bytes": 1107,
+      "sha256": "1c2bfc456cd2daed421d637228fb1fa3f5d7c33edd3027df7f19744721093cf3"
     },
     {
       "file": "nflow/libraries/acausal_planar/exports/PlanarAccelerationSensor.svg",
@@ -4104,198 +4104,198 @@
     },
     {
       "file": "nflow/libraries/acausal_rotational/AngleSensor.svg",
-      "bytes": 455,
-      "sha256": "3d8b95cb1b465d80b25a64f0fb7769e2166186146a586b32c1134047d5c706f8"
+      "bytes": 2003,
+      "sha256": "45f5f4a25f51b7e1664b7a89e56ef18b6ae2057647d5d83466e0885100b60fd1"
     },
     {
       "file": "nflow/libraries/acausal_rotational/BearingFriction.svg",
-      "bytes": 1104,
-      "sha256": "c924427b17f3b72cec4f19a6422dc61cd240ccae5d873eba02340d9831985ce4"
+      "bytes": 3077,
+      "sha256": "f1ebeeb6d12eb3282b3ccb2f96600f51c677df7f0d312fdcc00dbda5610c11ca"
     },
     {
       "file": "nflow/libraries/acausal_rotational/Clutch.svg",
-      "bytes": 458,
-      "sha256": "a69e482fe57666b3e54522793b314c8552fb753b65751d448e2594184cb2c489"
+      "bytes": 1608,
+      "sha256": "c6347cf1c78799c67cfa2e9a1570469ee870a70d76c7b9f847a03c2a9e8d9927"
     },
     {
       "file": "nflow/libraries/acausal_rotational/ConstantRotSpeed.svg",
-      "bytes": 426,
-      "sha256": "0c81c56298ef97b3307a646a3d82a35ca31cf35e47603ef4a7d6285283792027"
+      "bytes": 3176,
+      "sha256": "f288737b6e951bed2aa5cdc775b8f2822f0fb5c6dc6b97c8ac74126765facc2d"
     },
     {
       "file": "nflow/libraries/acausal_rotational/ConstantTorque.svg",
-      "bytes": 378,
-      "sha256": "fa76991fafe85f250f4ffedcf1af98e9d129285d1e3c8f527a9ac166005d484b"
+      "bytes": 3175,
+      "sha256": "e952d574ff000f73132f476c78765fa57d2c667d50c581a9424c67745ee015b0"
     },
     {
       "file": "nflow/libraries/acausal_rotational/ElastoBacklash.svg",
-      "bytes": 842,
-      "sha256": "e696a6042125be90614273fb2ef4c406a802a902ae41e02f80a51eae6379576f"
+      "bytes": 2414,
+      "sha256": "d2e527d6ce2113fafde4f9b4f63c92204ea4bdf346fb92fd96ac721f73bd1e5a"
     },
     {
       "file": "nflow/libraries/acausal_rotational/EMF.svg",
-      "bytes": 799,
-      "sha256": "1af7a3de6fdfa85a8f80f85942997f5a06a2d0a8308cd270a3f54d96ebb928f3"
+      "bytes": 1858,
+      "sha256": "7c34f06f2eb241db871ca373b8a08d05d820b7d9090b01e80dae723c6cb9cb0c"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/AngleSensor.svg",
-      "bytes": 455,
-      "sha256": "3d8b95cb1b465d80b25a64f0fb7769e2166186146a586b32c1134047d5c706f8"
+      "bytes": 2003,
+      "sha256": "45f5f4a25f51b7e1664b7a89e56ef18b6ae2057647d5d83466e0885100b60fd1"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/BearingFriction.svg",
-      "bytes": 1104,
-      "sha256": "c924427b17f3b72cec4f19a6422dc61cd240ccae5d873eba02340d9831985ce4"
+      "bytes": 3077,
+      "sha256": "f1ebeeb6d12eb3282b3ccb2f96600f51c677df7f0d312fdcc00dbda5610c11ca"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/Clutch.svg",
-      "bytes": 458,
-      "sha256": "a69e482fe57666b3e54522793b314c8552fb753b65751d448e2594184cb2c489"
+      "bytes": 1608,
+      "sha256": "c6347cf1c78799c67cfa2e9a1570469ee870a70d76c7b9f847a03c2a9e8d9927"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/ConstantRotSpeed.svg",
-      "bytes": 426,
-      "sha256": "0c81c56298ef97b3307a646a3d82a35ca31cf35e47603ef4a7d6285283792027"
+      "bytes": 3176,
+      "sha256": "f288737b6e951bed2aa5cdc775b8f2822f0fb5c6dc6b97c8ac74126765facc2d"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/ConstantTorque.svg",
-      "bytes": 378,
-      "sha256": "fa76991fafe85f250f4ffedcf1af98e9d129285d1e3c8f527a9ac166005d484b"
+      "bytes": 3175,
+      "sha256": "e952d574ff000f73132f476c78765fa57d2c667d50c581a9424c67745ee015b0"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/ElastoBacklash.svg",
-      "bytes": 842,
-      "sha256": "e696a6042125be90614273fb2ef4c406a802a902ae41e02f80a51eae6379576f"
+      "bytes": 2414,
+      "sha256": "d2e527d6ce2113fafde4f9b4f63c92204ea4bdf346fb92fd96ac721f73bd1e5a"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/EMF.svg",
-      "bytes": 799,
-      "sha256": "1af7a3de6fdfa85a8f80f85942997f5a06a2d0a8308cd270a3f54d96ebb928f3"
+      "bytes": 1858,
+      "sha256": "7c34f06f2eb241db871ca373b8a08d05d820b7d9090b01e80dae723c6cb9cb0c"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/ExpSineTorque.svg",
-      "bytes": 482,
-      "sha256": "d8d72c98d45b1db337b5b8d8228cebdd575ccabbcdc2f5df85f5892a85036cb5"
+      "bytes": 3002,
+      "sha256": "629a11129449c9963d297df6b2a9c1d75c8675e63bc77036d10eef9e118198bc"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/Freewheel.svg",
-      "bytes": 717,
-      "sha256": "d82eea01f790660eac5f80b02e53d7233d64c812871fd3a207ca62e4524ba431"
+      "bytes": 1738,
+      "sha256": "bcb616794d85a7e8af3808368db386a933e46c20fa6a323ee139975b87d1d99a"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/IdealGear.svg",
-      "bytes": 800,
-      "sha256": "197bccb0f7e453196bf54d3b4ccf7afdea5bb92af44b60ad48372921addb96b2"
+      "bytes": 7235,
+      "sha256": "2ea5d2a8ea20d2336b6ad0d29a9f6e46980106cda8e0945315dff2554d6b71ff"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/Inertia.svg",
-      "bytes": 535,
-      "sha256": "aed3ac278044d652b9cdbe7afdbc1bc14663822eb2970331031e04b1769aa30d"
+      "bytes": 2271,
+      "sha256": "7073ca7fa46c88b15abb684b9828680660b76d311d2ce0802605117c9c10eb13"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/LinearSpeedDependentTorque.svg",
-      "bytes": 1008,
-      "sha256": "c3ca411b1d3a7f7705231b6c70f725d8107a17d5ae68fb099d1968f7800f94de"
+      "bytes": 3019,
+      "sha256": "e563192693c87867abfb71cc590e282c684a486479d3479a909a30d3f80286b6"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/QuadraticSpeedDependentTorque.svg",
-      "bytes": 1120,
-      "sha256": "0b9921d2b0680655785e55e65fae9eb52a2e861ab1e8ebbe4e5539e667d27432"
+      "bytes": 3089,
+      "sha256": "ecf96a6c1686a13fac9512e8d8a65983faa24a570807e68f7cd2ce5c683f067b"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RampTorque.svg",
-      "bytes": 458,
-      "sha256": "42ff845683b2fdc9964d6e12efd4a92263665d1ce9f1e22e8e7106a0e5028079"
+      "bytes": 2030,
+      "sha256": "42137de63968864ec49b4e0485e5e3c293b7782d7cc7054c161c1759c43a016b"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RelAngleSensor.svg",
-      "bytes": 507,
-      "sha256": "3a6f350a40a1f0dfa84a0581dd773d1664ecacda979d37b40db7294c3f308ed0"
+      "bytes": 2139,
+      "sha256": "c74b627bc675689529e9b113de8dbdd4032e1f366b78282ee369750959d46ea9"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RelRotSpeedSensor.svg",
-      "bytes": 507,
-      "sha256": "bec038c4d12a6fa589bfd3756d9dc30c0cd77887ceab7b7e8a3e6b8afeb75e86"
+      "bytes": 2144,
+      "sha256": "2fe96cde4ce5eb54fc2772bb392079d9af312e75857172176c217c878551178c"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotAccelerate.svg",
-      "bytes": 427,
-      "sha256": "ee507aa24e8008657e278aff368cf4b98a4483865ea3f2fef43f737e07aeb0cb"
+      "bytes": 1949,
+      "sha256": "ac170ff178d0986590f79163ce7297b5bc09566ebc9a471b26dfbf28a8b1e1fb"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotBrake.svg",
-      "bytes": 598,
-      "sha256": "7ad1ac769b0d8e84948e02778fda97ab95928e85cb160e1beabde0a98c4cafcd"
+      "bytes": 2516,
+      "sha256": "3790dde33d99cf8458dcf84c0bd92c2438a5688fe8feb3d983f68f30ec35bb48"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotDamper.svg",
-      "bytes": 670,
-      "sha256": "8cd0c645c4b0ab2fe7a58896e8b9e7645ed440cf3977e75dce10bc128d3f4dc9"
+      "bytes": 1384,
+      "sha256": "af6f22ef8ce7356f1fde8290ce32012ad4ea83f5ae9774dff8106fb6cbfdf567"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotFixed.svg",
-      "bytes": 822,
-      "sha256": "331da91be0cb3d8d2919ee21ca9e4dc87d3afada459f845e2c5cfa8778e512dc"
+      "bytes": 1264,
+      "sha256": "74d7d0ef1880637ff4876f03028790150e1d45ea4dead78b17bec556910b0d3f"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotSpeed.svg",
-      "bytes": 378,
-      "sha256": "fa76991fafe85f250f4ffedcf1af98e9d129285d1e3c8f527a9ac166005d484b"
+      "bytes": 2271,
+      "sha256": "fc5a92f639e4c332b835596af3f2236f534355196e04b2a83e9c369a2a2877e6"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotSpeedSensor.svg",
-      "bytes": 455,
-      "sha256": "0a8cd75597aea79d10927a5efdc9264047f7e8f49e215db07640839b69c8e854"
+      "bytes": 2008,
+      "sha256": "55ee8fb0f0860a22090c8a1dc8bf5b05fa9f21b8f75bd55d23f77436c004d32d"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotSpring.svg",
-      "bytes": 590,
-      "sha256": "d291d264c28b3522197156b38c38c17693e0194e287dd52051963755bf07990c"
+      "bytes": 784,
+      "sha256": "8a57e30b834c65d0ed57c2e065ee1b73855c3cc4cc96267a13297579e377c110"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/RotSpringDamper.svg",
-      "bytes": 1178,
-      "sha256": "5a0de77062a9c5bb87c7c05a63ed77d8870c93fd0eb742da7be56f6b294f2475"
+      "bytes": 2240,
+      "sha256": "dca1d2e8d96487a82c08b26815e93c3804ad330e87186fffac02d0d6e3a1f9ab"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/SineTorque.svg",
-      "bytes": 473,
-      "sha256": "e397501ec57cd89a4624642165780269ad3236de84f073cde9a0e4b1ebf147a9"
+      "bytes": 2794,
+      "sha256": "b6d6454b896ad325c82ab01acb35ff755c18a764e5f114a27b8ed394e826f8c9"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/Torque.svg",
-      "bytes": 473,
-      "sha256": "647d6daa3d79d8c691e519df6f79aa680681a6f2c69055bfe2b42591350908ea"
+      "bytes": 2026,
+      "sha256": "59b7cf0a095dfa2aeaa42566d32dbf3ee5e29744116865aa5cfbcb740e6c69e2"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/Torque2.svg",
-      "bytes": 651,
-      "sha256": "440ee02cec2bdf911eacf6ca9bd19dd154952097fd1322e926e10f601e28aa9c"
+      "bytes": 1015,
+      "sha256": "1a9a7e8dac866253682d4b8c03cde1c526c7362499b51721bd10b76767f9ec65"
     },
     {
       "file": "nflow/libraries/acausal_rotational/exports/TrapezoidTorque.svg",
-      "bytes": 465,
-      "sha256": "0a59e32a622c5d4de836fdd7402e6618d519119d7ee9def16f6a53f971f61c50"
+      "bytes": 2294,
+      "sha256": "568fe762c8fecafd06faa51e18f90fcaa2f61b743252a8b8ea33355a0b2e5df7"
     },
     {
       "file": "nflow/libraries/acausal_rotational/ExpSineTorque.svg",
-      "bytes": 482,
-      "sha256": "d8d72c98d45b1db337b5b8d8228cebdd575ccabbcdc2f5df85f5892a85036cb5"
+      "bytes": 3002,
+      "sha256": "629a11129449c9963d297df6b2a9c1d75c8675e63bc77036d10eef9e118198bc"
     },
     {
       "file": "nflow/libraries/acausal_rotational/Freewheel.svg",
-      "bytes": 717,
-      "sha256": "d82eea01f790660eac5f80b02e53d7233d64c812871fd3a207ca62e4524ba431"
+      "bytes": 1738,
+      "sha256": "bcb616794d85a7e8af3808368db386a933e46c20fa6a323ee139975b87d1d99a"
     },
     {
       "file": "nflow/libraries/acausal_rotational/IdealGear.svg",
-      "bytes": 800,
-      "sha256": "197bccb0f7e453196bf54d3b4ccf7afdea5bb92af44b60ad48372921addb96b2"
+      "bytes": 7235,
+      "sha256": "2ea5d2a8ea20d2336b6ad0d29a9f6e46980106cda8e0945315dff2554d6b71ff"
     },
     {
       "file": "nflow/libraries/acausal_rotational/Inertia.svg",
-      "bytes": 535,
-      "sha256": "aed3ac278044d652b9cdbe7afdbc1bc14663822eb2970331031e04b1769aa30d"
+      "bytes": 2271,
+      "sha256": "7073ca7fa46c88b15abb684b9828680660b76d311d2ce0802605117c9c10eb13"
     },
     {
       "file": "nflow/libraries/acausal_rotational/library.json",
@@ -4304,188 +4304,188 @@
     },
     {
       "file": "nflow/libraries/acausal_rotational/LinearSpeedDependentTorque.svg",
-      "bytes": 1008,
-      "sha256": "c3ca411b1d3a7f7705231b6c70f725d8107a17d5ae68fb099d1968f7800f94de"
+      "bytes": 3019,
+      "sha256": "e563192693c87867abfb71cc590e282c684a486479d3479a909a30d3f80286b6"
     },
     {
       "file": "nflow/libraries/acausal_rotational/QuadraticSpeedDependentTorque.svg",
-      "bytes": 1120,
-      "sha256": "0b9921d2b0680655785e55e65fae9eb52a2e861ab1e8ebbe4e5539e667d27432"
+      "bytes": 3089,
+      "sha256": "ecf96a6c1686a13fac9512e8d8a65983faa24a570807e68f7cd2ce5c683f067b"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RampTorque.svg",
-      "bytes": 458,
-      "sha256": "42ff845683b2fdc9964d6e12efd4a92263665d1ce9f1e22e8e7106a0e5028079"
+      "bytes": 2030,
+      "sha256": "42137de63968864ec49b4e0485e5e3c293b7782d7cc7054c161c1759c43a016b"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RelAngleSensor.svg",
-      "bytes": 507,
-      "sha256": "3a6f350a40a1f0dfa84a0581dd773d1664ecacda979d37b40db7294c3f308ed0"
+      "bytes": 2139,
+      "sha256": "c74b627bc675689529e9b113de8dbdd4032e1f366b78282ee369750959d46ea9"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RelRotSpeedSensor.svg",
-      "bytes": 507,
-      "sha256": "bec038c4d12a6fa589bfd3756d9dc30c0cd77887ceab7b7e8a3e6b8afeb75e86"
+      "bytes": 2144,
+      "sha256": "2fe96cde4ce5eb54fc2772bb392079d9af312e75857172176c217c878551178c"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotAccelerate.svg",
-      "bytes": 427,
-      "sha256": "ee507aa24e8008657e278aff368cf4b98a4483865ea3f2fef43f737e07aeb0cb"
+      "bytes": 1949,
+      "sha256": "ac170ff178d0986590f79163ce7297b5bc09566ebc9a471b26dfbf28a8b1e1fb"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotBrake.svg",
-      "bytes": 598,
-      "sha256": "7ad1ac769b0d8e84948e02778fda97ab95928e85cb160e1beabde0a98c4cafcd"
+      "bytes": 2516,
+      "sha256": "3790dde33d99cf8458dcf84c0bd92c2438a5688fe8feb3d983f68f30ec35bb48"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotDamper.svg",
-      "bytes": 670,
-      "sha256": "8cd0c645c4b0ab2fe7a58896e8b9e7645ed440cf3977e75dce10bc128d3f4dc9"
+      "bytes": 1384,
+      "sha256": "af6f22ef8ce7356f1fde8290ce32012ad4ea83f5ae9774dff8106fb6cbfdf567"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotFixed.svg",
-      "bytes": 822,
-      "sha256": "331da91be0cb3d8d2919ee21ca9e4dc87d3afada459f845e2c5cfa8778e512dc"
+      "bytes": 1264,
+      "sha256": "74d7d0ef1880637ff4876f03028790150e1d45ea4dead78b17bec556910b0d3f"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotSpeed.svg",
-      "bytes": 378,
-      "sha256": "fa76991fafe85f250f4ffedcf1af98e9d129285d1e3c8f527a9ac166005d484b"
+      "bytes": 2271,
+      "sha256": "fc5a92f639e4c332b835596af3f2236f534355196e04b2a83e9c369a2a2877e6"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotSpeedSensor.svg",
-      "bytes": 455,
-      "sha256": "0a8cd75597aea79d10927a5efdc9264047f7e8f49e215db07640839b69c8e854"
+      "bytes": 2008,
+      "sha256": "55ee8fb0f0860a22090c8a1dc8bf5b05fa9f21b8f75bd55d23f77436c004d32d"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotSpring.svg",
-      "bytes": 590,
-      "sha256": "d291d264c28b3522197156b38c38c17693e0194e287dd52051963755bf07990c"
+      "bytes": 784,
+      "sha256": "8a57e30b834c65d0ed57c2e065ee1b73855c3cc4cc96267a13297579e377c110"
     },
     {
       "file": "nflow/libraries/acausal_rotational/RotSpringDamper.svg",
-      "bytes": 1178,
-      "sha256": "5a0de77062a9c5bb87c7c05a63ed77d8870c93fd0eb742da7be56f6b294f2475"
+      "bytes": 2240,
+      "sha256": "dca1d2e8d96487a82c08b26815e93c3804ad330e87186fffac02d0d6e3a1f9ab"
     },
     {
       "file": "nflow/libraries/acausal_rotational/SineTorque.svg",
-      "bytes": 473,
-      "sha256": "e397501ec57cd89a4624642165780269ad3236de84f073cde9a0e4b1ebf147a9"
+      "bytes": 2794,
+      "sha256": "b6d6454b896ad325c82ab01acb35ff755c18a764e5f114a27b8ed394e826f8c9"
     },
     {
       "file": "nflow/libraries/acausal_rotational/Torque.svg",
-      "bytes": 473,
-      "sha256": "647d6daa3d79d8c691e519df6f79aa680681a6f2c69055bfe2b42591350908ea"
+      "bytes": 2026,
+      "sha256": "59b7cf0a095dfa2aeaa42566d32dbf3ee5e29744116865aa5cfbcb740e6c69e2"
     },
     {
       "file": "nflow/libraries/acausal_rotational/Torque2.svg",
-      "bytes": 651,
-      "sha256": "440ee02cec2bdf911eacf6ca9bd19dd154952097fd1322e926e10f601e28aa9c"
+      "bytes": 1015,
+      "sha256": "1a9a7e8dac866253682d4b8c03cde1c526c7362499b51721bd10b76767f9ec65"
     },
     {
       "file": "nflow/libraries/acausal_rotational/TrapezoidTorque.svg",
-      "bytes": 465,
-      "sha256": "0a59e32a622c5d4de836fdd7402e6618d519119d7ee9def16f6a53f971f61c50"
+      "bytes": 2294,
+      "sha256": "568fe762c8fecafd06faa51e18f90fcaa2f61b743252a8b8ea33355a0b2e5df7"
     },
     {
       "file": "nflow/libraries/acausal_thermal/BodyRadiation.svg",
-      "bytes": 1354,
-      "sha256": "335440fd37c04d4085732a7b722f5a3cd55d45d4fb08103ad2d65cae63c6d207"
+      "bytes": 2648,
+      "sha256": "94488e4fd2a1d607515f3f15c3232b77b1e31565406ac875d3903abc7fddf745"
     },
     {
       "file": "nflow/libraries/acausal_thermal/Convection.svg",
-      "bytes": 1209,
-      "sha256": "8d95b072257c9d2633260a5d4c9dc1ef8f728519a1952ca12c2ce2809f590ded"
+      "bytes": 3384,
+      "sha256": "b752959c37fb6a4cb7f47c66a266b4f3a2b6b0c59a1cc605c7dabc3f62aa9057"
     },
     {
       "file": "nflow/libraries/acausal_thermal/ConvectiveResistor.svg",
-      "bytes": 1171,
-      "sha256": "853fce4548909c8531255f7f05127ce354adf560d854d1248670cc2905afa40e"
+      "bytes": 3392,
+      "sha256": "1a094cbfc53edfab073025029f9a53d8a47b48d08064511521bb8f68054a6f46"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/BodyRadiation.svg",
-      "bytes": 1354,
-      "sha256": "335440fd37c04d4085732a7b722f5a3cd55d45d4fb08103ad2d65cae63c6d207"
+      "bytes": 2648,
+      "sha256": "94488e4fd2a1d607515f3f15c3232b77b1e31565406ac875d3903abc7fddf745"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/Convection.svg",
-      "bytes": 1209,
-      "sha256": "8d95b072257c9d2633260a5d4c9dc1ef8f728519a1952ca12c2ce2809f590ded"
+      "bytes": 3384,
+      "sha256": "b752959c37fb6a4cb7f47c66a266b4f3a2b6b0c59a1cc605c7dabc3f62aa9057"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/ConvectiveResistor.svg",
-      "bytes": 1171,
-      "sha256": "853fce4548909c8531255f7f05127ce354adf560d854d1248670cc2905afa40e"
+      "bytes": 3392,
+      "sha256": "1a094cbfc53edfab073025029f9a53d8a47b48d08064511521bb8f68054a6f46"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/FixedHeatFlow.svg",
-      "bytes": 536,
-      "sha256": "de2defe27d39d6009fe0de38ef2d97cafae910898b1ff40caad628a99bc54659"
+      "bytes": 1223,
+      "sha256": "008d83a58c4fd647ebfcad779ca4100c946ca728e964b819ee29e363366c7edb"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/FixedTemperature.svg",
-      "bytes": 1199,
-      "sha256": "2c72c092d409da525b394e766c6433fa4bfd37c3fb36bad5203c25dc11c10c36"
+      "bytes": 1103,
+      "sha256": "f639f8116efbda92cc124f04ae0bbdf972a01b90b3ae2ff7bf76dab71386f715"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/HeatCapacitor.svg",
-      "bytes": 473,
-      "sha256": "0759b1017372dde0245ca8507f020fb80d66c3a2bf94bcbc9ce2a1a16a2328d8"
+      "bytes": 1403,
+      "sha256": "249a153885e8c3c3de73c9f338567eac0851e2478249e80fa98da04b743cc0c4"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/HeatFlowSensor.svg",
-      "bytes": 477,
-      "sha256": "d5ea3b7114a4d5073a39ca3ee67a365913a14d59051f61feebc6e8200c2aa050"
+      "bytes": 2137,
+      "sha256": "bcf7bc5c552f542ff740652eace9b65ddc1b0f9c5c78f7bfb8d01db408f60059"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/PrescribedHeatFlow.svg",
-      "bytes": 631,
-      "sha256": "fc7dc1196d375f19356d822ad56e5f7594d681927c2c3266800be90b452350f7"
+      "bytes": 1330,
+      "sha256": "a109c988ac9f5300dec4ac90f8122fe65c4796ce525dd33d7015e4a4580b7116"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/PrescribedTemperature.svg",
-      "bytes": 1294,
-      "sha256": "66ae5186380626656c9aa41f1d76c0dc00ac11f0ea9bfa305ecad3b4fcb2c3d4"
+      "bytes": 950,
+      "sha256": "8c4c94e1d41aa22a8675c15370fa8290b9ca240b17d85392ebcaf1833244ced4"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/RelTemperatureSensor.svg",
-      "bytes": 604,
-      "sha256": "0fb7e11b423125fbfda45d368f39d50492c37d444a40fb2a98e7a120ac9ed1d2"
+      "bytes": 2468,
+      "sha256": "41c92b1836b9e1c1f954c1f247444023328901426ffa58f65441335bae330da6"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/TemperatureSensor.svg",
-      "bytes": 446,
-      "sha256": "2726fd0f06a15e8df19c73c44ce00038045e9a37d8428a0497f05acdcffe1fc5"
+      "bytes": 1903,
+      "sha256": "39803b44b9c51b97c44d0c08006d04cf3c863bbc8804878cec0b19662b089f98"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/ThermalConductor.svg",
-      "bytes": 1245,
-      "sha256": "3c7521f0881f896f7d02cc31c9e738a8e14faf9ccdf4ae5d4e28e978a6b7ca4d"
+      "bytes": 952,
+      "sha256": "b76f5c39cace64ffbff947377f98a294582be2a6f29e02454643d0941c500579"
     },
     {
       "file": "nflow/libraries/acausal_thermal/exports/ThermalResistor.svg",
-      "bytes": 1245,
-      "sha256": "2d2e84245c50e1991460be86502566b757e310e7849cf59a17842522955e394c"
+      "bytes": 952,
+      "sha256": "847a537a5673c2183bc0a8c3567c6747b08478ddfc95f8df3ef0b4002e630009"
     },
     {
       "file": "nflow/libraries/acausal_thermal/FixedHeatFlow.svg",
-      "bytes": 536,
-      "sha256": "de2defe27d39d6009fe0de38ef2d97cafae910898b1ff40caad628a99bc54659"
+      "bytes": 1223,
+      "sha256": "008d83a58c4fd647ebfcad779ca4100c946ca728e964b819ee29e363366c7edb"
     },
     {
       "file": "nflow/libraries/acausal_thermal/FixedTemperature.svg",
-      "bytes": 1199,
-      "sha256": "2c72c092d409da525b394e766c6433fa4bfd37c3fb36bad5203c25dc11c10c36"
+      "bytes": 1103,
+      "sha256": "f639f8116efbda92cc124f04ae0bbdf972a01b90b3ae2ff7bf76dab71386f715"
     },
     {
       "file": "nflow/libraries/acausal_thermal/HeatCapacitor.svg",
-      "bytes": 473,
-      "sha256": "0759b1017372dde0245ca8507f020fb80d66c3a2bf94bcbc9ce2a1a16a2328d8"
+      "bytes": 1403,
+      "sha256": "249a153885e8c3c3de73c9f338567eac0851e2478249e80fa98da04b743cc0c4"
     },
     {
       "file": "nflow/libraries/acausal_thermal/HeatFlowSensor.svg",
-      "bytes": 477,
-      "sha256": "d5ea3b7114a4d5073a39ca3ee67a365913a14d59051f61feebc6e8200c2aa050"
+      "bytes": 2137,
+      "sha256": "bcf7bc5c552f542ff740652eace9b65ddc1b0f9c5c78f7bfb8d01db408f60059"
     },
     {
       "file": "nflow/libraries/acausal_thermal/library.json",
@@ -4494,243 +4494,243 @@
     },
     {
       "file": "nflow/libraries/acausal_thermal/PrescribedHeatFlow.svg",
-      "bytes": 631,
-      "sha256": "fc7dc1196d375f19356d822ad56e5f7594d681927c2c3266800be90b452350f7"
+      "bytes": 1330,
+      "sha256": "a109c988ac9f5300dec4ac90f8122fe65c4796ce525dd33d7015e4a4580b7116"
     },
     {
       "file": "nflow/libraries/acausal_thermal/PrescribedTemperature.svg",
-      "bytes": 1294,
-      "sha256": "66ae5186380626656c9aa41f1d76c0dc00ac11f0ea9bfa305ecad3b4fcb2c3d4"
+      "bytes": 950,
+      "sha256": "8c4c94e1d41aa22a8675c15370fa8290b9ca240b17d85392ebcaf1833244ced4"
     },
     {
       "file": "nflow/libraries/acausal_thermal/RelTemperatureSensor.svg",
-      "bytes": 604,
-      "sha256": "0fb7e11b423125fbfda45d368f39d50492c37d444a40fb2a98e7a120ac9ed1d2"
+      "bytes": 2468,
+      "sha256": "41c92b1836b9e1c1f954c1f247444023328901426ffa58f65441335bae330da6"
     },
     {
       "file": "nflow/libraries/acausal_thermal/TemperatureSensor.svg",
-      "bytes": 446,
-      "sha256": "2726fd0f06a15e8df19c73c44ce00038045e9a37d8428a0497f05acdcffe1fc5"
+      "bytes": 1903,
+      "sha256": "39803b44b9c51b97c44d0c08006d04cf3c863bbc8804878cec0b19662b089f98"
     },
     {
       "file": "nflow/libraries/acausal_thermal/ThermalConductor.svg",
-      "bytes": 1245,
-      "sha256": "3c7521f0881f896f7d02cc31c9e738a8e14faf9ccdf4ae5d4e28e978a6b7ca4d"
+      "bytes": 952,
+      "sha256": "b76f5c39cace64ffbff947377f98a294582be2a6f29e02454643d0941c500579"
     },
     {
       "file": "nflow/libraries/acausal_thermal/ThermalResistor.svg",
-      "bytes": 1245,
-      "sha256": "2d2e84245c50e1991460be86502566b757e310e7849cf59a17842522955e394c"
+      "bytes": 952,
+      "sha256": "847a537a5673c2183bc0a8c3567c6747b08478ddfc95f8df3ef0b4002e630009"
     },
     {
       "file": "nflow/libraries/acausal_translational/Accelerate.svg",
-      "bytes": 593,
-      "sha256": "6064a70d37d53256445cfe5fb1f815d327bcca4f44ed44ff486b43bbc33940f1"
+      "bytes": 1946,
+      "sha256": "ef885e13534883097ca92210258efe54befdcf5ab6da7844677c4e50188ff77c"
     },
     {
       "file": "nflow/libraries/acausal_translational/Brake.svg",
-      "bytes": 615,
-      "sha256": "16d9975e1b7444b13ec92e93835add6581697ce4a99bc729cf772651dd132441"
+      "bytes": 2397,
+      "sha256": "2f0db29a4bea7cd84cc8a0540f63a9101b69cec2edf0d39cd24a05a0ee73a709"
     },
     {
       "file": "nflow/libraries/acausal_translational/ConstantForce.svg",
-      "bytes": 535,
-      "sha256": "a583732482034f6673949026cf8d8de027b1adc16bc1c05cee74fdad13959d75"
+      "bytes": 2479,
+      "sha256": "6037a92bfcc5f122013cbc04e5db083d1ddec6dcc12c9383967cc74ce0be24d4"
     },
     {
       "file": "nflow/libraries/acausal_translational/ConstantSpeed.svg",
-      "bytes": 534,
-      "sha256": "e22a6f079b8c9729b6a092b8e80cf4b68217fd3d6fec30e2e43f6368567552fe"
+      "bytes": 2480,
+      "sha256": "ea9ec48ff8aee9c4a3e53024d4dfbd195ea153270fa300f2bb32dbfb1e70c2ce"
     },
     {
       "file": "nflow/libraries/acausal_translational/Damper.svg",
-      "bytes": 670,
-      "sha256": "927c088dfc180576c578bbb53808c9e56ce5dec35454410912a3a60c610dacfe"
+      "bytes": 1394,
+      "sha256": "f68f15fb726bdb3edf1813d52f7c1c541771d258974d1eca3433fe8fa4b4fa1b"
     },
     {
       "file": "nflow/libraries/acausal_translational/ElastoGap.svg",
-      "bytes": 871,
-      "sha256": "dce4ef09ba9921c3573d78260bda8854fad8c960dafff03902008c6224a2fdc5"
+      "bytes": 2130,
+      "sha256": "487df0433c33e12d9747d742aa57b5cdbba0c34800724f7265c0c348761aeba4"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Accelerate.svg",
-      "bytes": 593,
-      "sha256": "6064a70d37d53256445cfe5fb1f815d327bcca4f44ed44ff486b43bbc33940f1"
+      "bytes": 1946,
+      "sha256": "ef885e13534883097ca92210258efe54befdcf5ab6da7844677c4e50188ff77c"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Brake.svg",
-      "bytes": 615,
-      "sha256": "16d9975e1b7444b13ec92e93835add6581697ce4a99bc729cf772651dd132441"
+      "bytes": 2397,
+      "sha256": "2f0db29a4bea7cd84cc8a0540f63a9101b69cec2edf0d39cd24a05a0ee73a709"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/ConstantForce.svg",
-      "bytes": 535,
-      "sha256": "a583732482034f6673949026cf8d8de027b1adc16bc1c05cee74fdad13959d75"
+      "bytes": 2479,
+      "sha256": "6037a92bfcc5f122013cbc04e5db083d1ddec6dcc12c9383967cc74ce0be24d4"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/ConstantSpeed.svg",
-      "bytes": 534,
-      "sha256": "e22a6f079b8c9729b6a092b8e80cf4b68217fd3d6fec30e2e43f6368567552fe"
+      "bytes": 2480,
+      "sha256": "ea9ec48ff8aee9c4a3e53024d4dfbd195ea153270fa300f2bb32dbfb1e70c2ce"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Damper.svg",
-      "bytes": 670,
-      "sha256": "927c088dfc180576c578bbb53808c9e56ce5dec35454410912a3a60c610dacfe"
+      "bytes": 1394,
+      "sha256": "f68f15fb726bdb3edf1813d52f7c1c541771d258974d1eca3433fe8fa4b4fa1b"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/ElastoGap.svg",
-      "bytes": 871,
-      "sha256": "dce4ef09ba9921c3573d78260bda8854fad8c960dafff03902008c6224a2fdc5"
+      "bytes": 2130,
+      "sha256": "487df0433c33e12d9747d742aa57b5cdbba0c34800724f7265c0c348761aeba4"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/ExpSineForce.svg",
-      "bytes": 591,
-      "sha256": "c993c20cdf250e739b1f82ee9f67d096f313ebcc1743999e7d226fc54beff1ce"
+      "bytes": 2728,
+      "sha256": "1ee9e16e25bc76c36c88a37261f41150079ef7c643cd007e018749bf5c2af90b"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Fixed.svg",
-      "bytes": 822,
-      "sha256": "2d0f9ebf9873d4db4e052174f37892d3a20f5253e8a14a10f2d01df55f54bc0d"
+      "bytes": 1261,
+      "sha256": "140519763c58d7caaec6a72cd343501a6e6e9f1d4890fbfc2cb57da0a3543c01"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Force.svg",
-      "bytes": 582,
-      "sha256": "cf61916cd8d87643b61edee586fd5269f77b3503b0a545510a731a7e2ebaeef4"
+      "bytes": 1752,
+      "sha256": "3b4763c0f58feefa2efc946e408cd1fb9e910f37129867e3f062bee1da4f6944"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Force2.svg",
-      "bytes": 581,
-      "sha256": "bc3c7528988f5a7fbb7233c2a958eddd2339cfb902786e2e9e3b6117f6b19ccb"
+      "bytes": 757,
+      "sha256": "a333af3a6a023306cf124b4d872f6b267e92c0fcd5f878be69cfaa4214b4c135"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Friction.svg",
-      "bytes": 823,
-      "sha256": "4df98294121f6af9298191e635ff5bb6be9cb801b09831aeb60d390dd7e5a35c"
+      "bytes": 2326,
+      "sha256": "b902cedc13ece712113365a462883c27eb19f896c181c953d3f22ed0b67e1f80"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Lever.svg",
-      "bytes": 468,
-      "sha256": "02f426ef376dd839b1d1b747f64cea8811227b463825308668524f64fb2026b3"
+      "bytes": 1231,
+      "sha256": "63baa3cc88fa6c28d49023261aa55e7e8ae3bd8fec3abb702c6943a48ab11c25"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/LinearSpeedDependentForce.svg",
-      "bytes": 1008,
-      "sha256": "3eba267ace0d979f835ea7592f5149a6b92899daf20de438238edb0da12bd1fa"
+      "bytes": 2325,
+      "sha256": "a0afee2b91bad9ac02b36067e97d3e19b5b42af9395fa7cf8bf5d02dbaa2c6de"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Mass.svg",
-      "bytes": 343,
-      "sha256": "4f846887865b8dfdd0918695305c4298c29193d02c16b0367b514add93362ee4"
+      "bytes": 1109,
+      "sha256": "5641866d35f7034fb9618b681787229293e2e8294fdbbb49a2d8543dddf8839c"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/MassWithWeight.svg",
-      "bytes": 488,
-      "sha256": "002e81665883f4e1904468513ae0dda283c54f41b2f3010df7d4cca89495bf0d"
+      "bytes": 1298,
+      "sha256": "3c54c48a97dc2011a653cea1dcfa5e5757aa3e6c667f0d54ec7757b6cce11a99"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/PositionSensor.svg",
-      "bytes": 450,
-      "sha256": "15820478f4742fb6d89fda15e6fb331af823af79add38c197f501de1eaf24101"
+      "bytes": 2449,
+      "sha256": "42d5aa62393a7d83323dcd6ba5b8296811fbdc96a0779525542d5153d74a1976"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Pulley.svg",
-      "bytes": 593,
-      "sha256": "98ba47a389187736d1893fc15c2910a02dbb654a18a565b2745c5ce25c1cf9f8"
+      "bytes": 4133,
+      "sha256": "1cdb01f34b2739e766fd71a4f17c57eae58c674bf33d878dc996ae2c629b997a"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/QuadraticSpeedDependentForce.svg",
-      "bytes": 1120,
-      "sha256": "baab83ef38f584732d12a24a0f1b4e33d375a76222e426e05bb7116996d239d8"
+      "bytes": 2394,
+      "sha256": "392cb7edb17463828a9d310abbeea071011c2bf2908651a64b0bddb66fce068c"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/RampForce.svg",
-      "bytes": 567,
-      "sha256": "eba940d152accf687b3818d1613757270a32a65450a124b57cf94e3d6478cdbf"
+      "bytes": 1756,
+      "sha256": "6ed4381bb04163ac44ec81e5a5027602e6683da857784416eb3a590bf0f8ee5c"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/RelPositionSensor.svg",
-      "bytes": 502,
-      "sha256": "c5c410c59a174425f17cba8b012621101a87502e05fe973324b78190fe1c893b"
+      "bytes": 2574,
+      "sha256": "e8a193190fbd647eea56206d790d039aa9dfb81e908c9706ef9460b6d751cdd4"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/RelSpeedSensor.svg",
-      "bytes": 502,
-      "sha256": "f81bdb93ff1535e8fac4e7a9125f073edfc11aa3a012309dae82ec6ee426c209"
+      "bytes": 2574,
+      "sha256": "75871ac048940a34432d8f5861f4b834d57bcd5c1be55de337395e2edb73f0e8"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Rod.svg",
-      "bytes": 580,
-      "sha256": "24447c8608513102289cd5a2a04273a7919d90aa6b7b0f6252581cf8c3e7567f"
+      "bytes": 1108,
+      "sha256": "e9f3fdd64b03b6b33fedcd974f1d07ffc1e80af22285a3092d0602817cb2fa53"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/SineForce.svg",
-      "bytes": 582,
-      "sha256": "c5ffb6707599975b3359c4679db2bbb20836b6557a827a0b84c9878b230cc637"
+      "bytes": 2520,
+      "sha256": "103a380a67511769a831292b9db34ee5046287a0ada8c7b88d124dc11ed0dfac"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/SlidingMass.svg",
-      "bytes": 919,
-      "sha256": "6d0733fdedeacf78562fba2135be5ebf7b9246ecec7392421cd4bfe083939640"
+      "bytes": 1116,
+      "sha256": "770d17cf4a014ce31483a0119a52b946b6096878c140bdef0926c30e2e78ca74"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Speed.svg",
-      "bytes": 564,
-      "sha256": "0dadb64185416199df23e91d7d05118353f8c577bf92642f831741d1604c5043"
+      "bytes": 2268,
+      "sha256": "c310c8ea240d564c02e3a6f9a17e420da81aac21ad42b403ff6f3d25f27c03d2"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/SpeedSensor.svg",
-      "bytes": 450,
-      "sha256": "d81d3d7f7e0d13211b6579e555c64a96152aaba1955ae75d54d806fd3672a610"
+      "bytes": 2448,
+      "sha256": "bedbb5c46527f37abec7f4fe1e0ffd915e1680ac13ed7afb4c6631b69242cea7"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/Spring.svg",
-      "bytes": 590,
-      "sha256": "b13dd3a7dee75164bde5429d77f7388a56c8aa3352dcd790df37b1a7cc0cb9c2"
+      "bytes": 1045,
+      "sha256": "41e66794bcf5b0b89197902de7352c3d9082f737543a769ae863be9846cdbd1e"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/SpringDamper.svg",
-      "bytes": 1178,
-      "sha256": "e7c3e02b559e034f00ecdab0e9d23a0c87577d75bda43dc1b600f0aff00746f0"
+      "bytes": 1879,
+      "sha256": "46e723a11be4a0214ed6019da8dea099cb8abe33e4014ca65bf917f250ba92b1"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/TranslationalEMF.svg",
-      "bytes": 895,
-      "sha256": "a16d692c60acfa90c9fa75974356a5e08bab7e6824f4a0b22fdabb8415f63ce6"
+      "bytes": 2506,
+      "sha256": "8ecd060aec7e8d36060fb6af4b3d17ad21a55d8b02c9a98010acd84366ab1629"
     },
     {
       "file": "nflow/libraries/acausal_translational/exports/TrapezoidForce.svg",
-      "bytes": 574,
-      "sha256": "d4432a3583e3f230565b7c7f44399b83e7feb94d58c5c631c248e535500b3b9a"
+      "bytes": 2020,
+      "sha256": "6cde299a13cd5f130253a83b61ce9911eb2a00a8873f9a56ac4394948658d8e4"
     },
     {
       "file": "nflow/libraries/acausal_translational/ExpSineForce.svg",
-      "bytes": 591,
-      "sha256": "c993c20cdf250e739b1f82ee9f67d096f313ebcc1743999e7d226fc54beff1ce"
+      "bytes": 2728,
+      "sha256": "1ee9e16e25bc76c36c88a37261f41150079ef7c643cd007e018749bf5c2af90b"
     },
     {
       "file": "nflow/libraries/acausal_translational/Fixed.svg",
-      "bytes": 822,
-      "sha256": "2d0f9ebf9873d4db4e052174f37892d3a20f5253e8a14a10f2d01df55f54bc0d"
+      "bytes": 1261,
+      "sha256": "140519763c58d7caaec6a72cd343501a6e6e9f1d4890fbfc2cb57da0a3543c01"
     },
     {
       "file": "nflow/libraries/acausal_translational/Force.svg",
-      "bytes": 582,
-      "sha256": "cf61916cd8d87643b61edee586fd5269f77b3503b0a545510a731a7e2ebaeef4"
+      "bytes": 1752,
+      "sha256": "3b4763c0f58feefa2efc946e408cd1fb9e910f37129867e3f062bee1da4f6944"
     },
     {
       "file": "nflow/libraries/acausal_translational/Force2.svg",
-      "bytes": 581,
-      "sha256": "bc3c7528988f5a7fbb7233c2a958eddd2339cfb902786e2e9e3b6117f6b19ccb"
+      "bytes": 757,
+      "sha256": "a333af3a6a023306cf124b4d872f6b267e92c0fcd5f878be69cfaa4214b4c135"
     },
     {
       "file": "nflow/libraries/acausal_translational/Friction.svg",
-      "bytes": 823,
-      "sha256": "4df98294121f6af9298191e635ff5bb6be9cb801b09831aeb60d390dd7e5a35c"
+      "bytes": 2326,
+      "sha256": "b902cedc13ece712113365a462883c27eb19f896c181c953d3f22ed0b67e1f80"
     },
     {
       "file": "nflow/libraries/acausal_translational/Lever.svg",
-      "bytes": 468,
-      "sha256": "02f426ef376dd839b1d1b747f64cea8811227b463825308668524f64fb2026b3"
+      "bytes": 1231,
+      "sha256": "63baa3cc88fa6c28d49023261aa55e7e8ae3bd8fec3abb702c6943a48ab11c25"
     },
     {
       "file": "nflow/libraries/acausal_translational/library.json",
@@ -4739,93 +4739,93 @@
     },
     {
       "file": "nflow/libraries/acausal_translational/LinearSpeedDependentForce.svg",
-      "bytes": 1008,
-      "sha256": "3eba267ace0d979f835ea7592f5149a6b92899daf20de438238edb0da12bd1fa"
+      "bytes": 2325,
+      "sha256": "a0afee2b91bad9ac02b36067e97d3e19b5b42af9395fa7cf8bf5d02dbaa2c6de"
     },
     {
       "file": "nflow/libraries/acausal_translational/Mass.svg",
-      "bytes": 343,
-      "sha256": "4f846887865b8dfdd0918695305c4298c29193d02c16b0367b514add93362ee4"
+      "bytes": 1109,
+      "sha256": "5641866d35f7034fb9618b681787229293e2e8294fdbbb49a2d8543dddf8839c"
     },
     {
       "file": "nflow/libraries/acausal_translational/MassWithWeight.svg",
-      "bytes": 488,
-      "sha256": "002e81665883f4e1904468513ae0dda283c54f41b2f3010df7d4cca89495bf0d"
+      "bytes": 1298,
+      "sha256": "3c54c48a97dc2011a653cea1dcfa5e5757aa3e6c667f0d54ec7757b6cce11a99"
     },
     {
       "file": "nflow/libraries/acausal_translational/PositionSensor.svg",
-      "bytes": 450,
-      "sha256": "15820478f4742fb6d89fda15e6fb331af823af79add38c197f501de1eaf24101"
+      "bytes": 2449,
+      "sha256": "42d5aa62393a7d83323dcd6ba5b8296811fbdc96a0779525542d5153d74a1976"
     },
     {
       "file": "nflow/libraries/acausal_translational/Pulley.svg",
-      "bytes": 593,
-      "sha256": "98ba47a389187736d1893fc15c2910a02dbb654a18a565b2745c5ce25c1cf9f8"
+      "bytes": 4133,
+      "sha256": "1cdb01f34b2739e766fd71a4f17c57eae58c674bf33d878dc996ae2c629b997a"
     },
     {
       "file": "nflow/libraries/acausal_translational/QuadraticSpeedDependentForce.svg",
-      "bytes": 1120,
-      "sha256": "baab83ef38f584732d12a24a0f1b4e33d375a76222e426e05bb7116996d239d8"
+      "bytes": 2394,
+      "sha256": "392cb7edb17463828a9d310abbeea071011c2bf2908651a64b0bddb66fce068c"
     },
     {
       "file": "nflow/libraries/acausal_translational/RampForce.svg",
-      "bytes": 567,
-      "sha256": "eba940d152accf687b3818d1613757270a32a65450a124b57cf94e3d6478cdbf"
+      "bytes": 1756,
+      "sha256": "6ed4381bb04163ac44ec81e5a5027602e6683da857784416eb3a590bf0f8ee5c"
     },
     {
       "file": "nflow/libraries/acausal_translational/RelPositionSensor.svg",
-      "bytes": 502,
-      "sha256": "c5c410c59a174425f17cba8b012621101a87502e05fe973324b78190fe1c893b"
+      "bytes": 2574,
+      "sha256": "e8a193190fbd647eea56206d790d039aa9dfb81e908c9706ef9460b6d751cdd4"
     },
     {
       "file": "nflow/libraries/acausal_translational/RelSpeedSensor.svg",
-      "bytes": 502,
-      "sha256": "f81bdb93ff1535e8fac4e7a9125f073edfc11aa3a012309dae82ec6ee426c209"
+      "bytes": 2574,
+      "sha256": "75871ac048940a34432d8f5861f4b834d57bcd5c1be55de337395e2edb73f0e8"
     },
     {
       "file": "nflow/libraries/acausal_translational/Rod.svg",
-      "bytes": 580,
-      "sha256": "24447c8608513102289cd5a2a04273a7919d90aa6b7b0f6252581cf8c3e7567f"
+      "bytes": 1108,
+      "sha256": "e9f3fdd64b03b6b33fedcd974f1d07ffc1e80af22285a3092d0602817cb2fa53"
     },
     {
       "file": "nflow/libraries/acausal_translational/SineForce.svg",
-      "bytes": 582,
-      "sha256": "c5ffb6707599975b3359c4679db2bbb20836b6557a827a0b84c9878b230cc637"
+      "bytes": 2520,
+      "sha256": "103a380a67511769a831292b9db34ee5046287a0ada8c7b88d124dc11ed0dfac"
     },
     {
       "file": "nflow/libraries/acausal_translational/SlidingMass.svg",
-      "bytes": 919,
-      "sha256": "6d0733fdedeacf78562fba2135be5ebf7b9246ecec7392421cd4bfe083939640"
+      "bytes": 1116,
+      "sha256": "770d17cf4a014ce31483a0119a52b946b6096878c140bdef0926c30e2e78ca74"
     },
     {
       "file": "nflow/libraries/acausal_translational/Speed.svg",
-      "bytes": 564,
-      "sha256": "0dadb64185416199df23e91d7d05118353f8c577bf92642f831741d1604c5043"
+      "bytes": 2268,
+      "sha256": "c310c8ea240d564c02e3a6f9a17e420da81aac21ad42b403ff6f3d25f27c03d2"
     },
     {
       "file": "nflow/libraries/acausal_translational/SpeedSensor.svg",
-      "bytes": 450,
-      "sha256": "d81d3d7f7e0d13211b6579e555c64a96152aaba1955ae75d54d806fd3672a610"
+      "bytes": 2448,
+      "sha256": "bedbb5c46527f37abec7f4fe1e0ffd915e1680ac13ed7afb4c6631b69242cea7"
     },
     {
       "file": "nflow/libraries/acausal_translational/Spring.svg",
-      "bytes": 590,
-      "sha256": "b13dd3a7dee75164bde5429d77f7388a56c8aa3352dcd790df37b1a7cc0cb9c2"
+      "bytes": 1045,
+      "sha256": "41e66794bcf5b0b89197902de7352c3d9082f737543a769ae863be9846cdbd1e"
     },
     {
       "file": "nflow/libraries/acausal_translational/SpringDamper.svg",
-      "bytes": 1178,
-      "sha256": "e7c3e02b559e034f00ecdab0e9d23a0c87577d75bda43dc1b600f0aff00746f0"
+      "bytes": 1879,
+      "sha256": "46e723a11be4a0214ed6019da8dea099cb8abe33e4014ca65bf917f250ba92b1"
     },
     {
       "file": "nflow/libraries/acausal_translational/TranslationalEMF.svg",
-      "bytes": 895,
-      "sha256": "a16d692c60acfa90c9fa75974356a5e08bab7e6824f4a0b22fdabb8415f63ce6"
+      "bytes": 2506,
+      "sha256": "8ecd060aec7e8d36060fb6af4b3d17ad21a55d8b02c9a98010acd84366ab1629"
     },
     {
       "file": "nflow/libraries/acausal_translational/TrapezoidForce.svg",
-      "bytes": 574,
-      "sha256": "d4432a3583e3f230565b7c7f44399b83e7feb94d58c5c631c248e535500b3b9a"
+      "bytes": 2020,
+      "sha256": "6cde299a13cd5f130253a83b61ce9911eb2a00a8873f9a56ac4394948658d8e4"
     },
     {
       "file": "nflow/libraries/continuous/blocks.js",
@@ -4839,13 +4839,13 @@
     },
     {
       "file": "nflow/libraries/continuous/delay.svg",
-      "bytes": 671,
-      "sha256": "5c4f9c41c148caa7390fdbe0553b8129f23edb511e7e728630c67ca45b3bd0fd"
+      "bytes": 1973,
+      "sha256": "6f5a3d7949bf0f55c71c850a48f2a12219459794ba58207e6a9a8b150fc2f7a8"
     },
     {
       "file": "nflow/libraries/continuous/derivative.svg",
-      "bytes": 770,
-      "sha256": "88742af5e8f350d8d3a3b5bcd1be163b13d0b7db8365f0856cbe00e7dbf2b35d"
+      "bytes": 1631,
+      "sha256": "41d79146a44494fe3e519f3204f317f35725097ba2092f967a4694e8d3cacc49"
     },
     {
       "file": "nflow/libraries/continuous/exports/constraint.svg",
@@ -4854,53 +4854,53 @@
     },
     {
       "file": "nflow/libraries/continuous/exports/delay.svg",
-      "bytes": 671,
-      "sha256": "5c4f9c41c148caa7390fdbe0553b8129f23edb511e7e728630c67ca45b3bd0fd"
+      "bytes": 1973,
+      "sha256": "6f5a3d7949bf0f55c71c850a48f2a12219459794ba58207e6a9a8b150fc2f7a8"
     },
     {
       "file": "nflow/libraries/continuous/exports/derivative.svg",
-      "bytes": 770,
-      "sha256": "88742af5e8f350d8d3a3b5bcd1be163b13d0b7db8365f0856cbe00e7dbf2b35d"
+      "bytes": 1631,
+      "sha256": "41d79146a44494fe3e519f3204f317f35725097ba2092f967a4694e8d3cacc49"
     },
     {
       "file": "nflow/libraries/continuous/exports/hpf.svg",
-      "bytes": 628,
-      "sha256": "bcad75aad998a59be89e9dc8f4c70acb1bbd250d0d4d5c2f66a55a3815af8308"
+      "bytes": 1724,
+      "sha256": "27727311e157d9f9957c5221051d0e1168c260d50f3b731744ab0ee18557f027"
     },
     {
       "file": "nflow/libraries/continuous/exports/integrator.svg",
-      "bytes": 769,
-      "sha256": "422e26b85d26314524314c7cfaa9267fe2c47ec91754c027087161c4b466371a"
+      "bytes": 1545,
+      "sha256": "6924a7bc426bdfd377bbb7d8bf00e2c4ab3712c2c2d3e65e2cc0905db0963b4d"
     },
     {
       "file": "nflow/libraries/continuous/exports/lpf.svg",
-      "bytes": 628,
-      "sha256": "23d477dd0f932604541bdfdfbb20f565da019d7ffa21f8b63734814914cde2f2"
+      "bytes": 1950,
+      "sha256": "0b9dc171c5a91aa5bd7bb64e5654e7708a7a9a7efdb401dcd04ee674ff7fd101"
     },
     {
       "file": "nflow/libraries/continuous/exports/pid.svg",
-      "bytes": 494,
-      "sha256": "8bd6a0a600f5b2d6648e82304ec83ab90633fe13e0c1e089f0ee4148457052c7"
+      "bytes": 1547,
+      "sha256": "ff72f3a7d935fcccea964a7b234f61c9cd5a18d0072ae5947fc92ad99ef76ecd"
     },
     {
       "file": "nflow/libraries/continuous/exports/stateSpace.svg",
-      "bytes": 686,
-      "sha256": "3db7e03b5ad9c79a7ae8be37b5730a747aeb7eebd5b2d0a8f0821759c8807784"
+      "bytes": 1463,
+      "sha256": "5d4a414c63f3162afceaf9a4bd8e865366f0911ffa2e6ab408723162d813e52e"
     },
     {
       "file": "nflow/libraries/continuous/exports/tf.svg",
-      "bytes": 775,
-      "sha256": "44abea59cdea0c21a219974f9e96f30bf6b6d862150977a459a1607376b7ae1c"
+      "bytes": 1016,
+      "sha256": "80acc5aca1e952a58fc6ba9ea9e750c4fcdd6517fce21d0a8b0e01add6e0e9e1"
     },
     {
       "file": "nflow/libraries/continuous/hpf.svg",
-      "bytes": 628,
-      "sha256": "bcad75aad998a59be89e9dc8f4c70acb1bbd250d0d4d5c2f66a55a3815af8308"
+      "bytes": 1724,
+      "sha256": "27727311e157d9f9957c5221051d0e1168c260d50f3b731744ab0ee18557f027"
     },
     {
       "file": "nflow/libraries/continuous/integrator.svg",
-      "bytes": 769,
-      "sha256": "422e26b85d26314524314c7cfaa9267fe2c47ec91754c027087161c4b466371a"
+      "bytes": 1545,
+      "sha256": "6924a7bc426bdfd377bbb7d8bf00e2c4ab3712c2c2d3e65e2cc0905db0963b4d"
     },
     {
       "file": "nflow/libraries/continuous/library.json",
@@ -4909,28 +4909,28 @@
     },
     {
       "file": "nflow/libraries/continuous/lpf.svg",
-      "bytes": 628,
-      "sha256": "23d477dd0f932604541bdfdfbb20f565da019d7ffa21f8b63734814914cde2f2"
+      "bytes": 1950,
+      "sha256": "0b9dc171c5a91aa5bd7bb64e5654e7708a7a9a7efdb401dcd04ee674ff7fd101"
     },
     {
       "file": "nflow/libraries/continuous/pid.svg",
-      "bytes": 494,
-      "sha256": "8bd6a0a600f5b2d6648e82304ec83ab90633fe13e0c1e089f0ee4148457052c7"
+      "bytes": 1547,
+      "sha256": "ff72f3a7d935fcccea964a7b234f61c9cd5a18d0072ae5947fc92ad99ef76ecd"
     },
     {
       "file": "nflow/libraries/continuous/stateSpace.svg",
-      "bytes": 686,
-      "sha256": "3db7e03b5ad9c79a7ae8be37b5730a747aeb7eebd5b2d0a8f0821759c8807784"
+      "bytes": 1463,
+      "sha256": "5d4a414c63f3162afceaf9a4bd8e865366f0911ffa2e6ab408723162d813e52e"
     },
     {
       "file": "nflow/libraries/continuous/tf.svg",
-      "bytes": 775,
-      "sha256": "44abea59cdea0c21a219974f9e96f30bf6b6d862150977a459a1607376b7ae1c"
+      "bytes": 1016,
+      "sha256": "80acc5aca1e952a58fc6ba9ea9e750c4fcdd6517fce21d0a8b0e01add6e0e9e1"
     },
     {
       "file": "nflow/libraries/dashboard/blocks.js",
       "bytes": 83933,
-      "sha256": "859bd2a1d9d353df154f9b66f6b5dc15b9fc96527de3297aec303e45d07bfb3e"
+      "sha256": "110e997ee1e57e48d9b012c357bac0e5faaf53b0e7c7032c276d4a06db330730"
     },
     {
       "file": "nflow/libraries/dashboard/dashboardCallbackButton.svg",
@@ -5149,8 +5149,8 @@
     },
     {
       "file": "nflow/libraries/discrete/detectChange.svg",
-      "bytes": 361,
-      "sha256": "2f653d90007f3df71a34dccc209e753717ee4507784f9d3dece3ea2cda86ab96"
+      "bytes": 944,
+      "sha256": "bbe42c7bc7763f05e5c45ef695e36ed95df1a3a997400d8047289c5bee2a2f0a"
     },
     {
       "file": "nflow/libraries/discrete/detectDecrease.svg",
@@ -5169,13 +5169,13 @@
     },
     {
       "file": "nflow/libraries/discrete/dstateSpace.svg",
-      "bytes": 700,
-      "sha256": "a28d9b58863f623679aff311e1f66bf79293036177d52c83fae0467754013a2b"
+      "bytes": 1407,
+      "sha256": "9c25c021ab67a86964a28b9c8bc8c9c909a74255fbda12d0ee14d26bbe821a6a"
     },
     {
       "file": "nflow/libraries/discrete/dtf.svg",
-      "bytes": 796,
-      "sha256": "91a4ad0a9c976ac62646dff57229e1103244f89d9aafd0518034c65ef6ae6fc2"
+      "bytes": 1044,
+      "sha256": "51e1f7a01558ce285b8ab54605626c2ce5d308cd5a883bab8c82795ac85e17fe"
     },
     {
       "file": "nflow/libraries/discrete/exports/ddelay.svg",
@@ -5184,8 +5184,8 @@
     },
     {
       "file": "nflow/libraries/discrete/exports/detectChange.svg",
-      "bytes": 361,
-      "sha256": "2f653d90007f3df71a34dccc209e753717ee4507784f9d3dece3ea2cda86ab96"
+      "bytes": 944,
+      "sha256": "bbe42c7bc7763f05e5c45ef695e36ed95df1a3a997400d8047289c5bee2a2f0a"
     },
     {
       "file": "nflow/libraries/discrete/exports/detectDecrease.svg",
@@ -5204,23 +5204,23 @@
     },
     {
       "file": "nflow/libraries/discrete/exports/dstateSpace.svg",
-      "bytes": 700,
-      "sha256": "a28d9b58863f623679aff311e1f66bf79293036177d52c83fae0467754013a2b"
+      "bytes": 1407,
+      "sha256": "9c25c021ab67a86964a28b9c8bc8c9c909a74255fbda12d0ee14d26bbe821a6a"
     },
     {
       "file": "nflow/libraries/discrete/exports/dtf.svg",
-      "bytes": 796,
-      "sha256": "91a4ad0a9c976ac62646dff57229e1103244f89d9aafd0518034c65ef6ae6fc2"
+      "bytes": 1044,
+      "sha256": "51e1f7a01558ce285b8ab54605626c2ce5d308cd5a883bab8c82795ac85e17fe"
     },
     {
       "file": "nflow/libraries/discrete/exports/fallingEdge.svg",
-      "bytes": 309,
-      "sha256": "b646833a85261bcce8d6303f865621a1900dc4e2b9233c442b9b7a58523c2530"
+      "bytes": 944,
+      "sha256": "780b4c4e65608f927bcba5a15e23f067067f5a4f05ac769d98b632395fe8a2b3"
     },
     {
       "file": "nflow/libraries/discrete/exports/foh.svg",
-      "bytes": 1381,
-      "sha256": "28fcec9a2c81db2e88ab4bd99c1bd839ac76d4d5bf883ee4dff946060d202b41"
+      "bytes": 885,
+      "sha256": "c6d0153837b96fe8bf230678ab3b367687049beec73132d7455780fd579dba2d"
     },
     {
       "file": "nflow/libraries/discrete/exports/rateTransition.svg",
@@ -5229,28 +5229,28 @@
     },
     {
       "file": "nflow/libraries/discrete/exports/risingEdge.svg",
-      "bytes": 309,
-      "sha256": "e80abb46083bb937c7a39b9abb59cf0a21829c5cfcc699bcaf6de9ea551e3fc0"
+      "bytes": 940,
+      "sha256": "5ed685a1272be9670e4493c7696727b2e7566ba524c29485dc07d2c2bcce08f0"
     },
     {
       "file": "nflow/libraries/discrete/exports/unitDelay.svg",
-      "bytes": 790,
-      "sha256": "b1803410bb6cc339fc6a7ce14e57c07ecf3a328d276602bbb5fb073663747c1f"
+      "bytes": 1034,
+      "sha256": "f535bcbe688178b75fb349b4ce33bed3fb6af60a73fce7bf46bda239fbf069fd"
     },
     {
       "file": "nflow/libraries/discrete/exports/zoh.svg",
-      "bytes": 2079,
-      "sha256": "41415555db36e9438c63ee82fac45504bd298db7014227032a4ea6f891960f17"
+      "bytes": 786,
+      "sha256": "ea99f95f7d972652c0e03d2310fcbdeab39b942066769a196c11100d938dc5a4"
     },
     {
       "file": "nflow/libraries/discrete/fallingEdge.svg",
-      "bytes": 309,
-      "sha256": "b646833a85261bcce8d6303f865621a1900dc4e2b9233c442b9b7a58523c2530"
+      "bytes": 944,
+      "sha256": "780b4c4e65608f927bcba5a15e23f067067f5a4f05ac769d98b632395fe8a2b3"
     },
     {
       "file": "nflow/libraries/discrete/foh.svg",
-      "bytes": 1381,
-      "sha256": "28fcec9a2c81db2e88ab4bd99c1bd839ac76d4d5bf883ee4dff946060d202b41"
+      "bytes": 885,
+      "sha256": "c6d0153837b96fe8bf230678ab3b367687049beec73132d7455780fd579dba2d"
     },
     {
       "file": "nflow/libraries/discrete/library.json",
@@ -5264,23 +5264,23 @@
     },
     {
       "file": "nflow/libraries/discrete/risingEdge.svg",
-      "bytes": 309,
-      "sha256": "e80abb46083bb937c7a39b9abb59cf0a21829c5cfcc699bcaf6de9ea551e3fc0"
+      "bytes": 940,
+      "sha256": "5ed685a1272be9670e4493c7696727b2e7566ba524c29485dc07d2c2bcce08f0"
     },
     {
       "file": "nflow/libraries/discrete/unitDelay.svg",
-      "bytes": 790,
-      "sha256": "b1803410bb6cc339fc6a7ce14e57c07ecf3a328d276602bbb5fb073663747c1f"
+      "bytes": 1034,
+      "sha256": "f535bcbe688178b75fb349b4ce33bed3fb6af60a73fce7bf46bda239fbf069fd"
     },
     {
       "file": "nflow/libraries/discrete/zoh.svg",
-      "bytes": 2079,
-      "sha256": "41415555db36e9438c63ee82fac45504bd298db7014227032a4ea6f891960f17"
+      "bytes": 786,
+      "sha256": "ea99f95f7d972652c0e03d2310fcbdeab39b942066769a196c11100d938dc5a4"
     },
     {
       "file": "nflow/libraries/fmi/blocks.js",
-      "bytes": 40368,
-      "sha256": "a27fc37f10aa8ba25ec058289da5900bb37d9fe9bd764e98cfc3d6f15867f5f2"
+      "bytes": 40364,
+      "sha256": "6735476e41fa30a19926327a3c856ad1d25fce2a5aab349781cc63f9497a733b"
     },
     {
       "file": "nflow/libraries/fmi/exports/fmu.svg",
@@ -5309,8 +5309,8 @@
     },
     {
       "file": "nflow/libraries/logic/and.svg",
-      "bytes": 494,
-      "sha256": "50e1ceedf8dd78496f8269aa6431f9806f4cc82dc38406e334dc7d78133b6d6f"
+      "bytes": 1005,
+      "sha256": "1cd0178fe7eb8c66e62f3ece612108c5016b5118fc8e35ed5b409963ea18c8dc"
     },
     {
       "file": "nflow/libraries/logic/bitClear.svg",
@@ -5339,8 +5339,8 @@
     },
     {
       "file": "nflow/libraries/logic/compareToConstant.svg",
-      "bytes": 601,
-      "sha256": "f491aac66b45b76dbb380dc3b43274e4dd2dfcbd4fea1d071768bc6f098b4c11"
+      "bytes": 951,
+      "sha256": "276495cf2f4cd03e7485e2cf036bf3226e9dfc2a95b12674391476136dcf74dd"
     },
     {
       "file": "nflow/libraries/logic/compareToZero.svg",
@@ -5349,8 +5349,8 @@
     },
     {
       "file": "nflow/libraries/logic/exports/and.svg",
-      "bytes": 494,
-      "sha256": "50e1ceedf8dd78496f8269aa6431f9806f4cc82dc38406e334dc7d78133b6d6f"
+      "bytes": 1005,
+      "sha256": "1cd0178fe7eb8c66e62f3ece612108c5016b5118fc8e35ed5b409963ea18c8dc"
     },
     {
       "file": "nflow/libraries/logic/exports/bitClear.svg",
@@ -5374,8 +5374,8 @@
     },
     {
       "file": "nflow/libraries/logic/exports/compareToConstant.svg",
-      "bytes": 601,
-      "sha256": "f491aac66b45b76dbb380dc3b43274e4dd2dfcbd4fea1d071768bc6f098b4c11"
+      "bytes": 951,
+      "sha256": "276495cf2f4cd03e7485e2cf036bf3226e9dfc2a95b12674391476136dcf74dd"
     },
     {
       "file": "nflow/libraries/logic/exports/compareToZero.svg",
@@ -5409,18 +5409,18 @@
     },
     {
       "file": "nflow/libraries/logic/exports/not.svg",
-      "bytes": 494,
-      "sha256": "d3a078279ddaf81f6744206f7ae7a770ddf43e40fca4b0d81c2028ee8391d741"
+      "bytes": 906,
+      "sha256": "c976f32cf2e67728ff7b64a5d7935c0bc83c7a5252a7244039d3f0817e9373a3"
     },
     {
       "file": "nflow/libraries/logic/exports/or.svg",
-      "bytes": 493,
-      "sha256": "25435de07c30696674d9985ffcefec20986f01da780e84f201be07bc5bc26fa1"
+      "bytes": 1003,
+      "sha256": "2bb89f9a648640b350a1e8315dde78d2afaf81848e798db704d445e1f4d0a3f3"
     },
     {
       "file": "nflow/libraries/logic/exports/relationalOperator.svg",
-      "bytes": 671,
-      "sha256": "fdaa1024cd9c4ef610de47c627330f0229d2c040b9c97080e2b237db13623cbf"
+      "bytes": 1255,
+      "sha256": "d3e7e7792220e8af8ade33823d65ab8326c2359895c1c618b6e3ed78140af828"
     },
     {
       "file": "nflow/libraries/logic/exports/shiftArithmetic.svg",
@@ -5434,8 +5434,8 @@
     },
     {
       "file": "nflow/libraries/logic/exports/xor.svg",
-      "bytes": 494,
-      "sha256": "8b13ff1c94846bada87903799dd03b10647e00c5a4f3f5b8faff465f8cbdf990"
+      "bytes": 1005,
+      "sha256": "7ffad05115714c98f3ae31c898c2729102d5fed6497d0f4a5e1d8922ab0e6a03"
     },
     {
       "file": "nflow/libraries/logic/extractBits.svg",
@@ -5469,18 +5469,18 @@
     },
     {
       "file": "nflow/libraries/logic/not.svg",
-      "bytes": 494,
-      "sha256": "d3a078279ddaf81f6744206f7ae7a770ddf43e40fca4b0d81c2028ee8391d741"
+      "bytes": 906,
+      "sha256": "c976f32cf2e67728ff7b64a5d7935c0bc83c7a5252a7244039d3f0817e9373a3"
     },
     {
       "file": "nflow/libraries/logic/or.svg",
-      "bytes": 493,
-      "sha256": "25435de07c30696674d9985ffcefec20986f01da780e84f201be07bc5bc26fa1"
+      "bytes": 1003,
+      "sha256": "2bb89f9a648640b350a1e8315dde78d2afaf81848e798db704d445e1f4d0a3f3"
     },
     {
       "file": "nflow/libraries/logic/relationalOperator.svg",
-      "bytes": 671,
-      "sha256": "fdaa1024cd9c4ef610de47c627330f0229d2c040b9c97080e2b237db13623cbf"
+      "bytes": 1255,
+      "sha256": "d3e7e7792220e8af8ade33823d65ab8326c2359895c1c618b6e3ed78140af828"
     },
     {
       "file": "nflow/libraries/logic/shiftArithmetic.svg",
@@ -5494,8 +5494,8 @@
     },
     {
       "file": "nflow/libraries/logic/xor.svg",
-      "bytes": 494,
-      "sha256": "8b13ff1c94846bada87903799dd03b10647e00c5a4f3f5b8faff465f8cbdf990"
+      "bytes": 1005,
+      "sha256": "7ffad05115714c98f3ae31c898c2729102d5fed6497d0f4a5e1d8922ab0e6a03"
     },
     {
       "file": "nflow/libraries/lookup/blocks.js",
@@ -5519,13 +5519,13 @@
     },
     {
       "file": "nflow/libraries/lookup/exports/lookup1D.svg",
-      "bytes": 663,
-      "sha256": "c02afcedf50038a32f71d5d345f4011f0a1112ecd59a59e69990df0c35e5c2b0"
+      "bytes": 1542,
+      "sha256": "c8828c07c3ae5d2423cdc6922c8511e862db016e5c66485d3629014b63ad4f67"
     },
     {
       "file": "nflow/libraries/lookup/exports/lookup2D.svg",
-      "bytes": 764,
-      "sha256": "6422050ce14b1fe0f4a630624d9748d8024571fb1ab4d3930dbe8b7427635dda"
+      "bytes": 2248,
+      "sha256": "35fcba4f4c7a7fb97eeafcfa1dec5cffebb21aab1760550cb005e38e77370211"
     },
     {
       "file": "nflow/libraries/lookup/exports/lookupDynamic.svg",
@@ -5554,13 +5554,13 @@
     },
     {
       "file": "nflow/libraries/lookup/lookup1D.svg",
-      "bytes": 663,
-      "sha256": "c02afcedf50038a32f71d5d345f4011f0a1112ecd59a59e69990df0c35e5c2b0"
+      "bytes": 1542,
+      "sha256": "c8828c07c3ae5d2423cdc6922c8511e862db016e5c66485d3629014b63ad4f67"
     },
     {
       "file": "nflow/libraries/lookup/lookup2D.svg",
-      "bytes": 764,
-      "sha256": "6422050ce14b1fe0f4a630624d9748d8024571fb1ab4d3930dbe8b7427635dda"
+      "bytes": 2248,
+      "sha256": "35fcba4f4c7a7fb97eeafcfa1dec5cffebb21aab1760550cb005e38e77370211"
     },
     {
       "file": "nflow/libraries/lookup/lookupDynamic.svg",
@@ -5579,13 +5579,13 @@
     },
     {
       "file": "nflow/libraries/math/abs.svg",
-      "bytes": 697,
-      "sha256": "2e83455e85bd2c8d83e5d1925d8ff87e59d023c43099e2f98b0621510e6b3c74"
+      "bytes": 1361,
+      "sha256": "63930b8eebef26bddec5edc1e41a1d1e09e3eec0a13ca9f0642936efe23c5360"
     },
     {
       "file": "nflow/libraries/math/atan2.svg",
-      "bytes": 864,
-      "sha256": "e7671651db537e97e6779b7eccdb4fc81f0e4f3ef840ca6c1082aa7d8cfd2786"
+      "bytes": 2048,
+      "sha256": "6999bf66b0e81b0140b7f3e22f4107f2f8fd2eaf83f44521c9b5ca7a5b2e2183"
     },
     {
       "file": "nflow/libraries/math/bias.svg",
@@ -5595,22 +5595,22 @@
     {
       "file": "nflow/libraries/math/blocks.js",
       "bytes": 48092,
-      "sha256": "ecf65b61bc95c2ac876147b5273ad42fe4da177dc62f254ef903629d884d9438"
+      "sha256": "5c13ff07757a9b08cd1d1eb2dd9b348601158e1cb1694c59267ae2446b08252a"
     },
     {
       "file": "nflow/libraries/math/complexToMagnitudeAngle.svg",
-      "bytes": 1079,
-      "sha256": "fb94edadee9d7feff6c2bbf6f79bbb16f7312decd3b47b0bb4e04e5a1177b34b"
+      "bytes": 1202,
+      "sha256": "d6d66381196a814890d037e4826c61300a9c48a485dee4de7e1322260fd6acda"
     },
     {
       "file": "nflow/libraries/math/complexToRealImag.svg",
-      "bytes": 1093,
-      "sha256": "04791bef9c2428d8cd75a0509e67a90d7948420b266dea46c5359226dc46b41a"
+      "bytes": 1196,
+      "sha256": "ba9bbed9f735494d5297c68cb7ec765f722bbe22d029d931d4037264d0b03ebe"
     },
     {
       "file": "nflow/libraries/math/conjugate.svg",
-      "bytes": 578,
-      "sha256": "db254e1ef9e7c4dbc8a7222164235957dbe41c654bf4efbe183838744974172a"
+      "bytes": 1068,
+      "sha256": "2b3e4aecfd609646ff8cf462a49259fffc333ad492f262b5e88cdc2cc98f2a43"
     },
     {
       "file": "nflow/libraries/math/crossProduct.svg",
@@ -5619,8 +5619,8 @@
     },
     {
       "file": "nflow/libraries/math/divide.svg",
-      "bytes": 839,
-      "sha256": "8a1c37ca519aecf5f824b8fefd76544a3372c5cd5e57f3098d490d598621a9c6"
+      "bytes": 1558,
+      "sha256": "34d6371d0761f10c5a4c9f45c72dec91cc7687bc526314e8bea6de34cb3d1bc9"
     },
     {
       "file": "nflow/libraries/math/dotProduct.svg",
@@ -5629,13 +5629,13 @@
     },
     {
       "file": "nflow/libraries/math/exports/abs.svg",
-      "bytes": 697,
-      "sha256": "2e83455e85bd2c8d83e5d1925d8ff87e59d023c43099e2f98b0621510e6b3c74"
+      "bytes": 1361,
+      "sha256": "63930b8eebef26bddec5edc1e41a1d1e09e3eec0a13ca9f0642936efe23c5360"
     },
     {
       "file": "nflow/libraries/math/exports/atan2.svg",
-      "bytes": 864,
-      "sha256": "e7671651db537e97e6779b7eccdb4fc81f0e4f3ef840ca6c1082aa7d8cfd2786"
+      "bytes": 2048,
+      "sha256": "6999bf66b0e81b0140b7f3e22f4107f2f8fd2eaf83f44521c9b5ca7a5b2e2183"
     },
     {
       "file": "nflow/libraries/math/exports/bias.svg",
@@ -5644,18 +5644,18 @@
     },
     {
       "file": "nflow/libraries/math/exports/complexToMagnitudeAngle.svg",
-      "bytes": 1079,
-      "sha256": "fb94edadee9d7feff6c2bbf6f79bbb16f7312decd3b47b0bb4e04e5a1177b34b"
+      "bytes": 1202,
+      "sha256": "d6d66381196a814890d037e4826c61300a9c48a485dee4de7e1322260fd6acda"
     },
     {
       "file": "nflow/libraries/math/exports/complexToRealImag.svg",
-      "bytes": 1093,
-      "sha256": "04791bef9c2428d8cd75a0509e67a90d7948420b266dea46c5359226dc46b41a"
+      "bytes": 1196,
+      "sha256": "ba9bbed9f735494d5297c68cb7ec765f722bbe22d029d931d4037264d0b03ebe"
     },
     {
       "file": "nflow/libraries/math/exports/conjugate.svg",
-      "bytes": 578,
-      "sha256": "db254e1ef9e7c4dbc8a7222164235957dbe41c654bf4efbe183838744974172a"
+      "bytes": 1068,
+      "sha256": "2b3e4aecfd609646ff8cf462a49259fffc333ad492f262b5e88cdc2cc98f2a43"
     },
     {
       "file": "nflow/libraries/math/exports/crossProduct.svg",
@@ -5664,8 +5664,8 @@
     },
     {
       "file": "nflow/libraries/math/exports/divide.svg",
-      "bytes": 839,
-      "sha256": "8a1c37ca519aecf5f824b8fefd76544a3372c5cd5e57f3098d490d598621a9c6"
+      "bytes": 1558,
+      "sha256": "34d6371d0761f10c5a4c9f45c72dec91cc7687bc526314e8bea6de34cb3d1bc9"
     },
     {
       "file": "nflow/libraries/math/exports/dotProduct.svg",
@@ -5674,18 +5674,18 @@
     },
     {
       "file": "nflow/libraries/math/exports/gain.svg",
-      "bytes": 491,
-      "sha256": "040e414ccc453e890e318b80159cde6db5b8b8d4862df38a7e8adbb00c4bd46e"
+      "bytes": 743,
+      "sha256": "17b49659719e6791c7321e7d91e8f7a190345e422af604df9a81a2fa7d56ff33"
     },
     {
       "file": "nflow/libraries/math/exports/magnitudeAngleToComplex.svg",
-      "bytes": 1078,
-      "sha256": "97f00700a5f407ba2d99f99126617d0eb8ccfce04f082924c1746f2bf464d4bc"
+      "bytes": 1199,
+      "sha256": "5ac7018864dc8948e57b7678fd4eb626afc217eaeadd2d56c6644de864714cb6"
     },
     {
       "file": "nflow/libraries/math/exports/mathFunction.svg",
-      "bytes": 634,
-      "sha256": "bac379af39a6a8f7d65c887d7f2bf51d1e73d66acadb225dd5843f39f637297f"
+      "bytes": 1510,
+      "sha256": "8ab1fd505b8285b4678e4904057be16cb1d97483e13bba7bac822f9e27790ce9"
     },
     {
       "file": "nflow/libraries/math/exports/matmul.svg",
@@ -5694,18 +5694,18 @@
     },
     {
       "file": "nflow/libraries/math/exports/max.svg",
-      "bytes": 565,
-      "sha256": "5b843668622f139ee5062ba9dd6df915bcc9f6c904704c340cf6751ed04439b8"
+      "bytes": 717,
+      "sha256": "c1f66e50c4aaae526720f3dc0bd9cb87775aaedc06c03a53cce1633e17ba6213"
     },
     {
       "file": "nflow/libraries/math/exports/min.svg",
-      "bytes": 565,
-      "sha256": "693f4af379ae1785eba057993aece7f249571564d0f030233d5967d8cddcd982"
+      "bytes": 717,
+      "sha256": "21172cca917d81defde9987e33b0581eea9a46e153dacea8ed504c4070a347f4"
     },
     {
       "file": "nflow/libraries/math/exports/mult.svg",
-      "bytes": 1010,
-      "sha256": "d6b536bb729a62dc5e184fadc80f3f026f04431717577a7b87bde8fa41b26e19"
+      "bytes": 1485,
+      "sha256": "b01c8824f571224d698c1cbbd0ba78e9bbaf6c983eca2a49f9f1af3cad0d1f98"
     },
     {
       "file": "nflow/libraries/math/exports/negate.svg",
@@ -5724,8 +5724,8 @@
     },
     {
       "file": "nflow/libraries/math/exports/realImagToComplex.svg",
-      "bytes": 1092,
-      "sha256": "43685e710ca8a26c17b4ebc6bfd00b2840d3b876f904030076a189166c4dbae3"
+      "bytes": 1193,
+      "sha256": "a3dbb2e8ca85a2971a97f34331188f62a433ab685544cc523742f2bd8e8d1a66"
     },
     {
       "file": "nflow/libraries/math/exports/roundingFunction.svg",
@@ -5734,18 +5734,18 @@
     },
     {
       "file": "nflow/libraries/math/exports/sign.svg",
-      "bytes": 592,
-      "sha256": "e2c8acdfb80db9b20577dda8a7973fa823cae65ef01104aedac693cd37e5e3a0"
+      "bytes": 1592,
+      "sha256": "7f66d15d7805df7981c4331dc1860eca2206156f8190c0aefce2dfe1686aa052"
     },
     {
       "file": "nflow/libraries/math/exports/sqrt.svg",
-      "bytes": 623,
-      "sha256": "0221f26625270e7bee1357adfe2d82ba64e973386b6021b7ef0eb2bad4d2abc3"
+      "bytes": 1631,
+      "sha256": "785f18d474f5f2fc16cf0ccc36be03f9cfe55f722925ae190ae6d23c3a774d3e"
     },
     {
       "file": "nflow/libraries/math/exports/sum.svg",
-      "bytes": 1059,
-      "sha256": "d26fe1945009ba2a8f657ad57a50cb6657a0537e5024edae3c9d9187f1813e0a"
+      "bytes": 1549,
+      "sha256": "366eb3b46034d25fcb099d6fc091393569f541a5e336acf1664ccbb230389ce5"
     },
     {
       "file": "nflow/libraries/math/exports/sumElements.svg",
@@ -5754,8 +5754,8 @@
     },
     {
       "file": "nflow/libraries/math/exports/trigFunction.svg",
-      "bytes": 536,
-      "sha256": "3fd5d82f0c42b091a3fb0eebb2917df207631b9ce5aad9af1b5c941da56a8403"
+      "bytes": 1881,
+      "sha256": "378ba688e10eda8c4ebfcfa814f971db8a4aa6f7ed1798826bc43a4a1ac37b41"
     },
     {
       "file": "nflow/libraries/math/exports/wrapToZero.svg",
@@ -5764,8 +5764,8 @@
     },
     {
       "file": "nflow/libraries/math/gain.svg",
-      "bytes": 491,
-      "sha256": "040e414ccc453e890e318b80159cde6db5b8b8d4862df38a7e8adbb00c4bd46e"
+      "bytes": 743,
+      "sha256": "17b49659719e6791c7321e7d91e8f7a190345e422af604df9a81a2fa7d56ff33"
     },
     {
       "file": "nflow/libraries/math/library.json",
@@ -5774,13 +5774,13 @@
     },
     {
       "file": "nflow/libraries/math/magnitudeAngleToComplex.svg",
-      "bytes": 1078,
-      "sha256": "97f00700a5f407ba2d99f99126617d0eb8ccfce04f082924c1746f2bf464d4bc"
+      "bytes": 1199,
+      "sha256": "5ac7018864dc8948e57b7678fd4eb626afc217eaeadd2d56c6644de864714cb6"
     },
     {
       "file": "nflow/libraries/math/mathFunction.svg",
-      "bytes": 634,
-      "sha256": "bac379af39a6a8f7d65c887d7f2bf51d1e73d66acadb225dd5843f39f637297f"
+      "bytes": 1510,
+      "sha256": "8ab1fd505b8285b4678e4904057be16cb1d97483e13bba7bac822f9e27790ce9"
     },
     {
       "file": "nflow/libraries/math/matmul.svg",
@@ -5789,18 +5789,18 @@
     },
     {
       "file": "nflow/libraries/math/max.svg",
-      "bytes": 565,
-      "sha256": "5b843668622f139ee5062ba9dd6df915bcc9f6c904704c340cf6751ed04439b8"
+      "bytes": 717,
+      "sha256": "c1f66e50c4aaae526720f3dc0bd9cb87775aaedc06c03a53cce1633e17ba6213"
     },
     {
       "file": "nflow/libraries/math/min.svg",
-      "bytes": 565,
-      "sha256": "693f4af379ae1785eba057993aece7f249571564d0f030233d5967d8cddcd982"
+      "bytes": 717,
+      "sha256": "21172cca917d81defde9987e33b0581eea9a46e153dacea8ed504c4070a347f4"
     },
     {
       "file": "nflow/libraries/math/mult.svg",
-      "bytes": 1010,
-      "sha256": "d6b536bb729a62dc5e184fadc80f3f026f04431717577a7b87bde8fa41b26e19"
+      "bytes": 1485,
+      "sha256": "b01c8824f571224d698c1cbbd0ba78e9bbaf6c983eca2a49f9f1af3cad0d1f98"
     },
     {
       "file": "nflow/libraries/math/negate.svg",
@@ -5819,8 +5819,8 @@
     },
     {
       "file": "nflow/libraries/math/realImagToComplex.svg",
-      "bytes": 1092,
-      "sha256": "43685e710ca8a26c17b4ebc6bfd00b2840d3b876f904030076a189166c4dbae3"
+      "bytes": 1193,
+      "sha256": "a3dbb2e8ca85a2971a97f34331188f62a433ab685544cc523742f2bd8e8d1a66"
     },
     {
       "file": "nflow/libraries/math/roundingFunction.svg",
@@ -5829,18 +5829,18 @@
     },
     {
       "file": "nflow/libraries/math/sign.svg",
-      "bytes": 592,
-      "sha256": "e2c8acdfb80db9b20577dda8a7973fa823cae65ef01104aedac693cd37e5e3a0"
+      "bytes": 1592,
+      "sha256": "7f66d15d7805df7981c4331dc1860eca2206156f8190c0aefce2dfe1686aa052"
     },
     {
       "file": "nflow/libraries/math/sqrt.svg",
-      "bytes": 623,
-      "sha256": "0221f26625270e7bee1357adfe2d82ba64e973386b6021b7ef0eb2bad4d2abc3"
+      "bytes": 1631,
+      "sha256": "785f18d474f5f2fc16cf0ccc36be03f9cfe55f722925ae190ae6d23c3a774d3e"
     },
     {
       "file": "nflow/libraries/math/sum.svg",
-      "bytes": 1059,
-      "sha256": "d26fe1945009ba2a8f657ad57a50cb6657a0537e5024edae3c9d9187f1813e0a"
+      "bytes": 1549,
+      "sha256": "366eb3b46034d25fcb099d6fc091393569f541a5e336acf1664ccbb230389ce5"
     },
     {
       "file": "nflow/libraries/math/sumElements.svg",
@@ -5849,8 +5849,8 @@
     },
     {
       "file": "nflow/libraries/math/trigFunction.svg",
-      "bytes": 536,
-      "sha256": "3fd5d82f0c42b091a3fb0eebb2917df207631b9ce5aad9af1b5c941da56a8403"
+      "bytes": 1881,
+      "sha256": "378ba688e10eda8c4ebfcfa814f971db8a4aa6f7ed1798826bc43a4a1ac37b41"
     },
     {
       "file": "nflow/libraries/math/wrapToZero.svg",
@@ -5874,8 +5874,8 @@
     },
     {
       "file": "nflow/libraries/nonlinear/deadZone.svg",
-      "bytes": 472,
-      "sha256": "ac4494524ec3ed418a779d758b355981b35e79f2bcba2e512f44ef690a9e7955"
+      "bytes": 1375,
+      "sha256": "879cfd528d0dfaddcadbd8b692b74786c147abc3a2d48759335fdee2308705cf"
     },
     {
       "file": "nflow/libraries/nonlinear/exports/backlash.svg",
@@ -5889,18 +5889,18 @@
     },
     {
       "file": "nflow/libraries/nonlinear/exports/deadZone.svg",
-      "bytes": 472,
-      "sha256": "ac4494524ec3ed418a779d758b355981b35e79f2bcba2e512f44ef690a9e7955"
+      "bytes": 1375,
+      "sha256": "879cfd528d0dfaddcadbd8b692b74786c147abc3a2d48759335fdee2308705cf"
     },
     {
       "file": "nflow/libraries/nonlinear/exports/hitCrossing.svg",
-      "bytes": 481,
-      "sha256": "3175707139ab091cc81ab967c5be432f481a8b32813c69d2a9b7d0446e437d28"
+      "bytes": 2523,
+      "sha256": "5982b86234938b2f2031787c0061aef1a4485d7d405215a77fe8d0c7d5b350ad"
     },
     {
       "file": "nflow/libraries/nonlinear/exports/hysteresis.svg",
-      "bytes": 450,
-      "sha256": "1996768efac4ede2147f96fb0488c43da4294184fc34066489733516447eb0b2"
+      "bytes": 2995,
+      "sha256": "d0609967d753e15419101f2bc618ab30a05073c52d03cb591bdad04b8997a9f3"
     },
     {
       "file": "nflow/libraries/nonlinear/exports/quantizer.svg",
@@ -5909,23 +5909,23 @@
     },
     {
       "file": "nflow/libraries/nonlinear/exports/rate.svg",
-      "bytes": 460,
-      "sha256": "807e02453400dcad612840c60c0c488305b51255a0d071f4059e0253bc8cf9a4"
+      "bytes": 1202,
+      "sha256": "893418775b75f049713984b7116fec774e3e96900b6e94a375e34352e6b3fc6e"
     },
     {
       "file": "nflow/libraries/nonlinear/exports/saturation.svg",
-      "bytes": 460,
-      "sha256": "60baa15226822f1fe26877a2b3f09ff60cbf7d195946b7a8ad99218d6cc80783"
+      "bytes": 1379,
+      "sha256": "6bb8769b5400c572d80f64dbb75bfbae3cc606d1972ad5bf1baeff55fdc65b3a"
     },
     {
       "file": "nflow/libraries/nonlinear/hitCrossing.svg",
-      "bytes": 481,
-      "sha256": "3175707139ab091cc81ab967c5be432f481a8b32813c69d2a9b7d0446e437d28"
+      "bytes": 2523,
+      "sha256": "5982b86234938b2f2031787c0061aef1a4485d7d405215a77fe8d0c7d5b350ad"
     },
     {
       "file": "nflow/libraries/nonlinear/hysteresis.svg",
-      "bytes": 450,
-      "sha256": "1996768efac4ede2147f96fb0488c43da4294184fc34066489733516447eb0b2"
+      "bytes": 2995,
+      "sha256": "d0609967d753e15419101f2bc618ab30a05073c52d03cb591bdad04b8997a9f3"
     },
     {
       "file": "nflow/libraries/nonlinear/library.json",
@@ -5939,13 +5939,13 @@
     },
     {
       "file": "nflow/libraries/nonlinear/rate.svg",
-      "bytes": 460,
-      "sha256": "807e02453400dcad612840c60c0c488305b51255a0d071f4059e0253bc8cf9a4"
+      "bytes": 1202,
+      "sha256": "893418775b75f049713984b7116fec774e3e96900b6e94a375e34352e6b3fc6e"
     },
     {
       "file": "nflow/libraries/nonlinear/saturation.svg",
-      "bytes": 460,
-      "sha256": "60baa15226822f1fe26877a2b3f09ff60cbf7d195946b7a8ad99218d6cc80783"
+      "bytes": 1379,
+      "sha256": "6bb8769b5400c572d80f64dbb75bfbae3cc606d1972ad5bf1baeff55fdc65b3a"
     },
     {
       "file": "nflow/libraries/sink/blocks.js",
@@ -5954,13 +5954,13 @@
     },
     {
       "file": "nflow/libraries/sink/display.svg",
-      "bytes": 525,
-      "sha256": "572bb709400935c3db018141aaa4e74c103bf714508ecd91487f9ebbbccf010e"
+      "bytes": 551,
+      "sha256": "148c8326da6887fff7231c1a626f152283c9522aa6408cfb0e9fe567a9d597a4"
     },
     {
       "file": "nflow/libraries/sink/exports/display.svg",
-      "bytes": 525,
-      "sha256": "572bb709400935c3db018141aaa4e74c103bf714508ecd91487f9ebbbccf010e"
+      "bytes": 551,
+      "sha256": "148c8326da6887fff7231c1a626f152283c9522aa6408cfb0e9fe567a9d597a4"
     },
     {
       "file": "nflow/libraries/sink/exports/fileSink.svg",
@@ -5979,13 +5979,13 @@
     },
     {
       "file": "nflow/libraries/sink/exports/stopSimulation.svg",
-      "bytes": 252,
-      "sha256": "d56c331d700d679b7f277a2c92207c2f4119301d84e41a21b787e1bd3fd09429"
+      "bytes": 483,
+      "sha256": "fcc0f8d0974bb798d29bf66f2540296186bcec56207e238d1ba1e57be5200d76"
     },
     {
       "file": "nflow/libraries/sink/exports/terminator.svg",
-      "bytes": 453,
-      "sha256": "43b06b7b1d351fe5a0b697c84d2e747a0aeaf761176584cfb5403aa0fcdffe49"
+      "bytes": 655,
+      "sha256": "aa3bf77e9da11debeec1a6145f93762ac8ccba52fab6495bee6848c64e6ba1aa"
     },
     {
       "file": "nflow/libraries/sink/exports/toWorkspace.svg",
@@ -6024,13 +6024,13 @@
     },
     {
       "file": "nflow/libraries/sink/stopSimulation.svg",
-      "bytes": 252,
-      "sha256": "d56c331d700d679b7f277a2c92207c2f4119301d84e41a21b787e1bd3fd09429"
+      "bytes": 483,
+      "sha256": "fcc0f8d0974bb798d29bf66f2540296186bcec56207e238d1ba1e57be5200d76"
     },
     {
       "file": "nflow/libraries/sink/terminator.svg",
-      "bytes": 453,
-      "sha256": "43b06b7b1d351fe5a0b697c84d2e747a0aeaf761176584cfb5403aa0fcdffe49"
+      "bytes": 655,
+      "sha256": "aa3bf77e9da11debeec1a6145f93762ac8ccba52fab6495bee6848c64e6ba1aa"
     },
     {
       "file": "nflow/libraries/sink/toWorkspace.svg",
@@ -6059,13 +6059,13 @@
     },
     {
       "file": "nflow/libraries/source/clock.svg",
-      "bytes": 531,
-      "sha256": "86f999ed531d2bf22372b0afc037de3eed4dab13f1c10bbb395a7cc51a5fc10e"
+      "bytes": 2669,
+      "sha256": "43a2767dfc90eb0b1fec6ee105c6f96a08cdeaafaa15fb7204dfaffe4ab0d4e8"
     },
     {
       "file": "nflow/libraries/source/constant.svg",
-      "bytes": 427,
-      "sha256": "6382ef2aba2c3af2e5a1d4403c7bbd721f08bdf4f4fbe822a299a2072fee35af"
+      "bytes": 1379,
+      "sha256": "9804fc74e3330a91114b714b649ecd0d1c650ee05e2c82467c1cea8adbd44220"
     },
     {
       "file": "nflow/libraries/source/counterFreeRunning.svg",
@@ -6089,13 +6089,13 @@
     },
     {
       "file": "nflow/libraries/source/exports/clock.svg",
-      "bytes": 531,
-      "sha256": "86f999ed531d2bf22372b0afc037de3eed4dab13f1c10bbb395a7cc51a5fc10e"
+      "bytes": 2669,
+      "sha256": "43a2767dfc90eb0b1fec6ee105c6f96a08cdeaafaa15fb7204dfaffe4ab0d4e8"
     },
     {
       "file": "nflow/libraries/source/exports/constant.svg",
-      "bytes": 427,
-      "sha256": "6382ef2aba2c3af2e5a1d4403c7bbd721f08bdf4f4fbe822a299a2072fee35af"
+      "bytes": 1379,
+      "sha256": "9804fc74e3330a91114b714b649ecd0d1c650ee05e2c82467c1cea8adbd44220"
     },
     {
       "file": "nflow/libraries/source/exports/counterFreeRunning.svg",
@@ -6114,13 +6114,13 @@
     },
     {
       "file": "nflow/libraries/source/exports/fileSource.svg",
-      "bytes": 595,
-      "sha256": "f265f9553c10708c72c4fb222eede9acdadfd85a9d337dfbb6625de79ff1e0d4"
+      "bytes": 1578,
+      "sha256": "d0a3a1554d6f83b64253175caee2b15262b4b616a9f057b9f7e3b896ede49520"
     },
     {
       "file": "nflow/libraries/source/exports/fromWorkspace.svg",
-      "bytes": 786,
-      "sha256": "307e0e4ed130d678e827689b4ac2d402ab5a0bb35d41af4f4648b38b69941db3"
+      "bytes": 1577,
+      "sha256": "e461278f3ad8226656b2ab068d2a9aefc6c4636d340c5e9ddef2a7e8a9e31c40"
     },
     {
       "file": "nflow/libraries/source/exports/impulse.svg",
@@ -6134,18 +6134,18 @@
     },
     {
       "file": "nflow/libraries/source/exports/noise.svg",
-      "bytes": 416,
-      "sha256": "882dcb8f13623154ef34d19f93bffcac159011086d45931e734edc3c136796c7"
+      "bytes": 1936,
+      "sha256": "3fb0ec3930a254342b9cd79b5dcce72f0ace1bbb96a085baf583b602fb3ea58c"
     },
     {
       "file": "nflow/libraries/source/exports/pulse.svg",
-      "bytes": 325,
-      "sha256": "21c156ffc4da598aff633cbf1cbf3c9404ddbb492a897cde8c3f035f38948f48"
+      "bytes": 1433,
+      "sha256": "3d3636fa2318f572a7bfdaf6da743f53d8ec32983be442d61d14b180c6affd98"
     },
     {
       "file": "nflow/libraries/source/exports/ramp.svg",
-      "bytes": 380,
-      "sha256": "aaa93bc4e5ab5adfd748d46e3f958061058a2d90a21ccc309293f793b1aa2bd8"
+      "bytes": 1526,
+      "sha256": "dd4d6a93ae35d593ab6635cb41a90ce3493a1002824399267c9ad9fd36452e6a"
     },
     {
       "file": "nflow/libraries/source/exports/repeatingSequenceInterpolated.svg",
@@ -6164,23 +6164,23 @@
     },
     {
       "file": "nflow/libraries/source/exports/sine.svg",
-      "bytes": 404,
-      "sha256": "5abc69c5d884fcaeb0f5532168a73782efa9b6157f4636229c92f82b6ff394fb"
+      "bytes": 1860,
+      "sha256": "a0592cd7d1a3b7d2472f62053a7f88fc312dc5c0bbf3d5b04690d0f579c3111b"
     },
     {
       "file": "nflow/libraries/source/exports/step.svg",
-      "bytes": 392,
-      "sha256": "5fc98e096f8bff24d78db9478f0bf28fba41801f97f6f7ecf680e070de89a7d3"
+      "bytes": 1397,
+      "sha256": "a8733ef0bf4ccf1ee109aa8282811e069acd4f43d8d1b2860140368af9209963"
     },
     {
       "file": "nflow/libraries/source/fileSource.svg",
-      "bytes": 595,
-      "sha256": "f265f9553c10708c72c4fb222eede9acdadfd85a9d337dfbb6625de79ff1e0d4"
+      "bytes": 1578,
+      "sha256": "d0a3a1554d6f83b64253175caee2b15262b4b616a9f057b9f7e3b896ede49520"
     },
     {
       "file": "nflow/libraries/source/fromWorkspace.svg",
-      "bytes": 786,
-      "sha256": "307e0e4ed130d678e827689b4ac2d402ab5a0bb35d41af4f4648b38b69941db3"
+      "bytes": 1577,
+      "sha256": "e461278f3ad8226656b2ab068d2a9aefc6c4636d340c5e9ddef2a7e8a9e31c40"
     },
     {
       "file": "nflow/libraries/source/impulse.svg",
@@ -6199,18 +6199,18 @@
     },
     {
       "file": "nflow/libraries/source/noise.svg",
-      "bytes": 416,
-      "sha256": "882dcb8f13623154ef34d19f93bffcac159011086d45931e734edc3c136796c7"
+      "bytes": 1936,
+      "sha256": "3fb0ec3930a254342b9cd79b5dcce72f0ace1bbb96a085baf583b602fb3ea58c"
     },
     {
       "file": "nflow/libraries/source/pulse.svg",
-      "bytes": 325,
-      "sha256": "21c156ffc4da598aff633cbf1cbf3c9404ddbb492a897cde8c3f035f38948f48"
+      "bytes": 1433,
+      "sha256": "3d3636fa2318f572a7bfdaf6da743f53d8ec32983be442d61d14b180c6affd98"
     },
     {
       "file": "nflow/libraries/source/ramp.svg",
-      "bytes": 380,
-      "sha256": "aaa93bc4e5ab5adfd748d46e3f958061058a2d90a21ccc309293f793b1aa2bd8"
+      "bytes": 1526,
+      "sha256": "dd4d6a93ae35d593ab6635cb41a90ce3493a1002824399267c9ad9fd36452e6a"
     },
     {
       "file": "nflow/libraries/source/repeatingSequenceInterpolated.svg",
@@ -6229,13 +6229,13 @@
     },
     {
       "file": "nflow/libraries/source/sine.svg",
-      "bytes": 404,
-      "sha256": "5abc69c5d884fcaeb0f5532168a73782efa9b6157f4636229c92f82b6ff394fb"
+      "bytes": 1860,
+      "sha256": "a0592cd7d1a3b7d2472f62053a7f88fc312dc5c0bbf3d5b04690d0f579c3111b"
     },
     {
       "file": "nflow/libraries/source/step.svg",
-      "bytes": 392,
-      "sha256": "5fc98e096f8bff24d78db9478f0bf28fba41801f97f6f7ecf680e070de89a7d3"
+      "bytes": 1397,
+      "sha256": "a8733ef0bf4ccf1ee109aa8282811e069acd4f43d8d1b2860140368af9209963"
     },
     {
       "file": "nflow/libraries/userdefined/blocks.js",
@@ -6244,8 +6244,8 @@
     },
     {
       "file": "nflow/libraries/userdefined/exports/expression.svg",
-      "bytes": 599,
-      "sha256": "ddd00e6089160df5b88d9c66d4b156d41043039549ad557337f14a5df471218b"
+      "bytes": 717,
+      "sha256": "a4c60a1436078b4e24bb9f21a87bcc5b93ba927f140c2ae1bc422d4fe33df7fe"
     },
     {
       "file": "nflow/libraries/userdefined/exports/nelsonFunction.svg",
@@ -6254,8 +6254,8 @@
     },
     {
       "file": "nflow/libraries/userdefined/expression.svg",
-      "bytes": 599,
-      "sha256": "ddd00e6089160df5b88d9c66d4b156d41043039549ad557337f14a5df471218b"
+      "bytes": 717,
+      "sha256": "a4c60a1436078b4e24bb9f21a87bcc5b93ba927f140c2ae1bc422d4fe33df7fe"
     },
     {
       "file": "nflow/libraries/userdefined/library.json",
@@ -6274,8 +6274,8 @@
     },
     {
       "file": "nflow/libraries/utility/blocks.js",
-      "bytes": 55480,
-      "sha256": "588622cc4d428958d047542a3f0e8488e0a8af522dfc75dfd8b4514e43ab99b0"
+      "bytes": 55464,
+      "sha256": "adc417b9f6cac59d0d38b029626acc67df2616367534b923594d08d053803bee"
     },
     {
       "file": "nflow/libraries/utility/busAssignment.svg",
@@ -6304,8 +6304,8 @@
     },
     {
       "file": "nflow/libraries/utility/convert.svg",
-      "bytes": 829,
-      "sha256": "d10249ab0e9af3996fc69913d823f13a76846e88fb2eff136e3a6336b9d316f2"
+      "bytes": 1021,
+      "sha256": "e1119b1eca20a46fdda154599b0216523abff8224051d3f976d24d92a4e03d62"
     },
     {
       "file": "nflow/libraries/utility/dataStoreMemory.svg",
@@ -6324,8 +6324,8 @@
     },
     {
       "file": "nflow/libraries/utility/demux.svg",
-      "bytes": 806,
-      "sha256": "b396507ff3810a78b83977ae02da85200961c4c1ad2050ae8649a1d4bccf33c6"
+      "bytes": 1488,
+      "sha256": "9b2f15b8239d4dabb06516f082405cdd7567506296fe080e9cf6ce2ce73f8a25"
     },
     {
       "file": "nflow/libraries/utility/exports/assignment.svg",
@@ -6359,8 +6359,8 @@
     },
     {
       "file": "nflow/libraries/utility/exports/convert.svg",
-      "bytes": 829,
-      "sha256": "d10249ab0e9af3996fc69913d823f13a76846e88fb2eff136e3a6336b9d316f2"
+      "bytes": 1021,
+      "sha256": "e1119b1eca20a46fdda154599b0216523abff8224051d3f976d24d92a4e03d62"
     },
     {
       "file": "nflow/libraries/utility/exports/dataStoreMemory.svg",
@@ -6379,8 +6379,8 @@
     },
     {
       "file": "nflow/libraries/utility/exports/demux.svg",
-      "bytes": 806,
-      "sha256": "b396507ff3810a78b83977ae02da85200961c4c1ad2050ae8649a1d4bccf33c6"
+      "bytes": 1488,
+      "sha256": "9b2f15b8239d4dabb06516f082405cdd7567506296fe080e9cf6ce2ce73f8a25"
     },
     {
       "file": "nflow/libraries/utility/exports/functionCallGenerator.svg",
@@ -6419,8 +6419,8 @@
     },
     {
       "file": "nflow/libraries/utility/exports/mux.svg",
-      "bytes": 805,
-      "sha256": "e5ac86f012f8bf4aead7fbbc3a0798c1a47382962653a7b9b2b0374ded56dbe5"
+      "bytes": 1495,
+      "sha256": "0019c5569f17af2132cd0d8111a27fdce381d734bd3ac5814e8b29021ffcfdc8"
     },
     {
       "file": "nflow/libraries/utility/exports/reshape.svg",
@@ -6429,8 +6429,8 @@
     },
     {
       "file": "nflow/libraries/utility/exports/selector.svg",
-      "bytes": 821,
-      "sha256": "19e4e40cef940a410eab29b6d8b082a78d42cf7962b4bbf11587a0224529739a"
+      "bytes": 3353,
+      "sha256": "94a2af10c32aecce1f7b63f65397a739b8c8390923485b6af401247c0f455a9c"
     },
     {
       "file": "nflow/libraries/utility/exports/signalConversion.svg",
@@ -6444,8 +6444,8 @@
     },
     {
       "file": "nflow/libraries/utility/exports/switch.svg",
-      "bytes": 804,
-      "sha256": "155eaac18777b9b12aed21630a9d52e3973dddd00a4eef739afa1d268c4f1474"
+      "bytes": 1445,
+      "sha256": "c93428db5d8d56aeb1a7a231e370dd75b4e98d1900748d542083a344830590cf"
     },
     {
       "file": "nflow/libraries/utility/exports/toggleSwitch.svg",
@@ -6499,8 +6499,8 @@
     },
     {
       "file": "nflow/libraries/utility/mux.svg",
-      "bytes": 805,
-      "sha256": "e5ac86f012f8bf4aead7fbbc3a0798c1a47382962653a7b9b2b0374ded56dbe5"
+      "bytes": 1495,
+      "sha256": "0019c5569f17af2132cd0d8111a27fdce381d734bd3ac5814e8b29021ffcfdc8"
     },
     {
       "file": "nflow/libraries/utility/reshape.svg",
@@ -6509,8 +6509,8 @@
     },
     {
       "file": "nflow/libraries/utility/selector.svg",
-      "bytes": 821,
-      "sha256": "19e4e40cef940a410eab29b6d8b082a78d42cf7962b4bbf11587a0224529739a"
+      "bytes": 3353,
+      "sha256": "94a2af10c32aecce1f7b63f65397a739b8c8390923485b6af401247c0f455a9c"
     },
     {
       "file": "nflow/libraries/utility/signalConversion.svg",
@@ -6524,8 +6524,8 @@
     },
     {
       "file": "nflow/libraries/utility/switch.svg",
-      "bytes": 804,
-      "sha256": "155eaac18777b9b12aed21630a9d52e3973dddd00a4eef739afa1d268c4f1474"
+      "bytes": 1445,
+      "sha256": "c93428db5d8d56aeb1a7a231e370dd75b4e98d1900748d542083a344830590cf"
     },
     {
       "file": "nflow/libraries/utility/toggleSwitch.svg",
@@ -6594,13 +6594,13 @@
     },
     {
       "file": "nmm/app.css",
-      "bytes": 19368,
-      "sha256": "d339e2dbe7e85baaef691bff16286938196480c8548b0fafe15f875602874bf6"
+      "bytes": 19360,
+      "sha256": "41e37f423fa2c6e745ba194ba10aa227f7e0b40285a740a71b1ce873ba9b54cb"
     },
     {
       "file": "nmm/app.js",
-      "bytes": 190256,
-      "sha256": "7534825ee1a2edfcbfed73e46f0027c21331c7a04cd6f6d49b095a9820e7a1bd"
+      "bytes": 190522,
+      "sha256": "2e13226770186b2cb6b28923a789bc4aab734e031a25e65340ccd2d56a702f11"
     },
     {
       "file": "nmm/browser-bridge.mjs",
@@ -6610,7 +6610,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "39373d028ea9b016890d7f5a506b515ff56266488306ace39aec1b9ad02a94e4"
+      "sha256": "e43c4a8f9e3614389c5a932383c3e05b84245423ad91d179311835830ff14418"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -6623,9 +6623,9 @@
       "sha256": "bc8a1d656b8984556682f8a285f9fa8ca0a723fad3be5f4f1d453609b41c9a0f"
     },
     {
-      "file": "packs/editor/EditorPanel-Du_uqhMU.js",
-      "bytes": 3618960,
-      "sha256": "79e4265254b646d26aac766459999236bfd97d172268abfa0b445877c9c4b403"
+      "file": "packs/editor/EditorPanel-D6iJ14Og.js",
+      "bytes": 3543261,
+      "sha256": "22cc4ef641b4ca5056ae76afc351cb5ff0c5622f709fc5139ed6f6499a49bdcf"
     },
     {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
@@ -6640,22 +6640,22 @@
     {
       "file": "packs/examples/ExamplesPanel-DT_4yNQ7.js",
       "bytes": 9758,
-      "sha256": "57ba8ce75a8efba5f000dbb59b7f40a72ce1195ffbb879d6010628b4c5adbc44"
+      "sha256": "6d76142e588f8dfe6527049519f9eb592f9559776b56b57e4e96ded4852e9838"
     },
     {
-      "file": "packs/mock/mockEngine-BFq5HA4q.js",
-      "bytes": 31204,
-      "sha256": "c7be8c4c868cbbee9c60655846977bfeff327c1d4c37d72ac19b235d4e94abe0"
+      "file": "packs/mock/mockEngine-1e6JWa-a.js",
+      "bytes": 31205,
+      "sha256": "a3abb861c84c57f5958f1461ffefb802072a240ec93515fb0bd478758d96bc6f"
     },
     {
-      "file": "packs/nmm/PackageManagerPanel-BlfgTsWj.css",
-      "bytes": 19368,
-      "sha256": "d339e2dbe7e85baaef691bff16286938196480c8548b0fafe15f875602874bf6"
-    },
-    {
-      "file": "packs/nmm/PackageManagerPanel-LRz_EtB9.js",
+      "file": "packs/nmm/PackageManagerPanel-CLcDany2.js",
       "bytes": 48053,
-      "sha256": "dcf90d05835eea475d0946a1cc808859dc6a6d39d532b82192759968ead53c14"
+      "sha256": "3594e05b239c8b2b7212d96b275a3cb8963e8af655812d9dcac3203f83b651c3"
+    },
+    {
+      "file": "packs/nmm/PackageManagerPanel-D_8kqlRb.css",
+      "bytes": 19360,
+      "sha256": "41e37f423fa2c6e745ba194ba10aa227f7e0b40285a740a71b1ce873ba9b54cb"
     },
     {
       "file": "runtime-resources/bundles/assert_functions-tests.nlpack",
@@ -6664,8 +6664,8 @@
     },
     {
       "file": "runtime-resources/bundles/audio-tests.nlpack",
-      "bytes": 5200713,
-      "sha256": "5331043df8411a16ccbf3d3ce2983059a38e91995fa2c71aeec90c95e223fb86"
+      "bytes": 5201302,
+      "sha256": "f50605f9e0e1ffc851967fbe9042de1ede8c66994ec2f50012c7940c11f201fa"
     },
     {
       "file": "runtime-resources/bundles/categorical-tests.nlpack",
@@ -6684,43 +6684,43 @@
     },
     {
       "file": "runtime-resources/bundles/constructors_functions-tests.nlpack",
-      "bytes": 26593,
-      "sha256": "42fabfaa98070a6192af14c50ad2757c87b345f4b709470bc5b811936f3ce701"
+      "bytes": 36777,
+      "sha256": "ada4289ea8725f92d1bac2a5f9450b329942ab4344a7fdbef88a95f7f09aab14"
     },
     {
       "file": "runtime-resources/bundles/control_system-tests.nlpack",
-      "bytes": 186405,
-      "sha256": "e550acca48b58e680d9b4fca432038f907bb2bd97d00bd8d80a2671851c6aac7"
+      "bytes": 220091,
+      "sha256": "7aef94e1a13621bf63609239bdcadd1230b853fc455d384c9ac6333ad704d497"
     },
     {
       "file": "runtime-resources/bundles/core-tests.nlpack",
-      "bytes": 126090,
-      "sha256": "5c719f6d1135014600a94590449275f451ccced2e4871248fc728c6d5d1ccd50"
+      "bytes": 126072,
+      "sha256": "1528d1ee8ec951990c3b12ee3d26228ac4280c1d426f2ea834c59e6a924b6e00"
     },
     {
       "file": "runtime-resources/bundles/data_analysis-tests.nlpack",
-      "bytes": 362291,
-      "sha256": "08140d663cb029c4c6510614daf738c89a17d9ae69c3af1f6aad16f4d0e19253"
+      "bytes": 382381,
+      "sha256": "72e71cf55c4db42d53c581a88923dc47fdb140cf179dee2843524e8e09ea16c7"
     },
     {
       "file": "runtime-resources/bundles/data_structures-tests.nlpack",
-      "bytes": 115773,
-      "sha256": "b861362988118c913bd8e8654bdf25093f187de51a193d8a591a2e43207ce095"
+      "bytes": 124842,
+      "sha256": "91dd71ab0b3ca72abb119a3e3870dff4bd9af1051d8e4cec3a62e1937991bef6"
     },
     {
       "file": "runtime-resources/bundles/debugger-tests.nlpack",
-      "bytes": 32862,
-      "sha256": "c3953ae78c81e710da3539b0c52880e50303a58c9fd43c7e7bdb064afab7e4b8"
+      "bytes": 32865,
+      "sha256": "c5d06f11f94d595902b07c3762db78d619d255ce9815eb078d6f9496abe0e59d"
     },
     {
       "file": "runtime-resources/bundles/dictionary-tests.nlpack",
-      "bytes": 70371,
-      "sha256": "f3aceb133f94e448f421d2bd30714d0e8092cd990c039cccf3a3e9d2c0274525"
+      "bytes": 82010,
+      "sha256": "fbf3c20c2437414bf3e519f21380cee11b9460110823db45dad22b534fbf2884"
     },
     {
       "file": "runtime-resources/bundles/display_format-tests.nlpack",
-      "bytes": 415729,
-      "sha256": "510dc4e697229064eaac6992aff878b7c00a20cf094d68f06222636a3b31b9f1"
+      "bytes": 417729,
+      "sha256": "bed3f7e6ce66d52ca5dfae42ff4680085b290b3ce60ee28e0b5d056a6366f2b8"
     },
     {
       "file": "runtime-resources/bundles/double-tests.nlpack",
@@ -6729,8 +6729,8 @@
     },
     {
       "file": "runtime-resources/bundles/elementary_functions-tests.nlpack",
-      "bytes": 431245,
-      "sha256": "db65f4de910eda03e5028fb67a6afdf12443db860573e3df4b098f9ce7894693"
+      "bytes": 480919,
+      "sha256": "36ec717d273c813bdc36b674aa690ebb19569bfe3a6e28be626ec0405074d2d8"
     },
     {
       "file": "runtime-resources/bundles/elementary_mathematics-tests.nlpack",
@@ -6739,8 +6739,8 @@
     },
     {
       "file": "runtime-resources/bundles/engine-tests.nlpack",
-      "bytes": 77520,
-      "sha256": "9639610848ce793c926af1affe871f9f4d401d2129816dbe71d5eda2f271c3ef"
+      "bytes": 78129,
+      "sha256": "5370b22071ae190b591e73c69b83849c8d8c82df45f75e24b0e92c3dfba2b079"
     },
     {
       "file": "runtime-resources/bundles/error_manager-tests.nlpack",
@@ -6754,18 +6754,18 @@
     },
     {
       "file": "runtime-resources/bundles/fftw-tests.nlpack",
-      "bytes": 21459,
-      "sha256": "4601223735b0d88dbd71891b15bfd85c1561ceda3cc685f8d04ed9ace09b6866"
+      "bytes": 21445,
+      "sha256": "0e2a220730cc384d8e7795741e7dc6c4c7f114a7b3a1ca8f5af352508d031bf6"
     },
     {
       "file": "runtime-resources/bundles/file_archiver-tests.nlpack",
-      "bytes": 87735,
-      "sha256": "d389e907bc94c5b6282f6a11ee31144fc8847568289ea3503c9584dde43f231a"
+      "bytes": 87591,
+      "sha256": "28182b6eb89811f962102599a97371e5c47cd48969c966731bcd7f4a11caa17c"
     },
     {
       "file": "runtime-resources/bundles/files_folders_functions-tests.nlpack",
-      "bytes": 68297,
-      "sha256": "fa04d6d8d180643af90bd90d473fc52cc3215e0d1df33989bffebb02de7a5b22"
+      "bytes": 68200,
+      "sha256": "da50d50c3b3318b60d6552e229270d3feefa755de90d8b36938b474bd0fced71"
     },
     {
       "file": "runtime-resources/bundles/function_handle-tests.nlpack",
@@ -6779,18 +6779,18 @@
     },
     {
       "file": "runtime-resources/bundles/geometry-tests.nlpack",
-      "bytes": 35346,
-      "sha256": "0512baf39a732678365f23799cec125d982a439779579ac06622fb2fc696b40c"
+      "bytes": 50764,
+      "sha256": "c71225f233da8dfa29d9e4a0aab3ee5e561d218031f7f7bca291b01247fdd017"
     },
     {
       "file": "runtime-resources/bundles/graphics_io-tests.nlpack",
-      "bytes": 127154,
-      "sha256": "b2702e15a61a5e322f13c2c60b16251d9c27469908d46a93cfc341ebfd7be58f"
+      "bytes": 129885,
+      "sha256": "e41b7963e2b0dbb1f194d0e34c85e2bc2347c0b8243c6a66875a73b5d27d8c9f"
     },
     {
       "file": "runtime-resources/bundles/graphics-tests.nlpack",
-      "bytes": 6952065,
-      "sha256": "4e2e00753c7121950a5f33c57e6ec5d2d129a3796d22dc6070813b7e151fb60c"
+      "bytes": 7189139,
+      "sha256": "1072682eaebce43b105a574848eeb75ed76b4662fe43389fa74994347ca5c79b"
     },
     {
       "file": "runtime-resources/bundles/handle-tests.nlpack",
@@ -6804,13 +6804,13 @@
     },
     {
       "file": "runtime-resources/bundles/help_tools-help.nlpack",
-      "bytes": 5626972,
-      "sha256": "985cbc43f60c93dc4b46f216e2fa86aed39db9a2d7705f7a82bc2422b45922c6"
+      "bytes": 5745044,
+      "sha256": "0f75d213dfc11d3f54dd30d961ee93831c4d4a37dbb5eb360d739ddc276da92c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-tests.nlpack",
-      "bytes": 75760,
-      "sha256": "236910a27023197abf0e59d40402322acb6e7f4bfa03fb6aeace406ff8a8b0f7"
+      "bytes": 110316,
+      "sha256": "69b834ed3d9a146dd1f1d4ae1be936ced96d4d04e68bb79aa9700de23cd3f43d"
     },
     {
       "file": "runtime-resources/bundles/history_manager-tests.nlpack",
@@ -6824,18 +6824,18 @@
     },
     {
       "file": "runtime-resources/bundles/image_processing-tests.nlpack",
-      "bytes": 361081,
-      "sha256": "c9ef8bac109e961edaef4d50d769be279e2edb222e0468e64dbd87f0c5f1c5c8"
+      "bytes": 369654,
+      "sha256": "5de0b39d8c85ecf644fd399b59fcc822b5a4c304ab3a13da466b5bf0201e8591"
     },
     {
       "file": "runtime-resources/bundles/integer-tests.nlpack",
-      "bytes": 55028,
-      "sha256": "510764b29a5be01a29346f217ef1ac3a533ce2aec2567720a0d6ea18977a3cf0"
+      "bytes": 59410,
+      "sha256": "a2319d7b9ecb9630c6cf5125c71fc4f46fa487673744c745fbb0c39c9ab54e69"
     },
     {
       "file": "runtime-resources/bundles/interpreter-tests.nlpack",
-      "bytes": 1517729,
-      "sha256": "fbcea7952d7a8c66acf852b8744ccfb5dd2a5a3e37432c5826200318ce0a37d1"
+      "bytes": 1549585,
+      "sha256": "6ac522a36e9b7f115537d60808c53be83b1d1834a39730e4b74126aa6a981cad"
     },
     {
       "file": "runtime-resources/bundles/json-tests.nlpack",
@@ -6844,28 +6844,28 @@
     },
     {
       "file": "runtime-resources/bundles/linear_algebra-tests.nlpack",
-      "bytes": 416064,
-      "sha256": "7457011e03395627dbafecabc4de0b2626a8cc754853731bae10dcf0c8785250"
+      "bytes": 425431,
+      "sha256": "6643aef6be0b25a629119e5d5cc0e249c0d52fc8b09fc34a9bf974a590047697"
     },
     {
       "file": "runtime-resources/bundles/localization-tests.nlpack",
-      "bytes": 6368,
-      "sha256": "af480e65c485213e997cb772a2bf8c4a9b79c1f4990ab3004ce73bbe89ad8e37"
+      "bytes": 6731,
+      "sha256": "c8bcf119cc99d953a5c6d40f9fa049c559755da050b230883135eb7e7ba4e5be"
     },
     {
       "file": "runtime-resources/bundles/logical-tests.nlpack",
-      "bytes": 29055,
-      "sha256": "61ffca077ab3c83c036ed4dc3cf3747e57418c58d3dc9ce1ae4edda10724cfb3"
+      "bytes": 30723,
+      "sha256": "9f09aa3c15d583c184f4d2d849f26d3b1c671a276148b51f2f06424d8344e0ff"
     },
     {
       "file": "runtime-resources/bundles/main-tests.nlpack",
-      "bytes": 232418,
-      "sha256": "47ac86f10f4e8affe447140acea7d55ea0941c469cdfe0de4c0d2b6d3e8334ba"
+      "bytes": 232450,
+      "sha256": "7d8a584347b5850555dd8ac7cdbef2ced363006e3a8228e702be893c613f2ad4"
     },
     {
       "file": "runtime-resources/bundles/matio-tests.nlpack",
-      "bytes": 132853,
-      "sha256": "ca6dde1fdf57e22aeb278c3b5e0d7340eaeced14fd36949b880cb1b51020e1cc"
+      "bytes": 132805,
+      "sha256": "bf750b2a1bb23ad6bf5e7578e66feb774ee4434e4e5c0536973078fc1a328d5b"
     },
     {
       "file": "runtime-resources/bundles/memory_manager-tests.nlpack",
@@ -6874,8 +6874,8 @@
     },
     {
       "file": "runtime-resources/bundles/modules_manager-tests.nlpack",
-      "bytes": 1514712,
-      "sha256": "81b98ec0f3ba3420b1bee6753f51055dc6dc5de82c5f6426a70299672569fd64"
+      "bytes": 1524860,
+      "sha256": "4fe1269f5f6d0ed423fa0c890bec699049627472b2e10f895197c7510b0f39cf"
     },
     {
       "file": "runtime-resources/bundles/netcdf-tests.nlpack",
@@ -6884,13 +6884,13 @@
     },
     {
       "file": "runtime-resources/bundles/nflow_blocks-tests.nlpack",
-      "bytes": 649205,
-      "sha256": "b155e78388eaeab74a887e7a7f5a0edf5cab070f0d9291ff5594df076e05cb49"
+      "bytes": 654301,
+      "sha256": "224c6427a85ad7f529df8d2ce9f33d8aec8bd2ccbd0b2908b4b9361ecac4b3f8"
     },
     {
       "file": "runtime-resources/bundles/nflow_engine-tests.nlpack",
-      "bytes": 1483644,
-      "sha256": "f6078344c6f821f249331369d1fbf3406bd89c07f0f483ab6cae4ad1b1d3539a"
+      "bytes": 1493857,
+      "sha256": "d407bcbc884c32b39c9012ca7147a8cb9e155ba761ed75935f7f91cd48e464d9"
     },
     {
       "file": "runtime-resources/bundles/nflow_gui-tests.nlpack",
@@ -6899,13 +6899,13 @@
     },
     {
       "file": "runtime-resources/bundles/ode_solvers-tests.nlpack",
-      "bytes": 268323,
-      "sha256": "9727be2c81474f22ff964c31c28d82c63911f7d8b0b5a77d4536fa56bf99a263"
+      "bytes": 272811,
+      "sha256": "22e36bebb3507ab524b52bdeb82b5b01684b5a077e73317d36f0ab877d539d0b"
     },
     {
       "file": "runtime-resources/bundles/operators-tests.nlpack",
-      "bytes": 290937,
-      "sha256": "0c3882b1ab070d5d18cbd956ddde7c82684ee281a7650b92bbacaedfd280953e"
+      "bytes": 316391,
+      "sha256": "12206f518d676c42c2044dd86aad5c29c3d7aa85ac1b715b374a653e2913b2e7"
     },
     {
       "file": "runtime-resources/bundles/optimization-tests.nlpack",
@@ -6914,8 +6914,8 @@
     },
     {
       "file": "runtime-resources/bundles/os_functions-tests.nlpack",
-      "bytes": 45324,
-      "sha256": "bfff9c791cc2d8782c3f927542c79509d56e24d360ff6b8a35f01aef1fcbd151"
+      "bytes": 45813,
+      "sha256": "56e465730f7102a61c0707e63cde58e311b9e9cc11a3473875791812b6b8473a"
     },
     {
       "file": "runtime-resources/bundles/overload-tests.nlpack",
@@ -6924,13 +6924,13 @@
     },
     {
       "file": "runtime-resources/bundles/polynomial_functions-tests.nlpack",
-      "bytes": 32340,
-      "sha256": "4034121b9f275fc13021d2d7d351dd75112057d22205ed165575dfa54402c687"
+      "bytes": 37694,
+      "sha256": "1638dc2efafe8b0cec8eb6387db393bbb0508b28d7cfb5e9cf445d16db305ccf"
     },
     {
       "file": "runtime-resources/bundles/preferences-tests.nlpack",
-      "bytes": 3836,
-      "sha256": "549a5e8ffaeb4898abd31c15c20d97d7fe2c81f4275cbb5cd5013cd245b8ce1a"
+      "bytes": 3827,
+      "sha256": "6fa572380aa9c475e31213a02734be18dc61b7570827d701592bcf550225b8f1"
     },
     {
       "file": "runtime-resources/bundles/profiler-tests.nlpack",
@@ -6939,13 +6939,13 @@
     },
     {
       "file": "runtime-resources/bundles/random-tests.nlpack",
-      "bytes": 68983,
-      "sha256": "dee1774797e155347688466f12f604ad08607def7246570edffc8182547fee5c"
+      "bytes": 74791,
+      "sha256": "d988870e73fcfadb75291caab50d095d3e5853ced3270483566c8ad7f1f166f2"
     },
     {
       "file": "runtime-resources/bundles/signal_processing-tests.nlpack",
-      "bytes": 219150,
-      "sha256": "600d4408eae713f236d70de210f4244eb1e44bf367d994d3d91e6f89182b7224"
+      "bytes": 219823,
+      "sha256": "f1201c6fb59161710f5bc47ac279462acdcdccf57258d455252aef2b6fdebeca"
     },
     {
       "file": "runtime-resources/bundles/single-tests.nlpack",
@@ -6959,43 +6959,43 @@
     },
     {
       "file": "runtime-resources/bundles/sparse-tests.nlpack",
-      "bytes": 131942,
-      "sha256": "2e2c2d4a8cdb2adbd03a9f712c090703afb46168977e447e830ea01ba3a6fdcd"
+      "bytes": 136486,
+      "sha256": "e60bd5905ce7589b95815188de85d9e744f97d3628e55c623325d9389e61ed6c"
     },
     {
       "file": "runtime-resources/bundles/special_functions-tests.nlpack",
-      "bytes": 139614,
-      "sha256": "9f5cf2e68bd2498cc4d681864959f7b31bbd6a53ffe12dcc8be44d689d2e8b42"
+      "bytes": 151608,
+      "sha256": "5092ff28c281df4ecbbc709a4ddeb680dceff7e034bc2ae01dbdae3e2b0943a6"
     },
     {
       "file": "runtime-resources/bundles/spreadsheet-tests.nlpack",
-      "bytes": 195247,
-      "sha256": "f2de34583b99146ae4bf99091c77b809dae22dfb7c8281dae238b88d10a44c3b"
+      "bytes": 202931,
+      "sha256": "4465982b0f7423f3b014e21fbb2f41e68840b4c817dcab8215ef63f3f8202361"
     },
     {
       "file": "runtime-resources/bundles/statistics-tests.nlpack",
-      "bytes": 1083068,
-      "sha256": "0fc7138c15e4b61b7c4ad79cabb82ee15abaea23a3c441a269a7d39f3d5a0e1a"
+      "bytes": 1095089,
+      "sha256": "0ccd9726048f2226646a7392381ecfd6601495613d99aa4918135e0df095ee62"
     },
     {
       "file": "runtime-resources/bundles/stream_manager-tests.nlpack",
-      "bytes": 6147876,
-      "sha256": "be74d4e04e34158d3722083588d91280190941ccf273c5c595f34f472c49bfef"
+      "bytes": 6150351,
+      "sha256": "6834d64bc5af9f00c929c1a75b43f4b4e7b553fe2bc831e97a8e6f31bd3a2adb"
     },
     {
       "file": "runtime-resources/bundles/string-tests.nlpack",
-      "bytes": 317507,
-      "sha256": "e2271cec24d0b38f368d4b835226b8e7060234b3ba56bf0f7f5824e97b3ef8f6"
+      "bytes": 369649,
+      "sha256": "68109ff8171ccd03f213449a5b12fe00d307519b2c0d3015d7a01c728ffc77c4"
     },
     {
       "file": "runtime-resources/bundles/table-tests.nlpack",
-      "bytes": 581357,
-      "sha256": "94b904a9e344d72f87d53ec898194090defb66386cae68bed54b1c4bacb0144d"
+      "bytes": 596092,
+      "sha256": "9ff11956bd60d7785d61aeabce2e32ce6721d5002634e16a3971ee1665ca7bc4"
     },
     {
       "file": "runtime-resources/bundles/tests_manager-tests.nlpack",
-      "bytes": 192755,
-      "sha256": "2b15333808fa81375dddc3929ef1bce336c30e892d85aced6126306dc91f98d3"
+      "bytes": 192268,
+      "sha256": "484129417b1729a3e70936f7008550b4d5967c3765b7e4380f9a09d5534ce23c"
     },
     {
       "file": "runtime-resources/bundles/text_editor-tests.nlpack",
@@ -7004,34 +7004,34 @@
     },
     {
       "file": "runtime-resources/bundles/time-tests.nlpack",
-      "bytes": 271094,
-      "sha256": "a1d48a91684b9d784ae5c14c577e41eeb377b1035c111b103fc135187c70510c"
+      "bytes": 288077,
+      "sha256": "78b6cbd6dec2d91bd5f9f77b7184ae9573a27e4dcef666ca5b6f35bf8f2a39ab"
     },
     {
       "file": "runtime-resources/bundles/trigonometric_functions-tests.nlpack",
-      "bytes": 97978,
-      "sha256": "5835120daa32f437f994a49154c108154f9069ee23499ddd6cd23bc1ff5f2032"
+      "bytes": 101792,
+      "sha256": "ae0bb94fcc36bb8301cd5ea79a61926ef78f6a94db7cd0fcb84774836e8bed38"
     },
     {
       "file": "runtime-resources/bundles/types-tests.nlpack",
-      "bytes": 231735,
-      "sha256": "76d189e3f584499ac9fc2aa1f9bb8d72e457613343c5ea33031f9bf36ecbb04a"
+      "bytes": 254923,
+      "sha256": "7ad7f2cb137967ead42cf646abba4f98c5ffd650d57168dc9bea3fe4e59765a9"
     },
     {
       "file": "runtime-resources/bundles/validators-tests.nlpack",
-      "bytes": 95525,
-      "sha256": "f594a0d151ac6b95f6d54368ac7ec3039ada7c09fcc38afe55d2f0c84c1426bd"
+      "bytes": 95527,
+      "sha256": "6d9ff2a378ed764ce2c0357d869d3b966dae062e6ad410ce173711db33a6922e"
     },
     {
       "file": "runtime-resources/bundles/xml-tests.nlpack",
-      "bytes": 40942,
-      "sha256": "5d5f3c05e33741035396ec421ad97059bdf36f111faa7510a2944f3b5cc6e35f"
+      "bytes": 43056,
+      "sha256": "81ef2a01342f4c606494295878d3eb51817026f1be2b96b1976539c4b3124894"
     },
     {
       "file": "runtime-resources/index.json",
-      "bytes": 580418,
-      "sha256": "43985930f866d59d0062f7a9f3f8f8fa6affeddff7242a98f584915a962af06b"
+      "bytes": 600128,
+      "sha256": "c52c4d593dad083f8c0ca1555be886519c46a6fdad28d36cc2da2294c4b72bd3"
     }
   ],
-  "totalBytes": 120184870
+  "totalBytes": 109095027
 }

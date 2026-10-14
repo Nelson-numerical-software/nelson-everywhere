@@ -1,8 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
-  <line x1="18" y1="36" x2="54" y2="36" stroke="#3C3489" stroke-width="0.8" opacity="0.5"/>
-  <path d="M18 48 H 36 V 24 H 54" fill="none" stroke="#3C3489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="36" cy="36" r="2.4" fill="#3C3489"/>
-  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
-  <polygon points="67,32 67,40 73,36" fill="#3C3489" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="306.5" height="256.5" viewBox="-153.25 -153.25 306.5 256.5">
+  <rect x="-153.25" y="-153.25" width="306.5" height="256.5" rx="48.735" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <rect x="-100" y="-100" width="200" height="200" fill="#FFFFFF" stroke="#3C3489" stroke-width="3.25"/>
+    <g transform="translate(0,130) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">Sign</text></g>
+    <polyline points="-90,0 68,0" fill="none" stroke="#AFA9EC" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="90,0 68,8 68,-8 90,0" fill="#AFA9EC" stroke="#AFA9EC" stroke-width="3.25" stroke-linejoin="round"/>
+    <polyline points="-80,-80 0,-80" fill="none" stroke="#3C3489" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <polygon points="0,90 -8,68 8,68 0,90" fill="#AFA9EC" stroke="#AFA9EC" stroke-width="3.25" stroke-linejoin="round"/>
+    <polyline points="0,-80 0,68" fill="none" stroke="#AFA9EC" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(-54,48) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="38.4" fill="#3C3489">sign</text></g>
+    <polyline points="0,80 80,80" fill="none" stroke="#3C3489" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-2" y="-4" width="4" height="6" fill="#3C3489" stroke="#3C3489" stroke-width="3.25"/>
+  </g>
 </svg>

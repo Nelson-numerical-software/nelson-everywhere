@@ -7,7 +7,7 @@ function isExitStatus(error) {
   );
 }
 
-const BASE_ARGUMENTS = ["--nostartup", "--nousermodules", "--noipc", "--quiet"];
+const BASE_ARGUMENTS = ["--no-startup", "--no-user-modules", "--no-ipc", "--quiet"];
 
 function argumentsFor(options) {
   const args = [...BASE_ARGUMENTS];
@@ -87,7 +87,12 @@ function selectedRuntimeResourceSelection(manifest, runtimeIndex, options = {}) 
       const examplesMatch = /^examples\/files\/([^/]+)\/(examples)\//.exec(
         file,
       );
-      const match = runtimeMatch || examplesMatch;
+      // NFlow models ship in the nflow group; they are the examples of the
+      // nflow_blocks module.
+      const nflowMatch = /^nflow\/examples\/files\//.exec(file)
+        ? [file, "nflow_blocks", "examples"]
+        : null;
+      const match = runtimeMatch || examplesMatch || nflowMatch;
       if (!match || file.split("/").includes("..")) return false;
       if (runtimeMatch && hasBundleIndex) return false;
       if (modules && !modules.has(match[1])) return false;
@@ -102,6 +107,10 @@ function runtimeResourceVirtualPath(packagedFile) {
   const runtimePrefix = "runtime-resources/modules/";
   if (packagedFile.startsWith(runtimePrefix)) {
     return `/modules/${packagedFile.slice(runtimePrefix.length)}`;
+  }
+  const nflowPrefix = "nflow/examples/files/";
+  if (packagedFile.startsWith(nflowPrefix)) {
+    return `/modules/nflow_blocks/examples/${packagedFile.slice(nflowPrefix.length)}`;
   }
   const examplesMatch = /^examples\/files\/([^/]+)\/examples\/(.+)$/.exec(
     packagedFile,
@@ -176,10 +185,14 @@ export async function mountPackagedRuntimeResources(
       if (!group || typeof group !== "object") return false;
       return group.id === "runtime-resources" || group.trigger === "runtime-resources";
     });
-  if (!hasRuntimeResources) return 0;
-  const runtimeIndex = JSON.parse(
-    await readFile(join(browserRoot, "runtime-resources", "index.json"), "utf8"),
-  );
+  // The tests/help bundles exist only when the build defers them to the
+  // runtime-resources group; packaged examples are always an on-demand group
+  // and are mounted whatever the preload policy of the build.
+  const runtimeIndex = hasRuntimeResources
+    ? JSON.parse(
+        await readFile(join(browserRoot, "runtime-resources", "index.json"), "utf8"),
+      )
+    : null;
   const selection = selectedRuntimeResourceSelection(manifest, runtimeIndex, options);
   let mounted = 0;
   for (const bundle of selection.bundles) {

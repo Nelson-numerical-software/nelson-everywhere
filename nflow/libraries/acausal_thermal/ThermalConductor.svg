@@ -1,5 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect x="1" y="1" width="70" height="70" rx="14" fill="#FDECEA" stroke="#F0A99D" stroke-width="1.5"/>
-  <clipPath id="hc"><rect x="22" y="26" width="28" height="20"/></clipPath><g clip-path="url(#hc)"><line x1="2" y1="26" x2="22" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="8" y1="26" x2="28" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="14" y1="26" x2="34" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="20" y1="26" x2="40" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="26" y1="26" x2="46" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="32" y1="26" x2="52" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="38" y1="26" x2="58" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="44" y1="26" x2="64" y2="46" stroke="#9C2A1A" stroke-width="1"/><line x1="50" y1="26" x2="70" y2="46" stroke="#9C2A1A" stroke-width="1"/></g><rect x="22" y="26" width="28" height="20" fill="none" stroke="#9C2A1A" stroke-width="2"/><text x="58" y="31" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#9C2A1A">G</text>
-  <circle cx="8" cy="36" r="3" fill="#9C2A1A"/><circle cx="64" cy="36" r="3" fill="#9C2A1A"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="307" height="237" viewBox="-153.5 -123.5 307 237">
+  <rect x="-153.5" y="-123.5" width="307" height="237" rx="45.03" fill="#FDECEA" stroke="#F0A99D" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <rect x="-90" y="-70" width="180" height="140" fill="#F0A99D" stroke="none"/>
+    <polyline points="-90,70 -90,-70" fill="none" stroke="#9C2A1A" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="90,70 90,-70" fill="none" stroke="#9C2A1A" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(0,100) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#9C2A1A">ThermalConductor</text></g>
+    <g transform="translate(0,-95) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#9C2A1A">G</text></g>
+  </g>
 </svg>

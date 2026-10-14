@@ -35,7 +35,8 @@ function ventilator_gui()
   cVol = [0.30 0.80 0.94]; cLoop = [0.97 0.15 0.52];
 
   fig = uifigure('Name', 'NelVent - Bi-level (PC-AC) ventilator monitor', ...
-    'Position', [40 40 1180 660], 'AutoResizeChildren', 'off', 'Tag', 'ventGuiFigure');
+    'Position', [40 40 1180 660], 'AutoResizeChildren', 'off', 'Tag', 'ventGuiFigure', ...
+    'Visible', 'off'); % stay hidden until the first layout is done (no flash of unplaced widgets)
   fig.Color = bg;
   VENT.fig = fig;
 
@@ -114,6 +115,7 @@ function ventilator_gui()
 
   vt_prime();
   vt_refresh();
+  fig.Visible = 'on'; % reveal once every widget sits at its final place
   drawnow();
   vt_loop();
 end
@@ -217,7 +219,17 @@ end
 function place(h, pos)
   if pos(3) < 1, pos(3) = 1; end
   if pos(4) < 1, pos(4) = 1; end
+  if is_uislider(h)
+    % a uislider keeps a fixed 3 px thickness on its minor axis; honour it so the
+    % generic layout never fights the component (no "cannot be changed" warning).
+    if strcmp(h.Orientation, 'vertical'), pos(3) = 3; else, pos(4) = 3; end
+  end
   h.Position = pos;
+end
+%=============================================================================
+function tf = is_uislider(h)
+  tf = false;
+  try, tf = any(strcmp(h.Type, {'uislider', 'uirangeslider'})); catch, end
 end
 %=============================================================================
 function moncell(nameLbl, valLbl, rect)

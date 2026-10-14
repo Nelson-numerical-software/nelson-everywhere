@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect width="72" height="72" rx="14" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="1.5"/>
-  <text x="16" y="36" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="15" font-style="italic" fill="#3C3489">z</text>
-  <line x1="24" y1="36" x2="34" y2="36" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M31 32 L35 36 L31 40" fill="none" stroke="#3C3489" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="49" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" font-style="italic" fill="#3C3489">|z|</text>
-  <text x="49" y="44" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" fill="#3C3489">&#8736;</text>
-  <polygon points="-1,32 -1,40 5,36" fill="#3C3489" opacity="0.7"/>
-  <polygon points="67,24 67,32 73,28" fill="#3C3489" opacity="0.7"/>
-  <polygon points="67,40 67,48 73,44" fill="#3C3489" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="306.5" height="256.5" viewBox="-153.25 -153.25 306.5 256.5">
+  <rect x="-153.25" y="-153.25" width="306.5" height="256.5" rx="48.735" fill="#EEEDFE" stroke="#AFA9EC" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <rect x="-100" y="-100" width="200" height="200" fill="#FFFFFF" stroke="#3C3489" stroke-width="3.25"/>
+    <g transform="translate(0,130) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">Complex to Mag-Angle</text></g>
+    <g transform="translate(60,60) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">len</text></g>
+    <g transform="translate(60,-60) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#3C3489">phi</text></g>
+    <polygon points="40,0 20,20 20,10 -10,10 -10,-10 20,-10 20,-20 40,0" fill="#AFA9EC" stroke="#3C3489" stroke-width="3.25" stroke-linejoin="round"/>
+    <g transform="translate(-60,0) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="96" fill="#3C3489">C</text></g>
+  </g>
 </svg>

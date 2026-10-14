@@ -42,6 +42,17 @@ const useBrowserBridge = typeof BroadcastChannel === 'function' && examplesChann
 // On the desktop we must wait for that bridge instead of falling back to the
 // static fetch path, which has no `catalog.json` file to serve (404).
 const expectsNativeBridge = document.querySelector('script[src*="webui.js"]') !== null;
+let gallery = null;
+let examplesEventsChannel = null;
+
+if (useBrowserBridge) {
+  examplesEventsChannel = new BroadcastChannel(examplesChannelName);
+  examplesEventsChannel.onmessage = (event) => {
+    if (event.data?.type !== 'event' || event.data?.event !== 'changed') return;
+    void gallery?.reload(true);
+  };
+  window.addEventListener('pagehide', () => examplesEventsChannel?.close(), { once: true });
+}
 
 function delay(milliseconds) {
   return new Promise((resolve) => window.setTimeout(resolve, milliseconds));
@@ -113,7 +124,7 @@ function action(method, entry) {
   return entry.kind === 'command' ? rpc(method, { command: entry.command }) : rpc(method, { path: entry.file });
 }
 
-const gallery = mountExampleGallery(document.getElementById('gallery'), {
+gallery = mountExampleGallery(document.getElementById('gallery'), {
   primarySource: 'nelson',
   hasEditor: true,
   compact: 'auto',

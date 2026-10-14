@@ -121,12 +121,13 @@
     "controlSystem": true,
     "lapack": true,
     "nflow": true,
-    "nativeWasmExceptions": false,
+    "nativeWasmExceptions": true,
     "odeSolvers": true,
     "packageManager": true,
     "plots": true,
     "slicot": true,
     "threadedWasm": false,
+    "dynamicToolboxes": true,
     "virtualFilesystem": true,
     "worker": true
   },
@@ -140,7 +141,6 @@
   "unavailable": [
     "desktop-processes",
     "native-dialogs",
-    "native-dynamic-libraries",
     "native-windows"
   ]
 }

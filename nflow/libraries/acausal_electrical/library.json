@@ -1068,7 +1068,7 @@
         "type": "image",
         "src": "IdealDiode.svg"
       },
-      "help": "Piecewise-linear ideal diode: on-resistance Ron above the knee, off-conductance Goff below (smoothed)."
+      "help": "Ideal diode switching at the knee voltage Vknee: off below it (leak conductance Goff), on above it (on-resistance Ron in series with Vknee); the mode flip is an event."
     },
     {
       "type": "RampVoltage",

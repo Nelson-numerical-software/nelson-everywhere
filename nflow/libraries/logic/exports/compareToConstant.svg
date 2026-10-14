@@ -1,7 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" width="72" height="72">
-  <rect width="72" height="72" rx="14" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
-  <text x="36" y="35" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="13" font-weight="500" font-style="normal" fill="#444441">u &gt;= c</text>
-  <line x1="20" y1="47" x2="52" y2="47" stroke="#444441" stroke-width="1.5" stroke-linecap="round"/>
-  <polygon points="-1,32 -1,40 5,36" fill="#444441" opacity="0.7"/>
-  <polygon points="67,32 67,40 73,36" fill="#444441" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="307" height="297" viewBox="-153.5 -153.5 307 297">
+  <rect x="-153.5" y="-153.5" width="307" height="297" rx="56.43" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="3.25"/>
+  <g transform="matrix(1 0 0 -1 0 0)">
+    <rect x="-100" y="-100" width="200" height="200" fill="#B4B2A9" stroke="#444441" stroke-width="3.25"/>
+    <g transform="translate(0,-125) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="24" fill="#444441">threshold</text></g>
+    <ellipse cx="78" cy="0" rx="7" ry="7" fill="#B4B2A9" stroke="#B4B2A9" stroke-width="3.25"/>
+    <g transform="translate(0,130) scale(1,-1)"><text x="0" y="0" text-anchor="middle" dominant-baseline="central" font-size="32" fill="#444441">Compare Const</text></g>
+    <polyline points="-54,20 -8,0 -54,-20" fill="none" stroke="#444441" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </svg>

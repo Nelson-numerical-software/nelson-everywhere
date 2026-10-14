@@ -62,7 +62,7 @@
             "runtime-resources/modules/debugger/tests/test_dbstop.m",
             "runtime-resources/modules/debugger/tests/test_dbup.m"
           ],
-          "bytes": 28821
+          "bytes": 28824
         }
       }
     },
@@ -96,7 +96,7 @@
             "runtime-resources/modules/localization/tests/test_getlanguage.m",
             "runtime-resources/modules/localization/tests/test_setlanguage.m"
           ],
-          "bytes": 5422
+          "bytes": 5785
         }
       }
     },
@@ -190,8 +190,10 @@
             "runtime-resources/modules/types/tests/test_assign_all_false_logical_empty_rhs.m",
             "runtime-resources/modules/types/tests/test_assign_dense_fastpath.m",
             "runtime-resources/modules/types/tests/test_assign_keeps_destination_class.m",
+            "runtime-resources/modules/types/tests/test_assign_partially_empty.m",
             "runtime-resources/modules/types/tests/test_assign_repeated_subscripts.m",
             "runtime-resources/modules/types/tests/test_class.m",
+            "runtime-resources/modules/types/tests/test_delete_subset_dimensions.m",
             "runtime-resources/modules/types/tests/test_double_scalar_extract.m",
             "runtime-resources/modules/types/tests/test_empty_complex_subset_real.m",
             "runtime-resources/modules/types/tests/test_empty_extract.m",
@@ -260,12 +262,15 @@
             "runtime-resources/modules/types/tests/test_sparse_vector_extract_orientation.m",
             "runtime-resources/modules/types/tests/test_string_empty_grow_assign.m",
             "runtime-resources/modules/types/tests/test_string_grow_missing.m",
+            "runtime-resources/modules/types/tests/test_string_numeric_format.m",
+            "runtime-resources/modules/types/tests/test_struct_dynamic_field_build.m",
+            "runtime-resources/modules/types/tests/test_subset_empty_index_shape.m",
             "runtime-resources/modules/types/tests/test_types_error_ids.m",
             "runtime-resources/modules/types/tests/test_underlyingType.m",
             "runtime-resources/modules/types/tests/test_vector_extract.m",
             "runtime-resources/modules/types/tests/TestEnumColor.m"
           ],
-          "bytes": 214248
+          "bytes": 236501
         }
       }
     },
@@ -319,6 +324,7 @@
             "runtime-resources/modules/stream_manager/tests/test_filewrite.m",
             "runtime-resources/modules/stream_manager/tests/test_fopen.m",
             "runtime-resources/modules/stream_manager/tests/test_fprintf_ansi.m",
+            "runtime-resources/modules/stream_manager/tests/test_fprintf_fixes.m",
             "runtime-resources/modules/stream_manager/tests/test_fprintf.m",
             "runtime-resources/modules/stream_manager/tests/test_fread.m",
             "runtime-resources/modules/stream_manager/tests/test_frewind.m",
@@ -346,12 +352,13 @@
             "runtime-resources/modules/stream_manager/tests/test_saveloadbin_sparse.m",
             "runtime-resources/modules/stream_manager/tests/test_saveloadbin_string.m",
             "runtime-resources/modules/stream_manager/tests/test_saveloadbin_struct.m",
+            "runtime-resources/modules/stream_manager/tests/test_scanf_fixes.m",
             "runtime-resources/modules/stream_manager/tests/test_sscanf_io_fixes.m",
             "runtime-resources/modules/stream_manager/tests/test_sscanf_suppression.m",
             "runtime-resources/modules/stream_manager/tests/test_sscanf.m",
             "runtime-resources/modules/stream_manager/tests/test_textscan.m"
           ],
-          "bytes": 6134567
+          "bytes": 6136675
         }
       }
     },
@@ -474,6 +481,7 @@
             "runtime-resources/modules/display_format/tests/test_display_scalar_double_shortEng.m",
             "runtime-resources/modules/display_format/tests/test_display_scalar_number_double_bank.m",
             "runtime-resources/modules/display_format/tests/test_display_scalar_number_double_short.m",
+            "runtime-resources/modules/display_format/tests/test_display_single_leading_blank.m",
             "runtime-resources/modules/display_format/tests/test_display_sparse_double_bank.m",
             "runtime-resources/modules/display_format/tests/test_display_sparse_double_hex.m",
             "runtime-resources/modules/display_format/tests/test_display_sparse_double_long.m",
@@ -509,7 +517,7 @@
             "runtime-resources/modules/display_format/tests/test_scalefactor_integer_values_shortG.m",
             "runtime-resources/modules/display_format/tests/test_scalefactor_single_integer_values_long.m"
           ],
-          "bytes": 386907
+          "bytes": 388708
         }
       }
     },
@@ -565,9 +573,13 @@
             "runtime-resources/modules/operators/tests/test_bitxor.m",
             "runtime-resources/modules/operators/tests/test_cat.m",
             "runtime-resources/modules/operators/tests/test_classdef_array_vertcat_order.m",
+            "runtime-resources/modules/operators/tests/test_colon_integer_logical.m",
             "runtime-resources/modules/operators/tests/test_colon.m",
             "runtime-resources/modules/operators/tests/test_compatible_binary_sizes.m",
             "runtime-resources/modules/operators/tests/test_complex_divide_zero.m",
+            "runtime-resources/modules/operators/tests/test_complex_real_addsub.m",
+            "runtime-resources/modules/operators/tests/test_complex_real_divide.m",
+            "runtime-resources/modules/operators/tests/test_complex_real_times.m",
             "runtime-resources/modules/operators/tests/test_concatenate.m",
             "runtime-resources/modules/operators/tests/test_concatenation_complex_integer.m",
             "runtime-resources/modules/operators/tests/test_concatenation_dimension_mismatch.m",
@@ -584,6 +596,7 @@
             "runtime-resources/modules/operators/tests/test_gt.m",
             "runtime-resources/modules/operators/tests/test_horzcat_empty.m",
             "runtime-resources/modules/operators/tests/test_horzcat.m",
+            "runtime-resources/modules/operators/tests/test_integer_double_arithmetic.m",
             "runtime-resources/modules/operators/tests/test_ismember.m",
             "runtime-resources/modules/operators/tests/test_ldivide.m",
             "runtime-resources/modules/operators/tests/test_le.m",
@@ -601,8 +614,11 @@
             "runtime-resources/modules/operators/tests/test_plus_string_missing.m",
             "runtime-resources/modules/operators/tests/test_plus.m",
             "runtime-resources/modules/operators/tests/test_power_exact.m",
+            "runtime-resources/modules/operators/tests/test_power_fast_integer_exponent.m",
+            "runtime-resources/modules/operators/tests/test_power_logical_nan_inf.m",
             "runtime-resources/modules/operators/tests/test_power.m",
             "runtime-resources/modules/operators/tests/test_rdivide.m",
+            "runtime-resources/modules/operators/tests/test_relational_mixed_types.m",
             "runtime-resources/modules/operators/tests/test_sparse_mldivide.m",
             "runtime-resources/modules/operators/tests/test_struct_classdef_nd_concatenation.m",
             "runtime-resources/modules/operators/tests/test_struct_concatenation_fields.m",
@@ -620,7 +636,7 @@
             "runtime-resources/modules/operators/tests/VertcatOrderHandleFixture.m",
             "runtime-resources/modules/operators/tests/VertcatOrderValueFixture.m"
           ],
-          "bytes": 273503
+          "bytes": 297456
         }
       }
     },
@@ -673,6 +689,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_abs.m",
             "runtime-resources/modules/elementary_functions/tests/test_all.m",
             "runtime-resources/modules/elementary_functions/tests/test_allfinite.m",
+            "runtime-resources/modules/elementary_functions/tests/test_angle_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_angle.m",
             "runtime-resources/modules/elementary_functions/tests/test_base2dec.m",
             "runtime-resources/modules/elementary_functions/tests/test_bernsteinMatrix.m",
@@ -688,6 +705,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_cat_string_invalid_conversion.m",
             "runtime-resources/modules/elementary_functions/tests/test_cat.m",
             "runtime-resources/modules/elementary_functions/tests/test_ceil.m",
+            "runtime-resources/modules/elementary_functions/tests/test_circshift_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_circshift_scalar_shift.m",
             "runtime-resources/modules/elementary_functions/tests/test_circshift.m",
             "runtime-resources/modules/elementary_functions/tests/test_classic_test_matrices.m",
@@ -695,6 +713,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_complex.m",
             "runtime-resources/modules/elementary_functions/tests/test_conj.m",
             "runtime-resources/modules/elementary_functions/tests/test_deal.m",
+            "runtime-resources/modules/elementary_functions/tests/test_dec2base_signed.m",
             "runtime-resources/modules/elementary_functions/tests/test_dec2base.m",
             "runtime-resources/modules/elementary_functions/tests/test_dec2bin.m",
             "runtime-resources/modules/elementary_functions/tests/test_dec2hex.m",
@@ -703,6 +722,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_exp.m",
             "runtime-resources/modules/elementary_functions/tests/test_expm1_accuracy.m",
             "runtime-resources/modules/elementary_functions/tests/test_expm1.m",
+            "runtime-resources/modules/elementary_functions/tests/test_factorial_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_factorial_integer.m",
             "runtime-resources/modules/elementary_functions/tests/test_factorial.m",
             "runtime-resources/modules/elementary_functions/tests/test_filter_extended.m",
@@ -710,6 +730,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_find_empty_errors.m",
             "runtime-resources/modules/elementary_functions/tests/test_find.m",
             "runtime-resources/modules/elementary_functions/tests/test_fix.m",
+            "runtime-resources/modules/elementary_functions/tests/test_flip_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_flip.m",
             "runtime-resources/modules/elementary_functions/tests/test_flipdim.m",
             "runtime-resources/modules/elementary_functions/tests/test_fliplr.m",
@@ -726,6 +747,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_histcounts.m",
             "runtime-resources/modules/elementary_functions/tests/test_histcounts2.m",
             "runtime-resources/modules/elementary_functions/tests/test_hypot.m",
+            "runtime-resources/modules/elementary_functions/tests/test_idivide_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_idivide.m",
             "runtime-resources/modules/elementary_functions/tests/test_imag.m",
             "runtime-resources/modules/elementary_functions/tests/test_ind2sub_one_output.m",
@@ -737,7 +759,9 @@
             "runtime-resources/modules/elementary_functions/tests/test_iscolumn.m",
             "runtime-resources/modules/elementary_functions/tests/test_isdiag.m",
             "runtime-resources/modules/elementary_functions/tests/test_isequal_extended_types.m",
+            "runtime-resources/modules/elementary_functions/tests/test_isequal_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_isequal.m",
+            "runtime-resources/modules/elementary_functions/tests/test_isequaln_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_isequaln.m",
             "runtime-resources/modules/elementary_functions/tests/test_isequalto.m",
             "runtime-resources/modules/elementary_functions/tests/test_isequalwithequalnans.m",
@@ -753,6 +777,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_istriu.m",
             "runtime-resources/modules/elementary_functions/tests/test_isvector.m",
             "runtime-resources/modules/elementary_functions/tests/test_length.m",
+            "runtime-resources/modules/elementary_functions/tests/test_linspace_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_linspace_noninteger.m",
             "runtime-resources/modules/elementary_functions/tests/test_linspace.m",
             "runtime-resources/modules/elementary_functions/tests/test_log.m",
@@ -761,21 +786,27 @@
             "runtime-resources/modules/elementary_functions/tests/test_log1p.m",
             "runtime-resources/modules/elementary_functions/tests/test_log2.m",
             "runtime-resources/modules/elementary_functions/tests/test_logspace.m",
+            "runtime-resources/modules/elementary_functions/tests/test_magic_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_magic.m",
             "runtime-resources/modules/elementary_functions/tests/test_maxk_mink_clamp.m",
             "runtime-resources/modules/elementary_functions/tests/test_maxk_nan.m",
             "runtime-resources/modules/elementary_functions/tests/test_maxk.m",
             "runtime-resources/modules/elementary_functions/tests/test_meshgrid.m",
             "runtime-resources/modules/elementary_functions/tests/test_mink.m",
+            "runtime-resources/modules/elementary_functions/tests/test_mod_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_mod_rem_broadcasting.m",
             "runtime-resources/modules/elementary_functions/tests/test_mod_rem_compat.m",
             "runtime-resources/modules/elementary_functions/tests/test_mod.m",
+            "runtime-resources/modules/elementary_functions/tests/test_nchoosek_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_nchoosek.m",
             "runtime-resources/modules/elementary_functions/tests/test_ndgrid.m",
             "runtime-resources/modules/elementary_functions/tests/test_ndims.m",
+            "runtime-resources/modules/elementary_functions/tests/test_nextpow2_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_nextpow2.m",
+            "runtime-resources/modules/elementary_functions/tests/test_norm_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_norm.m",
             "runtime-resources/modules/elementary_functions/tests/test_normest.m",
+            "runtime-resources/modules/elementary_functions/tests/test_nthroot_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_nthroot.m",
             "runtime-resources/modules/elementary_functions/tests/test_num2bin.m",
             "runtime-resources/modules/elementary_functions/tests/test_num2hex.m",
@@ -785,6 +816,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_permute_empty_class.m",
             "runtime-resources/modules/elementary_functions/tests/test_permute.m",
             "runtime-resources/modules/elementary_functions/tests/test_pinv.m",
+            "runtime-resources/modules/elementary_functions/tests/test_pow2_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_pow2.m",
             "runtime-resources/modules/elementary_functions/tests/test_power.m",
             "runtime-resources/modules/elementary_functions/tests/test_rat.m",
@@ -794,16 +826,23 @@
             "runtime-resources/modules/elementary_functions/tests/test_reallog.m",
             "runtime-resources/modules/elementary_functions/tests/test_realpow.m",
             "runtime-resources/modules/elementary_functions/tests/test_realsqrt.m",
+            "runtime-resources/modules/elementary_functions/tests/test_rem_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_rem.m",
             "runtime-resources/modules/elementary_functions/tests/test_repelem.m",
             "runtime-resources/modules/elementary_functions/tests/test_repmat_empty.m",
+            "runtime-resources/modules/elementary_functions/tests/test_repmat_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_repmat.m",
+            "runtime-resources/modules/elementary_functions/tests/test_reshape_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_reshape.m",
+            "runtime-resources/modules/elementary_functions/tests/test_resize.m",
             "runtime-resources/modules/elementary_functions/tests/test_rosser.m",
             "runtime-resources/modules/elementary_functions/tests/test_rot90.m",
             "runtime-resources/modules/elementary_functions/tests/test_round_digits.m",
+            "runtime-resources/modules/elementary_functions/tests/test_round_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_round.m",
+            "runtime-resources/modules/elementary_functions/tests/test_shape_functions_validation.m",
             "runtime-resources/modules/elementary_functions/tests/test_shiftdim.m",
+            "runtime-resources/modules/elementary_functions/tests/test_sign_fixes.m",
             "runtime-resources/modules/elementary_functions/tests/test_sign.m",
             "runtime-resources/modules/elementary_functions/tests/test_size_last_output_collapses.m",
             "runtime-resources/modules/elementary_functions/tests/test_size.m",
@@ -824,7 +863,7 @@
             "runtime-resources/modules/elementary_functions/tests/test_vander.m",
             "runtime-resources/modules/elementary_functions/tests/test_wilkinson.m"
           ],
-          "bytes": 395840
+          "bytes": 441162
         }
       }
     },
@@ -957,6 +996,7 @@
             "runtime-resources/modules/interpreter/tests/bytecode_classdef_access/+NcByteAccess/+nested/Item.m",
             "runtime-resources/modules/interpreter/tests/bytecode_end_indexed_assign_fun.m",
             "runtime-resources/modules/interpreter/tests/bytecode_end_indexed_assign_script.m",
+            "runtime-resources/modules/interpreter/tests/bytecode_end_persistent_global_fun.m",
             "runtime-resources/modules/interpreter/tests/bytecode_local_multi_output.m",
             "runtime-resources/modules/interpreter/tests/bytecode_local_scalar_plus_constant_single.m",
             "runtime-resources/modules/interpreter/tests/bytecode_local_scalar_plus_constant.m",
@@ -1020,6 +1060,7 @@
             "runtime-resources/modules/interpreter/tests/classdef/@ClassdefSplit/protectedExternal.m",
             "runtime-resources/modules/interpreter/tests/classdef/@ClassdefSplit/staticExternal.m",
             "runtime-resources/modules/interpreter/tests/classdef/@ClassdefStaticMultiOutput/ClassdefStaticMultiOutput.m",
+            "runtime-resources/modules/interpreter/tests/classdef/@ClassdefVarargoutUnset/ClassdefVarargoutUnset.m",
             "runtime-resources/modules/interpreter/tests/classdef/+classdefpkg/@PackagedExternalMethod/externalScale.m",
             "runtime-resources/modules/interpreter/tests/classdef/+classdefpkg/@PackagedExternalMethod/PackagedExternalMethod.m",
             "runtime-resources/modules/interpreter/tests/classdef/+classdefpkg/@PackagedExternalMethod/staticShift.m",
@@ -1077,6 +1118,7 @@
             "runtime-resources/modules/interpreter/tests/classdef/ClassdefBraceIndexValue.m",
             "runtime-resources/modules/interpreter/tests/classdef/ClassdefBuiltinShadowMethod.m",
             "runtime-resources/modules/interpreter/tests/classdef/ClassdefBuiltinSubsref.m",
+            "runtime-resources/modules/interpreter/tests/classdef/ClassdefCaseDistinctMembers.m",
             "runtime-resources/modules/interpreter/tests/classdef/ClassdefColor.m",
             "runtime-resources/modules/interpreter/tests/classdef/ClassdefConcreteSameProperty.m",
             "runtime-resources/modules/interpreter/tests/classdef/ClassdefConflictMethodA.m",
@@ -1354,11 +1396,13 @@
             "runtime-resources/modules/interpreter/tests/compare_colon.m",
             "runtime-resources/modules/interpreter/tests/cpp/CMakeLists.txt",
             "runtime-resources/modules/interpreter/tests/cpp/lexer_semantic_value_tests.cpp",
+            "runtime-resources/modules/interpreter/tests/cpp/runtime_dispatch_idle_task_tests.cpp",
             "runtime-resources/modules/interpreter/tests/direct_script_call_stack_case.m",
             "runtime-resources/modules/interpreter/tests/direct_script_call_stack_helper.m",
             "runtime-resources/modules/interpreter/tests/direct_script_nested_call_stack_case.m",
             "runtime-resources/modules/interpreter/tests/fibonacci/fibonacci.m",
             "runtime-resources/modules/interpreter/tests/fun_varargin.m",
+            "runtime-resources/modules/interpreter/tests/global_continuation_fixture.m",
             "runtime-resources/modules/interpreter/tests/issue_#30_1/func1.m",
             "runtime-resources/modules/interpreter/tests/issue_#30_2/func1.m",
             "runtime-resources/modules/interpreter/tests/missing_input_argument/missing_input_cleared.m",
@@ -1372,6 +1416,7 @@
             "runtime-resources/modules/interpreter/tests/missing_input_argument/MissingInputCtorExplicitChild.m",
             "runtime-resources/modules/interpreter/tests/nelson_cli_command_for_test.m",
             "runtime-resources/modules/interpreter/tests/nelson_tool_command_for_test.m",
+            "runtime-resources/modules/interpreter/tests/nested_function_global_fixture.m",
             "runtime-resources/modules/interpreter/tests/nested_scope/nested_param_shadow.m",
             "runtime-resources/modules/interpreter/tests/nolhs_function.m",
             "runtime-resources/modules/interpreter/tests/onCleanup/demo_onCleanup.m",
@@ -1397,6 +1442,7 @@
             "runtime-resources/modules/interpreter/tests/package_function_call/packageCallHelper.m",
             "runtime-resources/modules/interpreter/tests/package_function_call/packageNargoutHelper.m",
             "runtime-resources/modules/interpreter/tests/package_function_call/Thing.m",
+            "runtime-resources/modules/interpreter/tests/persistent_continuation_fixture.m",
             "runtime-resources/modules/interpreter/tests/runClassdefHelpExample.m",
             "runtime-resources/modules/interpreter/tests/smartindent.txt",
             "runtime-resources/modules/interpreter/tests/tata.m",
@@ -1428,14 +1474,17 @@
             "runtime-resources/modules/interpreter/tests/test_bytecode_artifact.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_classdef_access.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_classdef_static_multi_output.m",
+            "runtime-resources/modules/interpreter/tests/test_bytecode_complex_scalar_fastpath.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_direct_macro_call.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_empty_source.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_end_indexed_assign.m",
+            "runtime-resources/modules/interpreter/tests/test_bytecode_end_persistent_global.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_fused_condition_jumps.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_inline_scalar_builtins.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_lazy_scope_cleanup.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_local_multi_output.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_local_scalar_plus.m",
+            "runtime-resources/modules/interpreter/tests/test_bytecode_ndim_scalar_assign.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_output_error_cleanup.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_scalar_expr.m",
             "runtime-resources/modules/interpreter/tests/test_bytecode_script_field_colon_index.m",
@@ -1455,6 +1504,7 @@
             "runtime-resources/modules/interpreter/tests/test_classdef_builtin_shadow_method.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_builtin_subclass.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_builtin_subsref.m",
+            "runtime-resources/modules/interpreter/tests/test_classdef_case_distinct_members.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_clear_classes_compiled_member_reload.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_clear_classes_value_object.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_clear_classes.m",
@@ -1523,7 +1573,7 @@
             "runtime-resources/modules/interpreter/tests/test_classdef_paren_indexing.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_paren_multi_output.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_parse_dump_fragilities.m",
-            "runtime-resources/modules/interpreter/tests/test_classdef_parse_dump_oracle.m",
+            "runtime-resources/modules/interpreter/tests/test_classdef_parse_dump_parity.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_property_access_rules.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_property_default_once.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_recursion_limit_constructor.m",
@@ -1543,6 +1593,7 @@
             "runtime-resources/modules/interpreter/tests/test_classdef_toplevel_static_dispatch.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_transpose_comment.m",
             "runtime-resources/modules/interpreter/tests/test_classdef_tutorial_examples.m",
+            "runtime-resources/modules/interpreter/tests/test_classdef_varargout_unset.m",
             "runtime-resources/modules/interpreter/tests/test_code_analyzer_ast.m",
             "runtime-resources/modules/interpreter/tests/test_code_analyzer_checkcode_fixes.m",
             "runtime-resources/modules/interpreter/tests/test_code_analyzer_checkcode_imports.m",
@@ -1585,6 +1636,7 @@
             "runtime-resources/modules/interpreter/tests/test_dot_assign_non_struct.m",
             "runtime-resources/modules/interpreter/tests/test_empty_body_loops.m",
             "runtime-resources/modules/interpreter/tests/test_empty_matrix_comparison.m",
+            "runtime-resources/modules/interpreter/tests/test_end_folded_subscripts.m",
             "runtime-resources/modules/interpreter/tests/test_feval_classdef_method.m",
             "runtime-resources/modules/interpreter/tests/test_filewatcher_burst.m",
             "runtime-resources/modules/interpreter/tests/test_filewatcher_removed.m",
@@ -1624,6 +1676,7 @@
             "runtime-resources/modules/interpreter/tests/test_nelson_syntax_gaps_current_behavior.m",
             "runtime-resources/modules/interpreter/tests/test_nested_dot_assign_autovivify.m",
             "runtime-resources/modules/interpreter/tests/test_nested_function_argument_scope.m",
+            "runtime-resources/modules/interpreter/tests/test_nested_function_global.m",
             "runtime-resources/modules/interpreter/tests/test_nested_functions.m",
             "runtime-resources/modules/interpreter/tests/test_number_syntax.m",
             "runtime-resources/modules/interpreter/tests/test_onCleanup_display.m",
@@ -1647,6 +1700,8 @@
             "runtime-resources/modules/interpreter/tests/test_parser_lexer_context_isolation.m",
             "runtime-resources/modules/interpreter/tests/test_parser_lexer_features.m",
             "runtime-resources/modules/interpreter/tests/test_parsestring.m",
+            "runtime-resources/modules/interpreter/tests/test_per_element_external_ref_linear.m",
+            "runtime-resources/modules/interpreter/tests/test_persistent_global_continuation.m",
             "runtime-resources/modules/interpreter/tests/test_recursion.m",
             "runtime-resources/modules/interpreter/tests/test_same_input_output_name.m",
             "runtime-resources/modules/interpreter/tests/test_scalar_double_operator_fastpath.m",
@@ -1686,7 +1741,7 @@
             "runtime-resources/modules/interpreter/tests/vm_semantic_parity_evalin_caller.m",
             "runtime-resources/modules/interpreter/tests/vm_semantic_parity_sum.m"
           ],
-          "bytes": 1350375
+          "bytes": 1379080
         }
       }
     },
@@ -1715,12 +1770,15 @@
             "runtime-resources/modules/modules_manager/tests/test_modules_loaded.m",
             "runtime-resources/modules/modules_manager/tests/test_modules_protected.m",
             "runtime-resources/modules/modules_manager/tests/test_ncc.m",
+            "runtime-resources/modules/modules_manager/tests/test_nmm_build_help_unloadable.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_build_help.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_build_loader.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_default_registry.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_init.m",
+            "runtime-resources/modules/modules_manager/tests/test_nmm_install_missing_archive.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_list_local.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_pack_include_exclude.m",
+            "runtime-resources/modules/modules_manager/tests/test_nmm_pack_target.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_phase0_install.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_phase0_validation.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_portable_local.m",
@@ -1730,6 +1788,7 @@
             "runtime-resources/modules/modules_manager/tests/test_nmm_registry_signature.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_registry.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_test_module_identity.m",
+            "runtime-resources/modules/modules_manager/tests/test_nmm_valid_platforms.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm_versions.m",
             "runtime-resources/modules/modules_manager/tests/test_nmm.m",
             "runtime-resources/modules/modules_manager/tests/test_removegateway.m",
@@ -1739,7 +1798,7 @@
             "runtime-resources/modules/modules_manager/tests/test_toolboxdir.m",
             "runtime-resources/modules/modules_manager/tests/test_usermodulesdir.m"
           ],
-          "bytes": 1507159
+          "bytes": 1516530
         }
       }
     },
@@ -1822,6 +1881,7 @@
             "runtime-resources/modules/sparse/tests/test_sparse_abs.m",
             "runtime-resources/modules/sparse/tests/test_sparse_arithmetic_operators.m",
             "runtime-resources/modules/sparse/tests/test_sparse_compatible_binary_sizes.m",
+            "runtime-resources/modules/sparse/tests/test_sparse_complex_canonicalization.m",
             "runtime-resources/modules/sparse/tests/test_sparse_core_functions_reference.m",
             "runtime-resources/modules/sparse/tests/test_sparse_ctranspose.m",
             "runtime-resources/modules/sparse/tests/test_sparse_imag.m",
@@ -1852,7 +1912,7 @@
             "runtime-resources/modules/sparse/tests/test_symrcm.m",
             "runtime-resources/modules/sparse/tests/test_vertcat_empty.m"
           ],
-          "bytes": 123432
+          "bytes": 127782
         }
       }
     },
@@ -1926,19 +1986,26 @@
             "runtime-resources/modules/constructors_functions/tests/bug_github_issue_1205.m",
             "runtime-resources/modules/constructors_functions/tests/bug_github_issue_534.m",
             "runtime-resources/modules/constructors_functions/tests/bug_github_issue_741.m",
+            "runtime-resources/modules/constructors_functions/tests/test_constructors_dims_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_diag_empty_complex.m",
+            "runtime-resources/modules/constructors_functions/tests/test_diag_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_diag.m",
             "runtime-resources/modules/constructors_functions/tests/test_eps_nonfinite.m",
             "runtime-resources/modules/constructors_functions/tests/test_eps.m",
+            "runtime-resources/modules/constructors_functions/tests/test_eye_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_eye.m",
             "runtime-resources/modules/constructors_functions/tests/test_i.m",
+            "runtime-resources/modules/constructors_functions/tests/test_inf_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_inf.m",
+            "runtime-resources/modules/constructors_functions/tests/test_nan_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_nan.m",
+            "runtime-resources/modules/constructors_functions/tests/test_ones_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_ones.m",
             "runtime-resources/modules/constructors_functions/tests/test_pi.m",
+            "runtime-resources/modules/constructors_functions/tests/test_zeros_fixes.m",
             "runtime-resources/modules/constructors_functions/tests/test_zeros.m"
           ],
-          "bytes": 23245
+          "bytes": 32105
         }
       }
     },
@@ -1985,9 +2052,10 @@
             "runtime-resources/modules/logical/tests/test_vertcat_logical_double.m",
             "runtime-resources/modules/logical/tests/test_vertcat_logical_integer.m",
             "runtime-resources/modules/logical/tests/test_vertcat_logical_single.m",
+            "runtime-resources/modules/logical/tests/test_xor_true_false_fixes.m",
             "runtime-resources/modules/logical/tests/test_xor.m"
           ],
-          "bytes": 25661
+          "bytes": 27146
         }
       }
     },
@@ -2001,6 +2069,7 @@
           "files": [
             "runtime-resources/modules/time/tests/bench_datenum.m",
             "runtime-resources/modules/time/tests/bench_datetime_vectorized.m",
+            "runtime-resources/modules/time/tests/bench_duration_display.m",
             "runtime-resources/modules/time/tests/bench_sleep_5_s.m",
             "runtime-resources/modules/time/tests/bug_github_issue_36.m",
             "runtime-resources/modules/time/tests/bug_now.m",
@@ -2014,6 +2083,7 @@
             "runtime-resources/modules/time/tests/test_calendarDuration_empty.m",
             "runtime-resources/modules/time/tests/test_calendarDuration_size.m",
             "runtime-resources/modules/time/tests/test_calendarDuration_split_units.m",
+            "runtime-resources/modules/time/tests/test_calendarDuration_vectorized_text.m",
             "runtime-resources/modules/time/tests/test_calendarDuration.m",
             "runtime-resources/modules/time/tests/test_calmonths.m",
             "runtime-resources/modules/time/tests/test_calquarters.m",
@@ -2036,6 +2106,7 @@
             "runtime-resources/modules/time/tests/test_datetime_concat_numeric_error.m",
             "runtime-resources/modules/time/tests/test_datetime_display_page_format.m",
             "runtime-resources/modules/time/tests/test_datetime_duration_empty.m",
+            "runtime-resources/modules/time/tests/test_datetime_duration_format.m",
             "runtime-resources/modules/time/tests/test_datetime_duration_quantiles.m",
             "runtime-resources/modules/time/tests/test_datetime_duration.m",
             "runtime-resources/modules/time/tests/test_datetime_setops.m",
@@ -2043,16 +2114,19 @@
             "runtime-resources/modules/time/tests/test_datetime_text_exact_instant.m",
             "runtime-resources/modules/time/tests/test_datetime_timezone_conversion.m",
             "runtime-resources/modules/time/tests/test_datetime_timezone.m",
+            "runtime-resources/modules/time/tests/test_datetime_vectorized_text.m",
             "runtime-resources/modules/time/tests/test_datetime.m",
             "runtime-resources/modules/time/tests/test_datevec.m",
             "runtime-resources/modules/time/tests/test_day.m",
             "runtime-resources/modules/time/tests/test_days.m",
+            "runtime-resources/modules/time/tests/test_displayTextArray_alignment.m",
             "runtime-resources/modules/time/tests/test_duration_cellstr.m",
             "runtime-resources/modules/time/tests/test_duration_concat_nan_cat.m",
             "runtime-resources/modules/time/tests/test_duration_concat_numeric.m",
             "runtime-resources/modules/time/tests/test_duration_setops.m",
             "runtime-resources/modules/time/tests/test_duration_string_missing.m",
             "runtime-resources/modules/time/tests/test_duration_text_significant_digits.m",
+            "runtime-resources/modules/time/tests/test_duration_vectorized_text.m",
             "runtime-resources/modules/time/tests/test_duration.m",
             "runtime-resources/modules/time/tests/test_eomdate.m",
             "runtime-resources/modules/time/tests/test_eomday.m",
@@ -2132,7 +2206,7 @@
             "runtime-resources/modules/time/tests/test_ymd.m",
             "runtime-resources/modules/time/tests/test_yyyymmdd.m"
           ],
-          "bytes": 248363
+          "bytes": 264233
         }
       }
     },
@@ -2187,6 +2261,7 @@
             "runtime-resources/modules/string/tests/test_convertStringsToChars.m",
             "runtime-resources/modules/string/tests/test_convertStringToCharArgs.m",
             "runtime-resources/modules/string/tests/test_count.m",
+            "runtime-resources/modules/string/tests/test_deblank_fixes.m",
             "runtime-resources/modules/string/tests/test_deblank.m",
             "runtime-resources/modules/string/tests/test_digitBoundary.m",
             "runtime-resources/modules/string/tests/test_digitsPattern.m",
@@ -2225,14 +2300,17 @@
             "runtime-resources/modules/string/tests/test_num2str_fixes.m",
             "runtime-resources/modules/string/tests/test_num2str.m",
             "runtime-resources/modules/string/tests/test_optionalPattern.m",
+            "runtime-resources/modules/string/tests/test_pad_fixes.m",
             "runtime-resources/modules/string/tests/test_pad.m",
             "runtime-resources/modules/string/tests/test_parse_measurements.m",
             "runtime-resources/modules/string/tests/test_pattern_functions.m",
             "runtime-resources/modules/string/tests/test_pattern.m",
             "runtime-resources/modules/string/tests/test_possessivePattern.m",
+            "runtime-resources/modules/string/tests/test_regexp_fixes.m",
             "runtime-resources/modules/string/tests/test_regexp.m",
             "runtime-resources/modules/string/tests/test_regexpi.m",
             "runtime-resources/modules/string/tests/test_regexpPattern.m",
+            "runtime-resources/modules/string/tests/test_regexprep_fixes.m",
             "runtime-resources/modules/string/tests/test_regexprep.m",
             "runtime-resources/modules/string/tests/test_regexptranslate.m",
             "runtime-resources/modules/string/tests/test_replace.m",
@@ -2251,9 +2329,11 @@
             "runtime-resources/modules/string/tests/test_str2double_implicit_exponents.m",
             "runtime-resources/modules/string/tests/test_str2double.m",
             "runtime-resources/modules/string/tests/test_str2num.m",
+            "runtime-resources/modules/string/tests/test_strcat_fixes.m",
             "runtime-resources/modules/string/tests/test_strcat.m",
             "runtime-resources/modules/string/tests/test_strcmp.m",
             "runtime-resources/modules/string/tests/test_strcmpi.m",
+            "runtime-resources/modules/string/tests/test_strfind_fixes.m",
             "runtime-resources/modules/string/tests/test_strfind.m",
             "runtime-resources/modules/string/tests/test_string_array.m",
             "runtime-resources/modules/string/tests/test_string_cell_convertible.m",
@@ -2271,13 +2351,16 @@
             "runtime-resources/modules/string/tests/test_strjust.m",
             "runtime-resources/modules/string/tests/test_strlength.m",
             "runtime-resources/modules/string/tests/test_strmatch.m",
+            "runtime-resources/modules/string/tests/test_strncmp_fixes.m",
             "runtime-resources/modules/string/tests/test_strncmp.m",
             "runtime-resources/modules/string/tests/test_strncmpi.m",
             "runtime-resources/modules/string/tests/test_strread.m",
             "runtime-resources/modules/string/tests/test_strrep_overlap.m",
             "runtime-resources/modules/string/tests/test_strrep.m",
             "runtime-resources/modules/string/tests/test_strsplit.m",
+            "runtime-resources/modules/string/tests/test_strtok_fixes.m",
             "runtime-resources/modules/string/tests/test_strtok.m",
+            "runtime-resources/modules/string/tests/test_strtrim_fixes.m",
             "runtime-resources/modules/string/tests/test_strtrim.m",
             "runtime-resources/modules/string/tests/test_strvcat.m",
             "runtime-resources/modules/string/tests/test_symvar.m",
@@ -2290,7 +2373,7 @@
             "runtime-resources/modules/string/tests/test_whitespacePattern.m",
             "runtime-resources/modules/string/tests/test_wildcardPattern.m"
           ],
-          "bytes": 292115
+          "bytes": 342673
         }
       }
     },
@@ -2315,6 +2398,7 @@
             "runtime-resources/modules/integer/tests/test_horzcat_empty.m",
             "runtime-resources/modules/integer/tests/test_int16.m",
             "runtime-resources/modules/integer/tests/test_int32.m",
+            "runtime-resources/modules/integer/tests/test_int64_uint64_literal.m",
             "runtime-resources/modules/integer/tests/test_int64.m",
             "runtime-resources/modules/integer/tests/test_int8.m",
             "runtime-resources/modules/integer/tests/test_integer_minus.m",
@@ -2338,7 +2422,7 @@
             "runtime-resources/modules/integer/tests/test_uint8.m",
             "runtime-resources/modules/integer/tests/test_vertcat_empty.m"
           ],
-          "bytes": 49013
+          "bytes": 53212
         }
       }
     },
@@ -2404,6 +2488,7 @@
             "runtime-resources/modules/linear_algebra/tests/test_condeig.m",
             "runtime-resources/modules/linear_algebra/tests/test_condest.m",
             "runtime-resources/modules/linear_algebra/tests/test_cumtrapz.m",
+            "runtime-resources/modules/linear_algebra/tests/test_curl.m",
             "runtime-resources/modules/linear_algebra/tests/test_del2.m",
             "runtime-resources/modules/linear_algebra/tests/test_det.m",
             "runtime-resources/modules/linear_algebra/tests/test_diff_empty.m",
@@ -2421,11 +2506,13 @@
             "runtime-resources/modules/linear_algebra/tests/test_hess.m",
             "runtime-resources/modules/linear_algebra/tests/test_ichol.m",
             "runtime-resources/modules/linear_algebra/tests/test_ilu.m",
+            "runtime-resources/modules/linear_algebra/tests/test_inv_fixes.m",
             "runtime-resources/modules/linear_algebra/tests/test_inv.m",
             "runtime-resources/modules/linear_algebra/tests/test_isbanded.m",
             "runtime-resources/modules/linear_algebra/tests/test_ishermitian.m",
             "runtime-resources/modules/linear_algebra/tests/test_issymmetric.m",
             "runtime-resources/modules/linear_algebra/tests/test_kron_class.m",
+            "runtime-resources/modules/linear_algebra/tests/test_kron_fixes.m",
             "runtime-resources/modules/linear_algebra/tests/test_kron.m",
             "runtime-resources/modules/linear_algebra/tests/test_linsolve.m",
             "runtime-resources/modules/linear_algebra/tests/test_logm.m",
@@ -2455,6 +2542,7 @@
             "runtime-resources/modules/linear_algebra/tests/test_qmr_preconditioners.m",
             "runtime-resources/modules/linear_algebra/tests/test_qmr.m",
             "runtime-resources/modules/linear_algebra/tests/test_qr.m",
+            "runtime-resources/modules/linear_algebra/tests/test_rank_fixes.m",
             "runtime-resources/modules/linear_algebra/tests/test_rank.m",
             "runtime-resources/modules/linear_algebra/tests/test_rcond.m",
             "runtime-resources/modules/linear_algebra/tests/test_rref.m",
@@ -2466,11 +2554,12 @@
             "runtime-resources/modules/linear_algebra/tests/test_svd.m",
             "runtime-resources/modules/linear_algebra/tests/test_svds.m",
             "runtime-resources/modules/linear_algebra/tests/test_tensorprod.m",
+            "runtime-resources/modules/linear_algebra/tests/test_trace_fixes.m",
             "runtime-resources/modules/linear_algebra/tests/test_trace.m",
             "runtime-resources/modules/linear_algebra/tests/test_trapz.m",
             "runtime-resources/modules/linear_algebra/tests/test_vecnorm.m"
           ],
-          "bytes": 394551
+          "bytes": 403019
         }
       }
     },
@@ -2517,7 +2606,7 @@
             "runtime-resources/modules/files_folders_functions/tests/test_tempname.m",
             "runtime-resources/modules/files_folders_functions/tests/test_userdir.m"
           ],
-          "bytes": 61873
+          "bytes": 61777
         }
       }
     },
@@ -2565,7 +2654,7 @@
             "runtime-resources/modules/os_functions/tests/test_winopen.m",
             "runtime-resources/modules/os_functions/tests/test_winqueryreg.m"
           ],
-          "bytes": 39131
+          "bytes": 39620
         }
       }
     },
@@ -2655,7 +2744,7 @@
             "runtime-resources/modules/core/tests/test_verLessThan.m",
             "runtime-resources/modules/core/tests/test_version.m"
           ],
-          "bytes": 113017
+          "bytes": 112999
         }
       }
     },
@@ -2799,6 +2888,7 @@
             "runtime-resources/modules/data_structures/tests/bench_plan_cell_linear_fill.m",
             "runtime-resources/modules/data_structures/tests/bench_plan_cell_partial_slice_broadcast.m",
             "runtime-resources/modules/data_structures/tests/bench_plan_cell_set_vector_contents_scalar_no_resize.m",
+            "runtime-resources/modules/data_structures/tests/bug_arrayfun_cellfun_struct_output.m",
             "runtime-resources/modules/data_structures/tests/bug_arrayfun_no_output.m",
             "runtime-resources/modules/data_structures/tests/bug_audit_arrayfun_uniform_class_mismatch.m",
             "runtime-resources/modules/data_structures/tests/bug_cellfun_no_output.m",
@@ -2843,7 +2933,7 @@
             "runtime-resources/modules/data_structures/tests/test_struct2cell.m",
             "runtime-resources/modules/data_structures/tests/test_structfun.m"
           ],
-          "bytes": 106664
+          "bytes": 115524
         }
       }
     },
@@ -2856,12 +2946,15 @@
           "file": "runtime-resources/bundles/dictionary-tests.nlpack",
           "files": [
             "runtime-resources/modules/dictionary/tests/bench_containers_map_keyed_ops.m",
+            "runtime-resources/modules/dictionary/tests/bench_containers_map_numeric_keyed_ops.m",
             "runtime-resources/modules/dictionary/tests/bench_plan_containers_map_construction.m",
             "runtime-resources/modules/dictionary/tests/bench_plan_containers_map_lookup.m",
             "runtime-resources/modules/dictionary/tests/bench_plan_containers_map_warm_construction.m",
             "runtime-resources/modules/dictionary/tests/test_audit_fixes.m",
             "runtime-resources/modules/dictionary/tests/test_configureDictionary.m",
+            "runtime-resources/modules/dictionary/tests/test_containers_map_fixes.m",
             "runtime-resources/modules/dictionary/tests/test_containers_map_native_fast_paths.m",
+            "runtime-resources/modules/dictionary/tests/test_containers_map_numeric_keys.m",
             "runtime-resources/modules/dictionary/tests/test_containers_map.m",
             "runtime-resources/modules/dictionary/tests/test_dictionary_classdef.m",
             "runtime-resources/modules/dictionary/tests/test_dictionary_demo.m",
@@ -2886,7 +2979,7 @@
             "runtime-resources/modules/dictionary/tests/test_writedictionary_readdictionary.m",
             "runtime-resources/modules/dictionary/tests/test_writedictionary.m"
           ],
-          "bytes": 64935
+          "bytes": 75995
         }
       }
     },
@@ -2898,6 +2991,7 @@
         "tests": {
           "file": "runtime-resources/bundles/table-tests.nlpack",
           "files": [
+            "runtime-resources/modules/table/tests/bench_join.m",
             "runtime-resources/modules/table/tests/bench_table_transformations.m",
             "runtime-resources/modules/table/tests/bench_timetable_retime_synchronize.m",
             "runtime-resources/modules/table/tests/test_addprop.m",
@@ -2937,6 +3031,7 @@
             "runtime-resources/modules/table/tests/test_istable.m",
             "runtime-resources/modules/table/tests/test_istabular.m",
             "runtime-resources/modules/table/tests/test_istimetable.m",
+            "runtime-resources/modules/table/tests/test_join_dupkeys_unmatched.m",
             "runtime-resources/modules/table/tests/test_join_innerjoin_outerjoin.m",
             "runtime-resources/modules/table/tests/test_join_options.m",
             "runtime-resources/modules/table/tests/test_join.m",
@@ -3029,6 +3124,7 @@
             "runtime-resources/modules/table/tests/test_table_size.m",
             "runtime-resources/modules/table/tests/test_table_sort_setops.m",
             "runtime-resources/modules/table/tests/test_table_sortrows_types.m",
+            "runtime-resources/modules/table/tests/test_table_space_variable_names.m",
             "runtime-resources/modules/table/tests/test_table_stack_unstack.m",
             "runtime-resources/modules/table/tests/test_table_subsasgn.m",
             "runtime-resources/modules/table/tests/test_table_subsref.m",
@@ -3081,6 +3177,7 @@
             "runtime-resources/modules/table/tests/test_timetable_no_variables_display.m",
             "runtime-resources/modules/table/tests/test_timetable_overlapsrange.m",
             "runtime-resources/modules/table/tests/test_timetable_properties_assign.m",
+            "runtime-resources/modules/table/tests/test_timetable_retime_vectorized.m",
             "runtime-resources/modules/table/tests/test_timetable_retime.m",
             "runtime-resources/modules/table/tests/test_timetable_row_time_subscript.m",
             "runtime-resources/modules/table/tests/test_timetable_rowtimes_count.m",
@@ -3104,7 +3201,7 @@
             "runtime-resources/modules/table/tests/test_withinrange.m",
             "runtime-resources/modules/table/tests/test_withtol.m"
           ],
-          "bytes": 544308
+          "bytes": 558313
         }
       }
     },
@@ -3288,7 +3385,7 @@
             "runtime-resources/modules/engine/tests/test_timeout_option.m",
             "runtime-resources/modules/engine/tests/test_windowed_evaluator_stack.m"
           ],
-          "bytes": 69655
+          "bytes": 70263
         }
       }
     },
@@ -3333,7 +3430,7 @@
             "runtime-resources/modules/file_archiver/tests/test_zipslip_dotdot.zip",
             "runtime-resources/modules/file_archiver/tests/test_zipslip_drive.zip"
           ],
-          "bytes": 85879
+          "bytes": 85735
         }
       }
     },
@@ -3393,6 +3490,7 @@
             "runtime-resources/modules/special_functions/tests/test_betainc.m",
             "runtime-resources/modules/special_functions/tests/test_betaln.m",
             "runtime-resources/modules/special_functions/tests/test_cross.m",
+            "runtime-resources/modules/special_functions/tests/test_dot_fixes.m",
             "runtime-resources/modules/special_functions/tests/test_dot_size_check.m",
             "runtime-resources/modules/special_functions/tests/test_dot.m",
             "runtime-resources/modules/special_functions/tests/test_erf.m",
@@ -3426,16 +3524,20 @@
             "runtime-resources/modules/special_functions/tests/test_interp3.m",
             "runtime-resources/modules/special_functions/tests/test_interpft.m",
             "runtime-resources/modules/special_functions/tests/test_interpn.m",
+            "runtime-resources/modules/special_functions/tests/test_isprime_fixes.m",
             "runtime-resources/modules/special_functions/tests/test_isprime.m",
+            "runtime-resources/modules/special_functions/tests/test_lcm_fixes.m",
             "runtime-resources/modules/special_functions/tests/test_lcm.m",
             "runtime-resources/modules/special_functions/tests/test_makima.m",
+            "runtime-resources/modules/special_functions/tests/test_membrane.m",
             "runtime-resources/modules/special_functions/tests/test_pchip.m",
             "runtime-resources/modules/special_functions/tests/test_peaks.m",
+            "runtime-resources/modules/special_functions/tests/test_primes_fixes.m",
             "runtime-resources/modules/special_functions/tests/test_primes.m",
             "runtime-resources/modules/special_functions/tests/test_quadgk.m",
             "runtime-resources/modules/special_functions/tests/test_spline.m"
           ],
-          "bytes": 128304
+          "bytes": 139380
         }
       }
     },
@@ -3486,9 +3588,11 @@
             "runtime-resources/modules/trigonometric_functions/tests/test_cscd.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_csch.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_deg2rad.m",
+            "runtime-resources/modules/trigonometric_functions/tests/test_degtorad.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_gallery_examples.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_pol2cart.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_rad2deg.m",
+            "runtime-resources/modules/trigonometric_functions/tests/test_radtodeg.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_sec.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_secd.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_sech.m",
@@ -3505,7 +3609,7 @@
             "runtime-resources/modules/trigonometric_functions/tests/test_tanm.m",
             "runtime-resources/modules/trigonometric_functions/tests/test_wrapTo.m"
           ],
-          "bytes": 87446
+          "bytes": 90886
         }
       }
     },
@@ -3521,9 +3625,11 @@
             "runtime-resources/modules/graphics/tests/assert_axis_label_orientation.m",
             "runtime-resources/modules/graphics/tests/assert_opengl_patch_frame.m",
             "runtime-resources/modules/graphics/tests/bench_area.m",
+            "runtime-resources/modules/graphics/tests/bench_camera_perspective.m",
             "runtime-resources/modules/graphics/tests/bench_clabel.m",
             "runtime-resources/modules/graphics/tests/bench_close_all.m",
             "runtime-resources/modules/graphics/tests/bench_close.m",
+            "runtime-resources/modules/graphics/tests/bench_contourf.m",
             "runtime-resources/modules/graphics/tests/bench_figure.m",
             "runtime-resources/modules/graphics/tests/bench_fill.m",
             "runtime-resources/modules/graphics/tests/bench_image_cdata_animation.m",
@@ -3532,6 +3638,7 @@
             "runtime-resources/modules/graphics/tests/bench_polarplot.m",
             "runtime-resources/modules/graphics/tests/bench_scatter_2.m",
             "runtime-resources/modules/graphics/tests/bench_scatter.m",
+            "runtime-resources/modules/graphics/tests/bench_surface_lighting.m",
             "runtime-resources/modules/graphics/tests/bug_audit_property_type_downcast.m",
             "runtime-resources/modules/graphics/tests/bug_github_issue_1080.m",
             "runtime-resources/modules/graphics/tests/bug_github_issue_809.m",
@@ -3540,6 +3647,14 @@
             "runtime-resources/modules/graphics/tests/bug_github_issue_975.m",
             "runtime-resources/modules/graphics/tests/create_animatedline_render_axes.m",
             "runtime-resources/modules/graphics/tests/create_animatedline_render_scene.m",
+            "runtime-resources/modules/graphics/tests/fixtures/portable_raster_baselines.json",
+            "runtime-resources/modules/graphics/tests/fixtures/savefig_openfig_reference.fig",
+            "runtime-resources/modules/graphics/tests/fixtures/stackedplot_inside.csv",
+            "runtime-resources/modules/graphics/tests/fixtures/stackedplot_matrix.csv",
+            "runtime-resources/modules/graphics/tests/fixtures/stackedplot_outage.csv",
+            "runtime-resources/modules/graphics/tests/fixtures/stackedplot_patients.csv",
+            "runtime-resources/modules/graphics/tests/fixtures/stackedplot_weather_events.csv",
+            "runtime-resources/modules/graphics/tests/fixtures/stackedplot_weather.csv",
             "runtime-resources/modules/graphics/tests/graphics_comet_any_full_trace.m",
             "runtime-resources/modules/graphics/tests/graphics_comet_count_points.m",
             "runtime-resources/modules/graphics/tests/graphics_comet3_any_full_trace.m",
@@ -3548,6 +3663,7 @@
             "runtime-resources/modules/graphics/tests/graphics_stackedplot_fixture.m",
             "runtime-resources/modules/graphics/tests/graphics_stackedplot_line_handles.m",
             "runtime-resources/modules/graphics/tests/graphics_streamline_fixture.m",
+            "runtime-resources/modules/graphics/tests/graphics_test_reference_figure_position.m",
             "runtime-resources/modules/graphics/tests/images/abydos.pcx",
             "runtime-resources/modules/graphics/tests/images/BUGLE.PCX",
             "runtime-resources/modules/graphics/tests/images/cube.jpg",
@@ -3561,17 +3677,9 @@
             "runtime-resources/modules/graphics/tests/images/winter-fox-64x64-rgb32.jpg",
             "runtime-resources/modules/graphics/tests/images/winter-fox-64x64-rgba32-gray.png",
             "runtime-resources/modules/graphics/tests/images/winter-fox-64x64-rgba32.png",
-            "runtime-resources/modules/graphics/tests/portable_raster_baselines.json",
             "runtime-resources/modules/graphics/tests/render_assert_not_blank.m",
             "runtime-resources/modules/graphics/tests/render_compare_images.m",
-            "runtime-resources/modules/graphics/tests/savefig_openfig_reference.fig",
             "runtime-resources/modules/graphics/tests/skip_if_portable_graphics_backend.m",
-            "runtime-resources/modules/graphics/tests/stackedplot_inside.csv",
-            "runtime-resources/modules/graphics/tests/stackedplot_matrix.csv",
-            "runtime-resources/modules/graphics/tests/stackedplot_outage.csv",
-            "runtime-resources/modules/graphics/tests/stackedplot_patients.csv",
-            "runtime-resources/modules/graphics/tests/stackedplot_weather_events.csv",
-            "runtime-resources/modules/graphics/tests/stackedplot_weather.csv",
             "runtime-resources/modules/graphics/tests/test_abstract_particle_vortex.m",
             "runtime-resources/modules/graphics/tests/test_abyss.m",
             "runtime-resources/modules/graphics/tests/test_adv_cli_shutdown_with_open_figure.m",
@@ -3603,11 +3711,19 @@
             "runtime-resources/modules/graphics/tests/test_annotation_type.m",
             "runtime-resources/modules/graphics/tests/test_annotation_validation.m",
             "runtime-resources/modules/graphics/tests/test_annotation.m",
+            "runtime-resources/modules/graphics/tests/test_appdata.m",
             "runtime-resources/modules/graphics/tests/test_area.m",
             "runtime-resources/modules/graphics/tests/test_autumn.m",
+            "runtime-resources/modules/graphics/tests/test_axes_camera_axis_aligned_view.m",
+            "runtime-resources/modules/graphics/tests/test_axes_camera_perspective.m",
             "runtime-resources/modules/graphics/tests/test_axes_children_replaced_by_image_surface.m",
+            "runtime-resources/modules/graphics/tests/test_axes_clipping_off_overflow.m",
+            "runtime-resources/modules/graphics/tests/test_axes_deferred_limits.m",
+            "runtime-resources/modules/graphics/tests/test_axes_edge_on_tick_labels.m",
             "runtime-resources/modules/graphics/tests/test_axes_limit_mode.m",
+            "runtime-resources/modules/graphics/tests/test_axes_object_creation_scaling.m",
             "runtime-resources/modules/graphics/tests/test_axes_opengl_overlap_order.m",
+            "runtime-resources/modules/graphics/tests/test_axes_perspective_manual_camva_data_extent.m",
             "runtime-resources/modules/graphics/tests/test_axes_pixel_units_logical_pixels.m",
             "runtime-resources/modules/graphics/tests/test_axes_ticks_disabled.m",
             "runtime-resources/modules/graphics/tests/test_axes_toolbar.m",
@@ -3615,6 +3731,7 @@
             "runtime-resources/modules/graphics/tests/test_axes_units_position_same_call.m",
             "runtime-resources/modules/graphics/tests/test_axes_units_uipanel_parent.m",
             "runtime-resources/modules/graphics/tests/test_axes.m",
+            "runtime-resources/modules/graphics/tests/test_axescheck.m",
             "runtime-resources/modules/graphics/tests/test_axis_equal_limits.m",
             "runtime-resources/modules/graphics/tests/test_axis_label_orientation_azimuth_120.m",
             "runtime-resources/modules/graphics/tests/test_axis_label_orientation_azimuth_30.m",
@@ -3633,6 +3750,7 @@
             "runtime-resources/modules/graphics/tests/test_bar_datetime.m",
             "runtime-resources/modules/graphics/tests/test_bar_grouped_irregular_step.m",
             "runtime-resources/modules/graphics/tests/test_bar.m",
+            "runtime-resources/modules/graphics/tests/test_bar3_depth_occlusion.m",
             "runtime-resources/modules/graphics/tests/test_bar3.m",
             "runtime-resources/modules/graphics/tests/test_bar3h.m",
             "runtime-resources/modules/graphics/tests/test_barh.m",
@@ -3644,6 +3762,7 @@
             "runtime-resources/modules/graphics/tests/test_box.m",
             "runtime-resources/modules/graphics/tests/test_boxchart.m",
             "runtime-resources/modules/graphics/tests/test_boxplot.m",
+            "runtime-resources/modules/graphics/tests/test_brighten.m",
             "runtime-resources/modules/graphics/tests/test_bubblechart.m",
             "runtime-resources/modules/graphics/tests/test_bubblechart3.m",
             "runtime-resources/modules/graphics/tests/test_bubblecloud.m",
@@ -3657,7 +3776,18 @@
             "runtime-resources/modules/graphics/tests/test_callback/uihtmlRecordDataChange.m",
             "runtime-resources/modules/graphics/tests/test_callback/uihtmlRecordEvent.m",
             "runtime-resources/modules/graphics/tests/test_callback/uiinspect.m",
+            "runtime-resources/modules/graphics/tests/test_camdolly.m",
             "runtime-resources/modules/graphics/tests/test_camlight.m",
+            "runtime-resources/modules/graphics/tests/test_camlookat.m",
+            "runtime-resources/modules/graphics/tests/test_camorbit.m",
+            "runtime-resources/modules/graphics/tests/test_campan.m",
+            "runtime-resources/modules/graphics/tests/test_campos.m",
+            "runtime-resources/modules/graphics/tests/test_camproj.m",
+            "runtime-resources/modules/graphics/tests/test_camroll.m",
+            "runtime-resources/modules/graphics/tests/test_camtarget.m",
+            "runtime-resources/modules/graphics/tests/test_camup.m",
+            "runtime-resources/modules/graphics/tests/test_camva.m",
+            "runtime-resources/modules/graphics/tests/test_camzoom.m",
             "runtime-resources/modules/graphics/tests/test_caxis.m",
             "runtime-resources/modules/graphics/tests/test_children_handlevisibility.m",
             "runtime-resources/modules/graphics/tests/test_children_order.m",
@@ -3726,6 +3856,7 @@
             "runtime-resources/modules/graphics/tests/test_contour_box_state.m",
             "runtime-resources/modules/graphics/tests/test_contour_constant_data.m",
             "runtime-resources/modules/graphics/tests/test_contour_fill_mode.m",
+            "runtime-resources/modules/graphics/tests/test_contour_fine_grid_smoothness.m",
             "runtime-resources/modules/graphics/tests/test_contour_label_upright.m",
             "runtime-resources/modules/graphics/tests/test_contour_level_on_grid_values.m",
             "runtime-resources/modules/graphics/tests/test_contour_matrix_levels.m",
@@ -3772,13 +3903,16 @@
             "runtime-resources/modules/graphics/tests/test_datetick.m",
             "runtime-resources/modules/graphics/tests/test_default_values_compat.m",
             "runtime-resources/modules/graphics/tests/test_delete.m",
+            "runtime-resources/modules/graphics/tests/test_donutchart_center_label_autosize.m",
             "runtime-resources/modules/graphics/tests/test_donutchart_data_modes.m",
             "runtime-resources/modules/graphics/tests/test_donutchart_render_visibility.m",
             "runtime-resources/modules/graphics/tests/test_donutchart_style_properties.m",
             "runtime-resources/modules/graphics/tests/test_donutchart.m",
             "runtime-resources/modules/graphics/tests/test_drawnow_gui_render_sync.m",
+            "runtime-resources/modules/graphics/tests/test_drawnow_offscreen_window.m",
             "runtime-resources/modules/graphics/tests/test_drawnow.m",
             "runtime-resources/modules/graphics/tests/test_dynamic_surface_lighting.m",
+            "runtime-resources/modules/graphics/tests/test_ellipsoid.m",
             "runtime-resources/modules/graphics/tests/test_errorbar.m",
             "runtime-resources/modules/graphics/tests/test_essential_plot_types_example.m",
             "runtime-resources/modules/graphics/tests/test_examples_1.m",
@@ -3787,6 +3921,7 @@
             "runtime-resources/modules/graphics/tests/test_explicit_parent.m",
             "runtime-resources/modules/graphics/tests/test_export_shading_interp.m",
             "runtime-resources/modules/graphics/tests/test_export_svg_large_surface.m",
+            "runtime-resources/modules/graphics/tests/test_exportapp.m",
             "runtime-resources/modules/graphics/tests/test_fcontour_axes_limits.m",
             "runtime-resources/modules/graphics/tests/test_fcontour.m",
             "runtime-resources/modules/graphics/tests/test_feather.m",
@@ -3801,6 +3936,7 @@
             "runtime-resources/modules/graphics/tests/test_figure_axes_property_effects_yaxis_location.m",
             "runtime-resources/modules/graphics/tests/test_figure_axes_property_effects.m",
             "runtime-resources/modules/graphics/tests/test_figure_close_callbacks.m",
+            "runtime-resources/modules/graphics/tests/test_figure_currentcharacter.m",
             "runtime-resources/modules/graphics/tests/test_figure_default_color.m",
             "runtime-resources/modules/graphics/tests/test_figure_default_position.m",
             "runtime-resources/modules/graphics/tests/test_figure_drawlater.m",
@@ -3810,10 +3946,12 @@
             "runtime-resources/modules/graphics/tests/test_figure_KeyPressFcn_KeyReleaseFcn_ButtonFcn.m",
             "runtime-resources/modules/graphics/tests/test_figure_multi_window.m",
             "runtime-resources/modules/graphics/tests/test_figure_native_placement.m",
+            "runtime-resources/modules/graphics/tests/test_figure_pick_object.m",
             "runtime-resources/modules/graphics/tests/test_figure_position_readback.m",
             "runtime-resources/modules/graphics/tests/test_figure_properties.m",
             "runtime-resources/modules/graphics/tests/test_figure_resize_pixel_ui_anchor.m",
             "runtime-resources/modules/graphics/tests/test_figure_resize.m",
+            "runtime-resources/modules/graphics/tests/test_figure_selectiontype.m",
             "runtime-resources/modules/graphics/tests/test_figure_sizechanged_uicontrols.m",
             "runtime-resources/modules/graphics/tests/test_figure_units.m",
             "runtime-resources/modules/graphics/tests/test_figure_visible_position.m",
@@ -3864,8 +4002,10 @@
             "runtime-resources/modules/graphics/tests/test_getframe_hidden_nested_uicomponent.m",
             "runtime-resources/modules/graphics/tests/test_getframe_hidden_position_resize.m",
             "runtime-resources/modules/graphics/tests/test_getframe_hidden_uicontrol_scale.m",
+            "runtime-resources/modules/graphics/tests/test_getframe_offscreen_window.m",
             "runtime-resources/modules/graphics/tests/test_getframe_second_axes.m",
             "runtime-resources/modules/graphics/tests/test_getframe_uifigure_layout.m",
+            "runtime-resources/modules/graphics/tests/test_getframe_uifigure_tabgroup.m",
             "runtime-resources/modules/graphics/tests/test_getframe.m",
             "runtime-resources/modules/graphics/tests/test_gobjects.m",
             "runtime-resources/modules/graphics/tests/test_graphics_help_examples_have_images.m",
@@ -3894,7 +4034,9 @@
             "runtime-resources/modules/graphics/tests/test_headless_text_drawable_content.m",
             "runtime-resources/modules/graphics/tests/test_heatmap.m",
             "runtime-resources/modules/graphics/tests/test_hggroup.m",
+            "runtime-resources/modules/graphics/tests/test_hgtransform.m",
             "runtime-resources/modules/graphics/tests/test_hist_binning_rules.m",
+            "runtime-resources/modules/graphics/tests/test_hist_default_style.m",
             "runtime-resources/modules/graphics/tests/test_hist_designated_target.m",
             "runtime-resources/modules/graphics/tests/test_hist_matrix_columns.m",
             "runtime-resources/modules/graphics/tests/test_hist_non_numeric_bins.m",
@@ -3909,6 +4051,7 @@
             "runtime-resources/modules/graphics/tests/test_im2frame.m",
             "runtime-resources/modules/graphics/tests/test_image_cdata_drawnow_resize.m",
             "runtime-resources/modules/graphics/tests/test_image_descending_data.m",
+            "runtime-resources/modules/graphics/tests/test_image_zero_cdata_direct.m",
             "runtime-resources/modules/graphics/tests/test_image.m",
             "runtime-resources/modules/graphics/tests/test_imagesc_axis_xy_rendering.m",
             "runtime-resources/modules/graphics/tests/test_imagesc_YDir.m",
@@ -3922,8 +4065,10 @@
             "runtime-resources/modules/graphics/tests/test_ishold.m",
             "runtime-resources/modules/graphics/tests/test_isonormals.m",
             "runtime-resources/modules/graphics/tests/test_isosurface.m",
+            "runtime-resources/modules/graphics/tests/test_isvalid.m",
             "runtime-resources/modules/graphics/tests/test_isValidGraphicsProperty.m",
             "runtime-resources/modules/graphics/tests/test_jet.m",
+            "runtime-resources/modules/graphics/tests/test_knot.m",
             "runtime-resources/modules/graphics/tests/test_labels_log_scale.m",
             "runtime-resources/modules/graphics/tests/test_labels.m",
             "runtime-resources/modules/graphics/tests/test_latex_interpreter_fallback.m",
@@ -3956,6 +4101,8 @@
             "runtime-resources/modules/graphics/tests/test_LineStyleOrder.m",
             "runtime-resources/modules/graphics/tests/test_log_scale_minor_ticks.m",
             "runtime-resources/modules/graphics/tests/test_loglog.m",
+            "runtime-resources/modules/graphics/tests/test_logo.m",
+            "runtime-resources/modules/graphics/tests/test_makehgtform.m",
             "runtime-resources/modules/graphics/tests/test_MenuBar_property.m",
             "runtime-resources/modules/graphics/tests/test_mesh_waterfall_binscatter_name_value.m",
             "runtime-resources/modules/graphics/tests/test_mesh.m",
@@ -4007,7 +4154,9 @@
             "runtime-resources/modules/graphics/tests/test_patch_properties.m",
             "runtime-resources/modules/graphics/tests/test_patch_render_assertions.m",
             "runtime-resources/modules/graphics/tests/test_patch_spiral_limits.m",
+            "runtime-resources/modules/graphics/tests/test_patch_struct_properties.m",
             "runtime-resources/modules/graphics/tests/test_patch_struct_props_constructor.m",
+            "runtime-resources/modules/graphics/tests/test_patch_surf2patch_interp_single.m",
             "runtime-resources/modules/graphics/tests/test_patch_two_columns.m",
             "runtime-resources/modules/graphics/tests/test_patch_vertices_update.m",
             "runtime-resources/modules/graphics/tests/test_patch.m",
@@ -4018,6 +4167,7 @@
             "runtime-resources/modules/graphics/tests/test_pie_subplots.m",
             "runtime-resources/modules/graphics/tests/test_pie.m",
             "runtime-resources/modules/graphics/tests/test_piechart_data_modes.m",
+            "runtime-resources/modules/graphics/tests/test_piechart_named_labels.m",
             "runtime-resources/modules/graphics/tests/test_piechart_render_visibility.m",
             "runtime-resources/modules/graphics/tests/test_piechart_style_properties.m",
             "runtime-resources/modules/graphics/tests/test_piechart.m",
@@ -4034,6 +4184,7 @@
             "runtime-resources/modules/graphics/tests/test_plot3_render_line.m",
             "runtime-resources/modules/graphics/tests/test_plot3.m",
             "runtime-resources/modules/graphics/tests/test_plotmatrix.m",
+            "runtime-resources/modules/graphics/tests/test_polaraxes_axis_off.m",
             "runtime-resources/modules/graphics/tests/test_polaraxes.m",
             "runtime-resources/modules/graphics/tests/test_polarbubblechart.m",
             "runtime-resources/modules/graphics/tests/test_polarhistogram.m",
@@ -4059,6 +4210,7 @@
             "runtime-resources/modules/graphics/tests/test_position_properties_wordcloud.m",
             "runtime-resources/modules/graphics/tests/test_position_properties.m",
             "runtime-resources/modules/graphics/tests/test_print.m",
+            "runtime-resources/modules/graphics/tests/test_property_partial_matching.m",
             "runtime-resources/modules/graphics/tests/test_property_value_class_compat.m",
             "runtime-resources/modules/graphics/tests/test_quiver_1.m",
             "runtime-resources/modules/graphics/tests/test_quiver_2.m",
@@ -4117,6 +4269,7 @@
             "runtime-resources/modules/graphics/tests/test_rgbplot.m",
             "runtime-resources/modules/graphics/tests/test_ribbon.m",
             "runtime-resources/modules/graphics/tests/test_rigid_triple_pendulum.m",
+            "runtime-resources/modules/graphics/tests/test_rotate.m",
             "runtime-resources/modules/graphics/tests/test_rotate3d.m",
             "runtime-resources/modules/graphics/tests/test_savefig_openfig_all_objects.m",
             "runtime-resources/modules/graphics/tests/test_savefig_openfig_basic_open.m",
@@ -4165,6 +4318,7 @@
             "runtime-resources/modules/graphics/tests/test_scatterhistogram_errors.m",
             "runtime-resources/modules/graphics/tests/test_scatterhistogram_groups.m",
             "runtime-resources/modules/graphics/tests/test_scatterhistogram_locations.m",
+            "runtime-resources/modules/graphics/tests/test_scatterhistogram_marginal_color.m",
             "runtime-resources/modules/graphics/tests/test_scatterhistogram_random_render.m",
             "runtime-resources/modules/graphics/tests/test_scatterhistogram_smooth.m",
             "runtime-resources/modules/graphics/tests/test_scatterhistogram_style_updates.m",
@@ -4176,6 +4330,7 @@
             "runtime-resources/modules/graphics/tests/test_set_introspection.m",
             "runtime-resources/modules/graphics/tests/test_sgtitle.m",
             "runtime-resources/modules/graphics/tests/test_shading_lighting_material.m",
+            "runtime-resources/modules/graphics/tests/test_shg.m",
             "runtime-resources/modules/graphics/tests/test_shrinkfaces.m",
             "runtime-resources/modules/graphics/tests/test_sky.m",
             "runtime-resources/modules/graphics/tests/test_slice.m",
@@ -4230,6 +4385,7 @@
             "runtime-resources/modules/graphics/tests/test_stem_namevalue_style.m",
             "runtime-resources/modules/graphics/tests/test_stem_render_examples.m",
             "runtime-resources/modules/graphics/tests/test_stem3.m",
+            "runtime-resources/modules/graphics/tests/test_stream2_default_length.m",
             "runtime-resources/modules/graphics/tests/test_stream2_stream3.m",
             "runtime-resources/modules/graphics/tests/test_streamline_3d.m",
             "runtime-resources/modules/graphics/tests/test_streamline_errors.m",
@@ -4250,13 +4406,19 @@
             "runtime-resources/modules/graphics/tests/test_subtitle.m",
             "runtime-resources/modules/graphics/tests/test_summer.m",
             "runtime-resources/modules/graphics/tests/test_surf.m",
+            "runtime-resources/modules/graphics/tests/test_surf2patch.m",
             "runtime-resources/modules/graphics/tests/test_surface_axes_aspect.m",
             "runtime-resources/modules/graphics/tests/test_surface_color_alpha.m",
             "runtime-resources/modules/graphics/tests/test_surface_empty_axis_labels_repaint.m",
+            "runtime-resources/modules/graphics/tests/test_surface_facealpha_flat.m",
             "runtime-resources/modules/graphics/tests/test_surface_imagesc_compat.m",
+            "runtime-resources/modules/graphics/tests/test_surface_lighting_brightness.m",
             "runtime-resources/modules/graphics/tests/test_surface_lighting_shading.m",
+            "runtime-resources/modules/graphics/tests/test_surface_marker_occlusion.m",
             "runtime-resources/modules/graphics/tests/test_surface_parent_axes.m",
             "runtime-resources/modules/graphics/tests/test_surface_rgb_color_data.m",
+            "runtime-resources/modules/graphics/tests/test_surface_texturemap.m",
+            "runtime-resources/modules/graphics/tests/test_surface_transparent_over_opaque.m",
             "runtime-resources/modules/graphics/tests/test_surface.m",
             "runtime-resources/modules/graphics/tests/test_surfc.m",
             "runtime-resources/modules/graphics/tests/test_surfl.m",
@@ -4286,11 +4448,13 @@
             "runtime-resources/modules/graphics/tests/test_tilerowcol.m",
             "runtime-resources/modules/graphics/tests/test_timeseries_plot.m",
             "runtime-resources/modules/graphics/tests/test_title_label_reuse.m",
+            "runtime-resources/modules/graphics/tests/test_title_log_scale.m",
             "runtime-resources/modules/graphics/tests/test_title_position_properties.m",
             "runtime-resources/modules/graphics/tests/test_title_subtitle.m",
             "runtime-resources/modules/graphics/tests/test_title_visibility.m",
             "runtime-resources/modules/graphics/tests/test_title.m",
             "runtime-resources/modules/graphics/tests/test_ToolBar_property.m",
+            "runtime-resources/modules/graphics/tests/test_translucent_faces.m",
             "runtime-resources/modules/graphics/tests/test_triplot.m",
             "runtime-resources/modules/graphics/tests/test_trisurf.m",
             "runtime-resources/modules/graphics/tests/test_turbo.m",
@@ -4303,6 +4467,7 @@
             "runtime-resources/modules/graphics/tests/test_uibutton.m",
             "runtime-resources/modules/graphics/tests/test_uibuttongroup_appdesigner.m",
             "runtime-resources/modules/graphics/tests/test_uibuttongroup_selectedobject.m",
+            "runtime-resources/modules/graphics/tests/test_uicheckbox_transparent_background.m",
             "runtime-resources/modules/graphics/tests/test_uicheckbox.m",
             "runtime-resources/modules/graphics/tests/test_uicomponent_font_rendering.m",
             "runtime-resources/modules/graphics/tests/test_uicontainer_axes_idle_drawnow.m",
@@ -4312,6 +4477,7 @@
             "runtime-resources/modules/graphics/tests/test_uicontainer_default_values_compat.m",
             "runtime-resources/modules/graphics/tests/test_uicontextmenu_properties.m",
             "runtime-resources/modules/graphics/tests/test_uicontrol_callback.m",
+            "runtime-resources/modules/graphics/tests/test_uicontrol_checkbox_radio_indicator.m",
             "runtime-resources/modules/graphics/tests/test_uicontrol_checkbox.m",
             "runtime-resources/modules/graphics/tests/test_uicontrol_edit_multiline_editable.m",
             "runtime-resources/modules/graphics/tests/test_uicontrol_edit_multiline.m",
@@ -4336,18 +4502,22 @@
             "runtime-resources/modules/graphics/tests/test_uicontrol_uibuttongroup.m",
             "runtime-resources/modules/graphics/tests/test_uicontrol_uipanel_parent.m",
             "runtime-resources/modules/graphics/tests/test_uicontrol_units.m",
+            "runtime-resources/modules/graphics/tests/test_uidatepicker.m",
             "runtime-resources/modules/graphics/tests/test_uidropdown.m",
             "runtime-resources/modules/graphics/tests/test_uieditfield.m",
             "runtime-resources/modules/graphics/tests/test_uifigure_auto_resize_children.m",
             "runtime-resources/modules/graphics/tests/test_uifigure_tabbed_cleanup.m",
             "runtime-resources/modules/graphics/tests/test_uifigure_visible_resize_uicomponents.m",
             "runtime-resources/modules/graphics/tests/test_uigauge_manual_ticks.m",
+            "runtime-resources/modules/graphics/tests/test_uigauge_render.m",
             "runtime-resources/modules/graphics/tests/test_uigridlayout.m",
             "runtime-resources/modules/graphics/tests/test_uihtml_not_supported.m",
             "runtime-resources/modules/graphics/tests/test_uihtml.m",
+            "runtime-resources/modules/graphics/tests/test_uiknob_discrete_export.m",
             "runtime-resources/modules/graphics/tests/test_uiknob_font_color.m",
             "runtime-resources/modules/graphics/tests/test_uiknob_interactive.m",
             "runtime-resources/modules/graphics/tests/test_uiknob_manual_ticks.m",
+            "runtime-resources/modules/graphics/tests/test_uiknob_render.m",
             "runtime-resources/modules/graphics/tests/test_uiknob_uigauge.m",
             "runtime-resources/modules/graphics/tests/test_uilabel.m",
             "runtime-resources/modules/graphics/tests/test_uilamp_transparent_background.m",
@@ -4357,15 +4527,23 @@
             "runtime-resources/modules/graphics/tests/test_uipanel_content_area_units.m",
             "runtime-resources/modules/graphics/tests/test_uipanel.m",
             "runtime-resources/modules/graphics/tests/test_uiradiobutton.m",
+            "runtime-resources/modules/graphics/tests/test_uislider_fixed_thickness.m",
             "runtime-resources/modules/graphics/tests/test_uislider_manual_ticks.m",
+            "runtime-resources/modules/graphics/tests/test_uislider_range_render.m",
+            "runtime-resources/modules/graphics/tests/test_uislider_render_after_replace.m",
             "runtime-resources/modules/graphics/tests/test_uislider.m",
+            "runtime-resources/modules/graphics/tests/test_uispinner_render.m",
+            "runtime-resources/modules/graphics/tests/test_uiswitch_label_not_clipped.m",
+            "runtime-resources/modules/graphics/tests/test_uiswitch_render.m",
             "runtime-resources/modules/graphics/tests/test_uitab_reparent.m",
             "runtime-resources/modules/graphics/tests/test_uitabgroup.m",
             "runtime-resources/modules/graphics/tests/test_uitable_appdesigner.m",
             "runtime-resources/modules/graphics/tests/test_uitable_column_width.m",
             "runtime-resources/modules/graphics/tests/test_uitable_export_image.m",
+            "runtime-resources/modules/graphics/tests/test_uitextarea_render.m",
             "runtime-resources/modules/graphics/tests/test_uitextarea_uispinner.m",
             "runtime-resources/modules/graphics/tests/test_uitogglebutton_web.m",
+            "runtime-resources/modules/graphics/tests/test_uitree_render.m",
             "runtime-resources/modules/graphics/tests/test_uitree.m",
             "runtime-resources/modules/graphics/tests/test_validatecolor.m",
             "runtime-resources/modules/graphics/tests/test_ventilator_gui.m",
@@ -4373,6 +4551,7 @@
             "runtime-resources/modules/graphics/tests/test_view.m",
             "runtime-resources/modules/graphics/tests/test_violinplot.m",
             "runtime-resources/modules/graphics/tests/test_viridis.m",
+            "runtime-resources/modules/graphics/tests/test_viscircles.m",
             "runtime-resources/modules/graphics/tests/test_visible_multi_axes_surface_repaint.m",
             "runtime-resources/modules/graphics/tests/test_visual_geometry.m",
             "runtime-resources/modules/graphics/tests/test_waitfor.m",
@@ -4399,13 +4578,14 @@
             "runtime-resources/modules/graphics/tests/test_yticks.m",
             "runtime-resources/modules/graphics/tests/test_yyaxis.m",
             "runtime-resources/modules/graphics/tests/test_zlim.m",
+            "runtime-resources/modules/graphics/tests/test_zoom_object.m",
             "runtime-resources/modules/graphics/tests/test_zoom.m",
             "runtime-resources/modules/graphics/tests/test_ztickangle.m",
             "runtime-resources/modules/graphics/tests/test_ztickformat.m",
             "runtime-resources/modules/graphics/tests/test_zticklabels.m",
             "runtime-resources/modules/graphics/tests/test_zticks.m"
           ],
-          "bytes": 6788027
+          "bytes": 7011061
         }
       }
     },
@@ -4482,13 +4662,14 @@
             "runtime-resources/modules/graphics_io/tests/test_saveas_svg_mesh_opengl_frame.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_svg_surface_axis_depth.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_svg_uifigure_uiaxes_capture.m",
+            "runtime-resources/modules/graphics_io/tests/test_saveas_tall_image_png.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_uicontrol_units_scale.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_unicode_title.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_vector_formats.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_violinplot_svg.m",
             "runtime-resources/modules/graphics_io/tests/test_saveas_wordcloud_svg_matches_png.m"
           ],
-          "bytes": 113847
+          "bytes": 116388
         }
       }
     },
@@ -4588,6 +4769,7 @@
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_bjt.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_brake.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_bus_assignment.m",
+            "runtime-resources/modules/nflow_blocks/tests/test_nflow_causal_generate_icon.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_combinatorial_logic.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_contact.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_controlled_sources.m",
@@ -4603,6 +4785,7 @@
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_freewheel.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_heating_resistor.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_hit_crossing.m",
+            "runtime-resources/modules/nflow_blocks/tests/test_nflow_idealdiode.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_initial_condition.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_interval_test_dynamic.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_interval_test.m",
@@ -4640,7 +4823,7 @@
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_waveform_sources.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_zdiode.m"
           ],
-          "bytes": 622461
+          "bytes": 627177
         }
       }
     },
@@ -4660,6 +4843,7 @@
             "runtime-resources/modules/nflow_engine/tests/Command_bode.nflow",
             "runtime-resources/modules/nflow_engine/tests/Command.csv",
             "runtime-resources/modules/nflow_engine/tests/Command.nflow",
+            "runtime-resources/modules/nflow_engine/tests/cpp/cmake_command_tests.cpp",
             "runtime-resources/modules/nflow_engine/tests/cpp/CMakeLists.txt",
             "runtime-resources/modules/nflow_engine/tests/cpp/dashboard_binding_tests.cpp",
             "runtime-resources/modules/nflow_engine/tests/cpp/fixtures/channel_two_nets.json",
@@ -4836,6 +5020,7 @@
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_dashboard.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_diode.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_foreach.m",
+            "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_idealdiode.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_int64.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_islands_rust.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_numeric_families_islands.m",
@@ -4884,7 +5069,7 @@
             "runtime-resources/modules/nflow_engine/tests/test_nflow_gcbh.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_gcs_gcb.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_getfullname.m",
-            "runtime-resources/modules/nflow_engine/tests/test_nflow_getsimulinkblockhandle.m",
+            "runtime-resources/modules/nflow_engine/tests/test_nflow_getnflowblockhandle.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_hierarchical_edit.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_if.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_int64_codegen.m",
@@ -4970,7 +5155,7 @@
             "runtime-resources/modules/nflow_engine/tests/trig_cos_ramp.csv",
             "runtime-resources/modules/nflow_engine/tests/trig_cos_ramp.nflow"
           ],
-          "bytes": 1422655
+          "bytes": 1432470
         }
       }
     },
@@ -5057,10 +5242,14 @@
             "runtime-resources/modules/data_analysis/tests/test_conv.m",
             "runtime-resources/modules/data_analysis/tests/test_conv2.m",
             "runtime-resources/modules/data_analysis/tests/test_cummax_cummin_options.m",
+            "runtime-resources/modules/data_analysis/tests/test_cummax_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_cummax.m",
+            "runtime-resources/modules/data_analysis/tests/test_cummin_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_cummin.m",
+            "runtime-resources/modules/data_analysis/tests/test_cumprod_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_cumprod.m",
             "runtime-resources/modules/data_analysis/tests/test_cumsum_cumprod_parallel_lines.m",
+            "runtime-resources/modules/data_analysis/tests/test_cumsum_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_cumsum.m",
             "runtime-resources/modules/data_analysis/tests/test_detrend.m",
             "runtime-resources/modules/data_analysis/tests/test_discretize.m",
@@ -5085,11 +5274,13 @@
             "runtime-resources/modules/data_analysis/tests/test_ismissing.m",
             "runtime-resources/modules/data_analysis/tests/test_issorted_directions.m",
             "runtime-resources/modules/data_analysis/tests/test_issorted.m",
+            "runtime-resources/modules/data_analysis/tests/test_max_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_max_min_broadcasting.m",
             "runtime-resources/modules/data_analysis/tests/test_max_min_empty_expansion.m",
             "runtime-resources/modules/data_analysis/tests/test_max_min_empty_reduction.m",
             "runtime-resources/modules/data_analysis/tests/test_max_sparse.m",
             "runtime-resources/modules/data_analysis/tests/test_max.m",
+            "runtime-resources/modules/data_analysis/tests/test_min_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_min_sparse.m",
             "runtime-resources/modules/data_analysis/tests/test_min.m",
             "runtime-resources/modules/data_analysis/tests/test_mov_long_input.m",
@@ -5106,6 +5297,7 @@
             "runtime-resources/modules/data_analysis/tests/test_movsum.m",
             "runtime-resources/modules/data_analysis/tests/test_movvar.m",
             "runtime-resources/modules/data_analysis/tests/test_normalize.m",
+            "runtime-resources/modules/data_analysis/tests/test_prod_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_prod.m",
             "runtime-resources/modules/data_analysis/tests/test_rescale.m",
             "runtime-resources/modules/data_analysis/tests/test_rmmissing_vector.m",
@@ -5119,6 +5311,7 @@
             "runtime-resources/modules/data_analysis/tests/test_sort_complex.m",
             "runtime-resources/modules/data_analysis/tests/test_sort_double.m",
             "runtime-resources/modules/data_analysis/tests/test_sort_five_arguments.m",
+            "runtime-resources/modules/data_analysis/tests/test_sort_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_sort_int32.m",
             "runtime-resources/modules/data_analysis/tests/test_sort_missing_components.m",
             "runtime-resources/modules/data_analysis/tests/test_sort_stability_complex.m",
@@ -5131,6 +5324,7 @@
             "runtime-resources/modules/data_analysis/tests/test_sort.m",
             "runtime-resources/modules/data_analysis/tests/test_standardizeMissing.m",
             "runtime-resources/modules/data_analysis/tests/test_subspace.m",
+            "runtime-resources/modules/data_analysis/tests/test_sum_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_sum_prod_cum_empty.m",
             "runtime-resources/modules/data_analysis/tests/test_sum.m",
             "runtime-resources/modules/data_analysis/tests/test_summary.m",
@@ -5139,6 +5333,7 @@
             "runtime-resources/modules/data_analysis/tests/test_unique_cell.m",
             "runtime-resources/modules/data_analysis/tests/test_unique_complex.m",
             "runtime-resources/modules/data_analysis/tests/test_unique_double.m",
+            "runtime-resources/modules/data_analysis/tests/test_unique_fixes.m",
             "runtime-resources/modules/data_analysis/tests/test_unique_integer.m",
             "runtime-resources/modules/data_analysis/tests/test_unique_legacy.m",
             "runtime-resources/modules/data_analysis/tests/test_unique_missing.m",
@@ -5148,7 +5343,7 @@
             "runtime-resources/modules/data_analysis/tests/test_unique.m",
             "runtime-resources/modules/data_analysis/tests/test_uniquetol.m"
           ],
-          "bytes": 341693
+          "bytes": 359979
         }
       }
     },
@@ -5169,6 +5364,7 @@
             "runtime-resources/modules/polynomial_functions/tests/test_polyder.m",
             "runtime-resources/modules/polynomial_functions/tests/test_polyfit.m",
             "runtime-resources/modules/polynomial_functions/tests/test_polyint.m",
+            "runtime-resources/modules/polynomial_functions/tests/test_polyval_horner.m",
             "runtime-resources/modules/polynomial_functions/tests/test_polyval_scalar_empty.m",
             "runtime-resources/modules/polynomial_functions/tests/test_polyval.m",
             "runtime-resources/modules/polynomial_functions/tests/test_polyvalm.m",
@@ -5177,7 +5373,7 @@
             "runtime-resources/modules/polynomial_functions/tests/test_roots_trailing_zeros.m",
             "runtime-resources/modules/polynomial_functions/tests/test_roots.m"
           ],
-          "bytes": 29353
+          "bytes": 34517
         }
       }
     },
@@ -5240,7 +5436,7 @@
             "runtime-resources/modules/validators/tests/test_validatestring.m",
             "runtime-resources/modules/validators/tests/test_validators_examples.m"
           ],
-          "bytes": 86465
+          "bytes": 86467
         }
       }
     },
@@ -5268,7 +5464,10 @@
             "runtime-resources/modules/control_system/tests/test_bode_errors.m",
             "runtime-resources/modules/control_system/tests/test_bode_plot_line_style.m",
             "runtime-resources/modules/control_system/tests/test_bode_plot_style.m",
+            "runtime-resources/modules/control_system/tests/test_bode_with_frequency.m",
             "runtime-resources/modules/control_system/tests/test_bode.m",
+            "runtime-resources/modules/control_system/tests/test_bodeoptions.m",
+            "runtime-resources/modules/control_system/tests/test_bodeplot.m",
             "runtime-resources/modules/control_system/tests/test_c2d.m",
             "runtime-resources/modules/control_system/tests/test_care.m",
             "runtime-resources/modules/control_system/tests/test_cloop.m",
@@ -5311,6 +5510,7 @@
             "runtime-resources/modules/control_system/tests/test_lsim.m",
             "runtime-resources/modules/control_system/tests/test_ltiDisplayModelProperties.m",
             "runtime-resources/modules/control_system/tests/test_lyap.m",
+            "runtime-resources/modules/control_system/tests/test_margin.m",
             "runtime-resources/modules/control_system/tests/test_minreal.m",
             "runtime-resources/modules/control_system/tests/test_nyquist_range.m",
             "runtime-resources/modules/control_system/tests/test_nyquist_special_systems.m",
@@ -5323,7 +5523,10 @@
             "runtime-resources/modules/control_system/tests/test_padecoef.m",
             "runtime-resources/modules/control_system/tests/test_parallel.m",
             "runtime-resources/modules/control_system/tests/test_pid_closed_loop_example.m",
+            "runtime-resources/modules/control_system/tests/test_place.m",
             "runtime-resources/modules/control_system/tests/test_pole.m",
+            "runtime-resources/modules/control_system/tests/test_pzmap.m",
+            "runtime-resources/modules/control_system/tests/test_rlocus.m",
             "runtime-resources/modules/control_system/tests/test_schord.m",
             "runtime-resources/modules/control_system/tests/test_series.m",
             "runtime-resources/modules/control_system/tests/test_sigma.m",
@@ -5363,9 +5566,10 @@
             "runtime-resources/modules/control_system/tests/test_tf2ss.m",
             "runtime-resources/modules/control_system/tests/test_tfdata.m",
             "runtime-resources/modules/control_system/tests/test_tzero.m",
-            "runtime-resources/modules/control_system/tests/test_zero.m"
+            "runtime-resources/modules/control_system/tests/test_zero.m",
+            "runtime-resources/modules/control_system/tests/test_zpk.m"
           ],
-          "bytes": 166291
+          "bytes": 198536
         }
       }
     },
@@ -5390,6 +5594,7 @@
             "runtime-resources/modules/ode_solvers/tests/cpp/CMakeLists.txt",
             "runtime-resources/modules/ode_solvers/tests/cpp/idas_session_tests.cpp",
             "runtime-resources/modules/ode_solvers/tests/cpp/main.cpp",
+            "runtime-resources/modules/ode_solvers/tests/cpp/sundials_backend_tests.cpp",
             "runtime-resources/modules/ode_solvers/tests/ddeTestEventThreshold.m",
             "runtime-resources/modules/ode_solvers/tests/odeAssertFinalValue.m",
             "runtime-resources/modules/ode_solvers/tests/odeBenchLinearInterpolate.m",
@@ -5520,7 +5725,7 @@
             "runtime-resources/modules/ode_solvers/tests/test_odeset.m",
             "runtime-resources/modules/ode_solvers/tests/test_odextend.m"
           ],
-          "bytes": 242405
+          "bytes": 246701
         }
       }
     },
@@ -5549,11 +5754,13 @@
             "runtime-resources/modules/random/tests/test_MRG32k3a.m",
             "runtime-resources/modules/random/tests/test_pcg.m",
             "runtime-resources/modules/random/tests/test_philox.m",
+            "runtime-resources/modules/random/tests/test_rand_dims_validation.m",
             "runtime-resources/modules/random/tests/test_rand.m",
+            "runtime-resources/modules/random/tests/test_randg.m",
             "runtime-resources/modules/random/tests/test_randi.m",
             "runtime-resources/modules/random/tests/test_randn_reference.m",
             "runtime-resources/modules/random/tests/test_randn.m",
-            "runtime-resources/modules/random/tests/test_randperm_reference.m",
+            "runtime-resources/modules/random/tests/test_randperm_expected_stream.m",
             "runtime-resources/modules/random/tests/test_randperm.m",
             "runtime-resources/modules/random/tests/test_RandStream_create_global.m",
             "runtime-resources/modules/random/tests/test_RandStream_global_isolation.m",
@@ -5568,7 +5775,7 @@
             "runtime-resources/modules/random/tests/test_twister64.m",
             "runtime-resources/modules/random/tests/test_xoshiro.m"
           ],
-          "bytes": 62916
+          "bytes": 68369
         }
       }
     },
@@ -5858,6 +6065,7 @@
             "runtime-resources/modules/statistics/tests/test_isoutlier.m",
             "runtime-resources/modules/statistics/tests/test_jackknife.m",
             "runtime-resources/modules/statistics/tests/test_jbtest.m",
+            "runtime-resources/modules/statistics/tests/test_KDTreeSearcher.m",
             "runtime-resources/modules/statistics/tests/test_kmeans_clustering_example.m",
             "runtime-resources/modules/statistics/tests/test_kmeans.m",
             "runtime-resources/modules/statistics/tests/test_kmedoids.m",
@@ -5881,12 +6089,15 @@
             "runtime-resources/modules/statistics/tests/test_mahal.m",
             "runtime-resources/modules/statistics/tests/test_mdscale.m",
             "runtime-resources/modules/statistics/tests/test_mean_empty.m",
+            "runtime-resources/modules/statistics/tests/test_mean_fixes.m",
             "runtime-resources/modules/statistics/tests/test_mean_invalid_dimension_id.m",
             "runtime-resources/modules/statistics/tests/test_mean.m",
             "runtime-resources/modules/statistics/tests/test_median_class.m",
+            "runtime-resources/modules/statistics/tests/test_median_fixes.m",
             "runtime-resources/modules/statistics/tests/test_median_var_std_empty.m",
             "runtime-resources/modules/statistics/tests/test_median.m",
             "runtime-resources/modules/statistics/tests/test_mode_empty.m",
+            "runtime-resources/modules/statistics/tests/test_mode_fixes.m",
             "runtime-resources/modules/statistics/tests/test_mode.m",
             "runtime-resources/modules/statistics/tests/test_moment.m",
             "runtime-resources/modules/statistics/tests/test_nan_statistics.m",
@@ -5960,6 +6171,7 @@
             "runtime-resources/modules/statistics/tests/test_squareform.m",
             "runtime-resources/modules/statistics/tests/test_statget.m",
             "runtime-resources/modules/statistics/tests/test_stats_empty_nan.m",
+            "runtime-resources/modules/statistics/tests/test_std_fixes.m",
             "runtime-resources/modules/statistics/tests/test_std.m",
             "runtime-resources/modules/statistics/tests/test_tabulate.m",
             "runtime-resources/modules/statistics/tests/test_tcdf.m",
@@ -5987,6 +6199,7 @@
             "runtime-resources/modules/statistics/tests/test_unifrnd.m",
             "runtime-resources/modules/statistics/tests/test_unifstat.m",
             "runtime-resources/modules/statistics/tests/test_var_complex.m",
+            "runtime-resources/modules/statistics/tests/test_var_fixes.m",
             "runtime-resources/modules/statistics/tests/test_var_mean_output.m",
             "runtime-resources/modules/statistics/tests/test_var_std_integer.m",
             "runtime-resources/modules/statistics/tests/test_var_std_options.m",
@@ -6005,7 +6218,7 @@
             "runtime-resources/modules/statistics/tests/test_zscore.m",
             "runtime-resources/modules/statistics/tests/test_ztest.m"
           ],
-          "bytes": 1008443
+          "bytes": 1019396
         }
       }
     },
@@ -6041,10 +6254,10 @@
             "runtime-resources/modules/image_processing/tests/bench_regionprops_pixel_copy.m",
             "runtime-resources/modules/image_processing/tests/bench_regionprops3.m",
             "runtime-resources/modules/image_processing/tests/bug_audit_imresize_optimized_colormap.m",
+            "runtime-resources/modules/image_processing/tests/fixtures/generate_image_processing_reference_core.ps1",
+            "runtime-resources/modules/image_processing/tests/fixtures/image_processing_reference_core.mat",
             "runtime-resources/modules/image_processing/tests/private/ip_bench_report.m",
             "runtime-resources/modules/image_processing/tests/private/ip_throws_expr.m",
-            "runtime-resources/modules/image_processing/tests/reference_fixtures/generate_image_processing_reference_core.ps1",
-            "runtime-resources/modules/image_processing/tests/reference_fixtures/image_processing_reference_core.mat",
             "runtime-resources/modules/image_processing/tests/test_activecontour.m",
             "runtime-resources/modules/image_processing/tests/test_adaptthresh.m",
             "runtime-resources/modules/image_processing/tests/test_affine2d.m",
@@ -6074,6 +6287,7 @@
             "runtime-resources/modules/image_processing/tests/test_im2uint16.m",
             "runtime-resources/modules/image_processing/tests/test_im2uint8.m",
             "runtime-resources/modules/image_processing/tests/test_imadjust.m",
+            "runtime-resources/modules/image_processing/tests/test_images_roi_ellipse.m",
             "runtime-resources/modules/image_processing/tests/test_imbinarize.m",
             "runtime-resources/modules/image_processing/tests/test_imboxfilt.m",
             "runtime-resources/modules/image_processing/tests/test_imclearborder.m",
@@ -6099,6 +6313,7 @@
             "runtime-resources/modules/image_processing/tests/test_imhmax.m",
             "runtime-resources/modules/image_processing/tests/test_imhmin.m",
             "runtime-resources/modules/image_processing/tests/test_imimposemin.m",
+            "runtime-resources/modules/image_processing/tests/test_imnoise.m",
             "runtime-resources/modules/image_processing/tests/test_imreconstruct.m",
             "runtime-resources/modules/image_processing/tests/test_imref2d.m",
             "runtime-resources/modules/image_processing/tests/test_imref3d.m",
@@ -6132,11 +6347,12 @@
             "runtime-resources/modules/image_processing/tests/test_threshold_geometry.m",
             "runtime-resources/modules/image_processing/tests/test_transformPointsForward.m",
             "runtime-resources/modules/image_processing/tests/test_transformPointsInverse.m",
+            "runtime-resources/modules/image_processing/tests/test_warp.m",
             "runtime-resources/modules/image_processing/tests/test_watershed.m",
             "runtime-resources/modules/image_processing/tests/test_worldToIntrinsic.m",
             "runtime-resources/modules/image_processing/tests/test_worldToSubscript.m"
           ],
-          "bytes": 339018
+          "bytes": 347063
         }
       }
     },
@@ -6232,7 +6448,7 @@
             "runtime-resources/modules/fftw/tests/test_ifftshift.m",
             "runtime-resources/modules/fftw/tests/test_two_dimensional_fft.m"
           ],
-          "bytes": 19086
+          "bytes": 19072
         }
       }
     },
@@ -6379,7 +6595,7 @@
             "runtime-resources/modules/signal_processing/tests/test_zp2sos.m",
             "runtime-resources/modules/signal_processing/tests/test_zp2tf.m"
           ],
-          "bytes": 194034
+          "bytes": 194707
         }
       }
     },
@@ -6393,6 +6609,7 @@
           "files": [
             "runtime-resources/modules/geometry/tests/bug_convhull_delaunay_collinear.m",
             "runtime-resources/modules/geometry/tests/test_alphaShape.m",
+            "runtime-resources/modules/geometry/tests/test_axes2ecc.m",
             "runtime-resources/modules/geometry/tests/test_boundary.m",
             "runtime-resources/modules/geometry/tests/test_convhull.m",
             "runtime-resources/modules/geometry/tests/test_convhulln.m",
@@ -6400,13 +6617,19 @@
             "runtime-resources/modules/geometry/tests/test_delaunayn.m",
             "runtime-resources/modules/geometry/tests/test_delaunayTriangulation.m",
             "runtime-resources/modules/geometry/tests/test_dsearchn.m",
+            "runtime-resources/modules/geometry/tests/test_ellipse1.m",
             "runtime-resources/modules/geometry/tests/test_gallery_examples.m",
             "runtime-resources/modules/geometry/tests/test_griddata.m",
+            "runtime-resources/modules/geometry/tests/test_polyarea.m",
+            "runtime-resources/modules/geometry/tests/test_polyshape.m",
             "runtime-resources/modules/geometry/tests/test_qhull_geometry.m",
+            "runtime-resources/modules/geometry/tests/test_reckon.m",
+            "runtime-resources/modules/geometry/tests/test_rectint.m",
             "runtime-resources/modules/geometry/tests/test_rotx.m",
             "runtime-resources/modules/geometry/tests/test_roty.m",
             "runtime-resources/modules/geometry/tests/test_rotz.m",
             "runtime-resources/modules/geometry/tests/test_scattered_data_interpolation_example.m",
+            "runtime-resources/modules/geometry/tests/test_scatteredInterpolant_shape.m",
             "runtime-resources/modules/geometry/tests/test_scatteredInterpolant.m",
             "runtime-resources/modules/geometry/tests/test_stlread_stlwrite.m",
             "runtime-resources/modules/geometry/tests/test_stlread.m",
@@ -6416,7 +6639,7 @@
             "runtime-resources/modules/geometry/tests/test_voronoi.m",
             "runtime-resources/modules/geometry/tests/test_voronoin.m"
           ],
-          "bytes": 31120
+          "bytes": 45317
         }
       }
     },
@@ -6740,7 +6963,7 @@
             "runtime-resources/modules/matio/tests/test_whomat.m",
             "runtime-resources/modules/matio/tests/test_whosmat.m"
           ],
-          "bytes": 106107
+          "bytes": 106060
         }
       }
     },
@@ -6765,7 +6988,7 @@
             "runtime-resources/modules/xml/tests/test_xmltransform.m",
             "runtime-resources/modules/xml/tests/test_xslt.m"
           ],
-          "bytes": 38846
+          "bytes": 40960
         }
       }
     },
@@ -6777,10 +7000,14 @@
         "tests": {
           "file": "runtime-resources/bundles/help_tools-tests.nlpack",
           "files": [
+            "runtime-resources/modules/help_tools/tests/fixtures/xml_chapter_table/chapter.xml",
+            "runtime-resources/modules/help_tools/tests/fixtures/xml_chapter_table/tablefun.xml",
             "runtime-resources/modules/help_tools/tests/md/readme.md",
             "runtime-resources/modules/help_tools/tests/test_buildhelp.m",
             "runtime-resources/modules/help_tools/tests/test_buildhelpjson.m",
             "runtime-resources/modules/help_tools/tests/test_buildhelpmd.m",
+            "runtime-resources/modules/help_tools/tests/test_buildhelptypst_manual.m",
+            "runtime-resources/modules/help_tools/tests/test_buildhelptypst.m",
             "runtime-resources/modules/help_tools/tests/test_buildhelpweb.m",
             "runtime-resources/modules/help_tools/tests/test_deployhelp.m",
             "runtime-resources/modules/help_tools/tests/test_doc.m",
@@ -6789,26 +7016,30 @@
             "runtime-resources/modules/help_tools/tests/test_help_external_xml.m",
             "runtime-resources/modules/help_tools/tests/test_help.m",
             "runtime-resources/modules/help_tools/tests/test_htmltopdf.m",
+            "runtime-resources/modules/help_tools/tests/test_markdown_to_typst.m",
             "runtime-resources/modules/help_tools/tests/test_markdown.m",
             "runtime-resources/modules/help_tools/tests/test_markdowndisp.m",
             "runtime-resources/modules/help_tools/tests/test_xmldoc_chapter_links.m",
             "runtime-resources/modules/help_tools/tests/test_xmldoc_chapter_table.m",
+            "runtime-resources/modules/help_tools/tests/test_xmldoc_link_resolution.m",
             "runtime-resources/modules/help_tools/tests/test_xmldoc_nested.m",
+            "runtime-resources/modules/help_tools/tests/test_xmldoc_source_code.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocbuild.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocchecker.m",
             "runtime-resources/modules/help_tools/tests/test_xmldoclinkchecker.m",
+            "runtime-resources/modules/help_tools/tests/test_xmldocmergesummary_links.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocrenderimages_all_languages.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocrenderimages_errors.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocrenderimages_force.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocrenderimages_generate_scripts.m",
             "runtime-resources/modules/help_tools/tests/test_xmldocrenderimages_nested.m",
-            "runtime-resources/modules/help_tools/tests/test_xmldoctohelp.m",
             "runtime-resources/modules/help_tools/tests/test_xmldoctohtml.m",
             "runtime-resources/modules/help_tools/tests/test_xmldoctomd.m",
+            "runtime-resources/modules/help_tools/tests/test_xmldoctotypst_compile.m",
+            "runtime-resources/modules/help_tools/tests/test_xmldoctotypst_escape.m",
+            "runtime-resources/modules/help_tools/tests/test_xmldoctotypst.m",
             "runtime-resources/modules/help_tools/tests/xml/chapter.xml",
             "runtime-resources/modules/help_tools/tests/xml/gpuArray.xml",
-            "runtime-resources/modules/help_tools/tests/xml_chapter_table/chapter.xml",
-            "runtime-resources/modules/help_tools/tests/xml_chapter_table/tablefun.xml",
             "runtime-resources/modules/help_tools/tests/xml_invalid/broken.xml",
             "runtime-resources/modules/help_tools/tests/xml_linkchecker/broken/broken_page.xml",
             "runtime-resources/modules/help_tools/tests/xml_linkchecker/broken/chapter.xml",
@@ -6829,7 +7060,7 @@
             "runtime-resources/modules/help_tools/tests/xml_nested_no_chapter/broken/orphan.xml",
             "runtime-resources/modules/help_tools/tests/xml_nested_no_chapter/chapter.xml"
           ],
-          "bytes": 66348
+          "bytes": 99402
         },
         "help": {
           "file": "runtime-resources/bundles/help_tools-help.nlpack",
@@ -6837,7 +7068,7 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5626567
+          "bytes": 5744639
         }
       }
     },
@@ -6906,7 +7137,10 @@
             "runtime-resources/modules/spreadsheet/tests/test_readtimetable_json.m",
             "runtime-resources/modules/spreadsheet/tests/test_readtimetable.m",
             "runtime-resources/modules/spreadsheet/tests/test_readvars.m",
+            "runtime-resources/modules/spreadsheet/tests/test_setvaropts.csv",
+            "runtime-resources/modules/spreadsheet/tests/test_setvaropts.m",
             "runtime-resources/modules/spreadsheet/tests/test_spreadsheet_portable_roundtrip.m",
+            "runtime-resources/modules/spreadsheet/tests/test_spreadsheetImportOptions.m",
             "runtime-resources/modules/spreadsheet/tests/test_writecell.m",
             "runtime-resources/modules/spreadsheet/tests/test_writematrix.m",
             "runtime-resources/modules/spreadsheet/tests/test_writetable_1.csv",
@@ -6958,7 +7192,7 @@
             "runtime-resources/modules/spreadsheet/tests/writematrix_5.csv",
             "runtime-resources/modules/spreadsheet/tests/writematrix_6.csv"
           ],
-          "bytes": 175854
+          "bytes": 182989
         }
       }
     },
@@ -7031,7 +7265,7 @@
             "runtime-resources/modules/audio/tests/test_synth_piano_gui.m",
             "runtime-resources/modules/audio/tests/test_synth_piano_i18n.m"
           ],
-          "bytes": 5189995
+          "bytes": 5190584
         }
       }
     },
@@ -7045,7 +7279,7 @@
           "files": [
             "runtime-resources/modules/preferences/tests/test_preferences.m"
           ],
-          "bytes": 3621
+          "bytes": 3612
         }
       }
     },
@@ -7204,7 +7438,7 @@
             "runtime-resources/modules/tests_manager/tests/test_windows_only.m",
             "runtime-resources/modules/tests_manager/tests/test_with_display.m"
           ],
-          "bytes": 175957
+          "bytes": 175470
         }
       }
     },
@@ -7315,7 +7549,7 @@
             "runtime-resources/modules/main/tests/test_nelsonc.ps1",
             "runtime-resources/modules/main/tests/test_qt_runtime_copy.ps1"
           ],
-          "bytes": 213676
+          "bytes": 213708
         }
       }
     },

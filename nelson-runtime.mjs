@@ -70,10 +70,14 @@ function selectedRuntimeResourceSelection(manifest, runtimeIndex, options = {}) 
     if (!module || (modules && !modules.has(module))) continue;
     const moduleBundles = entry.bundles;
     if (!moduleBundles || typeof moduleBundles !== "object") continue;
-    for (const kind of ["tests", "help"]) {
+    for (const kind of ["tests", "help", "archives"]) {
       if (kinds && !kinds.has(kind)) continue;
-      const file = String(moduleBundles[kind]?.file ?? "");
-      if (file && !file.split("/").includes("..")) bundles.push(file);
+      const value = moduleBundles[kind];
+      const candidates = Array.isArray(value) ? value : [value];
+      for (const candidate of candidates) {
+        const file = String(candidate?.file ?? "");
+        if (file && !file.split("/").includes("..")) bundles.push(file);
+      }
     }
   }
   const files = Array.isArray(manifest?.files) ? manifest.files : [];
@@ -106,7 +110,16 @@ function runtimeResourceVirtualPath(packagedFile) {
   if (packagedFile.split("/").includes("..")) return null;
   const runtimePrefix = "runtime-resources/modules/";
   if (packagedFile.startsWith(runtimePrefix)) {
-    return `/modules/${packagedFile.slice(runtimePrefix.length)}`;
+    const relative = packagedFile.slice(runtimePrefix.length);
+    // Help archives are packaged under the help_tools delivery group, but
+    // Nelson's native help installer resolves them from their owning module:
+    // /modules/<module>/help/<archive>.nhz.  Preserve that contract so
+    // deployhelp/buildhelpweb can consume the same archives in Wasm.
+    const archive = /^help_tools\/help\/(io\.github\.nelson_lang\.Nelson\.modules\.([A-Za-z0-9_]+)\.help\.[A-Za-z0-9_]+\.nhz)$/i.exec(
+      relative,
+    );
+    if (archive) return `/modules/${archive[2]}/help/${archive[1]}`;
+    return `/modules/${relative}`;
   }
   const nflowPrefix = "nflow/examples/files/";
   if (packagedFile.startsWith(nflowPrefix)) {

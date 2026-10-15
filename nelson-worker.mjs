@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=5c1d9c31b4a8";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=5c1d9c31b4a8";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=e68eba87aef2";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=e68eba87aef2";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,7 +14,7 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=5c1d9c31b4a8";
+} from "./nelson-worker-protocol.mjs?build=e68eba87aef2";
 
 const PROTOCOL_VERSION = 1;
 const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
@@ -44,6 +44,7 @@ let virtualDirectories = new Set();
 let workspaceStore = createWorkspaceStore();
 const PERSISTENT_DIRECTORIES = ["/workspace", "/preferences", "/user-modules"];
 const VIRTUAL_PATH_ROOTS = ["/workspace", "/modules"];
+const READABLE_RUNTIME_ROOTS = [...VIRTUAL_PATH_ROOTS, "/user-modules"];
 
 function progress(progress) {
   self.postMessage({ version: PROTOCOL_VERSION, event: "progress", progress });
@@ -433,6 +434,17 @@ function normalizeVirtualPath(value) {
   );
   if (!inVirtualRoot || path.split("/").includes("..")) {
     throw new Error("Virtual files must be below /workspace or /modules");
+  }
+  return path;
+}
+
+function normalizeReadablePath(value) {
+  const path = String(value).replaceAll("\\", "/");
+  const readable = READABLE_RUNTIME_ROOTS.some((root) =>
+    path.startsWith(`${root}/`),
+  );
+  if (!readable || path.split("/").includes("..")) {
+    throw new Error("Readable files must be below /workspace, /modules or /user-modules");
   }
   return path;
 }
@@ -1152,10 +1164,10 @@ async function deleteVirtualPath(pathValue) {
 }
 
 async function readVirtualFile(path) {
-  const normalized = normalizeVirtualPath(path);
+  const normalized = normalizeReadablePath(path);
   const data = virtualFiles.get(normalized);
   if (data) return { path: normalized, data };
-  if (normalized.startsWith("/modules/")) {
+  if (normalized.startsWith("/modules/") || normalized.startsWith("/user-modules/")) {
     const instance = await runner?.initialize();
     try {
       const moduleData = instance?.FS?.readFile(normalized);

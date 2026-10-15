@@ -5,6 +5,7 @@
       "module": "characters_encoding",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/characters_encoding-tests.nlpack",
@@ -34,6 +35,7 @@
       "module": "debugger",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/debugger-tests.nlpack",
@@ -70,6 +72,7 @@
       "module": "i18n",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/i18n-tests.nlpack",
@@ -86,6 +89,7 @@
       "module": "localization",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/localization-tests.nlpack",
@@ -104,6 +108,7 @@
       "module": "elementary_mathematics",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/elementary_mathematics-tests.nlpack",
@@ -118,6 +123,7 @@
       "module": "error_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/error_manager-tests.nlpack",
@@ -162,6 +168,7 @@
       "module": "types",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/types-tests.nlpack",
@@ -278,6 +285,7 @@
       "module": "stream_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/stream_manager-tests.nlpack",
@@ -366,6 +374,7 @@
       "module": "display_format",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/display_format-tests.nlpack",
@@ -525,6 +534,7 @@
       "module": "operators",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/operators-tests.nlpack",
@@ -644,6 +654,7 @@
       "module": "elementary_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/elementary_functions-tests.nlpack",
@@ -871,6 +882,7 @@
       "module": "interpreter",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/interpreter-tests.nlpack",
@@ -1749,6 +1761,7 @@
       "module": "modules_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/modules_manager-tests.nlpack",
@@ -1806,6 +1819,7 @@
       "module": "double",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/double-tests.nlpack",
@@ -1833,6 +1847,7 @@
       "module": "single",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/single-tests.nlpack",
@@ -1858,6 +1873,7 @@
       "module": "sparse",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/sparse-tests.nlpack",
@@ -1920,6 +1936,7 @@
       "module": "functions_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/functions_manager-tests.nlpack",
@@ -1975,6 +1992,7 @@
       "module": "constructors_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/constructors_functions-tests.nlpack",
@@ -2013,6 +2031,7 @@
       "module": "console",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/console-tests.nlpack",
@@ -2030,6 +2049,7 @@
       "module": "logical",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/logical-tests.nlpack",
@@ -2063,6 +2083,7 @@
       "module": "time",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/time-tests.nlpack",
@@ -2214,6 +2235,7 @@
       "module": "string",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/string-tests.nlpack",
@@ -2381,6 +2403,7 @@
       "module": "integer",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/integer-tests.nlpack",
@@ -2430,6 +2453,7 @@
       "module": "linear_algebra",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/linear_algebra-tests.nlpack",
@@ -2567,6 +2591,7 @@
       "module": "files_folders_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/files_folders_functions-tests.nlpack",
@@ -2614,6 +2639,7 @@
       "module": "os_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/os_functions-tests.nlpack",
@@ -2662,6 +2688,7 @@
       "module": "core",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/core-tests.nlpack",
@@ -2752,6 +2779,7 @@
       "module": "function_handle",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/function_handle-tests.nlpack",
@@ -2777,6 +2805,7 @@
       "module": "memory_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/memory_manager-tests.nlpack",
@@ -2847,6 +2876,7 @@
       "module": "overload",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/overload-tests.nlpack",
@@ -2878,6 +2908,7 @@
       "module": "data_structures",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/data_structures-tests.nlpack",
@@ -2941,6 +2972,7 @@
       "module": "dictionary",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/dictionary-tests.nlpack",
@@ -2987,6 +3019,7 @@
       "module": "table",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/table-tests.nlpack",
@@ -3209,6 +3242,7 @@
       "module": "categorical",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/categorical-tests.nlpack",
@@ -3267,6 +3301,7 @@
       "module": "history_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/history_manager-tests.nlpack",
@@ -3282,6 +3317,7 @@
       "module": "text_editor",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/text_editor-tests.nlpack",
@@ -3302,6 +3338,7 @@
       "module": "handle",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/handle-tests.nlpack",
@@ -3339,6 +3376,7 @@
       "module": "engine",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/engine-tests.nlpack",
@@ -3385,7 +3423,7 @@
             "runtime-resources/modules/engine/tests/test_timeout_option.m",
             "runtime-resources/modules/engine/tests/test_windowed_evaluator_stack.m"
           ],
-          "bytes": 70263
+          "bytes": 70338
         }
       }
     },
@@ -3393,6 +3431,7 @@
       "module": "profiler",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/profiler-tests.nlpack",
@@ -3415,6 +3454,7 @@
       "module": "file_archiver",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/file_archiver-tests.nlpack",
@@ -3438,6 +3478,7 @@
       "module": "json",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/json-tests.nlpack",
@@ -3465,6 +3506,7 @@
       "module": "special_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/special_functions-tests.nlpack",
@@ -3545,6 +3587,7 @@
       "module": "trigonometric_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/trigonometric_functions-tests.nlpack",
@@ -3617,6 +3660,7 @@
       "module": "graphics",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/graphics-tests.nlpack",
@@ -4220,6 +4264,7 @@
             "runtime-resources/modules/graphics/tests/test_rectangle.m",
             "runtime-resources/modules/graphics/tests/test_reference_surface_mask.m",
             "runtime-resources/modules/graphics/tests/test_refresh.m",
+            "runtime-resources/modules/graphics/tests/test_render_compare_capture.m",
             "runtime-resources/modules/graphics/tests/test_render_example_axes_plot.m",
             "runtime-resources/modules/graphics/tests/test_render_example_bar_categorical.m",
             "runtime-resources/modules/graphics/tests/test_render_example_bar_chart.m",
@@ -4558,6 +4603,7 @@
             "runtime-resources/modules/graphics/tests/test_waitforbuttonpress.m",
             "runtime-resources/modules/graphics/tests/test_waterfall.m",
             "runtime-resources/modules/graphics/tests/test_web_display_list_target_axes_view.m",
+            "runtime-resources/modules/graphics/tests/test_web_ui_pixel_layout.m",
             "runtime-resources/modules/graphics/tests/test_white.m",
             "runtime-resources/modules/graphics/tests/test_window_key_callbacks_interactive.m",
             "runtime-resources/modules/graphics/tests/test_winter.m",
@@ -4585,7 +4631,7 @@
             "runtime-resources/modules/graphics/tests/test_zticklabels.m",
             "runtime-resources/modules/graphics/tests/test_zticks.m"
           ],
-          "bytes": 7011061
+          "bytes": 7013775
         }
       }
     },
@@ -4593,6 +4639,7 @@
       "module": "graphics_io",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/graphics_io-tests.nlpack",
@@ -4677,6 +4724,7 @@
       "module": "nflow_blocks",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/nflow_blocks-tests.nlpack",
@@ -4831,6 +4879,7 @@
       "module": "nflow_engine",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/nflow_engine-tests.nlpack",
@@ -5163,6 +5212,7 @@
       "module": "f2c",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/f2c-tests.nlpack",
@@ -5179,6 +5229,7 @@
       "module": "slicot",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/slicot-tests.nlpack",
@@ -5215,6 +5266,7 @@
       "module": "data_analysis",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/data_analysis-tests.nlpack",
@@ -5351,6 +5403,7 @@
       "module": "polynomial_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/polynomial_functions-tests.nlpack",
@@ -5381,6 +5434,7 @@
       "module": "validators",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/validators-tests.nlpack",
@@ -5444,6 +5498,7 @@
       "module": "control_system",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/control_system-tests.nlpack",
@@ -5577,6 +5632,7 @@
       "module": "ode_solvers",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/ode_solvers-tests.nlpack",
@@ -5733,6 +5789,7 @@
       "module": "random",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/random-tests.nlpack",
@@ -5783,6 +5840,7 @@
       "module": "statistics",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/statistics-tests.nlpack",
@@ -6226,6 +6284,7 @@
       "module": "image_processing",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/image_processing-tests.nlpack",
@@ -6360,6 +6419,7 @@
       "module": "optimization",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/optimization-tests.nlpack",
@@ -6429,6 +6489,7 @@
       "module": "fftw",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/fftw-tests.nlpack",
@@ -6456,6 +6517,7 @@
       "module": "signal_processing",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/signal_processing-tests.nlpack",
@@ -6603,6 +6665,7 @@
       "module": "geometry",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/geometry-tests.nlpack",
@@ -6647,6 +6710,7 @@
       "module": "hdf5",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/hdf5-tests.nlpack",
@@ -6720,6 +6784,7 @@
       "module": "netcdf",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/netcdf-tests.nlpack",
@@ -6813,6 +6878,7 @@
       "module": "matio",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/matio-tests.nlpack",
@@ -6971,6 +7037,7 @@
       "module": "xml",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/xml-tests.nlpack",
@@ -6996,6 +7063,7 @@
       "module": "help_tools",
       "tests": true,
       "help": true,
+      "archives": true,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/help_tools-tests.nlpack",
@@ -7060,7 +7128,7 @@
             "runtime-resources/modules/help_tools/tests/xml_nested_no_chapter/broken/orphan.xml",
             "runtime-resources/modules/help_tools/tests/xml_nested_no_chapter/chapter.xml"
           ],
-          "bytes": 99402
+          "bytes": 99468
         },
         "help": {
           "file": "runtime-resources/bundles/help_tools-help.nlpack",
@@ -7068,14 +7136,997 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5744639
-        }
+          "bytes": 5745008
+        },
+        "archives": [
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.assert_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.assert_functions.help.en_US.nhz"
+            ],
+            "bytes": 145724
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.assert_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.assert_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 149168
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.audio.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.audio.help.en_US.nhz"
+            ],
+            "bytes": 98211
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.audio.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.audio.help.fr_FR.nhz"
+            ],
+            "bytes": 100594
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.categorical.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.categorical.help.en_US.nhz"
+            ],
+            "bytes": 60831
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.categorical.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.categorical.help.fr_FR.nhz"
+            ],
+            "bytes": 61778
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.characters_encoding.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.characters_encoding.help.en_US.nhz"
+            ],
+            "bytes": 34773
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.characters_encoding.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.characters_encoding.help.fr_FR.nhz"
+            ],
+            "bytes": 34951
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.console.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.console.help.en_US.nhz"
+            ],
+            "bytes": 35977
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.console.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.console.help.fr_FR.nhz"
+            ],
+            "bytes": 36167
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.constructors_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.constructors_functions.help.en_US.nhz"
+            ],
+            "bytes": 47506
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.constructors_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.constructors_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 48020
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.control_system.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.control_system.help.en_US.nhz"
+            ],
+            "bytes": 259176
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.control_system.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.control_system.help.fr_FR.nhz"
+            ],
+            "bytes": 262517
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.core.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.core.help.en_US.nhz"
+            ],
+            "bytes": 117617
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.core.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.core.help.fr_FR.nhz"
+            ],
+            "bytes": 119334
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_analysis.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.data_analysis.help.en_US.nhz"
+            ],
+            "bytes": 126454
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_analysis.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.data_analysis.help.fr_FR.nhz"
+            ],
+            "bytes": 129405
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_structures.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.data_structures.help.en_US.nhz"
+            ],
+            "bytes": 71299
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_structures.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.data_structures.help.fr_FR.nhz"
+            ],
+            "bytes": 72705
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.debugger.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.debugger.help.en_US.nhz"
+            ],
+            "bytes": 47489
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.debugger.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.debugger.help.fr_FR.nhz"
+            ],
+            "bytes": 48509
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.dictionary.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.dictionary.help.en_US.nhz"
+            ],
+            "bytes": 68751
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.dictionary.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.dictionary.help.fr_FR.nhz"
+            ],
+            "bytes": 70191
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.display_format.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.display_format.help.en_US.nhz"
+            ],
+            "bytes": 40643
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.display_format.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.display_format.help.fr_FR.nhz"
+            ],
+            "bytes": 41200
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.double.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.double.help.en_US.nhz"
+            ],
+            "bytes": 35524
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.double.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.double.help.fr_FR.nhz"
+            ],
+            "bytes": 35585
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.elementary_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.elementary_functions.help.en_US.nhz"
+            ],
+            "bytes": 272104
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.elementary_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.elementary_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 278892
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.engine.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.engine.help.en_US.nhz"
+            ],
+            "bytes": 49062
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.engine.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.engine.help.fr_FR.nhz"
+            ],
+            "bytes": 49796
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.error_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.error_manager.help.en_US.nhz"
+            ],
+            "bytes": 63806
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.error_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.error_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 64956
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.f2c.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.f2c.help.en_US.nhz"
+            ],
+            "bytes": 30136
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.f2c.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.f2c.help.fr_FR.nhz"
+            ],
+            "bytes": 30301
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.fftw.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.fftw.help.en_US.nhz"
+            ],
+            "bytes": 49297
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.fftw.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.fftw.help.fr_FR.nhz"
+            ],
+            "bytes": 50018
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.file_archiver.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.file_archiver.help.en_US.nhz"
+            ],
+            "bytes": 32232
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.file_archiver.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.file_archiver.help.fr_FR.nhz"
+            ],
+            "bytes": 32414
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.files_folders_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.files_folders_functions.help.en_US.nhz"
+            ],
+            "bytes": 72056
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.files_folders_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.files_folders_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 73291
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.function_handle.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.function_handle.help.en_US.nhz"
+            ],
+            "bytes": 36932
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.function_handle.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.function_handle.help.fr_FR.nhz"
+            ],
+            "bytes": 37228
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.functions_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.functions_manager.help.en_US.nhz"
+            ],
+            "bytes": 64689
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.functions_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.functions_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 65902
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.geometry.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.geometry.help.en_US.nhz"
+            ],
+            "bytes": 77740
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.geometry.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.geometry.help.fr_FR.nhz"
+            ],
+            "bytes": 79006
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics_io.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.graphics_io.help.en_US.nhz"
+            ],
+            "bytes": 396665
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics_io.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.graphics_io.help.fr_FR.nhz"
+            ],
+            "bytes": 397403
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.graphics.help.en_US.nhz"
+            ],
+            "bytes": 28392990
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.graphics.help.fr_FR.nhz"
+            ],
+            "bytes": 28419597
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.handle.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.handle.help.en_US.nhz"
+            ],
+            "bytes": 102115
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.handle.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.handle.help.fr_FR.nhz"
+            ],
+            "bytes": 104861
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.hdf5.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.hdf5.help.en_US.nhz"
+            ],
+            "bytes": 52257
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.hdf5.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.hdf5.help.fr_FR.nhz"
+            ],
+            "bytes": 53106
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.help_tools.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.help_tools.help.en_US.nhz"
+            ],
+            "bytes": 106545
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.help_tools.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.help_tools.help.fr_FR.nhz"
+            ],
+            "bytes": 108845
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.history_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.history_manager.help.en_US.nhz"
+            ],
+            "bytes": 30933
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.history_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.history_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 31261
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.i18n.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.i18n.help.en_US.nhz"
+            ],
+            "bytes": 35361
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.i18n.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.i18n.help.fr_FR.nhz"
+            ],
+            "bytes": 35789
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.image_processing.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.image_processing.help.en_US.nhz"
+            ],
+            "bytes": 2756758
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.image_processing.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.image_processing.help.fr_FR.nhz"
+            ],
+            "bytes": 2759323
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.integer.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.integer.help.en_US.nhz"
+            ],
+            "bytes": 48267
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.integer.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.integer.help.fr_FR.nhz"
+            ],
+            "bytes": 49028
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.interpreter.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.interpreter.help.en_US.nhz"
+            ],
+            "bytes": 107258
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.interpreter.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.interpreter.help.fr_FR.nhz"
+            ],
+            "bytes": 110790
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.json.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.json.help.en_US.nhz"
+            ],
+            "bytes": 34713
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.json.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.json.help.fr_FR.nhz"
+            ],
+            "bytes": 34976
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.linear_algebra.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.linear_algebra.help.en_US.nhz"
+            ],
+            "bytes": 154361
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.linear_algebra.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.linear_algebra.help.fr_FR.nhz"
+            ],
+            "bytes": 158345
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.localization.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.localization.help.en_US.nhz"
+            ],
+            "bytes": 35250
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.localization.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.localization.help.fr_FR.nhz"
+            ],
+            "bytes": 35613
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.logical.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.logical.help.en_US.nhz"
+            ],
+            "bytes": 35824
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.logical.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.logical.help.fr_FR.nhz"
+            ],
+            "bytes": 36112
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
+            ],
+            "bytes": 904306
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz"
+            ],
+            "bytes": 934879
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz"
+            ],
+            "bytes": 38664
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.matio.help.fr_FR.nhz"
+            ],
+            "bytes": 39212
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.memory_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.memory_manager.help.en_US.nhz"
+            ],
+            "bytes": 56155
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.memory_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.memory_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 57137
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.modules_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.modules_manager.help.en_US.nhz"
+            ],
+            "bytes": 92698
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.modules_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.modules_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 95874
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.netcdf.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.netcdf.help.en_US.nhz"
+            ],
+            "bytes": 158692
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.netcdf.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.netcdf.help.fr_FR.nhz"
+            ],
+            "bytes": 163181
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_blocks.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_blocks.help.en_US.nhz"
+            ],
+            "bytes": 1468012
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_blocks.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_blocks.help.fr_FR.nhz"
+            ],
+            "bytes": 1494730
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_engine.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_engine.help.en_US.nhz"
+            ],
+            "bytes": 83625
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_engine.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_engine.help.fr_FR.nhz"
+            ],
+            "bytes": 85426
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.ode_solvers.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.ode_solvers.help.en_US.nhz"
+            ],
+            "bytes": 164403
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.ode_solvers.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.ode_solvers.help.fr_FR.nhz"
+            ],
+            "bytes": 168096
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.operators.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.operators.help.en_US.nhz"
+            ],
+            "bytes": 104543
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.operators.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.operators.help.fr_FR.nhz"
+            ],
+            "bytes": 106852
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.optimization.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.optimization.help.en_US.nhz"
+            ],
+            "bytes": 97720
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.optimization.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.optimization.help.fr_FR.nhz"
+            ],
+            "bytes": 100196
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.os_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.os_functions.help.en_US.nhz"
+            ],
+            "bytes": 67299
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.os_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.os_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 68717
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.overload.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.overload.help.en_US.nhz"
+            ],
+            "bytes": 31512
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.overload.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.overload.help.fr_FR.nhz"
+            ],
+            "bytes": 31693
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.polynomial_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.polynomial_functions.help.en_US.nhz"
+            ],
+            "bytes": 52286
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.polynomial_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.polynomial_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 53100
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.profiler.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.profiler.help.en_US.nhz"
+            ],
+            "bytes": 32295
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.profiler.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.profiler.help.fr_FR.nhz"
+            ],
+            "bytes": 32540
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.random.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.random.help.en_US.nhz"
+            ],
+            "bytes": 44309
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.random.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.random.help.fr_FR.nhz"
+            ],
+            "bytes": 45077
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.signal_processing.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.signal_processing.help.en_US.nhz"
+            ],
+            "bytes": 205615
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.signal_processing.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.signal_processing.help.fr_FR.nhz"
+            ],
+            "bytes": 210143
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.single.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.single.help.en_US.nhz"
+            ],
+            "bytes": 30087
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.single.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.single.help.fr_FR.nhz"
+            ],
+            "bytes": 30170
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.slicot.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.slicot.help.en_US.nhz"
+            ],
+            "bytes": 93927
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.slicot.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.slicot.help.fr_FR.nhz"
+            ],
+            "bytes": 96136
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.sparse.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.sparse.help.en_US.nhz"
+            ],
+            "bytes": 62650
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.sparse.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.sparse.help.fr_FR.nhz"
+            ],
+            "bytes": 63650
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.special_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.special_functions.help.en_US.nhz"
+            ],
+            "bytes": 102783
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.special_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.special_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 102989
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.spreadsheet.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.spreadsheet.help.en_US.nhz"
+            ],
+            "bytes": 84957
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.spreadsheet.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.spreadsheet.help.fr_FR.nhz"
+            ],
+            "bytes": 87244
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.statistics.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.statistics.help.en_US.nhz"
+            ],
+            "bytes": 599215
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.statistics.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.statistics.help.fr_FR.nhz"
+            ],
+            "bytes": 610921
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.stream_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.stream_manager.help.en_US.nhz"
+            ],
+            "bytes": 80293
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.stream_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.stream_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 82359
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.string.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.string.help.en_US.nhz"
+            ],
+            "bytes": 206183
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.string.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.string.help.fr_FR.nhz"
+            ],
+            "bytes": 210229
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.table.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.table.help.en_US.nhz"
+            ],
+            "bytes": 148317
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.table.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.table.help.fr_FR.nhz"
+            ],
+            "bytes": 151600
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.tests_manager.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.tests_manager.help.en_US.nhz"
+            ],
+            "bytes": 65078
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.tests_manager.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.tests_manager.help.fr_FR.nhz"
+            ],
+            "bytes": 66487
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.text_editor.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.text_editor.help.en_US.nhz"
+            ],
+            "bytes": 184117
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.text_editor.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.text_editor.help.fr_FR.nhz"
+            ],
+            "bytes": 184584
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.time.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.time.help.en_US.nhz"
+            ],
+            "bytes": 354483
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.time.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.time.help.fr_FR.nhz"
+            ],
+            "bytes": 363305
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.trigonometric_functions.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.trigonometric_functions.help.en_US.nhz"
+            ],
+            "bytes": 128978
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.trigonometric_functions.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.trigonometric_functions.help.fr_FR.nhz"
+            ],
+            "bytes": 131166
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.types.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.types.help.en_US.nhz"
+            ],
+            "bytes": 108594
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.types.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.types.help.fr_FR.nhz"
+            ],
+            "bytes": 110858
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.validators.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.validators.help.en_US.nhz"
+            ],
+            "bytes": 116688
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.validators.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.validators.help.fr_FR.nhz"
+            ],
+            "bytes": 119512
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.xml.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.xml.help.en_US.nhz"
+            ],
+            "bytes": 44413
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.xml.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.xml.help.fr_FR.nhz"
+            ],
+            "bytes": 45124
+          }
+        ]
       }
     },
     {
       "module": "spreadsheet",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/spreadsheet-tests.nlpack",
@@ -7200,6 +8251,7 @@
       "module": "audio",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/audio-tests.nlpack",
@@ -7273,6 +8325,7 @@
       "module": "preferences",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/preferences-tests.nlpack",
@@ -7287,6 +8340,7 @@
       "module": "assert_functions",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/assert_functions-tests.nlpack",
@@ -7346,6 +8400,7 @@
       "module": "tests_manager",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/tests_manager-tests.nlpack",
@@ -7446,6 +8501,7 @@
       "module": "main",
       "tests": true,
       "help": false,
+      "archives": false,
       "bundles": {
         "tests": {
           "file": "runtime-resources/bundles/main-tests.nlpack",

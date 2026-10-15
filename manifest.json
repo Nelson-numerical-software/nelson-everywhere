@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "e68eba87aef2",
-  "entryPoint": "index.html?runtime=wasm&build=e68eba87aef2",
+  "buildId": "7f5aa989ed0e",
+  "entryPoint": "index.html?runtime=wasm&build=7f5aa989ed0e",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -41,7 +41,7 @@
           "nelson-worker.mjs",
           "nelson-workspace-store.mjs"
         ],
-        "bytes": 3250326
+        "bytes": 3250300
       }
     ],
     "onDemand": [
@@ -1404,8 +1404,8 @@
     },
     {
       "file": "app.js",
-      "bytes": 1305871,
-      "sha256": "3b59a4e60b25bd81a513928aab8dcc783c98158517c503e1f0d62f809c6b37db"
+      "bytes": 1305845,
+      "sha256": "c8f27c9947d7080faf155f17a9d2c1eb14d7289fd7d42c35732fe77ee16358ba"
     },
     {
       "file": "assets/figureCanvasWorker-BgYkuI5o.js",
@@ -2580,12 +2580,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "135d1244a7b70d7d2e9e67c1ee1530dbf9d67aaae7d69dc2390421578149c9d8"
+      "sha256": "c659c95265082524fc821548865967cdecd33b4c594ebc2be9898830bf553c0d"
     },
     {
       "file": "index.html",
       "bytes": 1785,
-      "sha256": "273a26ff9f62336789bbb93d9cc20f88d2830f26cc7f87148ad9c026abaed171"
+      "sha256": "931b53c885372075b88b717e89cef9b03b4a6336ec2e2df765e7057f9325c6bb"
     },
     {
       "file": "manifest.webmanifest",
@@ -2630,7 +2630,7 @@
     {
       "file": "nelson-worker.mjs",
       "bytes": 44858,
-      "sha256": "7a53df43d39b5d0c57cd19bdd69b1586037a308fc2c7b156c174c64d44238341"
+      "sha256": "78968f7fab891b1d90b653783f5f0f05f4920697abb149cb2d0ce7e723b1c387"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -3610,7 +3610,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "89a5399ff9dd807735b8e8943a03bfbf11bb5143340beca81cbe4ea88771748e"
+      "sha256": "7ef343592ed99958d44b6e2afe9425ad86878184de63f768b49ea95895793016"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -6750,7 +6750,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "8961a5077ab8f7ae4c81797eed4040cbd5a1cab24419682cc76d9b3dddff4564"
+      "sha256": "b7d6c382dcc6d9d41223d67727d729f54ab6ba72af18d93347eca40e6d7bbe7b"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -6765,7 +6765,7 @@
     {
       "file": "packs/editor/EditorPanel-D6iJ14Og.js",
       "bytes": 3543261,
-      "sha256": "49866cb1cc2d82fd9328113cd3ecf852bab6d54bd7e498a7549dd9309c8fcf74"
+      "sha256": "851631e00ccf2b6f563ab493b3b6bd731b578f4e0c752ce5d245b1da13861b90"
     },
     {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
@@ -6780,17 +6780,17 @@
     {
       "file": "packs/examples/ExamplesPanel-DT_4yNQ7.js",
       "bytes": 9758,
-      "sha256": "bca40f25d079c260ba175c9522657f9afa834e0e06db1255f3e35c988ceaa0b1"
+      "sha256": "9cf42898431f5b72e88336583ff606ff09b4301cacadba7d4fbeac5f9e0fc87f"
     },
     {
       "file": "packs/mock/mockEngine-1e6JWa-a.js",
       "bytes": 31205,
-      "sha256": "ec83957c14b1a2f77ed7303e6cb07eb8bcedcd020f2ed31007a5db7805e9b0c6"
+      "sha256": "36c2c1f7df0560c10c3b5de9708c156477dfad1af6848260ea008bc152c6dfa5"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-CLcDany2.js",
       "bytes": 48053,
-      "sha256": "fb58cae4cfa1f253c4ccbeddebe1860dcc01b2d029e5c6e858aff3086ce013b0"
+      "sha256": "2f935b7e87eb84fb5567af2b5080520a8a28c11b8b298a3bfe302f62c9fa80c1"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-D_8kqlRb.css",
@@ -7873,5 +7873,5 @@
       "sha256": "eedaae53f642f22edd26ebfeac291af8a6279740d558955d1a7d2db2225b6cbb"
     }
   ],
-  "totalBytes": 190001790
+  "totalBytes": 190001764
 }

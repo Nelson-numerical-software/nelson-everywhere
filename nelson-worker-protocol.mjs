@@ -554,6 +554,10 @@ export function extractUiActions(stdout) {
     if (
       action?.type !== "open-examples" &&
       !(
+        action?.type === "open-nflow" &&
+        (action.path === undefined || typeof action.path === "string")
+      ) &&
+      !(
         action?.type === "open-editor" &&
         typeof action.path === "string" &&
         (action.line === undefined || Number.isSafeInteger(action.line))

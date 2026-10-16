@@ -1282,6 +1282,23 @@
       ]
     },
     {
+      "name": "parquet",
+      "title": "parquet",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Parquet table round trip",
+          "description": "Write a typed table to a temporary Parquet file and read it back.",
+          "tags": [
+            "parquet",
+            "table"
+          ],
+          "requirements": [],
+          "file": "/modules/parquet/examples/parquet_roundtrip.m"
+        }
+      ]
+    },
+    {
       "name": "polynomial_functions",
       "title": "polynomial functions",
       "source": "nelson",

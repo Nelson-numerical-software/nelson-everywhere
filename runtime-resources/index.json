@@ -7034,6 +7034,37 @@
       }
     },
     {
+      "module": "parquet",
+      "tests": true,
+      "help": false,
+      "archives": false,
+      "bundles": {
+        "tests": {
+          "file": "runtime-resources/bundles/parquet-tests.nlpack",
+          "files": [
+            "runtime-resources/modules/parquet/tests/test_gallery_examples.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_cell_lists.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_datastore.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_errors.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_filter.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_info.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_nested_table.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_roundtrip.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_rowfilter_pushdown.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_rowgroups.m",
+            "runtime-resources/modules/parquet/tests/test_parquet_selected_variables.m",
+            "runtime-resources/modules/parquet/tests/test_parquetDatastore.m",
+            "runtime-resources/modules/parquet/tests/test_parquetinfo.m",
+            "runtime-resources/modules/parquet/tests/test_parquetread.m",
+            "runtime-resources/modules/parquet/tests/test_parquetwrite_zero_width.m",
+            "runtime-resources/modules/parquet/tests/test_parquetwrite.m",
+            "runtime-resources/modules/parquet/tests/test_rowfilter.m"
+          ],
+          "bytes": 19841
+        }
+      }
+    },
+    {
       "module": "xml",
       "tests": true,
       "help": false,
@@ -7136,7 +7167,7 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5745008
+          "bytes": 5756649
         },
         "archives": [
           {
@@ -7676,14 +7707,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
             ],
-            "bytes": 904307
+            "bytes": 906050
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz"
             ],
-            "bytes": 934880
+            "bytes": 936672
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",
@@ -7838,6 +7869,20 @@
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.overload.help.fr_FR.nhz"
             ],
             "bytes": 31693
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.parquet.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.parquet.help.en_US.nhz"
+            ],
+            "bytes": 46777
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.parquet.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.parquet.help.fr_FR.nhz"
+            ],
+            "bytes": 47286
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.polynomial_functions.help.en_US.nhz.nlpack",

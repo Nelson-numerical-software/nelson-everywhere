@@ -57,6 +57,7 @@
     "optimization",
     "os_functions",
     "overload",
+    "parquet",
     "polynomial_functions",
     "preferences",
     "profiler",

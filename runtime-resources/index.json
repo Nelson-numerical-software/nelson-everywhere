@@ -173,11 +173,13 @@
         "tests": {
           "file": "runtime-resources/bundles/types-tests.nlpack",
           "files": [
+            "runtime-resources/modules/types/tests/bench_double_scalar_storage.m",
             "runtime-resources/modules/types/tests/bench_isenum.m",
             "runtime-resources/modules/types/tests/bench_isreal_low_ram.m",
             "runtime-resources/modules/types/tests/bench_isreal.m",
             "runtime-resources/modules/types/tests/bench_logical_mask_extract.m",
             "runtime-resources/modules/types/tests/bench_memoize.m",
+            "runtime-resources/modules/types/tests/bench_real_scalar_storage.cpp",
             "runtime-resources/modules/types/tests/bench_underlyingType.m",
             "runtime-resources/modules/types/tests/bug_github_issue_152.m",
             "runtime-resources/modules/types/tests/bug_github_issue_1564.m",
@@ -193,6 +195,8 @@
             "runtime-resources/modules/types/tests/bytecode_local_parens_assign_handle_fastpath.m",
             "runtime-resources/modules/types/tests/bytecode_local_parens_fastpath.m",
             "runtime-resources/modules/types/tests/bytecode_local_parens_handle_fastpath.m",
+            "runtime-resources/modules/types/tests/double_scalar_storage.cpp",
+            "runtime-resources/modules/types/tests/real_scalar_storage.cpp",
             "runtime-resources/modules/types/tests/test_arrayof_indexing_fast_paths.m",
             "runtime-resources/modules/types/tests/test_assign_all_false_logical_empty_rhs.m",
             "runtime-resources/modules/types/tests/test_assign_dense_fastpath.m",
@@ -201,7 +205,10 @@
             "runtime-resources/modules/types/tests/test_assign_repeated_subscripts.m",
             "runtime-resources/modules/types/tests/test_class.m",
             "runtime-resources/modules/types/tests/test_delete_subset_dimensions.m",
+            "runtime-resources/modules/types/tests/test_double_scalar_construction.m",
             "runtime-resources/modules/types/tests/test_double_scalar_extract.m",
+            "runtime-resources/modules/types/tests/test_double_scalar_native.m",
+            "runtime-resources/modules/types/tests/test_double_scalar_storage.m",
             "runtime-resources/modules/types/tests/test_empty_complex_subset_real.m",
             "runtime-resources/modules/types/tests/test_empty_extract.m",
             "runtime-resources/modules/types/tests/test_empty_linear_index_grow.m",
@@ -241,6 +248,7 @@
             "runtime-resources/modules/types/tests/test_isuint8.m",
             "runtime-resources/modules/types/tests/test_isvarname.m",
             "runtime-resources/modules/types/tests/test_linear_index_gather.m",
+            "runtime-resources/modules/types/tests/test_logical_scalar_storage.m",
             "runtime-resources/modules/types/tests/test_memoize_cache_keys.m",
             "runtime-resources/modules/types/tests/test_memoize_outputs_errors.m",
             "runtime-resources/modules/types/tests/test_memoize.m",
@@ -264,8 +272,10 @@
             "runtime-resources/modules/types/tests/test_nelson_lang_OnOffSwitchState.m",
             "runtime-resources/modules/types/tests/test_nelson.lang.makeUniqueStrings.m",
             "runtime-resources/modules/types/tests/test_nelson.lang.makeValidName.m",
+            "runtime-resources/modules/types/tests/test_real_scalar_native.m",
             "runtime-resources/modules/types/tests/test_reference_array_allocation.m",
             "runtime-resources/modules/types/tests/test_setNDimSubset_contiguous_blocks.m",
+            "runtime-resources/modules/types/tests/test_single_scalar_storage.m",
             "runtime-resources/modules/types/tests/test_sparse_vector_extract_orientation.m",
             "runtime-resources/modules/types/tests/test_string_empty_grow_assign.m",
             "runtime-resources/modules/types/tests/test_string_grow_missing.m",
@@ -277,7 +287,7 @@
             "runtime-resources/modules/types/tests/test_vector_extract.m",
             "runtime-resources/modules/types/tests/TestEnumColor.m"
           ],
-          "bytes": 236501
+          "bytes": 275596
         }
       }
     },

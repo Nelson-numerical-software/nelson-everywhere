@@ -20,7 +20,12 @@
             {
               "id": "V1",
               "type": "SineVoltage",
-              "params": { "name": "Vin", "Amplitude": 1, "Frequency": 1, "Phase": 0 },
+              "params": {
+                "name": "Vin",
+                "Amplitude": 1,
+                "Frequency": 1,
+                "Phase": 0
+              },
               "x": 50,
               "y": 280,
               "rotation": 90
@@ -28,7 +33,10 @@
             {
               "id": "R1",
               "type": "Resistor",
-              "params": { "name": "R1", "R": 100 },
+              "params": {
+                "name": "R1",
+                "R": 100
+              },
               "x": 200,
               "y": 210,
               "rotation": 0
@@ -36,7 +44,11 @@
             {
               "id": "C1",
               "type": "Capacitor",
-              "params": { "name": "C1", "C": 0.001, "v0": 0 },
+              "params": {
+                "name": "C1",
+                "C": 0.001,
+                "v0": 0
+              },
               "x": 350,
               "y": 280,
               "rotation": 90
@@ -44,7 +56,9 @@
             {
               "id": "VS",
               "type": "VoltageSensor",
-              "params": { "name": "Vc" },
+              "params": {
+                "name": "Vc"
+              },
               "x": 490,
               "y": 280,
               "rotation": 90
@@ -60,7 +74,9 @@
             {
               "id": "vc_out",
               "type": "labelSink",
-              "params": { "gotoTag": "vc" },
+              "params": {
+                "gotoTag": "vc"
+              },
               "inputs": 1,
               "outputs": 1,
               "x": 650,
@@ -69,15 +85,41 @@
             }
           ],
           "connections": [
-            { "from": "VS", "to": "vc_out", "fromIndex": 0, "toIndex": 0 }
+            {
+              "from": "VS",
+              "to": "vc_out",
+              "fromIndex": 0,
+              "toIndex": 0
+            }
           ],
           "physicalWires": [
-            { "pins": ["V1.p", "R1.p"] },
-            { "pins": ["R1.n", "C1.p", "VS.p"] },
-            { "pins": ["V1.n", "C1.n", "VS.n", "G.p"] }
+            {
+              "pins": [
+                "V1.p",
+                "R1.p"
+              ]
+            },
+            {
+              "pins": [
+                "R1.n",
+                "C1.p",
+                "VS.p"
+              ]
+            },
+            {
+              "pins": [
+                "V1.n",
+                "C1.n",
+                "VS.n",
+                "G.p"
+              ]
+            }
           ],
           "externalOutputs": [
-            { "id": "vc_out", "name": "vc" }
+            {
+              "id": "vc_out",
+              "name": "vc"
+            }
           ]
         }
       },
@@ -90,7 +132,12 @@
     {
       "id": "twV",
       "type": "toWorkspace",
-      "params": { "VariableName": "vc", "SaveFormat": "Array", "Decimation": 1, "MaxDataPoints": "inf" },
+      "params": {
+        "VariableName": "vc",
+        "SaveFormat": "Array",
+        "Decimation": 1,
+        "MaxDataPoints": "inf"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 560,
@@ -115,8 +162,18 @@
     }
   ],
   "connections": [
-    { "from": "sub", "to": "twV", "fromIndex": 0, "toIndex": 0 },
-    { "from": "sub", "to": "sc", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "sub",
+      "to": "twV",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "sub",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 3,

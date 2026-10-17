@@ -56,7 +56,9 @@
         "LabelPosition": "Hide",
         "Binding": {
           "kind": "signal",
-          "blockPath": ["gain"],
+          "blockPath": [
+            "gain"
+          ],
           "outputPortIndex": 1,
           "frameProcessingMode": "sample"
         },
@@ -66,7 +68,11 @@
         "Opacity": "1",
         "Layout": "Preserve dimensions",
         "FormatString": "%d",
-        "GridColor": [0.502, 0.502, 0.502],
+        "GridColor": [
+          0.502,
+          0.502,
+          0.502
+        ],
         "ShowGrid": "on"
       }
     },
@@ -80,13 +86,19 @@
         "LabelPosition": "Top",
         "Binding": {
           "kind": "parameter",
-          "blockPath": ["gain"],
+          "blockPath": [
+            "gain"
+          ],
           "paramName": "Gain",
           "element": ""
         },
         "ShowInitialText": "on",
         "ScaleType": "Linear",
-        "Limits": [0, -1, 10],
+        "Limits": [
+          0,
+          -1,
+          10
+        ],
         "DashboardValue": 1
       }
     }
@@ -98,8 +110,14 @@
       "fromIndex": 0,
       "toIndex": 0,
       "points": [
-        [140, 100],
-        [220, 100]
+        [
+          140,
+          100
+        ],
+        [
+          220,
+          100
+        ]
       ]
     },
     {
@@ -108,8 +126,14 @@
       "fromIndex": 0,
       "toIndex": 0,
       "points": [
-        [320, 100],
-        [400, 100]
+        [
+          320,
+          100
+        ],
+        [
+          400,
+          100
+        ]
       ]
     }
   ],

@@ -13,7 +13,9 @@
     {
       "id": "wld",
       "type": "PlanarWorld",
-      "params": { "gravity": 0 },
+      "params": {
+        "gravity": 0
+      },
       "x": 0,
       "y": 90,
       "rotation": 0
@@ -55,7 +57,9 @@
     {
       "id": "rt",
       "type": "PlanarRelativeTorque",
-      "params": { "tau": 1 },
+      "params": {
+        "tau": 1
+      },
       "x": 200,
       "y": 210,
       "rotation": 0
@@ -63,7 +67,9 @@
     {
       "id": "s0",
       "type": "PlanarVelocitySensor",
-      "params": { "axis": "omega" },
+      "params": {
+        "axis": "omega"
+      },
       "x": 90,
       "y": 490,
       "rotation": 90
@@ -71,7 +77,9 @@
     {
       "id": "s1",
       "type": "PlanarVelocitySensor",
-      "params": { "axis": "omega" },
+      "params": {
+        "axis": "omega"
+      },
       "x": 290,
       "y": 490,
       "rotation": 90
@@ -79,7 +87,9 @@
     {
       "id": "w0",
       "type": "toWorkspace",
-      "params": { "VariableName": "W0" },
+      "params": {
+        "VariableName": "W0"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 100,
@@ -89,7 +99,9 @@
     {
       "id": "w1",
       "type": "toWorkspace",
-      "params": { "VariableName": "W1" },
+      "params": {
+        "VariableName": "W1"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 300,
@@ -98,14 +110,36 @@
     }
   ],
   "connections": [
-    { "from": "s0", "to": "w0", "fromIndex": 0, "toIndex": 0 },
-    { "from": "s1", "to": "w1", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "s0",
+      "to": "w0",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "s1",
+      "to": "w1",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 5,
   "sampleTime": 0.05,
   "physicalWires": [
-    { "pins": ["s0.a", "rt.a", "r0.com"] },
-    { "pins": ["rt.b", "s1.a", "r1.com"] }
+    {
+      "pins": [
+        "s0.a",
+        "rt.a",
+        "r0.com"
+      ]
+    },
+    {
+      "pins": [
+        "rt.b",
+        "s1.a",
+        "r1.com"
+      ]
+    }
   ]
 }

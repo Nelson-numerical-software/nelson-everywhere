@@ -13,7 +13,9 @@
     {
       "id": "wld",
       "type": "PlanarWorld",
-      "params": { "gravity": 9.81 },
+      "params": {
+        "gravity": 9.81
+      },
       "x": 0,
       "y": 90,
       "rotation": 0
@@ -21,7 +23,10 @@
     {
       "id": "anc",
       "type": "PlanarFixed",
-      "params": { "x": 0, "y": 1 },
+      "params": {
+        "x": 0,
+        "y": 1
+      },
       "x": 0,
       "y": 210,
       "rotation": 180
@@ -35,7 +40,12 @@
         "x0": 0.2,
         "y0": 0,
         "phi0": 0,
-        "frames": { "top": [0, 0.3] }
+        "frames": {
+          "top": [
+            0,
+            0.3
+          ]
+        }
       },
       "x": 400,
       "y": 210,
@@ -44,7 +54,10 @@
     {
       "id": "sd",
       "type": "PlanarSpringDamper",
-      "params": { "c": 60, "d": 6 },
+      "params": {
+        "c": 60,
+        "d": 6
+      },
       "x": 200,
       "y": 210,
       "rotation": 0
@@ -52,7 +65,9 @@
     {
       "id": "sp",
       "type": "PlanarPositionSensor",
-      "params": { "axis": "y" },
+      "params": {
+        "axis": "y"
+      },
       "x": 400,
       "y": 490,
       "rotation": 90
@@ -60,7 +75,9 @@
     {
       "id": "tw",
       "type": "toWorkspace",
-      "params": { "VariableName": "y" },
+      "params": {
+        "VariableName": "y"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 550,
@@ -85,15 +102,40 @@
     }
   ],
   "connections": [
-    { "from": "sp", "to": "tw", "fromIndex": 0, "toIndex": 0 },
-    { "from": "sp", "to": "sc", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "sp",
+      "to": "tw",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "sp",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 3,
   "sampleTime": 0.01,
   "physicalWires": [
-    { "pins": ["sd.a", "anc.frame"] },
-    { "pins": ["b.top", "sd.b"] },
-    { "pins": ["sp.a", "b.com"] }
+    {
+      "pins": [
+        "sd.a",
+        "anc.frame"
+      ]
+    },
+    {
+      "pins": [
+        "b.top",
+        "sd.b"
+      ]
+    },
+    {
+      "pins": [
+        "sp.a",
+        "b.com"
+      ]
+    }
   ]
 }

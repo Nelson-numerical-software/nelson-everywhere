@@ -1125,6 +1125,53 @@
       "source": "nflow",
       "examples": [
         {
+          "title": "Acausal RLC driven by FMU",
+          "description": "Co-simulation demo mixing an FMU with an acausal physical network. A Van der Pol oscillator (FMI 3.0 Co-Simulation FMU) produces a nonlinear signal x0 that drives a SignalVoltage source. That source feeds a series R-L-C circuit built from acausal electrical components (undirected physical connections to Ground). A VoltageSensor reads the capacitor voltage -- the damped second-order response of the circuit to the oscillator excitation. The top scope shows the FMU source signal; the bottom scope shows the circuit response; ToWorkspace exports the capacitor voltage.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/Acausal_FMU_RLC_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 12
+        },
+        {
+          "title": "BouncingBall FMU",
+          "description": "BouncingBall reference FMU (FMI 3.0 Co-Simulation) demo.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/bouncingball_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "BouncingBall FMU (Model Exchange)",
+          "description": "BouncingBall reference FMU (FMI 3.0 Model Exchange) demo. Nelson's ode4 solver integrates the two continuous states; the floor-contact state event is located by the shared zero-crossing detection and handled by the FMU's discrete update (velocity reflected).",
+          "kind": "model",
+          "file": "nflow-example:/fmi/bouncingball_me_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "Dahlquist FMU",
+          "description": "Dahlquist reference FMU (FMI 3.0 Co-Simulation) demo.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/dahlquist_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 2
+        },
+        {
+          "title": "Feedthrough FMU",
+          "description": "Feedthrough reference FMU (FMI 3.0 Co-Simulation) demo.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/feedthrough_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 5
+        },
+        {
           "title": "FMU Wasm - Adder (C)",
           "description": "FMI-LS-WASM Co-Simulation addition example (C). Run in NFlow WebAssembly: after the first communication step, sum = 2 + 3 = 5.",
           "kind": "model",
@@ -1150,6 +1197,33 @@
           "tags": [],
           "requirements": [],
           "blockCount": 4
+        },
+        {
+          "title": "StateSpace FMU",
+          "description": "StateSpace reference FMU (FMI 3.0 Co-Simulation) demo.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/statespace_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "VanDerPol FMU",
+          "description": "VanDerPol reference FMU (FMI 3.0 Co-Simulation) demo.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/vanderpol_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
+        },
+        {
+          "title": "VanDerPol FMU (Model Exchange)",
+          "description": "VanDerPol reference FMU (FMI 3.0 Model Exchange) demo. The FMU exposes only the model equations; Nelson's ode4 solver integrates its two continuous states.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/vanderpol_me_fmu.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 3
         }
       ]
     },

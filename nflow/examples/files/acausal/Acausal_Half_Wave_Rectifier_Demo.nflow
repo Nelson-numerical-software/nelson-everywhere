@@ -13,7 +13,10 @@
     {
       "id": "src",
       "type": "sine",
-      "params": { "Amplitude": 2, "Frequency": 1 },
+      "params": {
+        "Amplitude": 2,
+        "Frequency": 1
+      },
       "inputs": 0,
       "outputs": 1,
       "x": -140,
@@ -23,7 +26,9 @@
     {
       "id": "Vac",
       "type": "SignalVoltage",
-      "params": { "name": "Vac" },
+      "params": {
+        "name": "Vac"
+      },
       "x": 50,
       "y": 280,
       "rotation": 90
@@ -31,7 +36,11 @@
     {
       "id": "D1",
       "type": "Diode",
-      "params": { "name": "D1", "Is": 1e-9, "Vt": 0.04 },
+      "params": {
+        "name": "D1",
+        "Is": 1e-9,
+        "Vt": 0.04
+      },
       "x": 200,
       "y": 210,
       "rotation": 0
@@ -39,7 +48,10 @@
     {
       "id": "R1",
       "type": "Resistor",
-      "params": { "name": "R1", "R": 1000 },
+      "params": {
+        "name": "R1",
+        "R": 1000
+      },
       "x": 350,
       "y": 280,
       "rotation": 90
@@ -47,7 +59,11 @@
     {
       "id": "C1",
       "type": "Capacitor",
-      "params": { "name": "C1", "C": 0.001, "v0": 0 },
+      "params": {
+        "name": "C1",
+        "C": 0.001,
+        "v0": 0
+      },
       "x": 490,
       "y": 280,
       "rotation": 90
@@ -55,7 +71,9 @@
     {
       "id": "VS",
       "type": "VoltageSensor",
-      "params": { "name": "Vout" },
+      "params": {
+        "name": "Vout"
+      },
       "x": 630,
       "y": 280,
       "rotation": 90
@@ -79,7 +97,9 @@
     {
       "id": "tw",
       "type": "toWorkspace",
-      "params": { "VariableName": "vout" },
+      "params": {
+        "VariableName": "vout"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 790,
@@ -104,17 +124,56 @@
     }
   ],
   "connections": [
-    { "from": "src", "to": "Vac", "fromIndex": 0, "toIndex": 0 },
-    { "from": "VS", "to": "tw", "fromIndex": 0, "toIndex": 0 },
-    { "from": "VS", "to": "sc", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "src",
+      "to": "Vac",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "VS",
+      "to": "tw",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "VS",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 3,
   "sampleTime": 0.005,
   "physicalWires": [
-    { "pins": ["Vac.p", "D1.p"] },
-    { "pins": ["D1.n", "R1.p", "C1.p", "VS.p"] },
-    { "pins": ["G.p", "Vac.n"] },
-    { "pins": ["G2.p", "R1.n", "C1.n", "VS.n"] }
+    {
+      "pins": [
+        "Vac.p",
+        "D1.p"
+      ]
+    },
+    {
+      "pins": [
+        "D1.n",
+        "R1.p",
+        "C1.p",
+        "VS.p"
+      ]
+    },
+    {
+      "pins": [
+        "G.p",
+        "Vac.n"
+      ]
+    },
+    {
+      "pins": [
+        "G2.p",
+        "R1.n",
+        "C1.n",
+        "VS.n"
+      ]
+    }
   ]
 }

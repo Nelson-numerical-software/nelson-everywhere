@@ -13,7 +13,9 @@
     {
       "id": "wld",
       "type": "PlanarWorld",
-      "params": { "gravity": 9.81 },
+      "params": {
+        "gravity": 9.81
+      },
       "x": 0,
       "y": 210,
       "rotation": 180
@@ -27,7 +29,16 @@
         "x0": 0.5,
         "y0": 0,
         "phi0": 0,
-        "frames": { "prox": [-0.5, 0], "dist": [0.5, 0] }
+        "frames": {
+          "prox": [
+            -0.5,
+            0
+          ],
+          "dist": [
+            0.5,
+            0
+          ]
+        }
       },
       "x": 400,
       "y": 210,
@@ -42,7 +53,16 @@
         "x0": 1.5,
         "y0": 0,
         "phi0": 0,
-        "frames": { "prox": [-0.5, 0], "dist": [0.5, 0] }
+        "frames": {
+          "prox": [
+            -0.5,
+            0
+          ],
+          "dist": [
+            0.5,
+            0
+          ]
+        }
       },
       "x": 800,
       "y": 210,
@@ -67,7 +87,9 @@
     {
       "id": "sp",
       "type": "PlanarPositionSensor",
-      "params": { "axis": "phi" },
+      "params": {
+        "axis": "phi"
+      },
       "x": 800,
       "y": 490,
       "rotation": 90
@@ -75,7 +97,9 @@
     {
       "id": "tw",
       "type": "toWorkspace",
-      "params": { "VariableName": "phi1" },
+      "params": {
+        "VariableName": "phi1"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 950,
@@ -100,17 +124,52 @@
     }
   ],
   "connections": [
-    { "from": "sp", "to": "tw", "fromIndex": 0, "toIndex": 0 },
-    { "from": "sp", "to": "sc", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "sp",
+      "to": "tw",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "sp",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 2,
   "sampleTime": 0.01,
   "physicalWires": [
-    { "pins": ["j0.a", "wld.frame"] },
-    { "pins": ["r0.prox", "j0.b"] },
-    { "pins": ["j1.a", "r0.dist"] },
-    { "pins": ["r1.prox", "j1.b"] },
-    { "pins": ["sp.a", "r1.com"] }
+    {
+      "pins": [
+        "j0.a",
+        "wld.frame"
+      ]
+    },
+    {
+      "pins": [
+        "r0.prox",
+        "j0.b"
+      ]
+    },
+    {
+      "pins": [
+        "j1.a",
+        "r0.dist"
+      ]
+    },
+    {
+      "pins": [
+        "r1.prox",
+        "j1.b"
+      ]
+    },
+    {
+      "pins": [
+        "sp.a",
+        "r1.com"
+      ]
+    }
   ]
 }

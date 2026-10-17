@@ -5250,6 +5250,75 @@
       }
     },
     {
+      "module": "nflow_fmi",
+      "tests": true,
+      "help": false,
+      "archives": false,
+      "bundles": {
+        "tests": {
+          "file": "runtime-resources/bundles/nflow_fmi-tests.nlpack",
+          "files": [
+            "runtime-resources/modules/nflow_fmi/tests/nflow_fmi_skip_bundled_fmi2_runtime.m",
+            "runtime-resources/modules/nflow_fmi/tests/nflow_fmi_skip_no_toolchain.m",
+            "runtime-resources/modules/nflow_fmi/tests/nflow_modelica_example_run.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_gallery_examples.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_available.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_block.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_cosim.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_coupling_uncoupled.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_coupling.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_demos.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_info.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_me_block.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_modelexchange.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_state.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi_structural.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi2_cosim.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi2_info.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmi2_me.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_filesource.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_fromworkspace_var.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_input_drive_feedback.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_input_drive.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_input_state.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_ode45_roundtrip_discontinuous_loop.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_ode45_roundtrip_oscillator.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_ode45_roundtrip_saturation.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_ode45_roundtrip.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_roundtrip_int64.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_roundtrip_pid.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_roundtrip_uint64.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_roundtrip.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_state_export.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_substep.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_fmu_to_block.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_block.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_config.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples_bouncing_ball.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples_mass_spring_damper.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples_motor.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples_multi_output.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples_rlc.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples_thermal.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_examples.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_tofmu_concurrent.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_tofmu_paths.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_modelica_tofmu.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_controlled_drivetrain.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_export_diagram.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_export_native.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_export.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_import_fmi2.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_import.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_parameters.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_runnable.m",
+            "runtime-resources/modules/nflow_fmi/tests/test_nflow_wasm_module.m"
+          ],
+          "bytes": 173041
+        }
+      }
+    },
+    {
       "module": "f2c",
       "tests": true,
       "help": false,
@@ -7208,7 +7277,7 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5760681
+          "bytes": 5794827
         },
         "archives": [
           {
@@ -7748,14 +7817,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
             ],
-            "bytes": 906047
+            "bytes": 912024
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz"
             ],
-            "bytes": 936669
+            "bytes": 943340
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",
@@ -7818,14 +7887,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_blocks.help.en_US.nhz"
             ],
-            "bytes": 1468237
+            "bytes": 1468284
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_blocks.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_blocks.help.fr_FR.nhz"
             ],
-            "bytes": 1495016
+            "bytes": 1495042
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_engine.help.en_US.nhz.nlpack",
@@ -7840,6 +7909,20 @@
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_engine.help.fr_FR.nhz"
             ],
             "bytes": 85426
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_fmi.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_fmi.help.en_US.nhz"
+            ],
+            "bytes": 50981
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_fmi.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_fmi.help.fr_FR.nhz"
+            ],
+            "bytes": 52528
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.ode_solvers.help.en_US.nhz.nlpack",
@@ -8948,7 +9031,7 @@
             "runtime-resources/modules/nflow_gui/tests/wasm/fmu.spec.ts",
             "runtime-resources/modules/nflow_gui/tests/wasm/playwright.config.ts"
           ],
-          "bytes": 1677815
+          "bytes": 1683298
         }
       }
     }

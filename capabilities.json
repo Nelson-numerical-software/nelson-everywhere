@@ -52,6 +52,7 @@
     "netcdf",
     "nflow_blocks",
     "nflow_engine",
+    "nflow_fmi",
     "ode_solvers",
     "operators",
     "optimization",

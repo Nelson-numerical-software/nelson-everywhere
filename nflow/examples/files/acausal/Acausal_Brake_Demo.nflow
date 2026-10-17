@@ -13,7 +13,9 @@
     {
       "id": "K",
       "type": "constant",
-      "params": { "Value": 4 },
+      "params": {
+        "Value": 4
+      },
       "inputs": 0,
       "outputs": 1,
       "x": -40,
@@ -23,7 +25,9 @@
     {
       "id": "B",
       "type": "RotBrake",
-      "params": { "w_eps": 0.01 },
+      "params": {
+        "w_eps": 0.01
+      },
       "x": 150,
       "y": 90,
       "rotation": 270
@@ -31,7 +35,11 @@
     {
       "id": "J1",
       "type": "Inertia",
-      "params": { "J": 1, "phi0": 0, "w0": 10 },
+      "params": {
+        "J": 1,
+        "phi0": 0,
+        "w0": 10
+      },
       "x": 290,
       "y": 90,
       "rotation": 270
@@ -63,7 +71,9 @@
     {
       "id": "tw",
       "type": "toWorkspace",
-      "params": { "VariableName": "w" },
+      "params": {
+        "VariableName": "w"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 450,
@@ -72,12 +82,35 @@
     }
   ],
   "connections": [
-    { "from": "K", "to": "B", "fromIndex": 0, "toIndex": 0 },
-    { "from": "WS", "to": "sc", "fromIndex": 0, "toIndex": 0 },
-    { "from": "WS", "to": "tw", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "K",
+      "to": "B",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "WS",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "WS",
+      "to": "tw",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "ode4",
   "runtime": 4,
   "sampleTime": 0.01,
-  "physicalWires": [{ "pins": ["WS.flange", "B.flange", "J1.flange"] }]
+  "physicalWires": [
+    {
+      "pins": [
+        "WS.flange",
+        "B.flange",
+        "J1.flange"
+      ]
+    }
+  ]
 }

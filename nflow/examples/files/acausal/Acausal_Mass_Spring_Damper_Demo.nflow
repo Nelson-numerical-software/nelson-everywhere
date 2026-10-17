@@ -13,7 +13,11 @@
     {
       "id": "M1",
       "type": "Mass",
-      "params": { "m": 1, "s0": 1, "v0": 0 },
+      "params": {
+        "m": 1,
+        "s0": 1,
+        "v0": 0
+      },
       "x": 150,
       "y": 90,
       "rotation": 270
@@ -21,7 +25,9 @@
     {
       "id": "K1",
       "type": "Spring",
-      "params": { "k": 4 },
+      "params": {
+        "k": 4
+      },
       "x": 150,
       "y": 280,
       "rotation": 90
@@ -29,7 +35,9 @@
     {
       "id": "D1",
       "type": "Damper",
-      "params": { "d": 1 },
+      "params": {
+        "d": 1
+      },
       "x": 290,
       "y": 280,
       "rotation": 90
@@ -37,7 +45,9 @@
     {
       "id": "W",
       "type": "Fixed",
-      "params": { "s0": 0 },
+      "params": {
+        "s0": 0
+      },
       "x": 150,
       "y": 430,
       "rotation": 90
@@ -53,7 +63,9 @@
     {
       "id": "tw",
       "type": "toWorkspace",
-      "params": { "VariableName": "s" },
+      "params": {
+        "VariableName": "s"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 450,
@@ -78,14 +90,37 @@
     }
   ],
   "connections": [
-    { "from": "PS", "to": "tw", "fromIndex": 0, "toIndex": 0 },
-    { "from": "PS", "to": "sc", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "PS",
+      "to": "tw",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "PS",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 10,
   "sampleTime": 0.02,
   "physicalWires": [
-    { "pins": ["M1.flange", "K1.a", "PS.flange", "D1.a"] },
-    { "pins": ["W.flange", "K1.b", "D1.b"] }
+    {
+      "pins": [
+        "M1.flange",
+        "K1.a",
+        "PS.flange",
+        "D1.a"
+      ]
+    },
+    {
+      "pins": [
+        "W.flange",
+        "K1.b",
+        "D1.b"
+      ]
+    }
   ]
 }

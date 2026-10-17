@@ -13,7 +13,10 @@
     {
       "id": "J1",
       "type": "Inertia",
-      "params": { "J": 1, "w0": 0 },
+      "params": {
+        "J": 1,
+        "w0": 0
+      },
       "x": 90,
       "y": 90,
       "rotation": 270
@@ -21,7 +24,9 @@
     {
       "id": "G",
       "type": "IdealGear",
-      "params": { "ratio": 2 },
+      "params": {
+        "ratio": 2
+      },
       "x": 200,
       "y": 210,
       "rotation": 0
@@ -29,7 +34,10 @@
     {
       "id": "J2",
       "type": "Inertia",
-      "params": { "J": 3, "w0": 0 },
+      "params": {
+        "J": 3,
+        "w0": 0
+      },
       "x": 290,
       "y": 90,
       "rotation": 270
@@ -37,7 +45,9 @@
     {
       "id": "T",
       "type": "ConstantTorque",
-      "params": { "tau": 2 },
+      "params": {
+        "tau": 2
+      },
       "x": 0,
       "y": 210,
       "rotation": 180
@@ -45,7 +55,9 @@
     {
       "id": "D",
       "type": "RotDamper",
-      "params": { "d": 1 },
+      "params": {
+        "d": 1
+      },
       "x": 350,
       "y": 280,
       "rotation": 90
@@ -53,7 +65,9 @@
     {
       "id": "W",
       "type": "RotFixed",
-      "params": { "phi0": 0 },
+      "params": {
+        "phi0": 0
+      },
       "x": 350,
       "y": 400,
       "rotation": 90
@@ -69,7 +83,9 @@
     {
       "id": "tw",
       "type": "toWorkspace",
-      "params": { "VariableName": "w" },
+      "params": {
+        "VariableName": "w"
+      },
       "inputs": 1,
       "outputs": 0,
       "x": 510,
@@ -94,15 +110,43 @@
     }
   ],
   "connections": [
-    { "from": "WS", "to": "tw", "fromIndex": 0, "toIndex": 0 },
-    { "from": "WS", "to": "sc", "fromIndex": 0, "toIndex": 0 }
+    {
+      "from": "WS",
+      "to": "tw",
+      "fromIndex": 0,
+      "toIndex": 0
+    },
+    {
+      "from": "WS",
+      "to": "sc",
+      "fromIndex": 0,
+      "toIndex": 0
+    }
   ],
   "solver": "dae",
   "runtime": 20,
   "sampleTime": 0.05,
   "physicalWires": [
-    { "pins": ["T.flange", "G.a", "J1.flange"] },
-    { "pins": ["G.b", "J2.flange", "WS.flange", "D.a"] },
-    { "pins": ["D.b", "W.flange"] }
+    {
+      "pins": [
+        "T.flange",
+        "G.a",
+        "J1.flange"
+      ]
+    },
+    {
+      "pins": [
+        "G.b",
+        "J2.flange",
+        "WS.flange",
+        "D.a"
+      ]
+    },
+    {
+      "pins": [
+        "D.b",
+        "W.flange"
+      ]
+    }
   ]
 }

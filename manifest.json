@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "buildId": "eb3266d2e135",
-  "entryPoint": "index.html?runtime=wasm&build=eb3266d2e135",
+  "buildId": "4828123056af",
+  "entryPoint": "index.html?runtime=wasm&build=4828123056af",
   "capabilityManifest": "capabilities.json",
   "delivery": {
     "formatVersion": 1,
@@ -1179,7 +1179,7 @@
           "nflow/styles/themes.css",
           "nflow/styles/ui-extras.css"
         ],
-        "bytes": 10566071
+        "bytes": 10566633
       },
       {
         "id": "nmm",
@@ -1422,7 +1422,7 @@
           "runtime-resources/bundles/xml-tests.nlpack",
           "runtime-resources/index.json"
         ],
-        "bytes": 126210618
+        "bytes": 126210616
       }
     ]
   },
@@ -1440,7 +1440,7 @@
     {
       "file": "app.js",
       "bytes": 1337738,
-      "sha256": "802879cd1e368b44a1fadaeea2d2cc98316face5beafb8a3a04b52411944ce08"
+      "sha256": "f7be73c6a530661510281ad01ba91eca43a8f8ca2bdbf1899343899cb9656bd9"
     },
     {
       "file": "assets/figureCanvasWorker-BgYkuI5o.js",
@@ -2630,12 +2630,12 @@
     {
       "file": "examples/index.html",
       "bytes": 528,
-      "sha256": "46a88fe4da12d392bf044729fcde1444637dff034a247fedd7e01b0738a7cb9a"
+      "sha256": "be7b277fe76fe2d98363a6e3031f4aca199ef8d7b7547ce9418113618e90b6af"
     },
     {
       "file": "index.html",
       "bytes": 1785,
-      "sha256": "465d1e0525b03a3d941bef9c818de7cd685d1b3b207e2e441d569c5c5c611173"
+      "sha256": "8a00278598c246e4249bf38d5c88bd37ed1eef62029c36f8808ebef61d164b58"
     },
     {
       "file": "manifest.webmanifest",
@@ -2680,7 +2680,7 @@
     {
       "file": "nelson-worker.mjs",
       "bytes": 45383,
-      "sha256": "013a195fbdd641b5f48ace0dc3e88570a38e3b796c68432d0e7595cb5dc46bad"
+      "sha256": "7d1f59cd16bb89ab099ceeb2a2295358766d3ff013ce53df2f8e1c7e222707dd"
     },
     {
       "file": "nelson-workspace-store.mjs",
@@ -3679,8 +3679,8 @@
     },
     {
       "file": "nflow/examples/files/fmi/dahlquist_fmu.nflow",
-      "bytes": 1398,
-      "sha256": "d857a66b59ec44713e1f8cac2f24819ae079d53b0c1cadd3ccf70ca10dec7ca7"
+      "bytes": 1461,
+      "sha256": "c6fe12bcb44311e0fba81d7651236dc072559cea5051e6d2da8eb49e216333a9"
     },
     {
       "file": "nflow/examples/files/fmi/Dahlquist.fmu",
@@ -3689,8 +3689,8 @@
     },
     {
       "file": "nflow/examples/files/fmi/feedthrough_fmu.nflow",
-      "bytes": 3151,
-      "sha256": "6ca6488bc7872ecb69ac5a18810a1f95b1bc60e2f91d60a094aff13e81b07bca"
+      "bytes": 3298,
+      "sha256": "3092742b299acf64a9d1662b3d42bc8d5f513c7a6b1637b52c5eb36098eca436"
     },
     {
       "file": "nflow/examples/files/fmi/Feedthrough.fmu",
@@ -3699,8 +3699,8 @@
     },
     {
       "file": "nflow/examples/files/fmi/statespace_fmu.nflow",
-      "bytes": 1924,
-      "sha256": "cad3f116dfa71574b767351662c645b8b5a6d99fc79fe9e96fd0cf40e9f56c2b"
+      "bytes": 2032,
+      "sha256": "bb1125920f505d9b41cc2183164b51aa56d535c723d05c99d13ab44191124dbb"
     },
     {
       "file": "nflow/examples/files/fmi/StateSpace.fmu",
@@ -3709,13 +3709,13 @@
     },
     {
       "file": "nflow/examples/files/fmi/vanderpol_fmu.nflow",
-      "bytes": 2014,
-      "sha256": "00cd611f6a7e89cf7a4c2519c215a97dc07ca13b6793edff1ed7e5703b2751dd"
+      "bytes": 2116,
+      "sha256": "464136a275e8a9a7ac28764a7368ad2e0013533a514514eca41ce8885f7aebdd"
     },
     {
       "file": "nflow/examples/files/fmi/vanderpol_me_fmu.nflow",
-      "bytes": 2222,
-      "sha256": "3e7ba7046fd392a832480167d0194375010f65d74a0f7fcc9a3a7bc18895f164"
+      "bytes": 2364,
+      "sha256": "b72f510639ea79c053431e1dbafde49eedcd7b4225fae6b3b24f5d58a7e691be"
     },
     {
       "file": "nflow/examples/files/fmi/VanDerPol.fmu",
@@ -3780,7 +3780,7 @@
     {
       "file": "nflow/index.html",
       "bytes": 2978,
-      "sha256": "b88925da0826f4f15391c04f6d24d49378cb99cf504c4d57fb06f21b4645af08"
+      "sha256": "41a02778138ecf898d4975d04fcce836b076db267f8d421e683137046aabf10f"
     },
     {
       "file": "nflow/libraries/_builtin-icons.sprite.svg",
@@ -6930,7 +6930,7 @@
     {
       "file": "nmm/index.html",
       "bytes": 578,
-      "sha256": "ec52e8f145f34da5ef94d71182fe181ad2d49db4084d5e748b3ffbef26516882"
+      "sha256": "b248b694223a0e1de9b83133a1c59082b67529770e26c6225c14b6abb7d6fc00"
     },
     {
       "file": "nmm/locale/nmm-ui-en_US.json",
@@ -6945,7 +6945,7 @@
     {
       "file": "packs/editor/EditorPanel-D6iJ14Og.js",
       "bytes": 3543261,
-      "sha256": "4f703b9cbd50ea406d667be2f4a41059fca6c6bd1ba9dbeecc2a31886adeaba2"
+      "sha256": "dbdbcf362e3cbd5af8a55f7f8229d2f7ea7d95edaec246b02c5014d4f6785460"
     },
     {
       "file": "packs/editor/EditorPanel-DV2I0Fna.css",
@@ -6960,17 +6960,17 @@
     {
       "file": "packs/examples/ExamplesPanel-DT_4yNQ7.js",
       "bytes": 9758,
-      "sha256": "9cd91f898fce9a73ed3513d1229baa372414516aa126c17b9b3319da4e4fd8e0"
+      "sha256": "8c885cabd1f0078ab563496f8468642c1b0414eb1bd4c5e989e9b217cf17e668"
     },
     {
       "file": "packs/mock/mockEngine-BEDb1W65.js",
       "bytes": 34539,
-      "sha256": "13de05c245222bd99071ccc0ce70b4c0e7d63ee9c289034437cab51d3723c157"
+      "sha256": "dcc8916e496cd2f618c601e0a23f7217a18adbcba5fe4966a55ada3fee7686ea"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-CLcDany2.js",
       "bytes": 48053,
-      "sha256": "9d774925c8794ed1b1cbe15b84682d93e0cea7f6f8e1331da817ba56f6ab4b30"
+      "sha256": "8a217d66fc62283bfe6f064674daac123e1b05f1936382031c744e1276e201bc"
     },
     {
       "file": "packs/nmm/PackageManagerPanel-D_8kqlRb.css",
@@ -7125,722 +7125,722 @@
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.assert_functions.help.en_US.nhz.nlpack",
       "bytes": 145989,
-      "sha256": "f12ee2f8ae7a30bf96988f53f4a73b8efbe19d634e2fd53b795983203387db15"
+      "sha256": "49afc4d1494b74d476552155cfaa04ef148d4650ebe20a75c10e40c9336f4759"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.assert_functions.help.fr_FR.nhz.nlpack",
       "bytes": 149433,
-      "sha256": "c00677254b4f4a74a5fa71a5dbd47c5e8515df04c2705dae5f05e346050c65b4"
+      "sha256": "b9962d974bd334a09bb71702d75b16e148574f540c9f8912bc7b712319fcb801"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.audio.help.en_US.nhz.nlpack",
       "bytes": 98464,
-      "sha256": "caaab8f85f954a6bcc379b5ba3333706a543e4b21397920fb0a5a07199288dbf"
+      "sha256": "da86ccc87c0a37bf48b0d564ce90b52c8f08d6fb3f4383e5154b7db21f915b43"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.audio.help.fr_FR.nhz.nlpack",
       "bytes": 100848,
-      "sha256": "0aeb4c18ada9044251e309bdea4f8bb960cf8d20672b78cf763a159ede356213"
+      "sha256": "08122af525d9c8089579d65eb55ed75a383e979274297078b7ea1bfd2f0b8762"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.categorical.help.en_US.nhz.nlpack",
       "bytes": 61090,
-      "sha256": "853bdb2934d53aea660bd457e3d402b3796acdd810a2d4dc7a6d332ed634544d"
+      "sha256": "030c9d08cbce973239dd6a38dea3efbd6e8e80dfc7eb43d2e690a58b60f86fa3"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.categorical.help.fr_FR.nhz.nlpack",
       "bytes": 62037,
-      "sha256": "b1e934cf265247802353908d6117b8808b5c851a3a1c7e3be615f2dde2bb0d79"
+      "sha256": "10e9eb4d8b9627314ad84ec871f63b779794fb1b43018463d2a84d5a1505655c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.characters_encoding.help.en_US.nhz.nlpack",
       "bytes": 35040,
-      "sha256": "61804113e374acb3ab1bd5a6eb05c676441883e4d98bf27b2a702ec587145af0"
+      "sha256": "0a8a87721b50308a5f83780b5ff4c118d71d81a9058ec468490ce4fb597aa26b"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.characters_encoding.help.fr_FR.nhz.nlpack",
       "bytes": 35218,
-      "sha256": "f390a82bfb121f50c2f382d68964cf7d543e95e24dc1d4ee085e6918b0792b37"
+      "sha256": "f9826cb9d188d555c9ce4af1975379031ca1b906f5679f4e605419e2adda1c41"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.console.help.en_US.nhz.nlpack",
       "bytes": 36232,
-      "sha256": "7e2608b386187b3237aca34ca69fd0242d674f3bc752933ede345342edc7b292"
+      "sha256": "0c8ec1cc86038fdd8eee3d347df1aa04b37e15060eabce5a11171e4149279a16"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.console.help.fr_FR.nhz.nlpack",
       "bytes": 36422,
-      "sha256": "1abb9dd4197b03b3a4ed107d238796dc7674d244bd14f6a77d1fe3b1c0b7ec8a"
+      "sha256": "a710a0ac0211ee84ce71182072f9c37d52e664ddc1cd0538d36de9c72108a705"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.constructors_functions.help.en_US.nhz.nlpack",
       "bytes": 47776,
-      "sha256": "4fb9963376327d472b966bb1082775432d8869381c1455deb96803d912f62b07"
+      "sha256": "48303bc33b899d53353a40f513a63abea05db4119ce1b15a50b46e638dea695e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.constructors_functions.help.fr_FR.nhz.nlpack",
       "bytes": 48290,
-      "sha256": "193b115a757c4e8ea42f05a4542056bd42e5a6bfffb05f955dd81ac7f78d5a45"
+      "sha256": "cd4d1d05cf78218c36c5f2f4a5b7ec4d1bcfc9c8a23550d3cda1bb07109c9e48"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.control_system.help.en_US.nhz.nlpack",
       "bytes": 259439,
-      "sha256": "fd4ee71fe9fc528b52268e1b89858f6f853621747edf4b6ce39ca4e50215554d"
+      "sha256": "40fbad7a2d429b74b246ce5c421a598763386448a02347384fd101971d38a063"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.control_system.help.fr_FR.nhz.nlpack",
       "bytes": 262780,
-      "sha256": "8205093ac334b87898e79d5f23dffd46f833461cb93c826a922acd1fe3905b65"
+      "sha256": "69182750d67325abdaacb65ef5bd289182464541c08ab664c8c99d8f2f59950d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.core.help.en_US.nhz.nlpack",
       "bytes": 117870,
-      "sha256": "bbe5f35629f05edd708d3955ede89ddd33cda41e12b08471d0dd16a5ed2a09fb"
+      "sha256": "0b6d49c275d351b3f6d7e820dfee36a3e38409c7a1886c4a075e6a0d810cc652"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.core.help.fr_FR.nhz.nlpack",
       "bytes": 119587,
-      "sha256": "3bd92c80f84ad8e34789bbaabc1a0935bc1f1e19a9d019c6d189aaaa56d73057"
+      "sha256": "2862a99d86dc6075dedb2eba799ef3a2ff42035c3aca4dee4039546e07e6e217"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_analysis.help.en_US.nhz.nlpack",
       "bytes": 126716,
-      "sha256": "985a1d60b764f34c184ee592e7344cc4191e66a3fdfb52e3698562698049a3d9"
+      "sha256": "dcdcfa87e3c6c963f6188f2a25a1c301d092012fd24510bc504c73204b1adf62"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_analysis.help.fr_FR.nhz.nlpack",
       "bytes": 129667,
-      "sha256": "35111aa25cc65733e8d984e29631ac8dab6a05c008b0a97a831fd4c8a50e70e8"
+      "sha256": "42a16a6fbb683cd2b1ad54802478972946462afa97c3e43ee7ffcde5cd328a33"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_structures.help.en_US.nhz.nlpack",
       "bytes": 71562,
-      "sha256": "567706525df6b7fe34fab1bebaa11d70df6df36179ad952ab6de1c798fd7353c"
+      "sha256": "4d28cd7b128c8d06d2f2d79c7af84ab2c89f2446a485f19d639971e4bbbbc201"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.data_structures.help.fr_FR.nhz.nlpack",
       "bytes": 72968,
-      "sha256": "e6d7a245b354e7652e14a998d5e393bea66236d55f1b6bbec6bf11e0c7a44ffc"
+      "sha256": "be2463d40a086d40a1f8333911fc83b34561a35ca2cdb8560b67c858c9c80fd1"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.debugger.help.en_US.nhz.nlpack",
       "bytes": 47745,
-      "sha256": "a29feaa39a456a15a2424679aa092f93a33b934b450b2ba2bf4f884182309a88"
+      "sha256": "44a858d7014fa19bfa5dfcb73d0f1fe8d1fc27b48b5700bfd67fc5c6aac973b9"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.debugger.help.fr_FR.nhz.nlpack",
       "bytes": 48765,
-      "sha256": "f722f549871603d529e585828c9909d61d900a1b35cc746ace88e7a07e00b7b7"
+      "sha256": "86ac14f2daaa48697aaf73bcbdd09e8ff6388db7729f73d69e86f41b15a028ad"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.dictionary.help.en_US.nhz.nlpack",
       "bytes": 69009,
-      "sha256": "45c79d702d218263afaca0b7073ebfd57b21984346b341dae0ddc3976413768b"
+      "sha256": "d82b5b15c07cb59b6044deaa9c8f87feccc40c7974b93788301bf0e0e9b6df0f"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.dictionary.help.fr_FR.nhz.nlpack",
       "bytes": 70449,
-      "sha256": "3e6cf6bb662edc28013d3eb6d2bba98dc975c768d0282899cc7c904157f175eb"
+      "sha256": "58828ae530f6702811d27d39e6bf55a6f2493125124bd159b65205a239640fb2"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.display_format.help.en_US.nhz.nlpack",
       "bytes": 40905,
-      "sha256": "745c19632d1249fb5df85ed8d6cdff3429c1b9ba69cb18d0b36103cfcbbd0c66"
+      "sha256": "49314367994d21a0ea3b00bfb298419695dd718fb73dead08bdf3687049df1b5"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.display_format.help.fr_FR.nhz.nlpack",
       "bytes": 41462,
-      "sha256": "e258d4750d35c40450bec759b0e4a2db0888839095ed6848a51ebe37935c2a46"
+      "sha256": "c9d9fc89db8e72786d5c92a668e0f35c7659c65d1ff2bfa25ed2a6656d88eabc"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.double.help.en_US.nhz.nlpack",
       "bytes": 35778,
-      "sha256": "356956f71cc6a427ee375930d47727976999a5a607b2c8a38e3ea86042cebe8f"
+      "sha256": "ea5e19c723c2dd8c5b1800bfbc1681304082b18136903c1cb88bfbe60667348c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.double.help.fr_FR.nhz.nlpack",
       "bytes": 35839,
-      "sha256": "78b3203285b06212328100be65c7f8a723f409d1f2068df2c131ca826c5deaed"
+      "sha256": "2c56806345b79077ab843c3860a36e347433057f8ded18b942d627bbd3936d62"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.elementary_functions.help.en_US.nhz.nlpack",
       "bytes": 272373,
-      "sha256": "4a641917e2003d2bbe8e441e8bdfe006fa179cde92331bbe0da5d87aa1f433a3"
+      "sha256": "4705727aac60a776a3f5dd59b314d77c15b384d16c25b31986f27e7630070f9b"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.elementary_functions.help.fr_FR.nhz.nlpack",
       "bytes": 279161,
-      "sha256": "29fb9debffecf921c662848bbc0ef0cb0495fe69a93870a80f6d4367bed96c37"
+      "sha256": "ab755cb98b5dde750ff9c0f1574ef6a212bc67c761909d20baea680619e2f34d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.engine.help.en_US.nhz.nlpack",
       "bytes": 49316,
-      "sha256": "84ea28c5a28c4a51c9f6060f0ffbcc4f4790cd8ae9794d04a1eaf246043a1586"
+      "sha256": "277d153f57b5dd8efba7dec13ccd9fe8b825c3f9655cd431d555fb7d7d2c4845"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.engine.help.fr_FR.nhz.nlpack",
       "bytes": 50050,
-      "sha256": "c0b39193eb71eade5fa93cbee08379c302b1f4a7a2478fb89782e7a39ca1e38c"
+      "sha256": "00749187d44ba884d8c2fa17ce50bca6cdb53ca8da5c5e392810d26f28473b49"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.error_manager.help.en_US.nhz.nlpack",
       "bytes": 64067,
-      "sha256": "275fbfa91197e6b840d5105d5fcc26b8d048f3e81b65325068dbbf9a4482313b"
+      "sha256": "cc62a3e72dec4d44d92f2bdf6b732eed34f91dec16868a38f2374c200ac9cf4f"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.error_manager.help.fr_FR.nhz.nlpack",
       "bytes": 65217,
-      "sha256": "e82f7e550577b3d1e9a9c145fbfd007bca2a109fce8d5c480e86be6b4d0ac648"
+      "sha256": "e9457d6556b3b044cf59c64be6bf58d9586a19d0f5f81306ceafed12b19f5043"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.f2c.help.en_US.nhz.nlpack",
       "bytes": 30387,
-      "sha256": "532afca86718db8318629da8797076c338c57d7a160d8f22a3af211404218bbf"
+      "sha256": "c37e405133e07311be3a60d7f425de3d69525d16987b140649eb8abc59706943"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.f2c.help.fr_FR.nhz.nlpack",
       "bytes": 30552,
-      "sha256": "207e98cfa8a21e6b34a5cdb56cde64b78e17f31ae8e3d6921312d89dca7b22c1"
+      "sha256": "d89733e3aaa3f7c03c1192131f959ba0542d1ff4f5454279ef59a14e142b6abe"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.fftw.help.en_US.nhz.nlpack",
       "bytes": 49549,
-      "sha256": "61432b18fa4c28b084bd1c1aad3f4baf4dd4ccb2cf1859d91db98fa1543c87bd"
+      "sha256": "8fea105832a5816285bc5e2dbb5c997aad706b3a87cb7bc93365208cd7c14349"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.fftw.help.fr_FR.nhz.nlpack",
       "bytes": 50270,
-      "sha256": "fed2caeb467add50899ee8c89e7c913860003b16def09307c51c3fdd28de1ae4"
+      "sha256": "78775588fc482547d4b80948d1e403bbeedbb458e741bbe547b2dde67f07258a"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.file_archiver.help.en_US.nhz.nlpack",
       "bytes": 32493,
-      "sha256": "ffbd842b1070d781171aaf63d747f1148e5dd1bbc31b9afa55ee99e55d2147ed"
+      "sha256": "8513c4847be3f7538b1598f62dd136e429ea20eb74df2d8b6c75eefdfefa0c1f"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.file_archiver.help.fr_FR.nhz.nlpack",
       "bytes": 32675,
-      "sha256": "68e58296f22093a83e22297d6211e11bde82c6f43877bbe8340146d025c40cc9"
+      "sha256": "c417baadf468297df82215fed0f9f5679bcd81083e437e7b812b19676ab7ca2a"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.files_folders_functions.help.en_US.nhz.nlpack",
       "bytes": 72327,
-      "sha256": "cbe0572a6a64211f9511671da6768b975d684652b38df43ceed22dbf091aa72e"
+      "sha256": "5bab201e781f3cd827fc9c0e15d539b6347e0ffbbaf8bd23a84952eb468f66f1"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.files_folders_functions.help.fr_FR.nhz.nlpack",
       "bytes": 73562,
-      "sha256": "463017e7c04a2b51d25644b0c01a7b8db628f5d80b37081e9fe1c4d018bb7bf0"
+      "sha256": "19cb429095f038cc3df8072e817c7c28af19141073f2a054cee03164afe71519"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.function_handle.help.en_US.nhz.nlpack",
       "bytes": 37195,
-      "sha256": "785768ed57bfc988a2356439b7d58347178f8a5bcf4755d62278f91b3da32d3b"
+      "sha256": "ac20b924a757096f00808d023c3f1d50198edbb01336cb971005ceb2db90bd29"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.function_handle.help.fr_FR.nhz.nlpack",
       "bytes": 37491,
-      "sha256": "52fb545e18f3ecd3a813cbd0b81ec513038e5a48e00a55f6a9015037431a3146"
+      "sha256": "e7f21cfe9074978f8ec4693bac8eae10deeb12d596d815461b3ebee10c3daa24"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.functions_manager.help.en_US.nhz.nlpack",
       "bytes": 64954,
-      "sha256": "c9e5079d5e5fe10f34cb214134e1de50cb533fc7f149f47c1d9cf30f76daa6c1"
+      "sha256": "b7c4b019d4b4bad278a4426cfba1bd271af01a3edff9e8335a64af5d952d6361"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.functions_manager.help.fr_FR.nhz.nlpack",
       "bytes": 66167,
-      "sha256": "ae3a765c0eb70f4a621d719d9692051ce9287df5292650d33bfad780014ea65a"
+      "sha256": "d69a45e861b237367fe5e84c5716e10ea390e99427c40aa4eec885f83cd8fb14"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.geometry.help.en_US.nhz.nlpack",
       "bytes": 77996,
-      "sha256": "65e0307d4e7a8a26789a7e7ee522be03f0be9a7856d97c9c006ea6f21f506e10"
+      "sha256": "4e626d4c961b046a63b08a3500d547d35ff1926af485259b43e3e3dffb61476e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.geometry.help.fr_FR.nhz.nlpack",
       "bytes": 79262,
-      "sha256": "4c8ea9ba75d902c2e7e13a55f4de025e780178308236866c368e5f7d789e6048"
+      "sha256": "46189292f4623b4bc43f13ba6535d46cff62478f636458e29f396e1c13edd77d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics_io.help.en_US.nhz.nlpack",
       "bytes": 396925,
-      "sha256": "a5e2d5366f83961f54cfb6b315e0f392717cd5f0ca069a217fc7862a6ae176f3"
+      "sha256": "21007df0d39dff4467b7b442c2589087e37b4eac839f9baf454d2a2ee82ee8e3"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics_io.help.fr_FR.nhz.nlpack",
       "bytes": 397663,
-      "sha256": "a89428692db5b10d119410a7859e9e9e20bafab23a3500a68031642e5d86b68d"
+      "sha256": "f7056b38a95134d3085af7710024d9cf30ce7f1942a18a767c02c2e0ee5d2118"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics.help.en_US.nhz.nlpack",
       "bytes": 28393249,
-      "sha256": "092f9a5c9489e5b10b27761f202d5e7cd99203f18d6f8c0259b6074d1597817e"
+      "sha256": "fa4172562651d89babbde9da9694608e82473bc8aa04934fed703d31d9fe6a64"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics.help.fr_FR.nhz.nlpack",
       "bytes": 28419856,
-      "sha256": "3cf26df74abe3ccc3c52059ef495bfbab0f2d76a8686bf97bc92940a33dbfad2"
+      "sha256": "fdc2ad39146cf7b04d96ef75a741910661bde25860f0672b66b888db35d25d54"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.handle.help.en_US.nhz.nlpack",
       "bytes": 102370,
-      "sha256": "55cd04fdc82af73965f03facdc270783698e548d515cde0e05b642860ccede7f"
+      "sha256": "c77eada9d969b29753676c97fcc7a96f09f150f5d87ee75c479560093d39d571"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.handle.help.fr_FR.nhz.nlpack",
       "bytes": 105116,
-      "sha256": "8349a18d6a8deda5bba97be1988c9ea7e94bbcd8a07c3e7647bfe3214c41625a"
+      "sha256": "85c3b5dc47253ef813ee2ed8db0edae55cd49765f8e4ebad38c3b091029f88f6"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.hdf5.help.en_US.nhz.nlpack",
       "bytes": 52509,
-      "sha256": "b3b85844b088d790481af84b5f866b3ead7bb0183616d9678f0c6ff8b360bda9"
+      "sha256": "6cfd797f89abbe6767fc960cd69431cbbcdd99f42b20d983deaeb9abe007374b"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.hdf5.help.fr_FR.nhz.nlpack",
       "bytes": 53358,
-      "sha256": "1f4f9e131b5c6e708db228ce10902e9b61d805c5812e7ad39847656a42280683"
+      "sha256": "f720f1bcb93ee28debf3bd87f89d36ce8092ec6add1b2ea15837043027640f14"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.help_tools.help.en_US.nhz.nlpack",
       "bytes": 106804,
-      "sha256": "78352393bd0dcc7609de6abd310382d23c2dbc8fcdad3021726511eef513ab2c"
+      "sha256": "5de64d2d9b041646f83af78e95a7d0e48b62024cc7e4be96128f73bfc9f2ded8"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.help_tools.help.fr_FR.nhz.nlpack",
       "bytes": 109104,
-      "sha256": "f64fa954bd149a23d92bc15c04b4013c653f0273d9e6703752e0f813222c47a3"
+      "sha256": "3aa2b5119bb1f91c162dc3f7e31e4bfac034db820b9316e4b5bc2ab852c492f0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.history_manager.help.en_US.nhz.nlpack",
       "bytes": 31196,
-      "sha256": "d0003d466fc3839ddae5ce7b1597b547900d7e3f0d30db754c8e8cc19c9d8f25"
+      "sha256": "6f47d86c7adf93ef2f5639131873344bba309705d7a363035c6b5e3a094bd8e8"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.history_manager.help.fr_FR.nhz.nlpack",
       "bytes": 31524,
-      "sha256": "4c274c31bc79eda0311b2766e691a68bbc8ca23525681dec41d496b83bd0dc43"
+      "sha256": "f2bcf207b7b4d9e94876af8c36055a5f49d1e6be92016324591f1b9f3be82da0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.i18n.help.en_US.nhz.nlpack",
       "bytes": 35613,
-      "sha256": "00b1bc37ac201253cb4e04c6d652fc69eb2d9a88baef9f93fd9f603d64688f2b"
+      "sha256": "f9925c5f44e93f82eee0689033170274fa4e91027ee3320c22282cc968ae2e0c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.i18n.help.fr_FR.nhz.nlpack",
       "bytes": 36041,
-      "sha256": "14d2611b47fac898ca1ce7f25b7c771406d19ca42c99c5ab4b866510dc6566d1"
+      "sha256": "d38219487339a94fcbc5a9174b7c60ca871bba40fd4af02c4d76dc28d83d9dd1"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.image_processing.help.en_US.nhz.nlpack",
       "bytes": 2757024,
-      "sha256": "b44955c66307ccb56c583a75301b500f0b3cbd8f63fd371e0e52034df6314dfa"
+      "sha256": "662447874a2bec9d8540d191067cf951860198873db5e330b6e05be18f3288bb"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.image_processing.help.fr_FR.nhz.nlpack",
       "bytes": 2759589,
-      "sha256": "10ce6d7b21ad7fcdb6167494539faa534f1c529779ca6c3d1dffe52b4b79f143"
+      "sha256": "ef0551a9e7030140bede8abd3b9b18193f90e4aa9d25b55165617043ee17246d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.integer.help.en_US.nhz.nlpack",
       "bytes": 48522,
-      "sha256": "9dc45d03489f601d0b50d662ca93490f233e857eee7ecc77e3ca0e96a80ac607"
+      "sha256": "5d443416bf3f828284723f289347fce8734174fa029923a38439c950ce2a4f71"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.integer.help.fr_FR.nhz.nlpack",
       "bytes": 49283,
-      "sha256": "dd671ee25e5674b153abf62d8c191419f2184310ed44f4e867efab2ee511d259"
+      "sha256": "a5513bb51244705a1afd312df3165d37d011ecb233d8e690aa588b77a24c4980"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.interpreter.help.en_US.nhz.nlpack",
       "bytes": 107518,
-      "sha256": "d33e8adc68b99486bfc0a167715739e44852d561fd825b4e7165d3f59e9b602a"
+      "sha256": "77a16f6ecd624fec4a398a4ea1fcb4c5eabf6c584d40786367f8ee4da44d725d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.interpreter.help.fr_FR.nhz.nlpack",
       "bytes": 111050,
-      "sha256": "4798ce49b2f392df7aa34bb6741f0e3b8a8c03bfd3175c3c6c0b4445a9e03e46"
+      "sha256": "b823968eef8a36c2b97cb65b98138a09e69c49e06b9b8a5412b0e9cd6098c471"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.json.help.en_US.nhz.nlpack",
       "bytes": 34965,
-      "sha256": "f21a2bcbe915b22bfd46e40b4c04e3c14c4ce0660a5a42f02ba712ad0665bd5b"
+      "sha256": "b8d69ffb4eb8b2b5d8ab1aea0c631d4601c1bd613990b8586b2efe1bdf89c384"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.json.help.fr_FR.nhz.nlpack",
       "bytes": 35228,
-      "sha256": "3f9340c7dad2fdf76ba60a83ab281ecf7623cca3e5fe9b4eb54fb9294145f014"
+      "sha256": "c4c985505e04c38f604db132d5f628f8dbd96e67355c79366323c9082f0bdf97"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.linear_algebra.help.en_US.nhz.nlpack",
       "bytes": 154624,
-      "sha256": "a4f70c5613360c538f7456dbb363b269f3c3c15c9f76438e2c4b2890b13a3527"
+      "sha256": "30c63195a70eca9eab272b577ea124fd14856073a7de7c8abe9252ed1175be32"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.linear_algebra.help.fr_FR.nhz.nlpack",
       "bytes": 158608,
-      "sha256": "d0b2baf5da82aa49034b8be7dfb3a2b87363466eaf32e570a0e4ef8c175c84fe"
+      "sha256": "24e7610203b7d7bbbe27c5f048c718415c9aeef212f06ee8b787d57508ceb96c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.localization.help.en_US.nhz.nlpack",
       "bytes": 35510,
-      "sha256": "b5795278e67a7893a442566c9f646de1fab1be92933b70afbf7bf8d9c26c179e"
+      "sha256": "076e6b688a77d997fbff822e293275b7ff1682d8d858bd3cdee3ce44265a97e0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.localization.help.fr_FR.nhz.nlpack",
       "bytes": 35873,
-      "sha256": "3917089d0c1fb208afa57c8cf2de6c9e552f5635c7c05c36b6747ff02912146a"
+      "sha256": "1c6b33cc1a335cc4dca1e1adbc2c6af1f5e1906b0aa0dff7d2fa1ca935548233"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.logical.help.en_US.nhz.nlpack",
       "bytes": 36079,
-      "sha256": "97630c3b379e7e06134d42b3cd36bdca3ba1e98f2eeceaab7f1c014a1702c33b"
+      "sha256": "00546149c8297b77a3fdc2581174821051bcf67267e8c44e7549c3c0dd81c864"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.logical.help.fr_FR.nhz.nlpack",
       "bytes": 36367,
-      "sha256": "3129ea731b841df518ad6207d30c9d430f7a48f057ae68ce37d2313aa0cf8376"
+      "sha256": "528c9a5aeb2cd364a046e5ceb8df87d6acb7ec1af553bcd1fa90758c3c739b94"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz.nlpack",
-      "bytes": 912277,
-      "sha256": "567ee194b7f77f15d33eb8511e08986c588f361f05edd3a7dbdbfcd7a4262d99"
+      "bytes": 912278,
+      "sha256": "449818ee4c5ec0df5179316bb1076ccd102a4ddffca4a759773713f26a867177"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
       "bytes": 943593,
-      "sha256": "0d7d053ff999c294c5abea75967302e85e3edd73111601d14ab7b42c33cdbd2c"
+      "sha256": "8dedc384cfb06c24636dec251da21b57f15844e7a1dd38b289eaa29cce6c0820"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",
       "bytes": 38917,
-      "sha256": "f975b2c521ca044471ce17ffc8aede8334d3464f81e879a75cca78a3586eec6b"
+      "sha256": "d5945d23a5c11787b84b5a4bd9a43b57ce82dd37c94eeacdfa04c8b2cf1b1232"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.fr_FR.nhz.nlpack",
       "bytes": 39465,
-      "sha256": "5a45f8558c21d4c4e9fb46f3423e0f7d5599c127c27a6341fbda98442af25f61"
+      "sha256": "cc0eca497bb5d70eaf1842a039c91ae87149f0a342896294f27860eec2aeeb8c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.memory_manager.help.en_US.nhz.nlpack",
       "bytes": 56417,
-      "sha256": "44eca6fd05a96a5ca59030059da606327f968ff94609864de261a46eae9aa426"
+      "sha256": "a4b07d66c00ebb297df5f84561cf8eb7b19fa37851b9562db9cf4a84262eabec"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.memory_manager.help.fr_FR.nhz.nlpack",
       "bytes": 57399,
-      "sha256": "420e0d90b373b4af34c1fc736c97cc0a5e051f205da5f176238cddd96b700331"
+      "sha256": "df49d0383eb22f07d5551dfa4c9f6c5ca87758e6dbf7fe15244231c8d8961adf"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.modules_manager.help.en_US.nhz.nlpack",
       "bytes": 92961,
-      "sha256": "c09125ccf53f6f61091a560864da11506fc33cc801a6308cd7a0e19c76a1b841"
+      "sha256": "19475e8ecc99b26b67b6eb5b4496ae9d9a82f56017dff26ed89bcbe7ea66c4f7"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.modules_manager.help.fr_FR.nhz.nlpack",
       "bytes": 96137,
-      "sha256": "e8f14f532aa30a5e1f097154ca29f3a9e9a320427f36ca3b8aeec5439775b8db"
+      "sha256": "60b94c72dcddc1ebb5e11d4a436c20706dd255a63c44a3c848719ff840a0b700"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.netcdf.help.en_US.nhz.nlpack",
       "bytes": 158947,
-      "sha256": "492124314c6b3c112542d5dfff0890a7c1391a3cd8159bbcc58566afb47b2b85"
+      "sha256": "584ca9135ec1308e32735674d11a401235b8b2c7e7d504b9e39bc65dbc674505"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.netcdf.help.fr_FR.nhz.nlpack",
       "bytes": 163436,
-      "sha256": "4cb166de86d6a8a476c146fecd3b61d6982d0bcb34971fa4f5254dafc987ceb4"
+      "sha256": "79367a10fcf8ff247bd82a9bc2946cc3f34f4a995f329e936e2e9ee021547301"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_blocks.help.en_US.nhz.nlpack",
       "bytes": 1468546,
-      "sha256": "1f36c9d2e158f120bd3e2b562913fa1d61d86fdff22337f2888f860f3379e998"
+      "sha256": "59e2543c21da173d3aac2e9498704bbeb155c58d4b7aba7fa9ebd9ab97f7364d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_blocks.help.fr_FR.nhz.nlpack",
       "bytes": 1495304,
-      "sha256": "0d4e8d47fe925f5d0e1d696580e22254252dfcea17d934df79d463793a7131d7"
+      "sha256": "d401298b4800cb6fa03599dbf67f6b16e48b1ee1e00c2249108cb50569750081"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_engine.help.en_US.nhz.nlpack",
       "bytes": 83885,
-      "sha256": "e7e03e13dfb4179dcfce34d16cead1985063f2fb8090d9acd7cf1e409c3ba8e7"
+      "sha256": "0d1f2430c592727f5ca4444b3e14ff6464538eb4a9bdba4965a2db2becbd978c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_engine.help.fr_FR.nhz.nlpack",
       "bytes": 85686,
-      "sha256": "c08faa5ab28fccf4788de0aa4a70fcf77a936b67eaccf48ecbed925ed1ec9d6a"
+      "sha256": "e1c0d066943e63700b1015825dcc0dbbab5e74c67e15b7a2eb01b204621aa4d0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_fmi.help.en_US.nhz.nlpack",
       "bytes": 51238,
-      "sha256": "a6724fd89f5437e53be920263abc9182167c4eba286d09837b6de80f4118c8b9"
+      "sha256": "db5e4c91bd1403b6c8d5bafd993e347b303c763441b66b9bf02fd01c08d76b26"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_fmi.help.fr_FR.nhz.nlpack",
       "bytes": 52785,
-      "sha256": "e76eda93a0af9ccc147fc3591b18f30a78b46a62b05018afb5e3a899d145d1e6"
+      "sha256": "558071e18b6726f9482474656e266ebc09b14edc44f30e2fad1eefb70d7e0c00"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.ode_solvers.help.en_US.nhz.nlpack",
       "bytes": 164663,
-      "sha256": "a52071afaa2d267f811ee45818d93ecff54fc4e2b9d59ea8e710cf11a1ced656"
+      "sha256": "88946b373bc3d2f470562494c15ec7b4d326213eef024157c83350a7b4255a45"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.ode_solvers.help.fr_FR.nhz.nlpack",
       "bytes": 168356,
-      "sha256": "16704762945a382371506ed97d42b6f25e4f1de56cc7fee1c56b17b95d4161ca"
+      "sha256": "ac19b287747a092e4fa6985494150b74f6bd1e348f64a6fe3ed2b424469ad4d0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.operators.help.en_US.nhz.nlpack",
       "bytes": 104801,
-      "sha256": "2f7c795139a72dccff9df155f5536cee3814cd4712a8ccb84c331f48f28f25b5"
+      "sha256": "d5eabbcfcb03a38126c15d702417f77ccf8a9b611158fac9ab291775810e9120"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.operators.help.fr_FR.nhz.nlpack",
       "bytes": 107110,
-      "sha256": "8db8869d15700b0b6ba7b6428c2ff7c39581b059135b1b5c955897bb4b47e402"
+      "sha256": "9cf0c7673a60274aa3b06dc55a8501c7ea31b38cbfe0d7733d5ed42e2219b1ff"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.optimization.help.en_US.nhz.nlpack",
       "bytes": 97980,
-      "sha256": "c81e60d3d4b4874b376bebd103c51ed96bc97f7b274e89bfc3e415ecb9ca9dfa"
+      "sha256": "94951033262fb770367e48b2e93e09b26b36da2031e43eab8239465241b288be"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.optimization.help.fr_FR.nhz.nlpack",
       "bytes": 100457,
-      "sha256": "9e32d8ddd305d06dd3a42af89298cfbc114c250e7b9bbf873312fa0cd4bf78b3"
+      "sha256": "f84f205ed1476d3af50d210dd6f433ad2dafbb9866d946c87c8d652cc05b17a5"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.os_functions.help.en_US.nhz.nlpack",
       "bytes": 67559,
-      "sha256": "82d2925a11085948f088be1b42a523d3e1289493066f88277487e85fb6314820"
+      "sha256": "9787714d13f2d0c447a93a51fc1690a941ee6c16a6ed24a2e6dfec9ae03a4587"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.os_functions.help.fr_FR.nhz.nlpack",
       "bytes": 68977,
-      "sha256": "11671a0ccae02c898a1a0cebbb8bcb3643bdb272339c20e6a3246abf7aea5456"
+      "sha256": "162a8f138c55ad455eaa1f4087b31a4bc7eedc2e5227a05cd6a80a9b61a24b7c"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.overload.help.en_US.nhz.nlpack",
       "bytes": 31768,
-      "sha256": "f96ea7f1daa9c1b007758a84f42537e4d0ba3a281ca36a3659460f6db1821e9f"
+      "sha256": "fce31eb7a1b716d1d9c66523e3a95eac26c3f631e9a50c32ac4c84e2e5157a45"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.overload.help.fr_FR.nhz.nlpack",
       "bytes": 31949,
-      "sha256": "35e80b0577ba3ee8fa3d9e17552b9e51e338f8ac91f4b2845656e8cd9d1980ed"
+      "sha256": "934b846698362fe15ba15e6c5e0c39da28d7db193cc17201afec4d4457df26a6"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.parquet.help.en_US.nhz.nlpack",
       "bytes": 47032,
-      "sha256": "f216962ebe4c5a4118cce4a2f50b78a552abcf388cd89d9ee7e9c6dbafdc25b6"
+      "sha256": "d9583a8109eebf73164d18a2fcba07db173ca005572e481ae314ccdbdebe607b"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.parquet.help.fr_FR.nhz.nlpack",
       "bytes": 47541,
-      "sha256": "d7bc8d919416355e75fa8df744e6058bae4ce82c973d4d830ffa3d2b943d8bb6"
+      "sha256": "294bb138164e802725a02aece9e3608bd7986f4010a55533fd748e87d43e8f23"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.polynomial_functions.help.en_US.nhz.nlpack",
       "bytes": 52554,
-      "sha256": "47157cd07507469a6ddf8f2ae20630991986f82f052a3413121cbe56618b3eae"
+      "sha256": "b1c867f0e9b9f0d71e9cc8e864d1eab9f7e9052d1c4417b4b8b5348906f55c33"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.polynomial_functions.help.fr_FR.nhz.nlpack",
       "bytes": 53368,
-      "sha256": "ded62ae30c740a279697e56dc38bfeb0e75022c622f048a2a183f3458f6e75bf"
+      "sha256": "0e4041fb4b00854f90906ab8ff5feb5940334799ee51b904c114b6f3fcd63709"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.profiler.help.en_US.nhz.nlpack",
       "bytes": 32551,
-      "sha256": "7b9388fd6538dc401e5375dbf7c0a37979d1df5833d76ccc5b4d9fd742cdd552"
+      "sha256": "419754625bc525fc05eb1a0c0c72cb2305df7fe40c4da293796e12bedcf6eaea"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.profiler.help.fr_FR.nhz.nlpack",
       "bytes": 32796,
-      "sha256": "9e77388f288a14f78fc9cdc7ff579b85ab2808343dd8cdac777c5cfdaf6b3028"
+      "sha256": "53b6e2002ade18835ccd4de45a252ace2e6eb50defba5f8382a0986d0e563f02"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.random.help.en_US.nhz.nlpack",
       "bytes": 44563,
-      "sha256": "e760a416cc4be1ee4a4e5094214333ec4612542bb81076a18713081ecc7f0a66"
+      "sha256": "1a665a3b42fd7f0304e1f5fa42b48edaf44b84f7ef7d6805b6432663d41a8ad4"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.random.help.fr_FR.nhz.nlpack",
       "bytes": 45331,
-      "sha256": "6b5144d40cbe41a4123a82f64fd0beb9971760480481fd355c7424f47425f9a1"
+      "sha256": "6e89ab7aae01c251cd1afd8bb841554392c912d7eea58f1e7b89c55f9693187a"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.signal_processing.help.en_US.nhz.nlpack",
       "bytes": 205881,
-      "sha256": "7cacadfdecc6ade4b64f333b3975475a9da68cc50b197a1d485af74f6a3c387e"
+      "sha256": "f43661ad8509f398ffc781b84f4302855b70b905723f4b63ce9d66da9839137e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.signal_processing.help.fr_FR.nhz.nlpack",
       "bytes": 210409,
-      "sha256": "f4b85b986278aab3e601cd0d5f54755a6b945647842d4dd202ef1cda38c6189b"
+      "sha256": "d7111b85d54d3971ceb7a4e0ddb36ccde67095aa85ff9056776aad8b36a2035b"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.single.help.en_US.nhz.nlpack",
       "bytes": 30341,
-      "sha256": "a8807c962acbc9c48a2fc470befc2a47da305259649bb927386f77448024b5af"
+      "sha256": "ebfec35f124deacc287c7248ebe54dea97c15aa06bc0b58a3b42ace622e14ae7"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.single.help.fr_FR.nhz.nlpack",
       "bytes": 30424,
-      "sha256": "ed56c0675747342dfd75efbacfaf44f1447d496ff382b951534d97c5140a96a1"
+      "sha256": "5392ce903059f8053a7aa2aca4280983425cca099c46facc6e2e7a9d586682d0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.slicot.help.en_US.nhz.nlpack",
       "bytes": 94181,
-      "sha256": "a5980618eb893441b037f5bfd106cc32806cce12885d1fcc4e15d7c01c0f24e2"
+      "sha256": "fc24c4e5a4a0e6f3d47e18f4a38ba43ba3e837cf187c5a00f790b9d8c8e26678"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.slicot.help.fr_FR.nhz.nlpack",
       "bytes": 96390,
-      "sha256": "dc38d0db3b8ce8283637072ceb4c854788544e9240bcc9b4606b1884efeb0322"
+      "sha256": "3912e070fc0083dbf82bee0b54f3dcc70a6403ba26d5377c12998f27e5fa530d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.sparse.help.en_US.nhz.nlpack",
       "bytes": 62904,
-      "sha256": "37e7956ef69392afb96a69075c3ec165a343c409c1fcf797c83702cddce3bee2"
+      "sha256": "825c345d6d9a9ddabe7fb74498aea4dcc605a29c034c444a3df4aed0c02d2e54"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.sparse.help.fr_FR.nhz.nlpack",
       "bytes": 63904,
-      "sha256": "475d56ca5684b6a30e2226d1e42157981f43ac71ea8cc198a0f11003faf003ac"
+      "sha256": "37999800576e6935ce60fe5fb699fd44dae01093c9dad66df9c4dc8cc59560b4"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.special_functions.help.en_US.nhz.nlpack",
       "bytes": 103049,
-      "sha256": "ef58728a9ee880861d462b003c9b558685bc165b918816ba430a663795a71c99"
+      "sha256": "4a80f38b127b5ef8fcb628850c91a414c8b167c7898c5bd03a2608f545b4a8f7"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.special_functions.help.fr_FR.nhz.nlpack",
       "bytes": 103255,
-      "sha256": "6a3d1a3a3044c3bf5f915b014c8125e7c2cf24aa177640dabbb07076048af7b3"
+      "sha256": "46ae5e2c83447e41fee25e58cbc5891efec458e08ca0d286ff673c9189c2327f"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.spreadsheet.help.en_US.nhz.nlpack",
       "bytes": 85216,
-      "sha256": "860680b5f15327a54922018afc27be2d79614471fb14d6938c24ffa4093bbec4"
+      "sha256": "1c2ed7e6e9dec826f7ca8c370b602854848f7561f354ad7e80aaab88b088fdc6"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.spreadsheet.help.fr_FR.nhz.nlpack",
       "bytes": 87503,
-      "sha256": "fc515397bb693727ba8afe7a7d307261ffdb0ba5f62e2df44142e65bf15a797d"
+      "sha256": "4a1e72abd95da144764cf8820df41fbf1050213699d889d701bbfaaa20ed719e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.statistics.help.en_US.nhz.nlpack",
       "bytes": 599474,
-      "sha256": "3fb664512563d88ae855a7cbf0f35f852e79e12ae7cb0cdb0a3114fa445e4526"
+      "sha256": "e9897fd10a559ee721a0228c8825496871834e08421f52aaff86cafc149ff7f5"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.statistics.help.fr_FR.nhz.nlpack",
       "bytes": 611180,
-      "sha256": "7c730a7f4125133489407648835c18ef69d45cb170ff9a8cf8e74727022cff9c"
+      "sha256": "239af8e65ac6973d2b00596799817a4066222017e38143cc59470ed61b76eaed"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.stream_manager.help.en_US.nhz.nlpack",
       "bytes": 80555,
-      "sha256": "02a3c94883752986e8901dae616b1264d1004d638439e628e628f17faa2836fa"
+      "sha256": "25b5518f0573084c186a0e4eafd522d06584043862674eedd7636d6e0db0aec6"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.stream_manager.help.fr_FR.nhz.nlpack",
       "bytes": 82621,
-      "sha256": "67fed623e68b75753fa593b739fb05bbcf97896d6765376462816ef3b75b6221"
+      "sha256": "9a4bc90d26cba048f6275b72e60086736bcc11ba083a4904b252e96cee5c2f80"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.string.help.en_US.nhz.nlpack",
       "bytes": 206438,
-      "sha256": "c90404a01768e6215d73630ba6c71a63e3f417b56a9e6a23b21cfbbaf8ea6a61"
+      "sha256": "bbc4b8cf34f2e146a96b9fc49b53d6ada3f8512dc12f5e646fac6ab8cca5efa2"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.string.help.fr_FR.nhz.nlpack",
       "bytes": 210484,
-      "sha256": "629e37889207ac47d0a7356f68fcb746959a6568eb5326f295057c94737708c6"
+      "sha256": "db10bab5d166437bd1b22a7d283894c718cd2ad9a8ed4087aff64e2e649d2ae7"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.table.help.en_US.nhz.nlpack",
       "bytes": 148571,
-      "sha256": "49b8ec9abb0906087a53f71dae505bb58b1da333e888204683d6956906d11517"
+      "sha256": "fe2a3945b5d85ba29975557ca8f5812d23eb1ebb11a5a28e0ee142b459e125f6"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.table.help.fr_FR.nhz.nlpack",
       "bytes": 151854,
-      "sha256": "8e7f438cce8e5902940f80b2cb92d7d4ca53cc884a0a6c35ab6a26ae17c1c850"
+      "sha256": "0f4ef770766f15ec8bc21ab52437b69bd198496ed2cf4ad9b10cf029c9431c21"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.tests_manager.help.en_US.nhz.nlpack",
       "bytes": 65339,
-      "sha256": "d8d95522237e4890765911d6ddd0ec3afc09aea69f88ced62b6a6e4c5924fe97"
+      "sha256": "c75b79a69ca638247a5bdf2c229937fd5ee79d669016e068d2d2862758c2a774"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.tests_manager.help.fr_FR.nhz.nlpack",
       "bytes": 66748,
-      "sha256": "37944008dec790a7770d54eeacfce2489847a65c4e736ea5daeaec50b852610e"
+      "sha256": "efabf200f8056b2946947c17e2490903c519605b34cfcba244f5fbc4591e1607"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.text_editor.help.en_US.nhz.nlpack",
       "bytes": 184377,
-      "sha256": "1f6ca1e1b4bbc20c788f721b5639f550f85f6c4d6a63f514183e4c2eec8d8656"
+      "sha256": "f0d23e354e4dc3ef887085a260396e2c41d26c8e446b5f584fa6b0b8e3314788"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.text_editor.help.fr_FR.nhz.nlpack",
       "bytes": 184844,
-      "sha256": "82834f40736accd24248044ea2941ff9ccbae9e6dfc792fe62750f4b03d020bc"
+      "sha256": "a00e5ff97abc805505cf93194eb108de29918403ae6beeddac52f1e41273056e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.time.help.en_US.nhz.nlpack",
       "bytes": 354736,
-      "sha256": "474c0d22d0d569542de09b45ec13548272c98c3f8b743b700895e2caad38c48e"
+      "sha256": "528eacee5d380222748cfa59339260992e12f8820a88d1e7fc94989a268e208e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.time.help.fr_FR.nhz.nlpack",
       "bytes": 363558,
-      "sha256": "f6dbf473d355cfeaf0214bf3c4b92d5740d4b452275c604280560d8995ed4a9b"
+      "sha256": "2d21b91b0b47fc5eeee2901ffa9864365b72a78f7496c47d048a6e255b96a43d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.trigonometric_functions.help.en_US.nhz.nlpack",
       "bytes": 129250,
-      "sha256": "f7ba6f30adebf658e933cd8c34a9248d8badc368bcc62fcd005f8bf0618df082"
+      "sha256": "6a91a9fccb69cd7c6599f25ce64194412513698ef07dcdbe313718b967cf018e"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.trigonometric_functions.help.fr_FR.nhz.nlpack",
       "bytes": 131438,
-      "sha256": "5891818dceaa3ff2981c9ca268544aed521b1ce822a2a4e4da6bf857efa23ce0"
+      "sha256": "9651f7b9c6686882380d66ef237eb16cb5900e5c1f099b5f420275901be104fd"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.types.help.en_US.nhz.nlpack",
       "bytes": 108848,
-      "sha256": "ac4b97b3b70f8a6cccffec81221df9547f6c7229659f510635ff87f6086c3c6f"
+      "sha256": "f41a6e0fb2d78c6b2ae8487dc4c7e8a73fb355bd46d26af4b256c05d6b6d821b"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.types.help.fr_FR.nhz.nlpack",
       "bytes": 111112,
-      "sha256": "4531c9e4bf208f575bfa3afc205037dd6f8e68cf96ffed234f66fea370fb0aef"
+      "sha256": "f3abc4932f3dcbc8cde425269e6d6127ccfa2a8cde0d0415f84e65318d56675d"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.validators.help.en_US.nhz.nlpack",
       "bytes": 116947,
-      "sha256": "dbbfbb8ab2d2a1ea9a7bbaa04653b56122f8826aadc854ac298c9f223a0e4afe"
+      "sha256": "32ac89bbf36152b0212cd44e81f1187d8dd63c91f28154653f84a5369c5fa1f0"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.validators.help.fr_FR.nhz.nlpack",
       "bytes": 119771,
-      "sha256": "fde3b98029364fdf5336b09e52f435fdc3cfba1a90f3c1d849f2692045821dc9"
+      "sha256": "74c631ad0e67b480d91819820a67d2d181141520fde5ead33f7299473716225a"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.xml.help.en_US.nhz.nlpack",
       "bytes": 44664,
-      "sha256": "e8f3591f68dd2110738cd53fc6a4bd7bfd181587c700f14a29f82d7fd13c5f6c"
+      "sha256": "4a72d0903e27988a4573a2379fd7e324d081ac7a7185909b3a91ffe3c04c2ee5"
     },
     {
       "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.xml.help.fr_FR.nhz.nlpack",
       "bytes": 45375,
-      "sha256": "027b7547acb29001edec126bf131b720de61d4b674984d4927a0170eeea31d92"
+      "sha256": "f2df5270aa9478892b11e9db92f355026b32a570a64677133e5193c6afdc37ca"
     },
     {
       "file": "runtime-resources/bundles/help_tools-help.nlpack",
@@ -8064,8 +8064,8 @@
     },
     {
       "file": "runtime-resources/bundles/types-tests.nlpack",
-      "bytes": 295850,
-      "sha256": "b14c643b5f02e260580a6db85d1b189c2232ca8e47f9bf6c8d45efb76445d8fb"
+      "bytes": 295847,
+      "sha256": "4a421cf006bc81e392217ecac1aa4ef66f6cecd85f5f0d1e29389216caa9c13a"
     },
     {
       "file": "runtime-resources/bundles/validators-tests.nlpack",
@@ -8080,8 +8080,8 @@
     {
       "file": "runtime-resources/index.json",
       "bytes": 663062,
-      "sha256": "c98dcb1e914b06682302baf3127771fe3feaa5eee4d36aa0bd8a7e00b7ee4962"
+      "sha256": "3f06b1ae4b1ea691692e2d0a225a933bf76d65100f88b2b123b76b39642ae0f9"
     }
   ],
-  "totalBytes": 203594555
+  "totalBytes": 203595115
 }

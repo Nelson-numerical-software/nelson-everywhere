@@ -3,7 +3,10 @@
   "format": "nflow-2",
   "metadata": {
     "author": "Allan CORNET",
+    "createdBy": "Allan CORNET",
     "created": "2026-08-02",
+    "lastSavedBy": "Allan CORNET",
+    "lastSavedAt": "2026-10-17T19:49:48.979Z",
     "tool": "Nelson nflow"
   },
   "license": "LGPL-3.0",
@@ -13,11 +16,9 @@
     {
       "id": "fmu1",
       "type": "fmuMe",
-      "x": 120,
-      "y": 228,
+      "x": 124,
+      "y": 230,
       "rotation": 0,
-      "inputs": 0,
-      "outputs": 2,
       "params": {
         "path": "nflow-example:/fmi/VanDerPol.fmu",
         "numInputs": 0,
@@ -29,18 +30,14 @@
           "x0",
           "x1"
         ]
-      },
-      "_dy": 0,
-      "_bary": 0
+      }
     },
     {
       "id": "scope1",
       "type": "scope",
-      "x": 336,
+      "x": 340,
       "y": 120,
       "rotation": 0,
-      "inputs": 1,
-      "outputs": 0,
       "params": {
         "TMin": "",
         "TMax": "",
@@ -49,18 +46,14 @@
         "width": 220,
         "height": 160,
         "ShowTickLabels": false
-      },
-      "_dy": -8,
-      "_bary": -108
+      }
     },
     {
       "id": "scope2",
       "type": "scope",
-      "x": 336,
+      "x": 340,
       "y": 320,
       "rotation": 0,
-      "inputs": 1,
-      "outputs": 0,
       "params": {
         "TMin": "",
         "TMax": "",
@@ -69,49 +62,66 @@
         "width": 220,
         "height": 160,
         "ShowTickLabels": false
-      },
-      "_dy": -8,
-      "_bary": 92
+      }
     }
   ],
   "connections": [
     {
       "from": "fmu1",
-      "fromIndex": 0,
       "to": "scope1",
+      "fromIndex": 0,
       "toIndex": 0,
       "points": [
         [
-          2136,
-          1920
+          220,
+          250
         ],
         [
-          2360,
-          1840
+          320,
+          250
+        ],
+        [
+          320,
+          160
+        ],
+        [
+          340,
+          160
         ]
       ]
     },
     {
       "from": "fmu1",
-      "fromIndex": 1,
       "to": "scope2",
+      "fromIndex": 1,
       "toIndex": 0,
       "points": [
         [
-          2136,
-          1920
+          220,
+          270
         ],
         [
-          2360,
-          2020
+          240,
+          270
+        ],
+        [
+          240,
+          360
+        ],
+        [
+          340,
+          360
         ]
       ]
     }
   ],
-  "variables": {},
-  "solver": "ode4",
-  "runtime": "20",
+  "variables": "",
+  "runtime": "10",
   "sampleTime": 0.01,
   "autoRoute": true,
-  "locked": false
+  "locked": false,
+  "solver": "ode4",
+  "relTol": 0.000001,
+  "absTol": 1e-8,
+  "realTime": true
 }

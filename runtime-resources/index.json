@@ -287,7 +287,7 @@
             "runtime-resources/modules/types/tests/test_vector_extract.m",
             "runtime-resources/modules/types/tests/TestEnumColor.m"
           ],
-          "bytes": 275596
+          "bytes": 275593
         }
       }
     },
@@ -7817,7 +7817,7 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
             ],
-            "bytes": 912024
+            "bytes": 912025
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",

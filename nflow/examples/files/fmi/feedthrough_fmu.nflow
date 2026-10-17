@@ -3,7 +3,10 @@
   "format": "nflow-2",
   "metadata": {
     "author": "Allan CORNET",
+    "createdBy": "Allan CORNET",
     "created": "2026-08-01",
+    "lastSavedBy": "Allan CORNET",
+    "lastSavedAt": "2026-10-17T19:45:07.524Z",
     "tool": "Nelson nflow"
   },
   "license": "LGPL-3.0",
@@ -14,10 +17,8 @@
       "id": "fmu1",
       "type": "fmu",
       "x": 320,
-      "y": 228,
+      "y": 230,
       "rotation": 0,
-      "inputs": 2,
-      "outputs": 2,
       "params": {
         "path": "nflow-example:/fmi/Feedthrough.fmu",
         "numInputs": 2,
@@ -30,9 +31,7 @@
           "Float64_continuous_output",
           "Float64_discrete_output"
         ]
-      },
-      "_dy": 68,
-      "_bary": 8
+      }
     },
     {
       "id": "src1",
@@ -40,15 +39,11 @@
       "x": 120,
       "y": 160,
       "rotation": 0,
-      "inputs": 0,
-      "outputs": 1,
       "params": {
         "Amplitude": 1,
         "Frequency": 0.5,
         "Phase": 0
-      },
-      "_dy": 0,
-      "_bary": 0
+      }
     },
     {
       "id": "src2",
@@ -56,24 +51,18 @@
       "x": 120,
       "y": 280,
       "rotation": 0,
-      "inputs": 0,
-      "outputs": 1,
       "params": {
         "Amplitude": 1,
         "Frequency": 0.5,
         "Phase": 0
-      },
-      "_dy": 0,
-      "_bary": 0
+      }
     },
     {
       "id": "scope1",
       "type": "scope",
-      "x": 536,
+      "x": 540,
       "y": 120,
       "rotation": 0,
-      "inputs": 1,
-      "outputs": 0,
       "params": {
         "TMin": "",
         "TMax": "",
@@ -82,18 +71,14 @@
         "width": 220,
         "height": 160,
         "ShowTickLabels": false
-      },
-      "_dy": 60,
-      "_bary": -100
+      }
     },
     {
       "id": "scope2",
       "type": "scope",
-      "x": 536,
+      "x": 540,
       "y": 320,
       "rotation": 0,
-      "inputs": 1,
-      "outputs": 0,
       "params": {
         "TMin": "",
         "TMax": "",
@@ -102,80 +87,111 @@
         "width": 220,
         "height": 160,
         "ShowTickLabels": false
-      },
-      "_dy": 60,
-      "_bary": 100
+      }
     }
   ],
   "connections": [
     {
       "from": "src1",
-      "fromIndex": 0,
       "to": "fmu1",
+      "fromIndex": 0,
       "toIndex": 0,
       "points": [
         [
-          1800,
-          1820
+          200,
+          200
         ],
         [
-          2040,
-          1920
+          300,
+          200
+        ],
+        [
+          300,
+          250
+        ],
+        [
+          320,
+          250
         ]
       ]
     },
     {
       "from": "src2",
-      "fromIndex": 0,
       "to": "fmu1",
+      "fromIndex": 0,
       "toIndex": 1,
       "points": [
         [
-          1800,
-          1980
+          200,
+          320
         ],
         [
-          2040,
-          1920
+          300,
+          320
+        ],
+        [
+          300,
+          270
+        ],
+        [
+          320,
+          270
         ]
       ]
     },
     {
       "from": "fmu1",
-      "fromIndex": 0,
       "to": "scope1",
+      "fromIndex": 0,
       "toIndex": 0,
       "points": [
         [
-          2136,
-          1920
+          416,
+          250
         ],
         [
-          2360,
-          1840
+          520,
+          250
+        ],
+        [
+          520,
+          160
+        ],
+        [
+          540,
+          160
         ]
       ]
     },
     {
       "from": "fmu1",
-      "fromIndex": 1,
       "to": "scope2",
+      "fromIndex": 1,
       "toIndex": 0,
       "points": [
         [
-          2136,
-          1920
+          416,
+          270
         ],
         [
-          2360,
-          2020
+          440,
+          270
+        ],
+        [
+          440,
+          360
+        ],
+        [
+          540,
+          360
         ]
       ]
     }
   ],
-  "variables": {},
-  "runtime": "5",
+  "variables": "",
+  "runtime": "10",
   "sampleTime": 0.05,
   "autoRoute": true,
-  "locked": false
+  "locked": false,
+  "realTime": true
 }

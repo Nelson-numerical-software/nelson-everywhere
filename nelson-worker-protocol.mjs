@@ -3,6 +3,8 @@
 
 export const FIGURE_BEGIN = "__NELSON_FIGURE_BEGIN__";
 export const FIGURE_END = "__NELSON_FIGURE_END__";
+export const FIGURE_LIST_BEGIN = "__NELSON_FIGURE_LIST_BEGIN__";
+export const FIGURE_LIST_END = "__NELSON_FIGURE_LIST_END__";
 export const UI_ACTION_BEGIN = "__NELSON_UI_ACTION_BEGIN__";
 export const UI_ACTION_END = "__NELSON_UI_ACTION_END__";
 export const WORKER_LIMITS = Object.freeze({
@@ -14,13 +16,16 @@ export const WORKER_LIMITS = Object.freeze({
 });
 
 export function createTextOutputBatcher(send, options = {}) {
-  const maxChars = Number(options.maxChars) > 0 ? Number(options.maxChars) : 8192;
-  const intervalMs = Number(options.intervalMs) >= 0 ? Number(options.intervalMs) : 33;
+  const maxChars =
+    Number(options.maxChars) > 0 ? Number(options.maxChars) : 8192;
+  const intervalMs =
+    Number(options.intervalMs) >= 0 ? Number(options.intervalMs) : 33;
   const now =
     typeof options.now === "function"
       ? options.now
       : () =>
-          typeof performance !== "undefined" && typeof performance.now === "function"
+          typeof performance !== "undefined" &&
+          typeof performance.now === "function"
             ? performance.now()
             : Date.now();
   let buffer = "";
@@ -72,6 +77,7 @@ const REQUEST_TYPES = new Set([
   "figure.saveAs",
   "figure.setSize",
   "figure.setView",
+  "figure.action",
   "file.list",
   "file.read",
   "file.delete",
@@ -83,6 +89,7 @@ const REQUEST_TYPES = new Set([
   "init",
   "input.reply",
   "nflow.simulate",
+  "nflow.fmu.register",
   "reset",
   "variable.block",
   "variable.setNested",
@@ -117,10 +124,10 @@ export function validateRuntimeCapabilityManifest(manifest) {
     !stringArray(manifest.capabilities) ||
     !stringArray(manifest.unavailable) ||
     CAPABILITY_FEATURES.some(
-      (name) => typeof manifest.features?.[name] !== "boolean",
+      (name) => typeof manifest.features?.[name] !== "boolean"
     ) ||
     Object.entries(WORKER_LIMITS).some(
-      ([name, value]) => manifest.limits?.[name] !== value,
+      ([name, value]) => manifest.limits?.[name] !== value
     )
   ) {
     throw new Error("Invalid WebAssembly capability manifest");
@@ -149,7 +156,7 @@ function matrixCellCount(value) {
   if (!Array.isArray(value)) return -1;
   return value.reduce(
     (count, row) => count + (Array.isArray(row) ? row.length : 0),
-    0,
+    0
   );
 }
 
@@ -159,7 +166,7 @@ export function validateWorkerRequest(request) {
   }
   if (!REQUEST_TYPES.has(request.type)) {
     throw new Error(
-      `Unsupported Nelson Worker request: ${String(request.type)}`,
+      `Unsupported Nelson Worker request: ${String(request.type)}`
     );
   }
   switch (request.type) {
@@ -174,7 +181,7 @@ export function validateWorkerRequest(request) {
         const bytes = binaryBytes(request.wasmBinary);
         if (bytes < 0 || bytes > WORKER_LIMITS.maxWasmBytes) {
           throw new Error(
-            `WebAssembly binary exceeds the ${WORKER_LIMITS.maxWasmBytes}-byte limit`,
+            `WebAssembly binary exceeds the ${WORKER_LIMITS.maxWasmBytes}-byte limit`
           );
         }
       }
@@ -200,7 +207,7 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.code,
         WORKER_LIMITS.maxSourceBytes,
-        "Source code",
+        "Source code"
       );
       break;
     case "input.reply":
@@ -210,33 +217,33 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.value,
         WORKER_LIMITS.maxSourceBytes,
-        "Input response",
+        "Input response"
       );
       break;
     case "completion.request":
       assertStringByteLimit(
         request.line,
         WORKER_LIMITS.maxSourceBytes,
-        "Completion input",
+        "Completion input"
       );
       break;
     case "code.analyze":
       assertStringByteLimit(
         request.path,
         WORKER_LIMITS.maxSourceBytes,
-        "Code analyzer path",
+        "Code analyzer path"
       );
       assertStringByteLimit(
         request.source,
         WORKER_LIMITS.maxSourceBytes,
-        "Code analyzer source",
+        "Code analyzer source"
       );
       break;
     case "debugger.getBreakpoints":
       assertStringByteLimit(
         request.file,
         WORKER_LIMITS.maxSourceBytes,
-        "Debugger source path",
+        "Debugger source path"
       );
       break;
     case "debugger.state":
@@ -245,12 +252,26 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.file,
         WORKER_LIMITS.maxSourceBytes,
-        "Debugger source path",
+        "Debugger source path"
       );
       if (!Number.isSafeInteger(request.line) || request.line < 1) {
         throw new Error("Invalid debugger breakpoint line");
       }
       break;
+    case "figure.action": {
+      if (
+        !Number.isSafeInteger(request.handle) ||
+        request.handle < 0 ||
+        !request.request ||
+        typeof request.request !== "object" ||
+        Array.isArray(request.request) ||
+        typeof request.request.action !== "string" ||
+        JSON.stringify(request.request).length > 65536
+      ) {
+        throw new Error("Invalid WebAssembly figure action");
+      }
+      break;
+    }
     case "figure.close":
     case "figure.getImage":
     case "figure.setView": {
@@ -290,7 +311,7 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.path,
         WORKER_LIMITS.maxSourceBytes,
-        "Figure export path",
+        "Figure export path"
       );
       break;
     }
@@ -337,15 +358,28 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.diagramJson,
         WORKER_LIMITS.maxNflowJsonBytes,
-        "NFlow model",
+        "NFlow model"
       );
       break;
+    case "nflow.fmu.register": {
+      const model = request.model;
+      if (!model || typeof model.path !== "string" || !model.path.startsWith("/workspace/fmus/")) throw new Error("Invalid FMU model path");
+      assertStringByteLimit(model.source, WORKER_LIMITS.maxNflowJsonBytes, "FMU bindings");
+      if (!Array.isArray(model.files) || model.files.length > 64) throw new Error("Invalid FMU modules");
+      let bytes = 0;
+      for (const file of model.files) {
+        if (!Array.isArray(file) || typeof file[0] !== "string" || binaryBytes(file[1]) < 0) throw new Error("Invalid FMU module");
+        bytes += binaryBytes(file[1]);
+      }
+      if (bytes > WORKER_LIMITS.maxWasmBytes) throw new Error("FMU modules exceed size limit");
+      break;
+    }
     case "file.write": {
       const bytes = binaryBytes(request.data);
       if (bytes < 0) throw new Error("Virtual file data must be binary");
       if (bytes > WORKER_LIMITS.maxVirtualFileBytes) {
         throw new Error(
-          `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`,
+          `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`
         );
       }
       break;
@@ -362,7 +396,7 @@ export function validateWorkerRequest(request) {
         if (bytes < 0) throw new Error("Virtual file data must be binary");
         if (bytes > WORKER_LIMITS.maxVirtualFileBytes) {
           throw new Error(
-            `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`,
+            `Virtual file exceeds the ${WORKER_LIMITS.maxVirtualFileBytes}-byte limit`
           );
         }
       }
@@ -374,7 +408,7 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.path,
         WORKER_LIMITS.maxSourceBytes,
-        "Virtual path",
+        "Virtual path"
       );
       break;
     }
@@ -382,12 +416,12 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.from,
         WORKER_LIMITS.maxSourceBytes,
-        "Source virtual path",
+        "Source virtual path"
       );
       assertStringByteLimit(
         request.to,
         WORKER_LIMITS.maxSourceBytes,
-        "Target virtual path",
+        "Target virtual path"
       );
       break;
     }
@@ -409,7 +443,7 @@ export function validateWorkerRequest(request) {
       const cells = matrixCellCount(request.values);
       if (cells < 0 || cells > WORKER_LIMITS.maxVariableBlockCells) {
         throw new Error(
-          "Variable replacement exceeds the WebAssembly cell limit",
+          "Variable replacement exceeds the WebAssembly cell limit"
         );
       }
       break;
@@ -427,7 +461,7 @@ export function validateWorkerRequest(request) {
       assertStringByteLimit(
         request.value,
         WORKER_LIMITS.maxSourceBytes,
-        "Nested variable value",
+        "Nested variable value"
       );
       break;
     }
@@ -439,6 +473,9 @@ export function evaluationCodeWithFigures(code) {
   return [
     String(code),
     "if isbuiltin('__web_display_list__')",
+    "  if exist('__web_figure_list__', 'file')",
+    `    disp(['${FIGURE_LIST_BEGIN}', jsonencode(__web_figure_list__()), '${FIGURE_LIST_END}']);`,
+    "  end",
     "  nelsonWasmFigures = findall(0, 'Type', 'figure');",
     "  for nelsonWasmFigureIndex = 1:numel(nelsonWasmFigures)",
     "    nelsonWasmDisplayList = __web_display_list__(nelsonWasmFigures(nelsonWasmFigureIndex));",
@@ -462,6 +499,18 @@ export function nelsonCharacterExpression(value) {
 }
 
 export function extractFigureFrames(stdout) {
+  let figureList;
+  const listStart = stdout.indexOf(FIGURE_LIST_BEGIN);
+  if (listStart >= 0) {
+    const end = stdout.indexOf(FIGURE_LIST_END, listStart);
+    if (end < 0) throw new Error("Figure list end marker is missing");
+    const parsed = JSON.parse(
+      stdout.slice(listStart + FIGURE_LIST_BEGIN.length, end)
+    );
+    figureList = Array.isArray(parsed) ? parsed : [parsed];
+    stdout =
+      stdout.slice(0, listStart) + stdout.slice(end + FIGURE_LIST_END.length);
+  }
   const figures = [];
   const visible = [];
   let offset = 0;
@@ -491,6 +540,7 @@ export function extractFigureFrames(stdout) {
       .replace(/\n{3,}/g, "\n\n")
       .trim(),
     figures,
+    ...(figureList === undefined ? {} : { figureList }),
   };
 }
 
@@ -585,7 +635,7 @@ export function extractUiActions(stdout) {
 function longestMarkerPrefixSuffix(text, markers) {
   const maxLength = Math.min(
     text.length,
-    Math.max(...markers.map((marker) => marker.length - 1)),
+    Math.max(...markers.map((marker) => marker.length - 1))
   );
   for (let length = maxLength; length > 0; length -= 1) {
     const suffix = text.slice(-length);
@@ -597,6 +647,7 @@ function longestMarkerPrefixSuffix(text, markers) {
 export function createVisibleOutputFilter(onText) {
   const delimiters = [
     [FIGURE_BEGIN, FIGURE_END],
+    [FIGURE_LIST_BEGIN, FIGURE_LIST_END],
     [UI_ACTION_BEGIN, UI_ACTION_END],
   ];
   const beginMarkers = delimiters.map(([begin]) => begin);

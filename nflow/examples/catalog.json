@@ -1120,6 +1120,40 @@
       ]
     },
     {
+      "name": "nflow:fmi",
+      "title": "Fmi",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "FMU Wasm - Adder (C)",
+          "description": "FMI-LS-WASM Co-Simulation addition example (C). Run in NFlow WebAssembly: after the first communication step, sum = 2 + 3 = 5.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/wasm/Adder_C_Wasm_FMU.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "FMU Wasm - Adder (Rust)",
+          "description": "FMI-LS-WASM Co-Simulation addition example (Rust). Run in NFlow WebAssembly: after the first communication step, sum = 2 + 3 = 5.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/wasm/Adder_Rust_Wasm_FMU.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        },
+        {
+          "title": "FMU Wasm - Adder (WAT)",
+          "description": "FMI-LS-WASM Co-Simulation addition example (WAT). Run in NFlow WebAssembly: after the first communication step, sum = 2 + 3 = 5.",
+          "kind": "model",
+          "file": "nflow-example:/fmi/wasm/Adder_WAT_Wasm_FMU.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 4
+        }
+      ]
+    },
+    {
       "name": "nflow:medical",
       "title": "Medical",
       "source": "nflow",

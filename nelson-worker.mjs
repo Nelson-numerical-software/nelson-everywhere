@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=0af910d47fe8";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=0af910d47fe8";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=0ca47660f256";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=0ca47660f256";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,11 +14,12 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=0af910d47fe8";
+} from "./nelson-worker-protocol.mjs?build=0ca47660f256";
 
 const PROTOCOL_VERSION = 1;
-const NFLOW_BEGIN = "__NFLOW_RESULT_BEGIN__";
-const NFLOW_END = "__NFLOW_RESULT_END__";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=0ca47660f256";
+import { simulateNFlow } from "./nflow-worker.mjs?build=0ca47660f256";
+const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";
 const COMPLETION_BEGIN = "__COMPLETION_RESULT_BEGIN__";
@@ -70,7 +71,7 @@ function publishFigureBytes(handle, jsonBuffer) {
       event: "figure",
       figureBytes: { handle: Number(handle), json: buffer },
     },
-    [buffer],
+    [buffer]
   );
 }
 
@@ -98,7 +99,7 @@ function publishFigureAttachments(handle, jsonBuffer, attachments = []) {
         attachments: payloadAttachments,
       },
     },
-    transferList,
+    transferList
   );
 }
 
@@ -125,7 +126,7 @@ function publishAudioAction(action, transferList = []) {
       event: "audio",
       action,
     },
-    transferList,
+    transferList
   );
 }
 
@@ -150,7 +151,7 @@ function publishAudioBufferChunk(id, offset, frames, buffer) {
       frames: Number(frames),
       samplesF32Buffer: payload,
     },
-    [payload],
+    [payload]
   );
 }
 
@@ -227,7 +228,7 @@ async function initialize(
   runtimeCapabilities,
   nflowCancelBuffer,
   commandBuffer,
-  nflowEventBuffer,
+  nflowEventBuffer
 ) {
   const capabilities = runtimeCapabilityNames(runtimeCapabilities);
   nflowCancelSignal = cancellationSignalFrom(nflowCancelBuffer);
@@ -237,7 +238,7 @@ async function initialize(
   const module = await import(moduleUrl);
   if (typeof module.default !== "function") {
     throw new TypeError(
-      "The Nelson WebAssembly module has no default factory export",
+      "The Nelson WebAssembly module has no default factory export"
     );
   }
   runnerFactory = module.default;
@@ -264,6 +265,7 @@ async function initialize(
       onNelsonFigureFrameBytes: publishFigureBytes,
       onNelsonFigureFrameAttachments: publishFigureAttachments,
       onNelsonNFlowPartial: publishNFlowPartial,
+      onNelsonFmu: fmuRegistry.call,
       onNelsonDebuggerState: publishDebuggerState,
       onNelsonAudioBufferBegin: publishAudioBufferBegin,
       onNelsonAudioBufferChunk: publishAudioBufferChunk,
@@ -405,7 +407,9 @@ function fetchPendingNFlowEvents() {
     } catch {
       return "";
     }
-    const events = Array.isArray(snapshot?.params) ? snapshot.params.slice() : [];
+    const events = Array.isArray(snapshot?.params)
+      ? snapshot.params.slice()
+      : [];
     const callback = snapshot?.callback;
     if (callback && callback.seq > nflowCallbackLastSeq) {
       nflowCallbackLastSeq = callback.seq;
@@ -430,7 +434,7 @@ function cancellationSignalFrom(buffer) {
 function normalizeVirtualPath(value) {
   const path = String(value).replaceAll("\\", "/");
   const inVirtualRoot = VIRTUAL_PATH_ROOTS.some((root) =>
-    path.startsWith(`${root}/`),
+    path.startsWith(`${root}/`)
   );
   if (!inVirtualRoot || path.split("/").includes("..")) {
     throw new Error("Virtual files must be below /workspace or /modules");
@@ -441,10 +445,12 @@ function normalizeVirtualPath(value) {
 function normalizeReadablePath(value) {
   const path = String(value).replaceAll("\\", "/");
   const readable = READABLE_RUNTIME_ROOTS.some((root) =>
-    path.startsWith(`${root}/`),
+    path.startsWith(`${root}/`)
   );
   if (!readable || path.split("/").includes("..")) {
-    throw new Error("Readable files must be below /workspace, /modules or /user-modules");
+    throw new Error(
+      "Readable files must be below /workspace, /modules or /user-modules"
+    );
   }
   return path;
 }
@@ -454,7 +460,11 @@ function parentVirtualPath(path) {
 }
 
 function virtualRootFor(path) {
-  return VIRTUAL_PATH_ROOTS.find((root) => path === root || path.startsWith(`${root}/`)) ?? "";
+  return (
+    VIRTUAL_PATH_ROOTS.find(
+      (root) => path === root || path.startsWith(`${root}/`)
+    ) ?? ""
+  );
 }
 
 function addParentDirectories(path) {
@@ -468,7 +478,7 @@ function addParentDirectories(path) {
 
 function isPersistentVirtualPath(path) {
   return PERSISTENT_DIRECTORIES.some(
-    (directory) => path === directory || path.startsWith(`${directory}/`),
+    (directory) => path === directory || path.startsWith(`${directory}/`)
   );
 }
 
@@ -476,7 +486,7 @@ function disableWorkspacePersistence(error) {
   console.warn(
     `Nelson workspace persistence is unavailable: ${
       error instanceof Error ? error.message : String(error)
-    }`,
+    }`
   );
   workspaceStore = createWorkspaceStore(undefined);
 }
@@ -487,11 +497,11 @@ async function restorePersistentWorkspace() {
     const restored = await workspaceStore.loadWorkspace();
     virtualFiles = new Map(
       [...restored.files.entries()].filter(([path]) =>
-        isPersistentVirtualPath(path),
-      ),
+        isPersistentVirtualPath(path)
+      )
     );
     virtualDirectories = new Set(
-      [...restored.directories].filter((path) => isPersistentVirtualPath(path)),
+      [...restored.directories].filter((path) => isPersistentVirtualPath(path))
     );
     for (const path of virtualFiles.keys()) addParentDirectories(path);
   } catch (error) {
@@ -505,12 +515,12 @@ async function persistVirtualFiles() {
     await workspaceStore.replaceWorkspace(
       new Map(
         [...virtualFiles.entries()].filter(([path]) =>
-          isPersistentVirtualPath(path),
-        ),
+          isPersistentVirtualPath(path)
+        )
       ),
       new Set(
-        [...virtualDirectories].filter((path) => isPersistentVirtualPath(path)),
-      ),
+        [...virtualDirectories].filter((path) => isPersistentVirtualPath(path))
+      )
     );
   } catch (error) {
     disableWorkspacePersistence(error);
@@ -538,7 +548,7 @@ function populateVirtualFiles(module) {
     clearVirtualDirectory(module, directory);
   }
   for (const directory of [...virtualDirectories].sort(
-    (left, right) => left.length - right.length,
+    (left, right) => left.length - right.length
   )) {
     module.FS.mkdirTree(directory);
   }
@@ -552,10 +562,12 @@ function populateVirtualFiles(module) {
 
 async function collectVirtualFiles(module) {
   const collected = new Map(
-    [...virtualFiles.entries()].filter(([path]) => !isPersistentVirtualPath(path)),
+    [...virtualFiles.entries()].filter(
+      ([path]) => !isPersistentVirtualPath(path)
+    )
   );
   const directories = new Set(
-    [...virtualDirectories].filter((path) => !isPersistentVirtualPath(path)),
+    [...virtualDirectories].filter((path) => !isPersistentVirtualPath(path))
   );
   const visit = (directory) => {
     for (const name of module.FS.readdir(directory)) {
@@ -565,8 +577,7 @@ async function collectVirtualFiles(module) {
       if (module.FS.isDir(info.mode)) {
         directories.add(path);
         visit(path);
-      }
-      else collected.set(path, new Uint8Array(module.FS.readFile(path)));
+      } else collected.set(path, new Uint8Array(module.FS.readFile(path)));
     }
   };
   for (const directory of PERSISTENT_DIRECTORIES) visit(directory);
@@ -592,9 +603,7 @@ async function evaluateRaw(code, output = {}) {
       result.stderr.trim() ||
       `Nelson exited with status ${result.exitCode}`;
     throw new Error(
-      result.errorIdentifier
-        ? `${result.errorIdentifier}: ${message}`
-        : message,
+      result.errorIdentifier ? `${result.errorIdentifier}: ${message}` : message
     );
   }
   return result;
@@ -619,23 +628,11 @@ async function evaluate(code, handlers = {}) {
     ...result,
     stdout: outputFilter.emitted ? "" : ui.stdout,
     figures: figures.figures,
+    figureList: figures.figureList,
     uiActions: ui.actions,
   };
 }
 
-async function simulateNFlow(diagramJson) {
-  const escaped = escapeNelsonCharacterVector(diagramJson);
-  const code = [
-    `nelsonWasmNflowDocument = NFlow.internal.prepareModelJson('${escaped}');`,
-    "nelsonWasmNflowResult = __nflow_simulate__(nelsonWasmNflowDocument);",
-    `disp(['${NFLOW_BEGIN}', nelsonWasmNflowResult, '${NFLOW_END}']);`,
-    "clear nelsonWasmNflowDocument nelsonWasmNflowResult;",
-  ].join(" ");
-  const result = await evaluateRaw(code);
-  return JSON.parse(
-    extractMarkedResult(result.stdout, NFLOW_BEGIN, NFLOW_END, "NFlow"),
-  );
-}
 
 async function listWorkspace() {
   const code = [
@@ -649,16 +646,16 @@ async function listWorkspace() {
       result.stdout,
       WORKSPACE_BEGIN,
       WORKSPACE_END,
-      "Workspace",
-    ),
+      "Workspace"
+    )
   );
   const entries = Array.isArray(parsed)
     ? parsed
     : parsed && typeof parsed === "object" && Object.keys(parsed).length
-      ? [parsed]
-      : [];
+    ? [parsed]
+    : [];
   return entries.filter(
-    (entry) => !String(entry?.name ?? "").startsWith("nelsonWasm"),
+    (entry) => !String(entry?.name ?? "").startsWith("nelsonWasm")
   );
 }
 
@@ -674,8 +671,8 @@ async function complete(line) {
       result.stdout,
       COMPLETION_BEGIN,
       COMPLETION_END,
-      "Completion",
-    ),
+      "Completion"
+    )
   );
 }
 
@@ -702,8 +699,8 @@ async function readVariable(nameValue) {
         result.stdout,
         VARIABLE_BEGIN,
         VARIABLE_END,
-        "Variable",
-      ),
+        "Variable"
+      )
     ),
   };
 }
@@ -754,7 +751,8 @@ function variableMetadata({ name, entry, value }) {
       ? Object.keys(structValues[0])
       : [];
   const gridRows = kind === "struct" ? rows * cols : kind === "char" ? 1 : rows;
-  const gridCols = kind === "struct" ? fields.length : kind === "char" ? 1 : cols;
+  const gridCols =
+    kind === "struct" ? fields.length : kind === "char" ? 1 : cols;
   return {
     name,
     className,
@@ -796,22 +794,22 @@ function variableCells(descriptor) {
     return Array.from({ length: metadata.rows }, (_, row) =>
       Array.from(
         { length: metadata.cols },
-        (_, col) => flat[row + col * metadata.rows] ?? "",
-      ),
+        (_, col) => flat[row + col * metadata.rows] ?? ""
+      )
     );
   }
   if (metadata.kind === "struct") {
     const values = Array.isArray(value) ? value : [value];
     return values.map((element) =>
-      metadata.columns.map((field) => summarizeNestedValue(element?.[field])),
+      metadata.columns.map((field) => summarizeNestedValue(element?.[field]))
     );
   }
   if (metadata.kind === "cell") {
     const values = Array.isArray(value) ? value : [value];
     return Array.from({ length: metadata.rows }, (_, row) =>
       Array.from({ length: metadata.cols }, (_, col) =>
-        summarizeNestedValue(values[row + col * metadata.rows]),
-      ),
+        summarizeNestedValue(values[row + col * metadata.rows])
+      )
     );
   }
   if (metadata.kind !== "matrix") return [[metadata.text ?? ""]];
@@ -871,7 +869,7 @@ async function replaceVariable(nameValue, values) {
   } else if (metadata.kind === "string") {
     expression = matrixExpression(
       values,
-      (value) => `string(${characterExpression(value)})`,
+      (value) => `string(${characterExpression(value)})`
     );
   } else {
     expression = matrixExpression(values, numericLiteral);
@@ -921,12 +919,18 @@ async function setNestedVariable(request) {
         "'only scalar numeric, char, and string cells are editable');",
       "end",
       "clear nelsonWasmNestedValue;",
-    ].join("\n"),
+    ].join("\n")
   );
   return { ok: true };
 }
 
-async function setFigureView(handle, axesHandle, azimuth, elevation, compactView = false) {
+async function setFigureView(
+  handle,
+  axesHandle,
+  azimuth,
+  elevation,
+  compactView = false
+) {
   const figureHandle = Number(handle);
   const targetAxesHandle = Number(axesHandle);
   const az = Number(azimuth);
@@ -968,35 +972,55 @@ async function evaluateFigureAction(statement, resultExpression) {
         extracted.stdout,
         FIGURE_ACTION_BEGIN,
         FIGURE_ACTION_END,
-        "Figure action",
-      ),
+        "Figure action"
+      )
     ),
     figures: extracted.figures,
+    figureList: extracted.figureList,
   };
 }
 
 async function setFigureSize(handle, width, height) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_size__(${Number(handle)}, ${Number(
-      width,
+      width
     )}, ${Number(height)});`,
-    "struct('ok', nelsonWasmFigureActionOk)",
+    "struct('ok', nelsonWasmFigureActionOk)"
+  );
+}
+
+async function figureAction(handle, request) {
+  const code = `disp(['${FIGURE_ACTION_BEGIN}', __web_figure_action__(${Number(
+    handle
+  )}, ${nelsonCharacterExpression(
+    JSON.stringify(request)
+  )}), '${FIGURE_ACTION_END}']);`;
+  const result = await evaluateRaw(code);
+  if (result.exitCode !== 0)
+    throw new Error(result.stderr || "Figure action failed");
+  return JSON.parse(
+    extractMarkedResult(
+      result.stdout,
+      FIGURE_ACTION_BEGIN,
+      FIGURE_ACTION_END,
+      "Figure action"
+    )
   );
 }
 
 async function panFigure(handle, dxFrac, dyFrac) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_pan__(${Number(handle)}, ${Number(
-      dxFrac,
+      dxFrac
     )}, ${Number(dyFrac)});`,
-    "struct('ok', nelsonWasmFigureActionOk)",
+    "struct('ok', nelsonWasmFigureActionOk)"
   );
 }
 
 async function closeFigure(handle) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_close__(${Number(handle)});`,
-    "struct('ok', nelsonWasmFigureActionOk)",
+    "struct('ok', nelsonWasmFigureActionOk)"
   );
 }
 
@@ -1014,27 +1038,27 @@ async function sendFigureKeyEvent(request) {
   ].join(", ");
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_key_event__(${args});`,
-    "struct('ok', nelsonWasmFigureActionOk)",
+    "struct('ok', nelsonWasmFigureActionOk)"
   );
 }
 
 async function sendFigureMouseEvent(request) {
   return evaluateFigureAction(
     `[nelsonWasmFigureActionOk, nelsonWasmFigureMotion] = __figure_mouse_event__(${Number(
-      request.handle,
+      request.handle
     )}, ${nelsonCharacterExpression(request.action)}, [${Number(
-      request.x,
+      request.x
     )} ${Number(request.y)}], 'web');`,
-    "struct('ok', nelsonWasmFigureActionOk, 'motion', nelsonWasmFigureMotion)",
+    "struct('ok', nelsonWasmFigureActionOk, 'motion', nelsonWasmFigureMotion)"
   );
 }
 
 async function sendUIControlAction(request) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_uicontrol_action__(${Number(
-      request.handle,
+      request.handle
     )}, ${Number(request.value)}, ${nelsonCharacterExpression(request.text)});`,
-    "struct('ok', nelsonWasmFigureActionOk)",
+    "struct('ok', nelsonWasmFigureActionOk)"
   );
 }
 
@@ -1079,7 +1103,8 @@ async function writeVirtualFile(path, data) {
 }
 
 async function writeVirtualFiles(files) {
-  if (!Array.isArray(files)) throw new Error("Virtual file batch must be an array");
+  if (!Array.isArray(files))
+    throw new Error("Virtual file batch must be an array");
   let bytesWritten = 0;
   const written = [];
   for (const entry of files) {
@@ -1115,19 +1140,22 @@ function virtualPathExists(path) {
 async function renameVirtualPath(fromValue, toValue) {
   const from = normalizeVirtualPath(fromValue);
   const to = normalizeVirtualPath(toValue);
-  if (!virtualPathExists(from)) throw new Error(`Virtual path does not exist: ${from}`);
-  if (virtualPathExists(to)) throw new Error(`Virtual path already exists: ${to}`);
-  if (to.startsWith(`${from}/`)) throw new Error("Cannot move a directory inside itself");
+  if (!virtualPathExists(from))
+    throw new Error(`Virtual path does not exist: ${from}`);
+  if (virtualPathExists(to))
+    throw new Error(`Virtual path already exists: ${to}`);
+  if (to.startsWith(`${from}/`))
+    throw new Error("Cannot move a directory inside itself");
   if (virtualFiles.has(from)) {
     const data = virtualFiles.get(from);
     virtualFiles.delete(from);
     virtualFiles.set(to, data);
   } else {
     const movedFiles = [...virtualFiles.entries()].filter(([path]) =>
-      path.startsWith(`${from}/`),
+      path.startsWith(`${from}/`)
     );
     const movedDirectories = [...virtualDirectories].filter(
-      (path) => path === from || path.startsWith(`${from}/`),
+      (path) => path === from || path.startsWith(`${from}/`)
     );
     for (const [path] of movedFiles) virtualFiles.delete(path);
     for (const path of movedDirectories) virtualDirectories.delete(path);
@@ -1167,11 +1195,15 @@ async function readVirtualFile(path) {
   const normalized = normalizeReadablePath(path);
   const data = virtualFiles.get(normalized);
   if (data) return { path: normalized, data };
-  if (normalized.startsWith("/modules/") || normalized.startsWith("/user-modules/")) {
+  if (
+    normalized.startsWith("/modules/") ||
+    normalized.startsWith("/user-modules/")
+  ) {
     const instance = await runner?.initialize();
     try {
       const moduleData = instance?.FS?.readFile(normalized);
-      if (moduleData) return { path: normalized, data: new Uint8Array(moduleData) };
+      if (moduleData)
+        return { path: normalized, data: new Uint8Array(moduleData) };
     } catch {
       // Fall through to the explicit virtual-file error below.
     }
@@ -1196,7 +1228,7 @@ self.addEventListener("message", async (event) => {
           request.runtimeCapabilities,
           request.nflowCancelBuffer,
           request.commandBuffer,
-          request.nflowEventBuffer,
+          request.nflowEventBuffer
         );
         break;
       case "evaluate":
@@ -1207,7 +1239,7 @@ self.addEventListener("message", async (event) => {
               event: "output",
               id: request.id,
               output: { stream: "stdout", text },
-            }),
+            })
           );
           try {
             result = await evaluate(String(request.code ?? ""), {
@@ -1255,12 +1287,16 @@ self.addEventListener("message", async (event) => {
         result = { ok: true };
         break;
       }
+      case "nflow.fmu.register":
+        await fmuRegistry.register(request.model);
+        result = { success: true };
+        break;
       case "nflow.simulate":
         // Start from a clean live-event baseline: only interactions that happen
         // during this run should be applied.
         nflowEventLastSeq = 0;
         nflowCallbackLastSeq = 0;
-        result = await simulateNFlow(String(request.diagramJson ?? "{}"));
+        result = await simulateNFlow(evaluateRaw, extractMarkedResult, String(request.diagramJson ?? "{}"));
         break;
       case "file.write":
         result = await writeVirtualFile(request.path, request.data);
@@ -1307,7 +1343,7 @@ self.addEventListener("message", async (event) => {
       case "code.analyze":
         result = {
           diagnostics: desktopCodeAnalyzerDiagnostics(
-            await runner.analyzeCode(request.path, request.source),
+            await runner.analyzeCode(request.path, request.source)
           ),
         };
         break;
@@ -1315,13 +1351,18 @@ self.addEventListener("message", async (event) => {
         result = await runner.debuggerState();
         break;
       case "debugger.getBreakpoints":
-        result = await runner.debuggerGetBreakpoints(String(request.file ?? ""));
+        result = await runner.debuggerGetBreakpoints(
+          String(request.file ?? "")
+        );
         break;
       case "debugger.toggleBreakpoint":
         result = await runner.debuggerToggleBreakpoint(
           String(request.file ?? ""),
-          Number(request.line) || 0,
+          Number(request.line) || 0
         );
+        break;
+      case "figure.action":
+        result = await figureAction(request.handle, request.request);
         break;
       case "figure.setView":
         result = await setFigureView(
@@ -1329,21 +1370,21 @@ self.addEventListener("message", async (event) => {
           Number(request.axesHandle ?? 0),
           Number(request.azimuth),
           Number(request.elevation),
-          Boolean(request.compactView),
+          Boolean(request.compactView)
         );
         break;
       case "figure.setSize":
         result = await setFigureSize(
           Number(request.handle),
           Number(request.width),
-          Number(request.height),
+          Number(request.height)
         );
         break;
       case "figure.pan":
         result = await panFigure(
           Number(request.handle),
           Number(request.dxFrac),
-          Number(request.dyFrac),
+          Number(request.dyFrac)
         );
         break;
       case "figure.close":
@@ -1352,7 +1393,9 @@ self.addEventListener("message", async (event) => {
       case "figure.getImage":
         result = {
           handle: request.handle,
-          image: `data:image/png;base64,${await runner.renderFigurePng(request.handle)}`,
+          image: `data:image/png;base64,${await runner.renderFigurePng(
+            request.handle
+          )}`,
         };
         break;
       case "figure.saveAs": {

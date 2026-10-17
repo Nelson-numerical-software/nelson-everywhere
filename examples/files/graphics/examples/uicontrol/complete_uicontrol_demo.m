@@ -90,6 +90,8 @@ state.statusText = statusText;
 state.colors = [0.10 0.35 0.85; 0.85 0.20 0.20; ...
   0.15 0.65 0.30; 0.55 0.25 0.75];
 figureHandle.UserData = state;
+figureHandle.SizeChangedFcn = @completeUiControlLayout;
+completeUiControlLayout(figureHandle, []);
 
 controls = [amplitudeEdit frequencySlider phaseMenu gridCheckbox ...
   markerCheckbox sineRadio cosineRadio colorList thickToggle];

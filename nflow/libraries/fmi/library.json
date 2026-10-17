@@ -43,7 +43,7 @@
     },
     {
       "type": "fmu",
-      "label": "FMU",
+      "label": "FMU (CS)",
       "icon": "fmu.svg",
       "phases": [
         "INIT",

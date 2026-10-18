@@ -1086,10 +1086,96 @@
       ]
     },
     {
+      "name": "nflow:subsystems",
+      "title": "Subsystems",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Conditional Subsystem Demo",
+          "description": "Conditional subsystems demo (enabled / triggered).",
+          "kind": "script",
+          "file": "nflow-example:/subsystems/Conditional_Subsystem_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "ForEach Subsystem Demo",
+          "description": "For-each subsystem demo.",
+          "kind": "script",
+          "file": "nflow-example:/subsystems/ForEach_Subsystem_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "Multirate Demo",
+          "description": "Multi-rate demo: a discrete block running slower than the base step.",
+          "kind": "script",
+          "file": "nflow-example:/subsystems/Multirate_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        }
+      ]
+    },
+    {
+      "name": "nflow:solvers",
+      "title": "Solvers",
+      "source": "nflow",
+      "examples": [
+        {
+          "title": "Constraint DAE Demo",
+          "description": "Differential-algebraic (DAE) demo: a differential state and an",
+          "kind": "script",
+          "file": "nflow-example:/solvers/Constraint_DAE_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "Linmod Trim Demo",
+          "description": "Linearization / trim demo: a second-order plant analysed with linmod and trim.",
+          "kind": "script",
+          "file": "nflow-example:/solvers/Linmod_Trim_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "ODE45 Solver Demo",
+          "description": "Variable-step ode45 demo: adaptive Dormand-Prince 5(4) vs fixed-step ode4.",
+          "kind": "script",
+          "file": "nflow-example:/solvers/ODE45_Solver_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "RC Circuit DAE Demo",
+          "description": "A charging RC circuit as a differential-algebraic (DAE) system -- the",
+          "kind": "script",
+          "file": "nflow-example:/solvers/RC_Circuit_DAE_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        }
+      ]
+    },
+    {
       "name": "nflow:workspace",
       "title": "Workspace",
       "source": "nflow",
       "examples": [
+        {
+          "title": "From Workspace Demo",
+          "description": "Companion setup for From_Workspace_Demo.nflow.",
+          "kind": "script",
+          "file": "nflow-example:/workspace/From_Workspace_Demo.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
         {
           "title": "From Workspace Demo",
           "description": "From/To Workspace round-trip. Define the source signal in Nelson before running, e.g.  simin = [(0:0.01:10)', sin(2*pi*0.5*(0:0.01:10))'];  The From Workspace block reads 'simin', a gain of 2 is applied, and the result is written back to 'simout'.",
@@ -1172,6 +1258,15 @@
           "blockCount": 5
         },
         {
+          "title": "Fmi Cosimulation Example",
+          "description": "Import an FMI 3.0 Co-Simulation FMU and run it from Nelson.",
+          "kind": "script",
+          "file": "nflow-example:/fmi/fmi_cosimulation_example.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
           "title": "FMU Wasm - Adder (C)",
           "description": "FMI-LS-WASM Co-Simulation addition example (C). Run in NFlow WebAssembly: after the first communication step, sum = 2 + 3 = 5.",
           "kind": "model",
@@ -1197,6 +1292,33 @@
           "tags": [],
           "requirements": [],
           "blockCount": 4
+        },
+        {
+          "title": "Ssp Controlled Drivetrain",
+          "description": "Inspect a System Structure and Parameterization (SSP) archive.",
+          "kind": "script",
+          "file": "nflow-example:/fmi/ssp_controlled_drivetrain.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "Ssp Export Diagram",
+          "description": "Round-trip an SSP composition: SSP -> nflow diagram -> SSP.",
+          "kind": "script",
+          "file": "nflow-example:/fmi/ssp_export_diagram.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
+        },
+        {
+          "title": "Ssp Runnable Gainchain",
+          "description": "Generate a RUNNABLE SSP composition entirely with nflow, then open and",
+          "kind": "script",
+          "file": "nflow-example:/fmi/ssp_runnable_gainchain.m",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 0
         },
         {
           "title": "StateSpace FMU",

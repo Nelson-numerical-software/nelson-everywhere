@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=4828123056af";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=4828123056af";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=442a49da3cfb";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=442a49da3cfb";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,11 +14,11 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=4828123056af";
+} from "./nelson-worker-protocol.mjs?build=442a49da3cfb";
 
 const PROTOCOL_VERSION = 1;
-import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=4828123056af";
-import { simulateNFlow } from "./nflow-worker.mjs?build=4828123056af";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=442a49da3cfb";
+import { simulateNFlow } from "./nflow-worker.mjs?build=442a49da3cfb";
 const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";
@@ -984,7 +984,7 @@ async function setFigureSize(handle, width, height) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_figure_size__(${Number(handle)}, ${Number(
       width
-    )}, ${Number(height)});`,
+    )}, ${Number(height)}); __web_flush_callbacks__();`,
     "struct('ok', nelsonWasmFigureActionOk)"
   );
 }
@@ -1037,7 +1037,7 @@ async function sendFigureKeyEvent(request) {
     logical(request.meta),
   ].join(", ");
   return evaluateFigureAction(
-    `nelsonWasmFigureActionOk = __web_figure_key_event__(${args});`,
+    `nelsonWasmFigureActionOk = __web_figure_key_event__(${args}); __web_flush_callbacks__();`,
     "struct('ok', nelsonWasmFigureActionOk)"
   );
 }
@@ -1048,7 +1048,7 @@ async function sendFigureMouseEvent(request) {
       request.handle
     )}, ${nelsonCharacterExpression(request.action)}, [${Number(
       request.x
-    )} ${Number(request.y)}], 'web');`,
+    )} ${Number(request.y)}], 'web'); __web_flush_callbacks__();`,
     "struct('ok', nelsonWasmFigureActionOk, 'motion', nelsonWasmFigureMotion)"
   );
 }
@@ -1057,7 +1057,7 @@ async function sendUIControlAction(request) {
   return evaluateFigureAction(
     `nelsonWasmFigureActionOk = __web_uicontrol_action__(${Number(
       request.handle
-    )}, ${Number(request.value)}, ${nelsonCharacterExpression(request.text)});`,
+    )}, ${Number(request.value)}, ${nelsonCharacterExpression(request.text)}); __web_flush_callbacks__();`,
     "struct('ok', nelsonWasmFigureActionOk)"
   );
 }

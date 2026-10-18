@@ -4129,6 +4129,7 @@
             "runtime-resources/modules/graphics/tests/test_imshow_initial_magnification.m",
             "runtime-resources/modules/graphics/tests/test_imshow_logical_rendering.m",
             "runtime-resources/modules/graphics/tests/test_imshow.m",
+            "runtime-resources/modules/graphics/tests/test_inspect.m",
             "runtime-resources/modules/graphics/tests/test_is2D.m",
             "runtime-resources/modules/graphics/tests/test_isgraphics.m",
             "runtime-resources/modules/graphics/tests/test_ishold.m",
@@ -4202,6 +4203,7 @@
             "runtime-resources/modules/graphics/tests/test_patch_circle_axis_equal.m",
             "runtime-resources/modules/graphics/tests/test_patch_colormap_cdata.m",
             "runtime-resources/modules/graphics/tests/test_patch_facealpha_constructor.m",
+            "runtime-resources/modules/graphics/tests/test_patch_facecolor_interp_gradient.m",
             "runtime-resources/modules/graphics/tests/test_patch_facecolor_none_faces.m",
             "runtime-resources/modules/graphics/tests/test_patch_facecolor_none.m",
             "runtime-resources/modules/graphics/tests/test_patch_faces_vertices_constructor.m",
@@ -4269,6 +4271,7 @@
             "runtime-resources/modules/graphics/tests/test_portable_display_list.m",
             "runtime-resources/modules/graphics/tests/test_portable_raster.m",
             "runtime-resources/modules/graphics/tests/test_portable_web_figure_actions.m",
+            "runtime-resources/modules/graphics/tests/test_portable_web_figure_zoom.m",
             "runtime-resources/modules/graphics/tests/test_position_properties_axes.m",
             "runtime-resources/modules/graphics/tests/test_position_properties_donutchart.m",
             "runtime-resources/modules/graphics/tests/test_position_properties_piechart.m",
@@ -4629,8 +4632,10 @@
             "runtime-resources/modules/graphics/tests/test_waterfall.m",
             "runtime-resources/modules/graphics/tests/test_web_display_list_target_axes_view.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_3d_scales.m",
+            "runtime-resources/modules/graphics/tests/test_web_figure_callbacks_deferred.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_deferred_action.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_dense_wireframe_text.m",
+            "runtime-resources/modules/graphics/tests/test_web_figure_fast_rotation.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_fit.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_inspector.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_navigation_scales.m",
@@ -4640,7 +4645,9 @@
             "runtime-resources/modules/graphics/tests/test_web_figure_pick_native_scale.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_resize_callback.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_restore.m",
+            "runtime-resources/modules/graphics/tests/test_web_figure_scroll_wheel_callback.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_tiled_navigation.m",
+            "runtime-resources/modules/graphics/tests/test_web_image_reversed_ydata.m",
             "runtime-resources/modules/graphics/tests/test_web_ui_pixel_layout.m",
             "runtime-resources/modules/graphics/tests/test_white.m",
             "runtime-resources/modules/graphics/tests/test_window_key_callbacks_interactive.m",
@@ -4669,7 +4676,7 @@
             "runtime-resources/modules/graphics/tests/test_zticklabels.m",
             "runtime-resources/modules/graphics/tests/test_zticks.m"
           ],
-          "bytes": 7060873
+          "bytes": 7083073
         }
       }
     },
@@ -7277,7 +7284,7 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5794827
+          "bytes": 5801213
         },
         "archives": [
           {
@@ -7635,14 +7642,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.graphics.help.en_US.nhz"
             ],
-            "bytes": 28392990
+            "bytes": 28395646
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.graphics.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.graphics.help.fr_FR.nhz"
             ],
-            "bytes": 28419597
+            "bytes": 28422355
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.handle.help.en_US.nhz.nlpack",
@@ -7817,14 +7824,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
             ],
-            "bytes": 912025
+            "bytes": 912221
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz"
             ],
-            "bytes": 943340
+            "bytes": 943503
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",

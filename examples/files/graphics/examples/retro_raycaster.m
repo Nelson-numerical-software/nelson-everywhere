@@ -59,7 +59,9 @@ figureHandle = figure('Name', 'Nelson retro raycaster', ...
   'WindowKeyPressFcn', @(source, event) ...
   raycasterKeyEvent(source, event, true), ...
   'WindowKeyReleaseFcn', @(source, event) ...
-  raycasterKeyEvent(source, event, false), 'UserData', raycasterState);
+  raycasterKeyEvent(source, event, false), ...
+  'WindowScrollWheelFcn', @(source, event) ...
+  raycasterScrollWheelEvent(source, event), 'UserData', raycasterState);
 axesHandle = axes('Parent', figureHandle, 'Position', [0 0 1 1]);
 raycasterRenderWidth = raycasterWidth;
 raycasterRenderHeight = raycasterHeight;
@@ -151,7 +153,18 @@ while isgraphics(figureHandle) && isgraphics(imageHandle) && ...
     raycasterWeaponHandle, raycasterEnemies, raycasterState, ...
     raycasterRayDistance, raycasterRenderWidth, raycasterRenderHeight, ...
     currentTime);
-  set(figureHandle, 'UserData', raycasterState);
+  % The key callbacks write the input flags into UserData and may run at any
+  % statement boundary of this loop body (the web host dispatches a key event
+  % as soon as its command is drained). Writing back the copy read at the top
+  % of the frame would overwrite a press or release that landed meanwhile and
+  % leave a movement flag latched (e.g. turning forever after the key is let
+  % go). Re-read the live state and store only the fields this loop owns.
+  raycasterLiveState = get(figureHandle, 'UserData');
+  raycasterLiveState.x = raycasterState.x;
+  raycasterLiveState.y = raycasterState.y;
+  raycasterLiveState.angle = raycasterState.angle;
+  raycasterLiveState.moving = raycasterState.moving;
+  set(figureHandle, 'UserData', raycasterLiveState);
   raycasterFrameIndex = raycasterFrameIndex + 1;
   fpsFrameCount = fpsFrameCount + 1;
   fpsDuration = currentTime - fpsStartTime;
@@ -171,10 +184,11 @@ while isgraphics(figureHandle) && isgraphics(imageHandle) && ...
   drawnow();
   if ~raycasterBatch
     remainingTime = nextFrameTime - toc(raycasterClock);
-    if remainingTime > 0.002
-      pause(remainingTime - 0.002);
-    end
-    while toc(raycasterClock) < nextFrameTime
+    if remainingTime > 0
+      % Cooperative wait: pause() keeps servicing key/mouse callbacks while it
+      % paces the frame. An empty busy-wait spin would run no statement, so on
+      % the single-threaded WebAssembly build it would pump no input at all.
+      pause(remainingTime);
     end
     nextFrameTime = nextFrameTime + targetFrameDuration;
     if nextFrameTime < toc(raycasterClock)
@@ -261,6 +275,13 @@ function raycasterKeyEvent(source, event, pressed)
       state.quit = pressed;
   end
   set(figureSource, 'UserData', state);
+end
+%=============================================================================
+function raycasterScrollWheelEvent(source, event)
+  % The scroll wheel has no role in the game, but a figure that defines a
+  % WindowScrollWheelFcn owns the wheel: the figure hosts then keep their
+  % built-in axes zoom off, which would otherwise stretch the first-person
+  % view. Nothing to do here.
 end
 %=============================================================================
 function state = raycasterMovePlayer(state, worldMap, deltaTime)

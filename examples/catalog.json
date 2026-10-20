@@ -8,6 +8,7 @@
         {
           "title": "Play a generated stereo tone",
           "description": "Synthesize a short stereo tone, plot its waveform and play it through the available audio backend.",
+          "kind": "script",
           "tags": [
             "audio",
             "synthesis",
@@ -21,6 +22,7 @@
         {
           "title": "Play a WAV file",
           "description": "Load and play a bundled waveform.",
+          "kind": "script",
           "tags": [
             "audio",
             "beginner"
@@ -33,6 +35,7 @@
         {
           "title": "Polyphonic synthesizer piano",
           "description": "Play a three-octave neon keyboard with six live-synthesised instruments, ADSR knobs, oscilloscope, spectrum, recorder and a player piano.",
+          "kind": "script",
           "tags": [
             "audio",
             "synthesis",
@@ -55,6 +58,7 @@
         {
           "title": "Summarize categorical labels",
           "description": "Encode repeated labels and count each category.",
+          "kind": "script",
           "tags": [
             "categorical",
             "summary"
@@ -72,6 +76,7 @@
         {
           "title": "Time-domain response",
           "description": "Plot the step response of a stable second-order model.",
+          "kind": "script",
           "tags": [
             "control",
             "time-response"
@@ -85,6 +90,7 @@
         {
           "title": "Frequency-domain response",
           "description": "Inspect gain and phase across frequency for a low-pass model.",
+          "kind": "script",
           "tags": [
             "control",
             "frequency-response"
@@ -97,6 +103,7 @@
         {
           "title": "Ball-on-plate LQR tracking",
           "description": "Design a state-feedback controller, integrate a rolling-ball plate model and animate the ball, reference path and actuator linkages.",
+          "kind": "script",
           "tags": [
             "control",
             "lqr",
@@ -112,6 +119,7 @@
         {
           "title": "Filtered PID closed loop",
           "description": "Build a filtered PID controller, close the feedback loop and inspect stability and tracking.",
+          "kind": "script",
           "tags": [
             "control",
             "pid",
@@ -133,6 +141,7 @@
         {
           "title": "Workspace basics",
           "description": "Create an array, transform it and display a concise result.",
+          "kind": "script",
           "tags": [
             "beginner",
             "workspace"
@@ -150,6 +159,7 @@
         {
           "title": "Clean a measurement series",
           "description": "Interpolate missing values and compute a moving average.",
+          "kind": "script",
           "tags": [
             "data-cleaning",
             "missing-data"
@@ -160,6 +170,7 @@
         {
           "title": "Group observations",
           "description": "Count table rows by category and display a compact summary.",
+          "kind": "script",
           "tags": [
             "grouping",
             "table"
@@ -177,6 +188,7 @@
         {
           "title": "Organize heterogeneous records",
           "description": "Store named sample arrays in a structure collection.",
+          "kind": "script",
           "tags": [
             "struct",
             "data"
@@ -194,6 +206,7 @@
         {
           "title": "Key-value lookup",
           "description": "Create a dictionary and retrieve a value by its key.",
+          "kind": "script",
           "tags": [
             "dictionary",
             "data"
@@ -211,6 +224,7 @@
         {
           "title": "Classic test matrices",
           "description": "Construct Hilbert, Pascal and magic matrices and inspect their numerical properties.",
+          "kind": "script",
           "tags": [
             "matrices",
             "conditioning",
@@ -229,6 +243,7 @@
         {
           "title": "Matrix arithmetic",
           "description": "Compare matrix multiplication with element-wise operations.",
+          "kind": "script",
           "tags": [
             "beginner",
             "matrices"
@@ -246,6 +261,7 @@
         {
           "title": "Two-dimensional Fourier transform",
           "description": "Reveal the directional frequency content of a synthetic image.",
+          "kind": "script",
           "tags": [
             "fft2",
             "image",
@@ -266,6 +282,7 @@
         {
           "title": "Create and extract an archive",
           "description": "Package a temporary text file and extract it to another temporary folder.",
+          "kind": "script",
           "tags": [
             "zip",
             "files"
@@ -283,6 +300,7 @@
         {
           "title": "Work with temporary files",
           "description": "Create, read and clean up a text file under the temporary directory.",
+          "kind": "script",
           "tags": [
             "files",
             "folders"
@@ -300,6 +318,7 @@
         {
           "title": "Parameterized function handle",
           "description": "Capture coefficients in a function handle and pass it to a numerical algorithm.",
+          "kind": "script",
           "tags": [
             "function-handle",
             "closure",
@@ -318,6 +337,7 @@
         {
           "title": "Convex hull of a point set",
           "description": "Compute and display the boundary enclosing planar samples.",
+          "kind": "script",
           "tags": [
             "geometry",
             "points"
@@ -330,6 +350,7 @@
         {
           "title": "Scattered data interpolation",
           "description": "Connect Delaunay triangulation, Voronoi cells and gridded interpolation in one workflow.",
+          "kind": "script",
           "tags": [
             "geometry",
             "delaunay",
@@ -351,6 +372,7 @@
         {
           "title": "Colorbar layouts",
           "description": "Compare colorbar placement and styling options.",
+          "kind": "script",
           "tags": [
             "plot",
             "color"
@@ -363,6 +385,7 @@
         {
           "title": "Essential plot types",
           "description": "Compare line, error-bar, bar, histogram, contour and surface plots in a compact gallery.",
+          "kind": "script",
           "tags": [
             "plot",
             "beginner",
@@ -376,6 +399,7 @@
         {
           "title": "Draw a three-dimensional cube",
           "description": "Build and render a simple polygonal object.",
+          "kind": "script",
           "tags": [
             "3d",
             "geometry"
@@ -388,6 +412,7 @@
         {
           "title": "Animate image frames",
           "description": "Create an animation from bundled image sequences.",
+          "kind": "script",
           "tags": [
             "animation",
             "images"
@@ -401,6 +426,7 @@
         {
           "title": "Surface lighting",
           "description": "Explore lighting on a three-dimensional surface.",
+          "kind": "script",
           "tags": [
             "3d",
             "lighting"
@@ -413,6 +439,7 @@
         {
           "title": "Parametric rainbow rose",
           "description": "Build a colorful three-dimensional flower from parametric equations.",
+          "kind": "script",
           "tags": [
             "3d",
             "parametric",
@@ -426,6 +453,7 @@
         {
           "title": "Animated dot tunnel",
           "description": "Animate rings of points with depth, rotation and frame pacing.",
+          "kind": "script",
           "tags": [
             "animation",
             "scatter",
@@ -439,6 +467,7 @@
         {
           "title": "Abstract particle vortex",
           "description": "Animate a relaxing school-like vortex of luminous colored rectangles with depth, glow, paced rendering and an original ambient soundtrack.",
+          "kind": "script",
           "tags": [
             "animation",
             "particles",
@@ -453,6 +482,7 @@
         {
           "title": "Retro raycasting maze",
           "description": "Explore a textured first-person maze rendered by a pure Nelson software raycaster.",
+          "kind": "script",
           "tags": [
             "animation",
             "raycasting",
@@ -468,6 +498,7 @@
         {
           "title": "Particle funnel",
           "description": "Animate five hundred soft particles bouncing through a polished funnel with fluid paced rendering.",
+          "kind": "script",
           "tags": [
             "animation",
             "simulation",
@@ -482,6 +513,7 @@
         {
           "title": "Interactive controls",
           "description": "Connect buttons and sliders to a plotted signal.",
+          "kind": "script",
           "tags": [
             "ui",
             "callbacks"
@@ -494,6 +526,7 @@
         {
           "title": "Interruptible controls",
           "description": "Keep an interactive control responsive during updates.",
+          "kind": "script",
           "tags": [
             "ui",
             "callbacks"
@@ -506,6 +539,7 @@
         {
           "title": "Complete UI controls",
           "description": "Coordinate text, edit, slider, menu, checkbox, radio, list, toggle and push-button controls.",
+          "kind": "script",
           "tags": [
             "ui",
             "uicontrol",
@@ -519,6 +553,7 @@
         {
           "title": "Modern UI component gallery",
           "description": "Explore UI figures, layouts, tabs, axes, containers, controls, indicators, trees and tables.",
+          "kind": "script",
           "tags": [
             "ui",
             "components",
@@ -532,6 +567,7 @@
         {
           "title": "Nefertiti point cloud",
           "description": "Render a bundled three-dimensional scan.",
+          "kind": "script",
           "tags": [
             "3d",
             "data"
@@ -545,6 +581,7 @@
         {
           "title": "Bunny surface",
           "description": "Render a bundled triangulated surface.",
+          "kind": "script",
           "tags": [
             "3d",
             "mesh"
@@ -558,6 +595,7 @@
         {
           "title": "Teapot surface",
           "description": "Render a classic parametric surface dataset.",
+          "kind": "script",
           "tags": [
             "3d",
             "mesh"
@@ -571,6 +609,7 @@
         {
           "title": "Mandelbrot fractal",
           "description": "Render escape iterations across the complex plane.",
+          "kind": "script",
           "tags": [
             "fractal",
             "complex",
@@ -584,6 +623,7 @@
         {
           "title": "Moebius strip",
           "description": "Build a one-sided parametric surface with a half twist.",
+          "kind": "script",
           "tags": [
             "3d",
             "parametric",
@@ -597,6 +637,7 @@
         {
           "title": "Fractal tree",
           "description": "Grow a binary tree through repeated rotations and scaling.",
+          "kind": "script",
           "tags": [
             "fractal",
             "tree",
@@ -610,6 +651,7 @@
         {
           "title": "Conway Game of Life",
           "description": "Animate a cellular automaton with reproducible initial conditions.",
+          "kind": "script",
           "tags": [
             "cellular-automaton",
             "animation",
@@ -623,6 +665,7 @@
         {
           "title": "Gray-Scott reaction diffusion",
           "description": "Simulate pattern formation in a two-species reaction-diffusion model.",
+          "kind": "script",
           "tags": [
             "reaction-diffusion",
             "animation",
@@ -636,6 +679,7 @@
         {
           "title": "2D fluid simulation",
           "description": "Animate an incompressible jet that breaks on an obstacle into fine smoke vortices, solved in real time.",
+          "kind": "script",
           "tags": [
             "fluid",
             "animation",
@@ -650,6 +694,7 @@
         {
           "title": "2D SPH particle fluid",
           "description": "Stir an interactive 2D fluid of separate Smoothed Particle Hydrodynamics particles that fill the tank and bounce off its walls, each dot tinted by its speed.",
+          "kind": "script",
           "tags": [
             "fluid",
             "animation",
@@ -665,6 +710,7 @@
         {
           "title": "Mathematical shader",
           "description": "Compose a colorful image from vectorized waves, rings and projection.",
+          "kind": "script",
           "tags": [
             "generative-art",
             "image",
@@ -678,6 +724,7 @@
         {
           "title": "Interactive analog clock",
           "description": "Animate clock hands live and stop the animation with a UI control.",
+          "kind": "script",
           "tags": [
             "animation",
             "uicontrol",
@@ -691,6 +738,7 @@
         {
           "title": "Twisted surface animation",
           "description": "Animate a bounded sequence of smoothly deformed parametric surfaces.",
+          "kind": "script",
           "tags": [
             "3d",
             "surface",
@@ -704,6 +752,7 @@
         {
           "title": "Realtime 3D Boing Ball",
           "description": "Bounce a shaded checkered ball across a three-dimensional room with direction-linked spin and dynamic floor and wall shadows.",
+          "kind": "script",
           "tags": [
             "animation",
             "3d",
@@ -718,6 +767,7 @@
         {
           "title": "Formula racing aerodynamic trade-off",
           "description": "Compare low-drag and high-downforce setups with animated cars, speed profiles and lap-time delta.",
+          "kind": "script",
           "tags": [
             "animation",
             "simulation",
@@ -731,6 +781,7 @@
         {
           "title": "Aircraft flight animation",
           "description": "Follow a fixed-wing aircraft along a three-dimensional path with synchronized telemetry and an artificial horizon.",
+          "kind": "script",
           "tags": [
             "animation",
             "simulation",
@@ -745,6 +796,7 @@
         {
           "title": "Rigid triple pendulum",
           "description": "Animate three distributed-mass rigid rods with coupled nonlinear dynamics, angle traces and energy monitoring.",
+          "kind": "script",
           "tags": [
             "animation",
             "simulation",
@@ -760,6 +812,7 @@
         {
           "title": "Potential flow past a cylinder",
           "description": "Advect tracer particles through the potential flow past a circular cylinder, with live sliders for circulation and free-stream speed.",
+          "kind": "script",
           "tags": [
             "fluid",
             "animation",
@@ -773,6 +826,7 @@
         {
           "title": "Vibrating membrane (normal modes)",
           "description": "Animated 3D surface of the standing-wave normal modes of a rectangular membrane, with live sliders to reshape the mode amplitudes.",
+          "kind": "script",
           "tags": [
             "animation",
             "waves",
@@ -786,6 +840,7 @@
         {
           "title": "Harmonograph",
           "description": "Animate a harmonograph tracing decaying Lissajous figures with a moving pen and interactive frequency and damping controls.",
+          "kind": "script",
           "tags": [
             "animation",
             "curves",
@@ -799,6 +854,7 @@
         {
           "title": "Realtime demoscene reel",
           "description": "Run a fullscreen, music-synchronized demoscene reel with plasma, tunnel, starfield, rotozoomer, a flat-shaded 3D vector cube and a sine scroller, all software-rendered in pure Nelson over a procedurally generated synthwave soundtrack.",
+          "kind": "script",
           "tags": [
             "animation",
             "demoscene",
@@ -811,8 +867,38 @@
           "file": "/modules/graphics/examples/demoscene.m"
         },
         {
+          "title": "uihtml: a page and Nelson exchanging values",
+          "description": "A slider in an HTML page sends its value to Nelson, which converts it and writes the result back into Data.",
+          "kind": "script",
+          "tags": [
+            "uihtml",
+            "html",
+            "interactive"
+          ],
+          "requirements": [
+            "web_gui"
+          ],
+          "file": "/modules/graphics/examples/uihtml_unit_converter.m"
+        },
+        {
+          "title": "uihtml: wave packet in a well you shape",
+          "description": "Nelson diagonalises the Hamiltonian once per shape change; the page animates the exact evolution at 60 fps, phase drawn as hue.",
+          "kind": "script",
+          "tags": [
+            "uihtml",
+            "quantum",
+            "interactive",
+            "animation"
+          ],
+          "requirements": [
+            "web_gui"
+          ],
+          "file": "/modules/graphics/examples/uihtml_wave_packet.m"
+        },
+        {
           "title": "Portable curves and peaks",
           "description": "Render a sine curve and an interactive peaks surface with the portable plotting backend.",
+          "kind": "script",
           "tags": [
             "plot",
             "surface",
@@ -826,6 +912,7 @@
         {
           "title": "Bi-level ventilator monitor",
           "description": "Simulate a single-compartment lung under bi-level PC-AC ventilation with live pressure, flow and volume waveforms, a pressure-volume loop, real-time monitoring and adjustable settings.",
+          "kind": "script",
           "tags": [
             "ui",
             "simulation",
@@ -847,6 +934,7 @@
         {
           "title": "Export a plot as an image",
           "description": "Render a hidden figure and save it as a PNG in the temporary directory.",
+          "kind": "script",
           "tags": [
             "graphics",
             "export"
@@ -866,6 +954,7 @@
         {
           "title": "HDF5 dataset round trip",
           "description": "Create a dataset in a temporary HDF5 file and read it back.",
+          "kind": "script",
           "tags": [
             "hdf5",
             "data"
@@ -883,6 +972,7 @@
         {
           "title": "Denoise a grayscale image",
           "description": "Apply a median filter to synthetic impulse noise.",
+          "kind": "script",
           "tags": [
             "image",
             "filtering"
@@ -895,6 +985,7 @@
         {
           "title": "Binary image morphology",
           "description": "Clean binary regions and display their boundaries.",
+          "kind": "script",
           "tags": [
             "image",
             "morphology"
@@ -907,6 +998,7 @@
         {
           "title": "Rotate a synthetic image",
           "description": "Animate bilinear image rotation without relying on an external image file.",
+          "kind": "script",
           "tags": [
             "image",
             "rotation",
@@ -920,6 +1012,7 @@
         {
           "title": "Sobel edge detection",
           "description": "Compute horizontal and vertical gradients on a self-contained synthetic image.",
+          "kind": "script",
           "tags": [
             "image",
             "edges",
@@ -940,6 +1033,7 @@
         {
           "title": "Fixed-width integer arithmetic",
           "description": "Inspect integer ranges and saturation during conversion and arithmetic.",
+          "kind": "script",
           "tags": [
             "integer",
             "conversion",
@@ -958,6 +1052,7 @@
         {
           "title": "Read and write JSON",
           "description": "Inspect a patient record and write a formatted copy in the temporary directory.",
+          "kind": "script",
           "tags": [
             "json",
             "files",
@@ -976,6 +1071,7 @@
         {
           "title": "Solve a linear system",
           "description": "Solve a small symmetric system and verify its residual.",
+          "kind": "script",
           "tags": [
             "linear-system",
             "beginner"
@@ -986,6 +1082,7 @@
         {
           "title": "Compare matrix decompositions",
           "description": "Validate LU, QR and eigenvalue factorizations numerically.",
+          "kind": "script",
           "tags": [
             "decomposition",
             "matrix"
@@ -996,6 +1093,7 @@
         {
           "title": "Preconditioned conjugate gradient",
           "description": "Compare an iterative sparse solve with and without incomplete Cholesky preconditioning.",
+          "kind": "script",
           "tags": [
             "iterative-solver",
             "sparse",
@@ -1014,6 +1112,7 @@
         {
           "title": "Filter data with logical masks",
           "description": "Combine conditions to select and replace measurements without loops.",
+          "kind": "script",
           "tags": [
             "logical",
             "indexing",
@@ -1032,6 +1131,7 @@
         {
           "title": "MAT file round trip",
           "description": "Save selected variables to a temporary data file and reload them.",
+          "kind": "script",
           "tags": [
             "mat-file",
             "workspace"
@@ -1049,6 +1149,7 @@
         {
           "title": "Create and test a module",
           "description": "Build a minimal module in the temporary directory, load it, test it and unload it.",
+          "kind": "script",
           "tags": [
             "module",
             "testing"
@@ -1066,12 +1167,48 @@
         {
           "title": "NetCDF variable round trip",
           "description": "Create a temporary NetCDF variable and read its values back.",
+          "kind": "script",
           "tags": [
             "netcdf",
             "data"
           ],
           "requirements": [],
           "file": "/modules/netcdf/examples/netcdf_roundtrip.m"
+        }
+      ]
+    },
+    {
+      "name": "notebook",
+      "title": "notebook",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "Notebook showcase",
+          "description": "A ready-made .nlx document with every block kind - headings, text, a LaTeX equation, figures, interactive controls and a live task. Opens in the Notebook editor.",
+          "kind": "command",
+          "tags": [
+            "notebook",
+            "nlx",
+            "visualization"
+          ],
+          "requirements": [
+            "web_gui"
+          ],
+          "command": "edit([modulepath('notebook'), '/examples/notebook_showcase.nlx'])"
+        },
+        {
+          "title": "Interactive signals",
+          "description": "A ready-made .nlx document whose sliders reshape a waveform and update its spectrum live. Opens in the Notebook editor.",
+          "kind": "command",
+          "tags": [
+            "notebook",
+            "nlx",
+            "signal"
+          ],
+          "requirements": [
+            "web_gui"
+          ],
+          "command": "edit([modulepath('notebook'), '/examples/interactive_signals.nlx'])"
         }
       ]
     },
@@ -1083,6 +1220,7 @@
         {
           "title": "Bouncing ball events",
           "description": "Integrate a bouncing ball model with event detection.",
+          "kind": "script",
           "tags": [
             "ode",
             "events"
@@ -1095,6 +1233,7 @@
         {
           "title": "Boundary-value problem",
           "description": "Solve a delayed boundary-value problem with additional options.",
+          "kind": "script",
           "tags": [
             "dde",
             "boundary-value"
@@ -1105,6 +1244,7 @@
         {
           "title": "Delay sensitivity",
           "description": "Study sensitivities in a delayed differential system.",
+          "kind": "script",
           "tags": [
             "ode",
             "sensitivity"
@@ -1115,6 +1255,7 @@
         {
           "title": "Fully implicit system",
           "description": "Compute consistent initial conditions for an implicit system.",
+          "kind": "script",
           "tags": [
             "ode",
             "implicit"
@@ -1125,6 +1266,7 @@
         {
           "title": "Events and interpolation",
           "description": "Use solver objects, event locations and dense interpolation.",
+          "kind": "script",
           "tags": [
             "ode",
             "events"
@@ -1135,6 +1277,7 @@
         {
           "title": "Sparse preconditioning",
           "description": "Solve a larger system with a sparse preconditioner.",
+          "kind": "script",
           "tags": [
             "ode",
             "sparse"
@@ -1145,6 +1288,7 @@
         {
           "title": "Measure ode45 convergence",
           "description": "Compare measured integration errors with fourth- and fifth-order reference slopes.",
+          "kind": "script",
           "tags": [
             "ode45",
             "accuracy",
@@ -1158,6 +1302,7 @@
         {
           "title": "Lorenz attractor",
           "description": "Integrate a chaotic three-state system and display its phase-space trajectory.",
+          "kind": "script",
           "tags": [
             "ode45",
             "chaos",
@@ -1171,6 +1316,7 @@
         {
           "title": "Black hole funnel orbit",
           "description": "Orbit a point mass on the curved z = -1/r funnel and relaunch it from an interactive control panel.",
+          "kind": "script",
           "tags": [
             "ode45",
             "animation",
@@ -1184,6 +1330,7 @@
         {
           "title": "Levitron spinning top",
           "description": "Integrate the heavy symmetric-top equations and animate the hovering, precessing and nutating top in 3D.",
+          "kind": "script",
           "tags": [
             "ode45",
             "animation",
@@ -1197,6 +1344,7 @@
         {
           "title": "Solar system (N-body gravity)",
           "description": "Precompute a softened 3D N-body solar system with ode45, then animate planets on inclined orbits with fading trails and interactive controls.",
+          "kind": "script",
           "tags": [
             "ode45",
             "animation",
@@ -1211,6 +1359,7 @@
         {
           "title": "Strange attractors gallery",
           "description": "Pick a famous 3D strange attractor (Aizawa, Rossler, Thomas, Halvorsen, Lorenz), integrate it with ode45 and animate a growing, slowly rotating comet that traces the chaotic orbit.",
+          "kind": "script",
           "tags": [
             "ode45",
             "chaos",
@@ -1232,6 +1381,7 @@
         {
           "title": "Unconstrained minimization",
           "description": "Locate the minimum of a smooth two-variable objective.",
+          "kind": "script",
           "tags": [
             "optimization",
             "unconstrained"
@@ -1242,6 +1392,7 @@
         {
           "title": "Constrained quadratic program",
           "description": "Solve a bounded quadratic problem with a linear inequality.",
+          "kind": "script",
           "tags": [
             "optimization",
             "constraints"
@@ -1252,6 +1403,7 @@
         {
           "title": "Fit a noisy ellipse",
           "description": "Estimate the center, axes and rotation of an ellipse using unconstrained optimization.",
+          "kind": "script",
           "tags": [
             "fitting",
             "geometry",
@@ -1272,6 +1424,7 @@
         {
           "title": "Define an overloaded class",
           "description": "Use a class folder to customize display, indexing and addition.",
+          "kind": "script",
           "tags": [
             "objects",
             "operators"
@@ -1289,6 +1442,7 @@
         {
           "title": "Parquet table round trip",
           "description": "Write a typed table to a temporary Parquet file and read it back.",
+          "kind": "script",
           "tags": [
             "parquet",
             "table"
@@ -1306,6 +1460,7 @@
         {
           "title": "Polynomial roots and coefficients",
           "description": "Build a polynomial from roots and recover them numerically.",
+          "kind": "script",
           "tags": [
             "polynomial",
             "roots"
@@ -1323,6 +1478,7 @@
         {
           "title": "Profile a computation",
           "description": "Collect timing information for repeated matrix decompositions.",
+          "kind": "script",
           "tags": [
             "profiling",
             "performance"
@@ -1340,6 +1496,7 @@
         {
           "title": "Reproducible random samples",
           "description": "Seed the generator and create uniform and normal samples.",
+          "kind": "script",
           "tags": [
             "random",
             "reproducibility"
@@ -1350,6 +1507,7 @@
         {
           "title": "Estimate pi with Monte Carlo sampling",
           "description": "Visualize how uniformly distributed random points approximate the area of a circle.",
+          "kind": "script",
           "tags": [
             "random",
             "monte-carlo",
@@ -1370,6 +1528,7 @@
         {
           "title": "Filter a noisy signal",
           "description": "Design an FIR filter and smooth a synthetic measurement.",
+          "kind": "script",
           "tags": [
             "signal",
             "filter"
@@ -1382,6 +1541,7 @@
         {
           "title": "Inspect a signal spectrum",
           "description": "Use a Fourier transform to reveal two frequency components.",
+          "kind": "script",
           "tags": [
             "signal",
             "spectrum"
@@ -1394,6 +1554,7 @@
         {
           "title": "Track a chirp with a spectrogram",
           "description": "Use short-time spectral analysis to reveal a frequency sweep over time.",
+          "kind": "script",
           "tags": [
             "signal",
             "spectrogram",
@@ -1415,6 +1576,7 @@
         {
           "title": "Solve a sparse Poisson system",
           "description": "Assemble a banded sparse operator and solve a boundary-value discretization.",
+          "kind": "script",
           "tags": [
             "sparse",
             "linear-system"
@@ -1425,6 +1587,7 @@
         {
           "title": "Reduce sparse matrix bandwidth",
           "description": "Visualize a shuffled Poisson matrix and reduce its bandwidth with reverse Cuthill-McKee ordering.",
+          "kind": "script",
           "tags": [
             "sparse",
             "ordering",
@@ -1446,6 +1609,7 @@
         {
           "title": "Compare interpolation methods",
           "description": "Reconstruct a smooth signal from sparse samples with four interpolation methods.",
+          "kind": "script",
           "tags": [
             "interpolation",
             "interp1",
@@ -1466,6 +1630,7 @@
         {
           "title": "Spreadsheet round trip",
           "description": "Write a table to a temporary workbook and read it back.",
+          "kind": "script",
           "tags": [
             "spreadsheet",
             "table"
@@ -1483,6 +1648,7 @@
         {
           "title": "Descriptive statistics",
           "description": "Summarize measurements with central tendency, spread and a robust range.",
+          "kind": "script",
           "tags": [
             "statistics",
             "beginner"
@@ -1493,6 +1659,7 @@
         {
           "title": "Correlation analysis",
           "description": "Quantify the linear association between paired observations.",
+          "kind": "script",
           "tags": [
             "statistics",
             "correlation"
@@ -1503,6 +1670,7 @@
         {
           "title": "Weibull inverse sampling",
           "description": "Generate a Weibull population from uniform random values and compare bin probabilities.",
+          "kind": "script",
           "tags": [
             "distribution",
             "sampling",
@@ -1516,6 +1684,7 @@
         {
           "title": "K-means clustering",
           "description": "Partition a two-dimensional dataset and visualize observations with their estimated centers.",
+          "kind": "script",
           "tags": [
             "statistics",
             "clustering",
@@ -1536,6 +1705,7 @@
         {
           "title": "Parse measurement records",
           "description": "Split structured text records and convert their numeric fields.",
+          "kind": "script",
           "tags": [
             "text",
             "parsing",
@@ -1554,6 +1724,7 @@
         {
           "title": "Build and filter a table",
           "description": "Create typed columns and select rows with a logical condition.",
+          "kind": "script",
           "tags": [
             "table",
             "filtering"
@@ -1564,6 +1735,7 @@
         {
           "title": "Join related tables",
           "description": "Combine measurements and metadata by a shared station key.",
+          "kind": "script",
           "tags": [
             "table",
             "join"
@@ -1581,6 +1753,7 @@
         {
           "title": "Run a unit test",
           "description": "Create a temporary assertion-based test and execute it with the test manager.",
+          "kind": "script",
           "tags": [
             "testing",
             "automation"
@@ -1598,6 +1771,7 @@
         {
           "title": "Calendar arithmetic",
           "description": "Build a monthly schedule while preserving calendar semantics at month ends.",
+          "kind": "script",
           "tags": [
             "datetime",
             "calendar",
@@ -1616,6 +1790,7 @@
         {
           "title": "Coordinate-system round trip",
           "description": "Convert planar and spatial points between Cartesian, polar and spherical coordinates.",
+          "kind": "script",
           "tags": [
             "coordinates",
             "polar",
@@ -1634,6 +1809,7 @@
         {
           "title": "Parse function inputs",
           "description": "Define required, optional and named arguments with validation.",
+          "kind": "script",
           "tags": [
             "validation",
             "functions"
@@ -1644,6 +1820,7 @@
         {
           "title": "Validate attributes",
           "description": "Check value type, dimensions and numeric constraints.",
+          "kind": "script",
           "tags": [
             "validation",
             "errors"
@@ -1654,6 +1831,7 @@
         {
           "title": "Validate text choices",
           "description": "Resolve a text value against an accepted set.",
+          "kind": "script",
           "tags": [
             "validation",
             "text"
@@ -1671,6 +1849,7 @@
         {
           "title": "XML document round trip",
           "description": "Write XML to a temporary file, parse it and serialize the document.",
+          "kind": "script",
           "tags": [
             "xml",
             "data"

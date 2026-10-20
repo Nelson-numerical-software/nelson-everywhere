@@ -493,6 +493,24 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
         if (!encoded) throw new Error(`Figure ${Number(handle)} is unavailable`);
         return encoded;
       }),
+    clearCurrentFigure: () =>
+      enqueue(async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableClearCurrentFigure !== "function"
+        ) {
+          throw new Error("Portable current-figure reset is unavailable");
+        }
+        await portableCcall(
+          instance,
+          "nlsPortableClearCurrentFigure",
+          null,
+          [],
+          [],
+        );
+        return { ok: true };
+      }),
     saveFigure: (handle, path, options = {}) =>
       enqueue(async () => {
         const instance = await initialize();

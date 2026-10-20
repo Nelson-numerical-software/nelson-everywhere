@@ -53,6 +53,7 @@
     "nflow_blocks",
     "nflow_engine",
     "nflow_fmi",
+    "notebook",
     "ode_solvers",
     "operators",
     "optimization",
@@ -115,6 +116,7 @@
     "spreadsheet",
     "statistics",
     "virtual-filesystem",
+    "web_gui",
     "worker",
     "xml"
   ],

@@ -70,6 +70,7 @@ const REQUEST_TYPES = new Set([
   "debugger.state",
   "debugger.toggleBreakpoint",
   "figure.close",
+  "figure.clearCurrent",
   "figure.getImage",
   "figure.keyEvent",
   "figure.mouseEvent",
@@ -272,6 +273,8 @@ export function validateWorkerRequest(request) {
       }
       break;
     }
+    case "figure.clearCurrent":
+      break;
     case "figure.close":
     case "figure.getImage":
     case "figure.setView": {
@@ -612,6 +615,7 @@ export function extractUiActions(stdout) {
         typeof action.path === "string" &&
         (action.line === undefined || Number.isSafeInteger(action.line))
       ) &&
+      !(action?.type === "open-notebook" && typeof action.path === "string") &&
       !isPlayAudioAction(action) &&
       !isAudioBufferBeginAction(action) &&
       !isAudioBufferChunkAction(action) &&

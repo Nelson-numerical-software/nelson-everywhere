@@ -287,7 +287,7 @@
             "runtime-resources/modules/types/tests/test_vector_extract.m",
             "runtime-resources/modules/types/tests/TestEnumColor.m"
           ],
-          "bytes": 275593
+          "bytes": 277730
         }
       }
     },
@@ -1771,7 +1771,7 @@
             "runtime-resources/modules/interpreter/tests/vm_semantic_parity_evalin_caller.m",
             "runtime-resources/modules/interpreter/tests/vm_semantic_parity_sum.m"
           ],
-          "bytes": 1396975
+          "bytes": 1396903
         }
       }
     },
@@ -3353,6 +3353,22 @@
       }
     },
     {
+      "module": "notebook",
+      "tests": true,
+      "help": false,
+      "archives": false,
+      "bundles": {
+        "tests": {
+          "file": "runtime-resources/bundles/notebook-tests.nlpack",
+          "files": [
+            "runtime-resources/modules/notebook/tests/test_gallery_examples.m",
+            "runtime-resources/modules/notebook/tests/test_notebook.m"
+          ],
+          "bytes": 3193
+        }
+      }
+    },
+    {
       "module": "handle",
       "tests": true,
       "help": false,
@@ -4017,6 +4033,7 @@
             "runtime-resources/modules/graphics/tests/test_figure_position_readback.m",
             "runtime-resources/modules/graphics/tests/test_figure_properties.m",
             "runtime-resources/modules/graphics/tests/test_figure_resize_pixel_ui_anchor.m",
+            "runtime-resources/modules/graphics/tests/test_figure_resize_title_repack.m",
             "runtime-resources/modules/graphics/tests/test_figure_resize.m",
             "runtime-resources/modules/graphics/tests/test_figure_selectiontype.m",
             "runtime-resources/modules/graphics/tests/test_figure_sizechanged_uicontrols.m",
@@ -4632,10 +4649,13 @@
             "runtime-resources/modules/graphics/tests/test_waterfall.m",
             "runtime-resources/modules/graphics/tests/test_web_display_list_target_axes_view.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_3d_scales.m",
+            "runtime-resources/modules/graphics/tests/test_web_figure_action_current_axes.m",
+            "runtime-resources/modules/graphics/tests/test_web_figure_area_is_2d.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_callbacks_deferred.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_deferred_action.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_dense_wireframe_text.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_fast_rotation.m",
+            "runtime-resources/modules/graphics/tests/test_web_figure_fill_is_2d.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_fit.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_inspector.m",
             "runtime-resources/modules/graphics/tests/test_web_figure_navigation_scales.m",
@@ -4676,7 +4696,7 @@
             "runtime-resources/modules/graphics/tests/test_zticklabels.m",
             "runtime-resources/modules/graphics/tests/test_zticks.m"
           ],
-          "bytes": 7083073
+          "bytes": 7093604
         }
       }
     },
@@ -4919,7 +4939,7 @@
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_waveform_sources.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_zdiode.m"
           ],
-          "bytes": 630159
+          "bytes": 650544
         }
       }
     },
@@ -5252,7 +5272,7 @@
             "runtime-resources/modules/nflow_engine/tests/trig_cos_ramp.csv",
             "runtime-resources/modules/nflow_engine/tests/trig_cos_ramp.nflow"
           ],
-          "bytes": 1432470
+          "bytes": 1432793
         }
       }
     },
@@ -5898,7 +5918,7 @@
             "runtime-resources/modules/ode_solvers/tests/test_odeset.m",
             "runtime-resources/modules/ode_solvers/tests/test_odextend.m"
           ],
-          "bytes": 246701
+          "bytes": 247036
         }
       }
     },
@@ -7284,7 +7304,7 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5801213
+          "bytes": 5803037
         },
         "archives": [
           {
@@ -7824,14 +7844,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
             ],
-            "bytes": 912221
+            "bytes": 913194
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz"
             ],
-            "bytes": 943504
+            "bytes": 944465
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",
@@ -7930,6 +7950,20 @@
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_fmi.help.fr_FR.nhz"
             ],
             "bytes": 52528
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.notebook.help.en_US.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.notebook.help.en_US.nhz"
+            ],
+            "bytes": 33236
+          },
+          {
+            "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.notebook.help.fr_FR.nhz.nlpack",
+            "files": [
+              "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.notebook.help.fr_FR.nhz"
+            ],
+            "bytes": 33496
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.ode_solvers.help.en_US.nhz.nlpack",
@@ -8781,7 +8815,7 @@
             "runtime-resources/modules/main/tests/test_nelsonc.ps1",
             "runtime-resources/modules/main/tests/test_qt_runtime_copy.ps1"
           ],
-          "bytes": 213708
+          "bytes": 214435
         }
       }
     },
@@ -9038,7 +9072,7 @@
             "runtime-resources/modules/nflow_gui/tests/wasm/fmu.spec.ts",
             "runtime-resources/modules/nflow_gui/tests/wasm/playwright.config.ts"
           ],
-          "bytes": 1683298
+          "bytes": 1685808
         }
       }
     }

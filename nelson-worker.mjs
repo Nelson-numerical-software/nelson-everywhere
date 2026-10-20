@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=40891b4bc748";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=40891b4bc748";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=8e90c57766f8";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=8e90c57766f8";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,11 +14,11 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=40891b4bc748";
+} from "./nelson-worker-protocol.mjs?build=8e90c57766f8";
 
 const PROTOCOL_VERSION = 1;
-import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=40891b4bc748";
-import { simulateNFlow } from "./nflow-worker.mjs?build=40891b4bc748";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=8e90c57766f8";
+import { simulateNFlow } from "./nflow-worker.mjs?build=8e90c57766f8";
 const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";
@@ -944,17 +944,39 @@ async function setFigureView(
   if (!Number.isFinite(az) || !Number.isFinite(el)) {
     throw new Error("Invalid WebAssembly figure view");
   }
+  // Keep view updates on the same generic Nelson action path as zoom, pan,
+  // and rotation.  Calling the axes-qualified display-list overload directly
+  // is not safe while visible axes decorations are being refreshed: that
+  // overload can receive a transient handle array and raise
+  // conversionNotSupported.  __web_figure_action__ centralises the visible
+  // versus retained (compact) rendering decision in one place.
+  const request = {
+    action: "view",
+    axesHandle: targetAxesHandle,
+    azimuth: az,
+    elevation: el,
+    compactView: compactView === true,
+    softwareFallback: false,
+  };
   const code = [
-    `nelsonWasmViewFrame = __web_display_list__(${figureHandle}, ${targetAxesHandle}, ${az}, ${el}, ${
-      compactView ? "true" : "false"
-    });`,
-    `disp(['${FIGURE_BEGIN}', nelsonWasmViewFrame, '${FIGURE_END}']);`,
-    "clear nelsonWasmViewFrame;",
+    `disp(['${FIGURE_ACTION_BEGIN}', __web_figure_action__(${figureHandle}, ${nelsonCharacterExpression(
+      JSON.stringify(request)
+    )}, true), '${FIGURE_ACTION_END}']);`,
   ].join("\n");
   const result = await evaluateRaw(code);
-  const frame = extractFigureFrames(result.stdout).figures[0];
-  if (!frame) throw new Error("Updated figure frame is missing");
-  return { ...frame.displayList, handle: figureHandle };
+  if (result.exitCode !== 0) {
+    throw new Error(result.stderr || "Figure view update failed");
+  }
+  const action = JSON.parse(
+    extractMarkedResult(
+      result.stdout,
+      FIGURE_ACTION_BEGIN,
+      FIGURE_ACTION_END,
+      "Figure view update"
+    )
+  );
+  if (!action.displayList) throw new Error("Updated figure frame is missing");
+  return { ...action.displayList, handle: figureHandle };
 }
 
 async function evaluateFigureAction(statement, resultExpression) {
@@ -990,11 +1012,10 @@ async function setFigureSize(handle, width, height) {
 }
 
 async function figureAction(handle, request) {
+  const compactView = request?.compactView === true;
   const code = `disp(['${FIGURE_ACTION_BEGIN}', __web_figure_action__(${Number(
     handle
-  )}, ${nelsonCharacterExpression(
-    JSON.stringify(request)
-  )}), '${FIGURE_ACTION_END}']);`;
+  )}, ${nelsonCharacterExpression(JSON.stringify(request))}, ${compactView ? "false" : "true"}), '${FIGURE_ACTION_END}']);`;
   const result = await evaluateRaw(code);
   if (result.exitCode !== 0)
     throw new Error(result.stderr || "Figure action failed");
@@ -1389,6 +1410,9 @@ self.addEventListener("message", async (event) => {
         break;
       case "figure.close":
         result = await closeFigure(Number(request.handle));
+        break;
+      case "figure.clearCurrent":
+        result = await runner.clearCurrentFigure();
         break;
       case "figure.getImage":
         result = {

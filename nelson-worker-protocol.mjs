@@ -67,6 +67,7 @@ const REQUEST_TYPES = new Set([
   "completion.request",
   "evaluate",
   "debugger.getBreakpoints",
+  "debugger.rpc",
   "debugger.state",
   "debugger.toggleBreakpoint",
   "figure.close",
@@ -258,6 +259,26 @@ export function validateWorkerRequest(request) {
       if (!Number.isSafeInteger(request.line) || request.line < 1) {
         throw new Error("Invalid debugger breakpoint line");
       }
+      break;
+    case "debugger.rpc":
+      if (
+        typeof request.method !== "string" ||
+        !/^[A-Za-z]{1,64}$/.test(request.method)
+      ) {
+        throw new Error("Invalid debugger method");
+      }
+      if (
+        !request.params ||
+        typeof request.params !== "object" ||
+        Array.isArray(request.params)
+      ) {
+        throw new Error("Invalid debugger parameters");
+      }
+      assertStringByteLimit(
+        JSON.stringify(request.params),
+        WORKER_LIMITS.maxSourceBytes,
+        "Debugger parameters"
+      );
       break;
     case "figure.action": {
       if (
@@ -613,7 +634,8 @@ export function extractUiActions(stdout) {
       !(
         action?.type === "open-editor" &&
         typeof action.path === "string" &&
-        (action.line === undefined || Number.isSafeInteger(action.line))
+        (action.line === undefined || Number.isSafeInteger(action.line)) &&
+        (action.column === undefined || Number.isSafeInteger(action.column))
       ) &&
       !(action?.type === "open-notebook" && typeof action.path === "string") &&
       !isPlayAudioAction(action) &&

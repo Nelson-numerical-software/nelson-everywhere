@@ -1350,18 +1350,18 @@
       ]
     },
     {
-      "name": "nflow:medical",
-      "title": "Medical",
+      "name": "nflow:life_sciences",
+      "title": "Life Sciences",
       "source": "nflow",
       "examples": [
         {
           "title": "Medical Ventilator - Bi-level (PC-AC) with simulated patient",
           "description": "Bi-level (PC-AC) mechanical ventilation on a single-compartment lung. Airway pressure alternates between Pinsp and PEEP; the lung (resistance R, compliance C) responds as a first-order system, giving the decelerating inspiratory flow and the tidal volume of pressure-controlled ventilation. A periodic patient effort (Pmus) is added at each inspiration onset to emulate an assisted breath. Scopes show Pressure / Flow / Volume like a ventilator screen; the XY scope draws the dynamic pressure-volume loop. Settings: PEEP 5, Pinsp 18 cmH2O, RR 15/min, Ti 1.2 s (Width 30%), R 10 cmH2O.s/L, C 0.05 L/cmH2O (tau = R*C = 0.5 s) -> Vt ~ 0.6 L.",
           "kind": "model",
-          "file": "nflow-example:/medical/Ventilator_BiLevel_PCAC_Demo.nflow",
+          "file": "nflow-example:/life_sciences/Mechanical_Ventilation_Demo.nflow",
           "tags": [],
           "requirements": [],
-          "blockCount": 21
+          "blockCount": 32
         }
       ]
     }

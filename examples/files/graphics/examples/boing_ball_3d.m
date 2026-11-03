@@ -14,12 +14,14 @@ function boing_ball_3d()
   gridColor = [0.185 0.245 0.365];
   ballRadius = 1.25;
 
-  figureHandle = uifigure('Color', backgroundColor, ...
+  figureHandle = uifigure('SelectionHighlight', 'off', 'Color', backgroundColor, ...
     'Name', 'Realtime 3D Boing Ball', ...
     'GraphicsSmoothing', 'on');
   set(figureHandle, 'HandleVisibility', 'on');
   axesHandle = uiaxes(figureHandle, 'Color', backgroundColor, ...
     'Units', 'normalized', 'Position', [0 0.08 1 0.92]);
+  % Prevent accidental pan or rotate from disturbing the live animation.
+  disableDefaultInteractivity(axesHandle);
   hold(axesHandle, 'on');
 
   wallY = 5.0;

@@ -47,10 +47,12 @@ particleMarkerSize = max(10, min(42, 460 / sqrt(funnelParticleCount)));
 shadowMarkerSize = max(8, 0.86 * particleMarkerSize);
 figurePosition = funnelFigurePosition();
 
-figureHandle = figure('Name', 'Particle funnel', ...
+figureHandle = figure('SelectionHighlight', 'off', 'Name', 'Particle funnel', ...
   'NumberTitle', 'off', 'Color', [0.035 0.045 0.070], ...
   'Visible', funnelFigureVisible, 'Position', figurePosition);
 axesHandle = axes('Parent', figureHandle, 'Position', [0.05 0.06 0.90 0.88]);
+% Prevent accidental pan or zoom from disturbing the live animation.
+disableDefaultInteractivity(axesHandle);
 hold(axesHandle, 'on');
 image('Parent', axesHandle, 'XData', [-3.2 3.2], 'YData', [0 8.2], ...
   'CData', backgroundImage);

@@ -82,6 +82,7 @@
     "trigonometric_functions",
     "types",
     "validators",
+    "webtools",
     "xml"
   ],
   "capabilities": [
@@ -116,6 +117,7 @@
     "spreadsheet",
     "statistics",
     "virtual-filesystem",
+    "web",
     "web_gui",
     "worker",
     "xml"
@@ -133,6 +135,7 @@
     "threadedWasm": false,
     "dynamicToolboxes": true,
     "virtualFilesystem": true,
+    "web": true,
     "worker": true
   },
   "limits": {

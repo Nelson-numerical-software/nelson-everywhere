@@ -27,7 +27,7 @@ if ~exist('raycasterAutopilot', 'var')
   raycasterAutopilot = false;
 end
 if ~exist('raycasterStartFullscreen', 'var')
-  raycasterStartFullscreen = true;
+  raycasterStartFullscreen = false;
 end
 if ~exist('raycasterShowMinimap', 'var')
   raycasterShowMinimap = false;
@@ -51,7 +51,7 @@ figureWidth = min(960, max(640, screenSize(3) - 80));
 figureHeight = min(690, max(480, screenSize(4) - 100));
 figureLeft = screenSize(1) + max(20, (screenSize(3) - figureWidth) / 2);
 figureBottom = screenSize(2) + max(35, (screenSize(4) - figureHeight) / 2);
-figureHandle = figure('Name', 'Nelson retro raycaster', ...
+figureHandle = figure('SelectionHighlight', 'off', 'Name', 'Nelson retro raycaster', ...
   'NumberTitle', 'off', 'Color', [0.015 0.018 0.028], ...
   'MenuBar', 'none', 'ToolBar', 'none', 'Resize', 'on', ...
   'Visible', raycasterFigureVisible, ...
@@ -63,6 +63,8 @@ figureHandle = figure('Name', 'Nelson retro raycaster', ...
   'WindowScrollWheelFcn', @(source, event) ...
   raycasterScrollWheelEvent(source, event), 'UserData', raycasterState);
 axesHandle = axes('Parent', figureHandle, 'Position', [0 0 1 1]);
+% Prevent accidental pan or zoom from disturbing the live first-person view.
+disableDefaultInteractivity(axesHandle);
 raycasterRenderWidth = raycasterWidth;
 raycasterRenderHeight = raycasterHeight;
 raycasterFrame = zeros(raycasterRenderHeight, raycasterRenderWidth, 3);
@@ -101,8 +103,7 @@ set(statusText, 'KeyPressFcn', @(source, event) ...
 set(statusText, 'KeyReleaseFcn', @(source, event) ...
   raycasterKeyEvent(source, event, false));
 if raycasterStartFullscreen
-  delete(statusText);
-  statusText = [];
+  set(statusText, 'Visible', 'off');
 end
 fpsText = text(axesHandle, raycasterWidth - 4, 5, '-- FPS', ...
   'HorizontalAlignment', 'right', 'VerticalAlignment', 'top', ...

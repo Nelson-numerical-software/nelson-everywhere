@@ -65,6 +65,20 @@
           ],
           "requirements": [],
           "file": "/modules/categorical/examples/categorical_summary.m"
+        },
+        {
+          "title": "Weather category distribution",
+          "description": "Sample a weather mix whose proportions drift over time into a categorical array and animate each category count with the == operator.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "categorical",
+            "distribution"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/categorical/examples/category_distribution.m"
         }
       ]
     },
@@ -148,6 +162,20 @@
           ],
           "requirements": [],
           "file": "/modules/core/examples/workspace_basics.m"
+        },
+        {
+          "title": "SHA-256 avalanche",
+          "description": "Hash a changing message with sha256 and draw the 256-bit digest as a grid, highlighting how a tiny input change flips about half of the output bits.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "sha256",
+            "hashing"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/core/examples/sha256_avalanche.m"
         }
       ]
     },
@@ -177,6 +205,21 @@
           ],
           "requirements": [],
           "file": "/modules/data_analysis/examples/group_observations.m"
+        },
+        {
+          "title": "Live ECG oscilloscope",
+          "description": "Scroll a noisy synthetic ECG across the screen, smooth it with movmean and detect the heartbeats in real time with islocalmax, reading out the heart rate.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "signal",
+            "movmean",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/data_analysis/examples/live_oscilloscope.m"
         }
       ]
     },
@@ -213,6 +256,20 @@
           ],
           "requirements": [],
           "file": "/modules/dictionary/examples/dictionary_lookup.m"
+        },
+        {
+          "title": "Memoized Collatz stopping times",
+          "description": "Resolve Collatz stopping times while a dictionary memoizes every number and orbit intermediate it visits, revealing the banded scatter as the cache grows.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "dictionary",
+            "memoization"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/dictionary/examples/memoized_collatz.m"
         }
       ]
     },
@@ -232,6 +289,20 @@
           ],
           "requirements": [],
           "file": "/modules/elementary_functions/examples/classic_test_matrices.m"
+        },
+        {
+          "title": "Pascal to Sierpinski",
+          "description": "Grow the lower-triangular Pascal matrix from pascal() and colour its odd binomial coefficients to reveal the Sierpinski gasket emerging from the parity pattern.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "pascal",
+            "fractal"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/elementary_functions/examples/pascal_sierpinski.m"
         }
       ]
     },
@@ -250,6 +321,20 @@
           ],
           "requirements": [],
           "file": "/modules/elementary_mathematics/examples/matrix_arithmetic.m"
+        },
+        {
+          "title": "Modular multiplication circle",
+          "description": "Join point i to point (k*i mod n) around a circle and sweep the multiplier k to grow cardioid and nephroid envelopes from pure modular arithmetic.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "modular",
+            "curves"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/elementary_mathematics/examples/modular_multiplication_circle.m"
         }
       ]
     },
@@ -271,6 +356,20 @@
             "gui"
           ],
           "file": "/modules/fftw/examples/two_dimensional_fft.m"
+        },
+        {
+          "title": "FFT image compression",
+          "description": "Keep only the strongest fft2 coefficients of an image and rebuild it with ifft2, sweeping the kept fraction live from a blurry sketch to a perfect reconstruction.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "fft2",
+            "compression"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/fftw/examples/fft_compression.m"
         }
       ]
     },
@@ -326,6 +425,20 @@
           ],
           "requirements": [],
           "file": "/modules/function_handle/examples/parameterized_function.m"
+        },
+        {
+          "title": "Function handle explorer",
+          "description": "Turn plain text expressions into callable handles with str2func, then animate a sweeping parameter and label each curve with func2str.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "function-handle",
+            "str2func"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/function_handle/examples/function_explorer.m"
         }
       ]
     },
@@ -361,6 +474,20 @@
             "gui"
           ],
           "file": "/modules/geometry/examples/scattered_data_interpolation.m"
+        },
+        {
+          "title": "Lloyd relaxation mosaic",
+          "description": "Relax random seeds with repeated voronoin plus polygon-centroid steps until the Voronoi cells settle into an even, honeycomb-like centroidal mosaic.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "voronoi",
+            "relaxation"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/geometry/examples/lloyd_relaxation.m"
         }
       ]
     },
@@ -794,22 +921,6 @@
           "file": "/modules/graphics/examples/aircraft_flight_animation.m"
         },
         {
-          "title": "Rigid triple pendulum",
-          "description": "Animate three distributed-mass rigid rods with coupled nonlinear dynamics, angle traces and energy monitoring.",
-          "kind": "script",
-          "tags": [
-            "animation",
-            "simulation",
-            "mechanics",
-            "chaos"
-          ],
-          "requirements": [
-            "plots",
-            "ode-solvers"
-          ],
-          "file": "/modules/graphics/examples/rigid_triple_pendulum.m"
-        },
-        {
           "title": "Potential flow past a cylinder",
           "description": "Advect tracer particles through the potential flow past a circular cylinder, with live sliders for circulation and free-stream speed.",
           "kind": "script",
@@ -943,6 +1054,20 @@
             "gui"
           ],
           "file": "/modules/graphics_io/examples/export_plot.m"
+        },
+        {
+          "title": "imwrite contact sheet",
+          "description": "Render plasma thumbnails, write each one with imwrite and read it straight back with imread to fill a growing contact sheet.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "imwrite",
+            "imread"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/graphics_io/examples/contact_sheet.m"
         }
       ]
     },
@@ -961,6 +1086,20 @@
           ],
           "requirements": [],
           "file": "/modules/hdf5/examples/hdf5_roundtrip.m"
+        },
+        {
+          "title": "HDF5 point cloud spin",
+          "description": "Write a trefoil-knot point cloud to HDF5 datasets, read it back with h5read and spin the 3-D cloud in real time.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "hdf5",
+            "3d"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/hdf5/examples/point_cloud_spin.m"
         }
       ]
     },
@@ -1041,6 +1180,20 @@
           ],
           "requirements": [],
           "file": "/modules/integer/examples/fixed_width_integers.m"
+        },
+        {
+          "title": "Elementary cellular automaton",
+          "description": "Stream a one-dimensional Wolfram cellular automaton whose uint8 cells scroll downward, drawing Sierpinski triangles (rule 90) or chaos (rule 30).",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "integer",
+            "cellular-automaton"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/integer/examples/cellular_automaton.m"
         }
       ]
     },
@@ -1060,6 +1213,20 @@
           ],
           "requirements": [],
           "file": "/modules/json/examples/json_patient.m"
+        },
+        {
+          "title": "JSON particle fountain",
+          "description": "Decode a JSON scene with jsondecode and animate a particle fountain whose emitters, colours, gravity and drag all come straight from the data.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "json",
+            "particles"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/json/examples/json_particles.m"
         }
       ]
     },
@@ -1138,6 +1305,20 @@
           ],
           "requirements": [],
           "file": "/modules/matio/examples/mat_file_roundtrip.m"
+        },
+        {
+          "title": "MAT-file orbit replay",
+          "description": "Save a precessing three-dimensional rose orbit to a MAT-file, load it back with loadmat and replay it as a rotating comet trail.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "mat-file",
+            "3d"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/matio/examples/orbit_replay.m"
         }
       ]
     },
@@ -1174,6 +1355,20 @@
           ],
           "requirements": [],
           "file": "/modules/netcdf/examples/netcdf_roundtrip.m"
+        },
+        {
+          "title": "NetCDF climate field",
+          "description": "Write a moving temperature-anomaly field to a NetCDF variable, read it back with ncread and play the months back on a diverging blue-red map.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "netcdf",
+            "climate"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/netcdf/examples/climate_field.m"
         }
       ]
     },
@@ -1370,6 +1565,22 @@
             "gui"
           ],
           "file": "/modules/ode_solvers/examples/strange_attractors.m"
+        },
+        {
+          "title": "Rigid triple pendulum",
+          "description": "Animate three distributed-mass rigid rods with coupled nonlinear dynamics, angle traces and energy monitoring.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "simulation",
+            "mechanics",
+            "chaos"
+          ],
+          "requirements": [
+            "plots",
+            "ode-solvers"
+          ],
+          "file": "/modules/ode_solvers/examples/rigid_triple_pendulum.m"
         }
       ]
     },
@@ -1431,6 +1642,21 @@
           ],
           "requirements": [],
           "file": "/modules/overload/examples/complex/example_complex.m"
+        },
+        {
+          "title": "Quaternion rotating cube",
+          "description": "Define a quaternion class that overloads the * operator with the Hamilton product, then spin a 3-D cube by composing rotations with it frame after frame.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "operators",
+            "quaternion",
+            "3d"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/overload/examples/quaternion/rotating_cube.m"
         }
       ]
     },
@@ -1449,6 +1675,20 @@
           ],
           "requirements": [],
           "file": "/modules/parquet/examples/parquet_roundtrip.m"
+        },
+        {
+          "title": "Parquet galaxy density",
+          "description": "Write two hundred thousand spiral-galaxy stars to a Parquet file, stream them back and bin them into a live two-dimensional density map.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "parquet",
+            "big-data"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/parquet/examples/galaxy_density.m"
         }
       ]
     },
@@ -1467,6 +1707,21 @@
           ],
           "requirements": [],
           "file": "/modules/polynomial_functions/examples/polynomial_roots.m"
+        },
+        {
+          "title": "Newton fractal",
+          "description": "Zoom into the Newton basins of z^3 - 1 in the complex plane, each pixel coloured by the root it reaches, with a live pixels-per-second read-out.",
+          "kind": "script",
+          "tags": [
+            "fractal",
+            "complex",
+            "animation",
+            "audio"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/polynomial_functions/examples/newton_fractal.m"
         }
       ]
     },
@@ -1485,6 +1740,20 @@
           ],
           "requirements": [],
           "file": "/modules/profiler/examples/profile_computation.m"
+        },
+        {
+          "title": "Profiler hotspots",
+          "description": "Profile a mixed workload with profile() and reveal where the time went as animated horizontal bars, longest first.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "profiling",
+            "performance"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/profiler/examples/profile_flame.m"
         }
       ]
     },
@@ -1517,6 +1786,21 @@
             "plots"
           ],
           "file": "/modules/random/examples/monte_carlo_pi.m"
+        },
+        {
+          "title": "Galton board bell curve",
+          "description": "Drop balls through a peg board where each fair coin from rand sends them left or right, and watch the bins fill into the normal curve in real time.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "random",
+            "statistics",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/random/examples/galton_board.m"
         }
       ]
     },
@@ -1598,6 +1882,21 @@
             "gui"
           ],
           "file": "/modules/sparse/examples/sparsity_ordering.m"
+        },
+        {
+          "title": "Sparse heat diffusion",
+          "description": "Diffuse heat across a plate in real time with a sparse five-point Laplacian built from spdiags and kron, while two hot spots orbit and keep injecting energy.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "sparse",
+            "simulation",
+            "realtime"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/sparse/examples/heat_diffusion.m"
         }
       ]
     },
@@ -1619,6 +1918,20 @@
             "gui"
           ],
           "file": "/modules/special_functions/examples/interpolation_methods.m"
+        },
+        {
+          "title": "Ulam spiral of primes",
+          "description": "Wind the integers along a square spiral and light up the primes from primes(), revealing the diagonal streaks that still puzzle number theory.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "primes",
+            "number-theory"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/special_functions/examples/ulam_spiral.m"
         }
       ]
     },
@@ -1637,6 +1950,20 @@
           ],
           "requirements": [],
           "file": "/modules/spreadsheet/examples/spreadsheet_roundtrip.m"
+        },
+        {
+          "title": "Sales bar race",
+          "description": "Write monthly cumulative sales to a CSV, read them back with readtable and race the products as sorted bars month after month.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "spreadsheet",
+            "table"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/spreadsheet/examples/sales_race.m"
         }
       ]
     },
@@ -1713,6 +2040,20 @@
           ],
           "requirements": [],
           "file": "/modules/string/examples/parse_measurements.m"
+        },
+        {
+          "title": "Sine scroller banner",
+          "description": "Build a marquee with strjoin and pad, then scroll it as a rainbow sine wave of characters in the demoscene tradition.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "strings",
+            "demoscene"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/string/examples/sine_scroller.m"
         }
       ]
     },
@@ -1779,6 +2120,20 @@
           ],
           "requirements": [],
           "file": "/modules/time/examples/calendar_arithmetic.m"
+        },
+        {
+          "title": "World clock",
+          "description": "Tick four analog clocks from the live clock, shifting each by a city hour offset with datenum and datevec serial-date arithmetic.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "time",
+            "clock"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/time/examples/world_clock.m"
         }
       ]
     },
@@ -1798,6 +2153,20 @@
           ],
           "requirements": [],
           "file": "/modules/trigonometric_functions/examples/coordinate_transforms.m"
+        },
+        {
+          "title": "Lissajous figure with sound",
+          "description": "Morph a Lissajous curve x = sin(a t), y = sin(b t + phase) while a chord of the two frequencies plays, so a simple ratio is seen and heard as a consonant interval.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "trigonometry",
+            "audio"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/trigonometric_functions/examples/lissajous_sound.m"
         }
       ]
     },
@@ -1856,6 +2225,20 @@
           ],
           "requirements": [],
           "file": "/modules/xml/examples/xml_roundtrip.m"
+        },
+        {
+          "title": "XML bouncing-ball scene",
+          "description": "Write a scene of balls to XML with writestruct, read it back with readstruct and animate the balls bouncing, so the XML file fully drives the picture.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "xml",
+            "scene"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/xml/examples/xml_scene.m"
         }
       ]
     }

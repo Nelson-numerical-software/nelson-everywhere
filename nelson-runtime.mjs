@@ -618,6 +618,31 @@ export function createPersistentNelsonRunner(factory, defaultOptions = {}) {
           )) || '{"lines":[]}',
         );
       }),
+    debuggerRpc: (method, params = {}) => {
+      const call = async () => {
+        const instance = await initialize();
+        if (
+          typeof instance.ccall !== "function" ||
+          typeof instance._nlsPortableDebuggerRpc !== "function"
+        ) {
+          return { error: "debugger bridge unavailable" };
+        }
+        return JSON.parse(
+          (await portableCcall(
+            instance,
+            "nlsPortableDebuggerRpc",
+            "string",
+            ["string", "string"],
+            [String(method), JSON.stringify(params ?? {})],
+          )) || "{}",
+        );
+      };
+      // pause must reach a running engine: it bypasses the serialized call queue
+      if (method === "command" && params && params.cmd === "pause") {
+        return call();
+      }
+      return enqueue(call);
+    },
     loadUserModules: (options = {}) =>
       enqueue(async () => {
         const instance = await initialize();

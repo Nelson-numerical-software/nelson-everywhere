@@ -22,9 +22,11 @@ killRate = 0.062;
 timeStep = 1;
 laplacianKernel = [0 0.20 0; 0.20 -1 0.20; 0 0.20 0];
 
-figureHandle = figure('Name', 'Gray-Scott reaction diffusion', ...
+figureHandle = figure('SelectionHighlight', 'off', 'ToolBar', 'none', 'Name', 'Gray-Scott reaction diffusion', ...
   'NumberTitle', 'off');
 axesHandle = axes('Parent', figureHandle);
+% Prevent accidental pan or zoom from disturbing the live animation.
+disableDefaultInteractivity(axesHandle);
 imageHandle = image('Parent', axesHandle, 'CData', v, ...
   'CDataMapping', 'scaled');
 axis(axesHandle, 'image');

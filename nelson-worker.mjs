@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=8e90c57766f8";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=8e90c57766f8";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=6d4707302099";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=6d4707302099";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,11 +14,12 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=8e90c57766f8";
+} from "./nelson-worker-protocol.mjs?build=6d4707302099";
 
 const PROTOCOL_VERSION = 1;
-import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=8e90c57766f8";
-import { simulateNFlow } from "./nflow-worker.mjs?build=8e90c57766f8";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=6d4707302099";
+import { performSyncWebRequest } from "./nelson-web-request.mjs?build=6d4707302099";
+import { simulateNFlow } from "./nflow-worker.mjs?build=6d4707302099";
 const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";
@@ -276,6 +277,8 @@ async function initialize(
       onNelsonNFlowFetchEvents: fetchPendingNFlowEvents,
       onNelsonPollCommand: pollCooperativeCommand,
       onNelsonInput: requestInput,
+      // webread/websave/webwrite: a blocking XMLHttpRequest on this Worker.
+      onNelsonWebRequest: performSyncWebRequest,
     },
   };
   runner = createPersistentNelsonRunner(runnerFactory, runnerOptions);
@@ -1380,6 +1383,12 @@ self.addEventListener("message", async (event) => {
         result = await runner.debuggerToggleBreakpoint(
           String(request.file ?? ""),
           Number(request.line) || 0
+        );
+        break;
+      case "debugger.rpc":
+        result = await runner.debuggerRpc(
+          String(request.method ?? ""),
+          request.params ?? {}
         );
         break;
       case "figure.action":

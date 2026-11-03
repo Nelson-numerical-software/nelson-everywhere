@@ -19,9 +19,11 @@ twist = zeros(1, angularSamples);
 radialCosine = radialPosition * cos(twist);
 radialSine = radialPosition * sin(twist);
 
-figureHandle = figure('Name', 'Twisted surface animation', ...
+figureHandle = figure('SelectionHighlight', 'off', 'Name', 'Twisted surface animation', ...
   'NumberTitle', 'off');
 axesHandle = axes('Parent', figureHandle);
+% Prevent accidental pan or rotate from disturbing the live animation.
+disableDefaultInteractivity(axesHandle);
 surfaceHandle = surf(axesHandle, (1 + radialCosine) .* cosineGrid, ...
   (1 + radialCosine) .* sineGrid, radialSine, radialSine);
 set(surfaceHandle, 'EdgeColor', 'none');

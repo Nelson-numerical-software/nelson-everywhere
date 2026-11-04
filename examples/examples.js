@@ -10,7 +10,7 @@
 // Stand-alone gallery window opened by demo() on the desktop: the shared
 // component over the WebUI `examplesRpc` binding (list, refresh, open, run).
 //=============================================================================
-import { mountExampleGallery } from './example-gallery.js?build=83e2065a3037';
+import { mountExampleGallery } from './example-gallery.js?build=71ed60f9c4bc';
 
 function stopZoom(event) {
   event.preventDefault();

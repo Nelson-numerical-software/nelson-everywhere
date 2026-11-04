@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=83e2065a3037";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=83e2065a3037";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=71ed60f9c4bc";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=71ed60f9c4bc";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,12 +14,12 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=83e2065a3037";
+} from "./nelson-worker-protocol.mjs?build=71ed60f9c4bc";
 
 const PROTOCOL_VERSION = 1;
-import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=83e2065a3037";
-import { performSyncWebRequest } from "./nelson-web-request.mjs?build=83e2065a3037";
-import { simulateNFlow } from "./nflow-worker.mjs?build=83e2065a3037";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=71ed60f9c4bc";
+import { performSyncWebRequest } from "./nelson-web-request.mjs?build=71ed60f9c4bc";
+import { simulateNFlow } from "./nflow-worker.mjs?build=71ed60f9c4bc";
 const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";

@@ -1,4 +1,4 @@
-var U=Object.defineProperty;var C=(n,e,t)=>e in n?U(n,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[e]=t;var c=(n,e,t)=>C(n,typeof e!="symbol"?e+"":e,t);import{a1 as G,a2 as L}from"../app.js?build=83e2065a3037";function M(){return globalThis.navigator?.gpu??null}const x=`
+var U=Object.defineProperty;var C=(n,e,t)=>e in n?U(n,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):n[e]=t;var c=(n,e,t)=>C(n,typeof e!="symbol"?e+"":e,t);import{a1 as G,a2 as L}from"../app.js?build=71ed60f9c4bc";function M(){return globalThis.navigator?.gpu??null}const x=`
 struct Uniforms {
   model: mat4x4<f32>,
   projection: mat4x4<f32>,

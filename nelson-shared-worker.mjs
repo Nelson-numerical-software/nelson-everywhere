@@ -4,7 +4,7 @@
 // SharedWorker entry point: the origin-wide relay between the page that owns
 // the Nelson engine Worker and the other pages (desktop, NFlow editor,
 // satellite windows) that share its workspace. See nelson-engine-broker.mjs.
-import { createEngineBroker } from "./nelson-engine-broker.mjs?build=83e2065a3037";
+import { createEngineBroker } from "./nelson-engine-broker.mjs?build=71ed60f9c4bc";
 
 const broker = createEngineBroker();
 

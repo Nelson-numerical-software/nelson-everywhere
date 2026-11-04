@@ -2300,62 +2300,10 @@
   <path d="M32 51H40" stroke="#718078" stroke-width="2" stroke-linecap="round"/>
 </symbol>
 <symbol id="discrete__ddelay" data-lib="discrete" data-name="ddelay.svg" viewBox="0 0 72 72">
-  <defs
-     id="defs3" />
-  <sodipodi:namedview
-     id="namedview3"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="10.736111"
-     inkscape:cx="36.046572"
-     inkscape:cy="36"
-     inkscape:window-width="1920"
-     inkscape:window-height="991"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg3" />
-  <rect
-     width="72"
-     height="72"
-     rx="14"
-     fill="#E6F1FB"
-     stroke="#B5D4F4"
-     stroke-width="1"
-     stroke-dasharray="5,3"
-     id="rect1" />
-  <text
-     x="36"
-     y="28"
-     text-anchor="middle"
-     dominant-baseline="middle"
-     font-family="Georgia,serif"
-     font-size="13"
-     font-style="italic"
-     fill="#0C447C"
-     id="text1">z</text>
-  <line
-     x1="14"
-     y1="38"
-     x2="58"
-     y2="38"
-     stroke="#0C447C"
-     stroke-width="1"
-     id="line1" />
-  <text
-     x="36"
-     y="50"
-     text-anchor="middle"
-     dominant-baseline="middle"
-     font-family="Georgia,serif"
-     font-size="12"
-     fill="#0C447C"
-     id="text2">T</text>
+  <rect width="72" height="72" rx="14" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="36" y="28" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="13" font-style="italic" fill="#0C447C">z</text>
+  <line x1="14" y1="38" x2="58" y2="38" stroke="#0C447C" stroke-width="1"/>
+  <text x="36" y="50" text-anchor="middle" dominant-baseline="middle" font-family="Georgia,serif" font-size="12" fill="#0C447C">T</text>
 </symbol>
 <symbol id="discrete__detectChange" data-lib="discrete" data-name="detectChange.svg" viewBox="-153.25 -153.25 306.5 256.5">
   <rect x="-153.25" y="-153.25" width="306.5" height="256.5" rx="48.735" fill="#E6F1FB" stroke="#B5D4F4" stroke-width="3.25" stroke-dasharray="21 13"/>

@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=71ed60f9c4bc";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=71ed60f9c4bc";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=c682f6861e8d";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=c682f6861e8d";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,12 +14,12 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=71ed60f9c4bc";
+} from "./nelson-worker-protocol.mjs?build=c682f6861e8d";
 
 const PROTOCOL_VERSION = 1;
-import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=71ed60f9c4bc";
-import { performSyncWebRequest } from "./nelson-web-request.mjs?build=71ed60f9c4bc";
-import { simulateNFlow } from "./nflow-worker.mjs?build=71ed60f9c4bc";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=c682f6861e8d";
+import { performSyncWebRequest } from "./nelson-web-request.mjs?build=c682f6861e8d";
+import { simulateNFlow } from "./nflow-worker.mjs?build=c682f6861e8d";
 const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";
@@ -545,6 +545,12 @@ function clearVirtualDirectory(module, directory) {
 }
 
 function populateVirtualFiles(module) {
+  let savedCwd;
+  try {
+    savedCwd = module.FS.cwd();
+  } catch {
+    savedCwd = null;
+  }
   module.FS.chdir("/");
   for (const directory of PERSISTENT_DIRECTORIES) {
     module.FS.mkdirTree(directory);
@@ -560,7 +566,11 @@ function populateVirtualFiles(module) {
     module.FS.mkdirTree(parent);
     module.FS.writeFile(path, data);
   }
-  module.FS.chdir("/workspace");
+  try {
+    module.FS.chdir(savedCwd || "/workspace");
+  } catch {
+    module.FS.chdir("/workspace");
+  }
 }
 
 async function collectVirtualFiles(module) {

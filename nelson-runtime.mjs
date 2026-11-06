@@ -87,7 +87,7 @@ function selectedRuntimeResourceSelection(manifest, runtimeIndex, options = {}) 
     )
     .filter((file) => {
       const runtimeMatch =
-        /^runtime-resources\/modules\/([^/]+)\/(tests|help)\//.exec(file);
+        /^runtime-resources\/modules\/([^/]+)\/(tests|help|examples)\//.exec(file);
       const examplesMatch = /^examples\/files\/([^/]+)\/(examples)\//.exec(
         file,
       );

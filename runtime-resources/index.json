@@ -4,6 +4,7 @@
     {
       "module": "characters_encoding",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -34,6 +35,7 @@
     {
       "module": "debugger",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -79,6 +81,7 @@
     {
       "module": "i18n",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -96,6 +99,7 @@
     {
       "module": "localization",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -115,6 +119,7 @@
     {
       "module": "elementary_mathematics",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -125,12 +130,22 @@
             "runtime-resources/modules/elementary_mathematics/tests/test_modular_multiplication_circle.m"
           ],
           "bytes": 2264
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/elementary_mathematics-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/elementary_mathematics/examples/index.json",
+            "runtime-resources/modules/elementary_mathematics/examples/matrix_arithmetic.m",
+            "runtime-resources/modules/elementary_mathematics/examples/modular_multiplication_circle.m"
+          ],
+          "bytes": 7522
         }
       }
     },
     {
       "module": "error_manager",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -176,6 +191,7 @@
     {
       "module": "types",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -305,6 +321,7 @@
     {
       "module": "stream_manager",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -400,6 +417,7 @@
     {
       "module": "display_format",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -553,13 +571,14 @@
             "runtime-resources/modules/display_format/tests/test_scalefactor_integer_values_shortG.m",
             "runtime-resources/modules/display_format/tests/test_scalefactor_single_integer_values_long.m"
           ],
-          "bytes": 388708
+          "bytes": 388861
         }
       }
     },
     {
       "module": "operators",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -680,6 +699,7 @@
     {
       "module": "elementary_functions",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -903,12 +923,22 @@
             "runtime-resources/modules/elementary_functions/tests/test_wilkinson.m"
           ],
           "bytes": 443215
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/elementary_functions-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/elementary_functions/examples/classic_test_matrices.m",
+            "runtime-resources/modules/elementary_functions/examples/index.json",
+            "runtime-resources/modules/elementary_functions/examples/pascal_sierpinski.m"
+          ],
+          "bytes": 6745
         }
       }
     },
     {
       "module": "interpreter",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -1797,6 +1827,7 @@
     {
       "module": "modules_manager",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -1849,12 +1880,21 @@
             "runtime-resources/modules/modules_manager/tests/test_usermodulesdir.m"
           ],
           "bytes": 1517503
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/modules_manager-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/modules_manager/examples/create_temporary_module.m",
+            "runtime-resources/modules/modules_manager/examples/index.json"
+          ],
+          "bytes": 2100
         }
       }
     },
     {
       "module": "double",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -1883,6 +1923,7 @@
     {
       "module": "single",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -1909,6 +1950,7 @@
     {
       "module": "sparse",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -1968,12 +2010,23 @@
             "runtime-resources/modules/sparse/tests/test_vertcat_empty.m"
           ],
           "bytes": 131178
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/sparse-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/sparse/examples/heat_diffusion.m",
+            "runtime-resources/modules/sparse/examples/index.json",
+            "runtime-resources/modules/sparse/examples/sparse_poisson.m",
+            "runtime-resources/modules/sparse/examples/sparsity_ordering.m"
+          ],
+          "bytes": 9144
         }
       }
     },
     {
       "module": "functions_manager",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2030,6 +2083,7 @@
     {
       "module": "constructors_functions",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2069,6 +2123,7 @@
     {
       "module": "console",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2087,6 +2142,7 @@
     {
       "module": "logical",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2115,12 +2171,21 @@
             "runtime-resources/modules/logical/tests/test_xor.m"
           ],
           "bytes": 27637
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/logical-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/logical/examples/index.json",
+            "runtime-resources/modules/logical/examples/logical_indexing.m"
+          ],
+          "bytes": 1458
         }
       }
     },
     {
       "module": "time",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2268,12 +2333,22 @@
             "runtime-resources/modules/time/tests/test_yyyymmdd.m"
           ],
           "bytes": 266459
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/time-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/time/examples/calendar_arithmetic.m",
+            "runtime-resources/modules/time/examples/index.json",
+            "runtime-resources/modules/time/examples/world_clock.m"
+          ],
+          "bytes": 7104
         }
       }
     },
     {
       "module": "string",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2437,12 +2512,22 @@
             "runtime-resources/modules/string/tests/test_wildcardPattern.m"
           ],
           "bytes": 344467
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/string-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/string/examples/index.json",
+            "runtime-resources/modules/string/examples/parse_measurements.m",
+            "runtime-resources/modules/string/examples/sine_scroller.m"
+          ],
+          "bytes": 5994
         }
       }
     },
     {
       "module": "integer",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2488,12 +2573,22 @@
             "runtime-resources/modules/integer/tests/test_vertcat_empty.m"
           ],
           "bytes": 55065
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/integer-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/integer/examples/cellular_automaton.m",
+            "runtime-resources/modules/integer/examples/fixed_width_integers.m",
+            "runtime-resources/modules/integer/examples/index.json"
+          ],
+          "bytes": 6560
         }
       }
     },
     {
       "module": "linear_algebra",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2626,12 +2721,23 @@
             "runtime-resources/modules/linear_algebra/tests/test_vecnorm.m"
           ],
           "bytes": 403235
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/linear_algebra-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/linear_algebra/examples/index.json",
+            "runtime-resources/modules/linear_algebra/examples/matrix_decompositions.m",
+            "runtime-resources/modules/linear_algebra/examples/preconditioned_conjugate_gradient.m",
+            "runtime-resources/modules/linear_algebra/examples/solve_linear_system.m"
+          ],
+          "bytes": 4842
         }
       }
     },
     {
       "module": "files_folders_functions",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2674,12 +2780,21 @@
             "runtime-resources/modules/files_folders_functions/tests/test_userdir.m"
           ],
           "bytes": 61867
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/files_folders_functions-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/files_folders_functions/examples/index.json",
+            "runtime-resources/modules/files_folders_functions/examples/temporary_files.m"
+          ],
+          "bytes": 1328
         }
       }
     },
     {
       "module": "os_functions",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2729,6 +2844,7 @@
     {
       "module": "core",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2815,12 +2931,22 @@
             "runtime-resources/modules/core/tests/test_version.m"
           ],
           "bytes": 117482
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/core-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/core/examples/index.json",
+            "runtime-resources/modules/core/examples/sha256_avalanche.m",
+            "runtime-resources/modules/core/examples/workspace_basics.m"
+          ],
+          "bytes": 6608
         }
       }
     },
     {
       "module": "function_handle",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2842,12 +2968,22 @@
             "runtime-resources/modules/function_handle/tests/test_str2func.m"
           ],
           "bytes": 35682
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/function_handle-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/function_handle/examples/function_explorer.m",
+            "runtime-resources/modules/function_handle/examples/index.json",
+            "runtime-resources/modules/function_handle/examples/parameterized_function.m"
+          ],
+          "bytes": 5766
         }
       }
     },
     {
       "module": "memory_manager",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2919,6 +3055,7 @@
     {
       "module": "overload",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -2946,12 +3083,27 @@
             "runtime-resources/modules/overload/tests/test_quaternion_rotating_cube.m"
           ],
           "bytes": 12491
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/overload-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/overload/examples/complex/@complexObj/complexObj.m",
+            "runtime-resources/modules/overload/examples/complex/@complexObj/display.m",
+            "runtime-resources/modules/overload/examples/complex/@complexObj/plus.m",
+            "runtime-resources/modules/overload/examples/complex/@complexObj/subsref.m",
+            "runtime-resources/modules/overload/examples/complex/example_complex.m",
+            "runtime-resources/modules/overload/examples/index.json",
+            "runtime-resources/modules/overload/examples/quaternion/@quaternion/quaternion.m",
+            "runtime-resources/modules/overload/examples/quaternion/rotating_cube.m"
+          ],
+          "bytes": 12730
         }
       }
     },
     {
       "module": "data_structures",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3010,12 +3162,21 @@
             "runtime-resources/modules/data_structures/tests/test_structfun.m"
           ],
           "bytes": 115845
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/data_structures-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/data_structures/examples/index.json",
+            "runtime-resources/modules/data_structures/examples/organize_records.m"
+          ],
+          "bytes": 1304
         }
       }
     },
     {
       "module": "dictionary",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3058,12 +3219,22 @@
             "runtime-resources/modules/dictionary/tests/test_writedictionary.m"
           ],
           "bytes": 77223
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/dictionary-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/dictionary/examples/dictionary_lookup.m",
+            "runtime-resources/modules/dictionary/examples/index.json",
+            "runtime-resources/modules/dictionary/examples/memoized_collatz.m"
+          ],
+          "bytes": 6189
         }
       }
     },
     {
       "module": "table",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3281,12 +3452,22 @@
             "runtime-resources/modules/table/tests/test_withtol.m"
           ],
           "bytes": 558781
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/table-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/table/examples/build_and_select_table.m",
+            "runtime-resources/modules/table/examples/index.json",
+            "runtime-resources/modules/table/examples/join_tables.m"
+          ],
+          "bytes": 2675
         }
       }
     },
     {
       "module": "categorical",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3341,12 +3522,22 @@
             "runtime-resources/modules/categorical/tests/test_string_categorical_missing.m"
           ],
           "bytes": 83922
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/categorical-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/categorical/examples/categorical_summary.m",
+            "runtime-resources/modules/categorical/examples/category_distribution.m",
+            "runtime-resources/modules/categorical/examples/index.json"
+          ],
+          "bytes": 6582
         }
       }
     },
     {
       "module": "history_manager",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3363,6 +3554,7 @@
     {
       "module": "text_editor",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3390,6 +3582,7 @@
     {
       "module": "notebook",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3401,12 +3594,22 @@
             "runtime-resources/modules/notebook/tests/test_notebook.m"
           ],
           "bytes": 4824
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/notebook-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/notebook/examples/index.json",
+            "runtime-resources/modules/notebook/examples/interactive_signals.nlx",
+            "runtime-resources/modules/notebook/examples/notebook_showcase.nlx"
+          ],
+          "bytes": 335021
         }
       }
     },
     {
       "module": "handle",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3445,6 +3648,7 @@
     {
       "module": "engine",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3501,6 +3705,7 @@
     {
       "module": "profiler",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3519,12 +3724,22 @@
             "runtime-resources/modules/profiler/tests/test_profsave.m"
           ],
           "bytes": 16470
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/profiler-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/profiler/examples/index.json",
+            "runtime-resources/modules/profiler/examples/profile_computation.m",
+            "runtime-resources/modules/profiler/examples/profile_flame.m"
+          ],
+          "bytes": 7092
         }
       }
     },
     {
       "module": "file_archiver",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3543,12 +3758,21 @@
             "runtime-resources/modules/file_archiver/tests/test_zipslip_drive.zip"
           ],
           "bytes": 85966
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/file_archiver-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/file_archiver/examples/create_archive.m",
+            "runtime-resources/modules/file_archiver/examples/index.json"
+          ],
+          "bytes": 1499
         }
       }
     },
     {
       "module": "json",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3572,12 +3796,23 @@
             "runtime-resources/modules/json/tests/test_jsonprettyprint.m"
           ],
           "bytes": 2148276
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/json-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/json/examples/index.json",
+            "runtime-resources/modules/json/examples/json_particles.m",
+            "runtime-resources/modules/json/examples/json_patient.m",
+            "runtime-resources/modules/json/examples/patient.json"
+          ],
+          "bytes": 11712
         }
       }
     },
     {
       "module": "special_functions",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3654,12 +3889,22 @@
             "runtime-resources/modules/special_functions/tests/test_ulam_spiral.m"
           ],
           "bytes": 140990
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/special_functions-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/special_functions/examples/index.json",
+            "runtime-resources/modules/special_functions/examples/interpolation_methods.m",
+            "runtime-resources/modules/special_functions/examples/ulam_spiral.m"
+          ],
+          "bytes": 8148
         }
       }
     },
     {
       "module": "trigonometric_functions",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -3728,12 +3973,22 @@
             "runtime-resources/modules/trigonometric_functions/tests/test_wrapTo.m"
           ],
           "bytes": 92432
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/trigonometric_functions-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/trigonometric_functions/examples/coordinate_transforms.m",
+            "runtime-resources/modules/trigonometric_functions/examples/index.json",
+            "runtime-resources/modules/trigonometric_functions/examples/lissajous_sound.m"
+          ],
+          "bytes": 7680
         }
       }
     },
     {
       "module": "graphics",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -4778,13 +5033,107 @@
             "runtime-resources/modules/graphics/tests/test_zticklabels.m",
             "runtime-resources/modules/graphics/tests/test_zticks.m"
           ],
-          "bytes": 7221777
+          "bytes": 7223027
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/graphics-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/graphics/examples/abstract_particle_vortex.m",
+            "runtime-resources/modules/graphics/examples/aircraft_flight_animation.m",
+            "runtime-resources/modules/graphics/examples/analog_clock.m",
+            "runtime-resources/modules/graphics/examples/boing_ball_3d.m",
+            "runtime-resources/modules/graphics/examples/colorbar/demo_colorbar.m",
+            "runtime-resources/modules/graphics/examples/conway_game_of_life.m",
+            "runtime-resources/modules/graphics/examples/cube/demo_cube.m",
+            "runtime-resources/modules/graphics/examples/demoscene.m",
+            "runtime-resources/modules/graphics/examples/dot_tunnel.m",
+            "runtime-resources/modules/graphics/examples/essential_plot_types.m",
+            "runtime-resources/modules/graphics/examples/fluid_simulation_2d.m",
+            "runtime-resources/modules/graphics/examples/fluid_sph_2d.m",
+            "runtime-resources/modules/graphics/examples/formula_racing_aero_tradeoff.m",
+            "runtime-resources/modules/graphics/examples/fractal_tree.m",
+            "runtime-resources/modules/graphics/examples/gray_scott_reaction_diffusion.m",
+            "runtime-resources/modules/graphics/examples/harmonograph.m",
+            "runtime-resources/modules/graphics/examples/index.json",
+            "runtime-resources/modules/graphics/examples/mandelbrot_fractal.m",
+            "runtime-resources/modules/graphics/examples/mathematical_shader.m",
+            "runtime-resources/modules/graphics/examples/moebius_strip.m",
+            "runtime-resources/modules/graphics/examples/movie/dance_1.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_2.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_3.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_4.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_5.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_6.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_7.png",
+            "runtime-resources/modules/graphics/examples/movie/dance_8.png",
+            "runtime-resources/modules/graphics/examples/movie/demo_movie.m",
+            "runtime-resources/modules/graphics/examples/movie/leap_1.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_2.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_3.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_4.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_5.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_6.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_7.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_8.png",
+            "runtime-resources/modules/graphics/examples/movie/leap_9.png",
+            "runtime-resources/modules/graphics/examples/movie/readme.md",
+            "runtime-resources/modules/graphics/examples/movie/run_1.png",
+            "runtime-resources/modules/graphics/examples/movie/run_2.png",
+            "runtime-resources/modules/graphics/examples/movie/run_3.png",
+            "runtime-resources/modules/graphics/examples/movie/run_4.png",
+            "runtime-resources/modules/graphics/examples/movie/run_5.png",
+            "runtime-resources/modules/graphics/examples/movie/run_6.png",
+            "runtime-resources/modules/graphics/examples/movie/run_7.png",
+            "runtime-resources/modules/graphics/examples/movie/run_8.png",
+            "runtime-resources/modules/graphics/examples/nefertiti-mask/nefertiti_mask.m",
+            "runtime-resources/modules/graphics/examples/nefertiti-mask/nefertiti-mask.nh5",
+            "runtime-resources/modules/graphics/examples/particle_funnel.m",
+            "runtime-resources/modules/graphics/examples/portable_peaks.m",
+            "runtime-resources/modules/graphics/examples/potential_flow_cylinder.m",
+            "runtime-resources/modules/graphics/examples/rainbow_rose.m",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/brick.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/enemy_render.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/enemy.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/energy.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/metal.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/portal.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/stone.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/weapon_render.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster_assets/weapon.png",
+            "runtime-resources/modules/graphics/examples/retro_raycaster.m",
+            "runtime-resources/modules/graphics/examples/stanford-bunny/stanford_bunny.m",
+            "runtime-resources/modules/graphics/examples/stanford-bunny/stanford-bunny.nh5",
+            "runtime-resources/modules/graphics/examples/surface-lighting/demo_surface_lighting.m",
+            "runtime-resources/modules/graphics/examples/twisted_surface_animation.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/button1Callback.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/button2Callback.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/complete_ui_components_demo.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/complete_uicontrol_demo.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/completeUiComponentsReset.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/completeUiComponentsUpdate.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/completeUiControlLayout.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/completeUiControlReset.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/completeUiControlUpdate.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/completeUiControlWaveform.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/resetPlot.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/uicontrol_demo_interruptible.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/uicontrol_demo.m",
+            "runtime-resources/modules/graphics/examples/uicontrol/updatePlot.m",
+            "runtime-resources/modules/graphics/examples/uihtml_unit_converter.m",
+            "runtime-resources/modules/graphics/examples/uihtml_wave_packet.m",
+            "runtime-resources/modules/graphics/examples/utah-teapot/teapot.nh5",
+            "runtime-resources/modules/graphics/examples/utah-teapot/utah_teapot.m",
+            "runtime-resources/modules/graphics/examples/ventilator/ventilator_gui.m",
+            "runtime-resources/modules/graphics/examples/vibrating_membrane.m"
+          ],
+          "bytes": 6517386
         }
       }
     },
     {
       "module": "graphics_io",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -4866,12 +5215,23 @@
             "runtime-resources/modules/graphics_io/tests/test_web_figure_export.m"
           ],
           "bytes": 119486
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/graphics_io-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/graphics_io/examples/animated_surface_gif.m",
+            "runtime-resources/modules/graphics_io/examples/contact_sheet.m",
+            "runtime-resources/modules/graphics_io/examples/export_plot.m",
+            "runtime-resources/modules/graphics_io/examples/index.json"
+          ],
+          "bytes": 8791
         }
       }
     },
     {
       "module": "nflow_blocks",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5025,13 +5385,132 @@
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_waveform_sources.m",
             "runtime-resources/modules/nflow_blocks/tests/test_nflow_zdiode.m"
           ],
-          "bytes": 658800
+          "bytes": 658927
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/nflow_blocks-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Brake_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Contact_ElastoGap_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_DC_Motor_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_EMF_DC_Motor_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Freewheel_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Half_Wave_Rectifier_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Mass_Spring_Damper_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_RLC_Circuit_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Rotational_Drivetrain_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Series_RLC_AC_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Subsystem_RC_Lowpass.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Acausal_Thermal_Heatsink_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Bearing_Friction.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Body_Radiation.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Brake_Signal.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_CCC_Source.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_CCV_Source.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Clutch_TwoInertia.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Conductor_Divider.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Constant_RotSpeed.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Constant_Speed.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Coulomb_Friction.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Current_Divider.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_DC_Motor_EMF.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Deep_Diode.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Diode_Operating_Point.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_ExpSine_RC.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_ExpSineForce_MSD.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Extreme_Gear.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Freewheel_Engaged.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Freewheel_Free.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Geared_Inertia.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Gyrator_Inductor.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_HalfWave_Rectifier.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_HeatFlow_Body.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_HeatFlowSensor_Cooling.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Heating_Resistor.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_HighQ_RLC.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Idle_Branch.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Inverting_OpAmp.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_LC_Conservative.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Lever_Ratio.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Linear_Motor_TEMF.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Linear_SpeedForce.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Mass_Damper.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Mass_Spring.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_MassSpring_LongRun.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_MassWithWeight_FreeFall.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_NMOS_Diode_Connected.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_NPN_Diode_Connected.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_OpAmp_Integrator.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Parallel_RLC.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Planar_Pendulum.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_PMOS_Diode_Connected.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_PNP_Diode_Connected.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Quadratic_Drag.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RampCurrent_Cap.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RampForce_Mass.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RC_HighPass.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RC_Ladder.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RC_LowPass_AC.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RC_Ramp.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RelPosition_TwoMass.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RL_Sine.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RL_Step.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Rot_Damper.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Rot_Inertia_Spring.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Rot_Quadratic_Drag.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_RotSpringDamper.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Series_RLC_Step.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Short_Circuit.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_SineCurrent_RC.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_SineForce_MSD.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_SineTorque_ISD.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_SpringDamper_Step.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Stiff_RC.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Thermal_Chain.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Torsional_Oscillator.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_TwoCap_Sharing.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_TwoMass_Chain.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_VCC_Source.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_VCV_Amplifier.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Wheatstone_Bridge.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/gallery/Acausal_Zero_Resistor_Short.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Planar_Double_Pendulum_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Planar_Reaction_Wheel_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Planar_Rigid_Triple_Pendulum_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/acausal/Planar_Spring_Pendulum_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Amplitude_Modulation_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Bus_Assignment_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Chirp_Frequency_Response_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/complementary_filter.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Coulomb_Viscous_Friction_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Logic_Gates_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Nonlinear_Elements_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/PID_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Second_Order_Responses_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/causal/Signal_Utilities_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/dashboard/Dashboard_Gallery_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/dashboard/Dashboard_Runtime_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/life_sciences/Mechanical_Ventilation_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/solvers/Constraint_DAE_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/solvers/Linmod_Trim_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/solvers/ODE45_Solver_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/solvers/RC_Circuit_DAE_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/subsystems/Conditional_Subsystem_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/subsystems/ForEach_Subsystem_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/subsystems/Multirate_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/workspace/From_Workspace_Demo.m",
+            "runtime-resources/modules/nflow_blocks/examples/workspace/From_Workspace_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/workspace/Nelson_Function_Demo.nflow",
+            "runtime-resources/modules/nflow_blocks/examples/workspace/To_Workspace_Demo.nflow"
+          ],
+          "bytes": 260468
         }
       }
     },
     {
       "module": "nflow_engine",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5185,6 +5664,7 @@
             "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_ratetransition.m",
             "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_routing_lowered.m",
             "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_sampletime.m",
+            "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_scope_keeps_chain.m",
             "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_scoping_derivative_rust.m",
             "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_scoping_derivative_subsystem.m",
             "runtime-resources/modules/nflow_engine/tests/test_nf_codegenerate_scoping_derivative.m",
@@ -5213,6 +5693,7 @@
             "runtime-resources/modules/nflow_engine/tests/test_nflow_algebraic_loop.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_atan2.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_block_id_control_chars.m",
+            "runtime-resources/modules/nflow_engine/tests/test_nflow_block_param_names.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_bus_signals.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_acausal_expand.m",
             "runtime-resources/modules/nflow_engine/tests/test_nflow_codegen_help.m",
@@ -5359,13 +5840,14 @@
             "runtime-resources/modules/nflow_engine/tests/trig_cos_ramp.csv",
             "runtime-resources/modules/nflow_engine/tests/trig_cos_ramp.nflow"
           ],
-          "bytes": 1436779
+          "bytes": 1443972
         }
       }
     },
     {
       "module": "nflow_fmi",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5428,13 +5910,67 @@
             "runtime-resources/modules/nflow_fmi/tests/test_nflow_ssp_runnable.m",
             "runtime-resources/modules/nflow_fmi/tests/test_nflow_wasm_module.m"
           ],
-          "bytes": 173388
+          "bytes": 173485
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/nflow_fmi-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/nflow_fmi/examples/Acausal_FMU_RLC_Demo.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/BouncingBall_fmi2.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/bouncingball_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/bouncingball_me_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/BouncingBall.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/ControlledDrivetrain.ssp",
+            "runtime-resources/modules/nflow_fmi/examples/Dahlquist_fmi2.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/dahlquist_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/Dahlquist.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/Feedthrough_fmi2.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/feedthrough_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/Feedthrough.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/fmi_cosimulation_example.m",
+            "runtime-resources/modules/nflow_fmi/examples/GainChain.ssp",
+            "runtime-resources/modules/nflow_fmi/examples/index.json",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/BouncingBall.mo",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/DCMotor.mo",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/MassSpringDamper.mo",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/modelica_examples.m",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/RC.mo",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/RLC_MultiOutput.mo",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/RLC.mo",
+            "runtime-resources/modules/nflow_fmi/examples/modelica/Thermal.mo",
+            "runtime-resources/modules/nflow_fmi/examples/Resource.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/ssp_controlled_drivetrain.m",
+            "runtime-resources/modules/nflow_fmi/examples/ssp_export_diagram.m",
+            "runtime-resources/modules/nflow_fmi/examples/ssp_runnable_gainchain.m",
+            "runtime-resources/modules/nflow_fmi/examples/Stair.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/statespace_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/StateSpace.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/VanDerPol_fmi2.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/vanderpol_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/vanderpol_me_fmu.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/VanDerPol.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/Adder_C_Wasm_FMU.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/Adder_Rust_Wasm_FMU.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/Adder_WAT_Wasm_FMU.nflow",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/adder-c-fmu.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/adder-rust-fmu.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/adder-wat-fmu.fmu",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/build-manifest.json",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/LICENSE.fmi-ls-wasm.txt",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/LICENSE.Reference-FMUs.txt",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/LICENSE.Rust-Apache.txt",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/LICENSE.Rust-MIT.txt",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/README.md",
+            "runtime-resources/modules/nflow_fmi/examples/wasm/reference-fmus-build-manifest.json"
+          ],
+          "bytes": 3427316
         }
       }
     },
     {
       "module": "f2c",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5452,6 +5988,7 @@
     {
       "module": "slicot",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5489,6 +6026,7 @@
     {
       "module": "data_analysis",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5622,12 +6160,23 @@
             "runtime-resources/modules/data_analysis/tests/test_uniquetol.m"
           ],
           "bytes": 364256
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/data_analysis-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/data_analysis/examples/clean_measurements.m",
+            "runtime-resources/modules/data_analysis/examples/group_observations.m",
+            "runtime-resources/modules/data_analysis/examples/index.json",
+            "runtime-resources/modules/data_analysis/examples/live_oscilloscope.m"
+          ],
+          "bytes": 8734
         }
       }
     },
     {
       "module": "polynomial_functions",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5654,12 +6203,22 @@
             "runtime-resources/modules/polynomial_functions/tests/test_roots.m"
           ],
           "bytes": 36295
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/polynomial_functions-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/polynomial_functions/examples/index.json",
+            "runtime-resources/modules/polynomial_functions/examples/newton_fractal.m",
+            "runtime-resources/modules/polynomial_functions/examples/polynomial_roots.m"
+          ],
+          "bytes": 11709
         }
       }
     },
     {
       "module": "validators",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5718,12 +6277,23 @@
             "runtime-resources/modules/validators/tests/test_validators_examples.m"
           ],
           "bytes": 86779
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/validators-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/validators/examples/index.json",
+            "runtime-resources/modules/validators/examples/inputParser_example.m",
+            "runtime-resources/modules/validators/examples/validateattributes_example.m",
+            "runtime-resources/modules/validators/examples/validatestring_example.m"
+          ],
+          "bytes": 3698
         }
       }
     },
     {
       "module": "control_system",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -5852,12 +6422,24 @@
             "runtime-resources/modules/control_system/tests/test_zpk.m"
           ],
           "bytes": 199585
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/control_system-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/control_system/examples/ball_on_plate_lqr.m",
+            "runtime-resources/modules/control_system/examples/frequency_response.m",
+            "runtime-resources/modules/control_system/examples/index.json",
+            "runtime-resources/modules/control_system/examples/pid_closed_loop.m",
+            "runtime-resources/modules/control_system/examples/step_response.m"
+          ],
+          "bytes": 29864
         }
       }
     },
     {
       "module": "ode_solvers",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6010,12 +6592,33 @@
             "runtime-resources/modules/ode_solvers/tests/test_rigid_triple_pendulum.m"
           ],
           "bytes": 251128
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/ode_solvers-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/ode_solvers/examples/ballode.m",
+            "runtime-resources/modules/ode_solvers/examples/black_hole.m",
+            "runtime-resources/modules/ode_solvers/examples/dde_bvp_added_features_example.m",
+            "runtime-resources/modules/ode_solvers/examples/index.json",
+            "runtime-resources/modules/ode_solvers/examples/levitron.m",
+            "runtime-resources/modules/ode_solvers/examples/lorenz_attractor.m",
+            "runtime-resources/modules/ode_solvers/examples/ode_delay_sensitivity_example.m",
+            "runtime-resources/modules/ode_solvers/examples/ode_fully_implicit_consistent_example.m",
+            "runtime-resources/modules/ode_solvers/examples/ode_object_event_interpolation_example.m",
+            "runtime-resources/modules/ode_solvers/examples/ode_sundials_sparse_preconditioner_example.m",
+            "runtime-resources/modules/ode_solvers/examples/ode45_convergence.m",
+            "runtime-resources/modules/ode_solvers/examples/rigid_triple_pendulum.m",
+            "runtime-resources/modules/ode_solvers/examples/solar_system.m",
+            "runtime-resources/modules/ode_solvers/examples/strange_attractors.m"
+          ],
+          "bytes": 106627
         }
       }
     },
     {
       "module": "random",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6062,12 +6665,23 @@
             "runtime-resources/modules/random/tests/test_xoshiro.m"
           ],
           "bytes": 69684
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/random-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/random/examples/galton_board.m",
+            "runtime-resources/modules/random/examples/index.json",
+            "runtime-resources/modules/random/examples/monte_carlo_pi.m",
+            "runtime-resources/modules/random/examples/reproducible_random.m"
+          ],
+          "bytes": 11980
         }
       }
     },
     {
       "module": "statistics",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6506,12 +7120,24 @@
             "runtime-resources/modules/statistics/tests/test_ztest.m"
           ],
           "bytes": 1020960
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/statistics-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/statistics/examples/correlation_analysis.m",
+            "runtime-resources/modules/statistics/examples/descriptive_statistics.m",
+            "runtime-resources/modules/statistics/examples/index.json",
+            "runtime-resources/modules/statistics/examples/kmeans_clustering.m",
+            "runtime-resources/modules/statistics/examples/weibull_sampling.m"
+          ],
+          "bytes": 7297
         }
       }
     },
     {
       "module": "image_processing",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6641,12 +7267,24 @@
             "runtime-resources/modules/image_processing/tests/test_worldToSubscript.m"
           ],
           "bytes": 347511
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/image_processing-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/image_processing/examples/denoise_image.m",
+            "runtime-resources/modules/image_processing/examples/index.json",
+            "runtime-resources/modules/image_processing/examples/morphology_shapes.m",
+            "runtime-resources/modules/image_processing/examples/rotate_synthetic_image.m",
+            "runtime-resources/modules/image_processing/examples/sobel_edge_detection.m"
+          ],
+          "bytes": 7343
         }
       }
     },
     {
       "module": "optimization",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6711,12 +7349,23 @@
             "runtime-resources/modules/optimization/tests/test_solve.m"
           ],
           "bytes": 114132
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/optimization-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/optimization/examples/constrained_quadratic.m",
+            "runtime-resources/modules/optimization/examples/fit_noisy_ellipse.m",
+            "runtime-resources/modules/optimization/examples/index.json",
+            "runtime-resources/modules/optimization/examples/unconstrained_minimum.m"
+          ],
+          "bytes": 5745
         }
       }
     },
     {
       "module": "fftw",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6740,12 +7389,23 @@
             "runtime-resources/modules/fftw/tests/test_two_dimensional_fft.m"
           ],
           "bytes": 21022
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/fftw-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/fftw/examples/fft_compression.m",
+            "runtime-resources/modules/fftw/examples/fourier_epicycles.m",
+            "runtime-resources/modules/fftw/examples/index.json",
+            "runtime-resources/modules/fftw/examples/two_dimensional_fft.m"
+          ],
+          "bytes": 18215
         }
       }
     },
     {
       "module": "signal_processing",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6888,12 +7548,23 @@
             "runtime-resources/modules/signal_processing/tests/test_zp2tf.m"
           ],
           "bytes": 195011
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/signal_processing-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/signal_processing/examples/chirp_spectrogram.m",
+            "runtime-resources/modules/signal_processing/examples/filter_noisy_signal.m",
+            "runtime-resources/modules/signal_processing/examples/index.json",
+            "runtime-resources/modules/signal_processing/examples/signal_spectrum.m"
+          ],
+          "bytes": 5628
         }
       }
     },
     {
       "module": "geometry",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -6934,12 +7605,23 @@
             "runtime-resources/modules/geometry/tests/test_voronoin.m"
           ],
           "bytes": 46980
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/geometry-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/geometry/examples/convex_hull.m",
+            "runtime-resources/modules/geometry/examples/index.json",
+            "runtime-resources/modules/geometry/examples/lloyd_relaxation.m",
+            "runtime-resources/modules/geometry/examples/scattered_data_interpolation.m"
+          ],
+          "bytes": 11909
         }
       }
     },
     {
       "module": "hdf5",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -7009,12 +7691,22 @@
             "runtime-resources/modules/hdf5/tests/test_whosnh5.m"
           ],
           "bytes": 715839
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/hdf5-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/hdf5/examples/hdf5_roundtrip.m",
+            "runtime-resources/modules/hdf5/examples/index.json",
+            "runtime-resources/modules/hdf5/examples/point_cloud_spin.m"
+          ],
+          "bytes": 5769
         }
       }
     },
     {
       "module": "netcdf",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -7104,12 +7796,22 @@
             "runtime-resources/modules/netcdf/tests/test_netcdf_sync.m"
           ],
           "bytes": 151027
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/netcdf-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/netcdf/examples/climate_field.m",
+            "runtime-resources/modules/netcdf/examples/index.json",
+            "runtime-resources/modules/netcdf/examples/netcdf_roundtrip.m"
+          ],
+          "bytes": 6507
         }
       }
     },
     {
       "module": "matio",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -7264,12 +7966,22 @@
             "runtime-resources/modules/matio/tests/test_whosmat.m"
           ],
           "bytes": 107263
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/matio-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/matio/examples/index.json",
+            "runtime-resources/modules/matio/examples/mat_file_roundtrip.m",
+            "runtime-resources/modules/matio/examples/orbit_replay.m"
+          ],
+          "bytes": 5770
         }
       }
     },
     {
       "module": "parquet",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -7295,13 +8007,23 @@
             "runtime-resources/modules/parquet/tests/test_parquetwrite.m",
             "runtime-resources/modules/parquet/tests/test_rowfilter.m"
           ],
-          "bytes": 21643
+          "bytes": 21800
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/parquet-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/parquet/examples/galaxy_density.m",
+            "runtime-resources/modules/parquet/examples/index.json",
+            "runtime-resources/modules/parquet/examples/parquet_roundtrip.m"
+          ],
+          "bytes": 6890
         }
       }
     },
     {
       "module": "xml",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -7323,12 +8045,22 @@
             "runtime-resources/modules/xml/tests/test_xslt.m"
           ],
           "bytes": 42375
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/xml-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/xml/examples/index.json",
+            "runtime-resources/modules/xml/examples/xml_roundtrip.m",
+            "runtime-resources/modules/xml/examples/xml_scene.m"
+          ],
+          "bytes": 6937
         }
       }
     },
     {
       "module": "help_tools",
       "tests": true,
+      "examples": false,
       "help": true,
       "archives": true,
       "bundles": {
@@ -7404,7 +8136,7 @@
             "runtime-resources/modules/help_tools/help/nelson_help_en_US.json",
             "runtime-resources/modules/help_tools/help/nelson_help_fr_FR.json"
           ],
-          "bytes": 5873295
+          "bytes": 5884871
         },
         "archives": [
           {
@@ -7944,14 +8676,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.en_US.nhz"
             ],
-            "bytes": 913387
+            "bytes": 913657
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.main.help.fr_FR.nhz"
             ],
-            "bytes": 945504
+            "bytes": 945784
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.matio.help.en_US.nhz.nlpack",
@@ -8028,14 +8760,14 @@
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_engine.help.en_US.nhz"
             ],
-            "bytes": 89686
+            "bytes": 94868
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_engine.help.fr_FR.nhz.nlpack",
             "files": [
               "runtime-resources/modules/help_tools/help/io.github.nelson_lang.Nelson.modules.nflow_engine.help.fr_FR.nhz"
             ],
-            "bytes": 91751
+            "bytes": 97175
           },
           {
             "file": "runtime-resources/bundles/help_tools-archive-io.github.nelson_lang.Nelson.modules.nflow_fmi.help.en_US.nhz.nlpack",
@@ -8449,6 +9181,7 @@
     {
       "module": "spreadsheet",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -8569,12 +9302,22 @@
             "runtime-resources/modules/spreadsheet/tests/writematrix_6.csv"
           ],
           "bytes": 184326
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/spreadsheet-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/spreadsheet/examples/index.json",
+            "runtime-resources/modules/spreadsheet/examples/sales_race.m",
+            "runtime-resources/modules/spreadsheet/examples/spreadsheet_roundtrip.m"
+          ],
+          "bytes": 7197
         }
       }
     },
     {
       "module": "audio",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -8643,12 +9386,36 @@
             "runtime-resources/modules/audio/tests/test_synth_piano_i18n.m"
           ],
           "bytes": 5191100
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/audio-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/audio/examples/demo_recorder.m",
+            "runtime-resources/modules/audio/examples/drums.ogg",
+            "runtime-resources/modules/audio/examples/haha.wav",
+            "runtime-resources/modules/audio/examples/index.json",
+            "runtime-resources/modules/audio/examples/kaneda.flac",
+            "runtime-resources/modules/audio/examples/opening.mp3",
+            "runtime-resources/modules/audio/examples/play_flac.m",
+            "runtime-resources/modules/audio/examples/play_generated_tone.m",
+            "runtime-resources/modules/audio/examples/play_mp3.m",
+            "runtime-resources/modules/audio/examples/play_ogg.m",
+            "runtime-resources/modules/audio/examples/play_wav.m",
+            "runtime-resources/modules/audio/examples/synth_piano/synth_piano_engine.m",
+            "runtime-resources/modules/audio/examples/synth_piano/synth_piano_envelope.m",
+            "runtime-resources/modules/audio/examples/synth_piano/synth_piano_keys_at.m",
+            "runtime-resources/modules/audio/examples/synth_piano/synth_piano_score_groups.m",
+            "runtime-resources/modules/audio/examples/synth_piano/synth_piano_songs.m",
+            "runtime-resources/modules/audio/examples/synth_piano/synth_piano.m"
+          ],
+          "bytes": 1114265
         }
       }
     },
     {
       "module": "preferences",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -8664,6 +9431,7 @@
     {
       "module": "webtools",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -8712,13 +9480,31 @@
             "runtime-resources/modules/webtools/tests/test_websave.m",
             "runtime-resources/modules/webtools/tests/test_webwrite.m"
           ],
-          "bytes": 75218
+          "bytes": 75284
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/webtools-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/webtools/examples/chatGPT.m",
+            "runtime-resources/modules/webtools/examples/download_play.m",
+            "runtime-resources/modules/webtools/examples/index.json",
+            "runtime-resources/modules/webtools/examples/ollama/ollama_demo.m",
+            "runtime-resources/modules/webtools/examples/ollama/ollamaPrompt.m",
+            "runtime-resources/modules/webtools/examples/ollama/readme.md",
+            "runtime-resources/modules/webtools/examples/webread_demo_1.m",
+            "runtime-resources/modules/webtools/examples/webread_demo_2.m",
+            "runtime-resources/modules/webtools/examples/webread_demo_3.m",
+            "runtime-resources/modules/webtools/examples/webread_demo_4.m",
+            "runtime-resources/modules/webtools/examples/websave_demo.m"
+          ],
+          "bytes": 13628
         }
       }
     },
     {
       "module": "assert_functions",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -8779,6 +9565,7 @@
     {
       "module": "tests_manager",
       "tests": true,
+      "examples": true,
       "help": false,
       "archives": false,
       "bundles": {
@@ -8874,12 +9661,21 @@
             "runtime-resources/modules/tests_manager/tests/test_with_display.m"
           ],
           "bytes": 176394
+        },
+        "examples": {
+          "file": "runtime-resources/bundles/tests_manager-examples.nlpack",
+          "files": [
+            "runtime-resources/modules/tests_manager/examples/index.json",
+            "runtime-resources/modules/tests_manager/examples/run_unit_test.m"
+          ],
+          "bytes": 1321
         }
       }
     },
     {
       "module": "main",
       "tests": true,
+      "examples": false,
       "help": false,
       "archives": false,
       "bundles": {
@@ -9211,7 +10007,7 @@
             "runtime-resources/modules/nflow_gui/tests/wasm/fmu.spec.ts",
             "runtime-resources/modules/nflow_gui/tests/wasm/playwright.config.ts"
           ],
-          "bytes": 612288
+          "bytes": 590564
         }
       }
     }

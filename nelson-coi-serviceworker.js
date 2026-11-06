@@ -21,6 +21,22 @@ function withIsolationHeaders(response) {
   });
 }
 
+// Serve the self-contained help viewer at same-origin /help/<lang>/... by
+// unzipping the already-shipped help bundles on demand (see nelson-help-sw.js).
+// Guarded so a help-serving load failure never breaks cross-origin isolation.
+try {
+  importScripts(`./fflate.min.js?build=${BUILD_ID}`);
+  importScripts(`./nelson-help-sw.js?build=${BUILD_ID}`);
+  self.NelsonHelpSW.initHelpRoute({
+    scope: self.registration.scope,
+    build: BUILD_ID,
+    withIsolationHeaders,
+  });
+} catch (error) {
+  // Isolation (the critical job of this worker) keeps working; help falls back
+  // to the engine-rendered path in the Documentation panel.
+}
+
 function withBuild(reference) {
   const url = new URL(reference, self.registration.scope);
   if (BUILD_ID && !url.searchParams.has("build")) {
@@ -76,7 +92,12 @@ async function removeOldCaches() {
   const names = await caches.keys();
   await Promise.all(
     names
-      .filter((name) => name.startsWith("nelson-wasm-") && name !== CACHE_NAME)
+      .filter(
+        (name) =>
+          (name.startsWith("nelson-wasm-") || name.startsWith("nelson-help-")) &&
+          name !== CACHE_NAME &&
+          name !== `nelson-help-${BUILD_ID}`
+      )
       .map((name) => caches.delete(name))
   );
 }
@@ -108,6 +129,11 @@ self.addEventListener("fetch", (event) => {
   )
     return;
   if (event.request.method !== "GET") return;
+
+  if (self.NelsonHelpSW && self.NelsonHelpSW.matchHelpRequest(requestUrl.pathname)) {
+    event.respondWith(self.NelsonHelpSW.serveHelp(event.request));
+    return;
+  }
 
   event.respondWith(
     (async () => {

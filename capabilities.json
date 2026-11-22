@@ -3,6 +3,7 @@
   "runtime": "webassembly",
   "profile": "portable-nflow",
   "modules": [
+    "ai",
     "assert_functions",
     "audio",
     "categorical",

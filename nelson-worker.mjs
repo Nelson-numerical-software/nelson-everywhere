@@ -1,7 +1,7 @@
 // Copyright (c) 2016-present Allan CORNET (Nelson)
 // SPDX-License-Identifier: LGPL-3.0-or-later
-import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=c682f6861e8d";
-import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=c682f6861e8d";
+import { createPersistentNelsonRunner } from "./nelson-runtime.mjs?build=4effc0c46308";
+import { createWorkspaceStore } from "./nelson-workspace-store.mjs?build=4effc0c46308";
 import {
   createTextOutputBatcher,
   createVisibleOutputFilter,
@@ -14,12 +14,12 @@ import {
   validateRuntimeCapabilityManifest,
   validateWorkerRequest,
   versionedSiblingUrl,
-} from "./nelson-worker-protocol.mjs?build=c682f6861e8d";
+} from "./nelson-worker-protocol.mjs?build=4effc0c46308";
 
 const PROTOCOL_VERSION = 1;
-import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=c682f6861e8d";
-import { performSyncWebRequest } from "./nelson-web-request.mjs?build=c682f6861e8d";
-import { simulateNFlow } from "./nflow-worker.mjs?build=c682f6861e8d";
+import { createFmuRegistry } from "./nflow-fmu-runtime.mjs?build=4effc0c46308";
+import { performSyncWebRequest } from "./nelson-web-request.mjs?build=4effc0c46308";
+import { simulateNFlow } from "./nflow-worker.mjs?build=4effc0c46308";
 const fmuRegistry = createFmuRegistry();
 const WORKSPACE_BEGIN = "__WORKSPACE_RESULT_BEGIN__";
 const WORKSPACE_END = "__WORKSPACE_RESULT_END__";
@@ -109,6 +109,17 @@ function publishNFlowPartial(json) {
     version: PROTOCOL_VERSION,
     event: "nflow.partial",
     partial: JSON.parse(String(json)),
+  });
+}
+
+// Forward an engine tool event (assistant tokens/answers) to the main thread.
+function publishToolEvent(tool, channel, payload) {
+  self.postMessage({
+    version: PROTOCOL_VERSION,
+    event: "tool.event",
+    tool: String(tool),
+    channel: String(channel),
+    payload: String(payload),
   });
 }
 
@@ -266,6 +277,7 @@ async function initialize(
       onNelsonFigureFrameBytes: publishFigureBytes,
       onNelsonFigureFrameAttachments: publishFigureAttachments,
       onNelsonNFlowPartial: publishNFlowPartial,
+      onNelsonToolEvent: publishToolEvent,
       onNelsonFmu: fmuRegistry.call,
       onNelsonDebuggerState: publishDebuggerState,
       onNelsonAudioBufferBegin: publishAudioBufferBegin,

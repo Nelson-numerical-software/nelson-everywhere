@@ -49,7 +49,8 @@ function synth_piano()
   app.songs = synth_piano_songs();
   app.clock = tic();
   fig = uifigure('Name', _('Nelson NS-37 synthesizer'), 'Tag', 'synth_piano', 'Resize', 'off', ...
-    'Position', synthCenteredPosition(1180, 745), 'Color', app.theme.background);
+    'Position', synthCenteredPosition(1180, 745), 'Color', app.theme.background, ...
+    'Visible', 'off');
   app = synthBuildHeader(fig, app);
   app = synthBuildSoundPanel(fig, app);
   app = synthBuildPlayerPanel(fig, app);
@@ -79,6 +80,8 @@ function synth_piano()
   fig.WindowButtonDownFcn = @(src, evt) synthMousePressed(fig);
   fig.WindowButtonUpFcn = @(src, evt) synthMouseReleased(fig);
   fig.DeleteFcn = @(src, evt) synthShutdown(fig);
+  % shown only once fully built
+  fig.Visible = 'on';
   start(app.timer);
   synthStartScore(fig, synthIntroScore(), 0.035, _('Welcome glissando'));
 end
@@ -216,6 +219,8 @@ end
 %=============================================================================
 function ax = synthScreenAxes(parent, th, position, xl, yl)
   ax = uiaxes(parent, 'Position', position);
+  % Prevent accidental pan or zoom from disturbing the live displays.
+  disableDefaultInteractivity(ax);
   set(ax, 'Color', th.screen, 'XColor', [0.16 0.20 0.32], 'YColor', [0.16 0.20 0.32], ...
     'XLim', xl, 'YLim', yl, 'XTick', [], 'YTick', [], 'Box', 'on');
   hold(ax, 'on');
@@ -297,6 +302,8 @@ function app = synthBuildKeyboard(fig, app)
   board = uipanel(fig, 'Position', [0 0 1180 246], 'BorderType', 'none', ...
     'BackgroundColor', th.background);
   app.keyAxes = uiaxes(board, 'Position', [x0 - 11, -3, width + 15, 251]);
+  % Mouse drags play glissandi: no pan or zoom on the keys.
+  disableDefaultInteractivity(app.keyAxes);
   set(app.keyAxes, 'XLim', [0 width], 'YLim', [0 216], 'Color', th.background);
   axis(app.keyAxes, 'off');
   hold(app.keyAxes, 'on');
@@ -502,7 +509,7 @@ function y = synthRender(app, notes, params)
   if cache.Count >= app.cacheLimit
     remove(cache, keys(cache));
   end
-  cache(key) = y;
+  cache(key) = y; %#ok<NLS0004>
 end
 %=============================================================================
 function app = synthShowSignal(app, y, notes)

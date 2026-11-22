@@ -34,7 +34,7 @@
         },
         {
           "title": "Complementary Filter",
-          "description": "",
+          "description": "Complementary filter estimating a 0.2 Hz sine angle from two imperfect sensors: an accelerometer-like reading (angle + noise) goes through a 0.5 Hz low-pass filter, while a gyroscope-like rate (derivative + 0.2 bias) is integrated, then high-passed at 0.5 Hz to remove the drift. Their sum tracks the true angle: the scope overlays the true angle, the noisy accelerometer reading and the fused estimate.",
           "kind": "model",
           "file": "nflow-example:/causal/complementary_filter.nflow",
           "tags": [],
@@ -70,7 +70,7 @@
         },
         {
           "title": "PID Demo - P vs PI vs PID",
-          "description": "",
+          "description": "P vs PI vs PID on the same lightly damped plant 1/(s^2+0.5s+1), step at t=1 s. P (Kp=2) oscillates toward 2/3 and keeps a steady-state error; PI (Kp=2, Ki=1) removes the error but overshoots by about 40% and is still ringing at 10 s; PID (Kp=3, Ki=1.5, Kd=1.2) settles at 1 with about 15% overshoot. The first scope overlays the plant outputs, the second the control signals (note the derivative kick at the step).",
           "kind": "model",
           "file": "nflow-example:/causal/PID_Demo.nflow",
           "tags": [],
@@ -94,6 +94,15 @@
           "tags": [],
           "requirements": [],
           "blockCount": 12
+        },
+        {
+          "title": "WGS84 Gravity Annotated",
+          "description": "WGS-84 normal gravity on the reference ellipsoid.",
+          "kind": "model",
+          "file": "nflow-example:/causal/WGS84_Gravity_Annotated.nflow",
+          "tags": [],
+          "requirements": [],
+          "blockCount": 25
         }
       ]
     },
@@ -112,6 +121,39 @@
           ],
           "requirements": [],
           "blockCount": 6
+        },
+        {
+          "title": "Acausal Buck Converter",
+          "description": "Open-loop synchronous-buck step-down converter. A 12 V DC source feeds an ideal high-side switch gated by a 10 kHz pulse at 50% duty; an ideal freewheeling diode, a series inductor and an output RC load form the LC filter. In continuous conduction the averaged output follows Vout = D * Vin, so the load settles near 6 V. The Scope plots the output voltage; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Buck_Converter_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 11
+        },
+        {
+          "title": "Acausal Buck Converter PID",
+          "description": "Closed-loop (voltage-mode) PID buck converter. A PID regulator acts on the error between a 5 V reference and the measured output voltage; its saturated 0..1 output is the duty, which a 10 kHz sawtooth carrier and a relational comparator (carrier < duty) turn into the PWM gate of the ideal high-side switch. The ideal freewheeling diode and the LC output filter (L = 1 mH, C = 100 uF, R = 5) average the switched rail. The loop drives the duty toward Vref / Vin and the output settles at the 5 V reference regardless of the 12 V input rail. Each switching instant is a located zero-crossing of (carrier - duty), so the DAE solver reinitialises at the flip instead of error-testing across the gate step, and the comparator sees the live pid duty because the roots callback refreshes the algebraic chain. The Scope plots the regulated output; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Buck_Converter_PID_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 15
+        },
+        {
+          "title": "Acausal Buck Converter PWM",
+          "description": "Closed-form PWM buck step-down converter. A 10 kHz sawtooth carrier (0..1) and a constant duty reference feed a relational comparator (carrier < duty) whose 0/1 output gates the ideal high-side switch: a trailing-edge PWM modulator built from signal blocks instead of a fixed pulse source, so the duty is a tunable input. The ideal freewheeling diode and the LC output filter (L = 1 mH, C = 100 uF, R = 5) average the switched rail, so in continuous conduction the load settles at Vout = D * Vin = 0.4 * 12 = 4.8 V. The comparator exposes its carrier-minus-duty crossing as a zero-crossing surface, so the DAE solver locates each switching instant and reinits there instead of error-testing across the gate step. The Scope plots the output voltage; ToWorkspace exports it.",
+          "kind": "model",
+          "file": "nflow-example:/acausal/Acausal_Buck_Converter_PWM_Demo.nflow",
+          "tags": [
+            "acausal"
+          ],
+          "requirements": [],
+          "blockCount": 13
         },
         {
           "title": "Acausal Contact (ElastoGap)",

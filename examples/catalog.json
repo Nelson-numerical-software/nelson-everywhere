@@ -1,6 +1,27 @@
 {
   "groups": [
     {
+      "name": "ai",
+      "title": "ai",
+      "source": "nelson",
+      "examples": [
+        {
+          "title": "AI curve designer",
+          "description": "Ask a local AI model for Lissajous frequencies with aiask and animate the curve it designs, falling back to default parameters when no model is reachable.",
+          "kind": "script",
+          "tags": [
+            "animation",
+            "ai",
+            "interactive"
+          ],
+          "requirements": [
+            "gui"
+          ],
+          "file": "/modules/ai/examples/ai_curve_designer.m"
+        }
+      ]
+    },
+    {
       "name": "audio",
       "title": "audio",
       "source": "nelson",
@@ -525,7 +546,7 @@
         },
         {
           "title": "Draw a three-dimensional cube",
-          "description": "Build and render a simple polygonal object.",
+          "description": "Spin a wireframe cube filled with random coloured segments.",
           "kind": "script",
           "tags": [
             "3d",
@@ -1426,8 +1447,8 @@
           "file": "/modules/ode_solvers/examples/ballode.m"
         },
         {
-          "title": "Boundary-value problem",
-          "description": "Solve a delayed boundary-value problem with additional options.",
+          "title": "Delay and boundary-value solvers",
+          "description": "Delayed logistic growth with dde23 and ddesd, and the two solutions of a boundary-value problem with bvp4c and bvp5c.",
           "kind": "script",
           "tags": [
             "dde",
